@@ -1,6 +1,6 @@
 1、QuantumultX懒人配置&github
 
-QuantumultX大佬的GITHUB
+- QuantumultX大佬的GITHUB
 - ***[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)***
 - ***[NobyDa脚本](https://github.com/NobyDa/Script)***
 - ***[Koolson图标组](https://github.com/Koolson/Qure)***
@@ -11,7 +11,7 @@ QuantumultX大佬的GITHUB
 - ***[毒奶](https://github.com/limbopro/Adblock4limbo)***
 - ***[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)***
 
-QuantumultX懒人配置
+- QuantumultX懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
 - ***[Orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf)***
 - ***[DivineEngine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf)***
