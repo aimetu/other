@@ -1,6 +1,6 @@
 1、QuantumultX懒人配置&github
 
-github
+QuantumultX大佬的GITHUB
 - ***[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)***
 - ***[NobyDa脚本](https://github.com/NobyDa/Script)***
 - ***[Koolson图标组](https://github.com/Koolson/Qure)***
