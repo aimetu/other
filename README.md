@@ -7,8 +7,8 @@ github
 - ***[Orz-3图标组](https://github.com/Orz-3/mini)***
 - ***[墨魚手記](https://github.com/ddgksf2013/Cuttlefish)***
 - ***[Orz-3](https://github.com/Orz-3/QuantumultX)***
-- ***[](https://)***
-- ***[](https://)***
+- ***[GeoIP2 · CN](https://github.com/Hackl0us/GeoIP2-CN)***
+- ***[毒奶](https://github.com/limbopro/Adblock4limbo)***
 - 
 QuantumultX懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
@@ -16,7 +16,8 @@ QuantumultX懒人配置
 - ***[DivineEngine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf)***
 - ***[Cuttlefish](https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Profile/QuantumultX.conf)***
 - ***[Tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf)***
-
+- ***[毒奶](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf)***
+- ***[](https://)***
 
 2、OpenWrt大佬的GITHUB
 - ***[Lean的源码仓库](https://github.com/coolsnowwolf/lede)***
