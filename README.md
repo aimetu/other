@@ -11,7 +11,7 @@
 - ***[毒奶](https://github.com/limbopro/Adblock4limbo)***
 - ***[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)***
 - ***[apple解锁](https://github.com/VirgilClyne/iRingo)***
-- 
+- ***[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)***
 - QuantumultX懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
 - ***[Orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf)***
