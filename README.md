@@ -19,7 +19,7 @@
 - ***[Cuttlefish](https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Profile/QuantumultX.conf)***
 - ***[Tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf)***
 - ***[毒奶](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf)***
-- ***[](https://)***
+- ***[openit](https://openit.ml/Quanx.conf)***
 
 2、OpenWrt大佬的GITHUB
 - ***[Lean的源码仓库](https://github.com/coolsnowwolf/lede)***
