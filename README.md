@@ -26,6 +26,10 @@
 2、OpenWrt大佬的GITHUB
 - ***[Lean的源码仓库](https://github.com/coolsnowwolf/lede)***
 - ***[openwrt常用插件](https://github.com/kenzok8/openwrt-packages)***
-- ***[OpenWrt的App过滤](https://github.com/Lienol/openwrt-OpenAppFilter)***
+- ***[OpenWrt的App过滤](https://github.com/destan19/OpenAppFilter)***
+- ***[kiddin9常用插件](https://github.com/kiddin9/openwrt-packages)***
 - ***[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)***
-- ***[](https://)***
+- ***[OpenClash](https://github.com/vernesong/OpenClash)***
+- ***[mosdns分流](https://github.com/IrineSistiana/mosdns)***
+- ***[]()***
+- ***[]()***
