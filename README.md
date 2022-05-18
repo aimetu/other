@@ -24,6 +24,7 @@
 - ***[openit](https://openit.ml/Quanx.conf)***
 
 2、OpenWrt大佬的GITHUB
+- ***[openwrt官方源](https://github.com/openwrt/openwrt)***
 - ***[Lean的源码仓库](https://github.com/coolsnowwolf/lede)***
 - ***[openwrt常用插件](https://github.com/kenzok8/openwrt-packages)***
 - ***[OpenWrt的App过滤](https://github.com/destan19/OpenAppFilter)***
