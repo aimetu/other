@@ -32,5 +32,5 @@
 - ***[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)***
 - ***[OpenClash](https://github.com/vernesong/OpenClash)***
 - ***[mosdns分流](https://github.com/IrineSistiana/mosdns)***
-- ***[smartdns本地DNS服务器](https://github.com/pymumu/smartdns)***
+- ***[smartdns](https://github.com/pymumu/smartdns)***
 - ***[]()***
