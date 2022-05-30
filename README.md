@@ -13,6 +13,8 @@
 - ***[apple解锁](https://github.com/VirgilClyne/iRingo)***
 - ***[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)***
 - ***[boxjs](https://github.com/chavyleung/boxjs-doc)***
+- ***[奇心科技](https://github.com/zwf234/rules)***
+- ***[]()***
 - 
 - QuantumultX懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
@@ -22,6 +24,7 @@
 - ***[Tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf)***
 - ***[毒奶](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf)***
 - ***[openit](https://openit.ml/Quanx.conf)***
+- ***[奇心](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf)***
 
 2、OpenWrt大佬的GITHUB
 - ***[openwrt官方源](https://github.com/openwrt/openwrt)***
