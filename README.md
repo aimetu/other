@@ -14,7 +14,7 @@
 - ***[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)***
 - ***[boxjs](https://github.com/chavyleung/boxjs-doc)***
 - ***[奇心](https://github.com/zwf234/rules)***
-- ***[]()***
+- ***[Quantumult X资源解析器](https://github.com/KOP-XIAO/QuantumultX)***
 - 
 - QuantumultX懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
