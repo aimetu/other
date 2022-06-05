@@ -1,25 +1,25 @@
-1、QuantumultX懒人配置&github
+1、Quantumult X大佬们的GITHUB&懒人配置
 
-- QuantumultX大佬的GITHUB
-- ***[anti-AD 广告规则](https://github.com/privacy-protection-tools/anti-AD)***
+- Quantumult X大佬的GITHUB
+- ***[KOP-XIAO 资源解析器](https://github.com/KOP-XIAO/QuantumultX)***
+- ***[Sub-Store订阅转换](https://github.com/Peng-YM/Sub-Store)***
+- ***[GeoIP2.CN](https://github.com/Hackl0us/GeoIP2-CN)***
+- ***[boxjs](https://github.com/chavyleung/boxjs-doc)***
+- ***[apple解锁](https://github.com/VirgilClyne/iRingo)***
+- ***[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)***
+- ***[anti-AD](https://github.com/privacy-protection-tools/anti-AD)***
 - ***[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)***
-- ***[NobyDa脚本](https://github.com/NobyDa/Script)***
-- ***[Koolson图标组](https://github.com/Koolson/Qure)***
-- ***[Orz-3图标组](https://github.com/Orz-3/mini)***
-- ***[墨魚](https://github.com/ddgksf2013/Cuttlefish)***
 - ***[Orz-3](https://github.com/Orz-3/QuantumultX)***
+- ***[NobyDa](https://github.com/NobyDa/Script)***
+- ***[Koolson图标](https://github.com/Koolson/Qure)***
+- ***[Orz-3图标](https://github.com/Orz-3/mini)***
+- ***[墨魚](https://github.com/ddgksf2013/Cuttlefish)***
 - ***[奇心](https://github.com/zwf234/rules)***
 - ***[毒奶](https://github.com/limbopro/Adblock4limbo)***
 - ***[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)***
-- ***[apple解锁](https://github.com/VirgilClyne/iRingo)***
-- ***[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)***
-- ***[boxjs](https://github.com/chavyleung/boxjs-doc)***
-- ***[GeoIP2.CN](https://github.com/Hackl0us/GeoIP2-CN)***
-- ***[Quantumult X资源解析器](https://github.com/KOP-XIAO/QuantumultX)***
-- ***[Sub-Store本地订阅转换](https://github.com/Peng-YM/Sub-Store)***
 
 
-- QuantumultX懒人配置
+- Quantumult X懒人配置
 - ***[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)***
 - ***[Orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf)***
 - ***[神机DivineEngine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf)***
@@ -31,6 +31,7 @@
 - ***[GeQ1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf)***
 - ***[耳东橙](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)***
 - ***[zqzess](https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX/zqzess.conf)***
+
 
 2、OpenWrt大佬的GITHUB
 - ***[openwrt官方源](https://github.com/openwrt/openwrt)***
