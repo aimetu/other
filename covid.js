@@ -31,49 +31,38 @@ const headers = {
     let title = "🗣️【新冠疫情动态】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n     📻数据消息 \n " +
-        
-        "\n\n   🗣️疫情动态\n\n    -" +   
-        news.title +
-        
+        "\n     📻数据信息 \n " +
         "\n    -新增确诊: " +
         desc.yesterdayConfirmedCountIncr +
-        "\n    -新增无症状: " +
-        desc.seriousIncr +  
         "\n    -新增治愈: " +
-        desc.curedIncr +
-        
+        desc.curedIncr +  
         "\n    -现有确诊: " +
         desc.currentConfirmedCount +    
         "\n    -现存无症状: " +
         desc.seriousCount +
-        
         "\n    -累计确诊: " +
         desc.confirmedCount +
         "\n    -累计治愈: " +
         desc.curedCount +
         "\n    -累计死亡: "  +
-        desc.deadCount + 
-        
-        "\n    -国内风险地区: " +
-        desc.riskarea.title +
-        "\n    -国内中风险地区: " +
-        desc.midDangerCount.title +
-        "\n    -国内高风险地区: " +
-        desc.highDangerCount.title + 
-        
+        desc.deadCount +       
         "\n    -境外新增输入: " +
         desc.suspectedIncr +
         "\n    -境外累计输入: " +
         desc.suspectedCount +       
-        
+        "\n    -国内风险地区: " +
+        desc.riskarea +
+        "\n    -国内中风险地区: " +
+        desc.midDangerCount +
+        "\n    -国内高风险地区: " +
+        desc.highDangerCount + 
         "\n\n   🗣️新闻报告 \n\n"     +
         news.summary +
+        "\n\n   🗣️疫情动态\n\n     " +   
+        news.title +
         "\n\n    发布时间：" +
         news.pubDateStr;
-        "\n\n    新闻来源：" +
-        news.sourceUrl;
-    
+
     $.notify(title, subtitle, detail);
 })()
     .catch((err) => $.error(err))
