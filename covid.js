@@ -28,7 +28,7 @@ const headers = {
     console.log(newslist);
     let desc = newslist.desc;
     let news = newslist.news[0];
-    let title = "🗞【疫情信息概览】";
+    let title = "📢【新冠疫情播报】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
         "\n「全国数据」" +
