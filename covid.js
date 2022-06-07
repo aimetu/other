@@ -58,7 +58,7 @@ const headers = {
         desc.highDangerCount + 
         "\n    -国内风险地区: " +
         desc.riskarea +
-        "\n\n   🗣️新闻报告     \n\n"     +
+        "\n\n   🗣️新闻报告: \n\n     " +
         news.summary +
         "\n\n   发布时间：" +
         news.pubDateStr;
