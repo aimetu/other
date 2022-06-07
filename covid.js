@@ -19,7 +19,7 @@ const headers = {
     });
     $.log(province);
     console.log(province);
-    const newslist = await $.http.get({
+    const newslist = await $.http.POST({
         url: "http://api.tianapi.com/ncov/index?key=1ff4eefa905219b6b2579f39e85aaa1d",
         headers,
     }).then((resp) => JSON.parse(resp.body).newslist[0])
@@ -31,23 +31,66 @@ const headers = {
     let title = "📢【新冠疫情播报】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n「全国数据」" +
-        "\n\n「疫情动态」\n\n     " +
+        "\n「新冠数据动态」" +   
+        "\n\n「国内疫情动态」\n\n" +
         news.title +
-        "\n\n    -新增确诊: " +
+         "\n    -新增无症状人数: " +
+        desc.seriousIncr +
+        "\n    -新增确诊人数: " +
         desc.confirmedIncr +
-        "\n    -现有确诊: " +
+        "\n    -新增治愈人数: " +
+        desc.curedIncr +
+        "\n    -新增死亡人数: " +
+        desc.deadIncr +
+        "\n    -现存无症状人数: " +
+        desc.seriousIncr +
+        "\n    -现存确诊人数: " +
         desc.currentConfirmedCount +
         "\n    -累计确诊: " +
         desc.confirmedCount +
-        "\n    -治愈: " +
+        "\n    -累计治愈: " +
         desc.curedCount +
-        "\n    -死亡: " +
+        "\n    -累计死亡: " +
         desc.deadCount +
+        "\n\n  -国内风险地区: "     +
+        riskarea.title +
+        "\n\n  -国内中风险地区个数: "     +
+        midDangerCount.title +
+        "\n\n  -国内高风险地区个数: "     +
+        highDangerCount.title +
+        "\n    -境外新增输入人数: " +
+        desc.suspectedIncr +
+        "\n    -境外新增确诊人数: " +
+        desc.yesterdaySuspectedCountIncr +
+        "\n    -境外累计输入人数: " +
+        desc.suspectedCount +
         "\n\n「动态详情」\n\n     " +
         news.summary +
         "\n\n    发布时间：" +
         news.pubDateStr;
+
+        "\n\n「国外疫情动态」\n\n" +
+        foreignStatistics.title +
+        "\n    -国外新增无症状人数: " +
+        foreignStatistics.seriousIncr +
+        "\n    -国外新增确诊人数: " +
+        foreignStatistics.confirmedIncr +
+        "\n    -国外新增治愈人数: " +
+        foreignStatistics.curedIncr +
+        "\n    -国外新增死亡人数: " +
+        foreignStatistics.deadIncr +
+        "\n    -国外现存无症状人数: " +
+        foreignStatistics.seriousIncr +
+        "\n    -国外现存确诊人数: " +
+        foreignStatistics.currentConfirmedCount +
+        "\n    -国外累计确诊: " +
+        foreignStatistics.confirmedCount +
+        "\n    -国外累计治愈: " +
+        foreignStatistics.curedCount +
+        "\n    -国外累计死亡: " +
+        foreignStatistics.deadCount +
+        "\n\n「国外动态详情」\n\n     " +
+        foreignStatistics.summary +
     $.notify(title, subtitle, detail);
 })()
     .catch((err) => $.error(err))
