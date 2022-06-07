@@ -32,6 +32,8 @@ const headers = {
     let subtitle = `📅  ${formatTime()}`;
     let detail =
         "\n「全国数据」" +
+        "\n\n「疫情动态」\n\n     " +
+        news.title +
         "\n\n    -新增确诊: " +
         desc.confirmedIncr +
         "\n    -现有确诊: " +
@@ -42,8 +44,6 @@ const headers = {
         desc.curedCount +
         "\n    -死亡: " +
         desc.deadCount +
-        "\n\n「疫情动态」\n\n     " +
-        news.title +
         "\n\n「动态详情」\n\n     " +
         news.summary +
         "\n\n    发布时间：" +
