@@ -1,6 +1,6 @@
 /**
  *  疫情日报，自动获取当前位置的疫情信息
- *  API来自 https://www.tianapi.com/apiview/169
+ *  API来自 http://api.tianapi.com/ncov/index
  */
 
 const $ = API("covid");
@@ -13,7 +13,7 @@ const headers = {
 
 !(async () => {
     // get current location
-    const province = await $.http.get(`http://api.tianapi.com/ncov/index?key=${key}`).then(resp => {
+    const province = await $.http.get(`https://apis.map.qq.com/ws/location/v1/ip?key=${key}`).then(resp => {
         const data = JSON.parse(resp.body);
         return data.result.ad_info.province;
     });
