@@ -28,27 +28,27 @@ const headers = {
     console.log(newslist);
     let desc = newslist.desc;
     let news = newslist.news[0];
-    let title = "📣📣📣【新冠疫情动态】";
+    let title = "🗣️【新冠疫情动态】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n    「数据消息」" +   
-        "\n\n  「疫情报告」\n\n"    +
-        news.title +   
+        "\n    📻数据消息 " +   
+        "\n    🗣️疫情报告 \n"    +
+        news.title    +   
         "\n    -新增确诊: " +
         desc.yesterdayConfirmedCountIncr +
         "\n    -新增无症状: " +
         desc.seriousIncr +  
-        "\n    -新增治愈: " +
+        "\n    -新增治愈: "    +
         desc.curedIncr +
         "\n    -现有确诊: " +
         desc.currentConfirmedCount +    
-        "\n    -现存无症状: " +
+        "\n    -现存无症状: "    +
         desc.seriousCount +
         "\n    -累计确诊: " +
         desc.confirmedCount +
         "\n    -累计治愈: " +
         desc.curedCount +
-        "\n    -累计死亡: " +
+        "\n    -累计死亡: "    +
         desc.deadCount + 
         "\n    -国内风险地区: " +
         desc.riskarea +
@@ -60,7 +60,7 @@ const headers = {
         desc.suspectedIncr +
         "\n    -境外累计输入: " +
         desc.suspectedCount +       
-        "\n\n    📣疫情新闻详情 \n\n     " +
+        "\n\n    🗣️新闻报告 \n\n     " +
         news.summary +
         "\n\n    疫情发布时间：" +
         news.pubDateStr
