@@ -5,7 +5,7 @@
 
 const $ = API("covid");
 
-const key = key="NOUBZ-7BNHD-SZ64A-HUWCW-YBGZ7-DDBNK";
+const key = "35OBZ-HJ4EX-YR24X-T2CUG-CMH53-TEF5R";
 const headers = {
     "User-Agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
