@@ -8,7 +8,7 @@ const $ = API("covid");
 const key = "35OBZ-HJ4EX-YR24X-T2CUG-CMH53-TEF5R";
 const headers = {
     "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
 };
 
 !(async () => {
