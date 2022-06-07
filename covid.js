@@ -31,11 +31,17 @@ const headers = {
     let title = "📢【新冠疫情播报】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n「新冠数据动态」" +   
+        "\n「新冠数据动态」" + 
+        
         "\n\n「国内疫情动态」\n\n" +
         news.title +  
+        
         "\n    -新增确诊人数: " +
+        desc.yesterdayConfirmedCountIncr +
+        
+        "\n    -昨天累计确诊人数: " +
         desc.confirmedIncr +
+        
         "\n    -新增无症状人数: " +
         desc.seriousIncr +  
         "\n    -新增治愈人数: " +
@@ -44,7 +50,7 @@ const headers = {
         desc.deadIncr +
         
         "\n    -现存确诊人数: " +
-        desc.currentConfirmedCount +     
+        desc.currentConfirmedCount +    
         "\n    -现存无症状人数: " +
         desc.seriousIncr +
         
@@ -54,18 +60,21 @@ const headers = {
         desc.curedCount +
         "\n    -累计死亡: " +
         desc.deadCount +
+        
         "\n\n  -国内风险地区: "     +
-        desc.riskarea.title +
+        desc.riskarea.summary +
         "\n\n  -国内中风险地区个数: "     +
         desc.midDangerCount +
         "\n\n  -国内高风险地区个数: "     +
         desc.highDangerCount +
+        
         "\n    -境外新增输入人数: " +
         desc.suspectedIncr +
         "\n    -境外新增确诊人数: " +
         desc.yesterdaySuspectedCountIncr +
         "\n    -境外累计输入人数: " +
         desc.suspectedCount +
+        
         "\n\n「动态详情」\n\n     " +
         news.summary +
         "\n\n    发布时间：" +
@@ -74,7 +83,7 @@ const headers = {
         "\n\n「国外疫情统计」\n\n"     +
         desc.foreignStatistics.summary +
         "\n\n「全球疫情统计」\n\n     " +
-       desc. globalStatistics.summary +
+        desc. globalStatistics.summary +
             
     $.notify(title, subtitle, detail);
 })()
