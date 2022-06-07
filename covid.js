@@ -3,12 +3,12 @@
  *  API来自 https://www.tianapi.com/apiview/169
  */
 
-const $ = API("169");
+const $ = API("covid");
 
-const key = key="35OBZ-HJ4EX-YR24X-T2CUG-CMH53-TEF5R";
+const key = key="NOUBZ-7BNHD-SZ64A-HUWCW-YBGZ7-DDBNK";
 const headers = {
     "User-Agent":
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36",
 };
 
 !(async () => {
