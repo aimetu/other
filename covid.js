@@ -28,31 +28,26 @@ const headers = {
     console.log(newslist);
     let desc = newslist.desc;
     let news = newslist.news[0];
-    let title = "📢【新冠疫情播报】";
+    let title = "📣📣📣【新冠疫情动态】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n「新冠数据动态」" + 
-        
-        "\n\n「国内疫情动态」\n\n" +
+        "\n「数据消息」" +   
+        "\n\n「疫情报告」\n\n" +
         news.title +  
         
-        "\n    -新增确诊人数: " +
+        "\n    -新增确诊: " +
         desc.yesterdayConfirmedCountIncr +
-        
-        "\n    -昨天累计确诊人数: " +
-        desc.confirmedIncr +
-        
-        "\n    -新增无症状人数: " +
+        "\n    -新增无症状: " +
         desc.seriousIncr +  
-        "\n    -新增治愈人数: " +
+        "\n    -新增治愈: " +
         desc.curedIncr +
-        "\n    -新增死亡人数: " +
+        "\n    -新增死亡: " +
         desc.deadIncr +
         
-        "\n    -现存确诊人数: " +
+        "\n    -现有确诊: " +
         desc.currentConfirmedCount +    
-        "\n    -现存无症状人数: " +
-        desc.seriousIncr +
+        "\n    -现存无症状: " +
+        desc.seriousCount +
         
         "\n    -累计确诊: " +
         desc.confirmedCount +
@@ -61,25 +56,25 @@ const headers = {
         "\n    -累计死亡: " +
         desc.deadCount +
         
-        "\n\n  -国内风险地区: "     +
-        desc.riskarea.summary +
-        "\n\n  -国内中风险地区个数: "     +
+        "\n    -国内风险地区: "     +
+        desc.riskarea +
+        "\n    -国内中风险地区: " +
         desc.midDangerCount +
-        "\n\n  -国内高风险地区个数: "     +
+        "\n    -国内高风险地区个数: "  +
         desc.highDangerCount +
         
         "\n    -境外新增输入人数: " +
         desc.suspectedIncr +
-        "\n    -境外新增确诊人数: " +
-        desc.yesterdaySuspectedCountIncr +
         "\n    -境外累计输入人数: " +
         desc.suspectedCount +
         
-        "\n\n「动态详情」\n\n     " +
+        "\n\n「疫情新闻详情」\n\n     " +
         news.summary +
-        "\n\n    发布时间：" +
-        news.pubDateStr;
-
+        "\n\n    疫情发布时间：" +
+        news.pubDateStr
+        "\n\n    疫情数据来源：" +
+        news.infoSource
+    
         "\n\n「国外疫情统计」\n\n"     +
         desc.foreignStatistics.summary +
         "\n\n「全球疫情统计」\n\n     " +
