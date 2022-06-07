@@ -31,9 +31,9 @@ const headers = {
     let title = "🗣️【新冠疫情动态】";
     let subtitle = `📅  ${formatTime()}`;
     let detail =
-        "\n\n  🗣️疫情动态\n\n    " +   
+        "\n\n  🗣️疫情动态 \n\n   -" +   
         news.title +
-        "\n    📻数据报告\n " +
+        "\n\n  📻数据报告\n\n " +
         "\n    -新增确诊: " +
         desc.yesterdayConfirmedCountIncr +
         "\n    -新增治愈: " +
@@ -56,11 +56,11 @@ const headers = {
         desc.midDangerCount +
         "\n    -国内高风险地区: " +
         desc.highDangerCount + 
-        "\n\n   -国内风险地区: \n\n" +
+        "\n    -国内风险地区: \n" +
         desc.riskarea +
-        "\n\n   🗣️新闻报告 \n\n"     +
+        "\n\n   🗣️新闻报告     \n\n"     +
         news.summary +
-        "\n\n    发布时间：" +
+        "\n\n   发布时间：" +
         news.pubDateStr;
 
     $.notify(title, subtitle, detail);
