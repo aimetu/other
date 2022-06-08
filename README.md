@@ -2,11 +2,11 @@
 
 - ##### Quantumult_X大佬的GITHUB #####
 - *[KOP-XIAO 资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
-- *[Sub-Store订阅转换](https://github.com/Peng-YM/Sub-Store)*
-- *[GeoIP2.CN](https://github.com/Hackl0us/GeoIP2-CN)*
-- *[boxjs](https://github.com/chavyleung/boxjs-doc)*
-- *[apple解锁](https://github.com/VirgilClyne/iRingo)*
-- *[tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
+- *[Peng-YM 订阅转换](https://github.com/Peng-YM/Sub-Store)*
+- *[Hackl0us GeoIP2CN](https://github.com/Hackl0us/GeoIP2-CN)*
+- *[chavyleung boxjs](https://github.com/chavyleung/boxjs-doc)*
+- *[VirgilClyne apple解锁](https://github.com/VirgilClyne/iRingo)*
+- *[Semporia tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
 - *[anti-AD](https://github.com/privacy-protection-tools/anti-AD)*
 - *[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)*
 - *[Orz-3](https://github.com/Orz-3/QuantumultX)*
