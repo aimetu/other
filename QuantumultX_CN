@@ -1,0 +1,397 @@
+#>更新时间:2022.06.09
+#🗣️各个模块的说明「某些内容只适用于1.0.29以上版本」
+;⚠️注意:内容中带";" "#"的都是注释符号，去掉前面的符号该行才生效
+
+#🛠️Other设置补充说明
+#1️⃣建议在「其他设置」里「GeoLite2」的「来源」填写使用下面链接，并开启「自动更新」
+;https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
+;https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
+
+#2️⃣Task定时任务脚本「手动添加订阅」
+;奇心脚本&S大脚本
+;https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.json
+;https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/UI-Action.json
+
+#3️⃣图标订阅「策略组长按图标订阅」
+;Quremini迷你透明主题图标&QureColor彩色主题图标&QureColor-All彩色主题图标&QureLight-All浅色主题图标
+;https://raw.githubusercontent.com/Koolson/Qure/master/Other/Quremini.json
+;https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor.json
+;https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-All.json
+;https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureLight-All.json
+
+#4️⃣HTTP本地服务器「浏览器打开,自行添加脚本」
+;Sub-Store本地订阅转换&BoxJs本地挂载脚本
+;https://sub.store
+;http://boxjs.com:9999
+
+;BoxJs订阅脚本
+;https://qxnav.com/rules/QuantumultX/qixin.boxjs.json
+;https://raw.githubusercontent.com/xream/scripts/main/boxjs/boxjs.json
+;https://raw.githubusercontent.com/VirgilClyne/iRingo/main/box/iRingo.boxjs.json
+
+;💡general模块内为一些通用的设置参数项
+[general]
+;Quantumult X会对server_check_url指定的网址进行相应测试，以确认节点的可用性
+;你同样可以在server_local/remote中，为节点订阅单独指定server_check_url参数
+;节点网络测试&节点服务测试&设置图标显示
+network_check_url=http://www.qualcomm.cn/generate_204
+server_check_url=http://www.gstatic.com/generate_204
+profile_img_url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+
+;节点延迟测试超时参数，需小于5000毫秒才生效
+server_check_timeout=3000
+
+;🔑资源解析器可用于自定义各类远程资源的转换，如节点，规则filter，复写rewrite等，url地址可远程，可本地/iCloud(Quantumult X/Scripts目录)
+resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+
+;🌐geo_location_checker用于节点页面的节点信息展示，可完整自定义展示内容与方式
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
+
+;🕸️运行模式模块running_mode_trigger设置，即根据网络自动切换"分流/直连/全局代理"等模式
+;running-mode-trigger模式下，跟手动切换直连/全局代理等效，rewrite/task 模块始终会生效，比ssid策略组设置简单，比ssid-suspend更灵活
+;前两个filter先后表示 在4G网络跟一般Wi-Fi下，走filter(分流)模式，后面则表示在OpenWrt_5G下切换为全局直连，OpenWrt切换为全局代理
+;如需使用，相应SSID换成你自己Wi-Fi名即可
+;running_mode_trigger=filter, filter, OpenWrt_5G:all_direct, OpenWrt:all_proxy
+
+;ssid_suspended_list，让Quantumult X在特定Wi-Fi网络下暂停工作(仅task模块会继续工作)，多个Wi-Fi用“,”连接
+;ssid_suspended_list=OpenWrt_5G, OpenWrt
+
+;dns_exclusion_list中的域名将不使用fake-ip方式,其它域名则全部采用fake-ip及远程解析的模式
+;dns_exclusion_list=*.qq.com
+
+;UDP白名单，留空则默认所有端口,不在列表中的将被丢弃处理返回"ICMP端口不可达"信息
+udp_whitelist=53, 80-427, 444-65535
+
+;UDP_Drop名单，同白名单类似，但不会返回"ICMP端口不可达"信息
+;Drop名单仅处理whitelist名单中的端口
+udp_drop_list=1900, 80
+
+#参数fallback_udp_policy的值仅支持末端策略（末端策略为经由规则模块和策略模块后所命中的策略，例如：direct、reject 以及节点；不支持内置策略proxy以及其它自定义策略）
+fallback_udp_policy=direct
+
+;下列表中的内容将不经过Quantumult X的处理
+excluded_routes= 192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
+icmp_auto_reply=true
+
+;指定DoH请求所使用的User-Agent
+;doh_user_agent=Agent/1.0
+
+;指定服务器测试时所使用的User-Agent
+;server_check_user_agent=Agent/1.0
+
+#💡本地DNS服务器
+[dns]
+;禁用系统DNS或ipv6
+;no-system
+no-ipv6
+
+;指定DNS服务器，并发响应选取最优结果
+server=1.2.4.8
+server=223.5.5.5
+server=119.29.29.29
+
+;当设置Doh服务器时，所有"未指定"的服务器将失效
+;doh-server=https://doh.pub/dns-query
+;doh-server=https://dns.alidns.com/dns-query
+
+;1.0.29版本后支持多个doh并发
+;doh-server=https://dns.alidns.com/dns-query, https://doh.pub/dns-query
+
+;1.0.29版本后支持alias映射类型
+;alias=/example.com/another-example.com
+
+;支持参数excluded_ssids,included_ssids(1.0.29以上版本)指定在特定Wi-Fi下失效/生效
+;doh-server=https://dns.alidns.com/dns-query,https://doh.pub/dns-query,excluded_ssids=OpenWrt_5G, OpenWrt
+;doh-server=https://dns.alidns.com/dns-query,https://doh.pub/dns-query,included_ssids=OpenWrt_5G, OpenWrt
+
+;指定域名解析dns,下面为示范,同样支持excluded_ssids/included_ssids参数
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.qq.com/119.29.29.29
+;server=/*.qq.com/119.29.29.29, included_ssids=OpenWrt_5G, OpenWrt
+;server=/*.taobao.com/223.5.5.5, excluded_ssids=OpenWrt_5G, OpenWrt
+
+#💡定时任务脚本
+[task_local]
+;包含3️⃣种类型:cron定时任务,UI交互脚本,网络切换脚本
+
+#1️⃣cron定时任务，可用于签到,天气话费查询等
+;js文件放于iCloud或者本机的Quantumult X/Scripts路径下,TF版本可直接使用远程js链接
+;img-url参数用于指定task的图标(108*108)
+;从"分"开始的5位cron写法，具体cron表达式可自行Google
+;比如"0 0 7-21 * * ?"代表7-21点每整点自动执行一次
+
+0 7 * * * https://raw.githubusercontent.com/nzw9314/QuantumultX/master/yichahucha/cron_daily.js, tag=每日一句, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Alibaba.png, enabled=true
+0 7 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js, tag=环球视野, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png, enabled=true
+0 8 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/zaker/zaker.js, tag=Zaker签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/AIA.png, enabled=true
+0 8 * * * https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/weibo.js, tag=微博签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Weibo.png, enabled=true
+0 9 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.js, tag=哔哩签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/bilibili.png, enabled=true
+0 6 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, tag=美团签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Dinosaur.png, enabled=true
+0 6 * * * https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Bot.png, enabled=true
+0 12 * * * https://ooxx.be/js/maoyan.js, tag=猫眼电影, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Cat.png, enabled=true
+0 9 * * * https://raw.githubusercontent.com/xream/scripts/main/surge/modules/10010v3/10010.js, tag=联通流量, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Unicom.png, enabled=true
+0 10 * * * https://raw.githubusercontent.com/aimetu/other/main/covid.js, tag=疫情播报, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Luffy.png, enabled=true
+0 7-22/3 * * * https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, tag=彩云天气, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Daily.png, enabled=true
+0 0 1 1 * ? https://raw.githubusercontent.com/chavyleung/scripts/master/box/scripts/boxjs.revert.caches.js, tag=BoxJs缓存抹除, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/PostBox_Alt.png, enabled=false
+
+#2️⃣UI交互查询脚本，在首页长按"节点/策略组"唤出
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/geo_location.js, tag=GeoIP查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Back.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/traffic-check.js, tag=策略流量查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Bypass.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js, tag=流媒体解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HKMTMedia.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-google.js, tag=Google切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/ytb-ui-check.js, tag=YouTube查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube_Letter.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-ytb.js, tag=YouTube切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube_Letter.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/disney-ui-check.js, tag=Disneyᐩ查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-disneyplus.js, tag=Disneyᐩ切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/nf-ui-check.js, tag=Netflix查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix_Letter.png, enabled=true
+event-interaction https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/switch-check-nf.js, tag=Netflix切换, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix_Letter.png, enabled=true
+
+#3️⃣网络切换/变化时触发的脚本类型
+;event-network sample-taks.js
+
+#💡建立分流策略组
+;static策略组:手动选择想要的节点/策略组
+;available策略组:按顺序选择列表中第一个可用的节点
+;round-robin策略组:按列表的顺序轮流使用其中的节点
+;url-latency-benchmark延迟策略组:选取延迟最优节点
+;dest-hash策略组:随机负载均衡,相同域名走固定节点
+;ssid策略组:根据设定的网络自动切换节点/策略组
+;img-url参数用于指定策略组图标，可远程,也可本地/iCloud(Quantumult X/Images路径下)（108*108 大小）
+;check-interval为网络测试时间参数，单位秒, 默认更新时间为60*10=600秒，也就是10分钟
+;direct/proxy/reject则只能用本地图标，名字分别为direct.png, proxy.png,reject.png放置于Images文件夹下即可生效 (108*108 大小)
+[policy]
+static=⛵节点选择, 🚁自动选择, 🇭🇰香港节点, 🇹🇼台湾节点, 🇯🇵日本节点, 🇰🇷韩国节点, 🇸🇬狮城节点, 🇺🇸国际节点, 🇨🇳中国节点, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+url-latency-benchmark=🚁自动选择, server-tag-regex=(?=.*((?i))), check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
+url-latency-benchmark=🇭🇰香港节点, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$, check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
+url-latency-benchmark=🇹🇼台湾节点, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TW.png
+url-latency-benchmark=🇯🇵日本节点, server-tag-regex=(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$, check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
+url-latency-benchmark=🇰🇷韩国节点, server-tag-regex=(?=.*(韩国|韓國|朝鲜|KR|(?i)Korean))^((?!(台|日|港|新|美)).)*$, check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
+url-latency-benchmark=🇸🇬狮城节点, server-tag-regex=(?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$, check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
+url-latency-benchmark=🇺🇸国际节点, server-tag-regex=(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|🇺🇸|美國|American|德|DE|意|IT|英|GB|印|IN|欧|法|FR|澳|AU|荷|大|越|VN|俄|兰)), check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Area.png
+url-latency-benchmark=🇨🇳中国节点, server-tag-regex=(?=.*(移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨)), check-interval=1800, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+static=🔗Speedtest, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
+static=🎵TikTok, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
+static=📨Telegram, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
+static=🎶Spotify, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
+static=🎥HBO, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
+static=🎞️Netflix, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
+static=📼Disney, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
+static=📺YouTube, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
+static=🎮Game, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
+static=📟谷歌服务, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
+static=💻微软服务, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
+static=🍎苹果服务, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+static=🎬国际媒体, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
+static=🌏国际分流, ⛵节点选择, 🚁自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
+static=🪂中国分流, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/CN.png
+static=📹中国媒体, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
+static=🇨🇳中国直连, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
+static=🐟漏网之鱼, ⛵节点选择, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
+static=⛔阻止清单, reject, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
+
+#💡机场服务器远程订阅
+[server_remote]
+#远程服务器订阅模块,可直接订阅SSR，SS链接,以及Quantumult X格式的vmess/trojan/https订阅
+#其它格式可用opt-parser参数开启解析器导入使用
+#img-url参数用于指定图标，格式要求同样为108*108的png图片，可远程可本地
+#"tag"跟"enabled"为可选参数，分别表示 “标签”及“开启状态”, true为开启，false关闭
+#update-interval为更新时间参数，单位"秒", 默认更新时间为24*60*60=86400秒，也就是24小时
+#opt-parser=true/false 用于控制是否对本订阅开启资源解析器，不写或者false表示不启用解析器
+
+https://raw.githubusercontent.com/kxswa/k/k/long#del=1&emoji=1, tag=tg_kxswa(临急), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Round_Robin_Alt.png, update-interval=172800, opt-parser=true, enabled=false
+https://sub.fnf.xyz/link/NdeJTCtra4WII5Xb?list=shadowrocket#del=1&emoji=1, tag=yqc_123(临急), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/GCP.png, update-interval=172800, opt-parser=true, enabled=false
+https://raw.fastgit.org/freefq/free/master/v2#del=1&emoji=1, tag=worldcup(临急), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/deezer.png, update-interval=172800, opt-parser=true, enabled=false
+https://openit.ml/long#del=1&emoji=1, tag=openit(临急), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Round_Robin.png, update-interval=172800, opt-parser=true, enabled=false
+http://qxnav.com/tool.txt#del=1&emoji=1, tag=qxnav(临急), img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TIDAL.png, update-interval=172800, opt-parser=true, enabled=false
+
+#💡规则分流远程订阅
+[filter_remote]
+;远程分流模块，可使用force-policy来强制使用策略偏好, 替换远程规则内所指定的策略组
+;update-interval为更新时间参数,单位"秒",默认更新时间为24*60*60=86400秒,也就是24小时
+;opt-parser=true/false用于控制是否对本订阅 开启资源解析器,不写或者false表示不启用解析器
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=🦋哔哩哔哩, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Himalaya/Himalaya.list, tag=📻喜马拉雅, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KuaiShou/KuaiShou.list, tag=♪快手视频, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list, tag=🦘美团点评, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list, tag=🐶京东购物, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Kingsoft/Kingsoft.list, tag=📄金山办公, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ByteDance/ByteDance.list, tag=♬字节跳动, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list, tag=👀新浪科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NetEase/NetEase.list, tag=☁️网易科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list, tag=🐾百度科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list, tag=🐱阿里科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list, tag=🐧腾讯科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaMedia/ChinaMedia.list, tag=📹中国媒体, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=🇨🇳中国直连, force-policy=🇨🇳中国直连, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaIPs/ChinaIPs.list, tag=🇨🇳中国IPS, force-policy=🇨🇳中国直连, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Speedtest/Speedtest.list, tag=🔗Speedtest, force-policy=🔗Speedtest, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list, tag=🎵TikTok, force-policy=🎵TikTok, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=📨Telegram, force-policy=📨Telegram, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=🎶Spotify, force-policy=🎶Spotify, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/HBO/HBO.list, tag=🎥HBO, force-policy=🎥HBO, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=🎞️Netflix, force-policy=🎞️Netflix, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list, tag=📼Disney, force-policy=📼Disney, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list, tag=📺YouTube, force-policy=📺YouTube, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Game/Game.list, tag=🎮Game, force-policy=🎮Game, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=📟谷歌科技, force-policy=📟谷歌服务, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Microsoft/Microsoft.list, tag=💻微软科技, force-policy=💻微软服务, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SystemOTA/SystemOTA.list, tag=🍎系统更新, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=🍎苹果科技, force-policy=🍎苹果服务, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list, tag=🎬国际媒体, force-policy=🎬国际媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list, tag=🌍国际分流, force-policy=🌏国际分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AdGuardSDNSFilter/Direct/Direct.list, tag=🚥AD直连, force-policy=🇨🇳中国直连, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list, tag=🚥修正直连, force-policy=🇨🇳中国直连, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/AdvertisingScript/AdvertisingScript.list, tag=📄广告脚本, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list, tag=💡隐私保护, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list, tag=🕸️网络劫持, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AdGuardSDNSFilter/AdGuardSDNSFilter.list, tag=🚫AD广告, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AdvertisingLite/AdvertisingLite.list, tag=⛔广告大全, force-policy=⛔阻止清单, update-interval=172800, opt-parser=false, enabled=true
+
+#📄支持本地/iCloud规则文件，位于Quantumult X/Profiles路径下
+;filter.txt,tag=本地分流,enabled=false
+
+#💡rewrite复写远程订阅
+[rewrite_remote]
+;远程复写模块，内包含主机名hostname以及复写rewrite规则
+;update-interval为更新时间参数，单位"秒",默认更新时间为24*60*60=86400秒，也就是24小时
+;opt-parser=true/false用于控制是否对本订阅"开启资源解析器"，不写或者false表示不启用解析器
+
+https://raw.githubusercontent.com/aimetu/other/main/appunlock.conf, tag=🔐应用解锁, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf, tag=🗒️诺比脚本, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qxrules.conf, tag=🔓奇心解锁, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/zwf234/rules/master/getCookie.conf, tag=🏷️奇心Cookie, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/tailadv.conf, tag=📲奇心开屏, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/bilibili.conf, tag=🦋奇心哔哩, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/external/QuantumultX/TikTokUnlock/TikTokUK/TikTokUK.conf, tag=🎵TikTok, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/YouTubeAds.conf, tag=📺YouTube, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Weather.qxrewrite, tag=🍎解锁天气, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Siri.qxrewrite, tag=🍎解锁搜索, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/TV.qxrewrite, tag=🍎解锁TV, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/qxrewrite/Location.qxrewrite, tag=🍎解锁定位, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/Upgrade/Upgrade.conf, tag=✂️屏蔽检查, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/SafeRedirect/SafeRedirect.conf, tag=🔒安全定向, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/Redirect/Redirect.conf, tag=✍️定向重写, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/AdvertisingScript/AdvertisingScript.conf, tag=📄广告脚本, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/Advertising/Advertising.conf, tag=📝广告复写, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=🗂️BoxJs, update-interval=172800, opt-parser=false, enabled=true
+
+#📄支持本地/iCloud的复写规则文件，位于Quantumult X/Profiles路径下
+;rewrite.txt,tag=本地复写,opt-parser=false,enabled=false
+
+#💡本地服务器部分
+[server_local]
+;以下示范都是ip(域名):端口，
+;比如vmess-a.203.167.55.4:777，实际是 203.167.55.4:777
+;前面的ss-a，ws-tls这些，只是为了让你快速找到自己节点的类型
+;实际使用时，请不要真的傻乎乎的写vmess-a.203.167.55.4:777这种
+;目前支持shadowsocks/shadowsocksR/Vmess/Trojan/http(s)/Socks5 等类型
+;支持tls-cert-sha256以及tls-pubkey-sha256参数等自定义TLS验证
+
+#shadowsocks以及shadowsocksR类型, 支持V2-Plugin
+;支持UDP，支持UDP-OVER-TCP（版本1.0.29以上版本）
+;shadowsocks=ss-a.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=Sample-A
+;shadowsocks=ss-b.example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, tag=Sample-B
+;shadowsocks=ss-c.example.com:443, method=chacha20, password=pwd, obfs=tls, obfs-host=bing.com, fast-open=false, udp-relay=false, tag=Sample-C
+;shadowsocks=ssr-a.example.com:443, method=chacha20, password=pwd, ssr-protocol=auth_chain_b, ssr-protocol-param=def, obfs=tls1.2_ticket_fastauth, obfs-host=bing.com, tag=Sample-D
+;shadowsocks=ws-a.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-E
+;shadowsocks=ws-b.example.com:80, method=aes-128-gcm, password=pwd, obfs=ws, fast-open=false, udp-relay=false, tag=Sample-F
+;shadowsocks=ws-tls-a.example.com:443, method=aes-128-gcm, password=pwd, obfs=wss, obfs-uri=/ws, fast-open=false, udp-relay=false, tag=Sample-G
+;shadowsocks=ws-tls-a.example.com:443, method=aes-128-gcm, password=pwd, udp-over-tcp=true fast-open=false, udp-relay=false, tag=Sample-H
+
+#vmess类型,ws，wss(ws+tls),over-tls,tcp,支持UDP
+;vmess类型节点默认开启aead，关闭请用aead=false
+
+#ws类型
+;vmess=ws-c.example.com:80, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-c.example.com, obfs=ws, obfs-uri=/ws, fast-open=false, udp-relay=false, aead=false, tag=Sample-H
+
+#wss(ws+tls)类型
+;vmess=ws-tls-b.example.com:443, method=chacha20-ietf-poly1305, password= 23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=ws-tls-b.example.com, obfs=wss, obfs-uri=/ws, tls-verification=true,fast-open=false, udp-relay=false, tag=Sample-I
+
+;http类型
+;vmess=example.com:80, method=chacha20-poly1305, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=vmess-http
+
+#tcp类型
+;vmess=vmess-a.example.com:80, method=aes-128-gcm, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-J
+;vmess=vmess-b.example.com:80, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, fast-open=false, udp-relay=false, tag=Sample-K
+
+#over-tls类型
+;vmess=vmess-over-tls.example.com:443, method=none, password=23ad6b10-8d1a-40f7-8ad0-e3e35cd32291, obfs-host=vmess-over-tls.example.com, obfs=over-tls, tls-verification=true, fast-open=false, udp-relay=false, tag=Sample-L
+
+#http(s)类型
+;http=http.example.com:80, username=name, password=pwd, fast-open=false, udp-relay=false, tag=http
+;http=https.example.com:443, username=name, password=pwd, over-tls=true, tls-verification=true, tls-host=example.com, tls-verification=true, fast-open=false, udp-relay=false, tag=http-tls
+
+#socks5类型节点
+;socks5=example.com:80,fast-open=false, udp-relay=false, tag=socks5-01
+;socks5=example.com:80, username=name, password=pwd, fast-open=false, udp-relay=false, tag=socks5-02
+;socks5=example.com:443, username=name, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, fast-open=false, udp-relay=false, tag=socks5-tls-01
+;socks5=example.com:443, username=name, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, tls-pubkey-sha256=eb5ec6684564fd0d04975903ed75342d1b9fdc2096ea54b4cf8caf4740f4ae25, fast-open=false, udp-relay=false, tag=socks5-tls-02
+
+#trojan类型,支持over-tls以及websockets，支持UDP
+;trojan=example.com:443, password=pwd, over-tls=true, tls-verification=true, fast-open=false, udp-relay=true, tag=trojan-tls-01
+;trojan=example1.com:443, password=pwd, over-tls=true, tls-host=example.com, tls-verification=true, fast-open=false, udp-relay=false, tag=trojan-tls-02
+;trojan=192.168.1.1:443, password=pwd, obfs=wss, obfs-host=example.com, obfs-uri=/path, udp-relay=true, tag=trojan-wss-05
+
+#💡本地分流规则「对于完全相同的某条规则，本地的将优先生效」
+[filter_local]
+;user-agent, ?abc*, proxy
+;host, www.google.com, proxy
+;host-keyword, adsite, reject
+;host-suffix, googleapis.com, proxy
+
+//强制分流走蜂窝网络
+;host-suffix, googleapis.com, proxy, force-cellular
+
+//让分流走蜂窝网络跟Wi-Fi中的优选结果
+;host-suffix, googleapis.com, proxy, multi-interface
+
+//让分流走蜂窝网络跟Wi-Fi中的负载均衡，提供更大带宽出入接口
+;host-suffix, googleapis.com, proxy, multi-interface-balance
+
+//指定分流走特定网络接口
+;host-suffix, googleapis.com, proxy, via-interface=pdp_ip0
+
+//%TUN%参数，回传给Quantumult X接口，可用于曲线实现代理链功能
+;host-suffix, example.com, ServerA, via-interface=%TUN%
+;ip-cidr, ServerA's IP Range, ServerB
+
+//ip规则
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 224.0.0.0/24, direct
+
+//ipv6规则
+;ip6-cidr, 2001:4860:4860::8888/32, direct
+
+#🇨🇳已采用"中国ip池"分流规则，因此注释掉geoip cn
+;geoip, cn, direct
+
+#🗺️支持如下的geoip库写法"需GEO-IP库支持"
+;geoip, netflix, proxy
+
+#🐟不在上述规则中"远程以及本地"的剩余请求，将走final指定的节点/策略，这里即是→🐟漏网之鱼, 请根据自己的需求来选择直连或节点/策略
+final, 🐟漏网之鱼
+
+#💡部署一个本地HTTP服务器
+[http_backend]
+https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, tag=🗂️BoxJs, path=^/, enabled=true
+
+#💡本地复写规则
+[rewrite_local]
+^https?:\/\/sub\.store url script-analyze-echo-response https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
+https:\/\/((weather-data\.apple)|(api.weather))\.com url script-request-header https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
+
+#💡以下为证书&主机名
+[mitm]
+;请自行在Mitm中生成证书安装并信任
+skip_validating_cert = false
+force_sni_domain_name = false
+hostname = sub.store, weather-data.apple.com, api.weather.com
+
+;以下为证书参数，可去UI界面自行安装证书，会在此生成对应信息
+;passphrase = 
+;p12 = 
