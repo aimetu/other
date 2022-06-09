@@ -30,7 +30,7 @@
 - *[奇心](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf)*
 - *[GeQ1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf)*
 - *[耳东橙](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
-- *[zqzess](https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/QuantumultX/zqzess.conf)*
+- *[]()*
 
 
 - ##### 2、OpenWrt大佬的GITHUB #####
