@@ -211,13 +211,13 @@ http://qxnav.com/tool.txt#del=1&emoji=1, tag=qxnav(临急), img-url=https://raw.
 ;update-interval为更新时间参数,单位"秒",默认更新时间为24*60*60=86400秒,也就是24小时
 ;opt-parser=true/false用于控制是否对本订阅 开启资源解析器,不写或者false表示不启用解析器
 
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=🦋哔哩哔哩, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Himalaya/Himalaya.list, tag=📻喜马拉雅, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KuaiShou/KuaiShou.list, tag=♪快手视频, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=🦋哔哩哔哩, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Himalaya/Himalaya.list, tag=📻喜马拉雅, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/KuaiShou/KuaiShou.list, tag=♪快手视频, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list, tag=🦘美团点评, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list, tag=🐶京东购物, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Kingsoft/Kingsoft.list, tag=📄金山办公, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ByteDance/ByteDance.list, tag=♬字节跳动, force-policy=📹中国媒体, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ByteDance/ByteDance.list, tag=♬字节跳动, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Sina/Sina.list, tag=👀新浪科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NetEase/NetEase.list, tag=☁️网易科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Baidu/Baidu.list, tag=🐾百度科技, force-policy=🪂中国分流, update-interval=172800, opt-parser=false, enabled=true
