@@ -17,7 +17,7 @@
 - *[奇心](https://github.com/zwf234/rules)*
 - *[毒奶](https://github.com/limbopro/Adblock4limbo)*
 - *[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)*
-
+- *[app2smile 广告](https://github.com/app2smile/rules)*
 
 - ##### Quantumult_X懒人配置 #####
 - *[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
