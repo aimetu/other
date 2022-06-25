@@ -7,7 +7,8 @@
 - *[chavyleung boxjs](https://github.com/chavyleung/boxjs-doc)*
 - *[VirgilClyne apple解锁](https://github.com/VirgilClyne/iRingo)*
 - *[Semporia tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
-- *[anti-AD](https://github.com/privacy-protection-tools/anti-AD)*
+- *[anti-AD广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
+- *[cjxlist广告过滤](https://github.com/cjx82630/cjxlist)*
 - *[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)*
 - *[Orz-3](https://github.com/Orz-3/QuantumultX)*
 - *[NobyDa](https://github.com/NobyDa/Script)*
@@ -32,7 +33,6 @@
 - *[奇心](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf)*
 - *[GeQ1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf)*
 - *[耳东橙](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
-- *[]()*
 
 
 - ##### 2、OpenWrt大佬的GITHUB #####
