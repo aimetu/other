@@ -87,7 +87,6 @@ proxies:
 
 #策略组
 proxy-groups:
-
 - name: Pick
   type: select
   icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
