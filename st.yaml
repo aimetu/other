@@ -1,323 +1,432 @@
-# autocorrect-disable
+#>2022.07.02
 mixed-port: 7890
 mode: rule
 log-level: info
 
+#本地dns服务器
 dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    # from: https://github.com/Kr328/ClashForAndroid/blob/ffa559a57102ed8bc20eba41aa236a7764741bf9/core/src/main/golang/native/config/defaults.go#L10
-    # Stun Services
-    - '+.stun.*.*'
-    - '+.stun.*.*.*'
-    - '+.stun.*.*.*.*'
-    - '+.stun.*.*.*.*.*'
-    # Google Voices
-    - 'lens.l.google.com'
-    # Nintendo Switch
-    - '*.n.n.srv.nintendo.net'
-    # PlayStation
-    - '+.stun.playstation.net'
-    # XBox
-    - 'xbox.*.*.microsoft.com'
-    - '*.*.xboxlive.com'
-    # Microsoft
-    - '*.msftncsi.com'
-    - '*.msftconnecttest.com'
-    # Bilibili CDN
-    - '*.mcdn.bilivideo.cn'
-  # 截止 Stash 2.0 build 328，在使用 proxy-groups => ssid-policy 时，在 Wi-Fi 下走直连，部分国内请求会异常，所以暂时不指定。
-  # 如需指定，则请不要在 Wi-Fi 下走直连。
-  # nameserver:
-  #   - https://doh.pub/dns-query
-  #   - https://dns.alidns.com/dns-query
+  fake-ip-filter: []
 
+  default-nameserver:
+  - 120.53.53.88
+  - 120.53.53.13
+
+  nameserver:
+  - https://doh-e4da7876.doh.pub/dns-query
+  - tls://dot-e4da7876.dot.pub
+
+  fallback:
+  - https://cloudflare-dns.com/dns-query
+  - https://1.1.1.1/dns-query
+  - https://dns.google/dns-query
+  
+#重写
 http:
   mitm:
-    - g.cn
-    - "*.google.cn"
-    - "www.firefox.com.cn"
+  - g.cn
+  - "*.google.cn"
   rewrite:
-    - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
-    - ^https?:\/\/(www.)?firefox\.com\.cn\/(download\/)?$ https://www.mozilla.org/zh-CN/firefox/new/ 302
+  - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
-# 假如用组合订阅多个机场，就没必要使用 subscribe-url 了
-subscribe-url: https://sub.store/download/collection/subs
-# 替换上面文字用于 Stash 获取机场流量信息并在主页显示 （Stash1.6.1 build 287+支持）
-
-# 远程资源默认配置
-remote-resources-default-config: &remote-resources-default-config
+#订阅链接
+subscribe-url: https://www.naiun.co/api/v1/client/subscribe?token=02545c243d079d203c3e76b75ab3d923
+remote-resources-default-config:
   type: http
   interval: 86400
 
+
+#远程代理集
 proxy-providers:
-  # 全部节点
-  all-sub: &all-sub # 建立锚点
-    <<: *remote-resources-default-config
-    # 此处默认使用 Sub-Store 订阅链接，如果需要使用其他订阅链接，可以替换下面的 url 即可
+  all-sub:
+    <<:
+      type: http
+      interval: 86400
     url: "https://sub.store/download/collection/subs"
-    # 可以使用任意类型的链接仅替换上面文字，多个链接使用英文符号的竖杠 | 隔开一起写上即可
-    # Sub-Store 与 Clash 类型订阅链接替换掉整个引号""内的链接
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+      
+  Hong Kong:
+    <<: *All
+    filter: 港|香港|HK|Hong
 
+  Taiwan:
+    <<: *All
+    filter: 台|台湾|台北|TW|Taiwan
+
+  Japan:
+    <<: *All
+    filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
+    
+  Korean:
+    <<: *All
+    filter: 韩国|韓國|朝鲜|KR|Korean
+
+  Singapore:
+    <<: *All
+    filter: 新加坡|坡|狮城|SG|Singapore
+
+  American:
+    <<: *All
+    filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United States
+    
+  Chinese:
+    <<: *All
+    filter: 移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨   
+
+#代理
 proxies:
 
+#策略组
 proxy-groups:
 
-  - name: SSID Strategy
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/SSID.png?raw=true
-    proxies:
-    # 此处为配置文件中的已有策略组
-      - Server Strategy
-      - DIRECT  # 虽说 DIRECT 是保留字。但必须配置该策略选项，于此代理集的 proxies 下，不然该代理集就只有 1 个策略选项
-    ssid-policy:
-    # cellular: 保留字，指代蜂窝数据条件下
-    # default：保留字，指代其他 SSID 条件下，默认为 DIRECT 策略
-    # DIRECT：保留字，直连策略
-      HedyLamarr: DIRECT  # HedyLamarr，为 SSID 名称
-      cellular: Server Strategy
-      default: Server Strategy
+- name: Pick
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+  proxies:
+  - Auto
+  - Hong Kong
+  - Taiwan
+  - Korean
+  - Japan
+  - Singapore
+  - American
+  - Chinese
+  - DIRECT
+  - REJECT
 
-  - name: Outbound Strategy
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Server.png?raw=true
-    proxies:
-      - SSID Strategy
-      - DIRECT
-      - Auto Select
-      - Manual Select
-      - Fallback
-      - Country
+- name: Auto
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Server Strategy
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Server.png?raw=true
-    proxies:
-      - Auto Select
-      - Manual Select
-      - Fallback
-      - Country
+- name: Hong Kong
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Global Proxy
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Global.png?raw=true
-    proxies: &global-proxy
-      - Outbound Strategy
-      - DIRECT
+- name: Taiwan
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Global Direct
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/China_Map.png?raw=true
-    proxies: &global-direct
-      - DIRECT
-      - Outbound Strategy
+- name: Japan
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Final
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Final.png?raw=true
-    proxies:
-      *global-direct
+- name: Korean
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Apple
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Apple.png?raw=true
-    proxies:
-      *global-direct
+- name: Singapore
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Microsoft
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Microsoft.png?raw=true
-    proxies:
-      *global-direct
+- name: American
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: Speedtest
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Speedtest.png?raw=true
-    proxies:
-      *global-direct
+- name: Chinese
+  type: url-test
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
+  proxies: []
+  url: http://www.gstatic.com/generate_204
+  interval: 1800
 
-  - name: AD Block
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Advertising.png?raw=true
-    proxies:
-      - REJECT
-      - DIRECT
+- name: Speedtest
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
+  proxies:
+  - DIRECT
+  - REJECT
 
-  - name: Privacy
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Lock.png?raw=true
-    proxies:
-      - REJECT
-      - DIRECT
+- name: TikTok
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Manual Select
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Rocket.png?raw=true
-    use:
-      - all-sub
+- name: Telegram
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Auto Select
-    type: url-test
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Auto.png?raw=true
-    url: "http://www.gstatic.com/generate_204"
-    interval: 300
-    use:
-      - all-sub
+- name: Spotify
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Fallback
-    type: fallback
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Bypass.png?raw=true
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    use:
-      - all-sub
+- name: Hbo
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Country
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/World_Map.png?raw=true
-    proxies: &Country
-      - Hong Kong
-      - Japan
-      - Tai Wan
-      - America
-      - Other Country
+- name: Netflix
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Hong Kong
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Hong_Kong.png?raw=true
-    use:
-      - all-sub
-    filter: 港|🇭🇰|HK|Hong Kong
+- name: Disney
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Japan
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Japan.png?raw=true
-    use:
-      - all-sub
-    filter: 日|🇯🇵|东京|JP|Japan
+- name: YouTube
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Tai Wan
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/Taiwan.png?raw=true
-    use:
-      - all-sub
-    filter: 台|🇨🇳|🇹🇼|湾|TW|Taiwan
+- name: Game
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: America
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/United_States.png?raw=true
-    use:
-      - all-sub
-    filter: 美国|美|🇺🇲|US|American
+- name: Google
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
+  proxies:
+  - Pick
+  - Auto
 
-  - name: Other Country
-    type: select
-    icon: https://github.com/Koolson/Qure/blob/master/IconSet/Color/World_Map.png?raw=true
-    use:
-      - all-sub
-    filter: ^(?!.*(香港|港|🇭🇰|HK|Hong Kong|日本|日|🇯🇵|JP|Japan|台湾|台|🇹🇼|TW|Taiwan|美国|美|🇺🇲|US|American|CN)).*
+- name: Microsoft
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
+  proxies:
+  - DIRECT
+  - Pick
 
+- name: Apple
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+  proxies:
+  - DIRECT
+  - Pick
 
+- name: Global Media
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
+  proxies:
+  - Pick
+  - Auto
+
+- name: Global
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
+  proxies:
+  - Pick
+  - Auto
+
+- name: Filter
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
+  proxies:
+  - DIRECT
+  - REJECT
+  - Pick
+
+- name: China  Media
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
+  proxies:
+  - DIRECT
+  - REJECT
+  - Pick
+
+- name: China
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+  proxies:
+  - DIRECT
+  - REJECT
+  - Pick
+
+- name: Final
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
+  proxies:
+  - Pick
+  - DIRECT
+  - REJECT
+
+- name: Adblock
+  type: select
+  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
+  proxies:
+  - REJECT
+  - DIRECT
+
+#规则集
 rule-providers:
-
   privacy:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/QuentinHsu/network-rules/blob/release/Clash/DivineEngine-Privacy.yaml?raw=true
     path: ./ruleset/privacy.yaml
 
   ad-block:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/QuentinHsu/network-rules/blob/release/Clash/DivineEngine-AD.yaml?raw=true
     path: ./ruleset/ad.yaml
 
   youtube:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/YouTube/YouTube.yaml?raw=true
     path: ./ruleset/youtube.yaml
 
   google:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Google/Google.yaml?raw=true
     path: ./ruleset/google.yaml
 
   github:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/GitHub/GitHub.yaml?raw=true
     path: ./ruleset/github.yaml
 
   telegram:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Telegram/Telegram.yaml?raw=true
     path: ./ruleset/telegram.yaml
 
   twitter:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Twitter/Twitter.yaml?raw=true
     path: ./ruleset/twitter.yaml
 
   global-proxy:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/QuentinHsu/network-rules/blob/release/Clash/ACL4SSR-Proxy.yaml?raw=true
     path: ./ruleset/global-proxy.yaml
 
   apple:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Apple/Apple.yaml?raw=true
     path: ./ruleset/apple.yaml
 
   microsoft:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Microsoft/Microsoft.yaml?raw=true
     path: ./ruleset/microsoft.yaml
 
   speedtest:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Speedtest/Speedtest.yaml?raw=true
     path: ./ruleset/speedtest.yaml
 
   global-direct:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: classical
     url: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Direct/Direct.yaml?raw=true
     path: ./ruleset/global-direct.yaml
 
   china-domain:
-    <<: *remote-resources-default-config
+    <<:
+      type: http
+      interval: 86400
     behavior: domain
     url: https://github.com/QuentinHsu/network-rules/blob/release/Clash/Kr328-Domain-CN.yaml?raw=true
     path: ./ruleset/china-domain.yaml
 
+#规则
 rules:
-  - RULE-SET,ad-block,AD Block
-  - RULE-SET,privacy,Privacy
-  - RULE-SET,apple,Apple
-  - RULE-SET,microsoft,Microsoft
-  - RULE-SET,speedtest,Speedtest
-  - RULE-SET,github,Global Proxy
-  - RULE-SET,telegram,Global Proxy
-  - RULE-SET,twitter,Global Proxy
-  - RULE-SET,youtube,Global Proxy
-  - RULE-SET,google,Global Proxy
-  - RULE-SET,global-proxy,Global Proxy
-  - RULE-SET,global-direct,Global Direct
-  - RULE-SET,china-domain,Global Direct
-  - GEOIP,CN,Global Direct
-  - MATCH,Final
+ - RULE-SET,Pick,Pick
+ - RULE-SET,Auto,Auto
+ - RULE-SET,Hong Kong,Hong Kong
+ - RULE-SET,Taiwan,Taiwan
+ - RULE-SET,Korean,Korean
+ - RULE-SET,Singapore,Singapore
+ - RULE-SET,American,American
+ - RULE-SET,Chinese,Chinese
+ - RULE-SET,Speedtest,Speedtest
+ - RULE-SET,TikTok,TikTok
+ - RULE-SET,Telegram,Telegram
+ - RULE-SET,Spotify,Spotify
+ - RULE-SET,Hbo,Hbo
+ - RULE-SET,Netflix,Netflix
+ - RULE-SET,Disney,Disney
+ - RULE-SET,YouTube,YouTube
+ - RULE-SET,Game,Game
+ - RULE-SET,Google,Google
+ - RULE-SET,Microsoft,Microsoft
+ - RULE-SET,Apple,Apple
+ - RULE-SET,Global Media,Global Media
+ - RULE-SET,Global,Global
+ - RULE-SET,Filter,Filter
+ - RULE-SET,China Media,China Media
+ - RULE-SET,China,China
+ - RULE-SET,Final,Final
+ - RULE-SET,Adblock,Adblock
+- GEOIP,CN,China
+- MATCH,Final
