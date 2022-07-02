@@ -1,17 +1,14 @@
 #>2022.07.02
+#参考：https://stash.wiki/features/example-config
 
 #通用设置
-# 规则模式：rule（规则） / global（全局代理）/ direct（全局直连）
 mode: rule
-
-# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）
-# 5个级别：silent/info/warning/error/debug级别越高日志输出量越大，越倾向于调试，若需要请自行开启
 log-level: info
-
 mixed-port: 7890
 
 #dns服务器
 dns:
+  enable:true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter: 
@@ -24,6 +21,10 @@ dns:
   nameserver:
   - https://doh-e4da7876.doh.pub/dns-query
   - tls://dot-e4da7876.dot.pub
+  
+  fallback:
+  - https://1.1.1.1/dns-query
+  - https://dns.google/dns-query
   
 #重写
 # HTTP 引擎相关
