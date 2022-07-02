@@ -88,7 +88,7 @@ proxies:
 proxy-groups:
 - name: Pick
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
   proxies:
   - Auto
   - Hong Kong
@@ -103,14 +103,14 @@ proxy-groups:
 
 - name: Auto
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
 
 - name: Hong Kong
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
   proxies: []
   use:
     - Hong Kong
@@ -119,7 +119,7 @@ proxy-groups:
 
 - name: Taiwan
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
   proxies: []
   use:
     - Taiwan
@@ -128,7 +128,7 @@ proxy-groups:
 
 - name: Japan
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
   proxies: []
   use:
     - Japan
@@ -137,7 +137,7 @@ proxy-groups:
 
 - name: Korean
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
   proxies: []
   use:
     - Korean
@@ -146,7 +146,7 @@ proxy-groups:
 
 - name: Singapore
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
   proxies: []
   use:
     - Singapore
@@ -155,7 +155,7 @@ proxy-groups:
 
 - name: American
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
   proxies: []
   use:
     - American
@@ -164,7 +164,7 @@ proxy-groups:
 
 - name: Chinese
   type: url-test
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
   proxies: []
   use:
     - Chinese
@@ -173,105 +173,105 @@ proxy-groups:
 
 - name: Speedtest
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
   proxies:
   - DIRECT
   - REJECT
 
 - name: TikTok
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   proxies:
   - Pick
   - Auto
 
 - name: Telegram
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
   proxies:
   - Pick
   - Auto
 
 - name: Spotify
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
   proxies:
   - Pick
   - Auto
 
 - name: Hbo
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
   proxies:
   - Pick
   - Auto
 
 - name: Netflix
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
   proxies:
   - Pick
   - Auto
 
 - name: Disney
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
   proxies:
   - Pick
   - Auto
 
 - name: YouTube
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
   proxies:
   - Pick
   - Auto
 
 - name: Game
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
   proxies:
   - Pick
   - Auto
 
 - name: Google
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
   proxies:
   - Pick
   - Auto
 
 - name: Microsoft
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
   proxies:
   - DIRECT
   - Pick
 
 - name: Apple
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
   proxies:
   - DIRECT
   - Pick
 
 - name: Global Media
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
   proxies:
   - Pick
   - Auto
 
 - name: Global
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   proxies:
   - Pick
   - Auto
 
 - name: Filter
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
   proxies:
   - DIRECT
   - REJECT
@@ -279,7 +279,7 @@ proxy-groups:
 
 - name: China  Media
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
   proxies:
   - DIRECT
   - REJECT
@@ -287,7 +287,7 @@ proxy-groups:
 
 - name: China
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
   proxies:
   - DIRECT
   - REJECT
@@ -295,7 +295,7 @@ proxy-groups:
 
 - name: Final
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
   proxies:
   - Pick
   - DIRECT
@@ -303,7 +303,7 @@ proxy-groups:
 
 - name: Adblock
   type: select
-  icon:https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
   proxies:
   - REJECT
   - DIRECT
