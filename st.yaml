@@ -2,11 +2,11 @@
 #参考：https://stash.wiki/features/example-config
 
 #💡通用设置
-# 规则模式：rule规则/global全局代理/direct全局直连
+#规则模式：rule规则/global全局代理/direct全局直连
 mode: rule
 
-#设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
-#5个级别：silent/info/warning/error/debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
+#设置日志输出级别(默认级别：info，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）
+#5个级别：silent/info/warning/error/debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启
 log-level: info
 
 #💡dns服务器配置
@@ -57,10 +57,6 @@ http:
   mitm:
     - g.cn
     - '*.google.cn'
-    - weather-data.apple.com # 默认只对 443 端口开启
-    - weather-data.apple.com:* # 使用通配符对所有端口开启
-    - '*.weather-data.apple.com' # 域名中也可以使用通配符
-    - '-exclude.weather-data.apple.com' # 用-前缀排除域名
 
 #HTTP(S) 重写，支持header、302、307、reject多种策略
   url-rewrite:
