@@ -34,9 +34,15 @@ dns:
   enable: true
   ipv6: true
   listen: 0.0.0.0:53
+  
   default-nameserver:
     - 120.53.53.88
     - 120.53.53.13
+    
+  nameserver:
+    - https://doh-e4da7876.doh.pub/dns-query
+    - tls://dot-e4da7876.dot.pub
+    
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
@@ -53,9 +59,6 @@ dns:
     - '*.battlenet.com'
     - '*.blzstatic.cn'
     - '*.battle.net'
-  nameserver:
-    - https://doh-e4da7876.doh.pub/dns-query
-    - tls://dot-e4da7876.dot.pub
     
 #💡proxies代理
 #支持多种类型的代理协议ss、ssr、socks5、http、vmess、snell、trojan、hysteria、vless、tuic
