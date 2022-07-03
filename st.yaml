@@ -36,7 +36,6 @@ proxy-providers:
 proxy-groups:
 - name: Pick
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
   proxies:
   - Auto
   - Hong Kong
@@ -47,7 +46,8 @@ proxy-groups:
   - Chinese
   - DIRECT
   - REJECT
-      
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+  
 - name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
@@ -98,140 +98,140 @@ proxy-groups:
 
 - name: Speedtest
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
   proxies:
   - DIRECT
   - REJECT
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
+  
 - name: TikTok
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
+  
 - name: Telegram
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
+  
 - name: Spotify
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
+  
 - name: Hbo
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
   proxies:
   - Pick
   - Auto
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
 
 - name: Netflix
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
+  
 - name: Disney
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
   proxies:
   - Pick
   - Auto
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
 
 - name: YouTube
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
+  
 - name: Game
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
+  
 - name: Google
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
+  
 - name: Microsoft
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
   proxies:
   - DIRECT
   - Pick
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
+  
 - name: Apple
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
   proxies:
   - DIRECT
   - Pick
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+  
 - name: GMedia
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
+  
 - name: Global
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   proxies:
   - Pick
   - Auto
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
+  
 - name: Filter
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
   proxies:
   - DIRECT
   - REJECT
   - Pick
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
+  
 - name: CMedia
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
   proxies:
   - DIRECT
   - REJECT
   - Pick
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
+  
 - name: China
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
   proxies:
   - DIRECT
   - REJECT
   - Pick
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+  
 - name: Final
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
   proxies:
   - Pick
   - DIRECT
   - REJECT
-
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
+  
 - name: Adblock
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
   proxies:
   - REJECT
   - DIRECT
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
 #💡规则类型
 #通过规则匹配信息，指定连接的出站方式，例如直连、代理、拦截等
@@ -255,139 +255,139 @@ proxy-groups:
 rule-providers:  
   阿里巴巴:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml
     nterval: 86400
-    
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml
+
   字节跳动:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.yaml
     interval: 86400
-    
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.yaml
+
   腾讯科技:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
     interval: 86400
-    
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
+ 
   中国媒体:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     interval: 86400
-    
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+
   中国直连:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
 
   中国ips:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
 
   Speedtest:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
 
   TikTok:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
 
   Telegram:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     interval: 86400
-    
+     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+ 
   Spotify:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
 
   HBO:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
     
   Netflix:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
 
   Disney:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
 
   YouTube:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
 
   海外游戏:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
 
   谷歌服务:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
 
   微软服务:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
 
   苹果更新:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
 
   苹果服务:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
 
   Global Media:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
 
   Global:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml
     interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml
 
   直连守卫:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/Direct/Direct.yaml
     interval: 86400
-
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/Direct/Direct.yaml
+    
   直连修正:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     interval: 86400
-
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    
   隐私保护:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy.yaml
     interval: 86400
-
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy.yaml
+    
   网络劫持:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     interval:  86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
 
   广告守卫:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter.yaml
     interval:  86400
-
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter.yaml
+    
   广告大全:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml
     interval: 86400
-    
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml
+
 #💡rules规则引用集合    
 rules:
  - RULE-SET,阿里巴巴,Filter
