@@ -2,24 +2,49 @@
 #参考：https://stash.wiki/features/example-config
 
 #💡通用设置
-#规则模式：rule规则/global全局代理/direct全局直连
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
 mode: rule
-
-#设置日志输出级别(默认级别：info，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）
-#5个级别：silent/info/warning/error/debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启
 log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+
+#💡服务提供商订阅
+subscribe-url: https://proxy.service/stash/config
+
+#服务提供商可以通过HTTP Response Header提供服务信息，包括：上行流量、下行流量、流量总量、过期时间
+Subscription-Userinfo: upload=%f; download=%f; total=%f; expire=%f
+
+#💡远程代理集（proxy-provider），能在后台自动从 URL 更新策略组
+#要使用远程代理集，需要在 proxy-providers 下定义，并在proxy-groups中引用
+proxy-providers:
+  All:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true&emoji=true"
+    # 以下方法任选其一⚠️有Clash订阅优先使用方法二❗️
+    # 1.可以使用任意类型的链接仅替换上面文字，多个链接使用英文符号的竖杠|隔开一起写上即可
+    # 2.Sub-Store与Clash类型订阅链接替换掉整个引号""内的链接
+    interval: 86400
+    path: ./all.yaml
+    health-check:
+      enable: true
+      interval: 1800
+      url: http://www.gstatic.com/generate_204
 
 #💡dns服务器配置
 支持UDP/TCP/DoT/DoH协议的DNS服务，可以指明具体的连接端口号
 dns:
-#跳过证书验证
-  skip-cert-verify: true
-  fake-ip-filter: 
-  - 'openwrt.lan'
-
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:53
   default-nameserver:
   - 120.53.53.88
   - 120.53.53.13
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - 'openwrt.lan'
 
   nameserver:
   - https://doh-e4da7876.doh.pub/dns-query
@@ -92,11 +117,6 @@ hosts:
   '.dev': 127.0.0.1
   'alpha.clash.dev': '::1'
 
-#💡服务提供商订阅
-subscribe-url: https://proxy.service/stash/config
-#服务提供商可以通过 HTTP Response Header 提供服务信息，包括：上行流量、下行流量、流量总量、过期时间
-Subscription-Userinfo: upload=%f; download=%f; total=%f; expire=%f
-
 #💡proxies代理
 #支持多种类型的代理协议ss、ssr、socks5、http、vmess、snell、trojan、hysteria、vless、tuic
 proxies:
@@ -113,6 +133,8 @@ proxy-groups:
 - name: Pick
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+  use:
+    - All
   proxies:
   - Auto
   - Hong Kong
@@ -128,9 +150,10 @@ proxy-groups:
 - name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
-  proxies: []
-  url: http://www.gstatic.com/generate_204
-  interval: 1800
+    url: "http://www.gstatic.com/generate_204"
+    interval: 1800
+  use: 
+     - All
 
 - name: Hong Kong
   type: url-test
@@ -138,19 +161,19 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Hong Kong
-
+  use:
+    - All
+  filter: 港|香港|HK|Hong
+    
 - name: Taiwan
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Taiwan
+  use:
+    - All
+  filter: 台|台湾|台北|TW|Taiwan
 
 - name: Japan
   type: url-test
@@ -158,9 +181,9 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Japan
+  use:
+    - All
+  filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
 
 - name: Korean
   type: url-test
@@ -168,9 +191,9 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Korean
+  use:
+    - All
+  filter: 韩国|韓國|朝鲜|KR|Korean
 
 - name: Singapore
   type: url-test
@@ -178,9 +201,9 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Singapore
+  use:
+    - All
+  filter: 新加坡|狮城|SG|Singapore
 
 - name: American
   type: url-test
@@ -188,9 +211,9 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - American
+  use:
+    - All
+  filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United States
 
 - name: Chinese
   type: url-test
@@ -198,9 +221,9 @@ proxy-groups:
   proxies: []
   url: http://www.gstatic.com/generate_204
   interval: 1800
-    lazy:  true
-    use:
-      - Chinese
+  use:
+    - All
+  filter: 移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
 
 - name: Speedtest
   type: select
@@ -338,48 +361,6 @@ proxy-groups:
   proxies:
   - REJECT
   - DIRECT
-
-#💡远程代理集（proxy-provider），能在后台自动从 URL 更新策略组
-#要使用远程代理集，需要在 proxy-providers 下定义，并在proxy-groups中引用
-proxy-providers:
-  Hong Kong:
-    url:  
-    interval: 3600
-    filter: '港|香港|HK|Hong'
-
-  Taiwan:
-    url:  
-    interval: 3600
-    filter: '台|台湾|台北|TW|Taiwan'
-
-  Japan:
-    url:  
-    interval: 3600
-    filter: '日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan'
-
-  Korean:
-    url:  
-    interval: 3600
-    filter: '韩国|韓國|朝鲜|KR|Korean'
-
-  Singapore:
-    url:  
-    interval: 3600
-    filter: '新加坡|狮城|SG|Singapore'
-
-  American:
-    url:  
-    interval: 3600
-    filter: '美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United States'
-
-  Chinese:
-    url:  
-    interval: 3600
-    filter: '移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨'
-
-  provider-b:
-    url: https://raw.githubusercontent.com/STASH-NETWORKS-LIMITED/stash-example/main/config.yaml
-    interval: 3600
 
 #💡规则类型
 #通过规则匹配信息，指定连接的出站方式，例如直连、代理、拦截等
