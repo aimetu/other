@@ -97,7 +97,6 @@ proxy-groups:
   - name: Hong Kong
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -107,7 +106,6 @@ proxy-groups:
   - name: Taiwan
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -117,7 +115,6 @@ proxy-groups:
   - name: Japan
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -127,7 +124,6 @@ proxy-groups:
     - name: Korean
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -137,7 +133,6 @@ proxy-groups:
   - name: Singapore
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -147,7 +142,6 @@ proxy-groups:
   - name: American
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
@@ -157,7 +151,6 @@ proxy-groups:
   - name: Chinese
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
-    proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 1800
     use:
