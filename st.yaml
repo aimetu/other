@@ -423,4 +423,4 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 proxy-providers:
-subscribe-url: https://www.naiun.co/api/v1/client/subscribe?token=02545c243d079d203c3e76b75ab3d923
+subscribe-url: 订阅链接
