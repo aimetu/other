@@ -231,140 +231,96 @@ proxy-groups:
 #ipcidr-text: 支持 IPv4/IPv6集合, 性能优秀
 #Classical: 支持任意, 性能很差
 rule-providers:
-  
-  阿里巴巴:
-     behavior: classical
-     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml
-     interval: 86400
-    
-  字节跳动:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.yaml
+
+  Adblock-Domain:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.yaml"
+    path: ./ruleset/AdDomain.yaml
     interval: 86400
-    
-  腾讯科技:
+        
+  YouTube:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
-    interval: 86400
-    
-  中国媒体:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    interval: 86400
-    
-  中国直连:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
     interval: 86400
 
-  中国ips:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
-    interval: 86400
-
-  Speedtest:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    interval: 86400
-
-  TikTok:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    interval: 86400
-
-  Telegram:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    interval: 86400
-    
-  Spotify:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    interval: 86400
-
-  HBO:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
-    interval: 86400
-    
   Netflix:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"
+    path: ./ruleset/Netflix.yaml
     interval: 86400
 
   Disney:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./ruleset/Disney.yaml
+    interval: 86400
+    
+  Apple:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml"
+    path: ./ruleset/Apple.yaml
     interval: 86400
 
-  YouTube:
+  Microsoft:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml"
+    path: ./ruleset/Microsoft.yaml
     interval: 86400
 
-  海外游戏:
+  NetEaseMusic:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.yaml"
+    path: ./ruleset/NetEaseMusic.yaml
     interval: 86400
 
-  谷歌服务:
+  BiliBili:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./ruleset/BiliBili.yaml
     interval: 86400
 
-  微软服务:
+  Game:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml"
+    path: ./ruleset/Game.yaml
     interval: 86400
 
-  苹果更新:
+  PackageName:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Infatuation-Fei/rule/main/Clash/Rule/Android_Package_Name_Proxy.yaml"
+    path: ./ruleset/PackageName.yaml
     interval: 86400
 
-  苹果服务:
+  China:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
-    interval: 86400
-
-  Global Media:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml"
+    path: ./ruleset/China.yaml
     interval: 86400
 
   Global:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/Global-Domain.yaml
     interval: 86400
 
-  直连守卫:
+  Lan:
+    type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/Direct/Direct.yaml
-    interval: 86400
-
-  直连修正:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    interval: 86400
-
-  隐私保护:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy.yaml
-    interval: 86400
-
-  网络劫持:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    interval:  86400
-
-  广告守卫:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter.yaml
-    interval:  86400
-
-  广告大全:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    path: ./ruleset/lan.yaml
     interval: 86400
     
 #💡rules规则引用集合    
