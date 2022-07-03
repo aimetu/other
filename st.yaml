@@ -1,7 +1,5 @@
 #>2022.07.03
 #参考：https://stash.wiki/features/example-config
-
-#💡通用设置
 mixed-port: 7890
 allow-lan: true
 bind-address: '*'
@@ -10,11 +8,9 @@ log-level: info
 ipv6: true
 external-controller: 127.0.0.1:9090
 
-#💡服务提供商订阅
-subscribe-url: 订阅链接
+subscribe-url: 你的订阅链接
 #替换上面文字用于Stash获取机场流量信息并在主页显示
 
-💡远程代理集（proxy-provider），能在后台自动从 URL 更新策略组
 proxy-providers:
   All:
     type: http
@@ -28,8 +24,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
-      
-#💡dns服务器配置,支持UDP/TCP/DoT/DoH协议的DNS服务
+
 dns:
   enable: true
   ipv6: true
@@ -56,19 +51,9 @@ dns:
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-    
-#💡proxies代理
-#支持多种类型的代理协议ss、ssr、socks5、http、vmess、snell、trojan、hysteria、vless、tuic
-proxies:
 
-#💡策略组（proxy-groups）是一系列代理（或策略组）的组合。策略组可以像单个代理一样被分流规则引用，并可以指定特殊的策略提高可用性。
-#select: 用来允许用户手动选择
-#load-balance: 能充分利用多个代理的带宽
-#url-test: 可以定时与指定 URL 测速后，自动选择延迟最短的服务器
-#fallback: 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，由上至下自动选择服务器
-#relay: 代理的转发链, 流量将通过一系列的代理转发到达目的地
-#ssid-group: 为 select 的特例，可以根据设备的 SSID 自动切换
-proxy-groups:
+proxies:
+            
 proxy-groups:
   - name: 手动切换
     type: select
@@ -208,25 +193,6 @@ proxy-groups:
       - All
     filter: (?=.*(美|🇺🇸|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$
 
-#💡规则类型
-#通过规则匹配信息，指定连接的出站方式，例如直连、代理、拦截等
-#DOMAIN: 完全匹配域名
-#DOMAIN-SUFFIX: 匹配域名后缀
-#DOMAIN-KEYWORD: 关键词匹配域名
-#GEOIP: 通过 MaxMind GeoIP匹配国家代码
-#IP-CIDR / IP-CIDR6: IP CIDR 范围
-#DST-PORT: 目标端口
-#RULE-SET: 规则集合，请参考
-#SCRIPT: 通过 Python 表达式匹配请求
-
-#💡rule-providers规则集合
-#利用规则集合，可以在较低资源占用情况下引用大量规则，并且可以在后台静默更新而无需重新加载 Stash
-#要使用规则集合，必须在rule-provide下完成声明，然后在rules下引用集合
-#Domain: 支持域名/域名通配符, 性能良好
-#domain-text: 支持域名/域名通配符, 性能优秀
-#Ipcidr: 支持IPv4/IPv6集合, 性能良好
-#ipcidr-text: 支持 IPv4/IPv6集合, 性能优秀
-#Classical: 支持任意, 性能很差
 rule-providers:
 
   Adblock-Domain:
@@ -320,8 +286,6 @@ rule-providers:
     path: ./ruleset/lan.yaml
     interval: 86400
     
-#💡rules规则引用集合    
-rules:
 rules:
   - RULE-SET,Adblock-Domain,AdBlock
   - RULE-SET,YouTube,YouTube
