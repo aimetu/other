@@ -325,32 +325,19 @@ rule-providers:
     
 #💡rules规则引用集合    
 rules:
- - RULE-SET,阿里巴巴,Filter
- - RULE-SET,字节跳动,Filter
- - RULE-SET,腾讯科技,Filter
- - RULE-SET,中国媒体,CMedia
- - RULE-SET,中国直连,China
- - RULE-SET,中国ips,China
- - RULE-SET,Speedtest,Speedtest
- - RULE-SET,TikTok,TikTok
- - RULE-SET,Telegram,Telegram
- - RULE-SET,Spotify,Spotify
- - RULE-SET,HBO,Hbo
- - RULE-SET,Netflix,Netflix
- - RULE-SET,Disney,Disney
- - RULE-SET,YouTube,YouTube
- - RULE-SET,海外游戏,Game
- - RULE-SET,谷歌服务,Google
- - RULE-SET,微软服务,Microsoft
- - RULE-SET,苹果更新,Adblock
- - RULE-SET,苹果服务,Apple
- - RULE-SET,GMedia,GMedia
- - RULE-SET,Global,Global
- - RULE-SET,直连守卫,China
- - RULE-SET,直连修正,China
- - RULE-SET,隐私保护,Adblock
- - RULE-SET,网络劫持,Adblock
- - RULE-SET,广告守卫,Adblock
- - RULE-SET,广告大全,Adblock
- - GEOIP,CN,China
- - MATCH,Final
+rules:
+  - RULE-SET,Adblock-Domain,AdBlock
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,Netflix,NETFLIX
+  - RULE-SET,Disney,Disney+
+  - RULE-SET,Apple,苹果服务
+  - RULE-SET,Microsoft,微软服务
+  - RULE-SET,NetEaseMusic,网易音乐
+  - RULE-SET,BiliBili,哔哩哔哩
+  - RULE-SET,Game,游戏平台
+  - RULE-SET,PackageName,国外网站
+  - RULE-SET,Global,国外网站
+  - RULE-SET,China,国内网站
+  - RULE-SET,Lan,DIRECT
+  - GEOIP,CN,国内网站
+  - MATCH,漏网之鱼
