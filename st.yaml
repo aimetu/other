@@ -2,13 +2,13 @@
 #参考：https://stash.wiki/features/example-config
 
 #💡通用设置
-mixed-port: 7890
-allow-lan: true
-bind-address: '*'
-mode: rule
-log-level: info
-ipv6: true
-external-controller: 127.0.0.1:9090
+mixed-port:7890
+allow-lan:true
+bind-address:'*'
+mode:rule
+log-level:info
+ipv6:true
+external-controller:127.0.0.1:9090
 
 #💡服务提供商订阅
 subscribe-url: https://proxy.service/stash/config
@@ -33,7 +33,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 #💡dns服务器配置
-支持UDP/TCP/DoT/DoH协议的DNS服务，可以指明具体的连接端口号
+#支持UDP/TCP/DoT/DoH协议的DNS服务，可以指明具体的连接端口号
 dns:
   enable: true
   ipv6: true
@@ -129,13 +129,11 @@ proxies:
 #relay: 代理的转发链, 流量将通过一系列的代理转发到达目的地
 #ssid-group: 为 select 的特例，可以根据设备的 SSID 自动切换
 
-proxy-groups:
+ proxy-groups:
 - name: Pick
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
-  use:
-    - All
-  proxies:
+  proxies: []
   - Auto
   - Hong Kong
   - Taiwan
@@ -150,7 +148,8 @@ proxy-groups:
 - name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
-    url: "http://www.gstatic.com/generate_204"
+  proxies: []
+    url: http://www.gstatic.com/generate_204
     interval: 1800
   use: 
      - All
