@@ -75,8 +75,6 @@ proxy-groups:
   - name: Pick
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
-    use:
-      - All
     proxies:
       - Auto
       - Hong Kong
@@ -88,7 +86,7 @@ proxy-groups:
       - Chinese
       - DIRECT
       - REJECT
-
+      
   - name: Auto
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
@@ -244,7 +242,7 @@ proxy-groups:
       - DIRECT
       - Pick
 
-  - name: Global Media
+  - name: GMedia
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
     proxies:
@@ -266,7 +264,7 @@ proxy-groups:
       - REJECT
       - Pick
 
-  - name: China  Media
+  - name: CMedia
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
     proxies:
@@ -458,7 +456,7 @@ rules:
  - RULE-SET,阿里巴巴,Filter
  - RULE-SET,字节跳动,Filter
  - RULE-SET,腾讯科技,Filter
- - RULE-SET,中国媒体,China Media
+ - RULE-SET,中国媒体,CMedia
  - RULE-SET,中国直连,China
  - RULE-SET,中国ips,China
  - RULE-SET,Speedtest,Speedtest
@@ -474,7 +472,7 @@ rules:
  - RULE-SET,微软服务,Microsoft
  - RULE-SET,苹果更新,Adblock
  - RULE-SET,苹果服务,Apple
- - RULE-SET,Global Media,Global Media
+ - RULE-SET,GMedia,GMedia
  - RULE-SET,Global,Global
  - RULE-SET,直连守卫,China
  - RULE-SET,直连修正,China
