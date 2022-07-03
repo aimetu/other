@@ -72,228 +72,144 @@ proxies:
 #relay: 代理的转发链, 流量将通过一系列的代理转发到达目的地
 #ssid-group: 为 select 的特例，可以根据设备的 SSID 自动切换
 proxy-groups:
-  - name: Pick
+proxy-groups:
+  - name: 手动切换
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Quantumult_X.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
+    use:
+      - All
     proxies:
-      - Auto
-      - Hong Kong
-      - Taiwan
-      - Korean
-      - Japan
-      - Singapore
-      - American
-      - Chinese
-      - DIRECT
-      - REJECT
-      
-  - name: Auto
+      - 自动选择
+      - 故障转移
+
+  - name: 自动选择
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
-    url: "http://www.gstatic.com/generate_204"
-    interval: 1800
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     use: 
-      - All
-
-  - name: Hong Kong
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 港|香港|HK|Hong
+       - All
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
     
-  - name: Taiwan
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 台|台湾|台北|TW|Taiwan
-
-  - name: Japan
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
-
-    - name: Korean
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 韩国|韓國|朝鲜|KR|Korean
-
-  - name: Singapore
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 新加坡|狮城|SG|Singapore
-
-  - name: American
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United States
-
-  - name: Chinese
-    type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
-    url: http://www.gstatic.com/generate_204
-    interval: 1800
-    use:
-      - All
-    filter: 移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
-
-  - name: Speedtest
+  - name: 故障转移
+    type: fallback
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bypass.png
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    use: 
+       - All
+       
+  - name: 国外网站
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
-    proxies:
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+    proxies: &G
+      - 手动切换
+      - 自动选择
+      - 故障转移
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+
+  - name: 国内网站
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+    proxies: &C
       - DIRECT
-      - REJECT
-
-  - name: TikTok
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Telegram
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Spotify
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Hbo
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Netflix
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Disney
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
-    proxies:
-      - Pick
-      - Auto
-
+      - 手动切换
+      - 自动选择
+      - 故障转移
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      - 台湾节点
+      
   - name: YouTube
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
     proxies:
-      - Pick
-      - Auto
+      *G
 
-  - name: Game
+  - name: NETFLIX
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
     proxies:
-      - Pick
-      - Auto
+      *G
 
-  - name: Google
+  - name: Disney+
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/DisneyPlus.png
     proxies:
-      - Pick
-      - Auto
+      *G
 
-  - name: Microsoft
+  - name: 苹果服务
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
     proxies:
-      - DIRECT
-      - Pick
+      *C
 
-  - name: Apple
+  - name: 微软服务
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
     proxies:
-      - DIRECT
-      - Pick
+      *G
 
-  - name: GMedia
+  - name: 网易音乐
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Global
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
-    proxies:
-      - Pick
-      - Auto
-
-  - name: Filter
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
     proxies:
       - DIRECT
-      - REJECT
-      - Pick
 
-  - name: CMedia
+  - name: 哔哩哔哩
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
     proxies:
-      - DIRECT
-      - REJECT
-      - Pick
+      *C
 
-  - name: China
+  - name: 游戏平台
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
     proxies:
-      - DIRECT
-      - REJECT
-      - Pick
+      *G
 
-  - name: Final
+  - name: AdBlock
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
-    proxies:
-      - Pick
-      - DIRECT
-      - REJECT
-
-  - name: Adblock
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
     proxies:
       - REJECT
-      - DIRECT
+      
+  - name: 漏网之鱼
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+    proxies:
+      *G
+
+  - name: 香港节点
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    use:
+      - All
+    filter: (?=.*(港|🇭🇰|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$
+      
+  - name: 日本节点
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    use:
+      - All
+    filter: (?=.*(日|🇯🇵|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$
+     
+  - name: 台湾节点
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    use:
+      - All
+    filter: (?=.*(台|🇨🇳|🇹🇼|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
+
+  - name: 美国节点
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    use:
+      - All
+    filter: (?=.*(美|🇺🇸|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$
 
 #💡规则类型
 #通过规则匹配信息，指定连接的出站方式，例如直连、代理、拦截等
