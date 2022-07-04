@@ -34,11 +34,36 @@ script:
 subscribe-url: 填写订阅链接
 
 proxy-providers:
+  all:
+    interval: 86400
+    type: http
+    url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
+    
+  ss:
+    interval: 86400
+    type: http
+    url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
+    
   ssr:
     interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
-   
+
+  vmess:
+    interval: 86400
+    type: http
+    url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
+
+  vless:
+    interval: 86400
+    type: http
+    url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
+
+  trojan:
+    interval: 86400
+    type: http
+    url: https://sub.id9.cc/sub?target=clash&url=填写订阅链接&list=true&udp=true&emoji=true
+    
 proxy-groups:
 - name: 🔰pick
   type: select
@@ -63,7 +88,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
 
 - name: 🇭🇰hongkong
   type: url-test
@@ -72,7 +102,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 港|香港|HK|Hong
   
 - name: 🇹🇼taiwan
@@ -82,7 +117,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 台|台湾|台北|TW|Taiwan
   
 - name: 🇯🇵japan
@@ -92,7 +132,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
   
 - name: 🇰🇷korean
@@ -102,7 +147,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 韩国|韓國|朝鲜|KR|Korean
   
 - name: 🇸🇬singapore
@@ -112,7 +162,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 新加坡|狮城|SG|Singapore
   
 - name: 🇺🇸american
@@ -122,9 +177,13 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
-  filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United
-    States
+  - vmess
+  - vless
+  - trojan
+  filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American
     
 - name: 🇨🇳chinese
   type: url-test
@@ -133,7 +192,12 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 1800
   use:
+  - all
+  - ss
   - ssr
+  - vmess
+  - vless
+  - trojan
   filter: 移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
 
 - name: 🕸️speedtest
