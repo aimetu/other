@@ -13,15 +13,12 @@ dns:
     - 'dns.msftncsi.com'
     - 'www.msftncsi.com'
     - 'www.msftconnecttest.com'
-  default-nameserver:
+  nameserver:
     - 120.53.53.88
     - 120.53.53.13
-  nameserver:
+  fallback:
     - https://doh-e4da7876.doh.pub/dns-query
     - tls://dot-e4da7876.dot.pub
-  fallback:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
     
 tun:
   enable: true
