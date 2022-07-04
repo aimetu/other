@@ -67,7 +67,7 @@ proxy-providers:
     url: https://sub.id9.cc/sub?target=clash&url=订阅链接填写&list=true&udp=true&emoji=true
     
 proxy-groups:
-- name: pick
+- name: 🔰pick
   type: select
   proxies:
   - auto
@@ -83,7 +83,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png
   url: http://www.gstatic.com/generate_204
   
-- name: auto
+- name: ♻️auto
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
@@ -96,7 +96,7 @@ proxy-groups:
   - vmess
   - trojan
   
-- name: hongkong
+- name: 🇭🇰hongkong
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
@@ -110,7 +110,7 @@ proxy-groups:
   - trojan
   filter: 港|香港|HK|Hong
   
-- name: taiwan
+- name: 🇹🇼taiwan
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
@@ -124,7 +124,7 @@ proxy-groups:
   - trojan
   filter: 台|台湾|台北|TW|Taiwan
   
-- name: Japan
+- name: 🇯🇵Japan
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
@@ -138,7 +138,7 @@ proxy-groups:
   - trojan
   filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
   
-- name: korean
+- name: 🇰🇷korean
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
@@ -152,7 +152,7 @@ proxy-groups:
   - trojan
   filter: 韩国|韓國|朝鲜|KR|Korean
   
-- name: singapore
+- name: 🇸🇬singapore
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
@@ -166,7 +166,7 @@ proxy-groups:
   - trojan
   filter: 新加坡|狮城|SG|Singapore
   
-- name: american
+- name: 🇺🇸american
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
@@ -181,7 +181,7 @@ proxy-groups:
   filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|American|United
     States
     
-- name: chinese
+- name: 🇨🇳chinese
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
@@ -195,7 +195,7 @@ proxy-groups:
   - trojan
   filter: 移动|联通|电信|腾讯|阿里|CHINA|CN|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
 
-- name: speedtest
+- name: 🕸️speedtest
   type: select
   proxies:
   - DIRECT
@@ -203,7 +203,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
   
-- name: tiktok
+- name: 🎵tiktok
   type: select
   proxies:
   - auto
@@ -216,7 +216,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   
-- name: telegram
+- name: ✉️telegram
   type: select
   proxies:
   - pick
@@ -229,7 +229,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
   
-- name: spotify
+- name: 🎶spotify
   type: select
   proxies:
   - auto
@@ -241,7 +241,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
   
-- name: hbo
+- name: 📺hbo
   type: select
   proxies:
   - pick
@@ -254,7 +254,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
   
-- name: netflix
+- name: 📽️netflix
   type: select
   proxies:
   - pick
@@ -268,7 +268,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
   
   
-- name: disney
+- name: 📼disney
   type: select
   proxies:
   - pick
@@ -281,7 +281,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
   
-- name: youtube
+- name: 🎞️youtube
   type: select
   proxies:
   - pick
@@ -294,7 +294,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
   
-- name: game
+- name: 🎮game
   type: select
   proxies:
   - pick
@@ -307,7 +307,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
   
-- name: google
+- name: 📟google
   type: select
   proxies:
   - pick
@@ -320,7 +320,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
   
-- name: microsoft
+- name: 🖥️microsoft
   type: select
   proxies:
   - DIRECT
@@ -328,7 +328,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
   
-- name: apple
+- name: 🍎apple
   type: select
   proxies:
   - DIRECT
@@ -336,7 +336,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
   
-- name: gmedia
+- name: 🎬gmedia
   type: select
   proxies:
   - pick
@@ -349,7 +349,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
   
-- name: global
+- name: 🌐global
   type: select
   proxies:
   - pick
@@ -362,7 +362,7 @@ proxy-groups:
   - american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   
-- name: filter
+- name: 🔱filter
   type: select
   proxies:
   - DIRECT
@@ -370,7 +370,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
   
-- name: cmedia
+- name: 📹cmedia
   type: select
   proxies:
   - DIRECT
@@ -378,7 +378,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
   
-- name: china
+- name: 🇨🇳china
   type: select
   proxies:
   - DIRECT
@@ -386,7 +386,7 @@ proxy-groups:
   - pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
   
-- name: final
+- name: 🐟final
   type: select
   proxies:
   - pick
@@ -394,7 +394,7 @@ proxy-groups:
   - REJECT
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
   
-- name: adblock
+- name: ⛔adblock
   type: select
   proxies:
   - REJECT
@@ -403,173 +403,173 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
 rule-providers:
-  新浪科技:
+  👀新浪科技:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sina/Sina.yaml
     
-  阿里巴巴:
+  🐱阿里巴巴:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.yaml
     
-  字节跳动:
+  🎵字节跳动:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.yaml
     
-  腾讯科技:
+  🐧腾讯科技:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
     
-  中国媒体:
+  📹中国媒体:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     
-  中国直连:
+  🇨🇳中国直连:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
     
-  中国ips:
+  🇨🇳中国ips:
     behavior: ipcidr
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.yaml
     
-  Speedtest:
+  🕸️Speedtest:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     
-  Spotify:
+  🎶Spotify:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
     
-  Telegram:
+  ✉️Telegram:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     
-  TikTok:
+  🎵TikTok:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
     
-  YouTube:
+  🎞️YouTube:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     
-  Disney:
+  📼Disney:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
     
-  Netflix:
+  📽️Netflix:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
     
-  HBO:
+  📺HBO:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
     
-  国际游戏:
+  🎮国际游戏:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
     
-  苹果更新:
+  🍎苹果更新:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
     
-  苹果服务:
+  🍎苹果服务:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
     
-  微软服务:
+  🖥️微软服务:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     
-  谷歌服务:
+  📟谷歌服务:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     
-  国际媒体:
+  🎬国际媒体:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
     
-  国际网络:
+  🌐国际网络:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml
     
-  直连守卫:
+  🚥🇳直连守卫:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/Direct/Direct.yaml
     
-  直连修正:
+  🚥直连修正:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     
-  隐私保护:
+  ⛔隐私保护:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy.yaml
     
-  网络劫持:
+  ⛔网络劫持:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     
-  广告守卫:
+  ⛔广告守卫:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter.yaml
     
-  广告大全:
+  ⛔广告大全:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml
     
 rules:
-- RULE-SET,新浪科技,filter
-- RULE-SET,阿里巴巴,filter
-- RULE-SET,字节跳动,filter
-- RULE-SET,腾讯科技,filter
-- RULE-SET,中国媒体,cmedia
-- RULE-SET,中国直连,china
-- RULE-SET,中国ips,china
-- RULE-SET,Speedtest,speedtest
-- RULE-SET,Spotify,spotify
-- RULE-SET,Telegram,telegram
-- RULE-SET,TikTok,tiktok
-- RULE-SET,YouTube,youtube
-- RULE-SET,Disney,disney
-- RULE-SET,Netflix,netflix
-- RULE-SET,HBO,hbo
-- RULE-SET,国际游戏,game
-- RULE-SET,苹果更新,adblock
-- RULE-SET,苹果服务,apple
-- RULE-SET,微软服务,microsoft
-- RULE-SET,谷歌服务,google
-- RULE-SET,国际媒体,gmedia
-- RULE-SET,国际网络,global
-- RULE-SET,直连守卫,china
-- RULE-SET,直连修正,china
-- RULE-SET,隐私保护,adblock
-- RULE-SET,网络劫持,adblock
-- RULE-SET,广告守卫,adblock
-- RULE-SET,广告大全,adblock
-- MATCH,final
+- RULE-SET,👀新浪科技,🔱filter
+- RULE-SET,🐱阿里巴巴,🔱filter
+- RULE-SET,🎵字节跳动,🔱filter
+- RULE-SET,🐧腾讯科技,🔱filter
+- RULE-SET,📹中国媒体,📹🇳cmedia
+- RULE-SET,🇨🇳中国直连,🇨🇳china
+- RULE-SET,🇨🇳中国ips,🇨🇳china
+- RULE-SET,🕸️Speedtest,🕸️speedtest
+- RULE-SET,🎶Spotify,🎶spotify
+- RULE-SET,✉️Telegram,✉️telegram
+- RULE-SET,🎵TikTok,🎵tiktok
+- RULE-SET,🎞️YouTube,🎞️youtube
+- RULE-SET,📼Disney,📼disney
+- RULE-SET,📽️Netflix,📽️netflix
+- RULE-SET,📺HBO,📺hbo
+- RULE-SET,🎮国际游戏,🎮game
+- RULE-SET,🍎苹果更新,⛔adblock
+- RULE-SET,🍎苹果服务,🍎apple
+- RULE-SET,🖥️微软服务,🖥️microsoft
+- RULE-SET,📟谷歌服务,📟google
+- RULE-SET,🎬国际媒体,🎬gmedia
+- RULE-SET,🌐国际网络,🌐global
+- RULE-SET,🚥直连守卫,🇨🇳china
+- RULE-SET,🚥直连修正,🇨🇳china
+- RULE-SET,⛔隐私保护,⛔adblock
+- RULE-SET,⛔网络劫持,⛔adblock
+- RULE-SET,⛔广告守卫,⛔adblock
+- RULE-SET,⛔广告大全,⛔adblock
+- MATCH,🐟final
