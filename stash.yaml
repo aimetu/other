@@ -59,14 +59,14 @@ proxy-groups:
 - name: 🔰pick
   type: select
   proxies:
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
-  - chinese
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
+  - 🇨🇳chinese
   - DIRECT
   - REJECT
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png
@@ -113,7 +113,7 @@ proxy-groups:
   - trojan
   filter: 台|台湾|台北|TW|Taiwan
   
-- name: 🇯🇵Japan
+- name: 🇯🇵japan
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
@@ -189,124 +189,123 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
   
 - name: 🎵tiktok
   type: select
   proxies:
-  - auto
-  - pick
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - ♻️auto
+  - 🔰pick
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   
 - name: ✉️telegram
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
   
 - name: 🎶spotify
   type: select
   proxies:
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
   
 - name: 📺hbo
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
   
 - name: 📽️netflix
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
-  
   
 - name: 📼disney
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
   
 - name: 🎞️youtube
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
   
 - name: 🎮game
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
   
 - name: 📟google
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
   
 - name: 🖥️microsoft
@@ -314,7 +313,7 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
   
 - name: 🍎apple
@@ -322,33 +321,33 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
   
 - name: 🎬gmedia
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
   
 - name: 🌐global
   type: select
   proxies:
-  - pick
-  - auto
-  - hongkong
-  - taiwan
-  - Japan
-  - korean
-  - singapore
-  - american
+  - 🔰pick
+  - ♻️auto
+  - 🇭🇰hongkong
+  - 🇹🇼taiwan
+  - 🇯🇵japan
+  - 🇰🇷korean
+  - 🇸🇬singapore
+  - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   
 - name: 🔱filter
@@ -356,7 +355,7 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
   
 - name: 📹cmedia
@@ -364,7 +363,7 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
   
 - name: 🇨🇳china
@@ -372,13 +371,13 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
   
 - name: 🐟final
   type: select
   proxies:
-  - pick
+  - 🔰pick
   - DIRECT
   - REJECT
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
@@ -388,7 +387,7 @@ proxy-groups:
   proxies:
   - REJECT
   - DIRECT
-  - pick
+  - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
 rule-providers:
