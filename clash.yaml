@@ -110,12 +110,14 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - ♻️ 自动选择  
       
   - name: 🌍 全球加速
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
+      - DIRECT
       
   - name: 📲 电报信息
     type: select
@@ -127,7 +129,7 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - ♻️ 自动选择
+      - 🔰 节点选择
       
   - name: 🐟 漏网之鱼
     type: select
