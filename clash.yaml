@@ -4,6 +4,7 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: :9090
+
 dns:
   enable: true
   enhanced-mode: fake-ip # 或 redir-host
@@ -21,6 +22,7 @@ dns:
   fallback:
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
+    
 tun:
   enable: true
   stack: system
@@ -52,6 +54,7 @@ cfw-bypass:
     - 192.168.*
     - <local>
 cfw-latency-timeout: 5000
+
 proxy-providers:
   all:
     type: http
@@ -63,6 +66,7 @@ proxy-providers:
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
+      
   ssr:
     type: http
     url: "https://sub.id9.cc/sub?target=clash&&url=订阅链接"
@@ -73,6 +77,7 @@ proxy-providers:
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
+      
   ss:
     type: http
     url: "https://sub.id9.cc/sub?target=clash&&url=订阅链接"
@@ -83,6 +88,7 @@ proxy-providers:
       interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204
+      
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -93,6 +99,7 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - 🎯 中国直连
+      
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -101,51 +108,59 @@ proxy-groups:
       - all
       - ssr
       - ss
+      
   - name: 🎯 中国直连
     type: select
     proxies:
       - DIRECT
+      
   - name: 🌍 全球加速
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
+      
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
+      
   - name: 🚈 专业驾驶
     type: select
     proxies:
       - DIRECT
       - ♻️ 自动选择
+      
   - name: 🐟 漏网之鱼
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 中国直连
       - 🌍 全球加速
-# Premium only
+
 rule-providers:
   direct:
     behavior: "domain"
     type: http
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
-    interval: 3600
     path: ./ruleset/direct.yaml
+    interval: 86400
+    
   telegramcidr:
     type: http
     behavior: ipcidr
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
     interval: 86400
+    
   gfw:
     type: http
     behavior: domain
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
     path: ./ruleset/gfw.yaml
     interval: 86400
+    
 rules:
   - DOMAIN-KEYWORD,gimytv,🎯 中国直连
   - DOMAIN-KEYWORD,libvio,🎯 中国直连
