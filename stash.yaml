@@ -576,7 +576,7 @@ rules:
 - RULE-SET,🐱阿里巴巴,🔱filter
 - RULE-SET,🎵字节跳动,🔱filter
 - RULE-SET,🐧腾讯科技,🔱filter
-- RULE-SET,📹中国媒体,📹🇳cmedia
+- RULE-SET,📹中国媒体,📹cmedia
 - RULE-SET,🇨🇳中国直连,🇨🇳china
 - RULE-SET,🇨🇳中国ips,🇨🇳china
 - RULE-SET,🕸️Speedtest,🕸️speedtest
