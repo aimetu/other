@@ -20,7 +20,7 @@
 - *[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)*
 - *[app2smile 广告](https://github.com/app2smile/rules)*
 - *[I-am-R-E节点信息](https://github.com/I-am-R-E)*
-
+- *[clash规则](https://github.com/Loyalsoldier/clash-rules)*
 
 - ##### Quantumult_X懒人配置 #####
 - *[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
