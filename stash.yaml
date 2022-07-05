@@ -624,4 +624,5 @@ rules:
 - RULE-SET,⛔网络劫持,⛔adblock
 - RULE-SET,⛔广告守卫,⛔adblock
 - RULE-SET,⛔广告大全,⛔adblock
+- GEOIP,CN,🇨🇳china
 - MATCH,🐟final
