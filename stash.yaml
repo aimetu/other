@@ -53,6 +53,7 @@ dns:
 
 #对域名指定单独的dns服务器
   nameserver-policy:
+    'mtalk.google.com': 108.177.125.188
     '*testflight.apple.com': 23.76.66.98
     
 #💡http引擎相关
@@ -61,18 +62,11 @@ http:
   mitm:
     - g.cn
     - '*.google.cn'
-    - *.tiktokv.com
-    - *.byteoversea.com
-    - *.tik-tokapi.com
 
 #http(s)重写，支持header、302、307、reject多种策略
   url-rewrite:
     - ^http://g\.cn http://www.google.com header
     - ^https?://www\.google\.cn https://www.google.com 302
-    - (?<=_region=)CN(?=&) url 307 KR
-    - (?<=&mcc_mnc=)4 url 307 2
-    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) url 302  $1$3
-    - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) url 307 17
 
   hosts:
     '*.clash.dev': 127.0.0.1
