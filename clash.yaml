@@ -165,5 +165,5 @@ rules:
   - RULE-SET,direct,🎯 中国直连
   - RULE-SET,gfw,🌍 全球加速
   - RULE-SET,telegramcidr,📲 电报信息
-  - GEOIP,CN,DIRECT
+  - GEOIP,CN,🎯 中国直连
   - MATCH,🐟 漏网之鱼
