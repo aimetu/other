@@ -77,34 +77,34 @@ subscribe-url: 输入订阅链接
 #💡远程代理订阅链接（输入1个或多个代理）
 proxy-providers:
   all:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
     
   ss:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
     
   ssr:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
 
   vmess:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
 
   vless:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
 
   trojan:
-    interval: 86400
     type: http
     url: https://sub.id9.cc/sub?target=clash&url=输入订阅链接&list=true&udp=true&emoji=true
+    interval: 86400
 
 #💡本地代理（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm,tuic协议类型）
 proxies:
@@ -412,7 +412,7 @@ proxy-groups:
   - 🇺🇸american
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   
-- name: 🔱filter
+- name: 🎡filter
   type: select
   proxies:
   - DIRECT
@@ -596,10 +596,10 @@ rule-providers:
 
 #💡规则类型（指定规则直接引用代理或策略组）
 rules:
-- RULE-SET,👀新浪科技,🔱filter
-- RULE-SET,🐱阿里巴巴,🔱filter
-- RULE-SET,🎵字节跳动,🔱filter
-- RULE-SET,🐧腾讯科技,🔱filter
+- RULE-SET,👀新浪科技,🎡filter
+- RULE-SET,🐱阿里巴巴,🎡filter
+- RULE-SET,🎵字节跳动,🎡filter
+- RULE-SET,🐧腾讯科技,🎡filter
 - RULE-SET,📹中国媒体,📹cmedia
 - RULE-SET,🇨🇳中国直连,🇨🇳china
 - RULE-SET,🇨🇳中国ips,🇨🇳china
