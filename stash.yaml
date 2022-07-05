@@ -17,7 +17,6 @@ dns:
   skip-cert-verify: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
@@ -37,7 +36,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
     - system
-    
+  
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -52,7 +51,7 @@ dns:
     ipcidr:
       - 240.0.0.0/4
 
-#对部分域名使用单独的 DNS 服务器
+#对域名指定单独的dns服务器
   nameserver-policy:
     '*testflight.apple.com': 23.76.66.98
     
@@ -62,23 +61,26 @@ http:
   mitm:
     - g.cn
     - '*.google.cn'
+    - *.tiktokv.com
+    - *.byteoversea.com
+    - *.tik-tokapi.com
 
 #http(s)重写，支持header、302、307、reject多种策略
   url-rewrite:
     - ^http://g\.cn http://www.google.com header
     - ^https?://www\.google\.cn https://www.google.com 302
-  
-  script:
-  shortcuts:
-    quic: network == 'udp' and dst_port == 443
+    - (?<=_region=)CN(?=&) url 307 KR
+    - (?<=&mcc_mnc=)4 url 307 2
+    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) url 302  $1$3
+    - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) url 307 17
 
   hosts:
     '*.clash.dev': 127.0.0.1
 
-#💡代理机场流量信息在主页显示
+#💡机场流量信息在主页显示
 subscribe-url: 填写订阅链接
 
-#💡远程代理机场订阅链接
+#💡远程机场订阅链接
 proxy-providers:
   all:
     interval: 86400
@@ -456,7 +458,7 @@ proxy-groups:
   - 🔰pick
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
-#💡远程分流规则
+#💡远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
 rule-providers:
   👀新浪科技:
     behavior: classical
@@ -598,7 +600,7 @@ rule-providers:
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
 
-#💡规则（策略组关联远程分流规则）
+#💡规则类型（指定规则在策略组中引用）
 rules:
 - RULE-SET,👀新浪科技,🔱filter
 - RULE-SET,🐱阿里巴巴,🔱filter
