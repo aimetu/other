@@ -11,20 +11,97 @@ dns:
   enhanced-mode: fake-ip
   ake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.lan'
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
+    - "+.pool.ntp.org"
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
     - localhost.ptlogin2.qq.com
-    - '+.srv.nintendo.net'
-    - '+.stun.playstation.net'
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.xboxlive.com'
-    - 'msftconnecttest.com'
-    - 'xbox.*.microsoft.com'
-    - '*.battlenet.com.cn'
-    - '*.battlenet.com'
-    - '*.blzstatic.cn'
-    - '*.battle.net'
-    
+    - localhost.sec.qq.com
+    - "+.srv.nintendo.net"
+    - "+.stun.playstation.net"
+    - xbox.*.microsoft.com
+    - xnotify.xboxlive.com
+    - "+.battlenet.com.cn"
+    - "+.wotgame.cn"
+    - "+.wggames.cn"
+    - "+.wowsgame.cn"
+    - "+.wargaming.net"
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - heartbeat.belkin.com
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - mesu.apple.com
+    - swscan.apple.com
+    - swquery.apple.com
+    - swdownload.apple.com
+    - swcdn.apple.com
+    - swdist.apple.com
+    - lens.l.google.com
+    - stun.l.google.com
+    - "+.nflxvideo.net"
+    - "*.square-enix.com"
+    - "*.finalfantasyxiv.com"
+    - "*.ffxiv.com"
+    - "+.*"   
+   
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -36,11 +113,10 @@ dns:
 tun:
   enable: true
   stack: system
-  #stack: gvisor
-  #dns-hijack:
-  #  - 198.18.0.2:53
+  dns-hijack:
+    - 198.18.0.2:53
   auto-route: true
-  auto-detect-interface: true # 自动检测出口网卡
+  auto-detect-interface: true
 cfw-bypass:
     - localhost
     - 127.*
@@ -92,67 +168,127 @@ proxy-groups:
     interval: 300
     use:
       - ssr
+      
   - name: 🎯 中国直连
     type: select
     proxies:
       - DIRECT
       - ♻️ 自动选择  
       
-  - name: 🌍 全球加速
+  - name: 🌍 海外加速
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - DIRECT
       
-  - name: 📲 电报信息
+  - name: 📲 电报群聊
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-      
-  - name: 🚈 专业驾驶
+
+  - name: 🍎 苹果服务
     type: select
     proxies:
       - DIRECT
-      - 🔰 节点选择
+      - ♻️ 自动选择
+      
+  - name: 🕸️ 局域网
+    type: select
+    proxies:
+      - DIRECT
       
   - name: 🐟 漏网之鱼
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 中国直连
-      - 🌍 全球加速
-
+      - 🌍 海外加速
+      
+  - name: 🍃 广告净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      
 rule-providers:
-  direct:
-    behavior: "domain"
+  直连域名:
+    behavior: domain
     type: http
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
+
+  中国IP:
+    behavior: ipcidr
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  局域网:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
     
-  telegramcidr:
+  代理域名:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  gfw域名:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+  广告域名:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  隐私域名:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  苹果服务:
+    behavior: domain
+    type: http
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  电报群聊:
     type: http
     behavior: ipcidr
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
     interval: 86400
-    
-  gfw:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
-    path: ./ruleset/gfw.yaml
-    interval: 86400
-    
+
 rules:
   - DOMAIN-KEYWORD,gimytv,🎯 中国直连
   - DOMAIN-KEYWORD,libvio,🎯 中国直连
   - DOMAIN-KEYWORD,btbdys,🎯 中国直连
   - DOMAIN-KEYWORD,cokemv,🎯 中国直连
-  - RULE-SET,direct,🎯 中国直连
-  - RULE-SET,gfw,🌍 全球加速
-  - RULE-SET,telegramcidr,📲 电报信息
+  - RULE-SET,直连域名,🎯 中国直连
+  - RULE-SET,中国IP,🎯 中国直连
+  - RULE-SET,局域网,🕸️ 局域网
+  - RULE-SET,代理域名,🌍 海外加速
+  - RULE-SET,gfw域名,🌍 海外加速
+  - RULE-SET,广告域名,🍃 广告净化
+  - RULE-SET,隐私域名,🍃 广告净化
+  - RULE-SET,苹果服务,🍎 苹果服务
+  - RULE-SET,电报群聊,📲 电报群聊
   - GEOIP,CN,🎯 中国直连
   - MATCH,🐟 漏网之鱼
