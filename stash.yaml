@@ -140,7 +140,7 @@ http:
 #💡 代理信息在主页显示
 subscribe-url: 输入订阅链接
 
-#💡 远程代理订阅链接（输入1个或多个代理）
+#💡 远程代理订阅链接
 proxy-providers:
   stash:
     type: http
