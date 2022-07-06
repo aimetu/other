@@ -180,56 +180,42 @@ proxy-groups:
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
       
   - name: ✉️ telegram
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 🎵 tiktok
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 🎞️ youtube
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 📼 disney
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 📽️ netflix
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 📺 hbo
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 🎮 国际游戏
     type: select
@@ -237,64 +223,48 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - DIRECT
-    use:
-      - ssr
 
   - name: 🍎 苹果服务
     type: select
     proxies:
       - DIRECT
-      - 🔰 节点选择
-    use:
-      - ssr      
+      - 🔰 节点选择  
       
   - name: 🖥️ 微软服务
     type: select
     proxies:
       - DIRECT
       - 🔰 节点选择
-    use:
-      - ssr
       
   - name: 📟 谷歌服务
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 🎬 国际媒体
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 🌐 国际网络
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-    use:
-      - ssr
 
   - name: 📹 中国媒体
     type: select
     proxies:
       - DIRECT
       - 🔰 节点选择
-    use:
-      - ssr
 
   - name: 🇨🇳 中国直连
     type: select
     proxies:
       - DIRECT
       - 🔰 节点选择
-    use:
-      - ssr
 
   - name: 🐟 漏网之鱼
     type: select
