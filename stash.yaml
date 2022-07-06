@@ -82,7 +82,7 @@ subscribe-url: 输入订阅链接
 proxy-providers:
   stash:
     type: http
-    url: https://sub.store/download/stash
+    url: https://sub.store/download/collection/stash
 
 #💡 本地代理（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm,tuic协议类型）
 proxies:
