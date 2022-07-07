@@ -241,7 +241,6 @@ rules:
   - RULE-SET,🇨🇳 常用软件,🇨🇳 中国直连
   - RULE-SET,🇨🇳 直连域名,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国IP,🇨🇳 中国直连
-  - RULE-SET,🚥 直连修正,🇨🇳 中国直连
   - RULE-SET,⛔ 隐私域名,⛔ 广告净化
   - RULE-SET,⛔ 广告域名,⛔ 广告净化
   - GEOIP,CN,🇨🇳 中国直连
