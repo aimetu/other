@@ -105,9 +105,9 @@ tiles:
     title: 查询当前IP信息
     content: 正在查询请稍候
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
-    backgroundColor: #ef5b9c
+    backgroundColor: #007d65
     
- script-providers:
+script-providers:
   ipcheck-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
     interval: 86400
@@ -119,9 +119,9 @@ tiles:
     title: 节假日信息
     content: 赶紧看看什么时候放假
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
-    backgroundColor: #ef5b9c
+    backgroundColor: #d71345
     
- script-providers:
+script-providers:
   timecard-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/timecard.js
     interval: 86400
