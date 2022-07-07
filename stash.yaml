@@ -36,7 +36,7 @@ dns:
 # 指定dns服务器解析域名
   nameserver-policy:
     mtalk.google.com: 108.177.125.188
-    *testflight.apple.com: 23.76.66.98
+    '*testflight.apple.com': 23.76.66.98
 
 #💡 代理服务信息在主页显示
 subscribe-url: 输入订阅链接
@@ -61,9 +61,9 @@ http:
     - boxjs.com
     - boxjs.net
     - sub.store
-    - *.tiktokv.com
-    - *.byteoversea.com
-    - *.tik-tokapi.com
+    - '*.tiktokv.com'
+    - '*.byteoversea.com'
+    - '*.tik-tokapi.com'
     
 # http(s)重写支持header、302、307、reject多种策略
   rewrite:
