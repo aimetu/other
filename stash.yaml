@@ -541,11 +541,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     interval: 86400
     
-  🚥 直连守卫:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/Direct/Direct.yaml
-    interval: 86400
-    
   🚥 直连修正:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
@@ -561,14 +556,9 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     interval: 86400
     
-  ⛔ 广告守卫:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter_Classical.yaml
-    interval: 86400
-    
   ⛔ 广告大全:
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
     interval: 86400
 
 #💡 规则类型（指定规则直接引用代理或策略组）
@@ -595,11 +585,9 @@ rules:
 - RULE-SET,📟 谷歌服务,📟 google
 - RULE-SET,🎬 国际媒体,🎬 gmedia
 - RULE-SET,🌐 国际网络,🌐 global
-- RULE-SET,🚥 直连守卫,🇨🇳 china
 - RULE-SET,🚥 直连修正,🇨🇳 china
 - RULE-SET,⛔ 隐私保护,⛔ adblock
 - RULE-SET,⛔ 网络劫持,⛔ adblock
-- RULE-SET,⛔ 广告守卫,⛔ adblock
 - RULE-SET,⛔ 广告大全,⛔ adblock
 - GEOIP,CN,🇨🇳 china
 - MATCH,🐟 final
