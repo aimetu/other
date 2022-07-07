@@ -239,7 +239,7 @@ rules:
   - RULE-SET,🌐 国外域名,🌐 国际网络
   - RULE-SET,🇨🇳 直连域名,🇨🇳 中国直连
   - RULE-SET,🇨🇳 大陆IP,🇨🇳 中国直连
-  - RULE-SET,🇨🇳 常用软件,🇨🇳 中国直连
+  - RULE-SET,🇨🇳 常见软件,🇨🇳 中国直连
   - RULE-SET,🇨🇳 局域网,🇨🇳 中国直连
   - RULE-SET,⛔ 隐私域名,⛔ 广告净化
   - RULE-SET,⛔ 广告域名,⛔ 广告净化
