@@ -47,6 +47,8 @@ http:
     - boxjs.net:80
     
   mitm:
+    - g.cn
+    - '*.google.cn'
     - boxjs.com
     - boxjs.net
     - sub.store
@@ -55,7 +57,9 @@ http:
     - '*.tik-tokapi.com'
     
 # http(s)重写支持header、302、307、reject多种策略
-  rewrite:
+  url-rewrite:
+    - ^http://g\.cn http://www.google.com header
+    - ^https?://www\.google\.cn https://www.google.com 302
     - (?<=_region=)CN(?=&) KR 307
     - (?<=&mcc_mnc=)4 2 307
     - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$4 302
