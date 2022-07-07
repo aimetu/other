@@ -85,82 +85,20 @@ proxy-groups:
     interval: 300
     use:
       - clash
-      
-  - name: 🕸️ speedtest
-    type: select
-    proxies:
-      - DIRECT
-      - 🔰 节点选择
-      - ♻️ 自动选择
-      
-  - name: 🎶 spotify
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-      
-  - name: ✉️ telegram
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
 
-  - name: 🎵 tiktok
+  - name: ✉️ 电报群聊
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-
-  - name: 🎞️ youtube
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-
-  - name: 📼 disney
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-
-  - name: 📽️ netflix
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-
-  - name: 📺 hbo
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-
-  - name: 🎮 国际游戏
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
-      - DIRECT
 
   - name: 🍎 苹果服务
     type: select
     proxies:
       - DIRECT
       - 🔰 节点选择  
-      
-  - name: 🖥️ 微软服务
-    type: select
-    proxies:
-      - DIRECT
-      - 🔰 节点选择
-      
-  - name: 📟 谷歌服务
-    type: select
-    proxies:
-      - 🔰 节点选择
-      - ♻️ 自动选择
 
-  - name: 🎬 国际媒体
+  - name: 📟 谷歌服务
     type: select
     proxies:
       - 🔰 节点选择
@@ -171,12 +109,6 @@ proxy-groups:
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
-
-  - name: 📹 中国媒体
-    type: select
-    proxies:
-      - DIRECT
-      - 🔰 节点选择
 
   - name: 🇨🇳 中国直连
     type: select
@@ -198,182 +130,119 @@ proxy-groups:
       - DIRECT
       
 rule-providers:
-  📹 中国媒体:
-    behavior: domain
+  ✉️ 电报群聊:
     type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    path: ./ruleset/ChinaMedia.yaml
-    interval: 86400
-    
-  🇨🇳 中国直连:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
-    path: ./ruleset/China.yaml
-    interval: 86400
-    
-  🇨🇳 中国ips:
     behavior: ipcidr
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
-    path: ./ruleset/ChinaIPs_IP.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
     interval: 86400
-    
-  🕸️ Speedtest:
+
+  🍎 苹果云盘:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    path: ./ruleset/Speedtest.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
+    path: ./ruleset/icloud.yaml
     interval: 86400
-    
-  🎶 Spotify:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    path: ./ruleset/Spotify.yaml
-    interval: 86400
-    
-  ✉️ Telegram:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    path: ./ruleset/Telegram.yaml
-    interval: 86400
-    
-  🎵 TikTok:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    path: ./ruleset/TikTok.yaml
-    interval: 86400
-    
-  🎞️ YouTube:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
-    path: ./ruleset/YouTube.yaml
-    interval: 86400
-    
-  📼 Disney:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
-    path: ./ruleset/Disney.yaml
-    interval: 86400
-    
-  📽️ Netflix:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
-    path: ./ruleset/Netflix.yaml
-    interval: 86400
-    
-  📺 HBO:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
-    path: ./ruleset/HBO.yaml
-    interval: 86400
-    
-  🎮 国际游戏:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
-    path: ./ruleset/Game.yaml
-    interval: 86400
-    
-  🍎 苹果更新:
-    behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-    path: ./ruleset/SystemOTA.yaml
-    interval: 86400
-    
+
   🍎 苹果服务:
-    behavior: domain
     type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
-    path: ./ruleset/Apple.yaml
-    interval: 86400
-    
-  🖥️ 微软服务:
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-    path: ./ruleset/Microsoft.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
+    path: ./ruleset/apple.yaml
     interval: 86400
-    
+
   📟 谷歌服务:
-    behavior: domain
     type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-    path: ./ruleset/Google.yaml
-    interval: 86400
-    
-  🎬 国际媒体:
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
-    path: ./ruleset/GlobalMedia_Domain.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
+    path: ./ruleset/google.yaml
     interval: 86400
-    
-  🌐 国际网络:
+
+  🌐 gfw域名:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
-    path: ./ruleset/Global_Domain.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
+    path: ./ruleset/gfw.yaml
     interval: 86400
-      
-  🚥 直连修正:
+
+  🌐 greatfire域名:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    path: ./ruleset/Direct.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt"
+    path: ./ruleset/greatfire.yaml
     interval: 86400
-    
-  ⛔ 隐私保护:
+
+  🌐 代理域名:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
-    path: ./ruleset/Privacy_Domain.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
     interval: 86400
-    
-  ⛔ 网络劫持:
+
+  🌐 国外域名:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    path: ./ruleset/Hijacking.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
     interval: 86400
-    
-  ⛔ 广告大全:
+
+  🇨🇳 局域网:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  🇨🇳 常用软件:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+
+  🇨🇳 直连域名:
+    type: http
     behavior: domain
-    type: http
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
-    path: ./ruleset/AdvertisingLite_Domain.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+    path: ./ruleset/direct.yaml
     interval: 86400
-    
+
+  🇨🇳 中国IP:
+    type: http
+    behavior: ipcidr
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  ⛔ 隐私域名:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  ⛔ 广告域名:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
 rules:
-  - RULE-SET,🕸️ Speedtest,🕸️ speedtest
-  - RULE-SET,🎶 Spotify,🎶 spotify
-  - RULE-SET,✉️ Telegram,✉️ telegram
-  - RULE-SET,🎵 TikTok,🎵 tiktok
-  - RULE-SET,🎞️ YouTube,🎞️ youtube
-  - RULE-SET,📼 Disney,📼 disney
-  - RULE-SET,📽️ Netflix,📽️ netflix
-  - RULE-SET,📺 HBO,📺 hbo
-  - RULE-SET,🎮 国际游戏,🎮 国际游戏
-  - RULE-SET,🍎 苹果更新,⛔ 广告净化
+  - RULE-SET,✉️ 电报群聊,✉️ 电报群聊
+  - RULE-SET,🍎 苹果云盘,🍎 苹果服务
   - RULE-SET,🍎 苹果服务,🍎 苹果服务
-  - RULE-SET,🖥️ 微软服务,🖥️ 微软服务
   - RULE-SET,📟 谷歌服务,📟 谷歌服务
-  - RULE-SET,🎬 国际媒体,🎬 国际媒体
-  - RULE-SET,🌐 国际网络,🌐 国际网络
-  - RULE-SET,📹 中国媒体,📹 中国媒体
-  - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
-  - RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
+  - RULE-SET,🌐 gfw域名,🌐 国际网络
+  - RULE-SET,🌐 greatfire域名,🌐 国际网络
+  - RULE-SET,🌐 代理域名,🌐 国际网络
+  - RULE-SET,🌐 国外域名,🌐 国际网络
+  - RULE-SET,🇨🇳 局域网,🇨🇳 中国直连
+  - RULE-SET,🇨🇳 常用软件,🇨🇳 中国直连
+  - RULE-SET,🇨🇳 直连域名,🇨🇳 中国直连
+  - RULE-SET,🇨🇳 中国IP,🇨🇳 中国直连
   - RULE-SET,🚥 直连修正,🇨🇳 中国直连
-  - RULE-SET,⛔ 隐私保护,⛔ 广告净化
-  - RULE-SET,⛔ 网络劫持,⛔ 广告净化
-  - RULE-SET,⛔ 广告大全,⛔ 广告净化
+  - RULE-SET,⛔ 隐私域名,⛔ 广告净化
+  - RULE-SET,⛔ 广告域名,⛔ 广告净化
   - GEOIP,CN,🇨🇳 中国直连
   - MATCH,🐟 漏网之鱼
