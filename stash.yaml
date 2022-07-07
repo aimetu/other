@@ -95,6 +95,7 @@ tiles:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '#d71345'
 
+# JavaScript脚本
 script-providers:
   boxjs:
     url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
