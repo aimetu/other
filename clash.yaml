@@ -234,7 +234,7 @@ rules:
   - RULE-SET,🍎 苹果服务,🍎 苹果服务
   - RULE-SET,📟 谷歌服务,📟 谷歌服务
   - RULE-SET,🌐 gfw域名,🌐 国际网络
-  - RULE-SET,greatfire域名,🌐 国际网络
+  - RULE-SET,🌐 greatfire域名,🌐 国际网络
   - RULE-SET,🌐 代理域名,🌐 国际网络
   - RULE-SET,🌐 国外域名,🌐 国际网络
   - RULE-SET,🇨🇳 直连域名,🇨🇳 中国直连
