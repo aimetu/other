@@ -72,9 +72,7 @@ http:
     - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$4 302
     - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
 
-# boxjs覆写
-name: boxjs
-desc: 脚本工具
+# 覆写文件
   script:
     - match: https?:\/\/boxjs\.(com|net)
       name: boxjs
@@ -82,29 +80,22 @@ desc: 脚本工具
       require-body: true
       timeout: 120
 
-script-providers:
-  boxjs:
-    url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
-    interval: 86400
-    
-# sub-store高级订阅管理工具
-name: sub-store
-desc: 高级订阅管理工具
-  script:
     - match: ^https?:\/\/sub\.store
       name: sub-store
       type: request
       require-body: true
       timeout: 120
-      
+    
 script-providers:
+  boxjs:
+    url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
+    interval: 86400
+    
   sub-store:
     url: https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
     interval: 86400
 
-# ip查询tile面板
-name: ip查询tile面板
-desc: 用于显示ip信息的面板
+# tile面板
 tiles:
   - name: ipcheck-tile
     interval: 3600
@@ -113,14 +104,6 @@ tiles:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
     backgroundColor: #007d65
     
-script-providers:
-  ipcheck-tile:
-    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
-    interval: 86400
-
-# 节假日tile面板
-name: 节假日tile面板
-desc: 用于显示节假日的面板
 tiles:
   - name: timecard-tile
     interval: 86400
@@ -128,8 +111,12 @@ tiles:
     content: 赶紧看看什么时候放假
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: #d71345
-    
+
 script-providers:
+  ipcheck-tile:
+    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
+    interval: 86400
+
   timecard-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/timecard.js
     interval: 86400
