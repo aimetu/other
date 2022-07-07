@@ -85,7 +85,23 @@ http:
       type: request
       require-body: true
       timeout: 120
+
+# tile面板
+tiles:
+  - name: ipcheck-tile
+    interval: 3600
+    title: 查询当前IP信息
+    content: 正在查询请稍候
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
+    backgroundColor: '#007d65'
     
+  - name: timecard-tile
+    interval: 86400
+    title: 节假日信息
+    content: 赶紧看看什么时候放假
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
+    backgroundColor: '#d71345'
+
 script-providers:
   boxjs:
     url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
@@ -95,23 +111,6 @@ script-providers:
     url: https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
     interval: 86400
 
-# tile面板
-tiles:
-  - name: ipcheck-tile
-    interval: 3600
-    title: 查询当前IP信息
-    content: 正在查询请稍候
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
-    backgroundColor: #007d65
-    
-  - name: timecard-tile
-    interval: 86400
-    title: 节假日信息
-    content: 赶紧看看什么时候放假
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
-    backgroundColor: #d71345
-
-script-providers:
   ipcheck-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
     interval: 86400
