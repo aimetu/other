@@ -364,8 +364,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     path: ./ruleset/Direct.yaml
     interval: 86400
-
-    
+ 
   ⛔ 隐私保护:
     type: http
     behavior: domain
@@ -388,10 +387,10 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,👀 新浪科技,🇨🇳 中国直连
-  - RULE-SET,🐱 阿里巴巴,🇨🇳 中国直连
-  - RULE-SET,🎵 字节跳动,🇨🇳 中国直连
-  - RULE-SET,🐧 腾讯科技,🇨🇳 中国直连
+  - RULE-SET,👀 新浪科技,🏢 软件分流
+  - RULE-SET,🐱 阿里巴巴,🏢 软件分流连
+  - RULE-SET,🎵 字节跳动,🏢 软件分流
+  - RULE-SET,🐧 腾讯科技,🏢 软件分流
   - RULE-SET,📹 中国媒体,📹 中国媒体
   - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
