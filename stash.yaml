@@ -73,24 +73,19 @@ http:
     - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
 
 # boxjs覆写
-name: boxjs
-desc: http://boxjs.com
-
   script:
     - match: https?:\/\/boxjs\.(com|net)
-      name: BoxJs
+      name: boxjs
       type: request
       require-body: true
       timeout: 120
 
 script-providers:
-  BoxJs:
+  boxjs:
     url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
     interval: 86400
     
-# sub-store覆写
-name: sub-store
-desc: 高级订阅管理工具@Peng-YM
+# sub-store高级订阅管理工具
   script:
     - match: ^https?:\/\/sub\.store
       name: sub-store
@@ -103,8 +98,7 @@ script-providers:
     url: https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
     interval: 86400
 
-name: ip查询tile面板
-desc: 用于显示ip信息的面板
+# ip查询tile面板
 tiles:
   - name: ipcheck-tile
     interval: 3600
@@ -118,8 +112,7 @@ tiles:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
     interval: 86400
 
-name: 节假日tile面板
-desc: 用于显示节假日的面板
+# 节假日tile面板
 tiles:
   - name: timecard-tile
     interval: 86400
