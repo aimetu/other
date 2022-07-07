@@ -438,7 +438,7 @@ rule-providers:
     interval: 86400
     
   🐱 阿里巴巴:
-    behavior: domain
+    behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba_Domain.txt
     interval: 86400
     
@@ -463,7 +463,7 @@ rule-providers:
     interval: 86400
     
   🇨🇳 中国ips:
-    behavior: ipcidr
+    behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
     interval: 86400
     
@@ -533,12 +533,12 @@ rule-providers:
     interval: 86400
     
   🎬 国际媒体:
-    behavior: domain
+    behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
     interval: 86400
     
   🌐 国际网络:
-    behavior: domain
+    behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
     interval: 86400
     
@@ -548,7 +548,7 @@ rule-providers:
     interval: 86400
     
   ⛔ 隐私保护:
-    behavior: domain
+    behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
     interval: 86400
     
@@ -558,7 +558,7 @@ rule-providers:
     interval: 86400
     
   ⛔ 广告大全:
-    behavior: domain
+    behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
     interval: 86400
 
