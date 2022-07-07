@@ -104,7 +104,6 @@ tiles:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
     backgroundColor: #007d65
     
-tiles:
   - name: timecard-tile
     interval: 86400
     title: 节假日信息
