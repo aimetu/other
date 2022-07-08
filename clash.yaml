@@ -86,7 +86,7 @@ proxy-groups:
     use:
       - clash
       
-  - name: 🏢 企业分流
+  - name: 🎡 应用分流
     type: select
     proxies:
       - DIRECT
@@ -392,10 +392,10 @@ rules:
   - DOMAIN-KEYWORD,gimytv,🇨🇳 中国直连
   - DOMAIN-KEYWORD,libvio,🇨🇳 中国直连
   - DOMAIN-KEYWORD,ddrk,🇨🇳 中国直连
-  - RULE-SET,👀 新浪科技,🏢 企业分流
-  - RULE-SET,🐱 阿里巴巴,🏢 企业分流
-  - RULE-SET,🎵 字节跳动,🏢 企业分流
-  - RULE-SET,🐧 腾讯科技,🏢 企业分流
+  - RULE-SET,👀 新浪科技,🎡 应用分流
+  - RULE-SET,🐱 阿里巴巴,🎡 应用分流
+  - RULE-SET,🎵 字节跳动,🎡 应用分流
+  - RULE-SET,🐧 腾讯科技,🎡 应用分流
   - RULE-SET,📹 中国媒体,📹 中国媒体
   - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
