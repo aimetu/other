@@ -1,22 +1,16 @@
-#>2022.07.06
+#>2022.07.08
 #配置样例:https://stash.wiki/features/example-config
-#💡 通用配置
-mixed-port: 7890
-allow-lan: true
-bind-address: '*'
+#💡 通用设置
+
+# 规则模式：rule规则/global全局代理/direct全局直连
 mode: rule
-log-level: info
-ipv6: false
-external-controller: 127.0.0.1:9090
+
+# 日志输出,5个级别silent/info/warning/error/debug
+log-level: error
 
 #💡 dns服务器配置
 dns:
-  enable: true
-  ipv6: false
-  listen: 0.0.0.0:53
   skip-cert-verify: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - "*.lan"
     - "*.localdomain"
@@ -38,7 +32,15 @@ dns:
   nameserver-policy:
     mtalk.google.com: 108.177.125.188
     '*testflight.apple.com': 23.76.66.98
-
+    
+# 域名映射
+hosts:
+  '*.clash.dev': 127.0.0.1
+  xp.apple.com: 127.0.0.1
+  ocsp.apple.com: 127.0.0.1
+  mesu.apple.com: 127.0.0.1
+  gdmf.apple.com: 127.0.0.1
+   
 #💡 http引擎相关
 http:
 # 强制使用http引擎处理tcp连接 
@@ -112,7 +114,7 @@ script-providers:
   timecard-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/timecard.js
     interval: 86400
-
+  
 #💡 代理服务信息在主页显示
 subscribe-url: 输入订阅链接
 
