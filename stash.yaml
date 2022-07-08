@@ -129,17 +129,17 @@ proxies:
 
 #💡 策略组
 proxy-groups:
-- name: 🔰 pick
+- name: 🔰 节点选择
   type: select
   proxies:
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
-  - 🇨🇳 chinese
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇨🇳 中国节点
   - DIRECT
   - REJECT
   use:
@@ -147,7 +147,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png
   url: http://www.gstatic.com/generate_204
   
-- name: ♻️ auto
+- name: ♻️ 自动选择
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
@@ -156,7 +156,7 @@ proxy-groups:
   use:
   - stash
 
-- name: 🇭🇰 hongkong
+- name: 🇭🇰 香港节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
@@ -166,7 +166,7 @@ proxy-groups:
   - stash
   filter: 港|香港|🇭🇰|HK|Hong
   
-- name: 🇹🇼 taiwan
+- name: 🇹🇼 台湾节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
@@ -176,7 +176,7 @@ proxy-groups:
   - stash
   filter: 台|台湾|台北|🇹🇼|TW|Taiwan
   
-- name: 🇯🇵 japan
+- name: 🇯🇵 日本节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
@@ -186,7 +186,7 @@ proxy-groups:
   - stash
   filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
   
-- name: 🇰🇷 korean
+- name: 🇰🇷 韩国节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
@@ -196,7 +196,7 @@ proxy-groups:
   - stash
   filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korean
   
-- name: 🇸🇬 singapore
+- name: 🇸🇬 狮城节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
@@ -206,7 +206,7 @@ proxy-groups:
   - stash
   filter: 新加坡|狮城|🇸🇬|SG|Singapore
   
-- name: 🇺🇸 american
+- name: 🇺🇸 美国节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
@@ -216,7 +216,7 @@ proxy-groups:
   - stash
   filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American
     
-- name: 🇨🇳 chinese
+- name: 🇨🇳 中国节点
   type: url-test
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
@@ -226,210 +226,210 @@ proxy-groups:
   - stash
   filter: 移动|联通|电信|腾讯|阿里|🇨🇳|CN|CHINA|中国|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
 
-- name: 🕸️ speedtest
+- name: 🕸️ 网速测试
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
   
-- name: 🎵 tiktok
+- name: 🎵 国际抖音
   type: select
   proxies:
-  - ♻️ auto
-  - 🔰 pick
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - ♻️ 自动选择
+  - 🔰 节点选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   
-- name: ✉️ telegram
+- name: ✉️ 电报群聊
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
   
-- name: 🎶 spotify
+- name: 🎶 声田音乐
   type: select
   proxies:
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
   
-- name: 📺 hbo
+- name: 📺 鼎级剧场
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
   
-- name: 📽️ netflix
+- name: 📽️ 奈飞影视
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
   
-- name: 📼 disney
+- name: 📼 迪家影视
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
   
-- name: 🎞️ youtube
+- name: 🎞️ 油管视频
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
   
-- name: 🎮 game
+- name: 🎮 国际游戏
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
   
-- name: 📟 google
+- name: 📟 谷歌服务
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
   
-- name: 🖥️ microsoft
+- name: 🖥️ 微软服务
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
   
-- name: 🍎 apple
+- name: 🍎 苹果服务
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
   
-- name: 🎬 gmedia
+- name: 🎬 国际媒体
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
   
-- name: 🌐 global
+- name: 🌐 国际网络
   type: select
   proxies:
-  - 🔰 pick
-  - ♻️ auto
-  - 🇭🇰 hongkong
-  - 🇹🇼 taiwan
-  - 🇯🇵 japan
-  - 🇰🇷 korean
-  - 🇸🇬 singapore
-  - 🇺🇸 american
+  - 🔰 节点选择
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   
-- name: 🎡 filter
+- name: 🎡 应用分流
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
   
-- name: 📹 cmedia
+- name: 📹 中国媒体
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
   
-- name: 🇨🇳 china
+- name: 🇨🇳 中国直连
   type: select
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
   
-- name: 🐟 final
+- name: 🐟 漏网之鱼
   type: select
   proxies:
-  - 🔰 pick
+  - 🔰 节点选择
   - DIRECT
   - REJECT
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
   
-- name: ⛔ adblock
+- name: ⛔ 广告净化
   type: select
   proxies:
   - REJECT
   - DIRECT
-  - 🔰 pick
+  - 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
 #💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
@@ -469,42 +469,42 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
     interval: 86400
     
-  🕸️ Speedtest:
+  🕸️ 网速测试:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     interval: 86400
     
-  🎶 Spotify:
+  🎶 声田音乐:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
     interval: 86400
     
-  ✉️ Telegram:
+  ✉️ 电报群聊:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     interval: 86400
     
-  🎵 TikTok:
+  🎵 国际抖音:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
     interval: 86400
     
-  🎞️ YouTube:
+  🎞️ 油管视频:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     interval: 86400
     
-  📼 Disney:
+  📼 迪家影视:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
     interval: 86400
     
-  📽️ Netflix:
+  📽️ 奈飞影视:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
     interval: 86400
     
-  📺 HBO:
+  📺 鼎级剧场:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
     interval: 86400
@@ -566,31 +566,31 @@ rule-providers:
 
 #💡 规则类型（指定规则直接引用代理或策略组）
 rules:
-- RULE-SET,👀 新浪科技,🎡 filter
-- RULE-SET,🐱 阿里巴巴,🎡 filter
-- RULE-SET,🎵 字节跳动,🎡 filter
-- RULE-SET,🐧 腾讯科技,🎡 filter
-- RULE-SET,📹 中国媒体,📹 cmedia
-- RULE-SET,🇨🇳 中国直连,🇨🇳 china
-- RULE-SET,🇨🇳 中国ips,🇨🇳 china
-- RULE-SET,🕸️ Speedtest,🕸️ speedtest
-- RULE-SET,🎶 Spotify,🎶 spotify
-- RULE-SET,✉️ Telegram,✉️ telegram
-- RULE-SET,🎵 TikTok,🎵 tiktok
-- RULE-SET,🎞️ YouTube,🎞️ youtube
-- RULE-SET,📼 Disney,📼 disney
-- RULE-SET,📽️ Netflix,📽️ netflix
-- RULE-SET,📺 HBO,📺 hbo
-- RULE-SET,🎮 国际游戏,🎮 game
-- RULE-SET,🍎 苹果更新,⛔ adblock
-- RULE-SET,🍎 苹果服务,🍎 apple
-- RULE-SET,🖥️ 微软服务,🖥️ microsoft
-- RULE-SET,📟 谷歌服务,📟 google
-- RULE-SET,🎬 国际媒体,🎬 gmedia
-- RULE-SET,🌐 国际网络,🌐 global
-- RULE-SET,🚥 直连修正,🇨🇳 china
-- RULE-SET,⛔ 隐私保护,⛔ adblock
-- RULE-SET,⛔ 网络劫持,⛔ adblock
-- RULE-SET,⛔ 广告大全,⛔ adblock
-- GEOIP,CN,🇨🇳 china
-- MATCH,🐟 final
+- RULE-SET,👀 新浪科技,🎡 应用分流
+- RULE-SET,🐱 阿里巴巴,🎡 应用分流
+- RULE-SET,🎵 字节跳动,🎡 应用分流
+- RULE-SET,🐧 腾讯科技,🎡 应用分流
+- RULE-SET,📹 中国媒体,📹 中国媒体
+- RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
+- RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
+- RULE-SET,🕸️ 网速测试,🕸️ 网速测试
+- RULE-SET,🎶 声田音乐,🎶 声田音乐
+- RULE-SET,✉️ 电报群聊,✉️ 电报群聊
+- RULE-SET,🎵 国际抖音,🎵 国际抖音
+- RULE-SET,🎞️ 油管视频,🎞️ 油管视频
+- RULE-SET,📼 迪家影视,📼 迪家影视
+- RULE-SET,📽️ 奈飞影视,📽️ 奈飞影视
+- RULE-SET,📺 鼎级剧场,📺 鼎级剧场
+- RULE-SET,🎮 国际游戏,🎮 国际游戏
+- RULE-SET,🍎 苹果更新,⛔ 广告净化
+- RULE-SET,🍎 苹果服务,🍎 苹果服务
+- RULE-SET,🖥️ 微软服务,🖥️ 微软服务
+- RULE-SET,📟 谷歌服务,📟 谷歌服务
+- RULE-SET,🎬 国际媒体,🎬 国际媒体
+- RULE-SET,🌐 国际网络,🌐 国际网络
+- RULE-SET,🚥 直连修正,🇨🇳 中国直连
+- RULE-SET,⛔ 隐私保护,⛔ 广告净化
+- RULE-SET,⛔ 网络劫持,⛔ 广告净化
+- RULE-SET,⛔ 广告大全,⛔ 广告净化
+- GEOIP,CN,🇨🇳 中国直连
+- MATCH,🐟 漏网之鱼
