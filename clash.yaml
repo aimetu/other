@@ -1,4 +1,4 @@
-#>2022.07.06
+#>2022.07.08
 port: 7890
 socks-port: 7891
 allow-lan: true
