@@ -387,6 +387,11 @@ rule-providers:
     interval: 86400
     
 rules:
+  - DOMAIN-KEYWORD,cokemv,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,btbdys,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,gimytv,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,libvio,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,ddrk,🇨🇳 中国直连
   - RULE-SET,👀 新浪科技,🏢 企业分流
   - RULE-SET,🐱 阿里巴巴,🏢 企业分流
   - RULE-SET,🎵 字节跳动,🏢 企业分流
