@@ -1,3 +1,4 @@
+- *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
 - #### 1、Quantumult_X大佬们的GITHUB_懒人配置 ####
 
 - ##### Quantumult_X大佬的GITHUB #####
