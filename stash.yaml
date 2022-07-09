@@ -2,24 +2,24 @@
 #配置样例:https://stash.wiki/features/example-config
 #💡 通用设置
 
-# 规则模式：rule规则/global全局代理/direct全局直连
+# 规则模式：rule规则/global代理/direct直连
 mode: rule
 
-# 日志输出模式silent/info/warning/error/debug
+# 日志输出模式silent静默/info信息/warning警告/error错误/debug调试
 log-level: info
 
 #💡 dns服务器配置
 dns:
   skip-cert-verify: true
   fake-ip-filter:
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
+    - '*.lan'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+    - '*.localhost'
+    - '*.test'
+    - '*.local'
+    - '*.home.arpa'
 
   default-nameserver:
     - 223.5.5.5
