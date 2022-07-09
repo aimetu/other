@@ -5,8 +5,8 @@
 # 规则模式：rule规则/global全局代理/direct全局直连
 mode: rule
 
-# 日志输出,5个级别silent/info/warning/error/debug
-log-level: error
+# 日志输出模式silent/info/warning/error/debug
+log-level: info
 
 #💡 dns服务器配置
 dns:
@@ -28,12 +28,12 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
-# 指定dns服务器解析域名
+# 域名指定dns服务器解析
   nameserver-policy:
     mtalk.google.com: 108.177.125.188
     '*testflight.apple.com': 23.76.66.98
     
-# 域名映射
+# 本地域名映射
 hosts:
   '*.clash.dev': 127.0.0.1
   xp.apple.com: 127.0.0.1
@@ -67,7 +67,7 @@ http:
     - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$4 302
     - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
 
-# 覆写文件
+# 首页覆写配置
   script:
     - match: https?:\/\/boxjs\.(com|net)
       name: boxjs
@@ -81,7 +81,7 @@ http:
       require-body: true
       timeout: 120
 
-# tile面板
+# 首页tile面板
 tiles:
   - name: ipcheck-tile
     interval: 3600
@@ -97,7 +97,7 @@ tiles:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '#d71345'
 
-# JavaScript脚本
+# 远程JavaScript脚本
 script-providers:
   boxjs:
     url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
