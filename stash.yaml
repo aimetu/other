@@ -98,15 +98,15 @@ tiles:
     
   - name: timecard-tile
     interval: 86400
-    title: 节假日信息
+    title: 查询节假日信息
     content: 漫长的等待中
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '#008792'
 
   - name: stream-tile
     interval: 3600
-    title: 流媒体检测
-    content: 结果马上呈现
+    title: 查询流媒体服务
+    content: 正在检查当前网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
     backgroundColor: '#f05b72'
     
