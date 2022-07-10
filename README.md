@@ -9,20 +9,20 @@
 - *[chavyleung boxjs](https://github.com/chavyleung/boxjs-doc)*
 - *[VirgilClyne apple解锁](https://github.com/VirgilClyne/iRingo)*
 - *[Semporia tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
-- *[anti-AD广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
-- *[cjxlist广告过滤](https://github.com/cjx82630/cjxlist)*
-- *[blackmatrix7分流](https://github.com/blackmatrix7/ios_rule_script)*
+- *[anti-AD 广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
+- *[cjxlist 广告过滤](https://github.com/cjx82630/cjxlist)*
+- *[blackmatrix7 分流](https://github.com/blackmatrix7/ios_rule_script)*
 - *[Orz-3](https://github.com/Orz-3/QuantumultX)*
 - *[NobyDa](https://github.com/NobyDa/Script)*
-- *[Koolson图标](https://github.com/Koolson/Qure)*
-- *[Orz-3图标](https://github.com/Orz-3/mini)*
-- *[墨魚](https://github.com/ddgksf2013/Cuttlefish)*
-- *[奇心](https://github.com/zwf234/rules)*
-- *[毒奶](https://github.com/limbopro/Adblock4limbo)*
-- *[神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)*
-- *[app2smile 广告](https://github.com/app2smile/rules)*
-- *[I-am-R-E节点信息](https://github.com/I-am-R-E)*
-- *[clash规则](https://github.com/Loyalsoldier/clash-rules)*
+- *[Koolson 图标](https://github.com/Koolson/Qure)*
+- *[Orz-3 图标](https://github.com/Orz-3/mini)*
+- *[ddgksf2013](https://github.com/ddgksf2013/Cuttlefish)*
+- *[zwf234](https://github.com/zwf234/rules)*
+- *[limbopro](https://github.com/limbopro/Adblock4limbo)*
+- *[DivineEngine](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)*
+- *[app2smile 去广告](https://github.com/app2smile/rules)*
+- *[I-am-R-E 节点查询](https://github.com/I-am-R-E)*
+- *[clash 分流规则](https://github.com/Loyalsoldier/clash-rules)*
 
 - ##### Quantumult_X懒人配置 #####
 - *[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
