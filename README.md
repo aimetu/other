@@ -1,4 +1,5 @@
-- *[🇨🇳中国法律快查](https://github.com/RanKKI/LawRefBook)*
+- *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
+
 - #### 1、Quantumult_X大佬们的Github_懒人配置 ####
 
 - ##### Quantumult_X大佬的Github #####
@@ -10,7 +11,7 @@
 - *[Semporia tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
 - *[anti-AD广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist广告过滤](https://github.com/cjx82630/cjxlist)*
-- *[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script)*
+- *[blackmatrix7分流](https://github.com/blackmatrix7/ios_rule_script)*
 - *[Orz-3](https://github.com/Orz-3/QuantumultX)*
 - *[NobyDa](https://github.com/NobyDa/Script)*
 - *[Koolson图标](https://github.com/Koolson/Qure)*
@@ -37,6 +38,7 @@
 
 
 - ##### 2、OpenWrt大佬的Github #####
+- *[云编译 OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)*
 - *[openwrt官方源](https://github.com/openwrt/openwrt)*
 - *[Lean 源码仓库](https://github.com/coolsnowwolf/lede)*
 - *[openwrt常用插件](https://github.com/kenzok8/openwrt-packages)*
