@@ -1,7 +1,7 @@
-- *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
-- #### 1、Quantumult_X大佬们的GITHUB_懒人配置 ####
+- *[🇨🇳中国法律快查](https://github.com/RanKKI/LawRefBook)*
+- #### 1、Quantumult_X大佬们的Github_懒人配置 ####
 
-- ##### Quantumult_X大佬的GITHUB #####
+- ##### Quantumult_X大佬的Github #####
 - *[KOP-XIAO 资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[Peng-YM 订阅转换](https://github.com/Peng-YM/Sub-Store)*
 - *[Hackl0us GeoIP2CN](https://github.com/Hackl0us/GeoIP2-CN)*
@@ -36,7 +36,7 @@
 - *[耳东橙](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
 
 
-- ##### 2、OpenWrt大佬的GITHUB #####
+- ##### 2、OpenWrt大佬的Github #####
 - *[openwrt官方源](https://github.com/openwrt/openwrt)*
 - *[Lean 源码仓库](https://github.com/coolsnowwolf/lede)*
 - *[openwrt常用插件](https://github.com/kenzok8/openwrt-packages)*
