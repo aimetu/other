@@ -3,26 +3,26 @@
 - #### 1、Quantumult_X大佬们的Github_懒人配置 ####
 
 - ##### Quantumult_X大佬的Github #####
-- *[KOP-XIAO 资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
-- *[Peng-YM 订阅转换](https://github.com/Peng-YM/Sub-Store)*
+- *[KOP-XIAO资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
+- *[Peng-YM订阅转换](https://github.com/Peng-YM/Sub-Store)*
 - *[Hackl0us GeoIP2CN](https://github.com/Hackl0us/GeoIP2-CN)*
 - *[chavyleung boxjs](https://github.com/chavyleung/boxjs-doc)*
 - *[VirgilClyne apple解锁](https://github.com/VirgilClyne/iRingo)*
 - *[Semporia tiktok解锁](https://github.com/Semporia/TikTok-Unlock)*
-- *[anti-AD 广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
-- *[cjxlist 广告过滤](https://github.com/cjx82630/cjxlist)*
-- *[blackmatrix7 分流](https://github.com/blackmatrix7/ios_rule_script)*
+- *[anti-AD广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
+- *[cjxlist广告过滤](https://github.com/cjx82630/cjxlist)*
+- *[blackmatrix7分流](https://github.com/blackmatrix7/ios_rule_script)*
 - *[Orz-3](https://github.com/Orz-3/QuantumultX)*
 - *[NobyDa](https://github.com/NobyDa/Script)*
-- *[Koolson 图标](https://github.com/Koolson/Qure)*
-- *[Orz-3 图标](https://github.com/Orz-3/mini)*
+- *[Koolson图标](https://github.com/Koolson/Qure)*
+- *[Orz-3图标](https://github.com/Orz-3/mini)*
 - *[ddgksf2013](https://github.com/ddgksf2013/Cuttlefish)*
 - *[zwf234](https://github.com/zwf234/rules)*
 - *[limbopro](https://github.com/limbopro/Adblock4limbo)*
 - *[DivineEngine](https://github.com/DivineEngine/Profiles/tree/master/Quantumult)*
-- *[app2smile 去广告](https://github.com/app2smile/rules)*
-- *[I-am-R-E 节点查询](https://github.com/I-am-R-E)*
-- *[clash 分流规则](https://github.com/Loyalsoldier/clash-rules)*
+- *[app2smile去广告](https://github.com/app2smile/rules)*
+- *[I-am-R-E节点查询](https://github.com/I-am-R-E)*
+- *[clash分流规则](https://github.com/Loyalsoldier/clash-rules)*
 
 - ##### Quantumult_X懒人配置 #####
 - *[KOP-XIAO](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
@@ -37,12 +37,12 @@
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
 
 - ##### 2、OpenWrt大佬的Github #####
-- *[云编译 OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)*
-- *[openwrt 官方源](https://github.com/openwrt/openwrt)*
-- *[Lean 源码仓库](https://github.com/coolsnowwolf/lede)*
+- *[OpenWrt云编译](https://github.com/P3TERX/Actions-OpenWrt)*
+- *[openwrt官方源](https://github.com/openwrt/openwrt)*
+- *[Lean源码仓库](https://github.com/coolsnowwolf/lede)*
 - *[kenzo插件库](https://github.com/kenzok8/openwrt-packages)*
 - *[kiddin9插件库](https://github.com/kiddin9/openwrt-packages)*
-- *[OpenWrt App过滤](https://github.com/destan19/OpenAppFilter)*
+- *[App过滤](https://github.com/destan19/OpenAppFilter)*
 - *[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)*
 - *[OpenClash](https://github.com/vernesong/OpenClash)*
 - *[mosdns](https://github.com/IrineSistiana/mosdns)*
