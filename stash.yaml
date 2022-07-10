@@ -1,4 +1,4 @@
-#>2022.07.08
+#>2022.07.10
 #配置样例:https://stash.wiki/features/example-config
 #💡 通用设置
 
@@ -40,7 +40,12 @@ hosts:
   ocsp.apple.com: 127.0.0.1
   mesu.apple.com: 127.0.0.1
   gdmf.apple.com: 127.0.0.1
-   
+
+# 屏蔽http3/quic,让流量回落至http2,避免udp被qos
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443
+
 #💡 http引擎相关
 http:
 # 强制使用http引擎处理tcp连接 
@@ -64,8 +69,8 @@ http:
     - ^https?://www\.google\.cn https://www.google.com 302
     - (?<=_region=)CN(?=&) KR 307
     - (?<=&mcc_mnc=)4 2 307
-    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$4 302
-    - (?<=\d\/\?\w{7}_\w{4}=)1[6-9]..(?=.?.?&) 18.4 307
+    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+    - (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 
 # 首页覆写配置
   script:
@@ -93,10 +98,17 @@ tiles:
   - name: timecard-tile
     interval: 86400
     title: 节假日信息
-    content: 赶紧看看什么时候放假
+    content: 漫长的等待中
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '#008792'
 
+  - name: stream-tile
+    interval: 3600
+    title: 流媒体检测
+    content: 结果马上呈现
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
+    backgroundColor: '#f05b72'
+    
 # 远程JavaScript脚本
 script-providers:
   boxjs:
@@ -114,7 +126,11 @@ script-providers:
   timecard-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/timecard.js
     interval: 86400
-  
+
+  stream-tile:
+    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/stream.js
+    interval: 86400
+
 #💡 代理服务信息在主页显示
 subscribe-url: 订阅链接
 
@@ -596,5 +612,6 @@ rules:
 - RULE-SET,⛔ 隐私保护,⛔ 广告净化
 - RULE-SET,⛔ 网络劫持,⛔ 广告净化
 - RULE-SET,⛔ 广告大全,⛔ 广告净化
+- SCRIPT,quic,⛔ 广告净化
 - GEOIP,CN,🇨🇳 中国直连
 - MATCH,🐟 漏网之鱼
