@@ -109,7 +109,14 @@ tiles:
     content: 正在检查当前网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
     backgroundColor: '#f05b72'
-    
+
+  - name: caiyun-tile
+    interval: 21600
+    title: 查询天气服务
+    content: 正在当前天气
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Daily.png
+    backgroundColor: '#50b7c1'
+
 # 远程JavaScript脚本
 script-providers:
   boxjs:
@@ -130,6 +137,10 @@ script-providers:
 
   stream-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/stream.js
+    interval: 86400
+
+  caiyun-tile:
+    url: https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
     interval: 86400
 
 #💡 代理服务信息在主页显示
