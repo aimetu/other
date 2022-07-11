@@ -63,6 +63,8 @@ http:
     - '*.tiktokv.com'
     - '*.byteoversea.com'
     - '*.tik-tokapi.com'
+    - api.weather.com
+    - weather-data.apple.com
     
 # http(s)重写支持header、302、307、reject多种策略
   url-rewrite:
@@ -83,6 +85,12 @@ http:
 
     - match: ^https?:\/\/sub\.store
       name: sub-store
+      type: request
+      require-body: true
+      timeout: 120
+
+    - match: https:\/\/((weather-data\.apple)|(api.weather))\.com
+      name: covid-tile
       type: request
       require-body: true
       timeout: 120
