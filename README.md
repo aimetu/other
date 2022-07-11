@@ -1,7 +1,5 @@
 - *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
 
-- #### 1、Quantumult_X大佬们的Github_懒人配置 ####
-
 - ##### Quantumult_X大佬的Github #####
 - *[KOP-XIAO资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[Peng-YM订阅转换](https://github.com/Peng-YM/Sub-Store)*
@@ -37,12 +35,12 @@
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
 
 - ##### 2、OpenWrt大佬的Github #####
-- *[OpenWrt云编译](https://github.com/P3TERX/Actions-OpenWrt)*
-- *[openwrt官方源](https://github.com/openwrt/openwrt)*
-- *[Lean源码仓库](https://github.com/coolsnowwolf/lede)*
-- *[kenzo插件库](https://github.com/kenzok8/openwrt-packages)*
-- *[kiddin9插件库](https://github.com/kiddin9/openwrt-packages)*
-- *[App过滤](https://github.com/destan19/OpenAppFilter)*
+- *[P3TERX Actions](https://github.com/P3TERX/Actions-OpenWrt)*
+- *[openwrt](https://github.com/openwrt/openwrt)*
+- *[Lean](https://github.com/coolsnowwolf/lede)*
+- *[kenzo](https://github.com/kenzok8/openwrt-packages)*
+- *[kiddin9](https://github.com/kiddin9/openwrt-packages)*
+- *[AppFilter](https://github.com/destan19/OpenAppFilter)*
 - *[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)*
 - *[OpenClash](https://github.com/vernesong/OpenClash)*
 - *[mosdns](https://github.com/IrineSistiana/mosdns)*
