@@ -35,11 +35,11 @@
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
 
 - ##### 2、OpenWrt大佬的Github #####
-- *[P3TERX Actions](https://github.com/P3TERX/Actions-OpenWrt)*
-- *[openwrt](https://github.com/openwrt/openwrt)*
-- *[Lean](https://github.com/coolsnowwolf/lede)*
-- *[kenzo](https://github.com/kenzok8/openwrt-packages)*
-- *[kiddin9](https://github.com/kiddin9/openwrt-packages)*
+- *[P3TERX云编译](https://github.com/P3TERX/Actions-OpenWrt)*
+- *[openwrt官方源](https://github.com/openwrt/openwrt)*
+- *[Lean源码库](https://github.com/coolsnowwolf/lede)*
+- *[kenzo插件库](https://github.com/kenzok8/openwrt-packages)*
+- *[kiddin9插件库](https://github.com/kiddin9/openwrt-packages)*
 - *[AppFilter](https://github.com/destan19/OpenAppFilter)*
 - *[AdGuardHome](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)*
 - *[OpenClash](https://github.com/vernesong/OpenClash)*
