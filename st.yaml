@@ -149,19 +149,7 @@ proxy-providers:
 proxies:
 
 #💡 策略组
-proxy-groups:
-- name: 🏡 ssid-wifi
-  type: select
-  proxies:
-    - 🔰 节点选择
-    - DIRECT
-  ssid-policy:
-    OpenWrt: DIRECT
-    OpenWrt_5G: 🔰 节点选择
-    cellular: DIRECT
-    default: DIRECT
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/WiFi.png
-  
+proxy-groups:  
 - name: 🔰 节点选择
   type: select
   proxies:
