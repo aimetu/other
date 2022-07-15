@@ -150,6 +150,17 @@ proxies:
 
 #💡 策略组
 proxy-groups:  
+  - name: 🏡 网络切换
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - DIRECT
+    ssid-policy:
+      OpenWrt: 🔰 节点选择
+      OpenWrt_5G: 🔰 节点选择
+      cellular: DIRECT
+      default: 🔰 节点选择
+      
 - name: 🔰 节点选择
   type: select
   proxies:
