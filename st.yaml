@@ -161,6 +161,7 @@ proxy-groups:
     cellular: DIRECT
     default: 🔰 节点选择
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/WiFi.png
+  url: http://www.gstatic.com/generate_204
   
 - name: 🔰 节点选择
   type: select
