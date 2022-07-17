@@ -1,4 +1,4 @@
-*.list
-*.js
-*.conf
-*.yaml
+other/*.list
+other/*.js
+other/*.conf
+other/*.yaml
