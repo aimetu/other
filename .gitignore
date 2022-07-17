@@ -1,5 +1,4 @@
-appunlock.conf
-iosupdate.list
-covid.js
+*.list
+*.js
 *.conf
 *.yaml
