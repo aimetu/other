@@ -437,7 +437,7 @@ proxy-groups:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
   
 - name: 🐟 漏网之鱼
   type: select
