@@ -150,21 +150,9 @@ proxies:
 
 #💡 策略组
 proxy-groups: 
-- name: 🏡 网络切换
-  type: select
-  proxies:
-    - 🔰 节点选择
-    - DIRECT
-  ssid-policy:
-    OpenWrt: 🔰 节点选择
-    OpenWrt_5G: 🔰 节点选择
-    cellular: DIRECT
-    default: 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/WiFi.png
-  url: http://www.gstatic.com/generate_204
-
 - name: 🔰 节点选择
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png  
   proxies:
   - ♻️ 自动选择
   - 🇭🇰 香港节点
@@ -177,88 +165,87 @@ proxy-groups:
   - REJECT
   use:
   - stash
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png
-  url: http://www.gstatic.com/generate_204
-  
+
 - name: ♻️ 自动选择
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
 
 - name: 🇭🇰 香港节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 港|香港|🇭🇰|HK|Hong
   
 - name: 🇹🇼 台湾节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 台|台湾|台北|🇹🇼|TW|Taiwan
   
 - name: 🇯🇵 日本节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
   
 - name: 🇰🇷 韩国节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korean
   
 - name: 🇸🇬 狮城节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 新加坡|狮城|🇸🇬|SG|Singapore
   
 - name: 🇺🇸 美国节点
   type: url-test
-  proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 1800  
+  proxies: []
   use:
   - stash
   filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American
     
 - name: 🕸️ 网速测试
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
-  
+
 - name: 🎵 国际抖音
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png  
   proxies:
   - ♻️ 自动选择
   - 🔰 节点选择
@@ -268,10 +255,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png
   
 - name: ✉️ 电报群聊
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -281,10 +268,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png
-  
+
 - name: 🎶 声田音乐
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png  
   proxies:
   - ♻️ 自动选择
   - 🇭🇰 香港节点
@@ -293,10 +280,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
-  
+
 - name: 📺 鼎级剧场
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -306,10 +293,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png
-  
+
 - name: 📽️ 奈飞影视
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -319,10 +306,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png
   
 - name: 📼 迪家影视
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -332,10 +319,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png
-  
+
 - name: 🎞️ 油管视频
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -345,10 +332,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png
-  
+
 - name: 🎮 国际游戏
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -358,10 +345,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png
-  
+
 - name: 📟 谷歌服务
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -371,26 +358,26 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png
-  
+
 - name: 🖥️ 微软服务
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png
-  
+
 - name: 🍎 苹果服务
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
-  
+
 - name: 🎬 国际媒体
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -400,10 +387,10 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png
-  
+
 - name: 🌐 国际网络
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png  
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
@@ -413,47 +400,46 @@ proxy-groups:
   - 🇰🇷 韩国节点
   - 🇸🇬 狮城节点
   - 🇺🇸 美国节点
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png
   
 - name: 🎡 应用分流
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png
-  
+
 - name: 📹 中国媒体
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png
-  
+
 - name: 🇨🇳 中国直连
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png  
   proxies:
   - DIRECT
   - REJECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png
-  
+
 - name: 🐟 漏网之鱼
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png  
   proxies:
   - 🔰 节点选择
   - DIRECT
   - REJECT
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png
-  
+
 - name: ⛔ 广告净化
   type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png  
   proxies:
   - REJECT
   - DIRECT
   - 🔰 节点选择
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png
 
 #💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
 rule-providers:
