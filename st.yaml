@@ -248,7 +248,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -261,7 +260,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -274,7 +272,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png  
   proxies: 
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -287,7 +284,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -300,7 +296,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -313,7 +308,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -326,7 +320,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -339,7 +332,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -352,7 +344,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google_Search.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -381,7 +372,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/ForeignMedia.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -394,7 +384,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png  
   proxies:
   - 🔰 节点选择
-  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
