@@ -247,8 +247,8 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png  
   proxies:
-  - ♻️ 自动选择
   - 🔰 节点选择
+  - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -272,7 +272,8 @@ proxy-groups:
 - name: 🎶 声田音乐
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png  
-  proxies:
+  proxies: 
+  - 🔰 节点选择
   - ♻️ 自动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
