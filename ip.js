@@ -7,14 +7,14 @@ $httpClient.get(url, function (error, response, data) {
   let city = jsonData.city
   let isp = jsonData.isp
   let ip = jsonData.query
-  let lon = jsonData.lon
   let lat = jsonData.lat
+  let lon = jsonData.lon
   let time = jsonData.timezone
 
 
   body = {
     title: "节点信息",
-    content: `时区：${time}\n国家：${emoji}${country} - ${city}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
+    content: `纬度：${lat}\n经度：${lon}\nIP：${ip}\n时区：${time}\n国家：${emoji}${country} - ${city}\n运营商：${isp}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#00a6ac',
   }
