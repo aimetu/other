@@ -60,6 +60,7 @@ http:
     - boxjs.com
     - boxjs.net
     - sub.store
+    - testflight.apple.com
     - '*.tiktokv.com'
     - '*.byteoversea.com'
     - '*.tik-tokapi.com'
@@ -83,6 +84,12 @@ http:
 
     - match: ^https?:\/\/sub\.store
       name: sub-store
+      type: request
+      require-body: true
+      timeout: 120
+
+    - match: ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$
+      name: testflight
       type: request
       require-body: true
       timeout: 120
@@ -118,6 +125,10 @@ script-providers:
     
   sub-store:
     url: https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.min.js
+    interval: 86400
+
+  testflight:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/javascript/043922e05c79445b6da818d0864c1b7d.js
     interval: 86400
 
   ipcheck-tile:
