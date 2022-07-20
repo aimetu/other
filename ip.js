@@ -11,11 +11,11 @@ $httpClient.get(url, function (error, response, data) {
   let lat = jsonData.lat
   let dns = jsonData.dns
   let geo = jsonData.geo
-  let ip = jsonData.ip
+  let ips = jsonData.ip
   
   body = {
     title: "节点信息",
-    content: `运营商：${isp}\nIP：${ip}\n经纬度：${lon}${lat}\n国家：${emoji}${country} - ${city}\nDNS：${dns} - ${geo}${ip}`,
+    content: `运营商：${isp}\nIP：${ip}\n经纬度：${lon}${lat}\n国家：${emoji}${country} - ${city}\nDNS：${dns} - ${geo}${ips}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#00a6ac',
   }
