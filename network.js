@@ -7,7 +7,7 @@ $httpClient.get("https://ip.useragentinfo.com/json?", function (error, response,
     let region = `地区：${country} ${short_name}${province} ${city} ${area} ${code}`;
     body={
         title: "网络信息",
-        content: `${isp}\n${ip}\n${region}`,
+        content: `${isp}\n${net}\n${ip}\n${region}`,
         backgroundColor: "#006c54",
         icon: "antenna.radiowaves.left.and.right.circle.fill",
     }
