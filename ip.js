@@ -15,10 +15,10 @@ $httpClient.get(url, function (error, response, data) {
   let lat = jsonData.lat
 
   body = {
-    title: "节点信息",
+    title: "网络信息",
     content: `国家：${emoji} ${country} ${code}\n地区：${name} ${city}\n邮编：${zip}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
     icon: "globe.asia.australia.fill",
-    backgroundColor: '#525f42',
+    backgroundColor: '#c88400',
   }
   $done(body);
 });
