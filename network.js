@@ -7,7 +7,7 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     body={
         title: "网络信息",
         content: `${isp}\n${ip}\n${region}`,
-        backgroundColor: "#0c212b",
+        backgroundColor: "#ad8b3d",
         icon: "antenna.radiowaves.left.and.right.circle.fill",
     }
     $done(body)
