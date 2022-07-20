@@ -1,4 +1,4 @@
-$httpClient.get("https://ip.useragentinfo.com/api", function (error, response, data) {
+$httpClient.get("https://ip.useragentinfo.com/json?", function (error, response, data) {
     let dataObject = JSON.parse(data);
     let { country, short_name, province, city, area, isp, net, ip, code } = dataObject;
     isp = `运营商：${isp}`;
