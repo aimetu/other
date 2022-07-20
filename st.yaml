@@ -602,6 +602,7 @@ rules:
 - RULE-SET,⛔ 隐私保护,⛔ 广告净化
 - RULE-SET,⛔ 网络劫持,⛔ 广告净化
 - RULE-SET,⛔ 广告大全,⛔ 广告净化
+- DOMAIN,lens.l.google.com,🇨🇳 中国直连
 - SCRIPT,quic,⛔ 广告净化
 - GEOIP,CN,🇨🇳 中国直连
 - MATCH,🐟 漏网之鱼
