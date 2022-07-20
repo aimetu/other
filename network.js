@@ -5,7 +5,7 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     ip = `IP：${ip}`;
     let region = `地区：${country} ${province} ${city}`;
     body={
-        title: "当前网络信息",
+        title: "网络信息",
         content: `${isp}\n${ip}\n${region}`,
         backgroundColor: "#006c54",
         icon: "antenna.radiowaves.left.and.right.circle.fill",
