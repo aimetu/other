@@ -16,7 +16,7 @@ $httpClient.get(url, function (error, response, data) {
     title: "节点信息",
     content: `纬度：${lat}\n经度：${lon}\nIP：${ip}\n时区：${time}\n国家：${emoji}${country} - ${city}\n运营商：${isp}`,
     icon: "globe.asia.australia.fill",
-    backgroundColor: '#00a6ac',
+    backgroundColor: '#78cdd1',
   }
   $done(body);
 });
