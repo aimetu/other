@@ -96,7 +96,7 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: network-tile
+- name: network-tile
     interval: 3600
     title: 运营商查询
     content: 正在检查网络
