@@ -9,13 +9,12 @@ $httpClient.get(url, function (error, response, data) {
   let ip = jsonData.query
   let lon = jsonData.lon
   let lat = jsonData.lat
-  let dns = jsonData.dns
-  let geo = jsonData.geo
-  let ips = jsonData.ip
-  
+  let time = jsonData.timezone
+
+
   body = {
     title: "节点信息",
-    content: `运营商：${isp}\nIP：${ip}\n经纬度：${lon}${lat}\n国家：${emoji}${country} - ${city}\nDNS：${dns} - ${geo}${ips}`,
+    content: `时区：${time}\n国家：${emoji}${country} - ${city}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#00a6ac',
   }
