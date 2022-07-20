@@ -20,6 +20,7 @@ dns:
     - '*.test'
     - '*.local'
     - '*.home.arpa'
+    - lens.l.google.com
 
   default-nameserver:
     - system
@@ -96,16 +97,9 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: network-tile
-    interval: 3600
-    title: 运营商查询
-    content: 正在检查网络
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Area.png
-    backgroundColor: '#003a6c'
-    
   - name: ip-tile
     interval: 3600
-    title: 节点信息查询
+    title: 网络信息查询
     content: 正在查询请稍候
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
     backgroundColor: '#00a6ac'
@@ -136,10 +130,6 @@ script-providers:
 
   testflight:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/javascript/043922e05c79445b6da818d0864c1b7d.js
-    interval: 86400
-
-  network-tile:
-    url: https://raw.githubusercontent.com/aimetu/other/main/network.js
     interval: 86400
 
   ip-tile:
@@ -613,7 +603,6 @@ rules:
 - RULE-SET,⛔ 隐私保护,⛔ 广告净化
 - RULE-SET,⛔ 网络劫持,⛔ 广告净化
 - RULE-SET,⛔ 广告大全,⛔ 广告净化
-- DOMAIN,lens.l.google.com,🇨🇳 中国直连
 - SCRIPT,quic,⛔ 广告净化
 - GEOIP,CN,🇨🇳 中国直连
 - MATCH,🐟 漏网之鱼
