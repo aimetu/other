@@ -96,33 +96,33 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: ipcheck-tile
+  - name: network-tile
     interval: 3600
-    title: 查询当前IP信息
+    title: 运营商查询
+    content: 正在检查网络
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Area.png
+    backgroundColor: '#003a6c'
+    
+- name: ipcheck-tile
+    interval: 3600
+    title: 节点信息查询
     content: 正在查询请稍候
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
     backgroundColor: '#00a6ac'
     
   - name: timecard-tile
     interval: 86400
-    title: 查询节假日信息
+    title: 节假日信息查询
     content: 漫长的等待中
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '#8a2e3b'
 
   - name: stream-tile
     interval: 3600
-    title: 查询流媒体服务
-    content: 正在检查当前网络
+    title: 流媒体解锁查询
+    content: 正在检查网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
     backgroundColor: '#2585a6'
-
-  - name: baidu-tile
-    interval: 3600
-    title: 查询运营商
-    content: 正在检查当前网络
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Area.png
-    backgroundColor: '#003a6c'
 
 # 远程JavaScript脚本
 script-providers:
@@ -138,6 +138,10 @@ script-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/javascript/043922e05c79445b6da818d0864c1b7d.js
     interval: 86400
 
+  network-tile:
+    url: https://raw.githubusercontent.com/aimetu/other/main/network.js
+    interval: 86400
+
   ipcheck-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
     interval: 86400
@@ -148,10 +152,6 @@ script-providers:
 
   stream-tile:
     url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/stream.js
-    interval: 86400
-
-  baidu-tile:
-    url: https://raw.githubusercontent.com/QGCliveDavis/Module/main/STASH/BAIDU-IP.js
     interval: 86400
 
 #💡 代理服务信息在主页显示
