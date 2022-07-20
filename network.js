@@ -4,7 +4,8 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     isp = `运营商：${isp}`;
     ip = `IP：${ip}`;
     let region = `地区：${country} ${province} ${city}`;
-    let location = `纬度：${lon}经度：${lat}`;
+    let lon = `纬度：${lon}`;
+    let lat = `经度：${lat}`;
 
     body={
         title: "网络信息",
