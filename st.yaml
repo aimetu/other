@@ -96,14 +96,21 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: network-tile
+  - name: time-tile
+    interval: 3600
+    title: 运营商查询
+    content: 正在检查网络
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
+    backgroundColor: '##2e3a1f'
+
+- name: network-tile
     interval: 3600
     title: 运营商查询
     content: 正在检查网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Area.png
     backgroundColor: '#003a6c'
     
-  - name: ipcheck-tile
+  - name: ip-tile
     interval: 3600
     title: 节点信息查询
     content: 正在查询请稍候
@@ -138,20 +145,24 @@ script-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/javascript/043922e05c79445b6da818d0864c1b7d.js
     interval: 86400
 
+  time-tile:
+    url: https://raw.githubusercontent.com/aimetu/other/main/time.js
+    interval: 86400
+
   network-tile:
     url: https://raw.githubusercontent.com/aimetu/other/main/network.js
     interval: 86400
 
-  ipcheck-tile:
-    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/ipcheck.js
+  ip-tile:
+    url: https://raw.githubusercontent.com/aimetu/other/main/ip.js
     interval: 86400
 
   timecard-tile:
-    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/timecard.js
+    url: https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
     interval: 86400
 
   stream-tile:
-    url: https://raw.githubusercontent.com/StevenKwan/stash-waffle/main/tiles/stream.js
+    url: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/JS/stream-all.js
     interval: 86400
 
 #💡 代理服务信息在主页显示
