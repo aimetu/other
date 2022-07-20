@@ -6,6 +6,9 @@ $httpClient.get(url, function (error, response, data) {
   let emoji = getFlagEmoji(jsonData.countryCode)
   let time = jsonData.timezone
   let city = jsonData.city
+  let code = jsonData.countryCode
+  let name = jsonData.regionName
+  let zip = jsonData.zip
   let isp = jsonData.isp
   let ip = jsonData.query
   let lon = jsonData.lon
@@ -13,7 +16,7 @@ $httpClient.get(url, function (error, response, data) {
 
   body = {
     title: "网络信息",
-    content: `地区：${emoji} ${country} ${city}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
+    content: `地区：${emoji} ${country} ${code} ${name} ${city}\n邮编：${zip}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#375830',
   }
