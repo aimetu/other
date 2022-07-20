@@ -98,8 +98,8 @@ http:
 tiles:
   - name: time-tile
     interval: 3600
-    title: 运营商查询
-    content: 正在检查网络
+    title: 当前时间
+    content: 正在检查
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '##2e3a1f'
 
