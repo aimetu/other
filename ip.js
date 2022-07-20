@@ -8,7 +8,7 @@ $httpClient.get(url, function (error, response, data) {
   let city = jsonData.city
   let isp = jsonData.isp
   let ip = jsonData.query
-	let time = jsonData.timezone
+	let lon = jsonData.lon
   let lat = jsonData.lat
 
   body = {
