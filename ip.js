@@ -9,7 +9,7 @@ $httpClient.get(url, function (error, response, data) {
   let ip = jsonData.query
   body = {
     title: "节点信息",
-    content: `IP：${ip}\n运营商：${isp}\n地区：${emoji}${country} - ${city}`,
+    content: `${ip}\n运营商：IP：${isp}\n地区：${emoji}${country} - ${city}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#00a6ac',
   }
