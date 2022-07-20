@@ -13,7 +13,7 @@ $httpClient.get(url, function (error, response, data) {
 
   body = {
     title: "网络信息",
-    content: `国家：${emoji} - ${country} - ${city}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经纬度：${lon} - ${lat}`,
+    content: `地区：${emoji} ${country} ${city}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#375830',
   }
