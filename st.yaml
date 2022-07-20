@@ -96,13 +96,6 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: time-tile
-    interval: 3600
-    title: 当前时间
-    content: 正在检查
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
-    backgroundColor: '##2e3a1f'
-
   - name: network-tile
     interval: 3600
     title: 运营商查询
@@ -122,14 +115,14 @@ tiles:
     title: 节假日信息查询
     content: 漫长的等待中
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
-    backgroundColor: '#8a2e3b'
+    backgroundColor: '#b3424a'
 
   - name: stream-tile
     interval: 3600
     title: 流媒体解锁查询
     content: 正在检查网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
-    backgroundColor: '#2585a6'
+    backgroundColor: '#e0861a'
 
 # 远程JavaScript脚本
 script-providers:
@@ -143,10 +136,6 @@ script-providers:
 
   testflight:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/source/javascript/043922e05c79445b6da818d0864c1b7d.js
-    interval: 86400
-
-  time-tile:
-    url: https://raw.githubusercontent.com/aimetu/other/main/time.js
     interval: 86400
 
   network-tile:
