@@ -18,7 +18,7 @@ $httpClient.get(url, function (error, response, data) {
     title: "网络信息",
     content: `国家：${emoji} ${country} ${code}\n地区：${name} ${city}\n邮编：${zip}\n时区：${time}\n运营商：${isp}\nIP：${ip}\n经度：${lon}\n纬度：${lat}`,
     icon: "globe.asia.australia.fill",
-    backgroundColor: '#c88400',
+    backgroundColor: '#ef4136',
   }
   $done(body);
 });
