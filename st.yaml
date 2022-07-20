@@ -96,14 +96,14 @@ http:
 
 # 首页tile面板
 tiles:
-- name: network-tile
+  - name: network-tile
     interval: 3600
     title: 运营商查询
     content: 正在检查网络
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Area.png
     backgroundColor: '#003a6c'
     
-- name: ipcheck-tile
+  - name: ipcheck-tile
     interval: 3600
     title: 节点信息查询
     content: 正在查询请稍候
