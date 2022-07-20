@@ -8,8 +8,8 @@ $httpClient.get(url, function (error, response, data) {
   let isp = jsonData.isp
   let ip = jsonData.query
   body = {
-    title: "当前节点信息",
-    content: `IP信息：${ip}\n运营商：${isp}\n所在地：${emoji}${country} - ${city}`,
+    title: "节点信息",
+    content: `IP：${ip}\n运营商：${isp}\n地区：${emoji}${country} - ${city}`,
     icon: "globe.asia.australia.fill",
     backgroundColor: '#00a6ac',
   }
