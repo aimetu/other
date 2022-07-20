@@ -103,7 +103,7 @@ tiles:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
     backgroundColor: '##2e3a1f'
 
-- name: network-tile
+  - name: network-tile
     interval: 3600
     title: 运营商查询
     content: 正在检查网络
