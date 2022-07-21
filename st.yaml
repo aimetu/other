@@ -90,7 +90,7 @@ http:
 
 # 首页tile面板
 tiles:
-  - name: ip-tile
+  - name: network-tile
     interval: 3600
     title: 网络信息查询
     content: 正在查询请稍候
@@ -114,8 +114,8 @@ script-providers:
     url: https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.min.js
     interval: 86400
 
-  ip-tile:
-    url: https://raw.githubusercontent.com/aimetu/other/main/ip.js
+  network-tile:
+    url: https://raw.githubusercontent.com/aimetu/other/main/network.js
     interval: 86400
 
   timecard-tile:
