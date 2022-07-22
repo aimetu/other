@@ -20,7 +20,6 @@ dns:
     - '*.test'
     - '*.local'
     - '*.home.arpa'
-    - lens.l.google.com
 
   default-nameserver:
     - system
@@ -44,10 +43,9 @@ hosts:
   gdmf.apple.com: 127.0.0.1
 
 # 使用python脚本编写自定义规则
-# 屏蔽http3/quic,让流量回落至http2,避免udp被qos
 script:
   shortcuts:
-    quic: network == 'udp' and dst_port == 443
+    quic: network == 'udp' and dst_port == 443  # 屏蔽http3/quic,让流量回落至http2,避免udp被qos
 
 #💡 http引擎相关
 http:
