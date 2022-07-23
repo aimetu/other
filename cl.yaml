@@ -134,14 +134,20 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇺🇸 美国节点
       - DIRECT
-
+      - REJECT
+      
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
       - clash
-      
+
+  - name: ✋ 手动选择
+    type: select
+    use:
+      - clash
+
   - name: 🇭🇰 香港节点
     type: url-test
     url: http://www.gstatic.com/generate_204
