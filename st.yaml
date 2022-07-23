@@ -241,7 +241,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png  
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
 
 - name: 🎵 国际抖音
@@ -357,16 +356,26 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png  
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
 
 - name: 🍎 苹果服务
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png  
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
 
 - name: 🎬 国际媒体
   type: select
@@ -397,7 +406,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png  
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
   - 🇨🇳 中国节点
 
@@ -406,7 +414,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png  
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
   - 🇨🇳 中国节点
   
@@ -415,7 +422,6 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China_Map.png 
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 节点选择
   - 🇨🇳 中国节点
 
@@ -425,7 +431,6 @@ proxy-groups:
   proxies:
   - 🔰 节点选择
   - DIRECT
-  - REJECT
 
 - name: ⛔ 广告净化
   type: select
@@ -433,7 +438,6 @@ proxy-groups:
   proxies:
   - REJECT
   - DIRECT
-  - 🔰 节点选择
 
 #💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
 rule-providers:
