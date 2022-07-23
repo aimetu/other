@@ -58,65 +58,65 @@ cfw-bypass:
 cfw-latency-timeout: 5000
 
 proxy-providers:
-  clash:
+  all:
     type: http
     url: https://sub.id9.cc/sub?target=clash&new_name=true&url=订阅链接&list=true&emoji=false&udp=true&sort=true&fdn=true
     interval: 3600
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-  HK:
+  香港:
     filter: 港|香港|🇭🇰|HK|Hong
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
       
-  TW:
+  台湾:
     filter: 台|台湾|台北|🇹🇼|TW|Taiwan
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
       
-  JP:
+  日本:
     filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
       
-  KR:
+  韩国:
     filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korean
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
       
-  SG:
+  狮城:
     filter: 新加坡|狮城|🇸🇬|SG|Singapore
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
 
-  US:
+  美国:
     filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American
     type: file
-    path: ./clash.yaml
+    path: ./all.yaml
     health-check:
       enable: true
       interval: 600
@@ -141,54 +141,54 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - clash
+      - all
 
   - name: ✋ 手动选择
     type: select
     use:
-      - clash
+      - all
 
   - name: 🇭🇰 香港节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - HK
+      - 香港
       
   - name: 🇹🇼 台湾节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - TW
+      - 台湾
       
   - name: 🇯🇵 日本节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - JP
+      - 日本
       
   - name: 🇰🇷 韩国节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - KR
+      - 韩国
       
   - name: 🇸🇬 狮城节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - SG
+      - 狮城
       
   - name: 🇺🇸 美国节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - US
+      - 美国
       
   - name: 🎡 应用分流
     type: select
