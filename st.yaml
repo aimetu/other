@@ -48,8 +48,8 @@ script:
     quic: network == 'udp' and dst_port == 443  # 屏蔽http3/quic,让流量回落至http2,避免udp被qos
 
 #💡 http引擎相关
-http:
 # 强制使用http引擎处理tcp连接 
+http:
   force-http-engine:
     - boxjs.com:80
     - boxjs.net:80
@@ -123,7 +123,7 @@ proxy-providers:
 #    url: https://sub.store/download/collection/all
     interval: 86400
 
-#💡 本地代理服务（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm,tuic协议类型）
+#💡 本地代理服务（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm，tuic协议类型）
 proxies:
 
 #💡 策略组
