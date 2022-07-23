@@ -127,6 +127,7 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
+      - ✋ 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
