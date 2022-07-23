@@ -87,13 +87,13 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       
   JP:
-    filter: 日|东京|🇯🇵|JP|(?i)Japan
+    filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
     type: file
     path: ./clash.yaml
     health-check:
       enable: true
       interval: 600
-      url: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
+      url: http://www.gstatic.com/generate_204
       
   KR:
     filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korean
