@@ -128,7 +128,6 @@ subscribe-url: 订阅链接
 #💡 远程代理服务订阅链接
 proxy-providers:
   all:
-    type: http
 # 本地sub.store订阅
     url: https://sub.store/download/collection/all
 # 远程在线订阅   
