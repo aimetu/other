@@ -167,7 +167,7 @@ proxy-groups:
 
 - name: ✋ 手动选择
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Stack.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Available.png
   proxies: []
   use:
   - stash
