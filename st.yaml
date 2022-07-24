@@ -55,15 +55,13 @@ script:
 http:
 # 强制使用http引擎处理tcp连接 
   force-http-engine:
-    - boxjs.com:80
-    - boxjs.net:80
+    - boxer.baidu.com:80
 
 # 开启mitm功能的域名列表,需安装证书并信任
   mitm:
     - g.cn
     - '*.google.cn'
-    - boxjs.com
-    - boxjs.net
+    - boxer.baidu.com
     - '*.tiktokv.com'
     - '*.byteoversea.com'
     - '*.tik-tokapi.com'
@@ -86,11 +84,11 @@ http:
 
 # 使用javascript脚本改写https请求
   script:
-    - match: https?:\/\/boxjs\.(com|net)
-      name: boxjs
-      type: request
-      require-body: true
-      timeout: 120
+    - match: ^https:\/\/boxer\.baidu\.com\/scheme\?scheme
+      name: baidu
+      type: response
+      require-body: false
+      timeout: 10
 
 # 首页tile面板
 tiles:
@@ -110,8 +108,8 @@ tiles:
 
 # 远程资源脚本模式
 script-providers:
-  boxjs:
-    url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js
+  baidu:
+    url: https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
     interval: 86400
 
   network-tile:
