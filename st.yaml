@@ -30,9 +30,9 @@ dns:
     - 119.29.29.29
 # 支持udp/tcp/dot/doh/doq协议的dns服务，可指定端口，并发响应选取最快
   nameserver:
+    - https://223.5.5.5/dns-query
     - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-
+    
 # 域名使用指定的dns服务器解析
   nameserver-policy:
     mtalk.google.com: 108.177.125.188
@@ -55,7 +55,7 @@ script:
 http:
 # 强制使用http引擎处理tcp连接 
   force-http-engine:
-    - boxer.baidu.com:80
+    - boxer.baidu.com
 
 # 开启mitm功能的域名列表,需安装证书并信任
   mitm:
