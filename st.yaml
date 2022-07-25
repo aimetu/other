@@ -234,8 +234,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png  
   proxies:
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
   - 🔰 节点选择
 
 - name: 🎵 国际抖音
@@ -359,8 +358,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png  
   proxies:
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
   - 🔰 节点选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
@@ -374,8 +372,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png  
   proxies:
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
   - 🔰 节点选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
@@ -415,16 +412,14 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png  
   proxies:
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
   - 🔰 节点选择
 
 - name: 📹 中国媒体
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png  
   proxies:
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
   - 🔰 节点选择
   
 - name: 🇨🇳 中国直连
@@ -440,8 +435,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png  
   proxies:
   - 🔰 节点选择
-  - DIRECT
-  - REJECT
+  - 🇨🇳 中国直连
 
 - name: ⛔ 广告净化
   type: select
