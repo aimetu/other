@@ -1,4 +1,4 @@
-# >2022.07.15
+# >2022.07.25
 # 配置样例:https://stash.wiki/features/example-config
 
 #💡 通用设置
@@ -128,6 +128,10 @@ proxy-providers:
   all:
     url: https://sub.id9.cc/sub?target=clash&new_name=true&url=订阅链接|订阅链接&list=true&emoji=false&udp=true&sort=true&fdn=true
     interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
 
 #💡 本地代理服务（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm，tuic等协议）
 proxies:
@@ -155,7 +159,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -164,7 +168,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -174,7 +178,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -184,7 +188,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -194,7 +198,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -204,7 +208,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -214,7 +218,7 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800  
+  interval: 600  
   proxies: []
   use:
   - all
@@ -225,7 +229,7 @@ proxy-groups:
   proxies: []
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_Nations.png
   url: http://www.gstatic.com/generate_204
-  interval: 1800
+  interval: 600
   use:
   - all
   filter: ^((?!港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American).)*$
