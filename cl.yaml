@@ -200,13 +200,13 @@ proxy-groups:
   - name: 🎡 应用分流
     type: select
     proxies:
-      - DIRECT
+      - 🇨🇳 中国直连
       - 🔰 节点选择
 
   - name: 📹 中国媒体
     type: select
     proxies:
-      - DIRECT
+      - 🇨🇳 中国直连
       - 🔰 节点选择
 
   - name: 🇨🇳 中国直连
@@ -218,7 +218,7 @@ proxy-groups:
   - name: 🕸️ 网速测试
     type: select
     proxies:
-      - DIRECT
+      - 🇨🇳 中国直连
       - 🔰 节点选择
 
   - name: ✉️ 电报群聊
@@ -312,7 +312,7 @@ proxy-groups:
   - name: 🍎 苹果服务
     type: select
     proxies:
-      - DIRECT
+      - 🇨🇳 中国直连
       - 🔰 节点选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -324,7 +324,7 @@ proxy-groups:
   - name: 🖥️ 微软服务
     type: select
     proxies:
-      - DIRECT
+      - 🇨🇳 中国直连
       - 🔰 节点选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -370,7 +370,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 节点选择
-      - DIRECT
+      - 🇨🇳 中国直连
 
   - name: ⛔ 广告净化
     type: select
