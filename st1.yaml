@@ -1,0 +1,632 @@
+# >2022.07.25
+# 配置样例:https://stash.wiki/features/example-config
+
+#💡 通用设置
+# 网络模式:rule规则/global代理/direct直连
+mode: rule
+
+# 日志模式:silent静默/info信息/warning警告/error错误/debug调试
+log-level: info
+
+#💡 dns服务器配置
+dns:
+# 跳过证书验证，解决部分兼容性问题
+  skip-cert-verify: true
+# 以下域名不会被解析为fake-ip，解析请求将返回它们真实的 IP 地址
+  fake-ip-filter:
+    - '*.lan'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+    - '*.localhost'
+    - '*.test'
+    - '*.local'
+    - '*.home.arpa'
+    
+# 默认dns服务器只会被用来解析dns服务的域名，仅允许填写ip地址
+  default-nameserver:
+    - system
+    - 223.5.5.5
+    - 119.29.29.29
+# 支持udp/tcp/dot/doh/doq协议的dns服务，可指定端口，并发响应选取最快
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    
+# 域名使用指定的dns服务器解析
+  nameserver-policy:
+    mtalk.google.com: 108.177.125.188
+    '*testflight.apple.com': 23.76.66.98
+    
+# 本地域名映射
+hosts:
+  '*.clash.dev': 127.0.0.1
+  xp.apple.com: 127.0.0.1
+  ocsp.apple.com: 127.0.0.1
+  mesu.apple.com: 127.0.0.1
+  gdmf.apple.com: 127.0.0.1
+
+# 使用python脚本编写自定义规则
+script:
+  shortcuts:
+    quic: network == 'udp' and dst_port == 443  # 屏蔽http3/quic,让流量回落至http2,避免udp被qos
+
+#💡 http引擎相关
+http:
+# 强制使用http引擎处理tcp连接 
+  force-http-engine:
+    - boxer.baidu.com
+
+# 开启mitm功能的域名列表,需安装证书并信任
+  mitm:
+    - g.cn
+    - '*.google.cn'
+    - boxer.baidu.com
+    - '*.tiktokv.com'
+    - '*.byteoversea.com'
+    - '*.tik-tokapi.com'
+    
+# https-url重写支持header、302、307、reject多种策略
+  url-rewrite:
+    - ^http://g\.cn http://www.google.com header
+    - ^https?://www\.google\.cn https://www.google.com 302
+    - (?<=_region=)CN(?=&) KR 307
+    - (?<=&mcc_mnc=)4 2 307
+    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+    - (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
+
+# https-header重写允许用户增加、删除、替换http请求/响应的任意header
+  header-rewrite:
+    - ^http://g\.cn request-add DNT 1
+    - ^http://g\.cn request-del DNT
+    - ^http://g\.cn request-replace DNT 1
+    - ^http://g\.cn request-replace-regex User-Agent Go-http-client curl
+
+# 使用javascript脚本改写https请求
+  script:
+    - match: ^https:\/\/boxer\.baidu\.com\/scheme\?scheme
+      name: baidu
+      type: response
+      require-body: false
+      timeout: 10
+
+# 首页tile面板
+tiles:
+  - name: network-tile
+    interval: 3600
+    title: 网络信息查询
+    content: 正在查询请稍候
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
+    backgroundColor: '#00a6ac'
+    
+  - name: timecard-tile
+    interval: 86400
+    title: 节假日信息查询
+    content: 漫长的等待中
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Daily.png
+    backgroundColor: '#b3424a'
+
+# 远程资源脚本模式
+script-providers:
+  baidu:
+    url: https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
+    interval: 86400
+
+  network-tile:
+    url: https://raw.githubusercontent.com/aimetu/other/main/network.js
+    interval: 86400
+
+  timecard-tile:
+    url: https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
+    interval: 86400
+
+#💡 代理服务信息在主页显示
+subscribe-url: 订阅链接
+
+#💡 远程代理服务订阅链接，多个订阅用"|"隔开
+proxy-providers:
+  all: &All
+    url: https://sub.id9.cc/sub?target=clash&new_name=true&url=订阅链接|订阅链接&list=true&emoji=false&udp=true&sort=true&fdn=true
+    interval: 86400
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+
+  香港:
+    <<: *All
+    filter: 港|香港|🇭🇰|HK|Hong
+
+  台湾:
+    <<: *All
+    filter: 台|台湾|台北|🇹🇼|TW|Taiwan
+
+  日本:
+    <<: *All
+    filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
+
+  韩国:
+    <<: *All
+    filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korean
+
+  狮城:
+    <<: *All
+    filter: 新加坡|狮城|🇸🇬|SG|Singapore
+
+  美国:
+    <<: *All
+    filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American
+
+  国际:
+    <<: *All
+    filter: ^((?!港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|American).)*$
+
+#💡 本地代理服务（支持ss，ssr，socks5，http，vmess，vless，trojan，hysteria，snellm，tuic等协议）
+proxies:
+
+#💡 策略组
+proxy-groups: 
+- name: 🔰 手动选择
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png  
+  proxies:
+  - ♻️ 自动切换
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+  - DIRECT
+  - REJECT
+  use:
+  - all
+   ssid-policy:
+    OpenWrt_5G: 🔰 手动选择
+    OpenWrt: 🔰 手动选择
+    cellular: DIRECT  # 蜂窝数据
+    default: 🔰 手动选择  # 其他的ssid
+ 
+- name: ♻️ 自动切换
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  proxies: []
+  use:
+  - all
+
+- name: 🇭🇰 香港节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Hong_Kong.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 香港
+  
+- name: 🇹🇼 台湾节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Taiwan.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 台湾
+  
+- name: 🇯🇵 日本节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Japan.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 日本
+  
+- name: 🇰🇷 韩国节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Korea.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 韩国
+  
+- name: 🇸🇬 狮城节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Singapore.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 狮城
+  
+- name: 🇺🇸 美国节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_States.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  use:
+  - 美国
+    
+- name: 🇺🇳 国际节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/United_Nations.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600
+  use:
+  - 国际
+ 
+- name: 🕸️ 网速测试
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png  
+  proxies:
+  - 🇨🇳 中国直连
+  - 🔰 手动选择
+
+- name: 🎵 国际抖音
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+  
+- name: ✉️ 电报群聊
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🎶 声田音乐
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png  
+  proxies: 
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 📺 鼎级剧场
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 📽️ 奈飞影视
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+  
+- name: 📼 迪家影视
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🎞️ 油管视频
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🎮 国际游戏
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 📟 谷歌服务
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🖥️ 微软服务
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png  
+  proxies:
+  - 🇨🇳 中国直连
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🍎 苹果服务
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png  
+  proxies:
+  - 🇨🇳 中国直连
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🎬 国际媒体
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/GlobalMedia.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+
+- name: 🌐 国际网络
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 狮城节点
+  - 🇺🇸 美国节点
+  - 🇺🇳 国际节点
+  
+- name: 🎡 应用分流
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png  
+  proxies:
+  - 🇨🇳 中国直连
+  - 🔰 手动选择
+
+- name: 📹 中国媒体
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png  
+  proxies:
+  - 🇨🇳 中国直连
+  - 🔰 手动选择
+  
+- name: 🇨🇳 中国直连
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/China.png 
+  proxies:
+  - DIRECT
+  - REJECT
+  - 🔰 手动选择
+
+- name: 🐟 漏网之鱼
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png  
+  proxies:
+  - 🔰 手动选择
+  - 🇨🇳 中国直连
+
+- name: ⛔ 广告净化
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Advertising.png  
+  proxies:
+  - REJECT
+  - DIRECT
+
+#💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
+rule-providers:
+  👀 新浪科技:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sina/Sina.yaml
+    interval: 86400
+    
+  🐱 阿里巴巴:
+    behavior: domain-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba_Domain.txt
+    interval: 86400
+    
+  🎵 字节跳动:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ByteDance/ByteDance.yaml
+    interval: 86400
+    
+  🐧 腾讯科技:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Tencent/Tencent.yaml
+    interval: 86400
+    
+  📹 中国媒体:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    interval: 86400
+    
+  🇨🇳 中国直连:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
+    interval: 86400
+    
+  🇨🇳 中国ipv4:
+    behavior: ipcidr-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
+    interval: 86400
+    
+  🕸️ 网速测试:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
+    interval: 86400
+    
+  🎶 声田音乐:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    interval: 86400
+    
+  ✉️ 电报群聊:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    interval: 86400
+    
+  🎵 国际抖音:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    interval: 86400
+    
+  🎞️ 油管视频:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    interval: 86400
+    
+  📼 迪家影视:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    interval: 86400
+    
+  📽️ 奈飞影视:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    interval: 86400
+    
+  📺 鼎级剧场:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
+    interval: 86400
+    
+  🎮 国际游戏:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    interval: 86400
+    
+  🍎 苹果更新:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
+    interval: 86400
+    
+  🍎 苹果服务:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    interval: 86400
+    
+  🖥️ 微软服务:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    interval: 86400
+    
+  📟 谷歌服务:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    interval: 86400
+    
+  🎬 国际媒体:
+    behavior: domain-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
+    interval: 86400
+    
+  🌐 国际网络:
+    behavior: domain-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
+    interval: 86400
+    
+  🚥 直连修正:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    interval: 86400
+    
+  ⛔ 隐私保护:
+    behavior: domain-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
+    interval: 86400
+    
+  ⛔ 网络劫持:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
+    interval: 86400
+    
+  ⛔ 广告大全:
+    behavior: domain-text
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
+    interval: 86400
+
+#💡 规则类型引用（指定规则类型引用代理或策略组）
+rules:
+- RULE-SET,👀 新浪科技,🎡 应用分流
+- RULE-SET,🐱 阿里巴巴,🎡 应用分流
+- RULE-SET,🎵 字节跳动,🎡 应用分流
+- RULE-SET,🐧 腾讯科技,🎡 应用分流
+- RULE-SET,📹 中国媒体,📹 中国媒体
+- RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
+- RULE-SET,🇨🇳 中国ipv4,🇨🇳 中国直连
+- RULE-SET,🕸️ 网速测试,🕸️ 网速测试
+- RULE-SET,🎶 声田音乐,🎶 声田音乐
+- RULE-SET,✉️ 电报群聊,✉️ 电报群聊
+- RULE-SET,🎵 国际抖音,🎵 国际抖音
+- RULE-SET,🎞️ 油管视频,🎞️ 油管视频
+- RULE-SET,📼 迪家影视,📼 迪家影视
+- RULE-SET,📽️ 奈飞影视,📽️ 奈飞影视
+- RULE-SET,📺 鼎级剧场,📺 鼎级剧场
+- RULE-SET,🎮 国际游戏,🎮 国际游戏
+- RULE-SET,🍎 苹果更新,⛔ 广告净化
+- RULE-SET,🍎 苹果服务,🍎 苹果服务
+- RULE-SET,🖥️ 微软服务,🖥️ 微软服务
+- RULE-SET,📟 谷歌服务,📟 谷歌服务
+- RULE-SET,🎬 国际媒体,🎬 国际媒体
+- RULE-SET,🌐 国际网络,🌐 国际网络
+- RULE-SET,🚥 直连修正,🇨🇳 中国直连
+- RULE-SET,⛔ 隐私保护,⛔ 广告净化
+- RULE-SET,⛔ 网络劫持,⛔ 广告净化
+- RULE-SET,⛔ 广告大全,⛔ 广告净化
+- SCRIPT,quic,⛔ 广告净化
+- GEOIP,CN,🇨🇳 中国直连
+- MATCH,🐟 漏网之鱼
