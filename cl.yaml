@@ -133,10 +133,10 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 proxy-groups:
-  - name: 🔰 节点选择
+  - name: 🔰 手动选择
     type: select
     proxies:
-      - ♻️ 自动选择
+      - ♻️ 自动切换
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -148,7 +148,7 @@ proxy-groups:
     use:
       - all
 
-  - name: ♻️ 自动选择
+  - name: ♻️ 自动切换
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -201,30 +201,30 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 节点选择
+      - 🔰 手动选择
 
   - name: 📹 中国媒体
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 节点选择
+      - 🔰 手动选择
 
   - name: 🇨🇳 中国直连
     type: select
     proxies:
       - DIRECT
-      - 🔰 节点选择
+      - 🔰 手动选择
 
   - name: 🕸️ 网速测试
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 节点选择
+      - 🔰 手动选择
 
   - name: ✉️ 电报群聊
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -235,7 +235,7 @@ proxy-groups:
   - name: 🎵 国际抖音
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -246,7 +246,7 @@ proxy-groups:
   - name: 🎞️ 油管视频
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -257,7 +257,7 @@ proxy-groups:
   - name: 📼 迪家影视
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -268,7 +268,7 @@ proxy-groups:
   - name: 📽️ 奈飞影视
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -279,7 +279,7 @@ proxy-groups:
   - name: 📺 鼎级剧场
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -290,7 +290,7 @@ proxy-groups:
   - name: 🎶 声田音乐
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -301,7 +301,7 @@ proxy-groups:
   - name: 🎮 国际游戏
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -313,7 +313,7 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -325,7 +325,7 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -336,7 +336,7 @@ proxy-groups:
   - name: 📟 谷歌服务
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -347,7 +347,7 @@ proxy-groups:
   - name: 🎬 国际媒体
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -358,7 +358,7 @@ proxy-groups:
   - name: 🌐 国际网络
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -369,7 +369,7 @@ proxy-groups:
   - name: 🐟 漏网之鱼
     type: select
     proxies:
-      - 🔰 节点选择
+      - 🔰 手动选择
       - 🇨🇳 中国直连
 
   - name: ⛔ 广告净化
