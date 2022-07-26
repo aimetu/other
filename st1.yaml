@@ -182,7 +182,7 @@ proxy-groups:
   - REJECT
   use:
   - all
-   ssid-policy:
+  ssid-policy:
     OpenWrt_5G: 🔰 手动选择
     OpenWrt: 🔰 手动选择
     cellular: DIRECT  # 蜂窝数据
