@@ -168,7 +168,7 @@ proxies:
 proxy-groups: 
 - name: 🏡 网络切换
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/WiFi.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/SSID.png
   url: http://www.gstatic.com/generate_204
   proxies:
     - ♻️ 自动切换
