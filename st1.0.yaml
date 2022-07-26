@@ -170,6 +170,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png  
   proxies:
+  - 🚁 无线网络
   - ♻️ 自动切换
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
@@ -182,6 +183,19 @@ proxy-groups:
   - REJECT
   use:
   - all
+
+- name: 🚁 无线网络
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/SSID.png
+  url: http://www.gstatic.com/generate_204
+  proxies:
+  - ♻️ 自动切换
+  - 🇨🇳 中国直连
+  ssid-policy:
+    OpenWrt: 🇨🇳 中国直连
+    OpenWrt_5G: ♻️ 自动切换
+    cellular: 🇨🇳 中国直连  # 蜂窝数据
+    default: ♻️ 自动切换  # 其他ssid 
  
 - name: ♻️ 自动切换
   type: url-test
