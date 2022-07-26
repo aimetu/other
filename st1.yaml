@@ -186,7 +186,7 @@ proxy-groups:
     OpenWrt_5G: 🔰 手动选择
     OpenWrt: 🔰 手动选择
     cellular: DIRECT  # 蜂窝数据
-    default: 🔰 手动选择  # 其他的ssid
+    default: 🔰 手动选择  # 其他ssid
  
 - name: ♻️ 自动切换
   type: url-test
