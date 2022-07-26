@@ -138,11 +138,11 @@ proxies:
 
 #💡 策略组
 proxy-groups: 
-- name: 🔰 节点选择
+- name: 🔰 手动选择
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Static.png  
   proxies:
-  - ♻️ 自动选择
+  - ♻️ 自动切换
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -155,7 +155,7 @@ proxy-groups:
   use:
   - all
   
-- name: ♻️ 自动选择
+- name: ♻️ 自动切换
   type: url-test
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
   url: http://www.gstatic.com/generate_204
@@ -239,13 +239,13 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png  
   proxies:
   - 🇨🇳 中国直连
-  - 🔰 节点选择
+  - 🔰 手动选择
 
 - name: 🎵 国际抖音
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/TikTok.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -258,7 +258,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Telegram.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -271,7 +271,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png  
   proxies: 
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -284,7 +284,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/HBO.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -297,7 +297,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Netflix.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -310,7 +310,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Disney+.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -323,7 +323,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/YouTube.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -336,7 +336,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Game.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -349,7 +349,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Google.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -363,7 +363,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Microsoft.png  
   proxies:
   - 🇨🇳 中国直连
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -377,7 +377,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png  
   proxies:
   - 🇨🇳 中国直连
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -390,7 +390,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/GlobalMedia.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -403,7 +403,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Global.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇭🇰 香港节点
   - 🇹🇼 台湾节点
   - 🇯🇵 日本节点
@@ -417,14 +417,14 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Filter.png  
   proxies:
   - 🇨🇳 中国直连
-  - 🔰 节点选择
+  - 🔰 手动选择
 
 - name: 📹 中国媒体
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/StreamingCN.png  
   proxies:
   - 🇨🇳 中国直连
-  - 🔰 节点选择
+  - 🔰 手动选择
   
 - name: 🇨🇳 中国直连
   type: select
@@ -432,13 +432,13 @@ proxy-groups:
   proxies:
   - DIRECT
   - REJECT
-  - 🔰 节点选择
+  - 🔰 手动选择
 
 - name: 🐟 漏网之鱼
   type: select
   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Final.png  
   proxies:
-  - 🔰 节点选择
+  - 🔰 手动选择
   - 🇨🇳 中国直连
 
 - name: ⛔ 广告净化
