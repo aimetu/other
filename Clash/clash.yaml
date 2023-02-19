@@ -64,7 +64,7 @@ dns:
     
 # 使用指定的dns服务器解析域名
   nameserver-policy:
-    "openwrt.lan": systme
+    "openwrt.lan": system
     "blog.google": 1.0.0.1
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
