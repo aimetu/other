@@ -31,8 +31,6 @@ dns-server =
 # > 通用分流
 DOMAIN,adsmind.gdtimg.com,REJECT
 DOMAIN,m1.ad.10010.com,REJECT
-DOMAIN,gslbali.ximalaya.com,REJECT
-DOMAIN,gslbtx.ximalaya.com,REJECT
 
 # > 知乎广告
 DOMAIN,118.89.204.198,REJECT
