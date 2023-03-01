@@ -81,8 +81,8 @@ dns:
       
 # 当geoip不是cn时用以下dns解析
   fallback:
-    - tls://dns.google
-    - https://dns.cloudflare.com/dns-query
+    - tls://dns.google:853
+    - https://cloudflare-dns.com/dns-query
     
 # 指定该域名用fallback解析   
   domain:
