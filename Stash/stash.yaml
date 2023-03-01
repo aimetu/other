@@ -1,4 +1,4 @@
-#>2023.2.1
+#>2023.3.1
 # 配置样例:https://stash.wiki/features/example-config
 
 #💡 通用设置
@@ -218,8 +218,8 @@ proxy-groups:
   - 🇰🇷 korea
   - 🇸🇬 singapore
   - 🇺🇸 america
-  - nations
-  - chinese
+  - 🇺🇸 america
+  - 🇨🇳 chinese
   - DIRECT
   - REJECT
 
