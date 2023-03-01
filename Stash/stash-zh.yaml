@@ -209,7 +209,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
-  - wireless
+  - 🏠 网络场景
   - ♻️ 自动切换
   - ✅ 节点选择
   - 🇭🇰 香港节点
