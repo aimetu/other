@@ -205,47 +205,47 @@ script-providers:
 
 #💡 策略组
 proxy-groups: 
-- name: pick
+- name: 🔰 pick
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
-  - wireless
-  - auto
-  - node
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
+  - 🏠 wireless
+  - ♻️ auto
+  - ✅ node
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
   - nations
   - chinese
   - DIRECT
   - REJECT
 
-- name: wireless
+- name: 🏠 wireless
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
   proxies:
-  - auto
-  - node
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
-  - chinese
+  - ♻️ auto
+  - ✅ node
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
+  - 🇨🇳 chinese
   - DIRECT
   - REJECT
   ssid-policy:
-    cellular: auto
-    default: auto  
-    OpenWrt: nations
-    OpenWrt_5G: hongkong
+    cellular: ♻️ auto
+    default: ♻️ auto  
+    OpenWrt: 🇺🇳 nations
+    OpenWrt_5G: 🇭🇰 hongkong
 
-- name: auto
+- name: ♻️ auto
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
   url: http://www.gstatic.com/generate_204
@@ -253,12 +253,12 @@ proxy-groups:
   lazy: true
   include-all: true
 
-- name: node
+- name: ✅ node
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
   include-all: true
   
-- name: hongkong
+- name: 🇭🇰 hongkong
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
   url: http://www.gstatic.com/generate_204
@@ -267,7 +267,7 @@ proxy-groups:
   include-all: true
   filter: 港|香港|🇭🇰|HK|Hong
   
-- name: taiwan
+- name: 🇹🇼 taiwan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
   url: http://www.gstatic.com/generate_204
@@ -276,7 +276,7 @@ proxy-groups:
   include-all: true
   filter: 台|台湾|台北|🇹🇼|TW|Taiwan
   
-- name: japan
+- name: 🇯🇵 japan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
   url: http://www.gstatic.com/generate_204
@@ -285,7 +285,7 @@ proxy-groups:
   include-all: true
   filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
   
-- name: korea
+- name: 🇰🇷 korea
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
   url: http://www.gstatic.com/generate_204
@@ -294,7 +294,7 @@ proxy-groups:
   include-all: true
   filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korea
   
-- name: singapore
+- name: 🇸🇬 singapore
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
   url: http://www.gstatic.com/generate_204
@@ -303,7 +303,7 @@ proxy-groups:
   include-all: true
   filter: 新加坡|狮城|🇸🇬|SG|Singapore
   
-- name: america
+- name: 🇺🇸 america
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
   url: http://www.gstatic.com/generate_204
@@ -312,7 +312,7 @@ proxy-groups:
   include-all: true
   filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America
     
-- name: nations
+- name: 🇺🇳 nations
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
   url: http://www.gstatic.com/generate_204
@@ -321,7 +321,7 @@ proxy-groups:
   include-all: true
   filter: ^((?!港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America).)*$
 
-- name: chinese
+- name: 🇨🇳 chinese
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
   url: http://www.gstatic.com/generate_204
@@ -330,196 +330,196 @@ proxy-groups:
   include-all: true
   filter: 移动|联通|电信|腾讯|阿里|🇨🇳|CN|CHINA|中国|国内|华东|华南|华中|华西|华北|北京|上海|重庆|天津|广东|广州|深圳|湖北|武汉|宜昌|江苏|南京|无锡|镇江|苏州|浙江|杭州|宁波|温州|绍兴|云南|昆明|贵州|贵阳|四川|成都|福建|福州|厦门|海南|海口|湖南|长沙|安徽|合肥|江西|南昌|河南|郑州|河北|石家庄|山东|济南|山西|太原|陕西|西安|辽宁|沈阳|吉林|长春|广西|南宁|宁夏|银川|青海|西宁|甘肃|兰州|黑龙江|哈尔滨|辽宁|沈阳|内蒙古|呼和浩特|新疆|乌鲁木齐|西藏|拉萨
 
-- name: speedtest
+- name: 🕸️ speedtest
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/speedtest.png
   proxies:
-  - china
-  - pick
+  - 🇨🇳 china
+  - 🔰 pick
 
-- name: tiktok
+- name: 🎵 tiktok
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
   
-- name: telegram
+- name: ✉️ telegram
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: spotify
+- name: 🎶 spotify
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
   proxies: 
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: netflix
+- name: 📽️ netflix
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
   
-- name: disney
+- name: 📼 disney
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: youtube
+- name: 📹 youtube
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: facebook
+- name: 🤖 facebook
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: google
+- name: 📟 google
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: microsoft
+- name: 🖥️ microsoft
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/microsoft.png
   proxies:
-  - china
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🇨🇳 china
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: apple
+- name: 🍎 apple
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/apple.png
   proxies:
-  - china
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🇨🇳 china
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: streaming
+- name: 🎥 streaming
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
 
-- name: global
+- name: 🌐 global
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
   proxies:
-  - pick
-  - hongkong
-  - taiwan
-  - japan
-  - korea
-  - singapore
-  - america
-  - nations
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
   
-- name: media
+- name: 📺 media
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
   proxies:
-  - china
-  - pick
+  - 🇨🇳 china
+  - 🔰 pick
   
-- name: china
+- name: 🇨🇳 china
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
   proxies:
   - DIRECT
   - REJECT
-  - pick
-  - chinese
+  - 🔰 pick
+  - 🇨🇳 chinese
 
-- name: final
+- name: 🐟 final
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
   proxies:
-  - pick
-  - china
-  - adblock
+  - 🔰 pick
+  - 🇨🇳 china
+  - ⛔ adblock
 
-- name: adblock
+- name: ⛔ adblock
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
   proxies:
@@ -640,28 +640,28 @@ rule-providers:
     
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-- RULE-SET,🚥 direct,china
-- RULE-SET,⛔ privacy,adblock
-- RULE-SET,⛔ hijacking,adblock
-- RULE-SET,⛔ advertising,adblock
-- RULE-SET,🕸️ speedtest,speedtest
-- RULE-SET,🎵 tiktok,tiktok
-- RULE-SET,✉️ telegram,telegram
-- RULE-SET,🎶 spotify,spotify
-- RULE-SET,📽️ netflix,netflix
-- RULE-SET,📼 disney,disney
-- RULE-SET,📹 youtube,youtube
-- RULE-SET,🤖 facebook,facebook
-- RULE-SET,📟 google,google
-- RULE-SET,🖥️ microsoft,microsoft
-- RULE-SET,🍎 ota,adblock
-- RULE-SET,🍎 apple,apple
-- RULE-SET,🎥 streaming,streaming
-- RULE-SET,🌐 global,global
-- RULE-SET,📺 media,media
-- RULE-SET,🇨🇳 china,china
-- RULE-SET,🇨🇳 ips,china
-- RULE-SET,🇨🇳 bgp,china
-- SCRIPT,quic,adblock
-- GEOIP,CN,china
-- MATCH,final
+- RULE-SET,🚥 direct,🇨🇳 china
+- RULE-SET,⛔ privacy,⛔ adblock
+- RULE-SET,⛔ hijacking,⛔ adblock
+- RULE-SET,⛔ advertising,⛔ adblock
+- RULE-SET,🕸️ speedtest,🕸️ speedtest
+- RULE-SET,🎵 tiktok,🎵 tiktok
+- RULE-SET,✉️ telegram,✉️ telegram
+- RULE-SET,🎶 spotify,🎶 spotify
+- RULE-SET,📽️ netflix,📽️ netflix
+- RULE-SET,📼 disney,📼 disney
+- RULE-SET,📹 youtube,📹 youtube
+- RULE-SET,🤖 facebook,🤖 facebook
+- RULE-SET,📟 google,📟 google
+- RULE-SET,🖥️ microsoft,🖥️ microsoft
+- RULE-SET,🍎 ota,⛔ adblock
+- RULE-SET,🍎 apple,🍎 apple
+- RULE-SET,🎥 streaming,🎥 streaming
+- RULE-SET,🌐 global,🌐 global
+- RULE-SET,📺 media,📺 media
+- RULE-SET,🇨🇳 china,🇨🇳 china
+- RULE-SET,🇨🇳 ips,🇨🇳 china
+- RULE-SET,🇨🇳 bgp,🇨🇳 china
+- SCRIPT,quic,⛔ adblock
+- GEOIP,CN,🇨🇳 china
+- MATCH,🐟 final
