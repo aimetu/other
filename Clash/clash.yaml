@@ -72,6 +72,7 @@ dns:
     "openwrt.lan": system
     "myrouter.local": system
     # alibaba
+    "*.tb.cn": 223.5.5.5
     "*.1688.com": 223.5.5.5
     "*.tmall.com": 223.5.5.5
     "*.taobao.com": 223.5.5.5
@@ -91,6 +92,7 @@ dns:
     "*.aliyuncdn.com": 223.5.5.5
     "*.aliyundrive.com": 223.5.5.5
     # tencent
+    "*.url.cn": 119.29.29.29
     "*.qq.com": 119.29.29.29
     "*.qq.com.cn": 119.29.29.29
     "*.weixin.com": 119.29.29.29
@@ -116,14 +118,17 @@ dns:
     "*.smtcdns.net": 119.29.29.29
     "*.smtcdns.com": 119.29.29.29
     # baidu
+    "*.dwz.cn": 180.76.76.76
     "*.baidu.com": 180.76.76.76
     "*.bdimg.com": 180.76.76.76
     "*.bdstatic.com": 180.76.76.76
     # jd
+    "*.3.cn": 119.29.29.29
     "*.jd.com": 119.29.29.29
     "*.jdcloud.com": 119.29.29.29
     "*.360buyimg.com": 119.29.29.29
     # bilibili
+    "*.acg.tv": 119.29.29.29
     "*.hdslb.com": 119.29.29.29
     "*.hdslb.net": 119.29.29.29
     "*.bilibili.com": 119.29.29.29
