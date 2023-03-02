@@ -160,6 +160,7 @@ dns:
     "*.xiaomi.com": 119.29.29.29
     "*.pddpic.com": 119.29.29.29
     "*.pinduoduo.com": 119.29.29.29
+    "*.pinduoduo.net": 119.29.29.29
     "*.yangkeduo.com": 119.29.29.29
     # apple
     "*.apple.com": https://dns.alidns.com/dns-query
