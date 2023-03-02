@@ -65,12 +65,12 @@ dns:
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     "openwrt.lan": system
-    "blog.google": 1.0.0.1
+    "blog.google": 208.67.222.222
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
-    "dl.google.com": https://cloudflare-dns.com/dns-query
-    "dl.l.google.com": https://cloudflare-dns.com/dns-query
-    "update.googleapis.com": https://cloudflare-dns.com/dns-query
+    "dl.google.com": https://doh.opendns.com/dns-query
+    "dl.l.google.com": https://doh.opendns.com/dns-query
+    "update.googleapis.com": https://doh.opendns.com/dns-query
 
 # geoip过滤cn以外的地址，指定到fallback
   fallback-filter:
@@ -81,8 +81,8 @@ dns:
       
 # 当geoip不是cn时用以下dns解析
   fallback:
-    - tls://dns.google:853
-    - https://cloudflare-dns.com/dns-query
+    - tls://dns.google
+    - https://doh.opendns.com/dns-query
     
 # 指定该域名用fallback解析   
   domain:
