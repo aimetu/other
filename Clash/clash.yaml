@@ -65,8 +65,8 @@ dns:
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     # router
-    "tplogin.cn": system
     "falogin.cn": system
+    "tplogin.cn": system
     "miwifi.com": system
     "melogin.cn": system
     "openwrt.lan": system
