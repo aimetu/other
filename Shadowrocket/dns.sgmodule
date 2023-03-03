@@ -1,9 +1,5 @@
 #!name= dns
 #!desc= 💡指定dns服务器解析域名
-#!openUrl=https://github.com/aimetu/other
-#!author=aimetu
-#!homepage=https://github.com/aimetu
-#!icon= https://raw.githubusercontent.com/aimetu/icons/main/other/dns.png
 
 [Host]
 # router
