@@ -19,29 +19,6 @@ proxy-providers:
 
 #💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic等协议）
 proxies:
-- name: cloudflare
-  type: wireguard
-  server: engage.nanocat.me
-  port: 2408
-  ip: 172.16.0.2
-  ipv6: 2606:4700:110:870a:1cf0:e3e2:d9a6:7836
-  private-key: JWh5ZsnxQQW9nWJGJmXJUsdSRs2GzRVYidHX4fP9xXA=
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  #preshared-key: # optional
-  mtu: 1480
-  reserved: 
-  - 122
-  - 116
-  - 105
-  keepalive: 45
-  dns:
-  - 162.159.36.1
-  - 208.67.222.222
-#underlying-proxy: # optional
-  #type: trojan
-  #server: your-underlying-proxy
-  #port: 443
-  #password: your-password
 
 #💡 dns服务器配置
 dns:
