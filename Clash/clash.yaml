@@ -83,7 +83,6 @@ dns:
   fallback:
     - tls://dns.google
     - https://doh.opendns.com/dns-query
-    - https://dns.cloudflare.com/dns-query
     
 # 指定该域名用fallback解析   
   domain:
