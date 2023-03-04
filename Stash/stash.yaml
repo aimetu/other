@@ -63,7 +63,6 @@ dns:
   fallback:
     - https://dns.google/dns-query
     - https://doh.opendns.com/dns-query
-    - https://dns.cloudflare.com/dns-query  
     
 # 域名使用指定的dns服务器解析
   nameserver-policy:
