@@ -506,9 +506,9 @@ proxy-groups:
   proxies:
   - 🔰 手动选择
   - 🇨🇳 中国直连
-  - ⛔ 广告净化
+  - ⛔ 广告拦截
 
-- name: ⛔ 广告净化
+- name: ⛔ 广告拦截
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
   proxies:
@@ -630,9 +630,9 @@ rule-providers:
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
 - RULE-SET,🚥 规则修正,🇨🇳 中国直连
-- RULE-SET,⛔ 隐私保护,⛔ 广告净化
-- RULE-SET,⛔ 网络劫持,⛔ 广告净化
-- RULE-SET,⛔ 广告大全,⛔ 广告净化
+- RULE-SET,⛔ 隐私保护,⛔ 广告拦截
+- RULE-SET,⛔ 网络劫持,⛔ 广告拦截
+- RULE-SET,⛔ 广告大全,⛔ 广告拦截
 - RULE-SET,🕸️ 网速测试,🕸️ 网速测试
 - RULE-SET,🎵 国际抖音,🎵 国际抖音
 - RULE-SET,✉️ 电报群聊,✉️ 电报群聊
@@ -643,7 +643,7 @@ rules:
 - RULE-SET,🤖 脸书服务,🤖 脸书服务
 - RULE-SET,📟 谷歌服务,📟 谷歌服务
 - RULE-SET,🖥️ 微软服务,🖥️ 微软服务
-- RULE-SET,🍎 苹果更新,⛔ 广告净化
+- RULE-SET,🍎 苹果更新,⛔ 广告拦截
 - RULE-SET,🍎 苹果服务,🍎 苹果服务
 - RULE-SET,🎥 国际媒体,🎥 国际媒体
 - RULE-SET,🌐 国际加速,🌐 国际加速
@@ -651,6 +651,6 @@ rules:
 - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
 - RULE-SET,🇨🇳 中国地址,🇨🇳 中国直连
 - RULE-SET,🇨🇳 中国网关,🇨🇳 中国直连
-- SCRIPT,quic,⛔ 广告净化
+- SCRIPT,quic,⛔ 广告拦截
 - GEOIP,CN,🇨🇳 中国直连
 - MATCH,🐟 漏网之鱼
