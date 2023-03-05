@@ -459,7 +459,7 @@ proxy-groups:
       - 🇨🇳 中国直连
       - REJECT
 
-  - name: ⛔ 广告净化
+  - name: ⛔ 广告拦截
     type: select
     proxies:
       - REJECT
@@ -631,9 +631,9 @@ rule-providers:
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
   - RULE-SET,🚥 修正直连,🇨🇳 中国直连 
-  - RULE-SET,⛔ 隐私保护,⛔ 广告净化
-  - RULE-SET,⛔ 网络劫持,⛔ 广告净化
-  - RULE-SET,⛔ 广告大全,⛔ 广告净化
+  - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
+  - RULE-SET,⛔ 网络劫持,⛔ 广告拦截
+  - RULE-SET,⛔ 广告大全,⛔ 广告拦截
   - RULE-SET,🕸️ 网速测试,🕸️ 网速测试
   - RULE-SET,🎵 国际抖音,🎵 国际抖音
   - RULE-SET,✉️ 电报群聊,✉️ 电报群聊
@@ -644,7 +644,7 @@ rules:
   - RULE-SET,🤖 脸书服务,🤖 脸书服务
   - RULE-SET,🖥️ 微软服务,🖥️ 微软服务
   - RULE-SET,📟 谷歌服务,📟 谷歌服务
-  - RULE-SET,🍎 苹果更新,⛔ 广告净化
+  - RULE-SET,🍎 苹果更新,⛔ 广告拦截
   - RULE-SET,🍎 苹果服务,🍎 苹果服务
   - RULE-SET,🎮 国际游戏,🎮 国际游戏
   - RULE-SET,🎬 国际媒体,🎬 国际媒体
