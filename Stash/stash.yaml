@@ -22,7 +22,7 @@ proxies:
 
 #💡 dns服务器配置
 dns:
-# 跳过证书验证，解决部分兼容性问题
+# 跳过证书验证，解决部分兼容性问题,默认开启
   skip-cert-verify: true
 # 以下域名不会被解析为fake-ip，解析请求将返回它们真实的 IP 地址
   fake-ip-filter:
