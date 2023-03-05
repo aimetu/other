@@ -18,10 +18,10 @@ socks-port: 7891
 # 本地http(s)或socks5服务使用同一端口
 mixed-port: 7890
 
-# 允许局域网内其它设备通过clash访问互联网
+# 允许局域网内其它设备通过clash访问互联网,默认开启
 allow-lan: true
 
-# 开启ipv6转换，设置为false时关闭
+# 开启ipv6转换,设置为false时关闭,默认开启
 ipv6: true
 
 # 外部控制器可以通过监听地址控制clash
