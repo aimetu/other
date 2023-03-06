@@ -59,8 +59,8 @@ dns:
     
 # 自定义上游dns服务器，支持udp/tcp/dot/doh等协议   
   nameserver:
-    - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
     
 # 使用指定的dns服务器解析域名
   nameserver-policy:
