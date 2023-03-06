@@ -45,12 +45,12 @@ dns:
 # 默认dns服务器只会被用来解析dns服务的域名，仅允许ip地址
   default-nameserver:
     - 223.5.5.5
-    - 119.29.29.29
+    - 208.67.222.222
     
 # 支持udp/tcp/dot/doh/doq协议的dns服务，可指定端口，并发响应最快服务
   nameserver:
-    - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
     
 # geoip过滤cn以外的地址，指定到fallback  
   fallback-filter:
@@ -61,8 +61,8 @@ dns:
       
 # 当geoip不是cn时用以下dns解析 
   fallback:
-    - https://dns.google/dns-query
     - https://doh.opendns.com/dns-query
+    - https://dns.cloudflare.com/dns-query
     
 # 域名使用指定的dns服务器解析
   nameserver-policy:
