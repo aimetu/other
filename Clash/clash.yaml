@@ -1,6 +1,7 @@
 # 应用介绍:https://docs.cfw.lbyczf.com/
 # 配置样例:https://lancellc.gitbook.io/clash
-# 配置样例:https://github.com/Dreamacro/clash/wiki/Configuration
+# 官方模板:https://github.com/Dreamacro/clash/wiki/Configuration
+# meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
 #💡 通用设置
 # 网络模式:rule规则/global全局/direct直连/script脚本
@@ -9,7 +10,7 @@ mode: rule
 # 日志模式:silent静默/info信息/warning警告/error错误/debug调试
 log-level: info
 
-# 开启ipv6转换,设置为false时关闭,默认开启
+# 开启/关闭ipv6总开关，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
 ipv6: true
 
 # 本地http(s)服务端口
@@ -30,25 +31,47 @@ mixed-port: 7890
 # 允许局域网内其它设备通过clash访问互联网,默认开启
 allow-lan: true
 
-# 这仅适用allow-lan为true的情况，'*'为绑定所有ip
+# 这仅适用allow-lan为true的情况，'*'表示所有地址
 bind-address: '*'
 
 # 外部控制器可以通过监听地址控制clash
 external-controller: 127.0.0.1:9090
 
-# 当两个不同的配置有同名的组时将共享
+# 查找进程模式有3个值
+# - always, 开启，强制匹配所有进程
+# - strict, 默认，由clash判断是否开启
+# - off, 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: strict
+
+#自定义geodata url
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+  
+# 将结果存储在缓存中
 profile:
-  store-selected: true
+# 存储select记录
+  store-selected: false
+# 存储fake-ip记录
   store-fake-ip: true
   
 #💡 dns服务器配置
 dns:
+# 开启/关闭服务器配置，关闭将使用系统dns
   enable: true
+# 开启/关闭ipv6返回结果，关闭将AAAA的结果为空
   ipv6: true
-  listen: 0.0.0.0:53
+ # 开启/关闭doh支持http/3，将并发尝试 
+  prefer-h3: false
+# 开启dns服务器监听
+  listen: 0.0.0.0:53 
   enhanced-mode: fake-ip
+# fake-ip范围池设置  
   ake-ip-range: 198.18.0.1/16
+# 查询hosts  
   use-hosts: true
+# 配置不使用fake-ip的域名  
   fake-ip-filter:
     - "*.lan"
     - "*.local"
@@ -75,7 +98,7 @@ dns:
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-    
+ 
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     "openwrt.lan": system
@@ -86,31 +109,45 @@ dns:
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": https://doh.opendns.com/dns-query
 
-# geoip过滤cn以外的地址，指定到fallback
+# 配置fallback使用条件
   fallback-filter:
+# 配置是否开启geoip  
     geoip: true
+# geoip库匹配cn时，不使用fallback中的dns查询    
     geoip-code: CN
+# 如果不匹配ipcidr则使用nameservers中的结果    
     ipcidr:
       - 240.0.0.0/4
       
-# 当geoip不是cn时用以下dns解析
+# 当geoip过滤不是cn时用以下dns解析
   fallback:
     - https://doh.opendns.com/dns-query
-    - https://dns.cloudflare.com/dns-query
+    - https://dns.cloudflare.com/dns-query  
     
 # 指定该域名用fallback解析   
   domain:
     - "+.google.com"
     - "+.facebook.com"
-    - "+.youtube.com"
+    - "+.youtube.com"     
     
 #💡 tun模式配置
 tun:
   enable: true
   stack: system
-  auto-redir: true
+# 配置路由表  
   auto-route: true
+# 启用auto_route时使用自定义路由而不是默认路由  
+  inet4_route_address:
+    - 0.0.0.0/1
+    - 128.0.0.0/1
+ # 启用auto_route时使用自定义路由而不是默认路由    
+  inet6_route_address:
+    - "::/1"
+    - "8000::/1"  
+# 自动识别出口网卡
   auto-detect-interface: true
+# 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  strict_route: true
 # dns劫持仅支持tcp/udp
   dns-hijack:
     - any:53
