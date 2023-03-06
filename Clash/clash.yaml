@@ -209,7 +209,7 @@ proxy-providers:
 
 #💡 策略组
 proxy-groups:
-  - name: 🔰 手动选择
+  - name: 🔰 手动策略
     type: select
     proxies:
       - ♻️ 自动切换
@@ -291,12 +291,12 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 手动选择
+      - 🔰 手动策略
       
   - name: 🎵 国际抖音
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -307,7 +307,7 @@ proxy-groups:
   - name: ✉️ 电报群聊
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -318,7 +318,7 @@ proxy-groups:
   - name: 🎶 声田音乐
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -329,7 +329,7 @@ proxy-groups:
   - name: 📽️ 奈飞影视
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -340,7 +340,7 @@ proxy-groups:
   - name: 📼 迪家影视
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -351,7 +351,7 @@ proxy-groups:
   - name: 📹 油管视频
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -362,7 +362,7 @@ proxy-groups:
   - name: 🤖 脸书服务
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -373,7 +373,7 @@ proxy-groups:
   - name: 📟 谷歌服务
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -385,7 +385,7 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -397,7 +397,7 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -408,7 +408,7 @@ proxy-groups:
   - name: 🎮 国际游戏
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -420,7 +420,7 @@ proxy-groups:
   - name: 🎬 国际媒体
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -431,7 +431,7 @@ proxy-groups:
   - name: 🌐 国际加速
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - 🇯🇵 日本节点
@@ -443,19 +443,19 @@ proxy-groups:
     type: select
     proxies:
       - 🇨🇳 中国直连
-      - 🔰 手动选择
+      - 🔰 手动策略
 
   - name: 🇨🇳 中国直连
     type: select
     proxies:
       - DIRECT
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇨🇳 中国节点
 
   - name: 🐟 漏网之鱼
     type: select
     proxies:
-      - 🔰 手动选择
+      - 🔰 手动策略
       - 🇨🇳 中国直连
       - ⛔ 广告拦截
 
