@@ -93,7 +93,7 @@ dns:
 #💡 tun模式配置
 tun:
   enable: true
-  stack: gvisor
+  stack: system
   auto-redir: true
   auto-route: true
   auto-detect-interface: true
