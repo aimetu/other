@@ -135,7 +135,7 @@ dns:
 tun:
 # 开启/关闭tun模式
   enable: true
-# 数据结构system或gvisor
+# 网络栈类型system或gvisor
   stack: system
 # 开启或关闭自动检测
   auto-redir: true
