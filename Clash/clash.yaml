@@ -65,7 +65,8 @@ dns:
  # 开启/关闭doh支持http/3，将并发尝试 
   prefer-h3: false
 # 开启dns服务器监听
-  listen: 0.0.0.0:53 
+  listen: 0.0.0.0:53
+# 增强模式  
   enhanced-mode: fake-ip
 # fake-ip范围池设置  
   ake-ip-range: 198.18.0.1/16
@@ -132,8 +133,12 @@ dns:
     
 #💡 tun模式配置
 tun:
+# 开启/关闭tun模式
   enable: true
+# 数据结构system或gvisor
   stack: system
+# 开启或关闭自动检测
+  auto-redir: true
 # 配置路由表  
   auto-route: true
 # 启用auto_route时使用自定义路由而不是默认路由  
