@@ -55,7 +55,7 @@ dns:
 # 引导dns用来解析doh/dot的ip地址，只接受ip
   default-nameserver:
     - 223.5.5.5
-    - 119.29.29.29
+    - 208.67.222.222
     
 # 自定义上游dns服务器，支持udp/tcp/dot/doh等协议   
   nameserver:
@@ -81,8 +81,8 @@ dns:
       
 # 当geoip不是cn时用以下dns解析
   fallback:
-    - tls://dns.google
     - https://doh.opendns.com/dns-query
+    - https://dns.cloudflare.com/dns-query
     
 # 指定该域名用fallback解析   
   domain:
