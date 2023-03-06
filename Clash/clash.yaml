@@ -70,7 +70,7 @@ dns:
   enhanced-mode: fake-ip
 # fake-ip范围池设置  
   ake-ip-range: 198.18.0.1/16
-# 查询hosts  
+# 查询hosts并返回ip记录
   use-hosts: true
 # 配置不使用fake-ip的域名  
   fake-ip-filter:
