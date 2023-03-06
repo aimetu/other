@@ -21,16 +21,23 @@ mixed-port: 7890
 # 允许局域网内其它设备通过clash访问互联网,默认开启
 allow-lan: true
 
+# 这仅适用allow-lan为true的情况，'*'为绑定所有ip
+bind-address: '*'
+
 # 开启ipv6转换,设置为false时关闭,默认开启
 ipv6: true
 
 # 外部控制器可以通过监听地址控制clash
 external-controller: 127.0.0.1:9090
 
+# 当两个不同的配置有同名的组时将共享
+profile:
+  store-selected: true
+  store-fake-ip: true
+  
 #💡 dns服务器配置
 dns:
   enable: true
-  ipv6: true 
   listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   ake-ip-range: 198.18.0.1/16
