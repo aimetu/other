@@ -2,6 +2,7 @@
 # 配置样例:https://lancellc.gitbook.io/clash
 # 官方模板:https://github.com/Dreamacro/clash/wiki/Configuration
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+#注意:去掉前面的注释符号"#"该行生效,开启=true,关闭=false
 
 #💡 通用设置
 # 网络模式:rule规则/global全局/direct直连/script脚本
