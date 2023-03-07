@@ -86,8 +86,9 @@
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
 - *[clash for windows-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
 - *[clash for windows-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
-- *[clash-代理](https://github.com/Dreamacro/clash)*
-- *[clashx-代理](https://github.com/yichengchen/clashX)*
+- *[clash-多平台代理](https://github.com/Dreamacro/clash)*
+- *[clashx-mac](https://github.com/yichengchen/clashX)*
+- *[clashx-android](https://github.com/Kr328/ClashForAndroid)*
 - *[Loyalsoldier-分流规则](https://github.com/Loyalsoldier/clash-rules)*
 - *[hackl0us-规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
