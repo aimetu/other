@@ -299,8 +299,6 @@ proxy-groups:
       
   - name: ✅ 节点选择
     type: select
-    url: http://www.gstatic.com/generate_204
-    interval: 600
     use:
       - all
       
