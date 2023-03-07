@@ -60,7 +60,7 @@ profile:
 #💡 tun模式配置
 tun:
 # 开启/关闭tun模式
-  enable: false
+  enable: true
 # 网络栈类型system或gvisor
   stack: system
 # 开启或关闭自动重定向
