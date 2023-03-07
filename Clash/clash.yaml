@@ -43,7 +43,7 @@ external-controller: 127.0.0.1:9090
 # - off, 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: strict
 
-#自定义geodata url
+# 自定义geodata url
 geox-url:
   geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
@@ -56,6 +56,31 @@ profile:
 # 存储fake-ip记录
   store-fake-ip: true
   
+#💡 tun模式配置
+tun:
+# 开启/关闭tun模式
+  enable: false
+# 网络栈类型system或gvisor
+  stack: system
+# 开启或关闭自动重定向
+  auto-redir: true
+# 配置路由表  
+  auto-route: false
+# 启用auto_route时使用自定义路由而不是默认路由  
+  inet4_route_address:
+    - 0.0.0.0/1
+    - 128.0.0.0/1
+  inet6_route_address:
+    - "::/1"
+    - "8000::/1"  
+# 自动识别出口网卡
+  auto-detect-interface: true
+# 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  strict_route: true
+# dns劫持仅支持tcp/udp
+  dns-hijack:
+    - any:53
+    
 #💡 dns服务器配置
 dns:
 # 开启/关闭服务器配置，关闭将使用系统dns
@@ -66,12 +91,12 @@ dns:
   prefer-h3: false
 # 开启dns服务器监听
   listen: 0.0.0.0:53
+# 查询hosts并返回ip记录
+  use-hosts: true
 # 增强模式  
   enhanced-mode: fake-ip
 # fake-ip范围池设置  
   fake-ip-range: 198.18.0.1/16
-# 查询hosts并返回ip记录
-  use-hosts: true
 # 配置不使用fake-ip的域名  
   fake-ip-filter:
     - "*.lan"
@@ -99,7 +124,12 @@ dns:
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
- 
+    
+# 服务器节点域名解析的dns服务器，查询失败将使用nameserver
+  proxy-server-nameserver:
+   - https://doh.opendns.com/dns-query
+   - https://dns.cloudflare.com/dns-query
+   
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     "openwrt.lan": system
@@ -116,6 +146,9 @@ dns:
     geoip: true
 # geoip库匹配cn时，不使用fallback中的dns查询    
     geoip-code: CN
+# 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
+    geosite:
+      - gfw
 # 如果不匹配ipcidr则使用nameservers中的结果    
     ipcidr:
       - 240.0.0.0/4
@@ -130,33 +163,7 @@ dns:
     - "+.google.com"
     - "+.facebook.com"
     - "+.youtube.com"     
-    
-#💡 tun模式配置
-tun:
-# 开启/关闭tun模式
-  enable: true
-# 网络栈类型system或gvisor
-  stack: system
-# 开启或关闭自动检测
-  auto-redir: true
-# 配置路由表  
-  auto-route: true
-# 启用auto_route时使用自定义路由而不是默认路由  
-  inet4_route_address:
-    - 0.0.0.0/1
-    - 128.0.0.0/1
- # 启用auto_route时使用自定义路由而不是默认路由    
-  inet6_route_address:
-    - "::/1"
-    - "8000::/1"  
-# 自动识别出口网卡
-  auto-detect-interface: true
-# 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
-  strict_route: true
-# dns劫持仅支持tcp/udp
-  dns-hijack:
-    - any:53
-    
+
 #💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
