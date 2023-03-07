@@ -292,6 +292,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - all
       
@@ -306,13 +308,17 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - hk
-      
+    
   - name: 🇹🇼 台湾节点
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - tw
 
@@ -320,6 +326,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - jp    
       
@@ -327,6 +335,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - kr
 
@@ -334,6 +344,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - sg
       
@@ -341,6 +353,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - us
 
@@ -348,6 +362,8 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 150
+    lazy: true
     use:
       - cn
 
