@@ -31,6 +31,7 @@
 - *[githubdulong-脚本配置](https://github.com/githubdulong)*
 - *[clydetime-脚本配置](https://github.com/ClydeTime/Quantumult)*
 - *[]()*
+- *[]()*
 
 - ##### quantumult_x懒人配置 #####
 - *[kop-xiao](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
@@ -38,21 +39,25 @@
 - *[divineengine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf)*
 - *[tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf)*
 - *[limbopro](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf)*
-- *[openit](https://raw.githubusercontent.com/yu-steven/openit/main/Quanx.conf)*
+- *[fmz200](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf)*
 - *[ddgksf2013](https://raw.githubusercontent.com/ddgksf2013/Profile/master/QuantumultX.conf)*
 - *[zwf234](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf)*
 - *[geq1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf)*
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf)*
 - *[w37fhy](https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_diy.conf)*
 - *[githubdulong](https://raw.githubusercontent.com/githubdulong/Script/master/QuantumultX/QuantumultX.conf)*
+- *[godmoli](https://raw.githubusercontent.com/GodMoli/QuanX/main/File/Auto.conf)*
+- *[]()*
 - *[]()*
 
 - ##### loon插件仓库配置 #####
+- *[loon0x00-官方教程](https://loon0x00.github.io/LoonManual/#/)*
 - *[loon0x00-配置样例](https://github.com/Loon0x00/LoonManual)*
 - *[peng-ym-loon仓库](https://loon-gallery.vercel.app/)*
 - *[deezertidal-loon插件](https://github.com/deezertidal/private)*
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
 - *[mengyu-配置教程](https://github.com/mengyulianmian)*
+- *[]()*
 - *[]()*
 
 - ##### openwrt大佬的github #####
@@ -67,16 +72,25 @@
 - *[mosdns-dns服务](https://github.com/IrineSistiana/mosdns)*
 - *[smartdns-dns服务](https://github.com/pymumu/smartdns)*
 - *[]()*
+- *[]()*
 
 - ##### clash配置相关 #####
+- *[surfboard-代理应用](https://github.com/getsurfboard/surfboard)*
+- *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
+- *[stash-代理应用](https://stash.wiki)*
+- *[stash-配置样例](https://stash.wiki/features/example-config)*
+- *[clash for windows-代理应用]((https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
-- *[clash for windows](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
-- *[clash](https://github.com/Dreamacro/clash)*
-- *[clashx](https://github.com/yichengchen/clashX)*
-- *[clash-分流规则](https://github.com/Loyalsoldier/clash-rules)*
+- *[clash-官方模板]([https://github.com/Dreamacro/clash/wiki/Configuration)*
+- *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
+- *[clash for windows-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
+- *[clash for windows-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
+- *[clash-代理](https://github.com/Dreamacro/clash)*
+- *[clashx-代理](https://github.com/yichengchen/clashX)*
+- *[Loyalsoldier-分流规则](https://github.com/Loyalsoldier/clash-rules)*
 - *[hackl0us-规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
-- *[openit-节点工具](https://github.com/yu-steven/openit)*
-- *[surfboard-代理应用](https://github.com/getsurfboard/surfboard)*
+- *[]()*
+- *[]()*
