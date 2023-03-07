@@ -82,7 +82,7 @@
 - *[clash for windows-代理应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
-- *[clash-官方模板]([https://github.com/Dreamacro/clash/wiki/Configuration)*
+- *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
 - *[clash for windows-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
 - *[clash for windows-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
