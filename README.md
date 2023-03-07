@@ -79,7 +79,7 @@
 - *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
 - *[stash-代理应用](https://stash.wiki)*
 - *[stash-配置样例](https://stash.wiki/features/example-config)*
-- *[clash for windows-代理应用]((https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash for windows-代理应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板]([https://github.com/Dreamacro/clash/wiki/Configuration)*
