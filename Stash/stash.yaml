@@ -232,8 +232,8 @@ proxy-groups:
   ssid-policy:
     cellular: ♻️ auto
     default: ♻️ auto  
-    OpenWrt: 🇺🇳 nations
-    OpenWrt_5G: 🇭🇰 hongkong
+    OpenWrt: DIRECT
+    OpenWrt_5G: DIRECT
 
 - name: ♻️ auto
   type: url-test
