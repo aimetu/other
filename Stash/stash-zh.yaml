@@ -232,8 +232,8 @@ proxy-groups:
   ssid-policy:
     cellular: ♻️ 自动切换
     default: ♻️ 自动切换  
-    OpenWrt: 🇺🇳 国际节点
-    OpenWrt_5G: 🇭🇰 香港节点
+    OpenWrt: DIRECT
+    OpenWrt_5G: DIRECT
 
 - name: ♻️ 自动切换
   type: url-test
