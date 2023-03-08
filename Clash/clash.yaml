@@ -128,12 +128,12 @@ dns:
 # 引导dns用来解析doh/dot的ip地址，只接受ip
   default-nameserver:
     - 223.5.5.5
-    - 208.67.222.222
+    - 119.29.29.29
     
 # 自定义上游dns服务器，支持udp/tcp/dot/doh等协议   
   nameserver:
     - https://dns.alidns.com/dns-query
-    - https://doh.opendns.com/dns-query
+    - https://doh.pub/dns-query
     
 # 服务器节点域名解析的dns服务器，查询失败将使用nameserver
   proxy-server-nameserver:
