@@ -1,27 +1,27 @@
-#>2023.3.1
+# 2023.3.1
 # 配置样例:https://stash.wiki/features/example-config
 # 注意:去掉前面的注释符号"#"该行生效,开启=true,关闭=false
 
-#💡 通用设置
+# 💡 通用设置
 # 网络模式:rule规则/global代理/direct直连
 mode: rule
 
 # 日志模式:silent静默/info信息/warning警告/error错误/debug调试
 log-level: info
 
-#💡 代理服务信息在主页显示
+# 💡 代理服务信息在主页显示
 subscribe-url: 输入订阅链接
 
-#💡 远程代理服务器订阅链接
+# 💡 远程代理服务器订阅链接
 proxy-providers:
   node:
     url: https://sub.store/download/collection/node
     interval: 86400
 
-#💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic等协议）
+# 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic等协议）
 proxies:
 
-#💡 dns服务器配置
+# 💡 dns服务器配置
 dns:
 # 跳过证书验证，解决部分兼容性问题,默认开启
   skip-cert-verify: true
@@ -84,18 +84,18 @@ dns:
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": quic://cn-east.ovo.glass
     
-#💡 本地域名映射
+# 💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
   ".dev": 127.0.0.1
   "alpha.clash.dev": '::1'
 
-#💡 http3/quic协议基于udp，在目前的网络环境下较为低效,禁用quic协议
+# 💡 http3/quic协议基于udp，在目前的网络环境下较为低效,禁用quic协议
 script:
   shortcuts:
     quic: network == 'udp' and dst_port == 443  # 屏蔽http3/quic,让流量回落至http2,避免udp被qos
 
-#💡 http引擎相关
+# 💡 http引擎相关
 http:
 # 强制使用http引擎处理tcp连接 
   force-http-engine:
@@ -202,7 +202,7 @@ script-providers:
     url: https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
     interval: 86400
 
-#💡 策略组
+# 💡 策略组
 proxy-groups: 
 - name: 🔰 pick
   type: select
@@ -525,7 +525,7 @@ proxy-groups:
   - REJECT
   - DIRECT
 
-#💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
+# 💡 远程分流规则（domain-text=ipcidr-text > domain=ipcidr > classical）
 rule-providers:
   🚥 direct:
     behavior: classical
@@ -637,7 +637,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_IP.txt
     interval: 86400
     
-#💡 规则类型引用（指定规则类型引用代理或策略组）
+# 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
 - RULE-SET,🚥 direct,🇨🇳 china
 - RULE-SET,⛔ privacy,⛔ adblock
