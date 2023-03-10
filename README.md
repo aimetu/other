@@ -1,7 +1,7 @@
 - *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
 
 - ##### quantumult_x大佬的Github #####
-- *[crossutility-quantumult_x](https://github.com/crossutility/Quantumult-X)*
+- *[quantumultx](https://github.com/crossutility/Quantumult-X)*
 - *[kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store)*
 - *[hacklous-geoip2cn](https://github.com/Hackl0us/GeoIP2-CN)*
@@ -51,12 +51,11 @@
 - *[]()*
 
 - ##### loon插件仓库配置 #####
-- *[loon0x00-官方教程](https://loon0x00.github.io/LoonManual/#/)*
-- *[loon0x00-配置样例](https://github.com/Loon0x00/LoonManual)*
+- *[loon0x00-教程](https://loon0x00.github.io/LoonManual/#/)*
+- *[loon0x00-样例](https://github.com/Loon0x00/LoonManual)*
 - *[peng-ym-loon仓库](https://loon-gallery.vercel.app/)*
 - *[deezertidal-loon插件](https://github.com/deezertidal/private)*
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
-- *[mengyu-配置教程](https://github.com/mengyulianmian)*
 - *[]()*
 - *[]()*
 
@@ -75,11 +74,11 @@
 - *[]()*
 
 - ##### clash配置相关 #####
-- *[surfboard-代理应用](https://github.com/getsurfboard/surfboard)*
+- *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
 - *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
-- *[stash-代理应用](https://stash.wiki)*
+- *[stash-应用](https://stash.wiki)*
 - *[stash-配置样例](https://stash.wiki/features/example-config)*
-- *[clash for windows-代理应用](https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash for windows-应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
