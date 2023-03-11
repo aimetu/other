@@ -1,6 +1,6 @@
 - *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
 
-- ##### quantumult_x大佬的Github #####
+- ##### quantumult_x #####
 - *[quantumultx](https://github.com/crossutility/Quantumult-X)*
 - *[kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store)*
@@ -33,7 +33,7 @@
 - *[weiren0-scripts](https://github.com/WeiRen0/Scripts)*
 - *[]()*
 
-- ##### quantumult_x懒人配置 #####
+- ##### quantumult_x.conf #####
 - *[kop-xiao](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)*
 - *[orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf)*
 - *[divineengine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf)*
@@ -50,7 +50,7 @@
 - *[]()*
 - *[]()*
 
-- ##### loon插件仓库配置 #####
+- ##### loon #####
 - *[loon0x00-教程](https://loon0x00.github.io/LoonManual/#/)*
 - *[loon0x00-样例](https://github.com/Loon0x00/LoonManual)*
 - *[peng-ym-loon仓库](https://loon-gallery.vercel.app/)*
@@ -59,7 +59,7 @@
 - *[]()*
 - *[]()*
 
-- ##### openwrt大佬的github #####
+- ##### openwrt #####
 - *[p3terx-云编译](https://github.com/P3TERX/Actions-OpenWrt)*
 - *[openwrt-官方源](https://github.com/openwrt/openwrt)*
 - *[Lean-源码库](https://github.com/coolsnowwolf/lede)*
@@ -73,7 +73,7 @@
 - *[]()*
 - *[]()*
 
-- ##### clash配置相关 #####
+- ##### clash #####
 - *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
 - *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
 - *[stash-应用](https://stash.wiki)*
