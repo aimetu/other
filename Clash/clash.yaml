@@ -1,6 +1,7 @@
 # 应用介绍:https://docs.cfw.lbyczf.com/
 # 配置样例:https://lancellc.gitbook.io/clash
 # 官方模板:https://github.com/Dreamacro/clash/wiki/Configuration
+# meta样例:https://docs.metacubex.one/example/ex1
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 注意:去掉前面的注释符号"#"该行生效,开启=true,关闭=false
 
@@ -50,12 +51,12 @@ geox-url:
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
   mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
   
-# 将结果存储在缓存中
+# 缓存设置(文件位置./cache.db)
 profile:
-# 存储select记录
+# 节点状态记忆（若不同配置有同代理名称,设置值共享）
   store-selected: false
-# 存储fake-ip记录
-  store-fake-ip: true
+# fake-ip缓存
+  store-fake-ip: false
   
 #💡 tun模式配置
 tun:
@@ -84,21 +85,21 @@ tun:
     
 #💡 dns服务器配置
 dns:
-# 开启/关闭服务器配置，关闭将使用系统dns
+# dns开关(false/true)，关闭将使用系统dns
   enable: true
-# 开启/关闭ipv6返回结果，关闭将AAAA的结果为空
+# ipv6解析开关；如果为false，将返回ip6结果为空
   ipv6: true
  # 开启/关闭doh支持http/3，将并发尝试 
   prefer-h3: false
 # 开启dns服务器监听
   listen: 0.0.0.0:53
-# 查询hosts并返回ip记录
+# 查询hosts配置并返回真实ip
   use-hosts: true
 # 增强模式  
   enhanced-mode: fake-ip
-# fake-ip范围池设置  
+# fake-ip解析地址池  
   fake-ip-range: 198.18.0.1/16
-# 配置不使用fake-ip的域名  
+# fake-ip过滤，列表中的域名返回真实ip  
   fake-ip-filter:
     - "*.lan"
     - "*.local"
