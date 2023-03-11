@@ -12,7 +12,7 @@ mode: rule
 # 日志模式:silent静默/info信息/warning警告/error错误/debug调试
 log-level: info
 
-# 开启/关闭ipv6总开关，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
+# ipv6总开关，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
 ipv6: true
 
 # 本地http(s)服务端口
@@ -126,12 +126,12 @@ dns:
     - "opencloud.wostore.cn"
     - "auth.wosms.cn"
     
-# 引导dns用来解析doh/dot的ip地址，只接受ip
+# 引导dns用来解析非ip的dns服务器,只支持纯ip
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
     
-# 自定义上游dns服务器，支持udp/tcp/dot/doh等协议   
+# 默认dns服务器，支持udp/tcp/dot/doh等协议   
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -151,11 +151,11 @@ dns:
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": https://doh.opendns.com/dns-query
 
-# 配置fallback使用条件
+# 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置是否开启geoip  
     geoip: true
-# geoip库匹配cn时，不使用fallback中的dns查询    
+# geoip库匹配cn时，使用fallback返回结果 
     geoip-code: CN
 # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
     geosite:
@@ -164,7 +164,7 @@ dns:
     ipcidr:
       - 240.0.0.0/4
       
-# 当geoip过滤不是cn时用以下dns解析
+# 回落dns服务器,当geoip过滤不是cn时用以下dns解析
   fallback:
     - https://doh.opendns.com/dns-query
     - https://dns.cloudflare.com/dns-query  
