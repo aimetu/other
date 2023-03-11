@@ -30,7 +30,7 @@ tproxy-port: 7893
 # 本地http(s)或socks5服务使用同一端口
 mixed-port: 7890
 
-# 允许局域网内其它设备通过clash访问互联网,默认开启
+# 允许局域网内其它设备通过clash访问互联网开关(false/true)
 allow-lan: true
 
 # 这仅适用allow-lan为true的情况，'*'表示所有地址
@@ -95,7 +95,7 @@ dns:
   listen: 0.0.0.0:53
 # 查询hosts配置并返回真实ip开关(false/true)
   use-hosts: true
-# 增强模式  
+# dns增强模式  
   enhanced-mode: fake-ip
 # fake-ip解析地址池  
   fake-ip-range: 198.18.0.1/16
