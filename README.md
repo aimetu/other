@@ -31,6 +31,7 @@
 - *[githubdulong-脚本配置](https://github.com/githubdulong)*
 - *[clydetime-脚本配置](https://github.com/ClydeTime/Quantumult)*
 - *[weiren0-scripts](https://github.com/WeiRen0/Scripts)*
+- *[lowking-scripts](https://github.com/lowking/Scripts)*
 - *[]()*
 
 - ##### quantumult_x.conf #####
