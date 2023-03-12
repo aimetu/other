@@ -138,9 +138,9 @@ dns:
     
 # 服务器节点域名解析的dns服务器，查询失败将使用nameserver
   proxy-server-nameserver:
-   - 208.67.222.222
    - tls://8.8.4.4
    - tls://1.0.0.1
+   - 208.67.222.222
    
 # 使用指定的dns服务器解析域名
   nameserver-policy:
@@ -168,8 +168,8 @@ dns:
 # 回落dns服务器,当geoip过滤不是cn时用以下dns解析
   fallback:
     - tls://8.8.4.4
+    - https://1.0.0.1/dns-query
     - https://doh.opendns.com/dns-query 
-    - https://dns.cloudflare.com/dns-query
     
 # 指定该域名用fallback解析   
   domain:
