@@ -141,16 +141,6 @@ dns:
    - 8.8.4.4
    - 208.67.222.222
    
-# 使用指定的dns服务器解析域名
-  nameserver-policy:
-    "openwrt.lan": system
-    "blog.google": 208.67.222.222
-    "talk.google.com": 108.177.125.188
-    "mtalk.google.com": 108.177.125.188
-    "dl.google.com": https://doh.opendns.com/dns-query
-    "dl.l.google.com": https://doh.opendns.com/dns-query
-    "update.googleapis.com": https://doh.opendns.com/dns-query
-
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置geoip开关(false/true)
@@ -173,8 +163,18 @@ dns:
   domain:
     - "+.google.com"
     - "+.facebook.com"
-    - "+.youtube.com"     
-
+    - "+.youtube.com"
+    
+# 使用指定的dns服务器解析域名
+  nameserver-policy:
+    "openwrt.lan": system
+    "blog.google": 208.67.222.222
+    "talk.google.com": 108.177.125.188
+    "mtalk.google.com": 108.177.125.188
+    "dl.google.com": https://doh.opendns.com/dns-query
+    "dl.l.google.com": https://doh.opendns.com/dns-query
+    "update.googleapis.com": https://doh.opendns.com/dns-query
+    
 #💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
