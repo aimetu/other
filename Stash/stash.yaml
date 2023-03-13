@@ -71,9 +71,9 @@ dns:
       
 # 当geoip不是cn时用以下dns解析 
   fallback:
+    - https://dns.google/dns-query
     - https://doh.opendns.com/dns-query
-    - https://dns.cloudflare.com/dns-query
-    
+
 # 域名使用指定的dns服务器解析
   nameserver-policy:
     "openwrt.lan": system
