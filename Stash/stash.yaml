@@ -20,7 +20,7 @@ proxy-providers:
 
 # 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic,wireguard等协议）
 proxies:
-- name: ☁️ cloudflare-nanocat
+ - name: ☁️ cloudflare-nanocat
    type: wireguard
    server: engage.nanocat.me
    port: 2408
@@ -44,7 +44,7 @@ proxies:
     #   password: your-password
    url: "http://cp.cloudflare.com/generate_204"
 
-- name: ☁️ cloudflare-client
+ - name: ☁️ cloudflare-client
    type: wireguard
    server: engage.cloudflareclient.com
    port: 2408
