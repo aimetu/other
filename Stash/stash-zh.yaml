@@ -18,9 +18,32 @@ proxy-providers:
     url: https://sub.store/download/collection/node
     interval: 86400
 
-# 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic等协议）
+# 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic,wireguard等协议）
 proxies:
-
+ - name: ☁️ cloudflare
+   type: wireguard
+   server: engage.nanocat.me
+   port: 2408
+   ip: 172.16.0.2
+   ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
+   private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+   dns:
+   - 1.1.1.1
+   - 2606:4700:4700::1111
+   mtu: 1280
+   reserved:
+   - 80
+   - 73
+   - 10
+   keepalive: 45
+    # underlying-proxy: # optional
+    #   type: trojan
+    #   server: your-underlying-proxy
+    #   port: 443
+    #   password: your-password
+   url: "http://cp.cloudflare.com/generate_204"
+   
 # 💡 dns服务器配置
 dns:
 # 跳过证书验证开关(false/true)，解决部分兼容性问题
