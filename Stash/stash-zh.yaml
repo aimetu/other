@@ -531,6 +531,7 @@ proxy-groups:
   - DIRECT
   - REJECT
   - 🔰 手动选择
+  - ✅ 节点选择
   - 🇨🇳 中国节点
 
 - name: 🐟 漏网之鱼
