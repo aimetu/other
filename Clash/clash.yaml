@@ -537,7 +537,9 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+      - REJECT
       - 🔰 手动策略
+      - ✅ 节点选择
       - 🇨🇳 中国节点
 
   - name: 🐟 漏网之鱼
