@@ -531,6 +531,7 @@ proxy-groups:
   - DIRECT
   - REJECT
   - 🔰 pick
+  - ✅ node
   - 🇨🇳 chinese
 
 - name: 🐟 final
