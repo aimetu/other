@@ -94,6 +94,7 @@ dns:
 # 当geoip不是cn时用以下dns解析 
   fallback:
     - https://dns.google/dns-query
+    - https://1.0.0.1/dns-query
     - https://doh.opendns.com/dns-query
     
 # 域名使用指定的dns服务器解析
