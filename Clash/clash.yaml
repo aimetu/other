@@ -144,7 +144,7 @@ dns:
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置geoip开关(false/true)
-    geoip: false
+    geoip: true
 # geoip匹配区域设定，使用fallback返回结果 
     geoip-code: CN
 # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
