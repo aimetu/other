@@ -139,6 +139,7 @@ dns:
 # 服务器节点域名解析的dns服务器，查询失败将使用nameserver
   proxy-server-nameserver:
    - 8.8.4.4
+   - 1.0.0.1
    - 208.67.222.222
    
 # 配置fallback使用条件，回落dns服务器过滤
@@ -157,6 +158,7 @@ dns:
 # 回落dns服务器,当geoip过滤不是cn时用以下dns解析
   fallback:
     - tls://dns.google
+    - https://1.0.0.1/dns-query
     - https://doh.opendns.com/dns-query
     
 # 指定该域名用fallback解析   
