@@ -94,5 +94,5 @@
 - *[hackl0us-规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
-- *[]()*
+- *[wireguard-代理隧道](https://www.wireguard.com/install/)*
 - *[]()*
