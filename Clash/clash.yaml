@@ -566,7 +566,7 @@ rule-providers:
     path: ./Direct.yaml
     interval: 86400
 
-  ⛔ 中文广告:
+  ⛔ 中区广告:
     type: http
     behavior: domain
     url: https://anti-ad.net/clash.yaml
@@ -730,7 +730,7 @@ rule-providers:
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
   - RULE-SET,🚥 修正直连,🇨🇳 中国直连
-  - RULE-SET,⛔ 中文广告,⛔ 广告拦截
+  - RULE-SET,⛔ 中区广告,⛔ 广告拦截
   - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
   - RULE-SET,⛔ 网络劫持,⛔ 广告拦截
   - RULE-SET,⛔ 广告大全,⛔ 广告拦截
