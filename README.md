@@ -5,6 +5,7 @@
 - *[kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store)*
 - *[hacklous-geoip2cn](https://github.com/Hackl0us/GeoIP2-CN)*
+- *[Loyalsoldier-geoip2](https://github.com/Loyalsoldier/geoip)*
 - *[chavyleung-boxjs](https://github.com/chavyleung/boxjs-doc)*
 - *[peng-ym-脚本](https://github.com/Peng-YM)*
 - *[nobyda-脚本](https://github.com/NobyDa/Script)*
