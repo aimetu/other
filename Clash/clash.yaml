@@ -241,7 +241,7 @@ proxy-providers:
   jp:
     type: file
     path: ./all.yaml
-    filter: 日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
+    filter: 日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -250,7 +250,7 @@ proxy-providers:
   kr:
     type: file
     path: ./all.yaml
-    filter: 韩国|韓國|朝鲜|🇰🇷|KR|Korea
+    filter: 韩|韩国|韓國|朝鲜|🇰🇷|KR|Korea
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -259,7 +259,7 @@ proxy-providers:
   sg:
     type: file
     path: ./all.yaml
-    filter: 新加坡|狮城|🇸🇬|SG|Singapore
+    filter: 新|狮|新加坡|狮城|🇸🇬|SG|Singapore
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
