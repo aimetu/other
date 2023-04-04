@@ -681,8 +681,8 @@ rule-providers:
   🍎 苹果服务:
     type: http
     behavior: classical
-    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
-    path: ./Apple.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
+    path: ./Apple_Classical.yaml
     interval: 86400
     
   🎬 国际媒体:
@@ -729,7 +729,8 @@ rule-providers:
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-  - RULE-SET,🚥 修正直连,🇨🇳 中国直连 
+  - RULE-SET,🚥 修正直连,🇨🇳 中国直连
+  - RULE-SET,⛔ 中文广告,⛔ 广告拦截
   - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
   - RULE-SET,⛔ 网络劫持,⛔ 广告拦截
   - RULE-SET,⛔ 广告大全,⛔ 广告拦截
