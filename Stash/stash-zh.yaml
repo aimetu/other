@@ -364,7 +364,7 @@ proxy-groups:
   interval: 600
   lazy: true
   include-all: true
-  filter: ^((?!港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新|狮|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America).)*$
+  filter: ^((?!电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内|港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新|狮|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America).)*$
 
 - name: 🇨🇳 回国节点
   type: url-test
@@ -373,7 +373,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 移动|联通|电信|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|国内|华东|华南|华中|华西|华北
+  filter: 电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内
 
 - name: 🕸️ 网速测试
   type: select
@@ -552,10 +552,10 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
   proxies:
   - DIRECT
-  - REJECT
   - 🔰 手动选择
   - ✅ 节点选择
   - 🇨🇳 回国节点
+  - ⛔ 广告拦截
 
 - name: 🐟 漏网之鱼
   type: select
