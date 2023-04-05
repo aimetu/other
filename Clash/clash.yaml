@@ -745,7 +745,7 @@ rules:
   - RULE-SET,🎮 国际游戏,🎮 国际游戏
   - RULE-SET,📟 谷歌服务,📟 谷歌服务
   - RULE-SET,🖥️ 微软服务,🖥️ 微软服务
-  - RULE-SET,🍎 苹果更新,⛔ adblock
+  - RULE-SET,🍎 苹果更新,⛔ 广告拦截
   - RULE-SET,🍎 苹果服务,🍎 苹果服务
   - RULE-SET,🎬 国际媒体,🎬 国际媒体
   - RULE-SET,🌐 国际加速,🌐 国际加速
