@@ -277,7 +277,7 @@ proxy-providers:
   cn:
     type: file
     path: /all.yaml
-    filter: 移动|联通|电信|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|国内|华东|华南|华中|华西|华北
+    filter: 电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
