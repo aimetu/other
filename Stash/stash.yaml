@@ -257,6 +257,8 @@ proxy-groups:
   - 🏠 wireless
   - ♻️ auto
   - ✅ node
+  - ⚖️ load
+  - ⚙️ fallback
   - 🇭🇰 hongkong
   - 🇹🇼 taiwan
   - 🇯🇵 japan
@@ -274,6 +276,8 @@ proxy-groups:
   proxies:
   - ♻️ auto
   - ✅ node
+  - ⚖️ load
+  - ⚙️ fallback
   - 🇭🇰 hongkong
   - 🇹🇼 taiwan
   - 🇯🇵 japan
@@ -301,6 +305,22 @@ proxy-groups:
 - name: ✅ node
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
+  include-all: true
+  
+- name: ⚖️ load
+  type: load-balance
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  lazy: true
+  include-all: true
+  
+- name: ⚙️ fallback
+  type: fallback
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  lazy: true
   include-all: true
   
 - name: 🇭🇰 hongkong
