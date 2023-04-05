@@ -459,7 +459,19 @@ proxy-groups:
       - 🇰🇷 korea
       - 🇸🇬 singapore
       - 🇺🇸 america
-
+      
+  - name: 🎮 game
+    type: select
+    proxies:
+      - 🔰 pick
+      - 🇭🇰 hongkong
+      - 🇹🇼 taiwan
+      - 🇯🇵 japan
+      - 🇰🇷 korea
+      - 🇸🇬 singapore
+      - 🇺🇸 america
+      - 🇨🇳 chinese
+      
   - name: 📟 google
     type: select
     proxies:
@@ -494,18 +506,6 @@ proxy-groups:
       - 🇰🇷 korea
       - 🇸🇬 singapore
       - 🇺🇸 america
-
-  - name: 🎮 game
-    type: select
-    proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇨🇳 chinese
       
   - name: 🎬 streaming
     type: select
@@ -649,7 +649,14 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
     path: ./Facebook.yaml
     interval: 86400
-    
+
+  🎮 game:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    path: ./Game.yaml
+    interval: 86400
+
   📟 google:
     type: http
     behavior: classical
@@ -676,13 +683,6 @@ rule-providers:
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
     path: ./Apple_Classical.yaml
-    interval: 86400
-
-  🎮 game:
-    type: http
-    behavior: classical
-    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
-    path: ./Game.yaml
     interval: 86400
 
   🎬 streaming:
@@ -742,11 +742,11 @@ rules:
   - RULE-SET,📼 disney,📼 disney
   - RULE-SET,📹 youtube,📹 youtube
   - RULE-SET,🤖 facebook,🤖 facebook
+  - RULE-SET,🎮 game,🎮 game
   - RULE-SET,📟 google,📟 google
   - RULE-SET,🖥️ microsoft,🖥️ microsoft
   - RULE-SET,🍎 ota,⛔ adblock
   - RULE-SET,🍎 apple,🍎 apple
-  - RULE-SET,🎮 game,🎮 game
   - RULE-SET,🎬 streaming,🎬 streaming
   - RULE-SET,🌐 global,🌐 global
   - RULE-SET,📺 media,📺 media
