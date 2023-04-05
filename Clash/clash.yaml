@@ -539,10 +539,10 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - REJECT
       - 🔰 手动策略
       - ✅ 节点选择
       - 🇨🇳 回国节点
+      - ⛔ 广告拦截
 
   - name: 🐟 漏网之鱼
     type: select
