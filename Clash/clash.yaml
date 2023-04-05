@@ -291,6 +291,8 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动切换
+      - ⚖️ 负载均衡
+      - ⚙️ 故障转移
       - ✅ 节点选择
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
@@ -311,10 +313,35 @@ proxy-groups:
     use:
       - all
       
-  - name: ✅ 节点选择
-    type: select
+# 不同的请求使用不同的代理
+  - name: ⚖️ 负载均衡
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    # 禁用该组udp流量转发   
+    #disable-udp: true
+    # consistent-hashing同一请求采用相同代理
+    # round-robin所有请求使用不同的代理   
+    strategy: consistent-hashing
     use:
       - all
+
+# 直到该策略超时，才选择下一个可用代理
+  - name: ⚙️ 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    # 禁用该组udp流量转发    
+    #disable-udp: true
+    use:
+      - all
+
+- name: ✅ 节点选择
+    type: select
+    use:
+      - all 
       
   - name: 🇭🇰 香港节点
     type: url-test
