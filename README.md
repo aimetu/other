@@ -49,7 +49,7 @@
 - *[w37fhy](https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_diy.conf)*
 - *[githubdulong](https://raw.githubusercontent.com/githubdulong/Script/master/QuantumultX/QuantumultX.conf)*
 - *[godmoli](https://raw.githubusercontent.com/GodMoli/QuanX/main/File/Auto.conf)*
-- *[]()*
+- *[zhangjun](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf)*
 - *[]()*
 
 - ##### loon #####
@@ -58,7 +58,8 @@
 - *[peng-ym-loon仓库](https://loon-gallery.vercel.app/)*
 - *[deezertidal-loon插件](https://github.com/deezertidal/private)*
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
-- *[]()*
+- *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf)*
+- *[lanren-配置大全](https://www.evan888.top/1936/)*
 - *[]()*
 
 - ##### openwrt #####
@@ -73,24 +74,28 @@
 - *[mosdns-dns服务](https://github.com/IrineSistiana/mosdns)*
 - *[smartdns-dns服务](https://github.com/pymumu/smartdns)*
 - *[]()*
-- *[]()*
 
 - ##### clash #####
-- *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
-- *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
 - *[stash-应用](https://stash.wiki)*
 - *[stash-配置样例](https://stash.wiki/features/example-config)*
-- *[clash for windows-应用](https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
 - *[clash-meta样例](https://docs.metacubex.one/example/ex1)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
-- *[clash for windows-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
-- *[clash for windows-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
+- *[clash-for-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
+- *[clash-for-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
 - *[clash-多平台代理](https://github.com/Dreamacro/clash)*
 - *[clashx-mac](https://github.com/yichengchen/clashX)*
 - *[clash-android](https://github.com/Kr328/ClashForAndroid)*
+- *[clash-Kr328](https://github.com/Kr328/clash-multiplatform-compat)*
+- *[clash-meta-for-android](https://github.com/MetaCubeX/ClashMetaForAndroid)*
+- *[]()*
+
+- ##### other #####
+- *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
+- *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
 - *[Loyalsoldier-分流规则](https://github.com/Loyalsoldier/clash-rules)*
 - *[hackl0us-规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
