@@ -76,21 +76,23 @@
 - *[]()*
 
 - ##### clash #####
-- *[stash-应用](https://stash.wiki)*
-- *[stash-配置样例](https://stash.wiki/features/example-config)*
-- *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash-多平台代理](https://github.com/Dreamacro/clash)*
+- *[clash-ios-stash应用](https://stash.wiki)*
+- *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)*
+- *[clash-内核](https://github.com/Dreamacro/clash)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
-- *[clash-meta样例](https://docs.metacubex.one/example/ex1)*
+- *[clash-meta内核](https://github.com/MetaCubeX/Clash.Meta)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
-- *[clash-for-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
-- *[clash-for-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
-- *[clash-多平台代理](https://github.com/Dreamacro/clash)*
+- *[clash-meta样例](https://docs.metacubex.one/example/ex1)*
+- *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
+- *[clash-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
 - *[clashx-mac](https://github.com/yichengchen/clashX)*
-- *[clash-android](https://github.com/Kr328/ClashForAndroid)*
 - *[clash-Kr328](https://github.com/Kr328/clash-multiplatform-compat)*
-- *[clash-meta-for-android](https://github.com/MetaCubeX/ClashMetaForAndroid)*
+- *[clash-android](https://github.com/Kr328/ClashForAndroid)*
+- *[clash-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid)*
 - *[]()*
 
 - ##### other #####
@@ -101,5 +103,5 @@
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
 - *[wireguard-代理隧道](https://www.wireguard.com/install/)*
-- *[CloudFlare-WARP](https://1.1.1.1/)*
+- *[cloudFlare-warp](https://1.1.1.1/)*
 - *[]()*
