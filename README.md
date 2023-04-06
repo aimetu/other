@@ -1,7 +1,7 @@
 - *[中国法律快查](https://github.com/RanKKI/LawRefBook)*
 
 - ##### quantumult_x #####
-- *[quantumultx](https://github.com/crossutility/Quantumult-X)*
+- *[quantumultx-核心](https://github.com/crossutility/Quantumult-X)*
 - *[kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX)*
 - *[sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store)*
 - *[hacklous-geoip2cn](https://github.com/Hackl0us/GeoIP2-CN)*
@@ -53,8 +53,8 @@
 - *[]()*
 
 - ##### loon #####
+- *[loon0x00-核心](https://github.com/Loon0x00/LoonManual)*
 - *[loon0x00-教程](https://loon0x00.github.io/LoonManual/#/)*
-- *[loon0x00-样例](https://github.com/Loon0x00/LoonManual)*
 - *[peng-ym-loon仓库](https://loon-gallery.vercel.app/)*
 - *[deezertidal-loon插件](https://github.com/deezertidal/private)*
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
@@ -64,7 +64,7 @@
 
 - ##### openwrt #####
 - *[p3terx-云编译](https://github.com/P3TERX/Actions-OpenWrt)*
-- *[openwrt-官方源](https://github.com/openwrt/openwrt)*
+- *[openwrt-核心源](https://github.com/openwrt/openwrt)*
 - *[Lean-源码库](https://github.com/coolsnowwolf/lede)*
 - *[kenzo-插件库](https://github.com/kenzok8/openwrt-packages)*
 - *[kiddin9-插件库](https://github.com/kiddin9/openwrt-packages)*
@@ -79,11 +79,11 @@
 - *[clash-多平台代理](https://github.com/Dreamacro/clash)*
 - *[clash-ios-stash应用](https://stash.wiki)*
 - *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)*
-- *[clash-内核](https://github.com/Dreamacro/clash)*
+- *[clash-核心](https://github.com/Dreamacro/clash)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
-- *[clash-meta内核](https://github.com/MetaCubeX/Clash.Meta)*
+- *[clash-meta核心](https://github.com/MetaCubeX/Clash.Meta)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
 - *[clash-meta样例](https://docs.metacubex.one/example/ex1)*
 - *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
