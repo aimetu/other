@@ -313,7 +313,14 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
-  include-all: true
+  proxies:
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇸 america
   
 - name: ⚙️ fallback
   type: fallback
@@ -321,7 +328,14 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
-  include-all: true
+  proxies:
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇸 america
   
 - name: 🇭🇰 hongkong
   type: url-test
