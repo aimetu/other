@@ -80,6 +80,7 @@
 - *[clash-ios-stash应用](https://stash.wiki)*
 - *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)*
 - *[clash-核心](https://github.com/Dreamacro/clash)*
+- *[clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium)*
 - *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
 - *[clash-配置样例](https://lancellc.gitbook.io/clash)*
 - *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
@@ -89,19 +90,25 @@
 - *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
 - *[clash-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
-- *[clashx-mac](https://github.com/yichengchen/clashX)*
+- *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)*
+- *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)*
+- *[clashx-macos](https://github.com/yichengchen/clashX)*
+- *[clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)*
 - *[clash-Kr328](https://github.com/Kr328/clash-multiplatform-compat)*
 - *[clash-android](https://github.com/Kr328/ClashForAndroid)*
 - *[clash-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid)*
+- *[clash-android-magisk](https://docs.adlyq.ml/)*
 - *[]()*
 
 - ##### other #####
 - *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
 - *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
-- *[Loyalsoldier-分流规则](https://github.com/Loyalsoldier/clash-rules)*
-- *[hackl0us-规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
+- *[Loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules)*
+- *[acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master)*
+- *[hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
+- *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)*
 - *[wireguard-代理隧道](https://www.wireguard.com/install/)*
 - *[cloudFlare-warp](https://1.1.1.1/)*
 - *[]()*
