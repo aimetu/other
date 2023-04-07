@@ -499,18 +499,6 @@ proxy-groups:
       - 🇸🇬 狮城节点
       - 🇺🇸 美国节点
       
-  - name: 🎮 国际游戏
-    type: select
-    proxies:
-      - 🔰 手动选择
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇯🇵 日本节点
-      - 🇰🇷 韩国节点
-      - 🇸🇬 狮城节点
-      - 🇺🇸 美国节点
-      - 🇨🇳 回国节点
-      
   - name: 📟 谷歌服务
     type: select
     proxies:
@@ -689,13 +677,6 @@ rule-providers:
     path: ./Facebook.yaml
     interval: 86400
 
-  🎮 国际游戏:
-    type: http
-    behavior: classical
-    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
-    path: ./Game.yaml
-    interval: 86400
-
   📟 谷歌服务:
     type: http
     behavior: classical
@@ -781,7 +762,6 @@ rules:
   - RULE-SET,📼 迪家影视,📼 迪家影视
   - RULE-SET,📹 油管视频,📹 油管视频
   - RULE-SET,🤖 脸书服务,🤖 脸书服务
-  - RULE-SET,🎮 国际游戏,🎮 国际游戏
   - RULE-SET,📟 谷歌服务,📟 谷歌服务
   - RULE-SET,🖥️ 微软服务,🖥️ 微软服务
   - RULE-SET,🍎 苹果更新,⛔ 广告拦截
