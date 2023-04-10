@@ -4,7 +4,7 @@
 # meta样例:https://docs.metacubex.one/example/ex1
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
-# 2023.4.5
+# 2023.4.10
 # 注意:去掉前面的注释符号"#"该行生效
 
 #💡 通用设置
@@ -35,8 +35,20 @@ mixed-port: 7890
 # 允许局域网内其它设备通过clash访问互联网开关(false/true)
 allow-lan: true
 
-# 这仅适用allow-lan为true的情况，'*'表示所有地址
+# 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
 bind-address: '*'
+
+# clash的流量出站接口
+interface-name: en0
+
+# 为linux下的出站连接提供默认流量标记
+routing-mark: 6666
+
+# 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
+tcp-concurrent: true
+
+# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
+global-client-fingerprint: chrome
 
 # 外部控制器可以通过监听地址控制clash
 external-controller: 127.0.0.1:9090
@@ -47,7 +59,10 @@ external-controller: 127.0.0.1:9090
 # - off, 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: strict
 
-# 自定义geodata url
+# geoip.dat数据库开关(false/true),false使用mmdb数据库「meta专属」
+geodata-mode: true
+
+# 自定义geoip.data url
 geox-url:
   geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
@@ -58,12 +73,12 @@ profile:
 # 节点状态记忆（若不同配置有同代理名称,设置值共享）
   store-selected: false
 # fake-ip缓存
-  store-fake-ip: false
+  store-fake-ip: true
   
 #💡 tun模式配置
 tun:
 # tun模式开关(false/true)
-  enable: false
+  enable: true
 # 网络栈类型(system/gvisor)
   stack: system
 # 自动重定向开关(false/true)
@@ -138,7 +153,7 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     
-# 服务器节点域名解析的dns服务器，查询失败将使用nameserver
+# 代理服务器节点域名解析的dns服务器，查询失败将使用nameserver
   proxy-server-nameserver:
    - 8.8.4.4
    - 1.0.0.1
@@ -178,6 +193,27 @@ dns:
     "dl.google.com": https://doh.opendns.com/dns-query
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": https://doh.opendns.com/dns-query
+    
+# sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
+sniffer:
+# 配置sniffer开关(false/true)
+  enable: false
+# 需要嗅探的协议类型  
+  sniffing:
+    - tls
+    - http
+# 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+# 需要强制嗅探的域名    
+  force-domain:
+    - 'google.com'
+# 端口白名单
+  port-whitelist:
+    - 443
+    - 8000-9000
     
 #💡 本地域名映射
 hosts:
@@ -749,6 +785,22 @@ rule-providers:
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
+# 完整域名匹配
+  - DOMAIN,ad.21cn.com,⛔ 广告拦截
+  - DOMAIN,ad.k.21cn.com,⛔ 广告拦截
+  - DOMAIN,admarket.21cn.com,⛔ 广告拦截
+  - DOMAIN,adshows.21cn.com,⛔ 广告拦截
+# 域名后缀匹配
+  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
+# 域名关键词匹配  
+  - DOMAIN-KEYWORD,openwrt,🇨🇳 中国直连
+  # 本地ipv4匹配规则  
+  - IP-CIDR,127.0.0.0/8,DIRECT
+# 本地ipv6匹配规则  
+  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
+# 来源ip规则,匹配请求的客户端ip地址
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+# 指定规则配置
   - RULE-SET,🚥 直连修正,🇨🇳 中国直连
   - RULE-SET,⛔ 中区广告,⛔ 广告拦截
   - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
@@ -772,5 +824,6 @@ rules:
   - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国bgp,🇨🇳 中国直连
+# geoip数据库地区分流规则  
   - GEOIP,CN,🇨🇳 中国直连
   - MATCH,🐟 漏网之鱼
