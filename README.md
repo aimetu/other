@@ -81,16 +81,15 @@
 - *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)*
 - *[clash-核心](https://github.com/Dreamacro/clash)*
 - *[clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium)*
-- *[clash-应用介绍](https://docs.cfw.lbyczf.com/)*
-- *[clash-配置样例](https://lancellc.gitbook.io/clash)*
-- *[clash-官方模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
+- *[clash-cfw-官方文档](https://docs.cfw.lbyczf.com/)*
+- *[clash-D大样例](https://lancellc.gitbook.io/clash)*
+- *[clash-D大模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
 - *[clash-meta核心](https://github.com/MetaCubeX/Clash.Meta)*
+- *[clash-meta样例](https://docs.metacubex.one/example)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
-- *[clash-meta样例](https://docs.metacubex.one/example/ex1)*
 - *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
 - *[clash-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
 - *[clash-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
-- *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)*
 - *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)*
 - *[clashx-macos](https://github.com/yichengchen/clashX)*
 - *[clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)*
