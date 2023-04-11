@@ -1,4 +1,4 @@
-# 2023.4.5
+# 2023.4.10
 # 配置样例:https://stash.wiki
 # 注意:去掉前面的注释符号"#"该行生效
 
@@ -265,7 +265,7 @@ proxy-groups:
   - 🇰🇷 korea
   - 🇸🇬 singapore
   - 🇺🇸 america
-  - 🇺🇸 america
+  - 🇺🇳 nations
   - 🇨🇳 chinese
   - DIRECT
   - REJECT
@@ -320,7 +320,7 @@ proxy-groups:
   - 🇰🇷 korea
   - 🇸🇬 singapore
   - 🇺🇸 america
-  - 🇺🇸 america
+  - 🇺🇳 nations
   
 - name: ⚙️ fallback
   type: fallback
@@ -335,7 +335,7 @@ proxy-groups:
   - 🇰🇷 korea
   - 🇸🇬 singapore
   - 🇺🇸 america
-  - 🇺🇸 america
+  - 🇺🇳 nations
   
 - name: 🇭🇰 hongkong
   type: url-test
