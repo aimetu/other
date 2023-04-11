@@ -106,6 +106,8 @@ dns:
   enable: true
 # ipv6解析开关(false/true)；如果为false，将返回ip6结果为空
   ipv6: true
+# 内部双栈并发时，向上游查询时的等待时间，默认100ms(单位：ms)
+  ipv6-timeout: 300
  # doh支持http/3开关(false/true) 
   prefer-h3: false
 # 开启dns服务器监听
@@ -116,7 +118,7 @@ dns:
   enhanced-mode: fake-ip
 # fake-ip解析地址池  
   fake-ip-range: 198.18.0.1/16
-# fake-ip过滤，列表中的域名返回真实ip  
+# fake-ip过滤，列表中的域名返回真实ip
   fake-ip-filter:
     - "*.lan"
     - "*.local"
@@ -143,46 +145,46 @@ dns:
     - "opencloud.wostore.cn"
     - "auth.wosms.cn"
     
-# 引导dns用来解析非ip的dns服务器,只支持纯ip
+# 引导解析其他dns服务器,只支持纯ip可使用加密dns
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
+    - tls://223.5.5.5:853
     
-# 默认dns服务器，支持udp/tcp/dot/doh等协议   
+# 默认dns服务器，支持udp/tcp/dot/doh/doq等协议   
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     
-# 代理服务器节点域名解析的dns服务器，查询失败将使用nameserver
+# 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
   proxy-server-nameserver:
-   - 8.8.4.4
-   - 1.0.0.1
-   - 208.67.222.222
+    - 8.8.4.4
+    - 1.0.0.1
+    - 208.67.222.222
    
+# 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
+  fallback:
+    - tls://dns.google
+    - https://1.0.0.1/dns-query
+    - https://doh.opendns.com/dns-query
+    
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置geoip开关(false/true)
     geoip: true
-# geoip匹配区域设定，使用fallback返回结果 
+# geoip匹配区域设定，查询不是cn时使用fallback返回结果
     geoip-code: CN
 # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
     geosite:
       - gfw
 # 如果不匹配ipcidr则使用nameservers中的结果    
     ipcidr:
-      - 240.0.0.0/4
-      
-# 回落dns服务器,当geoip过滤不是cn时用以下dns解析
-  fallback:
-    - tls://dns.google
-    - https://1.0.0.1/dns-query
-    - https://doh.opendns.com/dns-query
-    
+      - 240.0.0.0/4      
 # 指定该域名用fallback解析   
-  domain:
-    - "+.google.com"
-    - "+.facebook.com"
-    - "+.youtube.com"
+    domain:
+      - "+.google.com"
+      - "+.facebook.com"
+      - "+.youtube.com"
     
 # 使用指定的dns服务器解析域名
   nameserver-policy:
@@ -194,7 +196,7 @@ dns:
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": https://doh.opendns.com/dns-query
     
-# sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
+#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
 sniffer:
 # 配置sniffer开关(false/true)
   enable: false
@@ -245,6 +247,9 @@ bypass:
   - 192.168.*
   - <local>
   - ...
+  
+#💡 本地代理服务器
+proxies: 
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
@@ -351,6 +356,7 @@ proxy-groups:
       - DIRECT
       - REJECT
 
+# 将按照url测试结果使用延迟最低节点
   - name: ♻️ 自动切换
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -360,12 +366,13 @@ proxy-groups:
     use:
       - all
 
+# 用户自行选择策略组或节点
   - name: ✅ 节点选择
     type: select
     use:
       - all 
 
-# 不同的请求使用不同的代理
+# 将按照算法随机选择节点,不同的请求使用不同的代理
   - name: ⚖️ 负载均衡
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -385,7 +392,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🇺🇳 国际节点
 
-# 直到该策略超时，才选择下一个可用代理
+# 将按url测试结果按照节点顺序选择,直到该策略超时，才选择下一个可用代理
   - name: ⚙️ 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
