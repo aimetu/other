@@ -99,7 +99,28 @@ tun:
 # dns劫持仅支持tcp/udp
   dns-hijack:
     - any:53
-    
+
+#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
+sniffer:
+# 配置sniffer开关(false/true)
+  enable: false
+# 需要嗅探的协议类型  
+  sniffing:
+    - tls
+    - http
+# 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+# 需要强制嗅探的域名    
+  force-domain:
+    - 'google.com'
+# 端口白名单
+  port-whitelist:
+    - 443
+    - 8000-9000
+
 #💡 dns服务器配置
 dns:
 # dns开关(false/true)，关闭将使用系统dns
@@ -195,28 +216,7 @@ dns:
     "dl.google.com": https://doh.opendns.com/dns-query
     "dl.l.google.com": https://doh.opendns.com/dns-query
     "update.googleapis.com": https://doh.opendns.com/dns-query
-    
-#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
-sniffer:
-# 配置sniffer开关(false/true)
-  enable: false
-# 需要嗅探的协议类型  
-  sniffing:
-    - tls
-    - http
-# 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
-  skip-domain:
-    - 'Mijia Cloud'
-    - 'dlg.io.mi.com'
-    - '+.apple.com'
-# 需要强制嗅探的域名    
-  force-domain:
-    - 'google.com'
-# 端口白名单
-  port-whitelist:
-    - 443
-    - 8000-9000
-    
+        
 #💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
