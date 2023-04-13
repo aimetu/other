@@ -69,7 +69,7 @@
 - *[kenzo-插件库](https://github.com/kenzok8/openwrt-packages)*
 - *[kiddin9-插件库](https://github.com/kiddin9/openwrt-packages)*
 - *[appfilter-应用过滤](https://github.com/destan19/OpenAppFilter)*
-- *[adguardHome-广告过滤](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)*
+- *[adguardhome-广告过滤](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)*
 - *[openclash-小猫咪](https://github.com/vernesong/OpenClash)*
 - *[mosdns-dns服务](https://github.com/IrineSistiana/mosdns)*
 - *[smartdns-dns服务](https://github.com/pymumu/smartdns)*
@@ -82,18 +82,18 @@
 - *[clash-核心](https://github.com/Dreamacro/clash)*
 - *[clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium)*
 - *[clash-cfw-官方文档](https://docs.cfw.lbyczf.com/)*
-- *[clash-D大样例](https://lancellc.gitbook.io/clash)*
-- *[clash-D大模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
+- *[clash-d大样例](https://lancellc.gitbook.io/clash)*
+- *[clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration)*
 - *[clash-meta核心](https://github.com/MetaCubeX/Clash.Meta)*
 - *[clash-meta样例](https://docs.metacubex.one/example)*
 - *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)*
-- *[clash-for-windows应用](https://github.com/Fndroid/clash_for_windows_pkg)*
-- *[clash-windows导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
-- *[clash-windows汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
+- *[clash-cfw应用](https://github.com/Fndroid/clash_for_windows_pkg)*
+- *[clash-cfw导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)*
+- *[clash-wcfw汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)*
 - *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)*
 - *[clashx-macos](https://github.com/yichengchen/clashX)*
 - *[clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)*
-- *[clash-Kr328](https://github.com/Kr328/clash-multiplatform-compat)*
+- *[clash-kr328](https://github.com/Kr328/clash-multiplatform-compat)*
 - *[clash-android](https://github.com/Kr328/ClashForAndroid)*
 - *[clash-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid)*
 - *[clash-android-magisk](https://docs.adlyq.ml/)*
@@ -109,5 +109,5 @@
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
 - *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)*
 - *[wireguard-代理隧道](https://www.wireguard.com/install/)*
-- *[cloudFlare-warp](https://1.1.1.1/)*
+- *[cloudflare-warp](https://1.1.1.1/)*
 - *[]()*
