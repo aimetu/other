@@ -1,0 +1,115 @@
+# 联网方式
+mode=wap;
+
+# 监听端口
+listen_port=65080;
+
+# 守护进程
+daemon=on;
+
+# 后台进程数
+worker_proc=0;
+
+# 应用放行
+uid=3004;
+
+# 获取动态token的api地址
+token_api="http://kc.iikira.com/kingcard";
+
+# http模块
+http_ip=210.22.247.196;
+http_port=8090;
+http_del="X-Online-Host,Host";
+http_first="[M] http://[H][U] [V]\r\nQ-GUID: [Q_G]\r\nQ-Token: [Q_T]\r\nHost: [H]\r\n";
+
+# https模块
+https_connect=on;
+https_ip=210.22.247.196;
+https_port=8091;
+https_del="X-Online-Host,Host";
+https_first="[M] [H] [V]\r\nHost: [H]\r\nQ-GUID: [Q_G]\r\nQ-Token: [Q_T]\r\n";
+
+# dns解析
+dns_tcp=http;
+dns_listen_port=65053;
+dns_url="119.29.29.29";
+
+# 分流字段
+bypass_flow=true;
+
+# v2ray 服务器参数按照填写
+
+# v2ray服务器 IP
+v2_address=10.0.0.1;
+
+# v2ray服务器 端口
+v2_port=886;
+
+# v2ray 用户id
+v2_id=024e6938-d626-4979-a8ba-66dsdwdfzsad;
+
+# v2ray dns设置 
+v2_dnsip=208.67.222.222;
+
+# v2ray 额外ID
+v2_alterId=0;
+
+# v2ray VLESS代理加密方式 none
+v2_encryption={encryption};
+
+# v2ray 加密方式 none auto aes-128-gcm chacha20-poly1305
+v2_security=auto;
+
+# v2ray 流控处理方式 xtls-rprx-origin xtls-rprx-direct xtls-rprx-origin-udp443 xtls-rprx-direct-udp443
+v2_flow={flow};
+
+# v2ray 传输协议 quic h2 ws kcp tcp
+v2_network=ws;
+
+# v2ray 配置别名 无效参数
+#v2_remarks=v2ray;
+
+# v2ray伪装类型 none http srtp utp wechat-video dtls wireguard
+v2_headerType=none;
+
+# v2ray伪装域名(host/ws host/h2 host)/QUIC 加密方式
+v2_requestHost=free.sinaimg.cn;
+
+# v2ray path(ws path/h2 path)/QUIC加密方式
+v2_path=/;
+
+# v2ray底层传输安全tls xtls
+v2_streamSecurity=none;
+
+# v2ray tls允许不安全连接 true false
+v2_allowlnsecure=true;
+
+# v2ray 配置类型 1 vmess 3 shadowsocks 4 socks 5 vless 6 trojan
+v2_configType=1;
+
+# v2ray 配置版本
+v2_configVersion=2;
+
+# v2ray 参数不明 留空
+v2_testResult=;
+
+# v2ray 参数不明 留空
+v2_subid=;
+
+# 连接到tiny的前置
+https_ip=127.0.0.1;
+https_port=18080;
+https_first="[M] [H] [V]\r\nHost:[H]\r\n";
+
+//本模式可自主替换IP
+//116.128.146.115===========>上海
+//210.22.247.196============>上海
+//140.207.62.38=============>上海
+//157.255.173.182===========>广东
+//157.255.137.185===========>广东
+//111.206.25.206============>北京
+//123.126.122.24============>北京
+//125.39.52.35==============>天津
+//111.161.111.158===========>天津
+
+// 参考：http://tinyproxy.mgapp.win/tinyproxy/Telegram.html
