@@ -861,16 +861,17 @@ rule-providers:
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-  - DOMAIN,ad.21cn.com,⛔ 广告拦截  # 完整域名匹配
+  - DOMAIN,ad.21cn.com,⛔ 广告拦截
   - DOMAIN,ad.k.21cn.com,⛔ 广告拦截
   - DOMAIN,admarket.21cn.com,⛔ 广告拦截
   - DOMAIN,adshows.21cn.com,⛔ 广告拦截
-  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截  # 域名后缀匹配
-  - DOMAIN-KEYWORD,openwrt,🇨🇳 中国直连  # 域名关键词匹配  
-  - IP-CIDR,127.0.0.0/8,DIRECT    # 本地ipv4匹配规则  
-  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT  # 本地ipv6匹配规则  
-  - SRC-IP-CIDR,192.168.1.201/32,DIRECT  # 来源ip规则,匹配请求的客户端ip地址
-  - RULE-SET,🚥 直连修正,🇨🇳 中国直连  # 指定规则配置
+  - DOMAIN,boxer.baidu.com,⛔ 广告拦截
+  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
+  - DOMAIN-KEYWORD,openwrt,🇨🇳 中国直连
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+  - RULE-SET,🚥 直连修正,🇨🇳 中国直连
   - RULE-SET,⛔ 中区广告,⛔ 广告拦截
   - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
   - RULE-SET,⛔ 网络劫持,⛔ 广告拦截
@@ -894,5 +895,5 @@ rules:
   - RULE-SET,🇨🇳 中国直连,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国ips,🇨🇳 中国直连
   - RULE-SET,🇨🇳 中国bgp,🇨🇳 中国直连
-  - GEOIP,CN,🇨🇳 中国直连  # geoip数据库地区分流规则  
+  - GEOIP,CN,🇨🇳 中国直连
   - MATCH,🐟 漏网之鱼
