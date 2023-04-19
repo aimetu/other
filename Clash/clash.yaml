@@ -186,7 +186,7 @@ dns:
 # 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
   fallback:
     - https://doh.opendns.com/dns-query
-    - https://cloudflare-dns.com/dns-query
+    - https://1.0.0.1/dns-query
     - tls://dns.google
 
 # 配置fallback使用条件，回落dns服务器过滤
