@@ -210,6 +210,7 @@ dns:
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     "openwrt.lan": system
+    "myrouter.local": system
     "blog.google": 208.67.222.222
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
