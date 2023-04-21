@@ -60,6 +60,7 @@
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf)*
 - *[lanren-配置大全](https://www.evan888.top/1936/)*
+- *[Repcz-配置大全](https://github.com/Repcz)*
 - *[]()*
 
 - ##### openwrt #####
