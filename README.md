@@ -60,7 +60,7 @@
 - *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)*
 - *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf)*
 - *[lanren-配置大全](https://www.evan888.top/1936/)*
-- *[Repcz-配置大全](https://github.com/Repcz)*
+- *[repcz-配置大全](https://github.com/Repcz)*
 - *[]()*
 
 - ##### openwrt #####
@@ -103,7 +103,7 @@
 - ##### other #####
 - *[surfboard-应用](https://github.com/getsurfboard/surfboard)*
 - *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)*
-- *[Loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules)*
+- *[loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules)*
 - *[acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master)*
 - *[hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)*
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
@@ -111,4 +111,6 @@
 - *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)*
 - *[wireguard-代理隧道](https://www.wireguard.com/install/)*
 - *[cloudflare-warp](https://1.1.1.1/)*
+- *[matsuri-android](https://github.com/MatsuriDayo/Matsuri)*
+- *[sub-订阅转换](https://sub.xeton.dev/)*
 - *[]()*
