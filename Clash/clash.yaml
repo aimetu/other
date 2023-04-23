@@ -282,7 +282,7 @@ proxies:
 proxy-providers:
   all:
     type: http
-    url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=false&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
+    url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
     interval: 86400
     path: /all.yaml
     health-check:
