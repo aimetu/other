@@ -109,7 +109,7 @@
 - *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)*
 - *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)*
 - *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)*
-- *[adrules-广告过滤](https://adrules.top)*
+- *[cats-team-广告过滤](https://adrules.top)*
 - *[wireguard-代理隧道](https://www.wireguard.com/install/)*
 - *[cloudflare-warp](https://1.1.1.1/)*
 - *[matsuri-android](https://github.com/MatsuriDayo/Matsuri)*
