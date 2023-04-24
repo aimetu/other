@@ -38,8 +38,11 @@ allow-lan: true
 # 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
 bind-address: '*'
 
-# clash的流量出站接口
-interface-name: WLAN
+# 自动检测clash出口网卡
+auto-detect-interface: true
+
+# 指定clash出口网卡名称
+# interface-name: WLAN
 
 # 为linux下的出站连接提供默认流量标记
 routing-mark: 6666
