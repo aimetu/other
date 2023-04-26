@@ -869,7 +869,8 @@ rules:
   - DOMAIN,adshows.21cn.com,⛔ 广告拦截
   - DOMAIN,boxer.baidu.com,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
-  - DOMAIN-KEYWORD,openwrt,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,cokemv,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,bdys,🇨🇳 中国直连
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
