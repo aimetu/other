@@ -862,13 +862,13 @@ rule-providers:
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
+  - DOMAIN,ad.cyapi.cn,⛔ 广告拦截
   - DOMAIN,ad.21cn.com,⛔ 广告拦截
   - DOMAIN,ad.k.21cn.com,⛔ 广告拦截
   - DOMAIN,admarket.21cn.com,⛔ 广告拦截
   - DOMAIN,adshows.21cn.com,⛔ 广告拦截
   - DOMAIN,boxer.baidu.com,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
-  - DOMAIN-SUFFIX,ad.cyapi.cn,⛔ 广告拦截
   - DOMAIN-KEYWORD,openwrt,🇨🇳 中国直连
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
