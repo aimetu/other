@@ -39,7 +39,7 @@
 - *[]()*
 
 🔴 **quantumult_x.conf** 
-| 序号 | 作者 | 功能 | 链接 | 平台 |
+| 序号 | 作者 | 功能 | 链接 | 适用 |
 |  ---- | ---- | ---- | ---- | ---- |
 | 1 | kop-xiao | 配置 | *[kop-xiao](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf)* | quantumultx |
 | 2 | orz-3 | 配置 | *[orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf)* | quantumultx |
@@ -58,7 +58,7 @@
 - *[]()*
 
 🐉 **loon** 
-| 序号 | 作者 | 功能 | 链接 | 平台 |
+| 序号 | 作者 | 功能 | 链接 | 适用 |
 |  ---- | ---- | ---- | ---- | ---- |
 | 1 | loon0x00 | 核心 | *[loon0x00-核心](https://github.com/Loon0x00/LoonManual)* | loon |
 | 2 | loon0x00 | 教程 | *[loon0x00-教程](https://loon0x00.github.io/LoonManual/#/)* | loon |
@@ -66,12 +66,12 @@
 | 4 | deezertidal | 插件&仓库 | *[deezertidal-loon插件](https://github.com/deezertidal/private)* | loon |
 | 5 | tartarus2014 | 配置&插件 | *[tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script)* | loon |
 | 6 | erdongchanyo | 配置 | *[erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf)* | loon |
-| 7 | lanren | 配置大全 | *[lanren-配置大全](https://www.evan888.top/1936/)* | loon |
-| 9 | repcz | 配置大全 | *[repcz-配置大全](https://github.com/Repcz)* | loon |
+| 7 | lanren | 配置大全 | *[lanren-配置大全](https://www.evan888.top/1936/)* | loon & quantumultx |
+| 9 | repcz | 配置大全 | *[repcz-配置大全](https://github.com/Repcz)* | loon & quantumultx  |
 - *[]()*
 
 💻 **openwrt** 
-| 序号 | 作者 | 功能 | 链接 | 平台 |
+| 序号 | 作者 | 功能 | 链接 | 适用 |
 |  ---- | ---- | ---- | ---- | ---- |
 | 1 | p3terx | 云编译 | *[p3terx-云编译](https://github.com/P3TERX/Actions-OpenWrt)* | openwrt |
 | 2 | openwrt | 核心源 | *[openwrt-核心源](https://github.com/openwrt/openwrt)* | openwrt |
@@ -80,30 +80,30 @@
 | 5 | kiddin9 | 插件库 | *[kiddin9-插件库](https://github.com/kiddin9/openwrt-packages)* | openwrt |
 | 6 | appfilter | 应用过滤 | *[appfilter-应用过滤](https://github.com/destan19/OpenAppFilter)* | openwrt |
 | 7 | adguardhome | 广告过滤 | *[adguardhome-广告过滤](https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#update)* | openwrt |
-| 8 | openclash | 小猫咪 | *[openclash-小猫咪](https://github.com/vernesong/OpenClash)* | openwrt |
+| 8 | openclash | 代理 | *[openclash-小猫咪](https://github.com/vernesong/OpenClash)* | openwrt |
 | 9 | mosdns | dns服务 | *[mosdns-dns服务](https://github.com/IrineSistiana/mosdns)* | openwrt |
 | 11 | smartdns| dns服务 | *[smartdns-dns服务](https://github.com/pymumu/smartdns)* | openwrt |
 - *[]()*
 
 🐈‍ **clash** 
-| 序号 | 作者 | 功能 | 链接 | 平台 |
+| 序号 | 作者 | 功能 | 链接 | 适用 |
 |  ---- | ---- | ---- | ---- | ---- |
-| 1 | Dreamacro | 多平台代理 | *[clash-多平台代理](https://github.com/Dreamacro/clash)* | android |
-| 2 | viannalau | 应用 | *[clash-ios-stash应用](https://stash.wiki)* | android |
-| 3 | features | 配置样例 | *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)* | android |
-| 4 | Dreamacro | 核心 | *[clash-核心](https://github.com/Dreamacro/clash)* |
-| 5 | Dreamacro | premium核心 | *[clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium)* | 
-| 6 | lbyczf | 配置样例 | *[clash-cfw-官方文档](https://docs.cfw.lbyczf.com/)* | android |
-| 7 | lancellc | 配置样例 | *[clash-d大样例](https://lancellc.gitbook.io/clash)* | android |
-| 8 | Dreamacro | 配置模版 | *[clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration)* | android |
-| 9 | MetaCubeX | meta核心 | *[clash-meta核心](https://github.com/MetaCubeX/Clash.Meta)* | android |
-| 10 | metacubex  | meta样例 | *[clash-meta样例](https://docs.metacubex.one/example)* | android |
-| 11 | metacubex | meta模板 | *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)* | android |
-| 12 | Fndroid | cfw应用 | *[clash-cfw应用](https://github.com/Fndroid/clash_for_windows_pkg)* | android |
-| 13 | ender-zhao | cfw导航 | *[clash-cfw导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)* | android |
+| 1 | Dreamacro | 多平台代理 | *[clash-多平台代理](https://github.com/Dreamacro/clash)* | 通用 |
+| 2 | viannalau | 应用 | *[clash-ios-stash应用](https://stash.wiki)* | ios |
+| 3 | features | 配置样例 | *[clash-ios-stash配置样例](https://stash.wiki/features/example-config)* | ios |
+| 4 | Dreamacro | 核心 | *[clash-核心](https://github.com/Dreamacro/clash)* | 通用 |
+| 5 | Dreamacro | premium核心 | *[clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium)* | 通用 |
+| 6 | lbyczf | 配置样例 | *[clash-cfw-官方文档](https://docs.cfw.lbyczf.com/)* | 通用 |
+| 7 | lancellc | 配置样例 | *[clash-d大样例](https://lancellc.gitbook.io/clash)* | 通用 |
+| 8 | Dreamacro | 配置模版 | *[clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration)* | 通用 |
+| 9 | MetaCubeX | meta核心 | *[clash-meta核心](https://github.com/MetaCubeX/Clash.Meta)* | 通用 |
+| 10 | metacubex  | meta样例 | *[clash-meta样例](https://docs.metacubex.one/example)* | 通用 |
+| 11 | metacubex | meta模板 | *[clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml)* | 通用 |
+| 12 | Fndroid | cfw应用 | *[clash-cfw应用](https://github.com/Fndroid/clash_for_windows_pkg)* | 通用 |
+| 13 | ender-zhao | cfw导航 | *[clash-cfw导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached)* | 通用 |
 | 14 | ender-zhao | wcfw汉化 | *[clash-wcfw汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese)* | android |
-| 15 | zzzgydi | 代理 | *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)* | android |
-| 16 | yichengchen | 代理 | *[clashx-macos](https://github.com/yichengchen/clashX)* | android |
+| 15 | zzzgydi | 代理 | *[clash-verge-windows](https://github.com/zzzgydi/clash-verge)* | windows |
+| 16 | yichengchen | 代理 | *[clashx-macos](https://github.com/yichengchen/clashX)* | macos |
 | 17 | distribution | 代理 | *[clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)* | android |
 | 18 | Kr328 | 代理 | *[clash-kr328](https://github.com/Kr328/clash-multiplatform-compat)* | android |
 | 19 | Kr328 | 代理 | *[clash-android](https://github.com/Kr328/ClashForAndroid)* | android |
@@ -112,19 +112,19 @@
 - *[]()*
 
 📱 **other** 
-| 序号 | 作者 | 功能 | 链接 | 平台 |
+| 序号 | 作者 | 功能 | 链接 | 适用 |
 |  ---- | ---- | ---- | ---- | ---- |
 | 1 | getsurfboard | 应用 | *[surfboard-应用](https://github.com/getsurfboard/surfboard)* | android |
 | 2 | getsurfboard | 配置样例 | *[surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview)* | android |
-| 3 | loyalsoldier | 分流规则 | *[loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules)* | android |
-| 4 | acl4ssr | 分流规则 | *[acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master)* | android |
-| 5 | hackl0us | 规则合集 | *[hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)* |  android |
-| 6 | anti-ad | 广告过滤 | *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)* | android |
-| 7 | cjx82630 | 广告过滤 | *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)* | android |
-| 8 | banbendalao | 广告过滤 | *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)* | android |
-| 9 | cats-team | 广告过滤 | *[cats-team-广告过滤](https://adrules.top)* | android |
-| 10 | wireguard | 代理隧道 | *[wireguard-代理隧道](https://www.wireguard.com/install/)* | android |
-| 11 | cloudflare | warp | *[cloudflare-warp](https://1.1.1.1/)* | android |
+| 3 | loyalsoldier | 分流规则 | *[loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules)* | 通用 |
+| 4 | acl4ssr | 分流规则 | *[acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master)* | 通用 |
+| 5 | hackl0us | 规则合集 | *[hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet)* |  通用 |
+| 6 | anti-ad | 广告过滤 | *[anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD)* | 通用 |
+| 7 | cjx82630 | 广告过滤 | *[cjxlist-广告过滤](https://github.com/cjx82630/cjxlist)* | 通用 |
+| 8 | banbendalao | 广告过滤 | *[adgk-adguard广告过滤](https://github.com/banbendalao/ADgk)* | adguard & surfboard & clash & loon & quantumultx|
+| 9 | cats-team | 广告过滤 | *[cats-team-广告过滤](https://adrules.top)* | 通用 |
+| 10 | wireguard | 代理隧道 | *[wireguard-代理隧道](https://www.wireguard.com/install/)* | 通用 |
+| 11 | cloudflare | warp | *[cloudflare-warp](https://1.1.1.1/)* | 通用 |
 | 12 | matsuri | android | *[matsuri-android](https://github.com/MatsuriDayo/Matsuri)* | android |
-| 13 | sub | 订阅转换 | *[sub-订阅转换](https://sub.xeton.dev/)* | android |
+| 13 | sub | 订阅转换 | *[sub-订阅转换](https://sub.xeton.dev/)* | 通用 |
 - *[]()*
