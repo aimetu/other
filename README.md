@@ -1,6 +1,6 @@
 - *[👨‍⚖️ 中国法律快查](https://github.com/RanKKI/LawRefBook)*
 
-| ⭕ quantumult_x |  |  |  |  |
+| 🔴 quantumult_x |  |  |  |  |
 | ---- | ---- | ---- | ---- | ---- |
 | [quantumultx-核心](https://github.com/crossutility/Quantumult-X) | [kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX) | [sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store) | [hacklous-geoip2cn](https://github.com/Hackl0us/GeoIP2-CN) | [Loyalsoldier-geoip2](https://github.com/Loyalsoldier/geoip) | 
 | [chavyleung-boxjs](https://github.com/chavyleung/boxjs-doc) | [peng-ym-脚本](https://github.com/Peng-YM) | [nobyda-脚本](https://github.com/NobyDa/Script) | [evilbutcher-脚本](https://github.com/evilbutcher/QuantumultX) | [yichahucha-脚本](https://github.com/yichahucha/surge) | [app2smile-脚本](https://github.com/app2smile/rules) | 
@@ -11,7 +11,7 @@
 | [lowking-scripts](https://github.com/lowking/Scripts) | 
 - *[]()*
 
-| ⭕ quantumult_x.conf |  |  |  |  |
+| 🔴 quantumult_x.conf |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [kop-xiao](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf) | [orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf) | [divineengine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf) | [tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf) | [limbopro](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf) | 
 | [fmz200](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf) | [ddgksf2013](https://raw.githubusercontent.com/ddgksf2013/Profile/master/QuantumultX.conf) | [zwf234](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf) | [geq1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf) | [erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf) | 
