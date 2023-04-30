@@ -868,6 +868,7 @@ rules:
   - DOMAIN,admarket.21cn.com,⛔ 广告拦截
   - DOMAIN,adshows.21cn.com,⛔ 广告拦截
   - DOMAIN,boxer.baidu.com,⛔ 广告拦截
+  - DOMAIN,mssdk-bu.bytedance.com,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
   - DOMAIN-KEYWORD,cokemv,🇨🇳 中国直连
   - DOMAIN-KEYWORD,bdys,🇨🇳 中国直连
