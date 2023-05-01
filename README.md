@@ -22,7 +22,7 @@
 | [w37fhy](https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_diy.conf) | [githubdulong](https://raw.githubusercontent.com/githubdulong/Script/master/QuantumultX/QuantumultX.conf) | [godmoli](https://raw.githubusercontent.com/GodMoli/QuanX/main/File/Auto.conf) | [zhangjun](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf) |
 - *[]()*
 
-| [ **🐉 **loon** ](https://github.com/Loon0x00) |  |  |  |  |
+| [ 🐉 **loon** ](https://github.com/Loon0x00) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [loon0x00-核心](https://github.com/Loon0x00/LoonManual) | [loon0x00-教程](https://loon0x00.github.io/LoonManual/#/) | [peng-ym-loon仓库](https://loon-gallery.vercel.app/) | [deezertidal-loon插件](https://github.com/deezertidal/private) | [tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script) |
 | [erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
