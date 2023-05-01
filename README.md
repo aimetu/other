@@ -130,4 +130,5 @@
 | 11 | cloudflare | warp | *[cloudflare-warp](https://1.1.1.1/)* | 通用 |
 | 12 | matsuri | android | *[matsuri-android](https://github.com/MatsuriDayo/Matsuri)* | android |
 | 13 | sub | 订阅转换 | *[sub-订阅转换](https://sub.xeton.dev/)* | 通用 |
+| 14 | EasyList | 广告过滤 | *[EasyList](https://easylist.to/)* | 通用 |
 - *[]()*
