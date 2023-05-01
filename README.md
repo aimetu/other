@@ -47,6 +47,6 @@
 | [📢 **other**](https://sub.xeton.dev) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [surfboard-应用](https://github.com/getsurfboard/surfboard) | [surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview) | [loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules) | [acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master) | [hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet) |
-| [anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD) | [cjxlist-广告过滤](https://github.com/cjx82630/cjxlist) | [adgk-adguard广告过滤](https://github.com/banbendalao/ADgk) | [cats-team-广告过滤](https://adrules.top) | [EasyList-广告过滤](https://easylist.to/) |
+| [anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD) | [cjxlist-广告过滤](https://github.com/cjx82630/cjxlist) | [adgk-adguard广告过滤](https://github.com/banbendalao/ADgk) | [cats-team-广告过滤](https://github.com/Cats-Team/AdRules) | [EasyList-广告过滤](https://easylist.to/) |
 | [wireguard-代理隧道](https://www.wireguard.com/install/) | [cloudflare-warp](https://1.1.1.1/) | [matsuri-android](https://github.com/MatsuriDayo/Matsuri) | [sub-订阅转换](https://sub.xeton.dev/) |
 - *[]()*
