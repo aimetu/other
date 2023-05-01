@@ -37,7 +37,7 @@
 | [😺 **clash**](https://github.com/Dreamacro/clash) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [clash-多平台代理](https://github.com/Dreamacro/clash) | [clash-ios-stash应用](https://stash.wiki) | [clash-ios-stash配置样例](https://stash.wiki/features/example-config) | [clash-核心](https://github.com/Dreamacro/clash) | [clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium) |
-| [clash-cfw-官方文档](https://docs.cfw.lbyczf.com/) | [clash-d大样例](https://lancellc.gitbook.io/clash)* | 通用 | [clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration) | [clash-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [clash-meta样例](https://docs.metacubex.one/example) |
+| [clash-cfw-官方文档](https://docs.cfw.lbyczf.com/) | [clash-d大样例](https://lancellc.gitbook.io/clash) | [clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration) | [clash-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [clash-meta样例](https://docs.metacubex.one/example) |
 | [clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) | [clash-cfw应用](https://github.com/Fndroid/clash_for_windows_pkg) | [clash-cfw导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [clash-wcfw汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [clash-verge-windows](https://github.com/zzzgydi/clash-verge) |
 | [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [clash-kr328](https://github.com/Kr328/clash-multiplatform-compat) | [clash-android](https://github.com/Kr328/ClashForAndroid) | [clash-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | 
 | [clash-android-magisk](https://docs.adlyq.ml/) |
@@ -46,6 +46,6 @@
 | [📢 **other**](https://sub.xeton.dev) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [surfboard-应用](https://github.com/getsurfboard/surfboard) | [surfboard-配置样例](https://getsurfboard.com/docs/profile-format/overview) | [loyalsoldier-clash分流规则](https://github.com/Loyalsoldier/clash-rules) | [acl4ssr-ssr分流规则](https://github.com/ACL4SSR/ACL4SSR/tree/master) | [hackl0us-代理规则合集](https://github.com/Hackl0us/SS-Rule-Snippet) |
-| [anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD) | [cjxlist-广告过滤](https://github.com/cjx82630/cjxlist) | [adgk-adguard广告过滤](https://github.com/banbendalao/ADgk) | [cats-team-广告过滤](https://adrules.top) | 广告过滤 | [EasyList](https://easylist.to/) |
-| [wireguard-代理隧道](https://www.wireguard.com/install/) | warp | [cloudflare-warp](https://1.1.1.1/) | [matsuri-android](https://github.com/MatsuriDayo/Matsuri) | [sub-订阅转换](https://sub.xeton.dev/) |
+| [anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD) | [cjxlist-广告过滤](https://github.com/cjx82630/cjxlist) | [adgk-adguard广告过滤](https://github.com/banbendalao/ADgk) | [cats-team-广告过滤](https://adrules.top) | [EasyList-广告过滤](https://easylist.to/) |
+| [wireguard-代理隧道](https://www.wireguard.com/install/) | [cloudflare-warp](https://1.1.1.1/) | [matsuri-android](https://github.com/MatsuriDayo/Matsuri) | [sub-订阅转换](https://sub.xeton.dev/) |
 - *[]()*
