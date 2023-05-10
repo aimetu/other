@@ -26,7 +26,7 @@
 | [ 🐉 **loon** ](https://github.com/Loon0x00) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [loon0x00-核心](https://github.com/Loon0x00/LoonManual) | [loon0x00-教程](https://loon0x00.github.io/LoonManual/#/) | [peng-ym-loon仓库](https://loon-gallery.vercel.app/) | [deezertidal-loon插件](https://github.com/deezertidal/private) | [tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script) |
-| [erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [lodepuly-可莉配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
+| [erdongchanyo-配置](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [lodepuly-脚本配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
 - *[]()*
 
 | [ 💻 **openwrt** ](https://github.com/openwrt/openwrt) |  |  |  |  |
@@ -38,11 +38,11 @@
 
 | [ 😺 **clash** ](https://github.com/Dreamacro/clash) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
-| [clash-多平台代理](https://github.com/Dreamacro/clash) | [clash-ios-stash应用](https://stash.wiki) | [clash-ios-stash配置样例](https://stash.wiki/features/example-config) | [clash-核心](https://github.com/Dreamacro/clash) | [clash-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium) |
-| [clash-cfw-官方文档](https://docs.cfw.lbyczf.com/) | [clash-d大样例](https://lancellc.gitbook.io/clash) | [clash-d大模板](https://github.com/Dreamacro/clash/wiki/Configuration) | [clash-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [clash-meta样例](https://docs.metacubex.one/example) |
-| [clash-meta模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) | [clash-cfw应用](https://github.com/Fndroid/clash_for_windows_pkg) | [clash-cfw导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [clash-wcfw汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [clash-verge-windows](https://github.com/zzzgydi/clash-verge) |
-| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [clash-kr328](https://github.com/Kr328/clash-multiplatform-compat) | [clash-android](https://github.com/Kr328/ClashForAndroid) | [clash-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | 
-| [clash-android-magisk](https://docs.adlyq.ml/) |
+| [dreamacro-多平台](https://github.com/Dreamacro/clash) | [ios-stash应用](https://stash.wiki) | [ios-stash-配置样例](https://stash.wiki/features/example-config) | [dreamacro-核心](https://github.com/Dreamacro/clash) | [dreamacro-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium) |
+| [cfw-官方文档](https://docs.cfw.lbyczf.com/) | [dreamacro-配置样例](https://lancellc.gitbook.io/clash) | [dreamacro-配置模板](https://github.com/Dreamacro/clash/wiki/Configuration) | [metacubex-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [meta-样例](https://docs.metacubex.one/example) |
+| [meta-模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) | [cfw-应用](https://github.com/Fndroid/clash_for_windows_pkg) | [cfw-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [cfw-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [verge-windows](https://github.com/zzzgydi/clash-verge) |
+| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [kr328-多平台](https://github.com/Kr328/clash-multiplatform-compat) | [kr328-android](https://github.com/Kr328/ClashForAndroid) | [metacubex-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | 
+| [android-magisk](https://docs.adlyq.ml/) |
 - *[]()*
 
 | [ 📢 **other** ](https://sub.xeton.dev) |  |  |  |  |
