@@ -170,7 +170,7 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-    - tls://1.12.12.12:853
+    - tls://1.0.0.1:853
     
 # 默认dns服务器，支持udp/tcp/dot/doh/doq等协议   
   nameserver:
@@ -179,16 +179,16 @@ dns:
     
 # 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
   proxy-server-nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
     - 208.67.222.222
-    - tls://one.one.one.one
-    - https://dns.google/dns-query
-   
+    
 # 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
   fallback:
-    - https://doh.opendns.com/dns-query
-    - https://1.0.0.1/dns-query
     - tls://dns.google
-
+    - https://1.0.0.1/dns-query
+    - https://doh.opendns.com/dns-query
+    
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置geoip开关(false/true)
