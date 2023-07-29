@@ -870,8 +870,8 @@ rules:
   - DOMAIN,boxer.baidu.com,⛔ 广告拦截
   - DOMAIN,mssdk-bu.bytedance.com,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
-  - DOMAIN-KEYWORD,cokemv,🇨🇳 中国直连
-  - DOMAIN-KEYWORD,bdys,🇨🇳 中国直连
+  - DOMAIN-KEYWORD,adguard,🌐 国际加速
+  - DOMAIN-KEYWORD,adtidy,🌐 国际加速
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
