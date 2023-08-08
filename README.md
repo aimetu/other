@@ -5,7 +5,7 @@
 | ---- | ---- |
 - *[]()*
 
-| [ 🔴 **规则脚本** ](https://github.com/crossutility/Quantumult-X) |  |  |  |  |
+| [ 📍 **规则脚本** ](https://github.com/crossutility/Quantumult-X) |  |  |  |  |
 | ---- | ---- | ---- | ---- | ---- |
 | [kop-xiao-资源解析器](https://github.com/KOP-XIAO/QuantumultX) | [sub-store-本地订阅转换](https://github.com/sub-store-org/Sub-Store) | [hacklous-geoip2cn](https://github.com/Hackl0us/GeoIP2-CN) | [Loyalsoldier-geoip2](https://github.com/Loyalsoldier/geoip) | [chavyleung-boxjs](https://github.com/chavyleung/boxjs-doc) 
 | [peng-ym-脚本](https://github.com/Peng-YM) | [nobyda-脚本](https://github.com/NobyDa/Script) | [evilbutcher-脚本](https://github.com/evilbutcher/QuantumultX) | [yichahucha-脚本](https://github.com/yichahucha/surge) | [app2smile-脚本](https://github.com/app2smile/rules) |
