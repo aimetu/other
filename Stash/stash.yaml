@@ -1,4 +1,4 @@
-# 2023.8.06
+# 2023.8.10
 # 配置样例:https://stash.wiki
 # 注意:去掉前面的注释符号"#"该行生效
 
@@ -495,7 +495,20 @@ proxy-groups:
   - 🇺🇸 america
   - 🇺🇳 nations
 
-- name: 🤖 facebook
+- name: 🤖 openai
+  type: select
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
+  proxies:
+  - 🔰 pick
+  - 🇭🇰 hongkong
+  - 🇹🇼 taiwan
+  - 🇯🇵 japan
+  - 🇰🇷 korea
+  - 🇸🇬 singapore
+  - 🇺🇸 america
+  - 🇺🇳 nations
+
+- name: 🎭 facebook
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
   proxies:
@@ -674,7 +687,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     interval: 86400    
 
-  🤖 facebook:
+  🤖 openai:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    interval: 86400
+
+  🎭 facebook:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
     interval: 86400
@@ -744,7 +762,8 @@ rules:
 - RULE-SET,📽️ netflix,📽️ netflix
 - RULE-SET,📼 disney,📼 disney
 - RULE-SET,📹 youtube,📹 youtube
-- RULE-SET,🤖 facebook,🤖 facebook
+- RULE-SET,🤖 openai,🤖 openai
+- RULE-SET,🎭 facebook,🎭 facebook
 - RULE-SET,📟 google,📟 google
 - RULE-SET,🖥️ microsoft,🖥️ microsoft
 - RULE-SET,🍎 ota,⛔ adblock
