@@ -252,13 +252,13 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  #- tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ 自动切换
-  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ 自动切换
+  #- tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ auto
+  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ auto
   # 完整yaml配置
   - network: [tcp, udp]
     address: 172.16.0.2:2408
     target: engage.nanocat.me
-    proxy: ♻️ 自动切换
+    proxy: ♻️ auto
   
 #💡 本地代理服务器
 proxies:
