@@ -600,6 +600,18 @@ proxy-groups:
       - 🇺🇸 america
       - 🇺🇳 nations
 
+  - name: 🛒 amazon
+    type: select
+    proxies:
+      - 🔰 pick
+      - 🇭🇰 hongkong
+      - 🇹🇼 taiwan
+      - 🇯🇵 japan
+      - 🇰🇷 korea
+      - 🇸🇬 singapore
+      - 🇺🇸 america
+      - 🇺🇳 nations
+
   - name: 🎭 facebook
     type: select
     proxies:
@@ -798,8 +810,15 @@ rule-providers:
   🤖 openai:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
     path: ./OpenAI.yaml
+    interval: 86400
+
+  🛒 amazon:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+    path: ./Amazon.yaml
     interval: 86400
 
   🎭 facebook:
@@ -908,6 +927,7 @@ rules:
   - RULE-SET,📼 disney,📼 disney
   - RULE-SET,📹 youtube,📹 youtube
   - RULE-SET,🤖 openai,🤖 openai
+  - RULE-SET,🛒 amazon,🛒 amazon
   - RULE-SET,🎭 facebook,🎭 facebook
   - RULE-SET,📟 google,📟 google
   - RULE-SET,🖥️ microsoft,🖥️ microsoft
