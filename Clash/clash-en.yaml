@@ -905,7 +905,6 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ adblock
   - DOMAIN,admarket.21cn.com,⛔ adblock
   - DOMAIN,adshows.21cn.com,⛔ adblock
-  - DOMAIN,boxer.baidu.com,⛔ adblock
   - DOMAIN,mssdk-bu.bytedance.com,⛔ adblock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
   - DOMAIN-KEYWORD,adtidy,🌐 global
