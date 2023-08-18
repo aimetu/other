@@ -40,9 +40,9 @@
 |  ---- | ---- | ---- | ---- | ---- |
 | [dreamacro-多平台](https://github.com/Dreamacro/clash) | [ios-stash应用](https://stash.wiki) | [ios-stash-配置样例](https://stash.wiki/features/example-config) | [dreamacro-核心](https://github.com/Dreamacro/clash) | [dreamacro-premium核心](https://github.com/Dreamacro/clash/releases/tag/premium) |
 | [cfw-官方文档](https://docs.cfw.lbyczf.com/) | [dreamacro-配置样例](https://lancellc.gitbook.io/clash) | [dreamacro-配置模板](https://github.com/Dreamacro/clash/wiki/Configuration) | [metacubex-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [meta-样例](https://docs.metacubex.one/example) |
-| [meta-模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) | [cfw-应用](https://github.com/Fndroid/clash_for_windows_pkg) | [cfw-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [cfw-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [verge-windows](https://github.com/zzzgydi/clash-verge) |
-| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [kr328-多平台](https://github.com/Kr328/clash-multiplatform-compat) | [kr328-android](https://github.com/Kr328/ClashForAndroid) | [metacubex-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | 
-| [android-magisk](https://docs.adlyq.ml/) |
+| [meta-模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) | [cfw-应用](https://github.com/Fndroid/clash_for_windows_pkg) | [cfw-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [ender-zhao-cfw-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [BoyceLig-cfw-汉化](https://github.com/BoyceLig/Clash_Chinese_Patch) |
+| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [kr328-多平台](https://github.com/Kr328/clash-multiplatform-compat) |  [verge-windows](https://github.com/zzzgydi/clash-verge) | 
+| [android-magisk](https://docs.adlyq.ml/) |[kr328-android](https://github.com/Kr328/ClashForAndroid) | [metacubex-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | 
 - *[]()*
 
 | [ 📢 **other** ](https://sub.xeton.dev) |  |  |  |  |
