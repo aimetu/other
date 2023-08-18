@@ -388,7 +388,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - all
@@ -442,7 +442,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - hk
@@ -451,7 +451,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - tw
@@ -460,7 +460,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - jp    
@@ -469,7 +469,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - kr
@@ -478,7 +478,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - sg
@@ -487,7 +487,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - us
@@ -496,7 +496,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - un
@@ -505,7 +505,7 @@ proxy-groups:
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 100
+    tolerance: 0
     lazy: true
     use:
       - cn
