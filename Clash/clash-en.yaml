@@ -78,7 +78,7 @@ profile:
 #💡 tun模式配置
 tun:
 # tun模式开关(false/true)
-  enable: false
+  enable: true
 # 网络栈类型(system/gvisor)
   stack: system
 # 自动重定向开关(false/true)
@@ -103,7 +103,7 @@ tun:
 #💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
 sniffer:
 # 配置sniffer开关(false/true)
-  enable: false
+  enable: true
 # 需要嗅探的协议类型  
   sniffing:
     - tls
@@ -192,7 +192,7 @@ dns:
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
 # 配置geoip开关(false/true)
-    geoip: false
+    geoip: true
 # geoip匹配区域设定，查询不是cn时使用fallback返回结果
     geoip-code: CN
 # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
