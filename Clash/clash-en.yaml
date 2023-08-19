@@ -909,7 +909,7 @@ rules:
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
   - DOMAIN-KEYWORD,adtidy,🌐 global
   - DOMAIN-KEYWORD,adguard,🌐 global
-  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   - RULE-SET,🚥 direct,🇨🇳 china
