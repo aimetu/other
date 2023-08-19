@@ -1,6 +1,6 @@
 # 应用介绍:https://docs.cfw.lbyczf.com/
 # 配置样例:https://lancellc.gitbook.io/clash
-# 官方模板:https://github.com/Dreamacro/clash/wiki/Configuration
+# 官方模板:https://dreamacro.github.io/clash/
 # meta样例:https://docs.metacubex.one/example
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -278,6 +278,14 @@ proxies:
     udp: true
     remote-dns-resolve: true
 
+  - name: ☁️ test
+    type: ss
+    server: test.jiedian.stream
+    port: 10000
+    cipher: aes-128-gcm
+    password: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
+    udp: true
+
 #💡 远程代理服务器订阅链接
 proxy-providers:
   all:
@@ -400,7 +408,7 @@ proxy-groups:
       - all 
     proxies:
       - ☁️ cloudflare
-      
+      - ☁️ test
 # 将按照算法随机选择节点,不同的请求使用不同的代理
   - name: ⚖️ load
     type: load-balance
