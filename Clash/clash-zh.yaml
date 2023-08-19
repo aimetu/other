@@ -899,6 +899,18 @@ rule-providers:
     interval: 86400
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
+# DOMAIN 完整域名匹配
+# DOMAIN-SUFFIX 域名后缀匹配
+# DOMAIN-KEYWORD 域名关键词匹配
+# DST-PORT 规则用于根据数据包的目标端口路由数据包
+# SRC-PORT 规则用于根据数据包的源端口来路由数据包
+# IP-CIDR 本地ipv4规则
+# IP-CIDR6 本地ipv6规则
+# SRC-IP-CIDR 根据数据包的源ipv4地址
+# PROCESS-NAME 根据进程名称
+# PROCESS-PATH 根据进程路径
+# GEOIP 根据ip地址国家/地区
+# MATCH 不在规则中的请求
 rules:
   - DOMAIN,ad.cyapi.cn,⛔ 广告拦截
   - DOMAIN,ad.21cn.com,⛔ 广告拦截
@@ -909,9 +921,13 @@ rules:
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
   - DOMAIN-KEYWORD,adtidy,🌐 国际加速
   - DOMAIN-KEYWORD,adguard,🌐 国际加速
+  # - DST-PORT,80,DIRECT    
+  # - SRC-PORT,7777,DIRECT
+  # - PROCESS-NAME,Telegram.exe,✉️ 电报群聊
+  # - PROCESS-PATH,/bin/sh,DIRECT
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
-  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+  - SRC-IP-CIDR,239.255.255.250/32,DIRECT
   - RULE-SET,🚥 直连修正,🇨🇳 中国直连
   - RULE-SET,⛔ 中区广告,⛔ 广告拦截
   - RULE-SET,⛔ 隐私保护,⛔ 广告拦截
