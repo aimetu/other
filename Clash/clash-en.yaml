@@ -902,8 +902,8 @@ rule-providers:
 # DOMAIN 完整域名匹配
 # DOMAIN-SUFFIX 域名后缀匹配
 # DOMAIN-KEYWORD 域名关键词匹配
-# DST-PORT 规则用于根据数据包的目标端口路由数据包
-# SRC-PORT 规则用于根据数据包的源端口来路由数据包
+# DST-PORT 从目标端口指定规则
+# SRC-PORT 发送至端口指定规则
 # IP-CIDR 本地ipv4规则
 # IP-CIDR6 本地ipv6规则
 # SRC-IP-CIDR 根据数据包的源ipv4地址
