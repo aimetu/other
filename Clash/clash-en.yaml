@@ -252,13 +252,13 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  #- tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ auto
-  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,♻️ auto
+  #- tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,✅ node
+  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,✅ node
   # 完整yaml配置
   - network: [tcp, udp]
     address: 172.16.0.2:2408
     target: engage.nanocat.me
-    proxy: ♻️ auto
+    proxy: ✅ node
   
 #💡 本地代理服务器
 proxies:
@@ -302,7 +302,7 @@ proxy-providers:
   hk:
     type: file
     path: /all.yaml
-    filter: (?i)港|香港|🇭🇰|HK|Hong
+    filter: (?i)港|香港|🇭🇰|hk|HK|Hong
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -311,7 +311,7 @@ proxy-providers:
   tw: 
     type: file
     path: /all.yaml
-    filter: (?i)台|台湾|台北|🇹🇼|TW|Taiwan
+    filter: (?i)台|台湾|台北|🇹🇼|tw|TW|Taiwan
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -320,7 +320,7 @@ proxy-providers:
   jp:
     type: file
     path: /all.yaml
-    filter: (?i)日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan
+    filter: (?i)日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -329,7 +329,7 @@ proxy-providers:
   kr:
     type: file
     path: /all.yaml
-    filter: (?i)韩|韩国|韓國|朝鲜|🇰🇷|KR|Korea
+    filter: (?i)韩|韩国|韓國|朝鲜|🇰🇷|kr|KR|Korea
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -338,7 +338,7 @@ proxy-providers:
   sg:
     type: file
     path: /all.yaml
-    filter: (?i)新|狮|新加坡|狮城|🇸🇬|SG|Singapore
+    filter: (?i)新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -347,7 +347,7 @@ proxy-providers:
   us:
     type: file
     path: /all.yaml
-    filter: (?i)美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America
+    filter: (?i)美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -356,7 +356,7 @@ proxy-providers:
   un:
     type: file
     path: /all.yaml
-    filter: ^((?!电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内|港|香港|🇭🇰|HK|Hong|台|台湾|台北|🇹🇼|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新|狮|新加坡|狮城|🇸🇬|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|America).)*$
+    filter: ^((?!电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|cn|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct|港|香港|🇭🇰|hk|HK|Hong|台|台湾|台北|🇹🇼|tw|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|kr|KR|Korean|新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America).)*$
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -365,7 +365,7 @@ proxy-providers:
   cn:
     type: file
     path: /all.yaml
-    filter: (?i)电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内
+    filter: (?i)电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
