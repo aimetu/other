@@ -252,19 +252,19 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  #- tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,✅ node
-  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,✅ node
+  #- tcp/udp,172.16.0.2:2408,=engage.nanocat.cloud:2408,✅ node
+  #- tcp,172.16.0.2:2408,=engage.nanocat.cloud:2408,✅ node
   # 完整yaml配置
   - network: [tcp, udp]
     address: 172.16.0.2:2408
-    target: engage.nanocat.me
+    target: =engage.nanocat.cloud
     proxy: ✅ node
   
 #💡 本地代理服务器
 proxies:
   - name: ☁️ cloudflare
     type: wireguard
-    server: engage.nanocat.me
+    server: =engage.nanocat.cloud
     port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
