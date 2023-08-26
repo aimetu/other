@@ -22,7 +22,7 @@ proxy-providers:
 proxies:
  - name: ☁️ cloudflare-warp-1280
    type: wireguard
-   server: engage.nanocat.me
+   server: engage.nanocat.cloud
    port: 2408
    ip: 172.16.0.2
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
