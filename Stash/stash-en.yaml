@@ -767,6 +767,16 @@ rule-providers:
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
+- DOMAIN,ad.cyapi.cn,⛔ adblock
+- DOMAIN,ad.21cn.com,⛔ adblock
+- DOMAIN,ad.k.21cn.com,⛔ adblock
+- DOMAIN,admarket.21cn.com,⛔ adblock
+- DOMAIN,adshows.21cn.com,⛔ adblock
+- DOMAIN,mssdk-bu.bytedance.com,⛔ adblock
+- DOMAIN-SUFFIX,adx.appicad.net,⛔ adblock
+- DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
+- DOMAIN-KEYWORD,adtidy,🌐 global
+- DOMAIN-KEYWORD,adguard,🌐 global
 - RULE-SET,🚥 direct,🇨🇳 china
 - RULE-SET,⛔ antiad,⛔ adblock
 - RULE-SET,⛔ privacy,⛔ adblock
