@@ -926,6 +926,7 @@ rules:
   - DOMAIN,admarket.21cn.com,⛔ adblock
   - DOMAIN,adshows.21cn.com,⛔ adblock
   - DOMAIN,mssdk-bu.bytedance.com,⛔ adblock
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ adblock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
   - DOMAIN-KEYWORD,adtidy,🌐 global
   - DOMAIN-KEYWORD,adguard,🌐 global
