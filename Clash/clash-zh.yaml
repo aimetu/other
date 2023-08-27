@@ -927,6 +927,7 @@ rules:
   - DOMAIN,admarket.21cn.com,⛔ 广告拦截
   - DOMAIN,adshows.21cn.com,⛔ 广告拦截
   - DOMAIN,mssdk-bu.bytedance.com,⛔ 广告拦截
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
   - DOMAIN-KEYWORD,adtidy,🌐 国际加速
   - DOMAIN-KEYWORD,adguard,🌐 国际加速
