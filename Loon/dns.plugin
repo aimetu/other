@@ -4,6 +4,7 @@
 #!author=aimetu
 #!homepage=https://github.com/aimetu
 #!icon= https://raw.githubusercontent.com/aimetu/icons/main/other/dns.png
+#!date=2023-08-31
 
 #1.ssid环境下使用特定的dns服务器
 #2.域名使用对应的ip地址
