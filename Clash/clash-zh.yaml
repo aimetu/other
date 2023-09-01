@@ -262,7 +262,7 @@ tunnels:
   
 #💡 本地代理服务器
 proxies:
-  - name: ☁️ cloudflare
+  - name: cloudflare
     type: wireguard
     server: engage.nanocat.cloud
     port: 2408
@@ -382,7 +382,8 @@ proxy-groups:
       - 🇨🇳 回国节点
       - DIRECT
       - REJECT
-
+      - cloudflare
+      
 # 将按照url测试结果使用延迟最低节点
   - name: ♻️ 自动切换
     type: url-test
@@ -392,14 +393,16 @@ proxy-groups:
     lazy: true
     use:
       - all
-
+    proxies:
+      - cloudflare
+      
 # 用户自行选择策略组或节点
   - name: ✅ 节点选择
     type: select
     use:
       - all 
     proxies:
-      - ☁️ cloudflare
+      - cloudflare
       
 # 将按照算法随机选择节点,不同的请求使用不同的代理
   - name: ⚖️ 负载均衡
