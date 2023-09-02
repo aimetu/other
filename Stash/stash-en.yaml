@@ -20,7 +20,7 @@ proxy-providers:
 
 # 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic,wireguard等协议）
 proxies:
- - name: cloudflare-warp-1280
+ - name: cloudflare
    type: wireguard
    server: engage.nanocat.cloud
    port: 2408
@@ -43,13 +43,13 @@ proxies:
     #   port: 443
     #   password: your-password
 
- - name: cloudflare-warp-1420
+ - name: warp
    type: wireguard
    server: engage.nanocat.me
    port: 2408
    ip: 172.16.0.2
-   ipv6: 2606:4700:110:85f2:1303:a9b0:68aa:e32c
-   private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+   ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
+   private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    dns:
    - 1.1.1.1
