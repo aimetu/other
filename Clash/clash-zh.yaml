@@ -253,7 +253,7 @@ bypass:
 tunnels:
   # 一行简约配置
   #- tcp,172.16.0.2:2408,engage.nanocat.cloud:2408,✅ 节点选择
-  - tcp/udp,172.16.0.2:2408,engage.cloudflareclient.com:2408,✅ 节点选择
+  - tcp/udp,172.16.0.2:2408,engage.nanocat.me:2408,✅ 节点选择
   # 完整yaml配置
   - network: [tcp, udp]
     address: 172.16.0.2:2408
@@ -280,7 +280,7 @@ proxies:
 
   - name: warp
     type: wireguard
-    server: engage.cloudflareclient.com
+    server: engage.nanocat.me
     port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:85f2:1303:a9b0:68aa:e32c
