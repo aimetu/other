@@ -396,11 +396,11 @@ proxy-groups:
       - 🇺🇸 america
       - 🇺🇳 nations
       - 🇨🇳 chinese
-      - DIRECT
-      - REJECT
       - cloudflare
       - warp
-      
+      - DIRECT
+      - REJECT
+
 # 将按照url测试结果使用延迟最低节点
   - name: ♻️ auto
     type: url-test
