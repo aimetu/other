@@ -396,10 +396,10 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🇺🇳 国际节点
       - 🇨🇳 回国节点
+      - cloudflare
+      - warp 
       - DIRECT
       - REJECT
-      - cloudflare
-      - warp
       
 # 将按照url测试结果使用延迟最低节点
   - name: ♻️ 自动切换
