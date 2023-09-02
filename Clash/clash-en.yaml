@@ -252,8 +252,8 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  #- tcp/udp,172.16.0.2:2408,engage.nanocat.cloud:2408,✅ node
   #- tcp,172.16.0.2:2408,engage.nanocat.cloud:2408,✅ node
+  - tcp/udp,172.16.0.2:2408,engage.cloudflareclient.com:2408,✅ node
   # 完整yaml配置
   - network: [tcp, udp]
     address: 172.16.0.2:2408
@@ -275,6 +275,22 @@ proxies:
     persistent-keepalive: 45
     reserved: [80,73,10]
     mtu: 1280
+    udp: true
+    remote-dns-resolve: true
+
+  - name: warp
+    type: wireguard
+    server: engage.cloudflareclient.com
+    port: 2408
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:85f2:1303:a9b0:68aa:e32c
+    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    #preshared-key: red-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    dns: [1.1.1.1, 2606:4700:4700::1111]
+    persistent-keepalive: 45
+    reserved: [173,82,247]
+    mtu: 1420
     udp: true
     remote-dns-resolve: true
 
@@ -383,6 +399,7 @@ proxy-groups:
       - DIRECT
       - REJECT
       - cloudflare
+      - warp
       
 # 将按照url测试结果使用延迟最低节点
   - name: ♻️ auto
@@ -395,6 +412,7 @@ proxy-groups:
       - all
     proxies:
       - cloudflare
+      - warp
       
 # 用户自行选择策略组或节点
   - name: ✅ node
@@ -403,7 +421,8 @@ proxy-groups:
       - all 
     proxies:
       - cloudflare
-
+      - warp
+      
 # 将按照算法随机选择节点,不同的请求使用不同的代理
   - name: ⚖️ load
     type: load-balance
