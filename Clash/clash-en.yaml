@@ -262,7 +262,7 @@ tunnels:
   
 #💡 本地代理服务器
 proxies:
-  - name: cloudflare
+  - name: warp
     type: wireguard
     server: engage.nanocat.cloud
     port: 2408
@@ -278,7 +278,7 @@ proxies:
     udp: true
     remote-dns-resolve: true
 
-  - name: warp
+  - name: warp+
     type: wireguard
     server: engage.nanocat.me
     port: 2408
@@ -396,8 +396,8 @@ proxy-groups:
       - 🇺🇸 america
       - 🇺🇳 nations
       - 🇨🇳 chinese
-      - cloudflare
       - warp
+      - warp+
       - DIRECT
       - REJECT
 
@@ -411,8 +411,8 @@ proxy-groups:
     use:
       - all
     proxies:
-      - cloudflare
       - warp
+      - warp+
       
 # 用户自行选择策略组或节点
   - name: ✅ node
@@ -420,8 +420,8 @@ proxy-groups:
     use:
       - all 
     proxies:
-      - cloudflare
       - warp
+      - warp+
       
 # 将按照算法随机选择节点,不同的请求使用不同的代理
   - name: ⚖️ load
