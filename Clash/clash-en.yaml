@@ -74,6 +74,13 @@ profile:
   store-selected: false
 # fake-ip缓存
   store-fake-ip: true
+
+#💡 ssid策略  
+strategy:
+  OpenWrt_5G:
+    tun: true
+    mixin: false
+    system: true
   
 #💡 tun模式配置
 tun:
