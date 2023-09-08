@@ -77,7 +77,7 @@ profile:
 
 #💡 ssid策略  
 strategy:
-  OpenWrt_5G:
+  OpenWrt, OpenWrt_5G: 
     tun: true
     mixin: false
     system: true
