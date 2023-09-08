@@ -76,7 +76,7 @@ profile:
   store-fake-ip: true
 
 #💡 ssid策略  
-strategy: # object
+strategy:
   OpenWrt_5G:
     tun: true
     mixin: false
