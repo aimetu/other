@@ -129,7 +129,7 @@ dns:
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.opendns.com/dns-query
     "dl.l.google.com": https://doh.opendns.com/dns-query
-    "update.googleapis.com": quic://cn-east.ovo.glass
+    "update.googleapis.com": quic://cn-a.ovo.glass
     
 # 💡 本地域名映射
 hosts:
