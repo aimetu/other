@@ -19,14 +19,14 @@
 | [ 🔴 **quantumult_x** ](https://github.com/crossutility/Quantumult-X) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [kop-xiao](https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/QuantumultX_Profiles.conf) | [orz-3](https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Orz-3.conf) | [divineengine](https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf) | [tartarus2014](https://raw.githubusercontent.com/Tartarus2014/QuantumultX-Script/main/QuanX.conf) | [limbopro](https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf) |
-| [fmz200](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf) | [ddgksf2013](https://raw.githubusercontent.com/ddgksf2013/Profile/master/QuantumultX.conf) | [zwf234](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf) | [geq1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf) | [erdongchanyo](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf) |
+| [fmz200](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf) | [ddgksf2013](https://raw.githubusercontent.com/ddgksf2013/Profile/master/QuantumultX.conf) | [zwf234](https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/qixin.conf) | [geq1an](https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/QuantumultX.conf) | [geq1an](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Quantumult%20X/LazyConf/QuantumultX_EDC-Lazy.conf) |
 | [w37fhy](https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_diy.conf) | [githubdulong](https://raw.githubusercontent.com/githubdulong/Script/master/QuantumultX/QuantumultX.conf) | [godmoli](https://raw.githubusercontent.com/GodMoli/QuanX/main/File/Auto.conf) | [zhangjun](https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/config/lanren.conf) |
 - *[]()*
 
 | [ 🐉 **loon** ](https://github.com/Loon0x00) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [loon0x00-核心](https://github.com/Loon0x00/LoonManual) | [loon0x00-教程](https://loon0x00.github.io/LoonManual/#/) | [peng-ym-loon仓库](https://loon-gallery.vercel.app/) | [deezertidal-loon插件](https://github.com/deezertidal/private) | [tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script) |
-| [erdongchanyo-配置](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [lodepuly-脚本配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
+| [erdongchanyo-配置](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [geq1an-配置](https://raw.githubusercontent.com/GeQ1an/Rules/master/Loon/Loon.conf) | [lodepuly-脚本配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
 - *[]()*
 
 | [ 💻 **openwrt** ](https://github.com/openwrt/openwrt) |  |  |  |  |
