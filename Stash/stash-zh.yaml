@@ -259,9 +259,9 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
-  - 网络场景
   - 自动切换
   - 节点选择
+  - 网络场景  
   - 负载均衡
   - 故障转移
   - 香港节点
@@ -274,6 +274,19 @@ proxy-groups:
   - 回国节点
   - DIRECT
   - REJECT
+
+- name: 自动切换
+  type: url-test
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
+  url: http://www.gstatic.com/generate_204
+  interval: 600  
+  lazy: true
+  include-all: true
+
+- name: 节点选择
+  type: select
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
+  include-all: true
 
 - name: 网络场景
   type: select
@@ -298,19 +311,6 @@ proxy-groups:
     default: 自动切换  
     OpenWrt: DIRECT
     OpenWrt_5G: DIRECT
-
-- name: 自动切换
-  type: url-test
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
-  lazy: true
-  include-all: true
-
-- name: 节点选择
-  type: select
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
-  include-all: true
 
 - name: 负载均衡
   type: load-balance
