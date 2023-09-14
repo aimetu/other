@@ -26,7 +26,7 @@
 | [ 🐉 **loon** ](https://github.com/Loon0x00) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
 | [loon0x00-核心](https://github.com/Loon0x00/LoonManual) | [loon0x00-教程](https://loon0x00.github.io/LoonManual/#/) | [peng-ym-loon仓库](https://loon-gallery.vercel.app/) | [deezertidal-loon插件](https://github.com/deezertidal/private) | [tartarus2014-配置插件](https://github.com/Tartarus2014/Loon-Script) |
-| [erdongchanyo-配置](https://raw.githubusercontent.com/erdongchanyo/Rules/main/Loon/Loon_EDC-Lazy.conf) | [geq1an-配置](https://raw.githubusercontent.com/GeQ1an/Rules/master/Loon/Loon.conf) | [lodepuly-脚本配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) |
+| [Loon-插件大全](https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/4a3b6152-3dd3-46da-b479-8c30ef6ef8d1) | [geq1an-配置](https://raw.githubusercontent.com/GeQ1an/Rules/master/Loon/Loon.conf) | [lodepuly-脚本配置](https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Config) | [lanren-配置大全](https://www.evan888.top/1936/) | [repcz-配置大全](https://github.com/Repcz) | [代理app-插件合集](https://yfamily.vercel.app/) |
 - *[]()*
 
 | [ 💻 **openwrt** ](https://github.com/openwrt/openwrt) |  |  |  |  |
