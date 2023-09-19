@@ -13,7 +13,7 @@
 | [koolson-图标](https://github.com/Koolson/Qure) | [orz-3-mini图标](https://github.com/Orz-3/mini) | [semporia-图标](https://github.com/Semporia/Hand-Painted-icon) | [tugepaopao-图标](https://github.com/tugepaopao/Image-Storage) | [aimeto-图标](https://github.com/aimetu/icons) |
 | [zwf234-奇心](https://github.com/zwf234/rules) | [ddgksf2013-墨魚](https://github.com/ddgksf2013) | [limbopro-毒奶](https://github.com/limbopro/Adblock4limbo) | [divineEngine-神机](https://github.com/DivineEngine/Profiles/tree/master/Quantumult) | [orz-3-配置](https://github.com/Orz-3/QuantumultX) |
 | [geq1an-规则仓库](https://github.com/GeQ1an/Rules/tree/master) | [w37fhy-懒人配置](https://github.com/w37fhy/QuantumultX) | [githubdulong-脚本配置](https://github.com/githubdulong) | [clydetime-脚本配置](https://github.com/ClydeTime/Quantumult) | [weiren0-脚本](https://github.com/WeiRen0/Scripts) |
-| [lowking-脚本](https://github.com/lowking/Scripts) |[BiliUniverse 哔哩哔哩增强](https://github.com/BiliUniverse) |
+| [lowking-脚本](https://github.com/lowking/Scripts) |[BiliUniverse 哔哩哔哩增强](https://github.com/BiliUniverse) |[张军 脚本配置](https://github.com/fmz200) |
 - *[]()*
 
 | [ 🔴 **quantumult_x** ](https://github.com/crossutility/Quantumult-X) |  |  |  |  |
