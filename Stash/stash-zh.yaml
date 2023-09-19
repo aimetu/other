@@ -37,7 +37,7 @@ proxies:
    - 73
    - 10
    keepalive: 45
-   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-url: http://1.1.1.1/generate_204
    benchmark-timeout: 3
     # underlying-proxy: # optional
     #   type: trojan
