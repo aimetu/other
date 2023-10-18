@@ -4,17 +4,17 @@
 # meta样例:https://wiki.metacubex.one/
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
-# 2023.9.1
+# 2023.10.1
 # 注意:去掉前面的注释符号"#"该行生效
 
 #💡 通用设置
-# 网络模式:rule规则/global全局/direct直连/script脚本
+# 网络模式:rule规则、global全局、direct直连、script脚本
 mode: rule
 
-# 日志模式:silent静默/info信息/warning警告/error错误/debug调试
+# 日志模式:silent静默、info信息、warning警告、error错误、debug调试
 log-level: info
 
-# ipv6开关(false/true)，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
+# ipv6开关(false、true)，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
 ipv6: true
 
 # 本地http(s)服务端口
@@ -32,7 +32,7 @@ tproxy-port: 7893
 # 本地http(s)或socks5服务使用同一端口
 mixed-port: 7890
 
-# 允许局域网内其它设备通过clash访问互联网开关(false/true)
+# 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
 # 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
@@ -84,11 +84,11 @@ strategy:
   
 #💡 tun模式配置
 tun:
-# tun模式开关(false/true)
+# tun模式开关(false、true)
   enable: true
-# 网络栈类型(system/gvisor)
+# 网络栈类型(system、gvisor)
   stack: system
-# 自动重定向开关(false/true)
+# 自动重定向开关(false、true)
   auto-redir: true
 # 配置路由表  
   auto-route: false
@@ -109,7 +109,7 @@ tun:
 
 #💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
 sniffer:
-# 配置sniffer开关(false/true)
+# 配置sniffer开关(false、true)
   enable: true
 # 需要嗅探的协议类型  
   sniffing:
@@ -130,17 +130,17 @@ sniffer:
 
 #💡 dns服务器配置
 dns:
-# dns开关(false/true)，关闭将使用系统dns
+# dns开关(false、true)，关闭将使用系统dns
   enable: true
-# ipv6解析开关(false/true)；如果为false，将返回ip6结果为空
+# ipv6解析开关(false、true)；如果为false，将返回ip6结果为空
   ipv6: true
 # 内部双栈并发时，向上游查询时的等待时间，默认100ms(单位：ms)
   ipv6-timeout: 300
- # doh支持http/3开关(false/true) 
+ # doh支持http/3开关(false、true) 
   prefer-h3: false
 # 开启dns服务器监听
   listen: 0.0.0.0:53
-# 查询hosts配置并返回真实ip开关(false/true)
+# 查询hosts配置并返回真实ip开关(false、true)
   use-hosts: true
 # dns增强模式  
   enhanced-mode: fake-ip
@@ -198,7 +198,7 @@ dns:
     
 # 配置fallback使用条件，回落dns服务器过滤
   fallback-filter:
-# 配置geoip开关(false/true)
+# 配置geoip开关(false、true)
     geoip: true
 # geoip匹配区域设定，查询不是cn时使用fallback返回结果
     geoip-code: CN
