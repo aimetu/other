@@ -18,7 +18,7 @@ proxy-providers:
     url: https://sub.store/download/collection/node
     interval: 86400
 
-# 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic,wireguard等协议）
+# 💡 本地代理服务器（支持ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard等协议）
 proxies:
  - name: warp
    type: wireguard
@@ -52,8 +52,8 @@ dns:
 # 以下域名不会被解析为fake-ip，解析请求将返回它们真实的 IP 地址
   fake-ip-filter:
     - "*.lan"
-    - "*.local"
     - "*.direct"
+    - "*.local"
     - "localhost"
     - "WORKGROUP"
     - "ntp.*.com"
@@ -113,7 +113,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
     
-# 支持udp/tcp/dot/doh/doq协议的dns服务，可指定端口，并发响应最快服务
+# 支持udp、tcp、dot、doh、doq协议的dns服务，可指定端口，并发响应最快服务
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
