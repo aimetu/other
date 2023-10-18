@@ -59,7 +59,7 @@ external-controller: 127.0.0.1:9090
 # - off, 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: off
 
-# geoip.dat数据库开关(false/true),false使用mmdb数据库「meta专属」
+# geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
 geodata-mode: true
 
 # 自定义geoip.data url
