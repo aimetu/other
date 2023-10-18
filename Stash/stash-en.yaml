@@ -18,7 +18,7 @@ proxy-providers:
     url: https://sub.store/download/collection/node
     interval: 86400
 
-# 💡 本地代理服务器（支持ss，ssr，socks5，http，https, vmess，vless，trojan，hysteria，snell，tuic,wireguard等协议）
+# 💡 本地代理服务器（支持ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard等协议）
 proxies:
  - name: warp
    type: wireguard
