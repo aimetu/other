@@ -142,6 +142,8 @@ dns:
   listen: 0.0.0.0:53
 # 查询hosts配置并返回真实ip开关(false、true)
   use-hosts: true
+# 搜索域以获取a/aaaa 记录
+  search-domains: [local]
 # dns增强模式  
   enhanced-mode: fake-ip
 # fake-ip解析地址池  
