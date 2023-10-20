@@ -456,6 +456,19 @@ proxy-groups:
   - america
   - nations
 
+- name: discord
+  type: select
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
+  proxies:
+  - pick
+  - hongkong
+  - taiwan
+  - japan
+  - korea
+  - singapore
+  - america
+  - nations
+  
 - name: spotify
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
@@ -692,6 +705,11 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     interval: 86400
+
+  🗣️ discord:
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    interval: 86400
     
   🎶 spotify:
     behavior: classical
@@ -799,6 +817,7 @@ rules:
 - RULE-SET,🕸️ speedtest,speedtest
 - RULE-SET,🎵 tiktok,tiktok
 - RULE-SET,✉️ telegram,telegram
+- RULE-SET,🗣️ discord,discord
 - RULE-SET,🎶 spotify,spotify
 - RULE-SET,📽️ netflix,netflix
 - RULE-SET,📼 disney,disney
