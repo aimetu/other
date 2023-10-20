@@ -1006,9 +1006,9 @@ rules:
   - DOMAIN-KEYWORD,adguard,🌐 global
   # - DST-PORT,80,DIRECT    
   # - SRC-PORT,7777,DIRECT
-  # - PROCESS-NAME,Telegram.exe,✉️ telegram
-  # - PROCESS-NAME,AdGuard.exe,🌐 global
-  # - PROCESS-NAME,AdGuardSvc.exe,🌐 global
+   - PROCESS-NAME,Telegram.exe,✉️ telegram
+   - PROCESS-NAME,AdGuard.exe,🌐 global
+   - PROCESS-NAME,AdGuardSvc.exe,🌐 global
   # - PROCESS-PATH,/bin/sh,DIRECT
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
