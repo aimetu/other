@@ -603,6 +603,18 @@ proxy-groups:
       - 🇺🇸 america
       - 🇺🇳 nations
 
+  - name: 🗣️ discord
+    type: select
+    proxies:
+      - 🔰 pick
+      - 🇭🇰 hongkong
+      - 🇹🇼 taiwan
+      - 🇯🇵 japan
+      - 🇰🇷 korea
+      - 🇸🇬 singapore
+      - 🇺🇸 america
+      - 🇺🇳 nations
+
   - name: 🎶 spotify
     type: select
     proxies:
@@ -841,6 +853,13 @@ rule-providers:
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     path: ./Telegram.yaml
     interval: 86400
+
+  🗣️ discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    path: ./Discord.yaml
+    interval: 86400
     
   🎶 spotify:
     type: http
@@ -1003,6 +1022,7 @@ rules:
   - RULE-SET,🕸️ speedtest,🕸️ speedtest
   - RULE-SET,🎵 tiktok,🎵 tiktok
   - RULE-SET,✉️ telegram,✉️ telegram
+  - RULE-SET,🗣️ discord,🗣️ discord
   - RULE-SET,🎶 spotify,🎶 spotify
   - RULE-SET,📽️ netflix,📽️ netflix
   - RULE-SET,📼 disney,📼 disney
