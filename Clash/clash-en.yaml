@@ -962,8 +962,8 @@ rules:
   - DOMAIN,mssdk-bu.bytedance.com,⛔ adblock
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ adblock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
-  - DOMAIN-KEYWORD,adtidy,🌐 global
-  - DOMAIN-KEYWORD,adguard,🌐 global
+  - DOMAIN-KEYWORD,reddit,🌐 global
+  - DOMAIN-KEYWORD,snapchat,🌐 global
   # - DST-PORT,80,DIRECT    
   # - SRC-PORT,7777,DIRECT
   - PROCESS-NAME,Telegram.exe,✉️ telegram
