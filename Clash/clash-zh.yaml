@@ -966,9 +966,9 @@ rules:
   - DOMAIN-KEYWORD,snapchat,🌐 国际加速
   # - DST-PORT,80,DIRECT    
   # - SRC-PORT,7777,DIRECT
-  - PROCESS-NAME,Telegram.exe,✉️ 电报群聊
   - PROCESS-NAME,AdGuard.exe,🌐 国际加速
   - PROCESS-NAME,AdGuardSvc.exe,🌐 国际加速
+  - PROCESS-NAME,pinterest.exe,🌐 国际加速
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 国际加速
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
