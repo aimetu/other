@@ -962,8 +962,8 @@ rules:
   - DOMAIN,mssdk-bu.bytedance.com,⛔ 广告拦截
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ 广告拦截
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ 广告拦截
-  - DOMAIN-KEYWORD,adtidy,🌐 国际加速
-  - DOMAIN-KEYWORD,adguard,🌐 国际加速
+  - DOMAIN-KEYWORD,reddit,🌐 国际加速
+  - DOMAIN-KEYWORD,snapchat,🌐 国际加速
   # - DST-PORT,80,DIRECT    
   # - SRC-PORT,7777,DIRECT
   - PROCESS-NAME,Telegram.exe,✉️ 电报群聊
