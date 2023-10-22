@@ -256,7 +256,9 @@ tunnels:
   - tcp/udp,127.0.0.1:63505,engage.nanocat.cloud:2408,⚙️ fallback
   #- tcp,127.0.0.1:63505,engage.nanocat.me:2408,⚙️ fallback
   # 完整yaml配置
-  - network: [tcp, udp]
+  - network: 
+      - tcp
+      - udp  
     address: 127.0.0.1:63505
     target: engage.nanocat.me:2408
     proxy: ⚙️ fallback
