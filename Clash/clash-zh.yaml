@@ -253,11 +253,11 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  - tcp/udp,172.16.0.2:2408,engage.nanocat.cloud:2408,⚙️ 故障转移
-  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,⚙️ 故障转移
+  - tcp/udp,127.0.0.1:63505,engage.nanocat.cloud:2408,⚙️ 故障转移
+  #- tcp,127.0.0.1:63505,engage.nanocat.me:2408,⚙️ 故障转移
   # 完整yaml配置
   - network: [tcp, udp]
-    address: 172.16.0.2:2408
+    address: 127.0.0.1:63505
     target: engage.nanocat.me:2408
     proxy: ⚙️ 故障转移
   
@@ -272,11 +272,17 @@ proxies:
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: red-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    dns: [1.1.1.1, 2606:4700:4700::1111]
+    dns: 
+      - 1.1.1.1
+      - 2606:4700:4700::1111
     persistent-keepalive: 45
-    reserved: [80,73,10]
+    reserved: 
+      - 80
+      - 73
+      - 10
     mtu: 1280
     udp: true
+    dialer-proxy: 8.8.8.8
     remote-dns-resolve: true
 
   - name: warp+
@@ -288,11 +294,17 @@ proxies:
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: red-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    dns: [1.1.1.1, 2606:4700:4700::1111]
+    dns: 
+      - 1.0.0.1
+      - 2606:4700:4700::1001
     persistent-keepalive: 45
-    reserved: [173,82,247]
+    reserved: 
+      - 173
+      - 82
+      - 247
     mtu: 1420
     udp: true
+    dialer-proxy: 208.67.222.222
     remote-dns-resolve: true
 
 #💡 远程代理服务器订阅链接
