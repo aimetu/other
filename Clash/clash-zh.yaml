@@ -250,16 +250,16 @@ bypass:
   - <local>
   - ...
 
-#💡 隧道模式，代理转发到目标服务器
+#💡 隧道模式，代理转发到目标服务器(address通过proxy转发到target)
 tunnels:
   # 一行简约配置
-  - tcp/udp,127.0.0.1:63505,engage.nanocat.cloud:2408,⚙️ 故障转移
-  #- tcp,127.0.0.1:63505,engage.nanocat.me:2408,⚙️ 故障转移
+  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,⚙️ 故障转移
+  - tcp/udp,172.16.0.2:2408,engage.nanocat.cloud:2408,⚙️ 故障转移
   # 完整yaml配置
   - network: 
       - tcp
       - udp
-    address: 127.0.0.1:63505
+    address:172.16.0.2:2408
     target: engage.nanocat.me:2408
     proxy: ⚙️ 故障转移
   
@@ -284,7 +284,7 @@ proxies:
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: 8.8.8.8
+    dialer-proxy: 208.67.222.222
     remote-dns-resolve: true
 
   - name: warp+
@@ -306,7 +306,7 @@ proxies:
       - 247
     mtu: 1420
     udp: true
-    dialer-proxy: 208.67.222.222
+    dialer-proxy: 1.0.0.1
     remote-dns-resolve: true
 
 #💡 远程代理服务器订阅链接
