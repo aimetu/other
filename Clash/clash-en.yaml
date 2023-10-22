@@ -253,13 +253,13 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  #- tcp,172.16.0.2:2408,engage.nanocat.me:2408,⚙️ fallback
-  - tcp/udp,172.16.0.2:2408,engage.nanocat.cloud:2408,⚙️ fallback
+  - tcp/udp,127.0.0.1:6553,engage.nanocat.me:2408,⚙️ fallback
+  - tcp/udp,127.0.0.1:6666,engage.nanocat.cloud:2408,⚙️ fallback
   # 完整yaml配置
   - network: 
       - tcp
       - udp  
-    address: 172.16.0.2:2408
+    address: 127.0.0.1:7777
     target: engage.nanocat.me:2408
     proxy: ⚙️ fallback
   
@@ -275,8 +275,8 @@ proxies:
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     dns: 
-      - 1.1.1.1
-      - 2606:4700:4700::1111
+      - 1.0.0.1
+      - 2606:4700:4700::1001
     persistent-keepalive: 45
     reserved: 
       - 80
@@ -284,7 +284,7 @@ proxies:
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: 208.67.222.222
+    dialer-proxy: https://1.0.0.1/dns-query
     remote-dns-resolve: true
     
   - name: warp+
@@ -297,8 +297,8 @@ proxies:
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     dns: 
-      - 1.0.0.1
-      - 2606:4700:4700::1001   
+      - 1.1.1.1
+      - 2606:4700:4700::1111 
     persistent-keepalive: 45
     reserved: 
       - 173
@@ -306,7 +306,7 @@ proxies:
       - 247
     mtu: 1420
     udp: true
-    dialer-proxy: 1.0.0.1
+    dialer-proxy: https://doh.opendns.com/dns-query
     remote-dns-resolve: true
 
 #💡 远程代理服务器订阅链接
