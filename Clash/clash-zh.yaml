@@ -341,7 +341,7 @@ proxy-providers:
   hk:
     type: file
     path: /all.yaml
-    filter: (?i)港|香港|🇭🇰|hk|HK|Hong
+    filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -350,7 +350,7 @@ proxy-providers:
   tw: 
     type: file
     path: /all.yaml
-    filter: (?i)台|台湾|台北|🇹🇼|tw|TW|Taiwan
+    filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -359,7 +359,7 @@ proxy-providers:
   jp:
     type: file
     path: /all.yaml
-    filter: (?i)日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan
+    filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -368,7 +368,7 @@ proxy-providers:
   kr:
     type: file
     path: /all.yaml
-    filter: (?i)韩|韩国|韓國|朝鲜|🇰🇷|kr|KR|Korea
+    filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -377,7 +377,7 @@ proxy-providers:
   sg:
     type: file
     path: /all.yaml
-    filter: (?i)新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore
+    filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -386,7 +386,7 @@ proxy-providers:
   us:
     type: file
     path: /all.yaml
-    filter: (?i)美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America
+    filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -395,7 +395,7 @@ proxy-providers:
   un:
     type: file
     path: /all.yaml
-    filter: ^((?!电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|cn|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct|港|香港|🇭🇰|hk|HK|Hong|台|台湾|台北|🇹🇼|tw|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|KR|Korean|新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America).)*$
+    filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American).)*$
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -404,7 +404,7 @@ proxy-providers:
   cn:
     type: file
     path: /all.yaml
-    filter: (?i)电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|cn|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct
+    filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
