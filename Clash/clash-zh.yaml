@@ -259,7 +259,7 @@ tunnels:
   - network: 
       - tcp
       - udp
-    address:127.0.0.1:7777
+    address: 127.0.0.1:7777
     target: dns.alidns.com:443
     proxy: ✅ 节点选择
   
