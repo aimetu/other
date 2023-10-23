@@ -23,14 +23,14 @@ port: 7890
 # 本地socks5服务端口
 socks-port: 7891
 
+# 本地http(s)或socks5服务使用同一混合端口
+mixed-port: 7890
+
 # linux和macos的透明代理服务器端口
 redir-port: 7892
 
-# linux的透明代理服务器端口
+# linux的透明代理服务器端口(tcp、udp)
 tproxy-port: 7893
-
-# 本地http(s)或socks5服务使用同一端口
-mixed-port: 7890
 
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
@@ -44,11 +44,14 @@ bind-address: '*'
 # 为linux下的出站连接提供默认流量标记
 routing-mark: 6666
 
+# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
+global-client-fingerprint: chrome
+
 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 tcp-concurrent: true
 
-# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
-global-client-fingerprint: chrome
+# tcp保持活动状态间隔
+keep-alive-interval: 15
 
 # 外部控制器可以通过监听地址控制clash
 external-controller: 127.0.0.1:9090
@@ -57,7 +60,7 @@ external-controller: 127.0.0.1:9090
 # - always, 开启，强制匹配所有进程
 # - strict, 默认，由clash判断是否开启
 # - off, 不匹配进程，推荐在路由器上使用此模式
-find-process-mode: off
+find-process-mode: strict
 
 # geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
 geodata-mode: true
@@ -78,7 +81,7 @@ profile:
 #💡 ssid策略  
 strategy:
   OpenWrt, OpenWrt_5G: 
-    tun: true
+    tun: false
     mixin: false
     system: true
   
@@ -111,10 +114,19 @@ tun:
 sniffer:
 # 配置sniffer开关(false、true)
   enable: true
+# 全局配置，优先级低于sniffer.sniff实际配置
+  override-destination: false
 # 需要嗅探的协议类型  
   sniffing:
-    - tls
-    - http
+    QUIC:
+      ports: [ 443 ]
+    TLS:
+      ports: [443, 8443]
+# 需要嗅探的端口,默认嗅探 80
+    HTTP: 
+      ports: [80, 8080-8880]
+# 可覆盖 sniffer.override-destination
+      override-destination: true
 # 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
   skip-domain:
     - 'Mijia Cloud'
@@ -125,9 +137,10 @@ sniffer:
     - 'google.com'
 # 端口白名单
   port-whitelist:
+    - 80
     - 443
     - 8000-9000
-
+    
 #💡 dns服务器配置
 dns:
 # dns开关(false、true)，关闭将使用系统dns
@@ -273,19 +286,20 @@ proxies:
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    remote-dns-resolve: true  
     dns: 
       - 1.0.0.1
       - 2606:4700:4700::1001
     persistent-keepalive: 45
+    allowed_ips: ['0.0.0.0/0, ::/0']
     reserved: 
       - 80
       - 73
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: https://1.0.0.1/dns-query
-    remote-dns-resolve: true
+    dialer-proxy: warp+
     
   - name: warp+
     type: wireguard
@@ -295,19 +309,19 @@ proxies:
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    remote-dns-resolve: true
     dns: 
       - 1.1.1.1
-      - 2606:4700:4700::1111 
+      - 2606:4700:4700::1111
     persistent-keepalive: 45
+    allowed_ips: ['0.0.0.0/0, ::/0']
     reserved: 
       - 173
       - 82
       - 247
     mtu: 1420
-    udp: true
-    dialer-proxy: https://doh.opendns.com/dns-query
-    remote-dns-resolve: true
+    dialer-proxy: warp
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
