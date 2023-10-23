@@ -253,15 +253,15 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  - tcp/udp,127.0.0.1:6553,engage.nanocat.me:2408,⚙️ fallback
-  - tcp/udp,127.0.0.1:6666,engage.nanocat.cloud:2408,⚙️ fallback
+  - tcp,127.0.0.1:6553,223.5.5.5:53,✅ node
+  - tcp/udp,127.0.0.1:6666,doh.pub:443,✅ node
   # 完整yaml配置
   - network: 
       - tcp
       - udp  
     address: 127.0.0.1:7777
-    target: engage.nanocat.me:2408
-    proxy: ⚙️ fallback
+    target: dns.alidns.com:443
+    proxy: ✅ node
   
 #💡 本地代理服务器
 proxies:
