@@ -317,7 +317,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 港|香港|🇭🇰|hk|HK|Hong
+  filter: 🇭🇰|港|香港|hk|HK|Hong|HongKong
   
 - name: 台湾节点
   type: url-test
@@ -326,7 +326,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 台|台湾|台北|🇹🇼|tw|TW|Taiwan
+  filter: 🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
   
 - name: 日本节点
   type: url-test
@@ -335,7 +335,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan
+  filter: 🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
   
 - name: 韩国节点
   type: url-test
@@ -344,7 +344,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 韩|韩国|韓國|朝鲜|🇰🇷|kr|KR|Korea
+  filter: 🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
   
 - name: 狮城节点
   type: url-test
@@ -353,7 +353,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore
+  filter: 🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
   
 - name: 美国节点
   type: url-test
@@ -362,7 +362,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America
+  filter: 🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American
     
 - name: 国际节点
   type: url-test
@@ -371,7 +371,7 @@ proxy-groups:
   interval: 600
   lazy: true
   include-all: true
-  filter: ^((?!电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|cn|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct|港|香港|🇭🇰|hk|HK|Hong|台|台湾|台北|🇹🇼|tw|TW|Taiwan|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|jp|JP|Japan|韩|韩国|韓國|朝鲜|🇰🇷|kr|KR|Korean|新|狮|新加坡|狮城|🇸🇬|sg|SG|Singapore|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|us|US|America).)*$
+  filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American).)*$
 
 - name: 回国节点
   type: url-test
@@ -380,7 +380,7 @@ proxy-groups:
   interval: 600  
   lazy: true
   include-all: true
-  filter: 电信|移动|联通|腾讯|阿里|教育|校园|回国|🇨🇳|cn|CN|CHINA|中国|大陆|国内|直连|DIRECT|Direct|direct
+  filter: 🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连
 
 - name: 网速测试
   type: select
