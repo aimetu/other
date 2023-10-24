@@ -786,7 +786,7 @@ rule-providers:
     path: ./Direct.yaml
     interval: 86400
 
-  ⛔ Anti-AD:
+  ⛔ Anti.AD:
     type: http
     behavior: domain
     url: https://anti-ad.net/clash.yaml
@@ -912,7 +912,7 @@ rule-providers:
     path: ./Microsoft.yaml
     interval: 86400
     
-  🍎 Apple-OTA:
+  🍎 Apple.OTA:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
@@ -1002,7 +1002,7 @@ rules:
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
   - RULE-SET,🚥 Direct,🇨🇳 China
-  - RULE-SET,⛔ Anti-AD,⛔ AdBlock
+  - RULE-SET,⛔ Anti.AD,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
   - RULE-SET,⛔ Hijacking,⛔ AdBlock
   - RULE-SET,⛔ AdvertisingLite,⛔ AdBlock
@@ -1020,7 +1020,7 @@ rules:
   - RULE-SET,🎭 Facebook,🎭 Facebook
   - RULE-SET,📟 Google,📟 Google
   - RULE-SET,🖥️ Microsoft,🖥️ Microsoft
-  - RULE-SET,🍎 Apple-OTA,⛔ AdBlock
+  - RULE-SET,🍎 Apple.OTA,⛔ AdBlock
   - RULE-SET,🍎 Apple,🍎 Apple
   - RULE-SET,🎬 GlobalMedia,🎬 GlobalMedia
   - RULE-SET,🌐 Global,🌐 Global
