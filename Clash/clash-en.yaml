@@ -266,19 +266,19 @@ bypass:
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   # 一行简约配置
-  - tcp,127.0.0.1:6553,223.5.5.5:53,✅ node
-  - tcp/udp,127.0.0.1:6666,doh.pub:443,✅ node
+  - tcp,127.0.0.1:6553,223.5.5.5:53,✅ Node
+  - tcp/udp,127.0.0.1:6666,doh.pub:443,✅ Node
   # 完整yaml配置
   - network: 
       - tcp
       - udp  
     address: 127.0.0.1:7777
     target: dns.alidns.com:443
-    proxy: ✅ node
+    proxy: ✅ Node
   
 #💡 本地代理服务器
 proxies:
-  - name: warp
+  - name: Cloudflare WARP
     type: wireguard
     server: engage.nanocat.cloud
     port: 2408
@@ -299,9 +299,9 @@ proxies:
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: warp+
+    dialer-proxy: Cloudflare WARP+
     
-  - name: warp+
+  - name: Cloudflare WARP+
     type: wireguard
     server: engage.nanocat.me
     port: 2408
@@ -321,11 +321,11 @@ proxies:
       - 82
       - 247
     mtu: 1420
-    dialer-proxy: warp
+    dialer-proxy: Cloudflare WARP
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
-  all:
+  ALL:
     type: http
     url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
     interval: 86400
@@ -336,7 +336,7 @@ proxy-providers:
       interval: 600
 
 # 服务器节点筛选
-  hk:
+  HK:
     type: file
     path: /all.yaml
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
@@ -345,7 +345,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       
-  tw: 
+  TW: 
     type: file
     path: /all.yaml
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
@@ -354,7 +354,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       
-  jp:
+  JP:
     type: file
     path: /all.yaml
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
@@ -363,7 +363,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       
-  kr:
+  KR:
     type: file
     path: /all.yaml
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
@@ -372,7 +372,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       
-  sg:
+  SG:
     type: file
     path: /all.yaml
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
@@ -381,7 +381,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
 
-  us:
+  US:
     type: file
     path: /all.yaml
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American
@@ -390,7 +390,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
 
-  un:
+  UN:
     type: file
     path: /all.yaml
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|American).)*$
@@ -399,7 +399,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
 
-  cn:
+  CN:
     type: file
     path: /all.yaml
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连
@@ -410,50 +410,50 @@ proxy-providers:
 
 #💡 策略组
 proxy-groups:
-  - name: 🔰 pick
+  - name: 🔰 Pick
     type: select
     proxies:
-      - ♻️ auto
-      - ✅ node
-      - ⚖️ load
-      - ⚙️ fallback
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
-      - 🇨🇳 chinese
-      - warp
-      - warp+
+      - ♻️ Auto
+      - ✅ Node
+      - ⚖️ Load Balance
+      - ⚙️ Fallback
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+      - 🇨🇳 Chinese
+      - Cloudflare WARP
+      - Cloudflare WARP+
       - DIRECT
       - REJECT
 
 # 将按照url测试结果使用延迟最低节点
-  - name: ♻️ auto
+  - name: ♻️ Auto
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - all
+      - ALL
     proxies:
-      - warp
-      - warp+
+      - Cloudflare WARP
+      - Cloudflare WARP+
       
 # 用户自行选择策略组或节点
-  - name: ✅ node
+  - name: ✅ Node
     type: select
     use:
-      - all 
+      - ALL 
     proxies:
-      - warp
-      - warp+
+      - Cloudflare WARP
+      - Cloudflare WARP+
       
 # 将按照算法随机选择节点,不同的请求使用不同的代理
-  - name: ⚖️ load
+  - name: ⚖️ Load Balance
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -464,16 +464,16 @@ proxy-groups:
     # round-robin所有请求使用不同的代理   
     strategy: consistent-hashing
     proxies:
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
 # 将按url测试结果按照节点顺序选择,直到该策略超时，才选择下一个可用代理
-  - name: ⚙️ fallback
+  - name: ⚙️ Fallback
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -481,297 +481,297 @@ proxy-groups:
     # 禁用该组udp流量转发    
     #disable-udp: true
     proxies:
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🇭🇰 hongkong
+  - name: 🇭🇰 HongKong
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - hk
+      - HK
     
-  - name: 🇹🇼 taiwan
+  - name: 🇹🇼 Taiwan
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - tw
+      - TW
 
-  - name: 🇯🇵 japan
+  - name: 🇯🇵 Japan
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - jp    
+      - JP    
       
-  - name: 🇰🇷 korea
+  - name: 🇰🇷 Korea
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - kr
+      - KR
 
-  - name: 🇸🇬 singapore
+  - name: 🇸🇬 Singapore
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - sg
+      - SG
       
-  - name: 🇺🇸 america
+  - name: 🇺🇸 America
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - us
+      - US
 
-  - name: 🇺🇳 nations
+  - name: 🇺🇳 Nations
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - un
+      - UN
 
-  - name: 🇨🇳 chinese
+  - name: 🇨🇳 Chinese
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
     use:
-      - cn
+      - CN
 
-  - name: 🕸️ speedtest
+  - name: 🕸️ Speedtest
     type: select
     proxies:
-      - 🇨🇳 china
-      - 🔰 pick
+      - 🇨🇳 China
+      - 🔰 Pick
       
-  - name: 🎵 tiktok
+  - name: 🎵 TikTok
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: ✉️ telegram
+  - name: ✉️ Telegram
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🗣️ discord
+  - name: 🗣️ Discord
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🎶 spotify
+  - name: 🎶 Spotify
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 📽️ netflix
+  - name: 📽️ Netflix
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 📼 disney
+  - name: 📼 Disney+
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 📹 youtube
+  - name: 📹 YouTube
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
       
-  - name: 🤖 openai
+  - name: 🤖 OpenAI
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🛒 amazon
+  - name: 🛒 Amazon
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🎭 facebook
+  - name: 🎭 Facebook
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 📟 google
+  - name: 📟 Google
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america      
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America      
+      - 🇺🇳 Nations
 
-  - name: 🖥️ microsoft
+  - name: 🖥️ Microsoft
     type: select
     proxies:
-      - 🇨🇳 china
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🇨🇳 China
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🍎 apple
+  - name: 🍎 Apple
     type: select
     proxies:
-      - 🇨🇳 china
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🇨🇳 China
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🎬 streaming
+  - name: 🎬 GlobalMedia
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 🌐 global
+  - name: 🌐 Global
     type: select
     proxies:
-      - 🔰 pick
-      - 🇭🇰 hongkong
-      - 🇹🇼 taiwan
-      - 🇯🇵 japan
-      - 🇰🇷 korea
-      - 🇸🇬 singapore
-      - 🇺🇸 america
-      - 🇺🇳 nations
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
-  - name: 📺 media
+  - name: 📺 ChinaMedia
     type: select
     proxies:
-      - 🇨🇳 china
-      - 🔰 pick
+      - 🇨🇳 China
+      - 🔰 Pick
 
-  - name: 🇨🇳 china
+  - name: 🇨🇳 China
     type: select
     proxies:
       - DIRECT
-      - 🔰 pick
-      - ✅ node
-      - 🇨🇳 chinese
-      - ⛔ adblock
+      - 🔰 Pick
+      - ✅ Node
+      - 🇨🇳 Chinese
+      - ⛔ AdBlock
 
-  - name: 🐟 final
+  - name: 🐟 Final
     type: select
     proxies:
-      - 🔰 pick
-      - 🇨🇳 china
-      - ⛔ adblock
+      - 🔰 Pick
+      - 🇨🇳 China
+      - ⛔ AdBlock
 
-  - name: ⛔ adblock
+  - name: ⛔ AdBlock
     type: select
     proxies:
       - REJECT
@@ -779,189 +779,189 @@ proxy-groups:
 
 #💡 远程分流规则
 rule-providers:
-  🚥 direct:
+  🚥 Direct:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     path: ./Direct.yaml
     interval: 86400
 
-  ⛔ antiad:
+  ⛔ Anti-AD:
     type: http
     behavior: domain
     url: https://anti-ad.net/clash.yaml
     path: ./anti-ad.yaml
     interval: 86400
 
-  ⛔ privacy:
+  ⛔ Privacy:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
     path: ./Privacy_Classical.yaml
     interval: 86400
     
-  ⛔ hijacking:
+  ⛔ Hijacking:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     path: ./Hijacking.yaml
     interval: 86400
     
-  ⛔ advertising:
+  ⛔ AdvertisingLite:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
     path: ./AdvertisingLite_Classical.yaml
     interval: 86400
 
-  ⛔ blockHttpdns:
+  ⛔ BlockHttpDNS:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
     path: ./BlockHttpDNS.yaml
     interval: 86400
 
-  🕸️ speedtest:
+  🕸️ Speedtest:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     path: ./Speedtest.yaml
     interval: 86400
     
-  🎵 tiktok:
+  🎵 TikTok:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
     path: ./TikTok.yaml
     interval: 86400
     
-  ✉️ telegram:
+  ✉️ Telegram:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     path: ./Telegram.yaml
     interval: 86400
 
-  🗣️ discord:
+  🗣️ Discord:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
     path: ./Discord.yaml
     interval: 86400
     
-  🎶 spotify:
+  🎶 Spotify:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
     path: ./Spotify.yaml
     interval: 86400
     
-  📽️ netflix:
+  📽️ Netflix:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
     path: ./Netflix.yaml
     interval: 86400
     
-  📼 disney:
+  📼 Disney+:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
     path: ./Disney.yaml
     interval: 86400
     
-  📹 youtube:
+  📹 YouTube:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
     path: ./YouTube.yaml
     interval: 86400
     
-  🤖 openai:
+  🤖 OpenAI:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
     path: ./OpenAI.yaml
     interval: 86400
 
-  🛒 amazon:
+  🛒 Amazon:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
     path: ./Amazon.yaml
     interval: 86400
 
-  🎭 facebook:
+  🎭 Facebook:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
     path: ./Facebook.yaml
     interval: 86400
 
-  📟 google:
+  📟 Google:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     path: ./Google.yaml
     interval: 86400
     
-  🖥️ microsoft:
+  🖥️ Microsoft:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     path: ./Microsoft.yaml
     interval: 86400
     
-  🍎 ota:
+  🍎 Apple-OTA:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
     path: ./SystemOTA.yaml
     interval: 86400
     
-  🍎 apple:
+  🍎 Apple:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
     path: ./Apple_Classical.yaml
     interval: 86400
 
-  🎬 streaming:
+  🎬 GlobalMedia:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
     path: ./GlobalMedia_Classical.yaml
     interval: 86400
     
-  🌐 global:
+  🌐 Global:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
     path: ./Global_Classical.yaml
     interval: 86400
     
-  📺 media:
+  📺 ChinaMedia:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     path: ./ChinaMedia.yaml
     interval: 86400
     
-  🇨🇳 china:
+  🇨🇳 China:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
     path: ./China_Classical.yaml
     interval: 86400
     
-  🇨🇳 ips:
+  🇨🇳 ChinaIPs:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
     path: ./ChinaIPs_Classical.yaml
     interval: 86400
 
-  🇨🇳 bgp:
+  🇨🇳 ChinaIPsBGP:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
@@ -982,51 +982,51 @@ rule-providers:
 # GEOIP 根据ip地址国家/地区
 # MATCH 不在规则中的请求
 rules:
-  - DOMAIN,ad.cyapi.cn,⛔ adblock
-  - DOMAIN,ad.21cn.com,⛔ adblock
-  - DOMAIN,ad.k.21cn.com,⛔ adblock
-  - DOMAIN,admarket.21cn.com,⛔ adblock
-  - DOMAIN,adshows.21cn.com,⛔ adblock
-  - DOMAIN,mssdk-bu.bytedance.com,⛔ adblock
-  - DOMAIN-SUFFIX,adx.appicad.net,⛔ adblock
-  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ adblock
-  - DOMAIN-KEYWORD,reddit,🌐 global
-  - DOMAIN-KEYWORD,snapchat,🌐 global
+  - DOMAIN,ad.cyapi.cn,⛔ AdBlock
+  - DOMAIN,ad.21cn.com,⛔ AdBlock
+  - DOMAIN,ad.k.21cn.com,⛔ AdBlock
+  - DOMAIN,admarket.21cn.com,⛔ AdBlock
+  - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
+  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
+  - DOMAIN-KEYWORD,reddit,🌐 Global
+  - DOMAIN-KEYWORD,snapchat,🌐 Global
   # - DST-PORT,80,DIRECT    
   # - SRC-PORT,7777,DIRECT
-  - PROCESS-NAME,AdGuard.exe,🌐 global
-  - PROCESS-NAME,AdGuardSvc.exe,🌐 global
-  - PROCESS-NAME,pinterest.exe,🌐 global
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 global
+  - PROCESS-NAME,AdGuard.exe,🌐 Global
+  - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
+  - PROCESS-NAME,pinterest.exe,🌐 Global
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
-  - RULE-SET,🚥 direct,🇨🇳 china
-  - RULE-SET,⛔ antiad,⛔ adblock
-  - RULE-SET,⛔ privacy,⛔ adblock
-  - RULE-SET,⛔ hijacking,⛔ adblock
-  - RULE-SET,⛔ advertising,⛔ adblock
-  - RULE-SET,⛔ blockHttpdns,⛔ adblock
-  - RULE-SET,🕸️ speedtest,🕸️ speedtest
-  - RULE-SET,🎵 tiktok,🎵 tiktok
-  - RULE-SET,✉️ telegram,✉️ telegram
-  - RULE-SET,🗣️ discord,🗣️ discord
-  - RULE-SET,🎶 spotify,🎶 spotify
-  - RULE-SET,📽️ netflix,📽️ netflix
-  - RULE-SET,📼 disney,📼 disney
-  - RULE-SET,📹 youtube,📹 youtube
-  - RULE-SET,🤖 openai,🤖 openai
-  - RULE-SET,🛒 amazon,🛒 amazon
-  - RULE-SET,🎭 facebook,🎭 facebook
-  - RULE-SET,📟 google,📟 google
-  - RULE-SET,🖥️ microsoft,🖥️ microsoft
-  - RULE-SET,🍎 ota,⛔ adblock
-  - RULE-SET,🍎 apple,🍎 apple
-  - RULE-SET,🎬 streaming,🎬 streaming
-  - RULE-SET,🌐 global,🌐 global
-  - RULE-SET,📺 media,📺 media
-  - RULE-SET,🇨🇳 china,🇨🇳 china
-  - RULE-SET,🇨🇳 ips,🇨🇳 china
-  - RULE-SET,🇨🇳 bgp,🇨🇳 china
-  - GEOIP,CN,🇨🇳 china
-  - MATCH,🐟 final
+  - RULE-SET,🚥 Direct,🇨🇳 China
+  - RULE-SET,⛔ Anti-AD,⛔ AdBlock
+  - RULE-SET,⛔ Privacy,⛔ AdBlock
+  - RULE-SET,⛔ Hijacking,⛔ AdBlock
+  - RULE-SET,⛔ AdvertisingLite,⛔ AdBlock
+  - RULE-SET,⛔ BlockHttpDNS,⛔ AdBlock
+  - RULE-SET,🕸️ Speedtest,🕸️ Speedtest
+  - RULE-SET,🎵 TikTok,🎵 TikTok
+  - RULE-SET,✉️ Telegram,✉️ Telegram
+  - RULE-SET,🗣️ Discord,🗣️ Discord
+  - RULE-SET,🎶 Spotify,🎶 Spotify
+  - RULE-SET,📽️ Netflix,📽️ Netflix
+  - RULE-SET,📼 Disney+,📼 Disney+
+  - RULE-SET,📹 YouTube,📹 YouTube
+  - RULE-SET,🤖 OpenAI,🤖 OpenAI
+  - RULE-SET,🛒 Amazon,🛒 Amazon
+  - RULE-SET,🎭 Facebook,🎭 Facebook
+  - RULE-SET,📟 Google,📟 Google
+  - RULE-SET,🖥️ Microsoft,🖥️ Microsoft
+  - RULE-SET,🍎 Apple-OTA,⛔ AdBlock
+  - RULE-SET,🍎 Apple,🍎 Apple
+  - RULE-SET,🎬 GlobalMedia,🎬 GlobalMedia
+  - RULE-SET,🌐 Global,🌐 Global
+  - RULE-SET,📺 ChinaMedia,📺 ChinaMedia
+  - RULE-SET,🇨🇳 China,🇨🇳 China
+  - RULE-SET,🇨🇳 ChinaIPs,🇨🇳 China
+  - RULE-SET,🇨🇳 ChinaIPsBGP,🇨🇳 China
+  - GEOIP,CN,🇨🇳 China
+  - MATCH,🐟 Final
