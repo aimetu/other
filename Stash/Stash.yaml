@@ -625,7 +625,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     interval: 86400
     
-  ⛔ Anti-AD:
+  ⛔ Anti.AD:
     behavior: domain
     url: https://anti-ad.net/clash.yaml
     interval: 86400
@@ -715,7 +715,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
     
-  🍎 Apple_OTA:
+  🍎 Apple.OTA:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
     interval: 86400
@@ -768,7 +768,7 @@ rules:
 - DOMAIN-KEYWORD,reddit,Global
 - DOMAIN-KEYWORD,snapchat,Global
 - RULE-SET,🚥 Direct,China
-- RULE-SET,⛔ Anti-AD,AdBlock
+- RULE-SET,⛔ Anti.AD,AdBlock
 - RULE-SET,⛔ Privacy,AdBlock
 - RULE-SET,⛔ Hijacking,AdBlock
 - RULE-SET,⛔ AdvertisingLite,AdBlock
@@ -786,7 +786,7 @@ rules:
 - RULE-SET,🎭 Facebook,Facebook
 - RULE-SET,📟 Google,Google
 - RULE-SET,🖥️ Microsoft,Microsoft
-- RULE-SET,🍎 Apple-OTA,AdBlock
+- RULE-SET,🍎 Apple.OTA,AdBlock
 - RULE-SET,🍎 Apple,AdBlock
 - RULE-SET,🎥 GlobalMedia,GlobalMedia
 - RULE-SET,🌐 Global,Global
