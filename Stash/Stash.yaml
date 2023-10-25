@@ -262,23 +262,12 @@ proxy-groups:
   proxies:
   - Auto
   - Node
-  - Load Balance
-  - Fallback
-  - HongKong
-  - Taiwan
-  - Japan
-  - Korea
-  - Singapore
-  - America
-  - Nations
-  - Chinese
-  - DIRECT
-  - REJECT
+  - China
   ssid-policy:
     cellular: Auto
-    default: Auto  
-    OpenWrt: DIRECT
-    OpenWrt_5G: DIRECT
+    default: Node
+    OpenWrt: China 
+    OpenWrt_5G: Node
 
 - name: Load Balance
   type: load-balance
