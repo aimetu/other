@@ -309,7 +309,7 @@ proxies:
     private-key: KNIUaK8rVES71P9COFupz9sLJVe878ou88/l6AwfyU0=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true  
+    remote-dns-resolve: true
     dns: 
       - 208.67.222.222
       - 2620:119:35::35
@@ -332,7 +332,7 @@ proxies:
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true  
+    remote-dns-resolve: true
     dns: 
       - 1.0.0.1
       - 2606:4700:4700::1001
@@ -355,7 +355,7 @@ proxies:
     private-key: sHlX5aH8alhxgcRDTHGl/B2h88RsqeL5Dd0WPksLAVE=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true  
+    remote-dns-resolve: true
     dns: 
       - 1.1.1.1
       - 2606:4700:4700::1111
