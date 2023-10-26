@@ -264,8 +264,8 @@ proxy-groups:
   - Node
   - China
   ssid-policy:
-    cellular: Auto
-    default: Node
+    cellular: Node 
+    default: Auto
     OpenWrt: China 
     OpenWrt_5G: Node
 
