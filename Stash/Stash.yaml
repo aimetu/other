@@ -20,7 +20,7 @@ proxy-providers:
 
 # 💡 本地代理服务器（支持ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard等协议）
 proxies:
- - name: WARP
+ - name: ☁︎ WARP
    type: wireguard
    server: engage.nanocat.me
    port: 2408
@@ -45,7 +45,7 @@ proxies:
     #   port: 443
     #   password: your-password
 
- - name: WARP+
+ - name: ☁︎ WARP+
    type: wireguard
    server: engage.cloudflareclient.com
    port: 2408
@@ -70,7 +70,7 @@ proxies:
     #   port: 443
     #   password: your-password
 
- - name: WARP+IP
+ - name: ☁︎ WARP+IP
    type: wireguard
    server: 188.114.97.229
    port: 2506
@@ -95,7 +95,7 @@ proxies:
     #   port: 443
     #   password: your-password
     
- - name: WARP+Teams
+ - name: ☁︎ WARP+Teams
    type: wireguard
    server: engage.nanocat.cloud
    port: 2408
