@@ -337,11 +337,11 @@ proxy-groups:
   proxies:
   - Auto
   - Node
-  - China
+  - DIRECT
   ssid-policy:
     cellular: Node 
     default: Auto
-    OpenWrt: China 
+    OpenWrt: DIRECT 
     OpenWrt_5G: Node
 
 - name: Load Balance
