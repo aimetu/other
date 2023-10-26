@@ -297,7 +297,7 @@ proxies:
       - 173
       - 82
       - 247
-    mtu: 1420
+    mtu: 1280
     dialer-proxy: 1.1.1.1
 
   - name: WARP+
