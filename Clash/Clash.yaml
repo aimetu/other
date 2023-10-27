@@ -298,7 +298,7 @@ proxies:
       - 82
       - 247
     mtu: 1280
-    dialer-proxy: 1.1.1.1
+    dialer-proxy: ⚙️ Fallback
 
   - name: ☁️ WARP+
     type: wireguard
@@ -311,8 +311,8 @@ proxies:
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     remote-dns-resolve: true
     dns: 
-      - 208.67.222.222
-      - 2620:119:35::35
+      - 1.1.1.1
+      - 2606:4700:4700::1111
     persistent-keepalive: 45
     allowed_ips: [0.0.0.0/0,::/0]
     reserved: 
@@ -321,7 +321,7 @@ proxies:
       - 143
     mtu: 1280
     udp: true
-    dialer-proxy: 208.67.222.222
+    dialer-proxy: ⚙️ Fallback
 
   - name: ☁️ WARP+IP
     type: wireguard
@@ -344,30 +344,30 @@ proxies:
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: 1.0.0.1
+    dialer-proxy: ⚙️ Fallback
 
   - name: ☁️ WARP+Teams
     type: wireguard
     server: engage.nanocat.cloud
     port: 2408
     ip: 172.16.0.2
-    ipv6: 2606:4700:110:83df:60d4:f0f9:6f2c:7c29
+    ipv6: 2606:4700:110:82fe:d8a4:909d:b445:7bd9
     private-key: sHlX5aH8alhxgcRDTHGl/B2h88RsqeL5Dd0WPksLAVE=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     remote-dns-resolve: true
     dns: 
-      - 1.1.1.1
-      - 2606:4700:4700::1111
+      - 1.0.0.1
+      - 2606:4700:4700::1001
     persistent-keepalive: 45
     allowed_ips: [0.0.0.0/0,::/0]
     reserved: 
-      - 48
-      - 106
-      - 252
+      - 14
+      - 44
+      - 87
     mtu: 1280
     udp: true
-    dialer-proxy: 1.1.1.1
+    dialer-proxy: ⚙️ Fallback
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
