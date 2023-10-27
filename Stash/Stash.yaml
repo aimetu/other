@@ -39,11 +39,11 @@ proxies:
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3   
-    # underlying-proxy: # optional
-    #   type: trojan
-    #   server: your-underlying-proxy
-    #   port: 443
-    #   password: your-password
+#   underlying-proxy: # optional
+#     type: trojan
+#     server: your-underlying-proxy
+#     port: 443
+#     password: your-password
 
  - name: ☁️ WARP+
    type: wireguard
@@ -64,11 +64,11 @@ proxies:
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3   
-    # underlying-proxy: # optional
-    #   type: trojan
-    #   server: your-underlying-proxy
-    #   port: 443
-    #   password: your-password
+#   underlying-proxy: # optional
+#     type: trojan
+#     server: your-underlying-proxy
+#     port: 443
+#     password: your-password
 
  - name: ☁️ WARP+IP
    type: wireguard
@@ -89,11 +89,11 @@ proxies:
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3   
-    # underlying-proxy: # optional
-    #   type: trojan
-    #   server: your-underlying-proxy
-    #   port: 443
-    #   password: your-password
+#   underlying-proxy: # optional
+#     type: trojan
+#     server: your-underlying-proxy
+#     port: 443
+#     password: your-password
     
  - name: ☁️ WARP+Teams
    type: wireguard
@@ -114,11 +114,11 @@ proxies:
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3   
-     underlying-proxy: # optional
-       type: 🇸🇬~NF~SGX0.01
-       server: hk.yydsb.link
-       port: 34237
-       password: e97fd9ea-2767-4b3f-90e2-4cd9961a7c58
+   underlying-proxy: # optional
+     type: 🇸🇬~NF~SGX0.01
+     server: hk.yydsb.link
+     port: 34237
+     password: e97fd9ea-2767-4b3f-90e2-4cd9961a7c58
     
 # 💡 dns服务器配置
 dns:
