@@ -624,7 +624,7 @@ proxy-groups:
   - America
   - Nations
 
-- name: GlobalMedia
+- name: Global Media
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
   proxies:
@@ -650,7 +650,7 @@ proxy-groups:
   - America
   - Nations
   
-- name: ChinaMedia
+- name: China Media
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
   proxies:
@@ -789,7 +789,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.txt
     interval: 86400
 
-  🎥 GlobalMedia:
+  🎥 Global Media:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
     interval: 86400
@@ -799,7 +799,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
     interval: 86400
     
-  📺 ChinaMedia:
+  📺 China Media:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     interval: 86400
@@ -809,12 +809,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.txt
     interval: 86400
     
-  🇨🇳 ChinaIPs:
+  🇨🇳 China.ips:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
     interval: 86400
 
-  🇨🇳 ChinaIPsBGP:
+  🇨🇳 China.ipsbgp:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_IP.txt
     interval: 86400
@@ -852,12 +852,12 @@ rules:
 - RULE-SET,🖥️ Microsoft,Microsoft
 - RULE-SET,🍎 Apple.ota,AdBlock
 - RULE-SET,🍎 Apple,AdBlock
-- RULE-SET,🎥 GlobalMedia,GlobalMedia
+- RULE-SET,🎥 Global Media,Global Media
 - RULE-SET,🌐 Global,Global
-- RULE-SET,📺 ChinaMedia,ChinaMedia
+- RULE-SET,📺 China Media,China Media
 - RULE-SET,🇨🇳 China,China
-- RULE-SET,🇨🇳 ChinaIPs,China
-- RULE-SET,🇨🇳 ChinaIPsBGP,China
+- RULE-SET,🇨🇳 China.ips,China
+- RULE-SET,🇨🇳 China.ipsbgp,China
 - SCRIPT,quic,AdBlock
 - GEOIP,CN,China
 - MATCH,Final
