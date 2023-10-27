@@ -114,11 +114,11 @@ proxies:
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3   
-   underlying-proxy: 
-     type: trojan
-     server: 183.213.200.208
-     port: 28157
-     password: M83a100a
+#   underlying-proxy: # optional
+#     type: trojan
+#     server: your-underlying-proxy
+#     port: 443
+#     password: your-password
     
 # 💡 dns服务器配置
 dns:
