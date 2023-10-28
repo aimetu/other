@@ -278,7 +278,7 @@ tunnels:
   
 #💡 本地代理服务器
 proxies:
-  - name: ☁️ WARP
+  - name: ☁️ WARP+
     type: wireguard
     server: engage.nanocat.me
     port: 2408
@@ -300,30 +300,7 @@ proxies:
     mtu: 1280
     dialer-proxy: 🇭🇰 HongKong
 
-  - name: ☁️ WARP+
-    type: wireguard
-    server: engage.cloudflareclient.com
-    port: 2408
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:8ec3:71a0:a55a:ded5:c9ce
-    private-key: kCpnE3Wnrd4C/lDK0wfBrVf88TTTg4K99C5yVKSVk3k=
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: 
-      - 1.1.1.1
-      - 2606:4700:4700::1111
-    persistent-keepalive: 45
-    allowed_ips: [0.0.0.0/0,::/0]
-    reserved: 
-      - 114
-      - 31
-      - 143
-    mtu: 1280
-    udp: true
-    dialer-proxy: 🇹🇼 Taiwan
-
-  - name: ☁️ WARP+IP
+  - name: ☁️ WARP+Teams
     type: wireguard
     server: 188.114.97.229
     port: 2506
@@ -344,30 +321,7 @@ proxies:
       - 10
     mtu: 1280
     udp: true
-    dialer-proxy: 🇯🇵 Japan
-
-  - name: ☁️ WARP+Teams
-    type: wireguard
-    server: engage.nanocat.cloud
-    port: 2408
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:82fe:d8a4:909d:b445:7bd9
-    private-key: sHlX5aH8alhxgcRDTHGl/B2h88RsqeL5Dd0WPksLAVE=
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: 
-      - 1.0.0.1
-      - 2606:4700:4700::1001
-    persistent-keepalive: 45
-    allowed_ips: [0.0.0.0/0,::/0]
-    reserved: 
-      - 14
-      - 44
-      - 87
-    mtu: 1280
-    udp: true
-    dialer-proxy: 🇰🇷 Korea
+    dialer-proxy: 🇹🇼 Taiwan
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
@@ -471,9 +425,7 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       - 🇨🇳 Chinese
-      - ☁️ WARP
       - ☁️ WARP+
-      - ☁️ WARP+IP
       - ☁️ WARP+Teams
       - DIRECT
       - REJECT
@@ -488,9 +440,7 @@ proxy-groups:
     use:
       - ALL
     proxies:
-      - ☁️ WARP
       - ☁️ WARP+
-      - ☁️ WARP+IP
       - ☁️ WARP+Teams
       
 # 用户自行选择策略组或节点
@@ -499,9 +449,7 @@ proxy-groups:
     use:
       - ALL 
     proxies:
-      - ☁️ WARP
       - ☁️ WARP+
-      - ☁️ WARP+IP
       - ☁️ WARP+Teams
       
 # 将按照算法随机选择节点,不同的请求使用不同的代理
