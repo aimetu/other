@@ -88,7 +88,7 @@ strategy:
 #💡 tun模式配置
 tun:
 # tun模式开关(false、true)
-  enable: true
+  enable: false
 # 网络栈类型(system、gvisor)
   stack: system
 # 自动重定向开关(false、true)
