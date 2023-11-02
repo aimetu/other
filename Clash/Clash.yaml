@@ -117,7 +117,7 @@ sniffer:
 # 全局配置，优先级低于sniffer.sniff实际配置
   override-destination: false
 # 需要嗅探的协议类型  
-  sniffing:
+  sniff:
     QUIC:
       ports: [ 443 ]
     TLS:
