@@ -113,7 +113,11 @@ tun:
 #💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
 sniffer:
 # 配置sniffer开关(false、true)
-  enable: true
+  enable: false
+# 对所有未获取到域名的流量进行强制嗅探  
+  parse-pure-ip: false
+# 对redir-host类型识别的流量进行强制嗅探
+  force-dns-mapping: false  
 # 全局配置，优先级低于sniffer.sniff实际配置
   override-destination: false
 # 需要嗅探的协议类型  
