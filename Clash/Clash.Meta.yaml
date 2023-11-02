@@ -60,7 +60,7 @@ external-controller: 127.0.0.1:9090
 find-process-mode: strict
 
 # 配置web ui目录，使用 http://{{external-controller}}/ui 访问
-external-ui: /path/to/ui/folder/
+external-ui: /ui/folder/
 external-ui-name: xd
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
