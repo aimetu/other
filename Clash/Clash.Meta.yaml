@@ -313,8 +313,8 @@ proxies:
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    udp: true
     remote-dns-resolve: true
+    udp: true
     dns: 
       - 1.1.1.1
       - 2606:4700:4700::1111
@@ -338,8 +338,8 @@ proxies:
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    udp: true   
     remote-dns-resolve: true
+    udp: true
     dns: 
       - 1.0.0.1
       - 2606:4700:4700::1001
