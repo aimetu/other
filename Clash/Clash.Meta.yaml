@@ -1,0 +1,1041 @@
+# meta样例:https://wiki.metacubex.one/
+# meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+
+# 2023.10.1
+# 注意:去掉前面的注释符号"#"该行生效
+
+#💡 通用设置
+# 网络模式:rule规则、global全局、direct直连、script脚本
+mode: rule
+
+# 日志模式:silent静默、info信息、warning警告、error错误、debug调试
+log-level: info
+
+# ipv6开关(false、true)，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
+ipv6: true
+
+# 本地http(s)服务端口
+port: 7890
+
+# 本地socks5服务端口
+socks-port: 7891
+
+# 本地http(s)或socks5服务使用同一混合端口
+mixed-port: 7890
+
+# linux和macos的透明代理服务器端口
+redir-port: 7892
+
+# linux的透明代理服务器端口(tcp、udp)
+tproxy-port: 7893
+
+# 允许局域网内其它设备通过clash访问互联网开关(false、true)
+allow-lan: true
+
+# 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
+bind-address: '*'
+
+# 指定clash出口网卡名称
+# interface-name: WLAN
+
+# 为linux下的出站连接提供默认流量标记
+routing-mark: 6666
+
+# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
+global-client-fingerprint: chrome
+
+# 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
+tcp-concurrent: true
+
+# tcp保持活动状态间隔
+keep-alive-interval: 15
+
+# 外部控制器可以通过监听地址控制clash
+external-controller: 127.0.0.1:9090
+
+# 查找进程模式有3个值
+# - always, 开启，强制匹配所有进程
+# - strict, 默认，由clash判断是否开启
+# - off, 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: strict
+
+# 配置web ui目录，使用 http://{{external-controller}}/ui 访问
+external-ui: /path/to/ui/folder/
+external-ui-name: xd
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+# geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
+geodata-mode: true
+
+# 自定义geoip.data url
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
+  
+# 缓存设置(文件位置./cache.db)
+profile:
+# 节点状态记忆（若不同配置有同代理名称,设置值共享）
+  store-selected: false
+# fake-ip缓存
+  store-fake-ip: true
+
+#💡 ssid策略  
+strategy:
+  OpenWrt, OpenWrt_5G: 
+    tun: false
+    mixin: false
+    system: true
+  
+#💡 tun模式配置
+tun:
+# tun模式开关(false、true)
+  enable: false
+# 网络栈类型(system、gvisor)
+  stack: system
+# 自动重定向开关(false、true)
+  auto-redir: true
+# 配置路由表  
+  auto-route: false
+# 启用auto_route时使用自定义路由而不是默认路由  
+  inet4_route_address:
+    - 0.0.0.0/1
+    - 128.0.0.0/1
+  inet6_route_address:
+    - "::/1"
+    - "8000::/1"  
+# 自动识别出口网卡
+  auto-detect-interface: true
+# 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  strict_route: true
+# dns劫持仅支持tcp/udp
+  dns-hijack:
+    - any:53
+
+#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
+sniffer:
+# 配置sniffer开关(false、true)
+  enable: false
+# 对所有未获取到域名的流量进行强制嗅探
+  parse-pure-ip: false
+# 对redir-host类型识别的流量进行强制嗅探
+  force-dns-mapping: false
+# 全局配置，优先级低于sniffer.sniff实际配置  
+  override-destination: false
+# 需要嗅探的协议类型  
+  sniff:
+    TLS:
+      ports: [443, 8443]
+# 需要嗅探的端口,默认嗅探 80
+    HTTP: 
+      ports: [80, 8080-8880]
+# 可覆盖 sniffer.override-destination
+      override-destination: true
+# 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
+# 需要强制嗅探的域名    
+  force-domain:
+    - 'google.com'
+# 端口白名单
+  port-whitelist:
+    - 80
+    - 443
+    - 8000-9000
+    
+#💡 dns服务器配置
+dns:
+# dns开关(false、true)，关闭将使用系统dns
+  enable: true
+# ipv6解析开关(false、true)；如果为false，将返回ip6结果为空
+  ipv6: true
+# 内部双栈并发时，向上游查询时的等待时间，默认100ms(单位：ms)
+  ipv6-timeout: 300
+ # doh支持http/3开关(false、true) 
+  prefer-h3: false
+# 开启dns服务器监听
+  listen: 0.0.0.0:53
+# 查询hosts配置并返回真实ip开关(false、true)
+  use-hosts: true
+# 搜索域以获取a/aaaa 记录
+  search-domains: [local]
+# dns增强模式  
+  enhanced-mode: fake-ip
+# fake-ip解析地址池  
+  fake-ip-range: 198.18.0.1/16
+# fake-ip过滤，列表中的域名返回真实ip
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "localhost"
+    - "WORKGROUP"
+    - "*.msftncsi.com"
+    - "*.msftconnecttest.com"
+    - "cable.auth.com"
+    - "captive.apple.com"
+    - "*.cmpassport.com"
+    - "id6.me"
+    - "open.e.189.cn"
+    - "auth.wosms.cn"
+    - "mdn.open.wo.cn"
+    - "opencloud.wostore.cn"
+    - "localhost.*.qq.com"
+    - "localhost.*.weixin.qq.com"
+    
+# 引导解析其他dns服务器,只支持纯ip可使用加密dns
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - tls://1.0.0.1:853
+    
+# 默认dns服务器，支持udp/tcp/dot/doh/doq等协议   
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    
+# 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
+  proxy-server-nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - 208.67.222.222
+    
+# 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
+  fallback:
+    - tls://dns.google
+    - https://1.0.0.1/dns-query
+    - https://doh.opendns.com/dns-query
+    
+# 配置fallback使用条件，回落dns服务器过滤
+  fallback-filter:
+# 配置geoip开关(false、true)
+    geoip: true
+# geoip匹配区域设定，查询不是cn时使用fallback返回结果
+    geoip-code: CN
+# 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
+    geosite:
+      - gfw
+# 如果不匹配ipcidr则使用nameservers中的结果    
+    ipcidr:
+      - 240.0.0.0/4      
+# 指定该域名用fallback解析   
+    domain:
+      - "+.google.com"
+      - "+.facebook.com"
+      - "+.youtube.com"
+    
+# 使用指定的dns服务器解析域名
+  nameserver-policy:
+    "openwrt.lan": system
+    "myrouter.local": system
+    "blog.google": 208.67.222.222
+    "talk.google.com": 108.177.125.188
+    "mtalk.google.com": 108.177.125.188
+    "dl.google.com": https://doh.opendns.com/dns-query
+    "dl.l.google.com": https://doh.opendns.com/dns-query
+    "update.googleapis.com": https://doh.opendns.com/dns-query
+        
+#💡 本地域名映射
+hosts:
+  "*.clash.dev": 127.0.0.1
+  ".dev": 127.0.0.1
+  "alpha.clash.dev": "::1"
+  
+#💡 自定义系统代理需要绕过的域名或ip
+bypass:
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+  - ...
+
+#💡 隧道模式，代理转发到目标服务器
+tunnels:
+  # 一行简约配置
+  - tcp,127.0.0.1:6553,223.5.5.5:53,✅ Node
+  - tcp/udp,127.0.0.1:6666,doh.pub:443,✅ Node
+  # 完整yaml配置
+  - network: 
+      - tcp
+      - udp  
+    address: 127.0.0.1:7777
+    target: dns.alidns.com:443
+    proxy: ✅ Node
+  
+#💡 本地代理服务器
+proxies:
+  - name: ☁️ WARP+
+    type: wireguard
+    server: engage.nanocat.me
+    port: 2408
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
+    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    udp: true
+    remote-dns-resolve: true
+    dns: 
+      - 1.1.1.1
+      - 2606:4700:4700::1111
+    persistent-keepalive: 45
+    allowed_ips: 
+      - 0.0.0.0/0
+      - ::/0    
+    reserved: 
+      - 173
+      - 82
+      - 247
+    mtu: 1280
+    dialer-proxy: 🇭🇰 HongKong
+
+  - name: ☁️ WARP+Teams
+    type: wireguard
+    server: 188.114.97.229
+    port: 2506
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
+    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    udp: true   
+    remote-dns-resolve: true
+    dns: 
+      - 1.0.0.1
+      - 2606:4700:4700::1001
+    persistent-keepalive: 45
+    allowed_ips: 
+      - 0.0.0.0/0
+      - ::/0    
+    reserved: 
+      - 80
+      - 73
+      - 10
+    mtu: 1280
+    dialer-proxy: 🇹🇼 Taiwan
+
+#💡 远程代理服务器订阅链接
+proxy-providers:
+  ALL:
+    type: http
+    url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
+    interval: 86400
+    path: /proxies/all.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+# 服务器节点筛选
+  HK:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
+  TW: 
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
+  JP:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
+  KR:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
+  SG:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+  US:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+  UN:
+    type: file
+    path: /proxies/all.yaml
+    filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+  CN:
+    type: file
+    path: /proxies/all.yaml
+    filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+#💡 策略组
+proxy-groups:
+  - name: 🔰 Pick
+    type: select
+    proxies:
+      - ♻️ Auto
+      - ✅ Node
+      - ⚖️ Load Balance
+      - ⚙️ Fallback
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+      - 🇨🇳 Chinese
+      - ☁️ WARP+
+      - ☁️ WARP+Teams
+      - DIRECT
+      - REJECT
+
+# 将按照url测试结果使用延迟最低节点
+  - name: ♻️ Auto
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - ALL
+    proxies:
+      - ☁️ WARP+
+      - ☁️ WARP+Teams
+      
+# 用户自行选择策略组或节点
+  - name: ✅ Node
+    type: select
+    use:
+      - ALL 
+    proxies:
+      - ☁️ WARP+
+      - ☁️ WARP+Teams
+      
+# 将按照算法随机选择节点,不同的请求使用不同的代理
+  - name: ⚖️ Load Balance
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    # 禁用该组udp流量转发   
+    #disable-udp: true
+    # consistent-hashing同一请求采用相同代理
+    # round-robin所有请求使用不同的代理   
+    strategy: consistent-hashing
+    proxies:
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+# 将按url测试结果按照节点顺序选择,直到该策略超时，才选择下一个可用代理
+  - name: ⚙️ Fallback
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    # 禁用该组udp流量转发    
+    #disable-udp: true
+    proxies:
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🇭🇰 HongKong
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - HK
+    
+  - name: 🇹🇼 Taiwan
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - TW
+
+  - name: 🇯🇵 Japan
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - JP    
+      
+  - name: 🇰🇷 Korea
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - KR
+
+  - name: 🇸🇬 Singapore
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - SG
+      
+  - name: 🇺🇸 America
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - US
+
+  - name: 🇺🇳 Nations
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - UN
+
+  - name: 🇨🇳 Chinese
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    use:
+      - CN
+
+  - name: 🕸️ Speedtest
+    type: select
+    proxies:
+      - 🇨🇳 China
+      - 🔰 Pick
+      
+  - name: 🎵 TikTok
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: ✉️ Telegram
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🗣️ Discord
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🎶 Spotify
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 📽️ Netflix
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 📼 Disney+
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+      
+  - name: 🤖 OpenAI
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🛒 Amazon
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🎭 Facebook
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 📟 Google
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America      
+      - 🇺🇳 Nations
+
+  - name: 🖥️ Microsoft
+    type: select
+    proxies:
+      - 🇨🇳 China
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🍎 Apple
+    type: select
+    proxies:
+      - 🇨🇳 China
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🎬 Global Media
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 🌐 Global
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: 📺 China Media
+    type: select
+    proxies:
+      - 🇨🇳 China
+      - 🔰 Pick
+
+  - name: 🇨🇳 China
+    type: select
+    proxies:
+      - DIRECT
+      - 🔰 Pick
+      - ✅ Node
+      - 🇨🇳 Chinese
+      - ⛔ AdBlock
+
+  - name: 🐟 Final
+    type: select
+    proxies:
+      - 🔰 Pick
+      - 🇨🇳 China
+      - ⛔ AdBlock
+
+  - name: ⛔ AdBlock
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+#💡 远程分流规则
+rule-providers:
+  🚥 Direct:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    path: /rules/Direct.yaml
+    interval: 86400
+
+  ⛔ Anti.ad:
+    type: http
+    behavior: domain
+    url: https://anti-ad.net/clash.yaml
+    path: /rules/anti-ad.yaml
+    interval: 86400
+
+  ⛔ Privacy:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
+    path: /rules/Privacy_Classical.yaml
+    interval: 86400
+    
+  ⛔ Hijacking:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
+    path: /rules/Hijacking.yaml
+    interval: 86400
+    
+  ⛔ AdvertisingLite:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
+    path: /rules/AdvertisingLite_Classical.yaml
+    interval: 86400
+
+  ⛔ BlockHttpDNS:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
+    path: /rules/BlockHttpDNS.yaml
+    interval: 86400
+
+  🕸️ Speedtest:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
+    path: /rules/Speedtest.yaml
+    interval: 86400
+    
+  🎵 TikTok:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: /rules/TikTok.yaml
+    interval: 86400
+    
+  ✉️ Telegram:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    path: /rules/Telegram.yaml
+    interval: 86400
+
+  🗣️ Discord:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    path: /rules/Discord.yaml
+    interval: 86400
+    
+  🎶 Spotify:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    path: /rules/Spotify.yaml
+    interval: 86400
+    
+  📽️ Netflix:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    path: /rules/Netflix.yaml
+    interval: 86400
+    
+  📼 Disney+:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    path: /rules/Disney.yaml
+    interval: 86400
+    
+  📹 YouTube:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: /rules/YouTube.yaml
+    interval: 86400
+    
+  🤖 OpenAI:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: /rules/OpenAI.yaml
+    interval: 86400
+
+  🛒 Amazon:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
+    path: /rules/Amazon.yaml
+    interval: 86400
+
+  🎭 Facebook:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+    path: /rules/Facebook.yaml
+    interval: 86400
+
+  📟 Google:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    path: /rules/Google.yaml
+    interval: 86400
+    
+  🖥️ Microsoft:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: /rules/Microsoft.yaml
+    interval: 86400
+    
+  🍎 Apple.ota:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
+    path: /rules/SystemOTA.yaml
+    interval: 86400
+    
+  🍎 Apple:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
+    path: /rules/Apple_Classical.yaml
+    interval: 86400
+
+  🎬 Global Media:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+    path: /rules/GlobalMedia_Classical.yaml
+    interval: 86400
+    
+  🌐 Global:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
+    path: /rules/Global_Classical.yaml
+    interval: 86400
+    
+  📺 China Media:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    path: /rules/ChinaMedia.yaml
+    interval: 86400
+    
+  🇨🇳 China:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
+    path: /rules/China_Classical.yaml
+    interval: 86400
+    
+  🇨🇳 China.ips:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
+    path: /rules/ChinaIPs_Classical.yaml
+    interval: 86400
+
+  🇨🇳 China.ipsbgp:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
+    path: /rules/ChinaIPsBGP_Classical.yaml
+    interval: 86400
+
+#💡 规则类型引用（指定规则类型引用代理或策略组）
+# DOMAIN 完整域名匹配
+# DOMAIN-SUFFIX 域名后缀匹配
+# DOMAIN-KEYWORD 域名关键词匹配
+# DST-PORT 从目标端口指定规则
+# SRC-PORT 发送至端口指定规则
+# IP-CIDR 本地ipv4规则
+# IP-CIDR6 本地ipv6规则
+# SRC-IP-CIDR 根据数据包的源ipv4地址
+# PROCESS-NAME 根据进程名称
+# PROCESS-PATH 根据进程路径
+# GEOIP 根据ip地址国家/地区
+# MATCH 不在规则中的请求
+rules:
+  - DOMAIN,ad.cyapi.cn,⛔ AdBlock
+  - DOMAIN,ad.21cn.com,⛔ AdBlock
+  - DOMAIN,ad.k.21cn.com,⛔ AdBlock
+  - DOMAIN,admarket.21cn.com,⛔ AdBlock
+  - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
+  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
+  - DOMAIN-KEYWORD,reddit,🌐 Global
+  - DOMAIN-KEYWORD,snapchat,🌐 Global
+  # - DST-PORT,80,DIRECT    
+  # - SRC-PORT,7777,DIRECT
+  - PROCESS-NAME,AdGuard.exe,🌐 Global
+  - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
+  - PROCESS-NAME,pinterest.exe,🌐 Global
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
+  - IP-CIDR,169.254.0.0/16,DIRECT
+  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
+  - SRC-IP-CIDR,239.255.255.250/32,DIRECT
+  - RULE-SET,🚥 Direct,🇨🇳 China
+  - RULE-SET,⛔ Anti.ad,⛔ AdBlock
+  - RULE-SET,⛔ Privacy,⛔ AdBlock
+  - RULE-SET,⛔ Hijacking,⛔ AdBlock
+  - RULE-SET,⛔ AdvertisingLite,⛔ AdBlock
+  - RULE-SET,⛔ BlockHttpDNS,⛔ AdBlock
+  - RULE-SET,🕸️ Speedtest,🕸️ Speedtest
+  - RULE-SET,🎵 TikTok,🎵 TikTok
+  - RULE-SET,✉️ Telegram,✉️ Telegram
+  - RULE-SET,🗣️ Discord,🗣️ Discord
+  - RULE-SET,🎶 Spotify,🎶 Spotify
+  - RULE-SET,📽️ Netflix,📽️ Netflix
+  - RULE-SET,📼 Disney+,📼 Disney+
+  - RULE-SET,📹 YouTube,📹 YouTube
+  - RULE-SET,🤖 OpenAI,🤖 OpenAI
+  - RULE-SET,🛒 Amazon,🛒 Amazon
+  - RULE-SET,🎭 Facebook,🎭 Facebook
+  - RULE-SET,📟 Google,📟 Google
+  - RULE-SET,🖥️ Microsoft,🖥️ Microsoft
+  - RULE-SET,🍎 Apple.ota,⛔ AdBlock
+  - RULE-SET,🍎 Apple,🍎 Apple
+  - RULE-SET,🎬 Global Media,🎬 Global Media
+  - RULE-SET,🌐 Global,🌐 Global
+  - RULE-SET,📺 China Media,📺 China Media
+  - RULE-SET,🇨🇳 China,🇨🇳 China
+  - RULE-SET,🇨🇳 China.ips,🇨🇳 China
+  - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
+  - GEOIP,CN,🇨🇳 China
+  - MATCH,🐟 Final
