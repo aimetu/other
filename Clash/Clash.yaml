@@ -32,6 +32,9 @@ redir-port: 7892
 # linux的透明代理服务器端口(tcp、udp)
 tproxy-port: 7893
 
+# 为linux下的出站连接提供默认流量标记
+routing-mark: 6666
+
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
@@ -41,20 +44,34 @@ bind-address: '*'
 # 指定clash出口网卡名称
 # interface-name: WLAN
 
-# 为linux下的出站连接提供默认流量标记
-routing-mark: 6666
-
-# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
-global-client-fingerprint: chrome
-
 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 tcp-concurrent: true
 
 # tcp保持活动状态间隔
 keep-alive-interval: 15
 
-# 外部控制器可以通过监听地址控制clash
+# 更换延迟计算方式,去除握手等额外延迟开关(false、true)
+unified-delay: true
+
+# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
+global-client-fingerprint: chrome
+
+# 自定义外部资源下载时使用的的ua,默认为clash.meta
+global-ua: clash.meta
+
+# api监听地址，你可以将127.0.0.1修改为0.0.0.0来监听所有 IP
 external-controller: 127.0.0.1:9090
+
+# 外部控制器访问密钥
+secret: 88888888
+
+# https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
+external-controller-tls: 127.0.0.1:9443
+
+# 目前仅用于api的https
+tls:
+  certificate: string # 证书 PEM 格式，或者 证书的路径
+  private-key: string
 
 # 查找进程模式有3个值
 # - always, 开启，强制匹配所有进程
@@ -64,6 +81,11 @@ find-process-mode: strict
 
 # geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
 geodata-mode: true
+
+# geo文件加载模式
+# standard：标准加载器
+# memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geodata-loader: memconservative
 
 # 自定义geoip.data url
 geox-url:
@@ -77,7 +99,6 @@ profile:
   store-selected: false
 # fake-ip缓存
   store-fake-ip: true
-
 #💡 ssid策略  
 strategy:
   OpenWrt, OpenWrt_5G: 
