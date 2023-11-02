@@ -14,7 +14,7 @@ subscribe-url: 输入订阅链接
 
 # 💡 远程代理服务器订阅链接
 proxy-providers:
-  ☁️ Node:
+  ☁️ Subscribe:
     url: https://sub.store/download/collection/node
     interval: 86400
 
