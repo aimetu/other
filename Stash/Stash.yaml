@@ -292,7 +292,7 @@ proxy-groups:
     cellular: Node 
     default: Auto
     OpenWrt: DIRECT 
-    OpenWrt_5G: Node
+    OpenWrt_5G: DIRECT
 
 - name: Load Balance
   type: load-balance
