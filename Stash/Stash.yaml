@@ -127,7 +127,6 @@ dns:
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
-    "update.googleapis.com": https://dns.alidns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
     
 # 💡 本地域名映射
