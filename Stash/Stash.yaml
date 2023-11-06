@@ -120,12 +120,12 @@ dns:
   nameserver-policy:
     "openwrt.lan": system
     "myrouter.local": system
-    "blog.google": 208.67.222.222
+    "blog.google": 119.29.29.29
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
-    "dl.google.com": https://doh.opendns.com/dns-query
-    "dl.l.google.com": https://doh.opendns.com/dns-query
-    "update.googleapis.com": quic://cn-a.ovo.glass
+    "dl.google.com": https://doh.pub/dns-query
+    "dl.l.google.com": https://dns.alidns.com/dns-query
+    "update.googleapis.com": quic://dns.alidns.com
     
 # 💡 本地域名映射
 hosts:
