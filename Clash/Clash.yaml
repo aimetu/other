@@ -250,10 +250,10 @@ dns:
 # 使用指定的dns服务器解析域名
   nameserver-policy:
     "openwrt.lan": system
-    "doh.pub": 1.12.12.12
-    "dns.alidns.com": 223.5.5.5
     "openwrt.org": 223.5.5.5
     "blog.google": 119.29.29.29
+    "dns.alidns.com": 223.5.5.5
+    "doh.pub": 1.12.12.12
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
