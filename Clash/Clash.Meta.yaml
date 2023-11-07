@@ -1,7 +1,7 @@
 # meta样例:https://wiki.metacubex.one/
 # meta模板:https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
-# 2023.10.1
+# 2023.11.08
 # 注意:去掉前面的注释符号"#"该行生效
 
 #💡 通用设置
@@ -54,7 +54,7 @@ unified-delay: true
 global-client-fingerprint: chrome
 
 # 自定义外部资源下载时使用的的ua,默认为clash.meta
-global-ua: clash.meta
+global-ua: Chrome/119.0.6045.106
 
 # api监听地址，你可以将127.0.0.1修改为0.0.0.0来监听所有 IP
 external-controller: 127.0.0.1:9090
@@ -216,7 +216,7 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - quic://dns.alidns.com
+    - quic://dns.alidns.com:853
     
 # 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
   proxy-server-nameserver:
@@ -258,7 +258,7 @@ nameserver-policy:
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
+    "update.googleapis.com": quic://dns.alidns.com:853
         
 #💡 本地域名映射
 hosts:
