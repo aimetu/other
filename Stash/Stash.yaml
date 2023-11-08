@@ -28,18 +28,14 @@ proxies:
    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   dns:
-   - 1.1.1.1
-   - 2606:4700:4700::1111
+   dns: [1.1.1.1,2606:4700:4700::1111]
    mtu: 1280
-   reserved:
-   - 173
-   - 82
-   - 247
+   reserved: [173,82,247]
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
-   benchmark-timeout: 3   
-#   underlying-proxy: # optional
+   benchmark-timeout: 3
+# 若使用underlying-proxy，其必须支持udp中继，建议使用udp over tcp的协议（如trojan、vless、vmess、snell）   
+#   underlying-proxy: 
 #     type: trojan
 #     server: your-underlying-proxy
 #     port: 443
@@ -53,18 +49,14 @@ proxies:
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   dns:
-   - 1.0.0.1
-   - 2606:4700:4700::1001
+   dns: [1.0.0.1,2606:4700:4700::1001]
    mtu: 1280
-   reserved:
-   - 80
-   - 73
-   - 10
+   reserved: [80,73,10]
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
-   benchmark-timeout: 3   
-#   underlying-proxy: # optional
+   benchmark-timeout: 3
+# 若使用underlying-proxy，其必须支持udp中继，建议使用udp over tcp的协议（如trojan、vless、vmess、snell）  
+#   underlying-proxy: 
 #     type: trojan
 #     server: your-underlying-proxy
 #     port: 443
@@ -256,6 +248,7 @@ proxy-groups:
   - Wireless  
   - Load Balance
   - Fallback
+  - Relay
   - HongKong
   - Taiwan
   - Japan
@@ -271,8 +264,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
   url: http://www.gstatic.com/generate_204
-  interval: 600  
+  interval: 600
+# lazy：懒惰模式，如果设置为true，策略组在未被使用时停止检测  
   lazy: true
+# include-all: true，引用所有的代理和远程代理集  
   include-all: true
 
 - name: Node
@@ -294,9 +289,12 @@ proxy-groups:
     default: Auto
     OpenWrt: DIRECT 
     OpenWrt_5G: DIRECT
-
+    
+# 均衡负载：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: Load Balance
   type: load-balance
+# strategy: consistent-hashing、round-robin，一般建议设置为consistent-hashing，避免频繁改变ip触发服务端的安全策略 
+  strategy: consistent-hashing
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
   url: http://www.gstatic.com/generate_204
   interval: 600  
@@ -309,7 +307,8 @@ proxy-groups:
   - Singapore
   - America
   - Nations
-  
+
+# 故障转移：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
 - name: Fallback
   type: fallback
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
@@ -324,6 +323,18 @@ proxy-groups:
   - Singapore
   - America
   - Nations
+
+# 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发tcp。relay策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试url
+- name: Relay
+  type: relay
+# 建议只使用HTTP协议  
+  benchmark-url: http://www.gstatic.com/generate_204
+# 延迟测试超时，单位：秒  
+  benchmark-timeout: 5
+# 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
+  proxies:
+    - HongKong
+    - ☁️ WARP+Teams
   
 - name: HongKong
   type: url-test
