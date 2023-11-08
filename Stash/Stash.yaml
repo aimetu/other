@@ -327,7 +327,7 @@ proxy-groups:
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发tcp。relay策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试url
 - name: Relay
   type: relay
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/relay.png
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用HTTP协议  
   benchmark-url: http://www.gstatic.com/generate_204
 # 延迟测试超时，单位：秒  
