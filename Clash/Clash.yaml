@@ -451,6 +451,7 @@ proxy-groups:
       - ✅ Node
       - ⚖️ Load Balance
       - ⚙️ Fallback
+      - 🛞 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -522,6 +523,17 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
+
+# 代理链，目前relay可以支持udp的只有vmess/vless/trojan/ss/ssr/tuic
+# wireguard目前不支持在relay中使用，请使用proxy中的dialer-proxy配置项
+# Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+  - name: 🛞 Proxy Chain
+    type: relay
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    proxies:
+      - 🇭🇰 HongKong
+      - ☁️ WARP+Teams
 
   - name: 🇭🇰 HongKong
     type: url-test
