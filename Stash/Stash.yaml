@@ -248,7 +248,7 @@ proxy-groups:
   - Wireless  
   - Load Balance
   - Fallback
-  - Chain
+  - Proxy Chain
   - HongKong
   - Taiwan
   - Japan
@@ -325,7 +325,7 @@ proxy-groups:
   - Nations
 
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发tcp。relay策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试url
-- name: Chain
+- name: Proxy Chain
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用HTTP协议  
