@@ -32,6 +32,14 @@ tproxy-port: 7893
 # 为linux下的出站连接提供默认流量标记
 routing-mark: 6666
 
+# http,socks入口的验证用户名，密码
+authentication: 
+  - "clash:88888888"
+# 设置跳过验证的ip段
+skip-auth-prefixes: 
+  - 127.0.0.0/8
+  - ::1/128
+  
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
@@ -56,19 +64,28 @@ global-client-fingerprint: chrome
 # 自定义外部资源下载时使用的的ua,默认为clash.meta
 global-ua: Chrome/119.0.6045.106
 
+# 禁用quic-go-gso支持开关(false、true),这可能会导致linux上的性能降低
+experimental:
+  quic-go-disable-gso: false
+  
 # api监听地址，你可以将127.0.0.1修改为0.0.0.0来监听所有 IP
 external-controller: 127.0.0.1:9090
-
-# 外部控制器访问密钥
-secret: 88888888
 
 # https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
 external-controller-tls: 127.0.0.1:9443
 
+# 外部控制器访问密钥
+secret: 88888888
+
 # 目前仅用于api的https
 tls:
   certificate: string # 证书 PEM 格式，或者 证书的路径
-  private-key: string
+  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+  custom-certifactes:
+    - |
+      -----BEGIN CERTIFICATE-----
+      format/pem...
+      -----END CERTIFICATE-----
 
 # 查找进程模式有3个值
 # - always, 开启，强制匹配所有进程
