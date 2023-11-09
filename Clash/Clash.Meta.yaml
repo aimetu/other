@@ -49,7 +49,7 @@ allow-lan: true
 bind-address: '*'
 
 # 指定clash出口网卡名称
-# interface-name: WLAN
+# interface-name: en0
 
 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 tcp-concurrent: true
@@ -237,7 +237,7 @@ dns:
     - "https://dns.alidns.com/dns-query#h3=true"
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com:853"
-    #- "https://223.5.5.5/dns-query#en0&h3=true" # 指定dns出口网卡
+    #- "https://223.5.5.5/dns-query#en0" # 指定dns出口网卡
     
 # 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
   proxy-server-nameserver:
@@ -247,7 +247,7 @@ dns:
     
 # 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
   fallback:
-    - "https://dns.google/dns-query#proxy&h3=true"
+    - "https://dns.google/dns-query#proxy"
     - "https://cloudflare-dns.com/dns-query#proxy&h3=true"
     - "https://doh.opendns.com/dns-query"
     
