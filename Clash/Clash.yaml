@@ -35,10 +35,11 @@ tproxy-port: 7893
 # 为linux下的出站连接提供默认流量标记
 routing-mark: 6666
 
-# http,socks入口的验证用户名，密码
+# 本地http(s)、socks服务端口验证的用户名和密码
 #authentication: 
 #  - "clash:88888888"
-# 设置跳过验证的ip段
+
+# 本地http(s)、socks服务端口跳过验证的ip段
 #skip-auth-prefixes: 
 #  - 127.0.0.0/8
 #  - ::1/128
@@ -46,7 +47,8 @@ routing-mark: 6666
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
-# 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
+# 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口
+# 支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
 bind-address: '*'
 
 # 指定clash出口网卡名称
@@ -77,12 +79,18 @@ external-controller: 127.0.0.1:9090
 # https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
 external-controller-tls: 127.0.0.1:9443
 
-# 外部控制器访问密钥
+# http(s)-api、api监听地址外部控制器访问密钥
 secret: 88888888
 
-# 目前仅用于api的https
+# 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径
+# clash core将会将其部署在 http://{{external-controller}}/ui
+#external-ui: /path/to/ui/folder
+#external-ui-name: xd
+#external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+# 目前仅用于api监听地址外部控制器的证书私钥
 tls:
-  certificate: string # 证书 PEM 格式，或者 证书的路径
+  certificate: string # 证书PEM格式，或者 证书的路径
   private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
   custom-certifactes:
     - |
