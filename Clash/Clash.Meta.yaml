@@ -35,6 +35,7 @@ routing-mark: 6666
 # http,socks入口的验证用户名，密码
 #authentication: 
 #  - "clash:88888888"
+
 # 设置跳过验证的ip段
 #skip-auth-prefixes: 
 #  - 127.0.0.0/8
@@ -43,7 +44,8 @@ routing-mark: 6666
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
-# 绑定ip仅允许某个ip访问代理端口,'*'表示所有地址,这仅适用allow-lan为true的情况
+# 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口
+# 支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
 bind-address: '*'
 
 # 指定clash出口网卡名称
@@ -74,8 +76,14 @@ external-controller: 127.0.0.1:9090
 # https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
 external-controller-tls: 127.0.0.1:9443
 
-# 外部控制器访问密钥
+# http(s)-api、api监听地址外部控制器访问密钥
 secret: 88888888
+
+# 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径
+# clash core将会将其部署在 http://{{external-controller}}/ui
+external-ui: /path/to/ui/folder
+external-ui-name: xd
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # 目前仅用于api的https
 tls:
@@ -92,11 +100,6 @@ tls:
 # - strict, 默认，由clash判断是否开启
 # - off, 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: strict
-
-# 配置web ui目录，使用 http://{{external-controller}}/ui 访问
-external-ui: /path/to/ui/folder
-external-ui-name: xd
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
 geodata-mode: true
