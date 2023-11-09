@@ -292,6 +292,8 @@ hosts:
 #💡 自定义系统代理需要绕过的域名或ip
 bypass:
   - localhost
+  - local.adguard.org
+  - injections.adguard.org
   - 127.*
   - 10.*
   - 172.16.*
