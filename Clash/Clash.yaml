@@ -84,7 +84,7 @@ secret: 88888888
 
 # 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径
 # clash core将会将其部署在 http://{{external-controller}}/ui
-#external-ui: /path/to/ui/folder
+#external-ui: /ui/folder
 #external-ui-name: xd
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
