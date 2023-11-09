@@ -1063,6 +1063,12 @@ rules:
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT 
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/24,DIRECT
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
