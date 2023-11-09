@@ -32,11 +32,11 @@ tproxy-port: 7893
 # 为linux下的出站连接提供默认流量标记
 routing-mark: 6666
 
-# http,socks入口的验证用户名，密码
+# 本地http(s)、socks服务端口验证的用户名和密码
 #authentication: 
 #  - "clash:88888888"
 
-# 设置跳过验证的ip段
+# 本地http(s)、socks服务端口跳过验证的ip段
 #skip-auth-prefixes: 
 #  - 127.0.0.0/8
 #  - ::1/128
