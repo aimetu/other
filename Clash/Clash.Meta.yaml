@@ -33,12 +33,12 @@ tproxy-port: 7893
 routing-mark: 6666
 
 # http,socks入口的验证用户名，密码
-authentication: 
-  - "clash:88888888"
+#authentication: 
+#  - "clash:88888888"
 # 设置跳过验证的ip段
-skip-auth-prefixes: 
-  - 127.0.0.0/8
-  - ::1/128
+#skip-auth-prefixes: 
+#  - 127.0.0.0/8
+#  - ::1/128
   
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
@@ -1057,8 +1057,6 @@ rules:
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global
-  # - DST-PORT,80,DIRECT    
-  # - SRC-PORT,7777,DIRECT
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
@@ -1072,6 +1070,8 @@ rules:
   - IP-CIDR,169.254.0.0/16,DIRECT
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
+  - DST-PORT,1400,✉️ Telegram    
+  #- SRC-PORT,7777,DIRECT
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
