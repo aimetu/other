@@ -52,7 +52,7 @@ allow-lan: true
 bind-address: '*'
 
 # 指定clash出口网卡名称
-# interface-name: WLAN
+# interface-name: en0
 
 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 tcp-concurrent: true
