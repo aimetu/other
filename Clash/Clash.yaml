@@ -89,14 +89,14 @@ secret: 88888888
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # 目前仅用于api监听地址外部控制器的证书私钥
-tls:
-  certificate: string # 证书PEM格式，或者 证书的路径
-  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
-  custom-certifactes:
-    - |
-      -----BEGIN CERTIFICATE-----
-      format/pem...
-      -----END CERTIFICATE-----
+#tls:
+#  certificate: string # 证书PEM格式，或者 证书的路径
+#  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+#  custom-certifactes:
+#    - |
+#      -----BEGIN CERTIFICATE-----
+#      format/pem...
+#      -----END CERTIFICATE-----
 
 # 查找进程模式有3个值
 # - always, 开启，强制匹配所有进程
