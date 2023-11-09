@@ -351,7 +351,7 @@ proxies:
        port: 2408
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
-       public-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ['0.0.0.0/0','::/0']
        reserved: [173,82,247]
@@ -377,7 +377,7 @@ proxies:
        port: 2408
        ip: 172.16.0.2
        ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
-       public-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ['0.0.0.0/0','::/0']
        reserved: [80,73,10]
