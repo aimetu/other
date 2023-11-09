@@ -1053,6 +1053,7 @@ rule-providers:
 # PROCESS-PATH 根据进程路径
 # GEOIP 根据ip地址国家/地区
 # MATCH 不在规则中的请求
+# no-resolve 可选，它用于跳过规则的dns解析
 rules:
   - DOMAIN,ad.cyapi.cn,⛔ AdBlock
   - DOMAIN,ad.21cn.com,⛔ AdBlock
