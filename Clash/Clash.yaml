@@ -81,31 +81,6 @@ tun:
   dns-hijack: # dns劫持仅支持tcp/udp
     - any:53
 
-#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板
-sniffer:
-  enable: true # 配置sniffer开关(false、true)
-  parse-pure-ip: true  # 对所有未获取到域名的流量进行强制嗅探
-  force-dns-mapping: true # 对redir-host类型识别的流量进行强制嗅探
-  override-destination: true # 是否使用嗅探结果作为实际访问，默认为 true  
-  sniff: # 需要嗅探的协议类型  
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-    TLS:
-      ports: [443, 8443]
-    QUIC:
-      ports: [443, 8443]
-  skip-domain: # 需要跳过嗅探的域名。主要解决部分站点sni字段非域名，导致嗅探结果异常的问题，如米家设备 
-    - "Mijia Cloud"
-    - "dlg.io.mi.com"
-    - "+.apple.com"
-  force-domain: # 需要强制嗅探的域名（默认情况下只对IP进行嗅探） 
-    - "google.com"
-  port-whitelist: # 端口白名单
-    - 80
-    - 443
-    - 8000-9000
-    
 #💡 dns服务器配置
 dns:
   enable: true  # dns开关(false、true)，关闭将使用系统dns
@@ -208,6 +183,77 @@ bypass:
   - <local>
   - ...
 
+#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板
+sniffer:
+  enable: true # 配置sniffer开关(false、true)
+  parse-pure-ip: true  # 对所有未获取到域名的流量进行强制嗅探
+  force-dns-mapping: true # 对redir-host类型识别的流量进行强制嗅探
+  override-destination: true # 是否使用嗅探结果作为实际访问，默认为 true  
+  sniff: # 需要嗅探的协议类型  
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain: # 需要跳过嗅探的域名。主要解决部分站点sni字段非域名，导致嗅探结果异常的问题，如米家设备 
+    - "Mijia Cloud"
+    - "dlg.io.mi.com"
+    - "+.apple.com"
+  force-domain: # 需要强制嗅探的域名（默认情况下只对IP进行嗅探） 
+    - "google.com"
+  port-whitelist: # 端口白名单
+    - 80
+    - 443
+    - 8000-9000
+
+#💡 流量入站配置,可以作为服务器
+listeners:
+  - name: socks5-lan # 用于监听局域网流量的入站,适用于无加密传输
+    type: socks # socks代理
+    port: 10808
+    listen: 0.0.0.0 # 默认监听 0.0.0.0
+    rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
+    proxy: ☁️ WARP+Teams # 如果不为空则直接将该入站流量交由指定proxy处理
+    udp: true # 默认 true
+
+  - name: http-lan # 用于监听局域网流量的入站,适用于无加密传输
+    type: http # htpp(s)代理
+    port: 10809
+    listen: 0.0.0.0
+    rule: rules # 默认使用 rules,如果未找到sub-rule则直接使用rules
+    proxy: ☁️ WARP+Teams # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时,这里的proxy名称必须合法,否则会出错)
+    udp: true # 默认 true
+
+  - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
+    type: mixed # htpp(s) 和socks代理混合
+    port: 10810
+    listen: 0.0.0.0
+    rule: rules # 默认使用 rules,如果未找到sub-rule则直接使用rules
+    proxy: ☁️ WARP+Teams # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时,这里的proxy名称必须合法,否则会出错)
+    udp: true # 默认 true
+
+  - name: shadowsocks-wwan # 互联网用于加密传输流量的入站
+    type: shadowsocks
+    port: 10813
+    listen: 0.0.0.0
+    rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
+    proxy: ☁️ WARP+ # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时,这里的proxy名称必须合法,否则会出错)
+    password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    cipher: 2022-blake3-aes-256-gcm
+
+  - name: vmess-wwan # 互联网用于加密传输流量的入站
+    type: vmess
+    port: 10814
+    listen: 0.0.0.0
+    rule: rules # 默认使用 rules,如果未找到sub-rule则直接使用rules
+    proxy: ☁️ WARP+ # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时,这里的proxy名称必须合法,否则会出错)
+    users:
+      - username: WARP+
+        uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
+        alterId: 1
+
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
   - tcp,127.0.0.1:6553,223.5.5.5:53,✅ Node # 一行简约配置
@@ -277,7 +323,7 @@ proxies:
 proxy-providers:
   ALL:  # 远程代理服务器引用名称
     type: http # 代理服务器引用类型
-    path: /proxies/all.yaml # 存储到位置路径
+    path: /proxy/all.yaml # 存储到位置路径
     url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
     interval: 86400 # 自动更新时长单位：秒
     udp: true # udp支持开关
@@ -289,7 +335,7 @@ proxy-providers:
 # 服务器节点筛选
   HK:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
     health-check:
       enable: true
@@ -298,7 +344,7 @@ proxy-providers:
       
   TW: 
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
     health-check:
       enable: true
@@ -307,7 +353,7 @@ proxy-providers:
       
   JP:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
     health-check:
       enable: true
@@ -316,7 +362,7 @@ proxy-providers:
       
   KR:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     health-check:
       enable: true
@@ -325,7 +371,7 @@ proxy-providers:
       
   SG:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     health-check:
       enable: true
@@ -334,7 +380,7 @@ proxy-providers:
 
   US:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     health-check:
       enable: true
@@ -343,7 +389,7 @@ proxy-providers:
 
   UN:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
     health-check:
       enable: true
@@ -352,7 +398,7 @@ proxy-providers:
 
   CN:
     type: file
-    path: /proxies/all.yaml
+    path: /proxy/all.yaml
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|🎮|game|GAME|游戏|direct|Direct|DIRECT|直连
     health-check:
       enable: true
@@ -737,189 +783,189 @@ rule-providers:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    path: /rules/Direct.yaml
+    path: /rule/Direct.yaml
     interval: 86400
 
   ⛔ Anti.ad:
     type: http
     behavior: domain
     url: https://anti-ad.net/clash.yaml
-    path: /rules/anti-ad.yaml
+    path: /rule/anti-ad.yaml
     interval: 86400
 
   ⛔ Privacy:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
-    path: /rules/Privacy_Classical.yaml
+    path: /rule/Privacy_Classical.yaml
     interval: 86400
     
   ⛔ Hijacking:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    path: /rules/Hijacking.yaml
+    path: /rule/Hijacking.yaml
     interval: 86400
     
   ⛔ AdvertisingLite:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
-    path: /rules/AdvertisingLite_Classical.yaml
+    path: /rule/AdvertisingLite_Classical.yaml
     interval: 86400
 
   ⛔ BlockHttpDNS:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
-    path: /rules/BlockHttpDNS.yaml
+    path: /rule/BlockHttpDNS.yaml
     interval: 86400
 
   🕸️ Speedtest:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    path: /rules/Speedtest.yaml
+    path: /rule/Speedtest.yaml
     interval: 86400
     
   🎵 TikTok:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    path: /rules/TikTok.yaml
+    path: /rule/TikTok.yaml
     interval: 86400
     
   ✉️ Telegram:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    path: /rules/Telegram.yaml
+    path: /rule/Telegram.yaml
     interval: 86400
 
   🗣️ Discord:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    path: /rules/Discord.yaml
+    path: /rule/Discord.yaml
     interval: 86400
     
   🎶 Spotify:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    path: /rules/Spotify.yaml
+    path: /rule/Spotify.yaml
     interval: 86400
     
   📽️ Netflix:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
-    path: /rules/Netflix.yaml
+    path: /rule/Netflix.yaml
     interval: 86400
     
   📼 Disney+:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
-    path: /rules/Disney.yaml
+    path: /rule/Disney.yaml
     interval: 86400
     
   📹 YouTube:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
-    path: /rules/YouTube.yaml
+    path: /rule/YouTube.yaml
     interval: 86400
     
   🤖 OpenAI:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
-    path: /rules/OpenAI.yaml
+    path: /rule/OpenAI.yaml
     interval: 86400
 
   🛒 Amazon:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
-    path: /rules/Amazon.yaml
+    path: /rule/Amazon.yaml
     interval: 86400
 
   🎭 Facebook:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
-    path: /rules/Facebook.yaml
+    path: /rule/Facebook.yaml
     interval: 86400
 
   📟 Google:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-    path: /rules/Google.yaml
+    path: /rule/Google.yaml
     interval: 86400
     
   🖥️ Microsoft:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-    path: /rules/Microsoft.yaml
+    path: /rule/Microsoft.yaml
     interval: 86400
     
   🍎 Apple.ota:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-    path: /rules/SystemOTA.yaml
+    path: /rule/SystemOTA.yaml
     interval: 86400
     
   🍎 Apple:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
-    path: /rules/Apple_Classical.yaml
+    path: /rule/Apple_Classical.yaml
     interval: 86400
 
   🎬 Global Media:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
-    path: /rules/GlobalMedia_Classical.yaml
+    path: /rule/GlobalMedia_Classical.yaml
     interval: 86400
     
   🌐 Global:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
-    path: /rules/Global_Classical.yaml
+    path: /rule/Global_Classical.yaml
     interval: 86400
     
   📺 China Media:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    path: /rules/ChinaMedia.yaml
+    path: /rule/ChinaMedia.yaml
     interval: 86400
     
   🇨🇳 China:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
-    path: /rules/China_Classical.yaml
+    path: /rule/China_Classical.yaml
     interval: 86400
     
   🇨🇳 China.ips:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
-    path: /rules/ChinaIPs_Classical.yaml
+    path: /rule/ChinaIPs_Classical.yaml
     interval: 86400
 
   🇨🇳 China.ipsbgp:
     type: http
     behavior: classical
     url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
-    path: /rules/ChinaIPsBGP_Classical.yaml
+    path: /rule/ChinaIPsBGP_Classical.yaml
     interval: 86400
 
 #💡 规则类型引用（指定规则类型引用代理或策略组）
