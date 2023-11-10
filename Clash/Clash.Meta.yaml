@@ -335,30 +335,31 @@ tunnels:
   
 #💡 本地代理服务器
 proxies:
-  - name: ☁️ WARP+
-    type: wireguard
-    server: 188.114.97.59
-    port: 1180
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
-    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: [1.1.1.1,2606:4700:4700::1111]
-    persistent-keepalive: 45
-    reserved: [173,82,247]
-    mtu: 1280
-    udp: true
-    dialer-proxy: 🇭🇰 HongKong
-    peers:
+  - name: ☁️ WARP+　　　　　　　# 代理名称,书写时请确保不会与其他代理节点重名
+    type: wireguard　　　　　　　# 代理类型,此处为 wireguard
+    server: 188.114.97.59　　　　# wireguard服务端地址
+    port: 1180　　　　　　　　　　# wireguard服务端端口
+    ip: 172.16.0.2　　　　　　　　# 本机在Wireguard网络中使用的IPv4地址
+    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92　　　　　　　　　　# 可选字段，本机在Wireguard网络中使用的IPv6地址
+    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=　　　# base64编码的Wireguard客户端私钥
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=   　　#　base64编码的Wireguard服务端公钥
+    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1　　　　　　# 可选字段，预共享密钥
+    remote-dns-resolve: true　　　　　　　　　# 可选字段，是否强制dns远程解析，默认值为false
+    dns: [1.1.1.1,2606:4700:4700::1111]　　　# 可选字段，当remote-dns-resolve为true时生效，指定远程解析使用的dns服务器
+    persistent-keepalive: 45　　　　　　　　　# 可选字段，数据包间隔持久保活时长
+    reserved: [173,82,247]　　　　　　　　　　# 可选字段，Wireguard协议保留字段的值，部分warp节点需要使用
+    allowed-ips: ["0.0.0.0/0"]　　　　　　　　# 可选字段，限制客户端的哪些IP段的流量由服务端进行转发。一般情况下可填['0.0.0.0/0']
+    mtu: 1280　　　　　　　　　　　　　　　　　# 可选字段，设置mtu值
+    udp: true　　　　　　　　　　　　　　　　　# 可选字段，是否启用UDP支持
+    dialer-proxy: 🇭🇰 HongKong　　　　　　　　　# 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group发出连接,用于Wireguard配置链式代理
+    peers:　　　　　　　　　　　　　　　　　　　# 如果使用多个peer，每一个peer的allowed-ips需要做区分；此时顶层段落的server, port, ip, ipv6, public-key, pre-shared-key, reserved等字段均会被忽略，不过private-key仍然在顶层指定
      - server: engage.nanocat.me
        port: 2408
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-       # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
-       allowed_ips: ['0.0.0.0/0','::/0']
+       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
+       allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [173,82,247]
 
   - name: ☁️ WARP+Teams
@@ -374,6 +375,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     persistent-keepalive: 45
     reserved: [80,73,10]
+    allowed-ips: ["0.0.0.0/0"]
     mtu: 1280
     udp: true
     dialer-proxy: 🇹🇼 Taiwan
@@ -384,7 +386,7 @@ proxies:
        ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
-       allowed_ips: ['0.0.0.0/0','::/0']
+       allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
 
 #💡 远程代理服务器订阅链接
