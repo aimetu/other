@@ -51,5 +51,5 @@
 | [anti-ad-广告过滤](https://github.com/privacy-protection-tools/anti-AD) | [cjxlist-广告过滤](https://github.com/cjx82630/cjxlist) | [adgk-adguard广告过滤](https://github.com/banbendalao/ADgk) | [cats-team-广告过滤](https://github.com/Cats-Team/AdRules) | [EasyList-广告过滤](https://easylist.to/) |
 | [wireguard-代理隧道](https://www.wireguard.com/install/) | [cloudflare-warp](https://1.1.1.1/) | [matsuri-android](https://github.com/MatsuriDayo/Matsuri) | [nekobox-Android](https://github.com/MatsuriDayo/NekoBoxForAndroid) | [matsuridayo-二合一](https://matsuridayo.github.io/) |
 | [sub-订阅转换](https://sub.xeton.dev/) | [Cloudflare-速度测试](https://github.com/XIU2/CloudflareSpeedTest#) | [Cloudflare-优选](https://gitlab.com/amirnow/warp-script) | [WARP-WGCF在线提取](https://replit.com/@misaka-blog/wgcf-profile-generator) |[WARP-WARP-GO在线提取](https://replit.com/@misaka-blog/warpgo-profile-generator) |
-| [proxypin-免费开源抓包工具](https://github.com/wanghongenpin) |
+| [proxypin-免费开源抓包工具](https://github.com/wanghongenpin) | [hiddify-多平台客户端](https://github.com/hiddify/hiddify-next) |
 - *[]()*
