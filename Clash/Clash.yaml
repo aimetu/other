@@ -8,87 +8,86 @@
 # 注意:去掉前面的注释符号"#"该行生效
 
 #💡 通用设置
-mode: rule　　　　　　　　　# 运行模式:rule规则、global全局、direct直连、script脚本
-log-level: info　　　　　　 # 日志模式:silent静默、info信息、warning警告、error错误、debug调试
-ipv6: true　　　　　　　　　# ipv6开关(false、true)，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
-port: 7890　　　　　　　　　# 本地http(s)服务端口
-socks-port: 7891　　　　　　# 本地socks5服务端口
-mixed-port: 7890　　　　　　# 本地http(s)或socks5服务使用同一混合端口
-redir-port: 7892　　　　　　# linux和macos的透明代理服务器端口
-tproxy-port: 7893　　　　　 # linux的透明代理服务器端口(tcp、udp)
-routing-mark: 6666　　　　　# 为linux下的出站连接提供默认流量标记
-#authentication: 　　　　　 # 本地http(s)、socks服务端口验证的用户名和密码
+mode: rule # 运行模式:rule规则、global全局、direct直连、script脚本
+log-level: info  # 日志模式:silent静默、info信息、warning警告、error错误、debug调试
+ipv6: true # ipv6开关(false、true)，关闭将阻断所有ipv6链接和屏蔽dns请求AAAA记录
+port: 7890 # 本地http(s)服务端口
+socks-port: 7891 # 本地socks5服务端口
+mixed-port: 7890 # 本地http(s)或socks5服务使用同一混合端口
+redir-port: 7892 # linux和macos的透明代理服务器端口
+tproxy-port: 7893  # linux的透明代理服务器端口(tcp、udp)
+routing-mark: 6666 # 为linux下的出站连接提供默认流量标记
+#authentication:  # 本地http(s)、socks服务端口验证的用户名和密码
 #  - "clash:88888888"
-#skip-auth-prefixes: 　　　　# 本地http(s)、socks服务端口跳过验证的ip段
+#skip-auth-prefixes: # 本地http(s)、socks服务端口跳过验证的ip段
 #  - "127.0.0.0/8"
 #  - "::1/128"
-allow-lan: true　　　　　　　　　　　　　　# 允许局域网内其它设备通过clash访问互联网开关(false、true)
-bind-address: "*"　　　　　　　　　　　　　# 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
-# interface-name: en0　　　　　　　　　　　# 指定clash出口网卡名称
-tcp-concurrent: true　　　　　　　　　　　 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
-keep-alive-interval: 30　　　　　　　　　　# 控制clash发出tcp keep alive包的间隔，减少移动设备耗电问题的临时措施
-unified-delay: true　　　　　　　　　　　　# 更换延迟计算方式,去除握手等额外延迟开关(false、true)
-global-client-fingerprint: chrome　　　　　# 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
-global-ua: Chrome/119.0.6045.106　　　　　 # 自定义外部资源下载时使用的的ua,默认为clash.meta
-experimental:　　　　　　　　　　　　　　　 # 禁用quic-go-gso支持开关(false、true),这可能会导致linux上的性能降低
+allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关(false、true)
+bind-address: '*' # 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
+interface-name: WLAN # 指定clash出口网卡名称
+tcp-concurrent: true  # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
+keep-alive-interval: 30 　# 控制clash发出tcp keep alive包的间隔，减少移动设备耗电问题的临时措施
+unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关(false、true)
+global-client-fingerprint: chrome # 全局客户端tls指纹,可选chrome/firefox/safari/ios/android/edge/360/qq/random
+global-ua: Chrome/119.0.6045.106  # 自定义外部资源下载时使用的的ua,默认为clash.meta
+experimental: # 禁用quic-go-gso支持开关(false、true),这可能会导致linux上的性能降低
   quic-go-disable-gso: false
-external-controller: 127.0.0.1:9090          # api监听地址，你可以将127.0.0.1修改为0.0.0.0来监听所有 IP
-external-controller-tls: 127.0.0.1:9443  　　# https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
-secret: "88888888"                # http(s)-api、api监听地址外部控制器访问密钥
-#external-ui: /ui/folder          # 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core将会将其部署在 http://{{external-controller}}/ui
-#external-ui-name: xd             # 自定义外部用户界面名字
+external-controller: 127.0.0.1:9090  # api监听地址，你可以将127.0.0.1修改为0.0.0.0来监听所有 IP
+external-controller-tls: 127.0.0.1:9443 # https-api监听地址，需要配置tls部分证书和其私钥配置，使用tls也必须填写external-controller
+secret: "88888888"  # http(s)-api、api监听地址外部控制器访问密钥
+#external-ui: /ui/folder # 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core将会将其部署在 http://{{external-controller}}/ui
+#external-ui-name: xd # 自定义外部用户界面名字
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"         # 自定义外部用户界面下载地址
-#tls:                             # 目前仅用于api监听地址外部控制器的证书私钥
-#  certificate: string            # 证书PEM格式，或者 证书的路径
-#  private-key: string            # 证书对应的私钥 PEM 格式，或者私钥路径
+#tls:  # 目前仅用于api监听地址外部控制器的证书私钥
+#  certificate: string # 证书PEM格式，或者 证书的路径
+#  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
 #  custom-certifactes:
 #    - |
 #      -----BEGIN CERTIFICATE-----
 #      format/pem...
 #      -----END CERTIFICATE-----
-find-process-mode: strict         # 查找进程模式有3个值：always开启，强制匹配所有进程。strict默认，由clash判断是否开启。off不匹配进程，推荐在路由器上使用此模式。
-geodata-mode: true                # geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
-geodata-loader: memconservative   # geo文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
-geox-url:                     　　# 自定义geoip.data url
+find-process-mode: strict # 查找进程模式有3个值：always开启，强制匹配所有进程。strict默认，由clash判断是否开启。off不匹配进程，推荐在路由器上使用此模式。
+geodata-mode: true # geoip.dat数据库开关(false、true),false使用mmdb数据库「meta专属」
+geodata-loader: memconservative # geo文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geox-url: # 自定义geoip.data url
   geoip: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
   mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
-profile:                      # profile为扩展配置，但在 Clash.meta, 仅作为缓存项使用(文件位置./cache.db)
-  store-selected: true        # 储存api对策略组的选择，以供下次启动时使用
-  store-fake-ip: true         # 储存fakeip映射表，域名再次发生连接时，使用原有映射地址
+profile:  # profile为扩展配置，但在 Clash.meta, 仅作为缓存项使用(文件位置./cache.db)
+  store-selected: true # 储存api对策略组的选择，以供下次启动时使用
+  store-fake-ip: true # 储存fakeip映射表，域名再次发生连接时，使用原有映射地址
   
 #💡 ssid策略  
 strategy:
-  OpenWrt, OpenWrt_5G:         # 无线网络名称
-    tun: false                 # tun模式网络开关
-    mixin: false               # 混合模式开关
-    system: true               # 系统代理开关
+  OpenWrt, OpenWrt_5G: # 无线网络名称
+    tun: false # tun模式网络开关
+    mixin: false # 混合模式开关
+    system: true # 系统代理开关
   
 #💡 tun模式配置
 tun:
-  enable: false                 # tun模式开关(false、true)
-  stack: system                 # 网络栈类型(system、gvisor)
-  auto-redir: true              # 自动重定向开关(false、true)
-# 配置路由表  
-  auto-route: false
-  inet4_route_address:           # 启用auto_route时使用自定义路由而不是ipv4默认路由  
+  enable: false # tun模式开关(false、true)
+  stack: system # 网络栈类型(system、gvisor)
+  auto-redir: true # 自动重定向开关(false、true)
+  auto-route: false # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
+  inet4_route_address: # 启用auto_route时使用自定义路由而不是ipv4默认路由  
     - "0.0.0.0/1"
     - "128.0.0.0/1"
-  inet6_route_address:           # 启用auto_route时使用自定义路由而不是ipv6默认路由  
+  inet6_route_address: # 启用auto_route时使用自定义路由而不是ipv6默认路由  
     - "::/1"
     - "8000::/1"  
-  auto-detect-interface: true    # 自动识别出口网卡
-  strict_route: true             # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
-  dns-hijack:                    # dns劫持仅支持tcp/udp
+  auto-detect-interface: true # 自动识别出口网卡
+  strict_route: true # 将所有连接路由到tun来防止泄漏，但你的设备将无法其他设备被访问
+  dns-hijack: # dns劫持仅支持tcp/udp
     - any:53
 
 #💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板
 sniffer:
-  enable: true                   # 配置sniffer开关(false、true)
-  parse-pure-ip: true            # 对所有未获取到域名的流量进行强制嗅探
-  force-dns-mapping: true        # 对redir-host类型识别的流量进行强制嗅探
-  override-destination: true     # 是否使用嗅探结果作为实际访问，默认为 true  
-  sniff:                         # 需要嗅探的协议类型  
+  enable: true # 配置sniffer开关(false、true)
+  parse-pure-ip: true  # 对所有未获取到域名的流量进行强制嗅探
+  force-dns-mapping: true # 对redir-host类型识别的流量进行强制嗅探
+  override-destination: true # 是否使用嗅探结果作为实际访问，默认为 true  
+  sniff: # 需要嗅探的协议类型  
     HTTP:
       ports: [80, 8080-8880]
       override-destination: true
@@ -96,29 +95,29 @@ sniffer:
       ports: [443, 8443]
     QUIC:
       ports: [443, 8443]
-  skip-domain:                    # 需要跳过嗅探的域名。主要解决部分站点sni字段非域名，导致嗅探结果异常的问题，如米家设备 
+  skip-domain: # 需要跳过嗅探的域名。主要解决部分站点sni字段非域名，导致嗅探结果异常的问题，如米家设备 
     - "Mijia Cloud"
     - "dlg.io.mi.com"
     - "+.apple.com"
-  force-domain:                   # 需要强制嗅探的域名（默认情况下只对IP进行嗅探） 
+  force-domain: # 需要强制嗅探的域名（默认情况下只对IP进行嗅探） 
     - "google.com"
-  port-whitelist:                 # 端口白名单
+  port-whitelist: # 端口白名单
     - 80
     - 443
     - 8000-9000
     
 #💡 dns服务器配置
 dns:
-  enable: true                      # dns开关(false、true)，关闭将使用系统dns
-  ipv6: true                        # ipv6解析开关(false、true)；如果为false，将返回ip6结果为空
-  ipv6-timeout: 300                 # 内部双栈并发时，向上游查询时的等待时间，默认100ms(单位：ms)
-  prefer-h3: true                   # doh支持http/3将并发尝试开关(false、true)
-  listen: 0.0.0.0:53                # 开启dns服务器监听
-  use-hosts: true                   # 是否查询系统 hosts配置开关(false、true)
-  search-domains: [local]           # 搜索域以获取a/aaaa 记录
-  enhanced-mode: fake-ip            # dns增强模式  
-  fake-ip-range: 198.18.0.1/16      # fake-ip解析地址池  
-  fake-ip-filter:                   # fake-ip过滤，列表中的域名返回真实ip
+  enable: true  # dns开关(false、true)，关闭将使用系统dns
+  ipv6: true # ipv6解析开关(false、true)；如果为false，将返回ip6结果为空
+  ipv6-timeout: 300 # 内部双栈并发时，向上游查询时的等待时间，默认100ms(单位：ms)
+  prefer-h3: true # doh支持http/3将并发尝试开关(false、true)
+  listen: 0.0.0.0:53 # 开启dns服务器监听
+  use-hosts: true # 是否查询系统 hosts配置开关(false、true)
+  search-domains: [local] # 搜索域以获取a/aaaa 记录
+  enhanced-mode: fake-ip # dns增强模式  
+  fake-ip-range: 198.18.0.1/16 # fake-ip解析地址池  
+  fake-ip-filter: # fake-ip过滤，列表中的域名返回真实ip
     - "*.lan"
     - "*.local"
     - "localhost"
@@ -135,35 +134,35 @@ dns:
     - "opencloud.wostore.cn"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-  default-nameserver:         # 引导解析其他dns服务器,只支持纯ip可使用加密dns
+  default-nameserver: # 引导解析其他dns服务器,只支持纯ip可使用加密dns
     - "223.5.5.5"
     - "119.29.29.29"
     - "tls://1.0.0.1:853"
-  nameserver:                 # 默认dns服务器，支持udp/tcp/dot/doh/doq等协议 
-    - "https://dns.alidns.com/dns-query#h3=true"            # 指定doq服务器查询，强制http/3
-    - "https://doh.pub/dns-query"                           # 指定doh服务器查询
-    #- "quic://dns.alidns.com:853"                          # 指定doq服务器查询，不支持premium内核
-    #- "https://223.5.5.5/dns-query#en0"                    # 指定dns出口网卡
-  proxy-server-nameserver:     # 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
+  nameserver: # 默认dns服务器，支持udp/tcp/dot/doh/doq等协议 
+    - "https://dns.alidns.com/dns-query#h3=true"  # 指定doq服务器查询，强制http/3
+    - "https://doh.pub/dns-query" # 指定doh服务器查询
+    #- "quic://dns.alidns.com:853" # 指定doq服务器查询，不支持premium内核
+    #- "https://223.5.5.5/dns-query#en0"  # 指定dns出口网卡
+  proxy-server-nameserver: # 回落dns服务器，解析代理服务器节点域名，查询失败将使用nameserver，非并发查询
     - "8.8.8.8"
     - "1.0.0.1"
     - "208.67.222.222"
-  fallback:                    # 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
-    - "https://dns.google/dns-query#proxy"　　　　          # dns经过代理查询
-    - "https://cloudflare-dns.com/dns-query#proxy&h3=true"  # dns经过代理查询，强制http/3,此选项与 perfer-h3 不冲突
-    - "https://doh.opendns.com/dns-query"                   # 指定doh服务器查询
-  fallback-filter:      # 配置fallback使用条件，回落dns服务器过滤
-    geoip: true         # 配置geoip开关(false、true)
-    geoip-code: CN      # geoip匹配区域设定，查询不是cn时使用fallback返回结果
-    geosite:            # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
+  fallback: # 当开启fallback时，会查询geoip过滤不是cn时用以下dns解析
+    - "https://dns.google/dns-query#proxy" # dns经过代理查询
+    - "https://cloudflare-dns.com/dns-query#proxy&h3=true" # dns经过代理查询，强制http/3,此选项与 perfer-h3 不冲突
+    - "https://doh.opendns.com/dns-query" # 指定doh服务器查询
+  fallback-filter: # 配置fallback使用条件，回落dns服务器过滤
+    geoip: true # 配置geoip开关(false、true)
+    geoip-code: CN # geoip匹配区域设定，查询不是cn时使用fallback返回结果
+    geosite: # 配置强制fallback，优先于ip判断，具体分类自行查看geosite库
       - gfw
-    ipcidr:             # 如果不匹配ipcidr则使用nameservers中的结果 
+    ipcidr: # 如果不匹配ipcidr则使用nameservers中的结果 
       - 240.0.0.0/4
-    domain:             # 指定该域名用fallback解析   
+    domain: # 指定该域名用fallback解析   
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
-  nameserver-policy:     # 使用指定的dns服务器解析域名
+  nameserver-policy: # 使用指定的dns服务器解析域名
     "openwrt.lan": system
     "openwrt.org": 223.5.5.5
     "blog.google": 119.29.29.29
@@ -208,33 +207,33 @@ bypass:
 
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
-  - tcp,127.0.0.1:6553,223.5.5.5:53,proxy　　　　　# 一行简约配置
-  - tcp/udp,127.0.0.1:6666,doh.pub:443,proxy
-  - network: [tcp, udp]　　　　　　　　　　　　　　# 完整yaml配置
+  - tcp,127.0.0.1:6553,223.5.5.5:53,✅ Node # 一行简约配置
+  - tcp/udp,127.0.0.1:6666,doh.pub:443,✅ Node
+  - network: [tcp, udp] # 完整yaml配置
     address: 127.0.0.1:7777
     target: dns.alidns.com:443
-    proxy: proxy
+    proxy: ✅ Node
   
 #💡 本地代理服务器
 proxies:
-  - name: ☁️ WARP+　　　　　　　# 代理名称,书写时请确保不会与其他代理节点重名
-    type: wireguard　　　　　　　# 代理类型,此处为wireguard
-    server: 188.114.97.59　　　　# wireguard服务端地址
-    port: 1180　　　　　　　　　　# wireguard服务端端口
-    ip: 172.16.0.2　　　　　　　　# 本机在Wireguard网络中使用的IPv4地址
-    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92　　　　　　　　　　# 可选字段，本机在wireguard网络中使用的IPv6地址
-    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=　　　# base64编码的wireguard客户端私钥
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=   　　#　base64编码的wireguard服务端公钥
-    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1　　　　　　# 可选字段，预共享密钥
-    remote-dns-resolve: true　　　　　　　　　# 可选字段，是否强制dns远程解析，默认值为false
-    dns: [1.1.1.1,2606:4700:4700::1111]　　　# 可选字段，当remote-dns-resolve为true时生效，指定远程解析使用的dns服务器
-    persistent-keepalive: 45　　　　　　　　　# 可选字段，数据包间隔持久保活时长
-    reserved: [173,82,247]　　　　　　　　　　# 可选字段，Wireguard协议保留字段的值，部分warp节点需要使用
-    allowed-ips: ["0.0.0.0/0"]　　　　　　　　# 可选字段，限制客户端的哪些IP段的流量由服务端进行转发。一般情况下可填['0.0.0.0/0']
-    mtu: 1280　　　　　　　　　　　　　　　　　# 可选字段，设置mtu值
-    udp: true　　　　　　　　　　　　　　　　　# 可选字段，是否启用UDP支持
-    dialer-proxy: 🇭🇰 HongKong　　　　　　　　　# 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group发出连接,用于Wireguard配置链式代理
-    peers:　　　　　　　　　　　　　　　　　　　# 如果使用多个peer，每一个peer的allowed-ips需要做区分；此时顶层段落的server, port, ip, ipv6, public-key, pre-shared-key, reserved等字段均会被忽略，不过private-key仍然在顶层指定
+  - name: ☁️ WARP+ # 代理名称,书写时请确保不会与其他代理节点重名
+    type: wireguard # 代理类型,此处为wireguard
+    server: 188.114.97.59 # wireguard服务端地址
+    port: 1180 # wireguard服务端端口
+    ip: 172.16.0.2 # 本机在Wireguard网络中使用的IPv4地址
+    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92 # 可选字段，本机在wireguard网络中使用的IPv6地址
+    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk= # base64编码的wireguard客户端私钥
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= #　base64编码的wireguard服务端公钥
+    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1 # 可选字段，预共享密钥
+    remote-dns-resolve: true # 可选字段，是否强制dns远程解析，默认值为false
+    dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当remote-dns-resolve为true时生效，指定远程解析使用的dns服务器
+    persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
+    reserved: [173,82,247] # 可选字段，Wireguard协议保留字段的值，部分warp节点需要使用
+    allowed-ips: ["0.0.0.0/0"] # 可选字段，限制客户端的哪些IP段的流量由服务端进行转发。一般情况下可填['0.0.0.0/0']
+    mtu: 1280 # 可选字段，设置mtu值
+    udp: true # 可选字段，是否启用UDP支持
+    dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group发出连接,用于Wireguard配置链式代理
+    peers: # 如果使用多个peer，每一个peer的allowed-ips需要做区分；此时顶层段落的server, port, ip, ipv6, public-key, pre-shared-key, reserved等字段均会被忽略，不过private-key仍然在顶层指定
      - server: engage.nanocat.me
        port: 2408
        ip: 172.16.0.2
@@ -273,13 +272,13 @@ proxies:
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
-  ALL:                  # 远程代理服务器引用名称
-    type: http          # 代理服务器引用类型
-    path: /all.yaml     # 存储到位置路径
-    url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
-    interval: 86400     # 自动更新时长单位：秒
-    udp: true           # udp支持开关
-    health-check:       # 网络健康检测
+  ALL:  # 远程代理服务器引用名称
+    type: http # 代理服务器引用类型
+    path: /all.yaml # 存储到位置路径
+    url: https://ik8s.eu.org/api/v1/client/subscribe?token=b46a803526f31f140a67d91cd49d6d6a&flag=clash
+    interval: 86400 # 自动更新时长单位：秒
+    udp: true # udp支持开关
+    health-check: # 网络健康检测
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
@@ -359,9 +358,9 @@ proxy-providers:
 
 #💡 策略组
 proxy-groups:
-  - name: 🔰 Pick        # 该策略组的名称
-    type: select　　　　　# select手动选择策略组
-    proxies:              # 该策略组包含的策略组或代理
+  - name: 🔰 Pick  # 该策略组的名称
+    type: select # select手动选择策略组
+    proxies: # 该策略组包含的策略组或代理
       - ♻️ Auto
       - ✅ Node
       - ⚖️ Load Balance
@@ -381,19 +380,19 @@ proxy-groups:
       - REJECT
 
   - name: ♻️ Auto
-    type: url-test                      # url-test自动策略组,将按照url测试结果使用延迟最低节点
+    type: url-test  # url-test自动策略组,将按照url测试结果使用延迟最低节点
     url: http://www.gstatic.com/generate_204
-    interval: 600                       # 间隔检测时间为秒
-    #exclude-type: "Shadowsocks|Http"   # 排除节点类型，不支持正则表达式，通过 | 分隔
-    tolerance: 0            　　　　　　# 网络间隔相差值，进行节点切换，否则不进行切换
-    lazy: true             　　　　　　 # lazy：懒惰模式，如果设置为true，策略组在未被使用时停止检测
-    use:                    　　　　　　# use包含远程代理服务器节点
+    interval: 600 # 间隔检测时间为秒
+    #exclude-type: "Shadowsocks|Http" # 排除节点类型，不支持正则表达式，通过 | 分隔
+    tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
+    lazy: true # lazy：懒惰模式，如果设置为true，策略组在未被使用时停止检测
+    use: # use包含远程代理服务器节点
       - ALL
     proxies:
       - ☁️ WARP+
       - ☁️ WARP+Teams
       
-  - name: ✅ Node　　　　　　　　　　　# 用户自行选择策略组或节点
+  - name: ✅ Node # 用户自行选择策略组或节点
     type: select
     use:
       - ALL 
@@ -402,12 +401,12 @@ proxy-groups:
       - ☁️ WARP+Teams
     
   - name: ⚖️ Load Balance
-    type: load-balance　　　　　　　　　　# 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
+    type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
-    strategy: consistent-hashing　　　　　# consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理 
-    #disable-udp: true　　　　　　　　　　# 禁用该组udp流量转发  
+    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理 
+    #disable-udp: true # 禁用该组udp流量转发  
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -418,7 +417,7 @@ proxy-groups:
       - 🇺🇳 Nations
       
   - name: ⚙️ Fallback
-    type: fallback　　　　　# 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
+    type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true   
@@ -433,7 +432,7 @@ proxy-groups:
       - 🇺🇳 Nations
 
   - name: 🛞 Proxy Chain
-    type: relay　　　　　# 代理链策略组，目前relay可以支持udp的只有vmess/vless/trojan/ss/ssr/tuic，wireguard目前不支持在relay中使用，请使用proxy中的dialer-proxy配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+    type: relay # 代理链策略组，目前relay可以支持udp的只有vmess/vless/trojan/ss/ssr/tuic，wireguard目前不支持在relay中使用，请使用proxy中的dialer-proxy配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
@@ -927,26 +926,26 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
-  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock　　　　　 # DOMAIN 完整域名匹配
-  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock　　　　　 # DOMAIN-SUFFIX 域名后缀匹配
+  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
-  - DOMAIN-KEYWORD,reddit,🌐 Global　　　　　　　　　　 # DOMAIN-KEYWORD 域名关键词匹配
+  - DOMAIN-KEYWORD,reddit,🌐 Global  # DOMAIN-KEYWORD 域名关键词匹配
   - DOMAIN-KEYWORD,snapchat,🌐 Global
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
-  - PROCESS-NAME,pinterest.exe,🌐 Global　　　　　　　　# PROCESS-NAME 根据进程名称
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global　　　　# PROCESS-PATH 根据进程路径
+  - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve　　　　　　　　# IP-CIDR 本地ipv4规则
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve　　　　　　　# no-resolve 可选，它用于跳过规则的dns解析
-  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve　　　 # IP-CIDR6 本地ipv6规则
-  - SRC-IP-CIDR,239.255.255.250/32,DIRECT　　　　　　　　 # SRC-IP-CIDR 根据数据包的源ipv4地址
-  - DST-PORT,1400,✉️ Telegram    　　　　　　　　　　　　 # DST-PORT 从目标端口指定规则
-  #- SRC-PORT,7777,DIRECT　　　　　　　　　　　　　　　　　# SRC-PORT 发送至端口指定规则
+  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve # IP-CIDR 本地ipv4规则
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve # no-resolve 可选，它用于跳过规则的dns解析
+  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve # IP-CIDR6 本地ipv6规则
+  - SRC-IP-CIDR,239.255.255.250/32,DIRECT # SRC-IP-CIDR 根据数据包的源ipv4地址
+  - DST-PORT,1400,✉️ Telegram  # DST-PORT 从目标端口指定规则
+  #- SRC-PORT,7777,DIRECT # SRC-PORT 发送至端口指定规则
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
@@ -974,5 +973,5 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
-  - GEOIP,CN,🇨🇳 China　　　　 # GEOIP 根据ip地址国家/地区
-  - MATCH,🐟 Final　　　　　 # MATCH 不在规则中的请求
+  - GEOIP,CN,🇨🇳 China # GEOIP 根据ip地址国家/地区
+  - MATCH,🐟 Final # MATCH 不在规则中的请求
