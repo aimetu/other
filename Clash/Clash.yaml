@@ -241,7 +241,7 @@ listeners:
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
     proxy: ☁️ WARP+ # 如果不为空则直接将该入站流量交由指定proxy处理(当proxy不为空时,这里的proxy名称必须合法,否则会出错)
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    cipher: 2022-blake3-aes-256-gcm
+    cipher: aes-256-gcm
 
   - name: vmess-wwan # 互联网用于加密传输流量的入站
     type: vmess
