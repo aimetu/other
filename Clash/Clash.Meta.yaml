@@ -158,31 +158,31 @@ tun:
   dns-hijack:
     - any:53
 
-#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板「meta专属」
+#💡 sniffer域名嗅探器通过读取握手包内的域名字段，将ip还原成域名，有效解决mapping机制的短板
 sniffer:
 # 配置sniffer开关(false、true)
-  enable: false
+  enable: true
 # 对所有未获取到域名的流量进行强制嗅探
-  parse-pure-ip: false
+  parse-pure-ip: true
 # 对redir-host类型识别的流量进行强制嗅探
-  force-dns-mapping: false
-# 全局配置，优先级低于sniffer.sniff实际配置  
-  override-destination: false
+  force-dns-mapping: true
+# 是否使用嗅探结果作为实际访问，默认为 true  
+  override-destination: true
 # 需要嗅探的协议类型  
   sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
     TLS:
       ports: [443, 8443]
-# 需要嗅探的端口,默认嗅探 80
-    HTTP: 
-      ports: [80, 8080-8880]
-# 可覆盖 sniffer.override-destination
-      override-destination: true
-# 遇到sni字段为列表中的内容，保留mapping结果，不使用嗅探的内容覆盖mapping结果    
+    QUIC:
+      ports: [443, 8443]
+# 需要跳过嗅探的域名。主要解决部分站点sni字段非域名，导致嗅探结果异常的问题，如米家设备   
   skip-domain:
     - 'Mijia Cloud'
     - 'dlg.io.mi.com'
     - '+.apple.com'
-# 需要强制嗅探的域名    
+# 需要强制嗅探的域名（默认情况下只对IP进行嗅探）   
   force-domain:
     - 'google.com'
 # 端口白名单
