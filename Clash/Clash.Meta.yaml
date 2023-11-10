@@ -5,7 +5,7 @@
 # 注意:去掉前面的注释符号"#"该行生效
 
 #💡 通用设置
-# 网络模式:rule规则、global全局、direct直连、script脚本
+# 运行模式:rule规则、global全局、direct直连、script脚本
 mode: rule
 
 # 日志模式:silent静默、info信息、warning警告、error错误、debug调试
@@ -38,15 +38,15 @@ routing-mark: 6666
 
 # 本地http(s)、socks服务端口跳过验证的ip段
 #skip-auth-prefixes: 
-#  - 127.0.0.0/8
-#  - ::1/128
+#  - "127.0.0.0/8"
+#  - "::1/128"
   
 # 允许局域网内其它设备通过clash访问互联网开关(false、true)
 allow-lan: true
 
 # 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口
 # 支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
-bind-address: '*'
+bind-address: "*"
 
 # 指定clash出口网卡名称
 # interface-name: en0
@@ -54,8 +54,8 @@ bind-address: '*'
 # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 tcp-concurrent: true
 
-# tcp保持活动状态间隔
-keep-alive-interval: 15
+# 控制clash发出tcp keep alive包的间隔，减少移动设备耗电问题的临时措施
+keep-alive-interval: 30
 
 # 更换延迟计算方式,去除握手等额外延迟开关(false、true)
 unified-delay: true
@@ -77,12 +77,16 @@ external-controller: 127.0.0.1:9090
 external-controller-tls: 127.0.0.1:9443
 
 # http(s)-api、api监听地址外部控制器访问密钥
-secret: 88888888
+secret: "88888888"
 
 # 配置外部控制器web ui目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径
 # clash core将会将其部署在 http://{{external-controller}}/ui
 #external-ui: /ui/folder
+
+# 自定义外部用户界面名字
 #external-ui-name: xd
+
+# 自定义外部用户界面下载地址
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # 目前仅用于api的https
@@ -115,11 +119,11 @@ geox-url:
   geosite: "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
   mmdb: "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
   
-# 缓存设置(文件位置./cache.db)
+# profile为扩展配置，但在 Clash.meta, 仅作为缓存项使用
 profile:
-# 节点状态记忆（若不同配置有同代理名称,设置值共享）
-  store-selected: false
-# fake-ip缓存
+# 储存api对策略组的选择，以供下次启动时使用
+  store-selected: true
+# 储存fakeip映射表，域名再次发生连接时，使用原有映射地址
   store-fake-ip: true
 
 #💡 ssid策略  
@@ -199,7 +203,7 @@ dns:
   prefer-h3: true
 # 开启dns服务器监听
   listen: 0.0.0.0:53
-# 查询hosts配置并返回真实ip开关(false、true)
+# 是否查询系统 hosts配置开关(false、true)
   use-hosts: true
 # 搜索域以获取a/aaaa 记录
   search-domains: [local]
