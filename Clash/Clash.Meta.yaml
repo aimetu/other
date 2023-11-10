@@ -87,7 +87,7 @@ secret: "88888888"
 #external-ui-name: xd
 
 # 自定义外部用户界面下载地址
-#external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+#external-ui-url: "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # 目前仅用于api的https
 #tls:
