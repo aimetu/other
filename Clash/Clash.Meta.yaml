@@ -45,7 +45,7 @@ routing-mark: 6666
 allow-lan: true
 
 # 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口
-# 支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
+# 支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,[aaaa::a8aa:ff:fe09:57d8]绑定一个ipv6地址
 bind-address: "*"
 
 # 指定clash出口网卡名称
