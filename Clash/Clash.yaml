@@ -23,7 +23,7 @@ routing-mark: 6666 # 为linux下的出站连接提供默认流量标记
 #  - "127.0.0.0/8"
 #  - "::1/128"
 allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关(false、true)
-bind-address: '*' # 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,"[aaaa::a8aa:ff:fe09:57d8]" 绑定一个ipv6地址
+bind-address: "*" # 仅适用allow-lan为true的情况，绑定ip仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188绑定一个的ipv4地址,[aaaa::a8aa:ff:fe09:57d8]绑定一个ipv6地址
 interface-name: WLAN # 指定clash出口网卡名称
 tcp-concurrent: true  # 如果域名解析结果对应多个ip,并发所有ip选择握手最快的ip进行连接「meta专属」
 keep-alive-interval: 30 　# 控制clash发出tcp keep alive包的间隔，减少移动设备耗电问题的临时措施
