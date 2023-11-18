@@ -1,11 +1,12 @@
 {
-    "log": {
+    "log": { // 日志
         "disabled": false, // 禁用日志，启动后不输出日志。
         "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
         "output": "box.log", // 输出文件路径，启动后将不输出到控制台
         "timestamp": true // 添加时间到每行
     },
-    "dns": {
+    
+    "dns": { // DNS 规则
         "servers": [
             {
                 "tag": "dns-china", // DNS 服务器的标签
@@ -15,6 +16,7 @@
                 "strategy": "ipv4_only", // 默认解析策略，可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only如果被其他设置覆盖则不生效
                 "detour": "direct" // 用于连接到 DNS 服务器的出站的标签,如果为空，将使用默认出站
             },
+            
             {
                 "tag": "dns-global", // DNS 服务器的标签
                 "address": "https://1.0.0.1/dns-query", // DNS 服务器的地址
@@ -23,40 +25,115 @@
                 "strategy": "ipv4_only", // 默认解析策略，可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only如果被其他设置覆盖则不生效
                 "detour": "proxy" // 用于连接到 DNS 服务器的出站的标签,如果为空，将使用默认出站
             },
+            
             {
-                "tag": "dns-block",
-                "address": "rcode://refused"
+                "tag": "dns-block", // 服务器的标签
+                "address": "rcode://refused" // 服务器指向地址
             },
+            
             {
-                "tag": "dns-default",
-                "address": "223.5.5.5",
-                "strategy": "ipv4_only",
-                "detour": "direct"
+                "tag": "dns-default", // DNS 服务器的标签
+                "address": "223.5.5.5", // DNS 服务器的地址
+                "strategy": "ipv4_only", // 默认解析策略，可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only如果被其他设置覆盖则不生效
+                "detour": "direct" // 用于连接到 DNS 服务器的出站的标签
             }
         ],
+        
         "rules": [
             {
                 "outbound": [
-                    "any"
+                    "mixed-in"
                 ],
-                "server": "dns-default"
+                
+                "ip_version": 6,
+                "query_type": [
+                  "A",
+                  "HTTPS",
+                  32768
+                ],
+                
+                "network": "tcp", // tcp 或 udp网络协议
+                "auth_user": [ // 认证用户名
+                  "usera",
+                  "userb"
+                ],
+                
+                "protocol": [ // 探测到的协议,HTTP/TLS/QUIC/STUN/DNS
+                  "tls",
+                  "http",
+                  "quic"
+                ],
+        
+                "domain": [ // 匹配完整域名
+                  "ad.cyapi.cn"
+                  "ad.21cn.com"
+                  "ad.k.21cn.com"
+                  "admarket.21cn.com"
+                  "adshows.21cn.com"
+                  "mssdk-bu.bytedance.com"
+               ],
+        
+                "domain_suffix": [ // 匹配域名后缀
+                  "adx.appicad.net"
+                  "m1.ad.10010.com"
+               ],
+        
+                "domain_keyword": [ // 匹配域名关键字
+                  "reddit"
+                  "snapchat"
+               ],
+        
+                "domain_regex": [ // 匹配域名正则表达式
+                  "^stun\\..+"
+               ],
+        
+                "server": "dns-block"  // 目标服务器的出站标签
             },
+    
             {
-                "geosite": [
+                "geoip": [ // 匹配 GeoSite
+                    "cn",
+                    "private"
+                ],
+                "outbound": "direct"
+            },
+
+            {
+                "geosite": [ // 匹配 GeoSite
+                    "private"
+                ],
+                "outbound": "direct"
+            },
+
+            {
+                "geosite": [ // 匹配 GeoSite
                     "category-ads-all"
                 ],
-                "server": "dns-block",
-                "disable_cache": true
+                "server": "dns-block", // 目标 DNS 服务器的标签
+                "disable_cache": true // 在此查询中禁用缓存
             },
+
             {
-                "geosite": [
+                "geosite": [ // 匹配 GeoSite
                     "geolocation-!cn"
                 ],
-                "server": "dns-global"
+                "server": "proxy" // 目标服务器的出站标签
             }
         ],
-        "final": "dns-global"
+
+        "final": "proxy",  // 默认出站标签。如果为空，将使用第一个可用于对应协议的出站
+        "auto_detect_interface": true // 默认将出站连接绑定到默认网卡，以防止在 tun 下出现路由环路，如果设置了 outbound.bind_interface 设置，则不生效
+
+            {
+                "process_name": [ // Windows可执行程序
+                    "AdGuard.exe",
+                    "AdGuardSvc.exe",
+                    "pinterest.exe",
+                ],
+                "outbound": "proxy" // Windows可执行程序出站的标签
+            },
     },
+
     "route": {
         "geoip": {
             "download_url": "https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db",
@@ -68,27 +145,12 @@
         },
         "rules": [
             {
-                "protocol": [
-                    "dns"
+                "process_name": [ // "proxy"，Windows可执行程序
+                    "AdGuard.exe",
+                    "AdGuardSvc.exe",
+                    "pinterest.exe",
                 ],
-                "outbound": "dns-out"
-            },
-            {
-                "protocol": [
-                    "quic"
-                ],
-                "outbound": "block"
-            },
-            {
-                "process_name": [ // 直连的 Windows 可执行程序
-                    "xray.exe",
-                    "hysteria.exe",
-                    "tuic.exe",
-                    "tuic-client.exe",
-                    "juicity.exe",
-                    "juicity-client.exe"
-                ],
-                "outbound": "direct"
+                "outbound": "proxy"
             },
             {
                 "geosite": [
