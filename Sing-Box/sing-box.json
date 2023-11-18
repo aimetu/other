@@ -1,9 +1,10 @@
+// https://sing-box.sagernet.org/zh/configuration/
 {
-    "log": { // 日志
-        "disabled": false, // 禁用日志，启动后不输出日志。
-        "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
-        "output": "box.log", // 输出文件路径，启动后将不输出到控制台
-        "timestamp": true // 添加时间到每行
+    "log": {
+        "disabled": false,
+        "level": "info",
+        "output": "box.log",
+        "timestamp": true
     },
     
     "dns": { // DNS 规则
