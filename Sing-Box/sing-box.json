@@ -1,10 +1,12 @@
 // https://sing-box.sagernet.org/zh/configuration/
+// 千歌 sing-box 模板: https://github.com/chika0801/sing-box-examples
+// 瞎折腾 sing-box 模板: https://t.me/ztvps/37
 {
     "log": {
-        "disabled": false,
-        "level": "info",
-        "output": "box.log",
-        "timestamp": true
+        "disabled": false, // 禁用日志，启动后不输出日志
+        "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
+        "output": "box.log", // 输出文件路径，启动后将不输出到控制台
+        "timestamp": true // 添加时间到每行
     },
     
     "dns": { // DNS 规则
