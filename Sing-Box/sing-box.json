@@ -1,0 +1,154 @@
+{
+    "log": {
+        "disabled": false, // 禁用日志，启动后不输出日志。
+        "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
+        "output": "box.log", // 输出文件路径，启动后将不输出到控制台
+        "timestamp": true // 添加时间到每行
+    },
+    "dns": {
+        "servers": [
+            {
+                "tag": "dns-china", // DNS 服务器的标签
+                "address": "https://dns.alidns.com/dns-query", // DNS 服务器的地址
+                "address_resolver": "dns-default", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签
+                "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略
+                "strategy": "ipv4_only", // 默认解析策略，可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only如果被其他设置覆盖则不生效
+                "detour": "direct" // 用于连接到 DNS 服务器的出站的标签,如果为空，将使用默认出站
+            },
+            {
+                "tag": "dns-global", // DNS 服务器的标签
+                "address": "https://1.0.0.1/dns-query", // DNS 服务器的地址
+                "address_resolver": "dns-default", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签
+                "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略
+                "strategy": "ipv4_only", // 默认解析策略，可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only如果被其他设置覆盖则不生效
+                "detour": "proxy" // 用于连接到 DNS 服务器的出站的标签,如果为空，将使用默认出站
+            },
+            {
+                "tag": "dns-block",
+                "address": "rcode://refused"
+            },
+            {
+                "tag": "dns-default",
+                "address": "223.5.5.5",
+                "strategy": "ipv4_only",
+                "detour": "direct"
+            }
+        ],
+        "rules": [
+            {
+                "outbound": [
+                    "any"
+                ],
+                "server": "dns-default"
+            },
+            {
+                "geosite": [
+                    "category-ads-all"
+                ],
+                "server": "dns-block",
+                "disable_cache": true
+            },
+            {
+                "geosite": [
+                    "geolocation-!cn"
+                ],
+                "server": "dns-global"
+            }
+        ],
+        "final": "dns-global"
+    },
+    "route": {
+        "geoip": {
+            "download_url": "https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db",
+            "download_detour": "proxy"
+        },
+        "geosite": {
+            "download_url": "https://github.com/soffchen/sing-geosite/releases/latest/download/geosite.db",
+            "download_detour": "proxy"
+        },
+        "rules": [
+            {
+                "protocol": [
+                    "dns"
+                ],
+                "outbound": "dns-out"
+            },
+            {
+                "protocol": [
+                    "quic"
+                ],
+                "outbound": "block"
+            },
+            {
+                "process_name": [ // 直连的 Windows 可执行程序
+                    "xray.exe",
+                    "hysteria.exe",
+                    "tuic.exe",
+                    "tuic-client.exe",
+                    "juicity.exe",
+                    "juicity-client.exe"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geosite": [
+                    "geolocation-!cn"
+                ],
+                "outbound": "proxy"
+            },
+            {
+                "geosite": [
+                    "private"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geoip": [
+                    "cn",
+                    "private"
+                ],
+                "outbound": "direct"
+            }
+        ],
+        "final": "proxy",
+        "auto_detect_interface": true
+    },
+    "inbounds": [
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "inet4_address": "172.19.0.1/30",
+            "inet6_address": "fdfe:dcba:9876::1/126",
+            "auto_route": true,
+            "strict_route": true,
+            "stack": "mixed",
+            "sniff": true,
+            "sniff_override_destination": false
+        }
+    ],
+    "outbounds": [
+        {
+            // 粘贴你的客户端配置，需要保留 "tag": "proxy"
+            "tag": "proxy"
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
+        },
+        {
+            "type": "block",
+            "tag": "block"
+        },
+        {
+            "type": "dns",
+            "tag": "dns-out"
+        }
+    ],
+    "ntp": {
+        "enabled": true,
+        "server": "time.apple.com",
+        "server_port": 123,
+        "interval": "30m",
+        "detour": "direct"
+    }
+}
