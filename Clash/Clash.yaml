@@ -280,7 +280,7 @@ proxies:
     allowed-ips: ["0.0.0.0/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
     mtu: 1280 # 可选字段，设置 mtu 值
     udp: true # 可选字段，是否启用 UDP 支持
-    dialer-proxy: 🇯🇵 Japan # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
+    dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
      - server: engage.cloudflareclient.com
        port: 2408
@@ -449,8 +449,8 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       - 🇨🇳 Chinese
-      - TW~Warp Teams
       - HK~Zero Trust
+      - TW~Warp Teams
       - JP~Warp Plus
       - DIRECT
       - REJECT
@@ -465,8 +465,8 @@ proxy-groups:
     use: # use 包含远程代理服务器节点
       - ALL
     proxies:
-      - TW~Warp Teams
       - HK~Zero Trust
+      - TW~Warp Teams
       - JP~Warp Plus
       
   - name: ✅ Node # 用户自行选择策略组或节点
@@ -474,8 +474,8 @@ proxy-groups:
     use:
       - ALL 
     proxies:
-      - TW~Warp Teams
       - HK~Zero Trust
+      - TW~Warp Teams
       - JP~Warp Plus
     
   - name: ⚖️ Load Balance
@@ -516,9 +516,9 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - JP~Warp Plus
-      - TW~Warp Teams
       - HK~Zero Trust
+      - TW~Warp Teams
+      - JP~Warp Plus
 
   - name: 🇭🇰 HongKong
     type: url-test
