@@ -22,8 +22,9 @@ proxy-providers:
 proxies:
  - name: Warp Plus
    type: wireguard
-   server: engage.cloudflareclient.com
-   port: 2408
+   # 服务器可选：engage.nanocat.me
+   server:188.114.97.59
+   port: 1180
    ip: 172.16.0.2
    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
@@ -43,6 +44,7 @@ proxies:
 
  - name: Warp Teams
    type: wireguard
+   #服务器可选：engage.nanocat.cloud
    server: 188.114.97.229
    port: 2506
    ip: 172.16.0.2
@@ -64,6 +66,7 @@ proxies:
 
  - name: Zero Trust
    type: wireguard
+   # 服务器可选：engage.cloudflareclient.com
    server: 188.114.97.146
    port: 5956
    ip: 172.16.0.2
