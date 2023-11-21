@@ -320,8 +320,8 @@ proxies:
 
   - name: JP~Warp Plus # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: 162.159.192.153 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，该"ip" 地址为优选过的地址
-    port: 5956 # wireguard 服务端端口
+    server: 188.114.97.125 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，该"ip" 地址为优选过的地址
+    port: 8742 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92 # 可选字段，本机在 wireguard 网络中使用的 IPv6 地址
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk= # base64 编码的 wireguard 客户端私钥
