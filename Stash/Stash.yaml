@@ -22,7 +22,7 @@ proxy-providers:
 proxies:
  - name: Zero Trust
    type: wireguard
-   # wireguard 代理服务器域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，下述"ip" 地址为优选过的地址
+   # wireguard 代理服务器域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
    server: engage.cloudflareclient.com
    port: 2408
    ip: 172.16.0.2
@@ -44,7 +44,7 @@ proxies:
 
  - name: Warp Teams
    type: wireguard
-   # wireguard 代理服务器域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，下述"ip" 地址为优选过的地址
+   # wireguard 代理服务器域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
    server: engage.nanocat.cloud
    port: 2408
    ip: 172.16.0.2
