@@ -266,7 +266,7 @@ tunnels:
 proxies: 
   - name: HK~Zero Trust # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: 188.114.97.146 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，该"ip" 地址为优选过的地址
+    server: 188.114.97.146 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 5956 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 IPv6 地址
@@ -293,7 +293,7 @@ proxies:
        
   - name:  TW~Warp Teams
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，该"ip" 地址为优选过的地址
+    server: 188.114.97.229 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 2506
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
@@ -320,7 +320,7 @@ proxies:
 
   - name: JP~Warp Plus # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: 188.114.97.125 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，该"ip" 地址为优选过的地址
+    server: 188.114.97.125 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 8742 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92 # 可选字段，本机在 wireguard 网络中使用的 IPv6 地址
@@ -440,7 +440,8 @@ proxy-groups:
       - ✅ Node
       - ⚖️ Load Balance
       - ⚙️ Fallback
-      - 🛞 Proxy Chain
+      - 🛞 HongKong Chain
+      - 🛞 Taiwan Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -509,7 +510,7 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
 
-  - name: 🛞 Proxy Chain
+  - name: 🛞 HongKong Chain
     type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -517,8 +518,15 @@ proxy-groups:
     proxies:
       - 🇭🇰 HongKong
       - HK~Zero Trust
+
+  - name: 🛞 Taiwan Chain
+    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    proxies:
+      - 🇹🇼 Taiwan
       - TW~Warp Teams
-      - JP~Warp Plus
 
   - name: 🇭🇰 HongKong
     type: url-test
