@@ -45,8 +45,8 @@ proxies:
  - name: Warp Teams
    type: wireguard
    # wireguard 代理服务器域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
-   server: engage.nanocat.cloud
-   port: 2408
+   server: 188.114.97.229
+   port: 2506
    ip: 172.16.0.2
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
