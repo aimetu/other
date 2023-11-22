@@ -252,8 +252,7 @@ proxy-groups:
   - Wireless  
   - Load Balance
   - Fallback
-  - HongKong Chain
-  - Taiwan Chain
+  - Proxy Chain
   - HongKong
   - Taiwan
   - Japan
@@ -330,7 +329,7 @@ proxy-groups:
   - Nations
 
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: HongKong Chain
+- name: Proxy Chain
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
@@ -341,19 +340,6 @@ proxy-groups:
   proxies:
     - HongKong
     - Zero Trust
-    
-# 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: Taiwan Chain
-  type: relay
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
-# 建议只使用 HTTP 协议  
-  benchmark-url: http://www.gstatic.com/generate_204
-# 延迟测试超时，单位：秒  
-  benchmark-timeout: 5
-# 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
-  proxies:
-    - Taiwan
-    - Warp Teams
 
 - name: HongKong
   type: url-test
