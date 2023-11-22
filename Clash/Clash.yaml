@@ -266,8 +266,8 @@ tunnels:
 proxies: 
   - name: HK~Zero Trust # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: 188.114.97.146 # 可选域名地址（端口2408）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
-    port: 5956 # wireguard 服务端端口
+    server: engage.cloudflareclient.com # wireguard服务器地址
+    port: 2408 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 IPv6 地址
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
