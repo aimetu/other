@@ -439,7 +439,7 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - ⚖️ Load Balance
-      - ⚙️ Fallback
+      - ⚠️ Fallback
       - 🛞 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -494,7 +494,7 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       
-  - name: ⚙️ Fallback
+  - name: ⚠️ Fallback
     type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
     url: http://www.gstatic.com/generate_204
     interval: 600
