@@ -288,7 +288,7 @@ proxies:
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= #　base64 编码的 wireguard 服务端公钥
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1 # 可选字段，预共享密钥
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
-    dns: [1.0.0.1,2606:4700:4700::1001] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
+    dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
     allowed-ips: ["0.0.0.0/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
