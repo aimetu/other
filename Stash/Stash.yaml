@@ -86,7 +86,7 @@ dns:
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
     
-# 默认 dns 服务器只会被用来解析 dns 服务的域名，仅允许 ip 地址
+# 默认 dns 服务器只会被用来解析 dns 服务的域名，仅允许 ip 地址，"ystem" 会导致系统 dns 泄露，所以未启用
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
