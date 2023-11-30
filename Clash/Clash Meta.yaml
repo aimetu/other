@@ -374,8 +374,6 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       - 🇨🇳 Chinese
-      - HK~Zero Trust
-      - TW~Warp Teams
       - DIRECT
       - REJECT
 
@@ -386,18 +384,14 @@ proxy-groups:
     #exclude-type: "Shadowsocks|Http" # 排除节点类型，不支持正则表达式，通过 | 分隔
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
-    use: # use 包含远程代理服务器节点
-      - ALL
-      - NODE
+    include-all-providers: true
     proxies:
       - HK~Zero Trust
       - TW~Warp Teams
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
     proxies:
       - HK~Zero Trust
       - TW~Warp Teams
@@ -449,9 +443,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
     
   - name: 🇹🇼 Taiwan
     type: url-test
@@ -460,9 +452,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
 
   - name: 🇯🇵 Japan
     type: url-test
@@ -471,9 +461,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
       
   - name: 🇰🇷 Korea
     type: url-test
@@ -482,9 +470,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
 
   - name: 🇸🇬 Singapore
     type: url-test
@@ -493,9 +479,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
       
   - name: 🇺🇸 America
     type: url-test
@@ -504,9 +488,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
 
   - name: 🇺🇳 Nations
     type: url-test
@@ -517,9 +499,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
 
   - name: 🇨🇳 Chinese
     type: url-test
@@ -528,9 +508,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
-    use:
-      - ALL
-      - NODE
+    include-all-providers: true
 
   - name: 🕸️ Speedtest
     type: select
