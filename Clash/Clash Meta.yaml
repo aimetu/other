@@ -484,7 +484,7 @@ proxy-groups:
     lazy: true
     use:
       - ALL
-      - - NODE
+      - NODE
 
   - name: 🇸🇬 Singapore
     type: url-test
@@ -495,7 +495,7 @@ proxy-groups:
     lazy: true
     use:
       - ALL
-      - - NODE
+      - NODE
       
   - name: 🇺🇸 America
     type: url-test
