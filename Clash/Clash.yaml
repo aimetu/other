@@ -1003,13 +1003,24 @@ rules:
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve # no-resolve 选项以跳过域名去进行 dns 解析
   - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve # IP-CIDR 本地 ipv4 规则
   - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve # no-resolve 可选，它用于跳过规则的 dns 解析
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve # IP-CIDR6 本地 ipv6 规则
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT # SRC-IP-CIDR 根据数据包的源 ipv4 地址
-  - DST-PORT,1400,✉️ Telegram  # DST-PORT 从目标端口指定规则
-  #- SRC-PORT,7777,DIRECT # SRC-PORT 发送至端口指定规则
+  - DST-PORT,1400,✉️ Telegram # DST-PORT 从目标端口指定规则
+  #- DST-PORT,114/514,DIRECT # 匹配 114 和 514 端口
+  #- DST-PORT,114-514,DIRECT # 匹配 114 到 514 端口
+  #- DST-PORT,114/233/514-1919,DIRECT匹配 114 和 233 以及 514 到 1919 端口
+  #- SRC-PORT,7777,DIRECT # SRC-PORT 来源端口指定规则
+  #- IN-NAME,ss,DIRECT # 匹配入站名称
+  #- IN-USER,meta,DIERCT # 匹配入站用户名,目前仅vmess入站支持配置用户名
+  #- IN-TYPE,INNER,DIRECT # 匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
+  #- NETWORK,tcp,DIRECT # 匹配入站流量的类型 TCP / UDP
+  #- AND,((DOMAIN,baidu.com),(NETWORK,tcp)),DIRECT # 示例为匹配 baidu.com 域名并且网络类型为 tcp 的请求直连
+  #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),DIRECT # ip 类规则可用 no-resolve, 需书写在括号内
+  #- OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),REJECT # 示例为域名关键词为 pcdn 或域名关键词为 stun 的请求 拦截
+  #- NOT,((DOMAIN,baidu.com)),DIRECT # 示例为不匹配 baidu.com 域名的请求走 direct 节点/策略组  
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
@@ -1038,4 +1049,6 @@ rules:
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
   - GEOIP,CN,🇨🇳 China # GEOIP 根据 geoip 地址国家/地区
+  #- GEOIP,lan,DIRECT,no-resolve # no-resolve 也可以添加到 geoip
+  - GEOSITE,cn,DIRECT # GEOSITE 域名集合,匹配集合内的域名
   - MATCH,🐟 Final # MATCH 不在规则中的请求
