@@ -344,17 +344,18 @@ proxy-providers:
       enable: true # 是否启用，可选 true/false
       url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
       interval: 600 # 健康检查间隔时间，单位为秒
-
-  NODE:  # 远程代理服务器引用名称
-    type: http # 代理服务器引用类型
-    path: /proxy/node.yaml # 存储到位置路径
-    url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
-    interval: 86400 # 自动更新时长单位：秒
-    udp: true # udp 支持开关
-    health-check: # 网络健康检查（测试延迟）
-      enable: true # 是否启用，可选 true/false
-      url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
-      interval: 600 # 健康检查间隔时间，单位为秒
+      
+# 可订阅多个代理服务器订阅
+  #NODE:  # 远程代理服务器引用名称
+    #type: http # 代理服务器引用类型
+    #path: /proxy/node.yaml # 存储到位置路径
+    #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
+    #interval: 86400 # 自动更新时长单位：秒
+    #udp: true # udp 支持开关
+    #health-check: # 网络健康检查（测试延迟）
+      #enable: true # 是否启用，可选 true/false
+      #url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
+      #interval: 600 # 健康检查间隔时间，单位为秒
       
 #💡 策略组
 proxy-groups:
