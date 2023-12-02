@@ -349,7 +349,7 @@ proxy-providers:
   #NODE:  # 远程代理服务器引用名称
     #type: http # 代理服务器引用类型
     #path: /proxy/node.yaml # 存储到位置路径
-    #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
+    #url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
     #interval: 86400 # 自动更新时长单位：秒
     #udp: true # udp 支持开关
     #health-check: # 网络健康检查（测试延迟）
