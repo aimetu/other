@@ -340,6 +340,7 @@ proxy-providers:
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400 # 自动更新时长单位：秒
     udp: true # udp 支持开关
+    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点类型排除 注意，proxy-groups 与 proxy-providers 写法不同
     health-check: # 网络健康检查（测试延迟）
       enable: true # 是否启用，可选 true/false
       url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
@@ -444,6 +445,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点类型排除 注意，proxy-groups 与 proxy-providers 写法不同
     include-all-providers: true
     
   - name: 🇹🇼 Taiwan
@@ -453,6 +455,7 @@ proxy-groups:
     interval: 600
     tolerance: 0
     lazy: true
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点类型排除 注意，proxy-groups 与 proxy-providers 写法不同
     include-all-providers: true
 
   - name: 🇯🇵 Japan
@@ -985,5 +988,5 @@ rules:
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
   - GEOIP,CN,🇨🇳 China # GEOIP 根据 geoip 地址国家/地区
   #- GEOIP,lan,DIRECT,no-resolve # no-resolve 也可以添加到 geoip
-  - GEOSITE,cn,DIRECT # GEOSITE 域名集合,匹配集合内的域名
+  #- GEOSITE,cn,DIRECT # GEOSITE 域名集合,匹配集合内的域名
   - MATCH,🐟 Final # MATCH 不在规则中的请求
