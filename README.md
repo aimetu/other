@@ -38,10 +38,10 @@
 
 | [ 😺 **clash** ](https://github.com/Dreamacro/clash) |  |  |  |  |
 |  ---- | ---- | ---- | ---- | ---- |
-| [dreamacro-核心](https://github.com/Dreamacro/clash) | [ios-stash应用](https://stash.wiki) | [ios-stash-配置样例](https://stash.wiki/features/example-config) | [clash-rev-doc-配置示例](https://merlinkodo.github.io/Clash-Rev-Doc/) | [clash-rev-核心](https://github.com/MerlinKodo/clash-rev) |
-| [cfw-官方文档](https://docs.cfw.lbyczf.com/) | [dreamacro-配置样例](https://lancellc.gitbook.io/clash) | [metacubex-meta核心](https://github.com/MetaCubeX/Clash.Meta) | [meta-样例](https://wiki.metacubex.one/example/) | [meta-模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) |
+| [dreamacro-核心](https://github.com/Dreamacro/clash) | [ios-stash应用](https://stash.wiki) | [ios-stash-配置样例](https://stash.wiki/features/example-config) | [clash-rev-doc-配置示例](https://merlinkodo.github.io/Clash-Rev-Doc/) | [clash-meta-rev核心](https://github.com/wonfen/Clash.Meta) |
+| [cfw-官方文档](https://docs.cfw.lbyczf.com/) | [dreamacro-配置样例](https://lancellc.gitbook.io/clash) | [metacubex-meta核心](https://github.com/MetaCubeX/mihomo) | [meta-样例](https://wiki.metacubex.one/example/) | [meta-模板](https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml) |
 | [cfw-应用](https://github.com/Fndroid/clash_for_windows_pkg) | [cfw-导航](https://github.com/ender-zhao/Clash-for-Windows_Chinese-Attached) | [ender-zhao-cfw-汉化](https://github.com/ender-zhao/Clash-for-Windows_Chinese) | [BoyceLig-cfw-汉化](https://github.com/BoyceLig/Clash_Chinese_Patch) |[kr328-多平台](https://github.com/Kr328/clash-multiplatform-compat) | 
-| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [Clash-verge新](https://github.com/catherndoukasrsm/clash-verge) |  [windows-verge](https://github.com/zzzgydi/clash-verge) | [android-magisk](https://docs.adlyq.ml/) |
+| [clashx-macos](https://github.com/yichengchen/clashX) | [clashx pro-macos](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public) | [Clash-verge新](https://github.com/wonfen/clash-verge-rev) |  [windows-verge](https://github.com/zzzgydi/clash-verge) | [android-magisk](https://docs.adlyq.ml/) |
 |[kr328-android](https://github.com/Kr328/ClashForAndroid) | [metacubex-meta-android](https://github.com/MetaCubeX/ClashMetaForAndroid) | [sing-box](https://github.com/SagerNet/sing-box) | [支持clash.meta的工具](https://wiki.metacubex.one/startup/client/#_1) |
 - *[]()*
 
