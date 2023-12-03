@@ -1053,6 +1053,6 @@ rules:
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
   - GEOIP,CN,🇨🇳 China # GEOIP 根据 geoip 地址国家/地区
-  #- GEOIP,lan,DIRECT,no-resolve # no-resolve 也可以添加到 geoip
-  - GEOSITE,cn,DIRECT # GEOSITE 域名集合,匹配集合内的域名
+  #- GEOIP,lan,🇨🇳 China,no-resolve # no-resolve 也可以添加到 geoip
+  - GEOSITE,cn,🇨🇳 China # GEOSITE 域名集合,匹配集合内的域名
   - MATCH,🐟 Final # MATCH 不在规则中的请求
