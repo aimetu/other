@@ -22,7 +22,7 @@ routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
 #  - "clash:88888888"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
-#  - "127.0.0.0/8"
+#  - "127.0.0.1/8"
 #  - "::1/128"
 allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关 true/false
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
