@@ -935,7 +935,7 @@ rules:
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
   - DOMAIN-KEYWORD,stun,⛔ AdBlock # 域名关键词匹配禁示 webrtc 泄露
-  - DOMAIN-KEYWORD,pcdn,⛔ AdBlock# 域名关键词匹配禁示 P2P 网络上传
+  - DOMAIN-KEYWORD,pcdn,⛔ AdBlock # 域名关键词匹配禁示 P2P 网络上传
   - DOMAIN-KEYWORD,browserleaks,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配禁示 dns 泄露
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
