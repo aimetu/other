@@ -932,8 +932,9 @@ rules:
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
-  - DOMAIN-KEYWORD,reddit,🌐 Global  # DOMAIN-KEYWORD 域名关键词匹配
-  - DOMAIN-KEYWORD,snapchat,🌐 Global
+  - DOMAIN-KEYWORD,stun,⛔ AdBlock # 域名关键词匹配禁示 DNS 泄露
+  - DOMAIN-KEYWORD,pcdn,⛔ AdBlock# 域名关键词匹配禁示 P2P 网络上传
+  - DOMAIN-KEYWORD,browserleaks,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称
