@@ -1017,11 +1017,12 @@ rules:
   #- DST-PORT,114-514,🇨🇳 China # 匹配 114 到 514 端口
   #- DST-PORT,114/233/514-1919,🇨🇳 China 114 和 233 以及 514 到 1919 端口
   #- SRC-PORT,7777,🇨🇳 China # SRC-PORT 来源端口指定规则
-  #- IN-NAME,ss,🇨🇳 China # 匹配入站名称
-  #- IN-USER,meta,🇨🇳 China # 匹配入站用户名,目前仅vmess入站支持配置用户名
-  #- IN-TYPE,INNER,🇨🇳 China # 匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
-  #- NETWORK,tcp,🇨🇳 China # 匹配入站流量的类型 TCP / UDP
-  #- AND,((DOMAIN,baidu.com),(NETWORK,tcp)),🇨🇳 China # 示例为匹配 baidu.com 域名并且网络类型为 tcp 的请求直连
+  #- IN-NAME,ss,🌐 Global # IN-NAME 匹配入站名称
+  #- IN-USER,vmess,🌐 Global # IN-USER 匹配入站用户名,目前仅 vmess 入站支持配置用户名
+  #- IN-TYPE,INNER,🌐 Global # IN-TYPE 匹配流量入站的类型，匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
+  #- NETWORK,tcp,🇨🇳 China # NETWORK 网络类型规则，匹配入站流量的类型 TCP / UDP
+  - AND,((DST-PORT,443),(NETWORK,UDP)),⛔ AdBlock # AND 规则内的条件都必须满足，示例为端口 443 并且网络类型为 UDP 的请求
+  #- AND,((DOMAIN,baidu.com),(NETWORK,TCP)),🇨🇳 China # AND 规则内的条件都必须满足，示例为匹配 baidu.com 域名并且网络类型为 TCP 的请求
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
   - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),⛔ AdBlock # OR 规则内的条件只需满足一项即可，示例为域名关键词为 pcdn 或 stun 的请求
   #- NOT,((GEOIP,CN)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 CN 以外地区请求走 🌐 Global 节点/策略组
