@@ -937,7 +937,7 @@ rules:
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据完整进程路径匹配
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
