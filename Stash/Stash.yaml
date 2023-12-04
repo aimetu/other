@@ -273,6 +273,8 @@ proxy-groups:
   lazy: true
 # include-all: true，引用所有的代理和远程代理集  
   include-all: true
+# hidden 在列表中隐藏策略组
+  #hidden: true
 
 - name: Node
   type: select
