@@ -336,6 +336,8 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
 # 延迟测试超时，单位：秒  
   benchmark-timeout: 5
+  interval: 600  
+  lazy: true
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
