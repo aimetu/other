@@ -120,6 +120,8 @@ dns:
     - "opencloud.wostore.cn"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+    - "local.adguard.org"
+    - "injections.adguard.org"
   default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
     - "223.5.5.5"
     - "119.29.29.29"
@@ -997,9 +999,9 @@ rules:
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
-  - DOMAIN-KEYWORD,stun,⛔ AdBlock # 域名关键词匹配禁示 DNS 泄露
-  - DOMAIN-KEYWORD,pcdn,⛔ AdBlock# 域名关键词匹配禁示 P2P 网络上传
-  - DOMAIN-KEYWORD,browserleaks,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配
+  - DOMAIN-KEYWORD,stun,⛔ AdBlock # 域名关键词匹配禁示 webrtc 泄露
+  - DOMAIN-KEYWORD,pcdn,⛔ AdBlock # 域名关键词匹配禁示 P2P 网络上传
+  - DOMAIN-KEYWORD,browserleaks,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配禁示 DNS 泄露
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称
