@@ -797,8 +797,9 @@ rules:
 - DOMAIN,mssdk-bu.bytedance.com,AdBlock
 - DOMAIN-SUFFIX,adx.appicad.net,AdBlock
 - DOMAIN-SUFFIX,m1.ad.10010.com,AdBlock
-- DOMAIN-KEYWORD,reddit,Global
-- DOMAIN-KEYWORD,snapchat,Global
+- DOMAIN-KEYWORD,stun,dBlock # 域名关键词匹配禁示 webrtc 泄露
+- DOMAIN-KEYWORD,pcdn,AdBlock # 域名关键词匹配禁示 P2P 网络上传
+- DOMAIN-KEYWORD,browserleaks,Global # DOMAIN-KEYWORD 域名关键词匹配禁示 DNS 泄露
 - RULE-SET,🚥 Direct,China
 - RULE-SET,⛔ Anti.ad,AdBlock
 - RULE-SET,⛔ Privacy,AdBlock
