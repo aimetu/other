@@ -339,7 +339,7 @@ proxy-providers:
     path: /proxy/all.yaml # 存储到位置路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
-    override:
+    override: # 覆写节点内容
       #down: "50 Mbps" # 下载速度默认以 Mbps 为单位
       #up: "10 Mbps" # 上传速度默认以 Mbps 为单位
       #dialer-proxy: DIRECT # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
