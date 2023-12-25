@@ -158,7 +158,7 @@ dns:
     - "https://doh.opendns.com/dns-query" # 指定 doh 服务器查询
     - "https://dns.cloudflare.com/dns-query" # 指定 doh 服务器查询
     #- "https://dns.google/dns-query#proxy" # dns 经过代理查询
-    #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组强制使用http/3
+    #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置geoip开关 true/false
     geoip-code: CN # geoip 匹配区域设定，查询不是cn时使用 fallback 返回结果
