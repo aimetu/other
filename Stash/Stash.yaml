@@ -1,4 +1,4 @@
-# 2023.11.20
+# 2024.01.07
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -113,7 +113,6 @@ dns:
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
     "openwrt.lan": system
-    "openwrt.org": 223.5.5.5
     "blog.google": 119.29.29.29
     "dns.alidns.com": 223.5.5.5
     "doh.pub": 1.12.12.12
