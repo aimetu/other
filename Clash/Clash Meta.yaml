@@ -345,7 +345,7 @@ proxies:
 proxy-providers:
   ALL:  # 远程代理服务器本地名称
     type: http # 订阅代理服务器类型
-    path: /proxy/all.yaml # 存储到位置路径
+    path: /proxy/all.yaml # 存储路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400 # 自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
@@ -364,8 +364,10 @@ proxy-providers:
       
 # 本地代理服务器筛选
   NODE:  # 本地服务器引用名称
-    type: file # 筛选代理服务器类型
-    path: /proxy/node.yaml # 存储到位置路径
+    type: file # 筛选代理服务器类型，可选 http 订阅类型
+    path: /proxy/node.yaml # 存储路径
+    #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
+    #interval: 86400 # 自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-providers 与 proxy-groups 写法不同
