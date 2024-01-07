@@ -344,7 +344,7 @@ proxies:
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
   ALL:  # 远程代理服务器本地名称
-    type: http # 订阅代理服务器类型
+    type: http # 代理服务器类型为订阅
     path: /proxy/all.yaml # 存储路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400 # 自动更新时长单位：秒
@@ -364,7 +364,7 @@ proxy-providers:
       
 # 本地代理服务器筛选
   NODE:  # 本地服务器引用名称
-    type: file # 筛选代理服务器类型，可选 http 订阅类型
+    type: file # 代理服务器类型为筛选，可选 http 订阅类型
     path: /proxy/node.yaml # 存储路径
     #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     #interval: 86400 # 自动更新时长单位：秒
