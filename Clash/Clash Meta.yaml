@@ -354,7 +354,7 @@ proxy-providers:
     override: # 覆写节点内容
       #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
-      #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #dialer-proxy: proxy # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       skip-cert-verify: true # 跳过证书验证
       udp: true # 启用 udp 支持
     health-check: # 网络健康检查（测试延迟）
@@ -374,7 +374,7 @@ proxy-providers:
     #override: # 覆写节点内容
       #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
-      #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #dialer-proxy: proxy # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #skip-cert-verify: true # 跳过证书验证
       #udp: true # 启用 udp 支持
     #health-check: # 网络健康检查（测试延迟）
