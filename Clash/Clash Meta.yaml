@@ -320,7 +320,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
 
-  - name:  TW~Warp Teams
+  - name: TW~Warp Teams
     type: wireguard
     server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 2506
@@ -349,7 +349,7 @@ proxies:
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
-  ALL:  # 远程代理服务器本地名称
+  ALL: # 远程代理服务器本地名称
     type: http # 代理服务器类型为订阅
     path: /proxy/all.yaml # 存储路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
