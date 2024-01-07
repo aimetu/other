@@ -263,7 +263,7 @@ listeners:
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
     proxy: TW~Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
-      - username: Cloudflare
+      - username: Warp
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
@@ -305,7 +305,7 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [17,176,6]
        
-  - name:  TW~Warp Teams
+  - name: TW~Warp Teams
     type: wireguard
     server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 2506
