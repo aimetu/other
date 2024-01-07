@@ -12,13 +12,13 @@
 #💡 通用设置
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
 log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、error 错误、debug 调试
-ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 AAAA 记录
+ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
 port: 7890 # 本地 http(s) 代理端口
 socks-port: 7891 # 本地 socks4/4a/5 代理端口
-mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 HTTP(S) 和 SOCKS5 协议. 您可以使用任何支持 HTTP 或 SOCKS 代理的程序连接到这个端口
-redir-port: 7892 # 透明代理端口，仅能代理 TCP 流量
-tproxy-port: 7893  # 透明代理端口，可代理 TCP 与 UDP 流量
-routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
+mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
+redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
+tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
+routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
 #  - "clash:88888888"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
@@ -27,29 +27,29 @@ routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
 allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关 true/false
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
 #interface-name: en0 # 指定 clash 流量出站接口
-tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip选择握手最快的 ip 进行连接「meta 专属」
+tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip选择握手最快的 ip 进行连接
 keep-alive-interval: 30 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关 true/false
 global-client-fingerprint: chrome # 全局客户端 tls 指纹,可选 chrome/firefox/safari/ios/android/edge/360/qq/random
-global-ua: Chrome/119.0  # 自定义外部资源下载时使用的的 ua,默认为 clash.meta
+global-ua: Chrome/120.0  # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
-external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 IP
+external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 #external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 #external-ui-name: metacubexd # 自定义外部用户界面名字
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 #tls: # 目前仅用于 api 监听地址外部控制器的证书私钥
-#  certificate: string # 证书 PEM 格式，或者 证书的路径
-#  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+#  certificate: string # 证书 pem 格式，或者 证书的路径
+#  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
 #  custom-certifactes:
 #    - |
 #      -----BEGIN CERTIFICATE-----
 #      format/pem...
 #      -----END CERTIFICATE-----
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
-geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库「meta专属」
+geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geox-url: # 自定义geoip.data url
   geoip: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
@@ -61,10 +61,10 @@ profile:  # profile 为扩展配置，但在 Clash.meta, 仅作为缓存项使�
 
 #💡 同步时间中心 ntp 服务
 ntp:
-  enable: true # 是否启用 NTP 服务
+  enable: true # 是否启用 ntp 服务
   write-to-system: true # 是否同步至系统时间，需要 root、管理员模式运行
-  server: ntp.aliyun.com # NTP 服务地址，默认 ntp.aliyun.com
-  port: 123 # NTP 服务端口，默认 123
+  server: ntp.aliyun.com # ntp 服务地址，默认 ntp.aliyun.com
+  port: 123 # ntp 服务端口，默认 123
   interval: 60 # 同步时间间隔，单位（分），默认同步间隔为 60 分
   
 #💡 无线网络 ssid 策略  
@@ -77,12 +77,12 @@ strategy:
 #💡 虚拟网卡 tun 模式配置
 tun:
   enable: false # tun 模式开关 true/false
-  stack: system # 网络栈类型 system > mixed > gvisor > lwip，MacOS 用户推荐 gvisor 栈
+  stack: system # 网络栈类型 system > mixed > gvisor > lwip，macos 用户推荐 gvisor 栈
   auto-redir: true # 自动重定向开关 true/false
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-detect-interface: true # 自动识别出口网卡
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
-  device: Meta # 指定 tun 网卡名称，MacOS 设备只能使用 utun 开头的网卡名
+  device: Meta # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   #mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - any:53
@@ -93,20 +93,20 @@ tun:
     - "::/1"
     - "8000::/1"
   #endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
-  #include-uid: # 包含的用户使用 Tun，未被配置的用户不会使用，默认不限制
+  #include-uid: # 包含的用户使用 tun，未被配置的用户不会使用，默认不限制
   #- 0
-  #include-uid-range: # 包含的用户范围使用 Tun，未被配置的用户不会使用
+  #include-uid-range: # 包含的用户范围使用 tun，未被配置的用户不会使用
   #- 1000-99999
-  #exclude-uid: # 排除用户使用 Tun
+  #exclude-uid: # 排除用户使用 tun
   #- 1000
-  #exclude-uid-range: # 排除范围用户使用 Tun
+  #exclude-uid-range: # 排除范围用户使用 tun
   #- 1000-99999
-  #include-android-user: # 包含的 Android 用户使用 Tun，未被配置的用户不会使用
+  #include-android-user: # 包含的 android 用户使用 tun，未被配置的用户不会使用
   #- 0
   #- 10
-  #include-package: # 包含的 Android 应用包名使用 Tun，未配置的应用包不会使用
+  #include-package: # 包含的 android 应用包名使用 tun，未配置的应用包不会使用
   #- com.android.chrome
-  #exclude-package: # 排除 Android 应用包名，使其避免使用 Tun
+  #exclude-package: # 排除 android 应用包名，使其避免使用 tun
   #- com.adguard.android
 
 #💡 域名解析 dns 服务器配置
@@ -280,7 +280,7 @@ listeners:
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
     proxy: TW~Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
-      - username: Cloudflare
+      - username: Warp
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
@@ -302,13 +302,13 @@ proxies:
      - server: engage.cloudflareclient.com # wireguard服务器地址
        port: 2408 # wireguard 服务端端口
        ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
-       ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 IPv6 地址
+       ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM= # 可选字段，预共享密钥
        allowed_ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
        reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
     mtu: 1280 # 可选字段，设置 mtu 值
-    udp: true # 可选字段，是否启用 UDP 支持
+    udp: true # 可选字段，是否启用 udp 支持
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
@@ -316,7 +316,7 @@ proxies:
 
   - name:  TW~Warp Teams
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
+    server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 2506
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
@@ -352,8 +352,8 @@ proxy-providers:
     #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
     override: # 覆写节点内容
-      #down: "5000 Mbps" # 下载速度默认以 Mbps 为单位
-      #up: "1000 Mbps" # 上传速度默认以 Mbps 为单位
+      #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
+      #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
       #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       skip-cert-verify: true # 跳过证书验证
       udp: true # 启用 udp 支持
@@ -372,8 +372,8 @@ proxy-providers:
     #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
     #override: # 覆写节点内容
-      #down: "5000 Mbps" # 下载速度默认以 Mbps 为单位
-      #up: "1000 Mbps" # 上传速度默认以 Mbps 为单位
+      #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
+      #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
       #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #skip-cert-verify: true # 跳过证书验证
       #udp: true # 启用 udp 支持
