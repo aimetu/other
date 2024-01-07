@@ -6,7 +6,7 @@
 # Meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2023.11.20
+# 2024.01.07
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -146,7 +146,7 @@ dns:
     #- "https://doh.pub/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
     #- "tls://dot.pub:853" # 指定 dot 服务器查询
-    - "quic://dns.alidns.com:853" # 指定 doq 服务器查询，「meta专属」
+    - "quic://dns.alidns.com:853" # 指定 doq 服务器查询
     #- "https://223.5.5.5/dns-query#en0" # 指定 dns 出口网卡
     #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
@@ -327,7 +327,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     persistent-keepalive: 45
     reserved: [80,73,10]
-    allowed-ips: ["0.0.0.0/0"]
+    allowed-ips: ["0.0.0.0/0","::/0"]
     mtu: 1280
     udp: true
     dialer-proxy: 🇹🇼 Taiwan
@@ -348,13 +348,15 @@ proxy-providers:
     path: /proxy/all.yaml # 存储到位置路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400 # 自动更新时长单位：秒
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
+    #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
+    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
     override: # 覆写节点内容
-      #down: "50 Mbps" # 下载速度默认以 Mbps 为单位
-      #up: "10 Mbps" # 上传速度默认以 Mbps 为单位
-      #dialer-proxy: DIRECT # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #down: "5000 Mbps" # 下载速度默认以 Mbps 为单位
+      #up: "1000 Mbps" # 上传速度默认以 Mbps 为单位
+      #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       skip-cert-verify: true # 跳过证书验证
-      udp: true # 启用 UDP 支持
+      udp: true # 启用 udp 支持
     health-check: # 网络健康检查（测试延迟）
       enable: true # 是否启用，可选 true/false
       url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
@@ -366,13 +368,15 @@ proxy-providers:
     #path: /proxy/node.yaml # 存储到位置路径
     #url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
     #interval: 86400 # 自动更新时长单位：秒
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
+    #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
+    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
     #override: # 覆写节点内容
-      #down: "50 Mbps" # 下载速度默认以 Mbps 为单位
-      #up: "10 Mbps" # 上传速度默认以 Mbps 为单位
-      #dialer-proxy: DIRECT # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #down: "5000 Mbps" # 下载速度默认以 Mbps 为单位
+      #up: "1000 Mbps" # 上传速度默认以 Mbps 为单位
+      #dialer-proxy: ✅ Node # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #skip-cert-verify: true # 跳过证书验证
-      #udp: true # 启用 UDP 支持
+      #udp: true # 启用 udp 支持
     #health-check: # 网络健康检查（测试延迟）
       #enable: true # 是否启用，可选 true/false
       #url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
@@ -382,7 +386,7 @@ proxy-providers:
 proxy-groups:
   - name: 🔰 Pick  # 该策略组的名称
     type: select # select 手动选择策略组
-    proxies: # 该策略组包含的策略组或代理
+    proxies: # 引入出站代理或其他策略组
       - ♻️ Auto
       - ✅ Node
       - ⚖️ Load Balance
@@ -403,27 +407,39 @@ proxy-groups:
     type: url-test  # url-test 自动策略组,将按照url测试结果使用延迟最低节点
     url: http://www.gstatic.com/generate_204
     interval: 600 # 间隔检测时间为秒
-    #exclude-type: "Shadowsocks|Http" # 排除节点类型，不支持正则表达式，通过 | 分隔
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
-    include-all-providers: true
-    proxies:
-      - HK~Zero Trust
-      - TW~Warp Teams
-      
+    include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    #include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
+    #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
+    #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
+
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
-    include-all-providers: true
-    proxies:
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
+    #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
+    #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
+    proxies: # 引入出站代理或其他策略组
       - HK~Zero Trust
       - TW~Warp Teams
-    
+    #use: # 引入代理集合
+      #- ALL
+      #- NODE
+      
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
-    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理 
+    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     #disable-udp: true # 禁用该组 udp 流量转发  
     proxies:
       - 🇭🇰 HongKong
@@ -438,8 +454,9 @@ proxy-groups:
     type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
     url: http://www.gstatic.com/generate_204
     interval: 600
-    lazy: true   
-    #disable-udp: true
+    lazy: true
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -460,79 +477,123 @@ proxy-groups:
 
   - name: 🇭🇰 HongKong
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
+    #exclude-filter: 台|日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
     #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
-    include-all-providers: true
-    
+    #disable-udp: true # 禁用该组 udp 流量转发
+
   - name: 🇹🇼 Taiwan
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
+    #exclude-filter: 港|日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #disable-udp: true # 禁用该组 udp 流量转发
     #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
-    include-all-providers: true
 
   - name: 🇯🇵 Japan
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
+    #exclude-filter: 港|台|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
       
   - name: 🇰🇷 Korea
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
+    #exclude-filter: 港|台|日|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
 
   - name: 🇸🇬 Singapore
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
+    #exclude-filter: 港|台|日|韩|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
       
   - name: 🇺🇸 America
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
+    #exclude-filter: 港|台|日|韩|新|狮
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
 
   - name: 🇺🇳 Nations
     type: url-test
     # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
-    #exclude-filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
+    #exclude-filter: 港|台|日|韩|新|狮
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
 
   - name: 🇨🇳 Chinese
     type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
+    #exclude-filter: 日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    include-all-providers: true
+    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
+    #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
+    #disable-udp: true # 禁用该组 udp 流量转发
 
   - name: 🕸️ Speedtest
     type: select
