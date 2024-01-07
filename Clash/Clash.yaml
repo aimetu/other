@@ -126,20 +126,20 @@ dns:
     - "tls://1.0.0.1:853"
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
+    #- "quic://dns.alidns.com:853" # 指定 doq 服务器查询，「meta专属」
     - "https://doh.pub/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
     #- "tls://dot.pub:853" # 指定 dot 服务器查询
-    #- "quic://dns.alidns.com:853" # 指定 doq 服务器查询，「meta专属」
-    #- "https://223.5.5.5/dns-query#en0" # 指定 dns 出口网卡
+    #- "https://1.12.12.12/dns-query#en0" # 指定 dns 出口网卡
     #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
-    - "8.8.8.8"
     - "1.0.0.1"
+    - "8.8.8.8"
     - "208.67.222.222"
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析
+    - "https://dns.opendns.com/dns-query" # 指定 doh 服务器查询
+    - "https://dns.cloudflare.com/dns-query" # 指定 doh 服务器查询
     - "tls://dns.google" # 指定 dot 服务器查询
-    - "https://1.0.0.1/dns-query" # 指定 doh 服务器查询
-    - "https://doh.opendns.com/dns-query" # 指定 doh 服务器查询
     #- "https://dns.google/dns-query#proxy" # dns 经过代理查询
     #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
