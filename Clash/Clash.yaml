@@ -1,23 +1,23 @@
-# Clash 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
+# clash 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
 # 对象键值对使用冒号结构表示 key: value, 冒号后面要加一个空格，使用缩进表示层级关系，示例：enable: true
-# IPV6 地址应当使用 [] 来框选，示例：[aaaa::a8aa:ff:fe09:57d9]:853 带端口的 IPV6 地址
+# ipv6 地址应当使用 [] 来框选，示例：[aaaa::a8aa:ff:fe09:57d9]:853 带端口的 ipv6 地址
 # 使用通配符时，应当使用引号 ''或 " " 将内容包裹起来，以免过度匹配
-# Meta 配置详解：https://wiki.metacubex.one
-# Meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+# meta 配置详解：https://wiki.metacubex.one
+# meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2023.11.20
+# 2023.01.07
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
 log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、error 错误、debug 调试
-ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 AAAA 记录
+ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
 port: 7890 # 本地 http(s) 代理端口
 socks-port: 7891 # 本地 socks4/4a/5 代理端口
-mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 HTTP(S) 和 SOCKS5 协议. 您可以使用任何支持 HTTP 或 SOCKS 代理的程序连接到这个端口
-redir-port: 7892 # 透明代理端口，仅能代理 TCP 流量
-tproxy-port: 7893  # 透明代理端口，可代理 TCP 与 UDP 流量
+mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
+redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
+tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
 routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
 #  - "clash:88888888"
@@ -30,19 +30,19 @@ bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许
 tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip选择握手最快的 ip 进行连接「meta 专属」
 keep-alive-interval: 30 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关 true/false
-global-client-fingerprint: chrome # 全局客户端 tls 指纹,可选 chrome/firefox/safari/ios/android/edge/360/qq/random
-global-ua: Chrome/119.0 # 自定义外部资源下载时使用的的 ua,默认为 clash.meta
+global-client-fingerprint: chrome # 全局客户端 tls 指纹，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
+global-ua: Chrome/120.0 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
-external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 IP
+external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 #external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 #external-ui-name: metacubexd # 自定义外部用户界面名字
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 #tls: # 目前仅用于 api 监听地址外部控制器的证书私钥
-#  certificate: string # 证书 PEM 格式，或者 证书的路径
-#  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+#  certificate: string # 证书 pem 格式，或者 证书的路径
+#  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
 #  custom-certifactes:
 #    - |
 #      -----BEGIN CERTIFICATE-----
@@ -55,16 +55,16 @@ geox-url: # 自定义geoip.data url
   geoip: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
   geosite: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
   mmdb: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
-profile:  # profile 为扩展配置，但在 Clash.meta, 仅作为缓存项使用(文件位置 ./cache.db)
+profile:  # profile 为扩展配置，但在 clash.meta, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
   store-fake-ip: true # 储存 fakeip 映射表，域名再次发生连接时，使用原有映射地址
 
 #💡 同步时间中心 ntp 服务
 ntp:
-  enable: true # 是否启用 NTP 服务
+  enable: true # 是否启用 ntp 服务
   write-to-system: true # 是否同步至系统时间，需要 root、管理员模式运行
-  server: ntp.aliyun.com # NTP 服务地址，默认 ntp.aliyun.com
-  port: 123 # NTP 服务端口，默认 123
+  server: ntp.aliyun.com # ntp 服务地址，默认 ntp.aliyun.com
+  port: 123 # ntp 服务端口，默认 123
   interval: 60 # 同步时间间隔，单位（分），默认同步间隔为 60 分
   
 #💡 无线网络 ssid 策略  
@@ -77,11 +77,11 @@ strategy:
 #💡 虚拟网卡 tun 模式配置
 tun:
   enable: false # tun 模式开关 true/false
-  stack: system # 网络栈类型 system > mixed > gvisor > lwip，MacOS 用户推荐 gvisor 栈
+  stack: system # 网络栈类型 system > mixed > gvisor > lwip，macos 用户推荐 gvisor 栈
   auto-redir: true # 自动重定向开关 true/false
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-detect-interface: true # 自动识别出口网卡
-  device: Clash # 指定 tun 网卡名称，MacOS 设备只能使用 utun 开头的网卡名
+  device: clash # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
   inet4_route_address: # 启用 auto_route 时使用自定义路由而不是 ipv4 默认路由
     - "0.0.0.0/1"
@@ -291,7 +291,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
-    allowed-ips: ["0.0.0.0/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
+    allowed-ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
     mtu: 1280 # 可选字段，设置 mtu 值
     udp: true # 可选字段，是否启用 UDP 支持
     dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
@@ -318,7 +318,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     persistent-keepalive: 45
     reserved: [80,73,10]
-    allowed-ips: ["0.0.0.0/0"]
+    allowed-ips: ["0.0.0.0/0","::/0"]
     mtu: 1280
     udp: true
     dialer-proxy: 🇹🇼 Taiwan
