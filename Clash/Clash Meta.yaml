@@ -1,9 +1,9 @@
-# Clash 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
+# clash 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
 # 对象键值对使用冒号结构表示 key: value, 冒号后面要加一个空格，使用缩进表示层级关系，示例：enable: true
-# IPV6 地址应当使用 [] 来框选，示例：[aaaa::a8aa:ff:fe09:57d9]:853 带端口的 IPV6 地址
+# ipv6 地址应当使用 [] 来框选，示例：[aaaa::a8aa:ff:fe09:57d9]:853 带端口的 ipv6 地址
 # 使用通配符时，应当使用引号 ''或 " " 将内容包裹起来，以免过度匹配
-# Meta 配置详解：https://wiki.metacubex.one
-# Meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+# meta 配置详解：https://wiki.metacubex.one
+# meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
 # 2024.01.07
@@ -410,13 +410,19 @@ proxy-groups:
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
     include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    #include-all-providers: true # 引入所有代理集合，可选 false
+    include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+    include-all-providers: true # 引入所有代理集合，可选 false
     #exclude-type: "Shadowsocks|Http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     #disable-udp: true # 禁用该组 udp 流量转发
     #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
     #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
-
+    proxies: # 手动引入出站代理或其他策略组
+      - HK~Zero Trust
+      - TW~Warp Teams
+    #use: # 手动引入代理集合
+      #- ALL
+      #- NODE
+      
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
     #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
@@ -426,13 +432,10 @@ proxy-groups:
     #disable-udp: true # 禁用该组 udp 流量转发
     #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
     #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
-    proxies: # 引入出站代理或其他策略组
+    proxies: # 手动引入出站代理或其他策略组
       - HK~Zero Trust
       - TW~Warp Teams
-    #use: # 引入代理集合
-      #- ALL
-      #- NODE
-      
+
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
     url: http://www.gstatic.com/generate_204
