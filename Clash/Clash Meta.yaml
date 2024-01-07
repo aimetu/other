@@ -341,16 +341,16 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
 
-#💡 远程代理服务器订阅链接
+#💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
-  ALL:  # 远程代理服务器引用名称
-    type: http # 代理服务器引用类型
+  ALL:  # 远程代理服务器本地名称
+    type: http # 订阅代理服务器类型
     path: /proxy/all.yaml # 存储到位置路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400 # 自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
+    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除排除，注意：proxy-providers 与 proxy-groups 写法不同
     override: # 覆写节点内容
       #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
@@ -362,25 +362,23 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
       interval: 600 # 健康检查间隔时间，单位为秒
       
-# 可订阅多个代理服务器订阅
-  #NODE:  # 远程代理服务器引用名称
-    #type: http # 代理服务器引用类型
-    #path: /proxy/node.yaml # 存储到位置路径
-    #url: https://sub.xeton.dev/sub?target=clash&url=订阅链接|订阅链接&list=true&emoji=true&sort=true&udp=true&tfo=true&scv=true&append_type=true&fdn=true&new_name=true
-    #interval: 86400 # 自动更新时长单位：秒
+# 本地代理服务器筛选
+  NODE:  # 本地服务器引用名称
+    type: file # 筛选代理服务器类型
+    path: /proxy/node.yaml # 存储到位置路径
     #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-providers 与 proxy-groups 写法不同
-    #override: # 覆写节点内容
+    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-providers 与 proxy-groups 写法不同
+    override: # 覆写节点内容
       #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
-      #dialer-proxy: proxy # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
-      #skip-cert-verify: true # 跳过证书验证
-      #udp: true # 启用 udp 支持
-    #health-check: # 网络健康检查（测试延迟）
-      #enable: true # 是否启用，可选 true/false
-      #url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
-      #interval: 600 # 健康检查间隔时间，单位为秒
+      #dialer-proxy: direct # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      skip-cert-verify: true # 跳过证书验证
+      udp: true # 启用 udp 支持
+    health-check: # 网络健康检查（测试延迟）
+      enable: true # 是否启用，可选 true/false
+      url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
+      interval: 600 # 健康检查间隔时间，单位为秒
       
 #💡 策略组
 proxy-groups:
