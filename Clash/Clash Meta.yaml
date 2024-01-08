@@ -442,8 +442,8 @@ proxy-groups:
     #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
     #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
     proxies: # 手动引入出站代理或其他策略组
-      - HK-Zero Trust
-      - TW-Warp Teams
+      - HK-Warp Client
+      - TW-Warp Team+
       - JP-Warp Plus
     #use: # 手动引入代理集合
       #- ALL
@@ -459,8 +459,8 @@ proxy-groups:
     #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
     #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
     proxies: # 手动引入出站代理或其他策略组
-      - HK-Zero Trust
-      - TW-Warp Teams
+      - HK-Warp Client
+      - TW-Warp Team+
       - JP-Warp Plus
 
   - name: 🛞 Proxy Chain
@@ -470,7 +470,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - HK-Zero Trust
+      - HK-Warp Client
 
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
