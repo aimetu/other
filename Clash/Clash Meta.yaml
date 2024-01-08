@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.01.07
+# 2024.01.08
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -286,7 +286,7 @@ listeners:
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
     proxy: JP~Warp Plus # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
-      - username: Cloudflare
+      - username: ClashMeta
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
