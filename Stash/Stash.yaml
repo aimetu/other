@@ -353,7 +353,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - Zero Trust
+    - HK-Warp Client
     
 # 均衡负载：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: Load Balance
