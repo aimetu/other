@@ -365,6 +365,25 @@ proxies:
        # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
+       
+  - name: SG-Warp Plus
+    type: wireguard
+    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    peers:
+     - server: engage.cloudflareclient.com
+       port: 2408
+       ip: 172.16.0.2
+       ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
+       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
+       allowed_ips: ["0.0.0.0/0","::/0"]
+       reserved: [173,82,247]
+    mtu: 1280
+    udp: true
+    persistent-keepalive: 45
+    remote-dns-resolve: true
+    dns: [1.1.1.1,2606:4700:4700::1111]
+    dialer-proxy: 🇸🇬 Singapore
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
@@ -445,6 +464,7 @@ proxy-groups:
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
+      - SG-Warp Plus
     #use: # 手动引入代理集合
       #- ALL
       #- NODE
@@ -462,6 +482,7 @@ proxy-groups:
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
+      - SG-Warp Plus
 
   - name: 🛞 Proxy Chain
     type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
