@@ -277,7 +277,7 @@ tunnels:
   
 #💡 本地代理服务器
 proxies: 
-  - name: HK-Zero Trust # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: HK-Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     server: engage.cloudflareclient.com # wireguard服务器地址
     port: 2408 # wireguard 服务端端口
