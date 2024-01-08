@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2023.01.07
+# 2023.01.08
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -228,7 +228,7 @@ listeners:
     port: 10808
     listen: 0.0.0.0 # 默认监听 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: HK~Zero Trust # 如果不为空则直接将该入站流量交由指定 proxy 处理
+    proxy: HK-Zero Trust # 如果不为空则直接将该入站流量交由指定 proxy 处理
     udp: true # 默认 true
 
   - name: http-lan # 用于监听局域网流量的入站,适用于无加密传输
@@ -236,7 +236,7 @@ listeners:
     port: 10809
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: HK~Zero Trust # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: HK-Zero Trust # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
@@ -244,7 +244,7 @@ listeners:
     port: 10810
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: HK~Zero Trust # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: TW-Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: shadowsocks-wwan # 互联网用于加密传输流量的入站
@@ -252,7 +252,7 @@ listeners:
     port: 10813
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: TW~Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: TW-Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     cipher: aes-256-gcm
 
@@ -261,24 +261,24 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: TW~Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: JP-Warp Plus # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
-      - username: Warp
+      - username: ClashMeta
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
 #💡 隧道模式，代理转发到目标服务器
 tunnels:
-  - tcp,127.0.0.1:6553,223.5.5.5:53,TW~Warp Teams
-  - tcp/udp,127.0.0.1:6666,223.6.6.6:53,TW~Warp Teams # 一行简约配置
+  - tcp,127.0.0.1:6553,223.5.5.5:53,JP-Warp Plus
+  - tcp/udp,127.0.0.1:6666,223.6.6.6:53,TW-Warp Teams # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: 119.29.29.29:53
-    proxy: HK~Zero Trust
+    proxy: HK-Zero Trust
   
 #💡 本地代理服务器
 proxies: 
-  - name: HK~Zero Trust # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: HK-Zero Trust # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     server: engage.cloudflareclient.com # wireguard服务器地址
     port: 2408 # wireguard 服务端端口
@@ -305,7 +305,7 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [17,176,6]
        
-  - name: TW~Warp Teams
+  - name: TW-Warp Teams
     type: wireguard
     server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
     port: 2506
@@ -331,6 +331,33 @@ proxies:
        # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
+
+  - name: JP-Warp Plus
+    type: wireguard
+    server: 188.114.97.125
+    port: 8742
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
+    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    remote-dns-resolve: true
+    dns: [1.1.1.1,2606:4700:4700::1111]
+    persistent-keepalive: 45
+    reserved: [173,82,247]
+    allowed-ips: ["0.0.0.0/0","::/0"]
+    mtu: 1280
+    udp: true
+    dialer-proxy: 🇯🇵 Japan
+    peers:
+     - server: engage.nanocat.me
+       port: 2408
+       ip: 172.16.0.2
+       ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
+       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
+       allowed_ips: ["0.0.0.0/0","::/0"]
+       reserved: [173,82,247]
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
@@ -445,8 +472,6 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       - 🇨🇳 Chinese
-      - HK~Zero Trust
-      - TW~Warp Teams
       - DIRECT
       - REJECT
 
@@ -460,16 +485,18 @@ proxy-groups:
     use: # use 包含远程代理服务器节点
       - ALL
     proxies:
-      - HK~Zero Trust
-      - TW~Warp Teams
+      - HK-Zero Trust
+      - TW-Warp Teams
+      - JP-Warp Plus
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
     use:
       - ALL 
     proxies:
-      - HK~Zero Trust
-      - TW~Warp Teams
+      - HK-Zero Trust
+      - TW-Warp Teams
+      - JP-Warp Plus
     
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
@@ -509,7 +536,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - HK~Zero Trust
+      - HK-Zero Trust
 
   - name: 🇭🇰 HongKong
     type: url-test
