@@ -414,9 +414,9 @@ proxy-groups:
     proxies: # 引入出站代理或其他策略组
       - ♻️ Auto
       - ✅ Node
+      - 🛞 Proxy Chain
       - ⚖️ Load Balance
       - ⚠️ Fallback
-      - 🛞 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -463,6 +463,15 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Plus
 
+  - name: 🛞 Proxy Chain
+    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    lazy: true
+    proxies:
+      - 🇭🇰 HongKong
+      - HK-Zero Trust
+
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
     url: http://www.gstatic.com/generate_204
@@ -495,15 +504,6 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
-
-  - name: 🛞 Proxy Chain
-    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-    lazy: true
-    proxies:
-      - 🇭🇰 HongKong
-      - HK-Zero Trust
 
   - name: 🇭🇰 HongKong
     type: url-test
