@@ -87,8 +87,8 @@ proxies:
 
  - name: SG-Warp Plus
    type: wireguard
-   server: engage.cloudflareclient.com
-   port: 2408
+   server: 188.114.97.229
+   port: 2506
    ip: 172.16.0.2
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
