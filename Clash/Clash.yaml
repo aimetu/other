@@ -488,6 +488,7 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - 🛞 Proxy Chain
+      - ☁️ Cloudflare Warp
       - ⚖️ Load Balance
       - ⚠️ Fallback
       - 🇭🇰 HongKong
@@ -534,6 +535,22 @@ proxy-groups:
     proxies:
       - 🇭🇰 HongKong
       - HK-Warp Client
+
+  - name: ☁️ Cloudflare Warp
+    type: url-test
+    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
+    filter: (?i)Warp
+    #exclude-filter: 台|日|韩|新|狮|美
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    lazy: true
+    #disable-udp: true # 禁用该组 udp 流量转发
+    proxies: # 手动引入出站代理或其他策略组
+      - HK-Warp Client
+      - TW-Warp Teams
+      - JP-Warp Team
+      - SG-Warp Plus
       
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
