@@ -444,6 +444,7 @@ proxy-groups:
     proxies: # 手动引入出站代理或其他策略组
       - HK-Zero Trust
       - TW-Warp Teams
+      - JP-Warp Plus
     #use: # 手动引入代理集合
       #- ALL
       #- NODE
@@ -460,6 +461,7 @@ proxy-groups:
     proxies: # 手动引入出站代理或其他策略组
       - HK-Zero Trust
       - TW-Warp Teams
+      - JP-Warp Plus
 
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
