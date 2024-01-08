@@ -358,7 +358,7 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
 
-  - name: SG-Warp Plus
+  - name: IP-Warp Plus
     type: wireguard
     server: 188.114.97.229
     port: 2506
@@ -515,7 +515,7 @@ proxy-groups:
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
-      - SG-Warp Plus
+      - IP-Warp Plus
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
@@ -525,7 +525,7 @@ proxy-groups:
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
-      - SG-Warp Plus
+      - IP-Warp Plus
       
   - name: 🛞 Proxy Chain
     type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
@@ -550,7 +550,7 @@ proxy-groups:
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
-      - SG-Warp Plus
+      - IP-Warp Plus
       
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
