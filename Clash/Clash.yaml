@@ -306,8 +306,8 @@ proxies:
 
   - name: TW-Warp Teams
     type: wireguard
-    server: 188.114.97.125
-    port: 8742
+    server: engage.nanocat.cloud
+    port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8590:3f3:93bd:c8a4:a85d
     private-key: gP9cP+V78zRVDy/TOyxuTtwyesCOP8549IWUXZg7XmA=
@@ -333,8 +333,8 @@ proxies:
        
   - name: JP-Warp Team
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
-    port: 2506
+    server: engage.nanocat.me # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
+    port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
@@ -360,8 +360,8 @@ proxies:
 
   - name: SG-Warp Plus
     type: wireguard
-    server: 188.114.97.125
-    port: 8742
+    server: 188.114.97.229
+    port: 2506
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
@@ -376,8 +376,8 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇸🇬 Singapore
     peers:
-     - server: engage.cloudflareclient.com
-       port: 2408
+     - server: 188.114.97.229
+       port: 2506
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
