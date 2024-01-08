@@ -85,7 +85,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: SG-Warp Plus
+ - name: IP-Warp Plus
    type: wireguard
    server: 188.114.97.229
    port: 2506
