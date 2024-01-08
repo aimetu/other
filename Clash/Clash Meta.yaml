@@ -382,7 +382,7 @@ proxies:
     udp: true
     persistent-keepalive: 45
     remote-dns-resolve: true
-    dns: [1.1.1.1,2606:4700:4700::1111]
+    dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇸🇬 Singapore
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
