@@ -134,12 +134,12 @@ dns:
     #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "1.0.0.1"
-    - "8.8.8.8"
     - "208.67.222.222"
+    #- "8.8.8.8"
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析
     - "https://dns.opendns.com/dns-query" # 指定 doh 服务器查询
     - "https://dns.cloudflare.com/dns-query" # 指定 doh 服务器查询
-    - "tls://dns.google" # 指定 dot 服务器查询
+    #- "tls://dns.google:853" # 指定 dot 服务器查询
     #- "https://dns.google/dns-query#proxy" # dns 经过代理查询
     #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
@@ -155,7 +155,6 @@ dns:
       - "+.youtube.com"
   nameserver-policy: # 使用指定的 dns 服务器解析域名
     "openwrt.lan": system
-    "openwrt.org": tls://dns.alidns.com
     "blog.google": tls://dot.pub
     "dns.alidns.com": 223.5.5.5
     "doh.pub": 1.12.12.12
@@ -287,13 +286,13 @@ proxies:
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo= #　base64 编码的 wireguard 服务端公钥
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1 # 可选字段，预共享密钥
+    allowed-ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
+    reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
+    mtu: 1280 # 可选字段，设置 mtu 值
+    udp: true # 可选字段，是否启用 udp 支持
+    persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
-    reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
-    allowed-ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
-    mtu: 1280 # 可选字段，设置 mtu 值
-    udp: true # 可选字段，是否启用 UDP 支持
     dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
      - server: engage.cloudflareclient.com
@@ -307,20 +306,20 @@ proxies:
        
   - name: TW-Warp Teams
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
+    server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
     port: 2506
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
    # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: [1.0.0.1,2606:4700:4700::1001]
-    persistent-keepalive: 45
-    reserved: [80,73,10]
     allowed-ips: ["0.0.0.0/0","::/0"]
+    reserved: [80,73,10]
     mtu: 1280
     udp: true
+    persistent-keepalive: 45
+    remote-dns-resolve: true
+    dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇹🇼 Taiwan
     peers:
      - server: engage.nanocat.cloud
@@ -341,13 +340,13 @@ proxies:
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: [1.1.1.1,2606:4700:4700::1111]
-    persistent-keepalive: 45
-    reserved: [173,82,247]
     allowed-ips: ["0.0.0.0/0","::/0"]
+    reserved: [173,82,247]
     mtu: 1280
     udp: true
+    persistent-keepalive: 45
+    remote-dns-resolve: true
+    dns: [1.1.1.1,2606:4700:4700::1111]
     dialer-proxy: 🇯🇵 Japan
     peers:
      - server: engage.nanocat.me
