@@ -306,7 +306,7 @@ proxies:
        
   - name: TW-Warp Teams
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
+    server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
     port: 2506
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
