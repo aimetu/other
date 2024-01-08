@@ -1,4 +1,4 @@
-# 2024.01.07
+# 2024.01.08
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -22,7 +22,7 @@ proxy-providers:
 proxies:
  - name: Zero Trust
    type: wireguard
-   # wireguard 代理服务器域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
+   # wireguard 代理服务器域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
    server: engage.cloudflareclient.com
    port: 2408
    ip: 172.16.0.2
@@ -44,9 +44,9 @@ proxies:
 
  - name: Warp Teams
    type: wireguard
-   # wireguard 代理服务器域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
-   server: 188.114.97.229
-   port: 2506
+   # wireguard 代理服务器域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
+   server: engage.nanocat.cloud
+   port: 2408
    ip: 172.16.0.2
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
@@ -54,6 +54,27 @@ proxies:
    dns: [1.0.0.1,2606:4700:4700::1001]
    mtu: 1280
    reserved: [80,73,10]
+   keepalive: 45
+   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-timeout: 3
+# 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
+#   underlying-proxy: 
+#     type: trojan
+#     server: your-underlying-proxy
+#     port: 443
+#     password: your-password
+
+ - name: Warp Plus
+   type: wireguard
+   server: engage.nanocat.me
+   port: 2408
+   ip: 172.16.0.2
+   ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
+   private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+   dns: [1.1.1.1,2606:4700:4700::1111]
+   mtu: 1280
+   reserved: [173,82,247]
    keepalive: 45
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
@@ -107,8 +128,8 @@ dns:
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
     - https://dns.google/dns-query
-    - https://1.0.0.1/dns-query
-    - https://doh.opendns.com/dns-query
+    - https://dns.opendns.com/dns-query
+    - https://dns.cloudflare.com/dns-query
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
