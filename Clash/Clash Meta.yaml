@@ -342,7 +342,7 @@ proxies:
   - name: JP-Warp Team
     type: wireguard
     server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
-    port: 2506
+    port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
@@ -370,8 +370,8 @@ proxies:
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
-     - server: engage.cloudflareclient.com
-       port: 2408
+     - server: 188.114.97.229
+       port: 2506
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
@@ -383,7 +383,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
-    dialer-proxy: 🇸🇬 Singapore
+    #dialer-proxy: 🇸🇬 Singapore
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
