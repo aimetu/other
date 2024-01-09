@@ -1067,6 +1067,8 @@ rule-providers:
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
 rules:
+  - DOMAIN,doh.pub,🇨🇳 China
+  - DOMAIN,dns.alidns.com,🇨🇳 China
   - DOMAIN,ad.cyapi.cn,⛔ AdBlock
   - DOMAIN,ad.21cn.com,⛔ AdBlock
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
