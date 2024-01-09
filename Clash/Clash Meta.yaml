@@ -89,7 +89,7 @@ tun:
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-detect-interface: true # 自动识别出口网卡
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
-  device: meta # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
+  device: Clash # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   #mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - any:53
@@ -144,6 +144,8 @@ dns:
     - "opencloud.wostore.cn"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+    - "local.adguard.org"
+    - "injections.adguard.org"
   default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
     - "https://223.5.5.5/dns-query"
     - "https://1.12.12.12/dns-query"
@@ -286,7 +288,7 @@ listeners:
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
     proxy: JP-Warp Team # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
-      - username: ClashMeta
+      - username: Clash
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
