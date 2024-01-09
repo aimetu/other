@@ -305,20 +305,20 @@ proxies:
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
-     - server: engage.cloudflareclient.com # wireguard服务器地址
+     - server: engage.cloudflareclient.com # wireguard 服务器地址
        port: 2408 # wireguard 服务端端口
-       ip: 172.16.0.2 # 本机在 Wireguard 网络中使用的 IPv4 地址
+       ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
        ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM= # 可选字段，预共享密钥
-       allowed_ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 IP 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
+       allowed_ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 ip 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
        reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
     mtu: 1280 # 可选字段，设置 mtu 值
     udp: true # 可选字段，是否启用 udp 支持
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 Wireguard 配置链式代理
+    dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 wireguard 配置链式代理
 
   - name: TW-Warp Teams
     type: wireguard
@@ -341,7 +341,7 @@ proxies:
 
   - name: JP-Warp Team
     type: wireguard
-    server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
+    server: engage.nanocat.me
     port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
@@ -370,7 +370,7 @@ proxies:
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
-     - server: 188.114.97.229
+     - server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
        port: 2506
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
@@ -434,7 +434,7 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - 🛞 Proxy Chain
-      - ☁️ Cloudflare Warp
+      - 🪆 Warp
       - ⚖️ Load Balance
       - ⚠️ Fallback
       - 🇭🇰 HongKong
@@ -494,17 +494,12 @@ proxy-groups:
       - 🇭🇰 HongKong
       - HK-Warp Client
 
-  - name: ☁️ Cloudflare Warp
+  - name: 🪆 Warp
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
-    filter: (?i)Warp
-    #exclude-filter: 台|日|韩|新|狮|美
-    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #disable-udp: true # 禁用该组 udp 流量转发
-    proxies: # 手动引入出站代理或其他策略组
+    proxies: 
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
@@ -516,8 +511,6 @@ proxy-groups:
     interval: 600
     lazy: true
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发  
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -532,8 +525,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
