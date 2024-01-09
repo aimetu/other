@@ -147,15 +147,16 @@ dns:
     - "local.adguard.org"
     - "injections.adguard.org"
   default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
+    #- system
     - "https://223.5.5.5/dns-query"
     - "https://1.12.12.12/dns-query"
     #- "tls://1.0.0.1:853"
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
+    #- system # 指定系默认 dns 服务器查询
     - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
     - "quic://dns.alidns.com:853" # 指定 doq 服务器查询
     #- "https://doh.pub/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
-    #- "tls://dot.pub:853" # 指定 dot 服务器查询
     #- "https://1.12.12.12/dns-query#en0" # 指定 dns 出口网卡
     #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
