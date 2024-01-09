@@ -247,7 +247,7 @@ listeners:
     port: 10810
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: TW-Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: HK-Warp Client # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: shadowsocks-wwan # 互联网用于加密传输流量的入站
@@ -255,7 +255,7 @@ listeners:
     port: 10813
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: TW-Warp Teams # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: HK-Warp Client # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     cipher: aes-256-gcm
 
@@ -264,16 +264,16 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: JP-Warp Team # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: HK-Warp Client # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     users:
       - username: Clash
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 1
 
-#💡 隧道模式，代理转发到目标服务器
+#💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
-  - tcp,127.0.0.1:6553,223.5.5.5:53,JP-Warp Team
-  - tcp/udp,127.0.0.1:6666,223.6.6.6:53,TW-Warp Teams # 一行简约配置
+  - tcp,127.0.0.1:6553,223.5.5.5:53,HK-Warp Client
+  - tcp/udp,127.0.0.1:6666,223.6.6.6:53,HK-Warp Client # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: 119.29.29.29:53
