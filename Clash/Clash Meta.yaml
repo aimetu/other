@@ -181,9 +181,10 @@ dns:
       - "+.youtube.com"
   nameserver-policy: # 使用指定的 dns 服务器解析域名
     "openwrt.lan": system
-    "blog.google": tls://dot.pub
-    "dns.alidns.com": 223.5.5.5
+    "blog.google": 119.29.29.29
     "doh.pub": 1.12.12.12
+    "dns.alidns.com": 223.5.5.5
+    "dns.opendns.com": 208.67.222.222
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
