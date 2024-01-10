@@ -474,21 +474,17 @@ proxy-groups:
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+    include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
     #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
+    #include-all-providers: true # 引入所有代理集合，可选 false
     #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
     #disable-udp: true # 禁用该组 udp 流量转发
     #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
     #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
-    proxies: # 手动引入出站代理或其他策略组
-      - HK-Warp Client
-      - TW-Warp Teams
-      - JP-Warp Team
-      - IP-Warp Plus
 
   - name: 🪆 Warp
     type: url-test
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
