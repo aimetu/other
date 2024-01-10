@@ -346,21 +346,7 @@ proxies:
 
   - name: JP-Warp Team
     type: wireguard
-    server: engage.nanocat.me
-    port: 2408
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
-    remote-dns-resolve: true
-    dns: [1.0.0.1,2606:4700:4700::1001]
-    persistent-keepalive: 45
-    reserved: [80,73,10]
-    allowed-ips: ["0.0.0.0/0","::/0"]
-    mtu: 1280
-    udp: true
-    dialer-proxy: 🇯🇵 Japan
     peers:
      - server: engage.nanocat.me
        port: 2408
@@ -370,12 +356,18 @@ proxies:
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
-       
+    mtu: 1280
+    udp: true
+    persistent-keepalive: 45
+    remote-dns-resolve: true
+    dns: [1.0.0.1,2606:4700:4700::1001]
+    dialer-proxy: 🇯🇵 Japan
+
   - name: IP-Warp Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
-     - server: 188.114.97.229 # 可选域名地址（udp 端口:2408，可选500、1701、4500）：engage.nanocat.cloud, engage.cloudflareclient.com，"ip" 地址为优选过的地址
+     - server: 188.114.97.229 # cloudflare 地址：engage.cloudflareclient.com，162.159.192/193/195.0/24, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
        port: 2506
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
