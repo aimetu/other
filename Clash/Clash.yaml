@@ -376,7 +376,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
-    #dialer-proxy: 🇸🇬 Singapore
+    dialer-proxy: 🇸🇬 Singapore
     peers:
      - server: 188.114.97.229
        port: 2506
