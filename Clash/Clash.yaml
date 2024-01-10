@@ -166,11 +166,14 @@ dns:
     "dl.l.google.com": https://dns.alidns.com/dns-query
     "update.googleapis.com": https://dns.alidns.com/dns-query
         
-#💡 本地域名映射
+#💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
 hosts:
-  "*.clash.dev": 127.0.0.1
+  "*.mihomo.dev": 127.0.0.1
   ".dev": 127.0.0.1
-  "alpha.clash.dev": "::1"
+  "alpha.mihomo.dev": "::1"
+  "test.com": [223.5.5.5, 223.6.6.6]
+  "example.com": baidu.com # 只允许配置一个别名
+  "home.lan": lan # lan 为特别字段，将加入本地所有网卡的地址
   
 #💡 自定义系统代理需要绕过的域名或ip
 bypass:
