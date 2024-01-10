@@ -65,7 +65,7 @@ proxies:
 
  - name: JP-Warp Team
    type: wireguard
-   # wireguard 代理服务器域名地址（UDP 端口:2408，可选500、1701、4500）：engage.nanocat.me, engage.nanocat.cloud, engage.cloudflareclient.com，可优选 server 为"ip" 地址
+   # cloudflare 地址：engage.cloudflareclient.com，162.159.192/193/195.0/24, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
    server: engage.nanocat.me
    port: 2408
    ip: 172.16.0.2
