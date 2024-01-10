@@ -349,7 +349,7 @@ proxies:
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   # preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
+    #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
     persistent-keepalive: 45
@@ -364,7 +364,7 @@ proxies:
        ip: 172.16.0.2
        ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-       # pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
+       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [80,73,10]
        
@@ -385,7 +385,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
-    #dialer-proxy: 🇸🇬 Singapore
+    dialer-proxy: 🇸🇬 Singapore
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 proxy-providers:
