@@ -447,7 +447,6 @@ proxy-providers:
 # hidden: true # 隐藏策略组
 # interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
 # routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
-
 proxy-groups:
   - name: 🔰 Pick
     type: select
@@ -498,7 +497,6 @@ proxy-groups:
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
     include-all: true
 
   - name: 🪆 Warp
@@ -838,7 +836,7 @@ proxy-groups:
       - REJECT
       - DIRECT
 
-#💡 远程分流规则集合（参数有三种可选项：domain / ipcidr / classical）
+#💡 远程分流规则集合（behavior 参数有三种可选项：domain / ipcidr / classical）
 rule-providers:
   🚥 Direct:
     type: http
