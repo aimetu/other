@@ -1029,13 +1029,14 @@ rule-providers:
     
 #💡 引用子规则，匹配到规则时，将请求送往另一规则流程
 sub-rules:
-  rule1:
-    - DOMAIN,qzs.qq.com,⛔ AdBlock
-    - DOMAIN-SUFFIX,local,DIRECT
+  local:
     - DOMAIN-KEYWORD,lan,DIRECT
-  sub-rule2:
+    - DOMAIN-SUFFIX,local,DIRECT
     - IP-CIDR,17.0.0.0/8,DIRECT
+    - IP-CIDR,182.254.116.0/24,DIRECT
     - IP-CIDR6,fe80::/10,DIRECT
+  adblock:
+    - DOMAIN,qzs.qq.com,⛔ AdBlock
     - DOMAIN,ocsp.apple.com,⛔ AdBlock
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
@@ -1128,8 +1129,8 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
-  - SUB-RULE,(NETWORK,TCP),rule1 # 示例：括号内可以使用任意规则
-  - SUB-RULE,(NETWORK,UDP),sub-rule2 # 示例：括号内可以使用任意规则
+  - SUB-RULE,(NETWORK,TCP),local # 示例：括号内可以使用任意规则
+  - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则
   - GEOIP,CN,🇨🇳 China
   - GEOIP,lan,🇨🇳 China,no-resolve
   - GEOSITE,cn,🇨🇳 China
