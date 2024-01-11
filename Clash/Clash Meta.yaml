@@ -1026,9 +1026,21 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
     path: /rule/ChinaIPsBGP_Classical.yaml
     interval: 86400
+    
+#💡 引用子规则，匹配到规则时，将请求送往另一规则流程
+sub-rules:
+  rule1:
+    - DOMAIN,qzs.qq.com,⛔ AdBlock
+    - DOMAIN-SUFFIX,local,DIRECT
+    - DOMAIN-KEYWORD,lan,DIRECT
+  sub-rule2:
+    - IP-CIDR,17.0.0.0/8,DIRECT
+    - IP-CIDR6,fe80::/10,DIRECT
+    - DOMAIN,ocsp.apple.com,⛔ AdBlock
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
 # RULE-SET：引用规则集合
+# SUB-RULE:引用子规则，匹配到规则时,将请求送往另一规则流程，如果在 sub-rule 内没匹配到，则会退回常规规则流程
 # DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
 # DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
 # DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
@@ -1063,7 +1075,7 @@ rules:
   - DOMAIN-KEYWORD,snapchat,🌐 Global
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
-  - PROCESS-NAME,pinterest.exe,🌐 Globa
+  - PROCESS-NAME,pinterest.exe,🌐 Global
   - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
@@ -1116,6 +1128,8 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
+  - SUB-RULE,(NETWORK,TCP),rule1 # 示例：括号内可以使用任意规则
+  - SUB-RULE,(NETWORK,UDP),sub-rule2 # 示例：括号内可以使用任意规则
   - GEOIP,CN,🇨🇳 China
   - GEOIP,lan,🇨🇳 China,no-resolve
   - GEOSITE,cn,🇨🇳 China
