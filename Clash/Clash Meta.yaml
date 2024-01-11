@@ -76,8 +76,8 @@ ntp:
   
 #💡 无线网络 ssid 策略  
 strategy:
-  OpenWrt, OpenWrt_5G: # 无线网络名称
-    tun: false # tun模式网络开关
+  OpenWrt, OpenWrt_5G: # 无线 wifi 网络名称
+    tun: false # tun 模式网络开关
     mixin: false # 混合模式开关
     system: true # 系统代理开关
 
@@ -169,7 +169,7 @@ dns:
     #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置geoip开关 true/false
-    geoip-code: CN # geoip 匹配区域设定，查询不是cn时使用 fallback 返回结果
+    geoip-code: CN # geoip 匹配区域设定，查询不是 cn 时使用 fallback 返回结果
     geosite: # 配置强制 fallback，优先于 ip 判断，具体分类自行查看 geosite 库
       - gfw
     ipcidr: # 如果不匹配 ipcidr 则使用 nameservers 中的结果 
@@ -305,6 +305,7 @@ tunnels:
     proxy: HK-Warp Client
   
 #💡 本地代理服务器
+# wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195/204.0/24, 188.114.96-99.0/24, 2606:4700:d0-d1::/48, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
 proxies: 
   - name: HK-Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
@@ -367,7 +368,7 @@ proxies:
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
-     - server: 188.114.97.229 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195/204.0/24, 188.114.96-99.0/24, 2606:4700:d0-d1::/48, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
+     - server: 188.114.97.229
        port: 2506
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
@@ -383,51 +384,74 @@ proxies:
     dialer-proxy: 🇸🇬 Singapore
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
+# filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
+# exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
+# exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除排除，注意：proxy-providers 与 proxy-groups 写法不同
 proxy-providers:
-  ALL: # 远程代理服务器本地名称
-    type: http # 代理服务器类型为订阅
+  ALL: # 远程代理服务器引用名称
+    type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: /proxy/all.yaml # 存储路径
     url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
-    interval: 86400 # 自动更新时长单位：秒
-    #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
-    #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除排除，注意：proxy-providers 与 proxy-groups 写法不同
-    override: # 覆写节点内容
-      #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
-      #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
-      #dialer-proxy: proxy # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
-      skip-cert-verify: true # 跳过证书验证
-      udp: true # 启用 udp 支持
-    health-check: # 网络健康检查（测试延迟）
-      enable: true # 是否启用，可选 true/false
-      url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
-      interval: 600 # 健康检查间隔时间，单位为秒
+    interval: 86400 # 示例：自动更新时长单位：秒
+    #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
+    #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
+    #exclude-type: "ss|http" # 示例：根据节点 "type" 类型
+    override: # 示例：覆写节点内容
+      #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
+      #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
+      #dialer-proxy: proxy # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      skip-cert-verify: true # 示例：跳过证书验证
+      udp: true # 示例：启用 udp 支持
+    health-check: # 示例：网络健康检查（测试延迟）
+      enable: true # 示例：是否启用，可选 true/false
+      url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
+      interval: 600 # 示例：健康检查间隔时间，单位为秒
       
 # 本地代理服务器筛选
-  NODE:  # 本地服务器引用名称
-    type: file # 代理服务器类型为筛选，可选 file、http 类型
-    path: /proxy/node.yaml # 存储路径
+  NODE: 
+    type: file
+    path: /proxy/node.yaml
     #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
-    interval: 86400 # 自动更新时长单位：秒
-    #filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
-    #exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-providers 与 proxy-groups 写法不同
-    override: # 覆写节点内容
-      #down: "5000 Mbps" # 下载速度默认以 mbps 为单位
-      #up: "1000 Mbps" # 上传速度默认以 mbps 为单位
-      #dialer-proxy: direct # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
-      skip-cert-verify: true # 跳过证书验证
-      udp: true # 启用 udp 支持
-    health-check: # 网络健康检查（测试延迟）
-      enable: true # 是否启用，可选 true/false
-      url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
-      interval: 600 # 健康检查间隔时间，单位为秒
+    interval: 86400
+    override: 
+      #down: "5000 Mbps"
+      #up: "1000 Mbps"
+      #dialer-proxy: direct 
+      skip-cert-verify: true
+      udp: true
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
       
 #💡 策略组
+# select：手动选择策略组
+# url-test：自动策略组,将按照url测试结果使用延迟最低节点
+# relay：代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+# load-balance：负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理（可选参数：strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理）
+# fallback：故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
+# > 策略组添加可选参数示例：
+# proxies: [Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
+# use: [ALL, NODE] 手动添加代理集合
+# filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
+# exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
+# url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
+# interval: 600 # 间隔检测时间，单位：秒
+# tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
+# lazy: true # 懒惰模式，如果设置为 true，策略组在未被使用时停止检测
+# include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
+# include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
+# include-all-providers: true # 引入所有代理集合，可选 false
+# exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
+# disable-udp: true # 禁用 udp 流量转发
+# hidden: true # 隐藏策略组
+# interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
+# routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
+
 proxy-groups:
-  - name: 🔰 Pick  # 该策略组的名称
-    type: select # select 手动选择策略组
-    proxies: # 引入出站代理或其他策略组
+  - name: 🔰 Pick
+    type: select
+    proxies:
       - ♻️ Auto
       - ✅ Node
       - 🪆 Warp
@@ -446,36 +470,36 @@ proxy-groups:
       - REJECT
 
   - name: ♻️ Auto
-    type: url-test  # url-test 自动策略组,将按照url测试结果使用延迟最低节点
-    url: http://www.gstatic.com/generate_204
-    interval: 600 # 间隔检测时间为秒
-    tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
-    lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
-    #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
-    #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
-    proxies: # 手动引入出站代理或其他策略组
+    type: url-test
+    url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
+    interval: 600 # 示例：间隔检测时间，单位：秒
+    tolerance: 0 # 示例：网络间隔相差值
+    lazy: true # 示例：懒惰模式
+    # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
+    # exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
+    #include-all: true # 示例：引入所有出站代理节点以及代理集合
+    #include-all-providers: true # 示例：引入所有出站代理节点
+    include-all-providers: true # 示例：引入所有代理集合
+    #exclude-type: "Shadowsocks|http" # 示例：根据节点 "协议" 类型
+    #disable-udp: true # 示例：禁用 udp 流量转发
+    #hidden: true # 示例：隐藏策略组
+    #interface-name: en0 # 示例：指定出站接口
+    #routing-mark: 8848 # 示例：策略组出站时附带路由标记
+    proxies: # 示例：手动添加出站代理或其他策略组
       - HK-Warp Client
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
-    #use: # 手动引入代理集合
+    #use: # 示例：手动添加代理集合
       #- ALL
       #- NODE
       
-  - name: ✅ Node # 用户自行选择策略组或节点
+  - name: ✅ Node
     type: select
-    include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    #include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
-    #interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
-    #routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    include-all: true
 
   - name: 🪆 Warp
     type: url-test
@@ -490,7 +514,7 @@ proxy-groups:
       - IP-Warp Plus
 
   - name: 🛞 Proxy Chain
-    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+    type: relay
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
@@ -499,11 +523,11 @@ proxy-groups:
       - HK-Warp Client
 
   - name: ⚖️ Load Balance
-    type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
+    type: load-balance
+    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
-    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -514,7 +538,7 @@ proxy-groups:
       - 🇺🇳 Nations
       
   - name: ⚠️ Fallback
-    type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
+    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
@@ -529,123 +553,74 @@ proxy-groups:
 
   - name: 🇭🇰 HongKong
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
-    #exclude-filter: 台|日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
+    include-all-providers: true
 
   - name: 🇹🇼 Taiwan
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
-    #exclude-filter: 港|日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #disable-udp: true # 禁用该组 udp 流量转发
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
+    include-all-providers: true
 
   - name: 🇯🇵 Japan
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
-    #exclude-filter: 港|台|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
+    include-all-providers: true
       
   - name: 🇰🇷 Korea
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
-    #exclude-filter: 港|台|日|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
-
+    include-all-providers: true
   - name: 🇸🇬 Singapore
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
-    #exclude-filter: 港|台|日|韩|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
-      
+    include-all-providers: true
+
   - name: 🇺🇸 America
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
-    #exclude-filter: 港|台|日|韩|新|狮
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
+    include-all-providers: true
 
   - name: 🇺🇳 Nations
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
-    #exclude-filter: 港|台|日|韩|新|狮
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|Http" "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
+    include-all-providers: true
 
   - name: 🇨🇳 Chinese
     type: url-test
-    # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
-    #exclude-filter: 日|韩|新|狮|美
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    #include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
-    #include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
-    include-all-providers: true # 引入所有代理集合，可选 false
-    #exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-    #disable-udp: true # 禁用该组 udp 流量转发
+    include-all-providers: true
 
   - name: 🕸️ Speedtest
     type: select
@@ -863,7 +838,7 @@ proxy-groups:
       - REJECT
       - DIRECT
 
-#💡 远程分流规则
+#💡 远程分流规则集合（参数有三种可选项：domain / ipcidr / classical）
 rule-providers:
   🚥 Direct:
     type: http
@@ -1055,45 +1030,67 @@ rule-providers:
     interval: 86400
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
+# RULE-SET：引用规则集合
+# DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
+# DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
+# DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
+# PROCESS-NAME：进程规则，匹配进程名称
+# PROCESS-PATH：进程路径规则，匹配完整进程路径
+# IP-CIDR：ip 范围规则，请求 ipv4 匹配的指定范围 参考：https://www.ipaddressguide.com/
+# IP-CIDR6：ip 范围规则，请求 ipv6 匹配的指定范围
+# no-resolve：跳过域名去进行 dns 解析，当请求为域名匹配到 geoip 或 ip-cidr 规则时，clash 将请求 dns 查询来检查域名的 ip 是否匹配此条规则
+# SRC-IP-CIDR：来源 ipv4 的 ip 范围规则，匹配请求的客户端 ip 地址范围
+# DST-PORT：从目标端口规则，匹配请求的目标端口
+# SRC-PORT：从来源端口规则，匹配请求来源的端口
+# AND：逻辑规则，规则内的条件都必须满足
+# OR：逻辑规则，规则内的条件只需满足一项即可
+# NOT：逻辑规则，必须为规则内不包含的条件
+# IN-TYPE：匹配流量入站的类型，支持的类型（HTTP/SOCKS/TUN/TPROXY/REDIR/INNER）
+# IN-USER：匹配入站用户名,目前仅vmess入站支持配置用户名
+# IN-NAME：匹配入站名称
+# NETWORK：匹配入站流量的类型，匹配入站流量的类型 tcp / udp
+# GEOIP：根据 geoip 地址国家/地区，匹配集合内相应的IP范围
+# GEOSITE：域名集合，匹配集合内的域名 参考：https://github.com/v2fly/domain-list-community/tree/master/data
+# MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
 rules:
   - DOMAIN,ad.cyapi.cn,⛔ AdBlock
   - DOMAIN,ad.21cn.com,⛔ AdBlock
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
-  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
-  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
+  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
   - DOMAIN-KEYWORD,reddit,🌐 Global
-  - DOMAIN-KEYWORD,snapchat,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配
+  - DOMAIN-KEYWORD,snapchat,🌐 Global
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
-  - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
-  - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global # PROCESS-PATH 根据完整进程路径匹配
+  - PROCESS-NAME,pinterest.exe,🌐 Globa
+  - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve # no-resolve 选项以跳过域名去进行 dns 解析
-  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve # IP-CIDR 本地 ipv4 规则
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve # no-resolve 可选，它用于跳过规则的 dns 解析
-  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve # IP-CIDR6 本地 ipv6 规则
-  - SRC-IP-CIDR,239.255.255.250/32,DIRECT # SRC-IP-CIDR 根据数据包的源 ipv4 地址
-  - DST-PORT,1400,✉️ Telegram # DST-PORT 从目标端口指定规则
-  #- DST-PORT,114/514,🇨🇳 China # 匹配 114 和 514 端口
-  #- DST-PORT,114-514,🇨🇳 China # 匹配 114 到 514 端口
-  #- DST-PORT,114/233/514-1919,🇨🇳 China 114 和 233 以及 514 到 1919 端口
-  #- SRC-PORT,7777,🇨🇳 China # SRC-PORT 来源端口指定规则
-  #- IN-NAME,ss,🌐 Global # IN-NAME 匹配入站名称
-  #- IN-USER,vmess,🌐 Global # IN-USER 匹配入站用户名,目前仅 vmess 入站支持配置用户名
-  #- IN-TYPE,INNER,🌐 Global # IN-TYPE 匹配流量入站的类型，匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
-  #- NETWORK,tcp,🇨🇳 China # NETWORK 网络类型规则，匹配入站流量的类型 TCP / UDP
-  - AND,((DST-PORT,443),(NETWORK,UDP)),⛔ AdBlock # AND 规则内的条件都必须满足，示例为端口 443 并且网络类型为 UDP 的请求
-  #- AND,((DOMAIN,baidu.com),(NETWORK,TCP)),🇨🇳 China # AND 规则内的条件都必须满足，示例为匹配 baidu.com 域名并且网络类型为 TCP 的请求
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve
+  - SRC-IP-CIDR,239.255.255.250/32,DIRECT
+  - DST-PORT,1400,✉️ Telegram
+  #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
+  #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
+  #- DST-PORT,114/233/514-1919,🇨🇳 China # 示例：匹配 114 和 233 以及 514 到 1919
+  #- SRC-PORT,7777,🇨🇳 China
+  #- IN-NAME,ss,🌐 Global
+  #- IN-USER,vmess,🌐 Global
+  #- IN-TYPE,INNER,🌐 Global
+  #- NETWORK,tcp,🇨🇳 China
+  - AND,((DST-PORT,443),(NETWORK,UDP)),⛔ AdBlock # 示例：端口为 443 并且网络类型为 udp 的请求
+  #- AND,((DOMAIN,baidu.com),(NETWORK,TCP)),🇨🇳 China # 示例：匹配 baidu.com 域名并且网络类型为 tcp 的请求
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
-  - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),⛔ AdBlock # OR 规则内的条件只需满足一项即可，示例为域名关键词为 pcdn 或 stun 的请求
-  #- NOT,((GEOIP,CN)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 CN 以外地区请求走 🌐 Global 节点/策略组
-  #- NOT,((DOMAIN,baidu.com)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 baidu.com 以外域名的请求走 🌐 Global 节点/策略组
+  - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),⛔ AdBlock # 示例：域名关键词为 pcdn 或 stun 的请求
+  #- NOT,((GEOIP,CN)),🌐 Global # 示例：cn 以外地区请求走 🌐 Global 节点/策略组
+  #- NOT,((DOMAIN,baidu.com)),🌐 Global # 示例：baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
@@ -1121,7 +1118,7 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.ipsbgp,🇨🇳 China
-  - GEOIP,CN,🇨🇳 China # GEOIP 根据 geoip 地址国家/地区
-  #- GEOIP,lan,🇨🇳 China,no-resolve # no-resolve 也可以添加到 geoip
-  #- GEOSITE,cn,🇨🇳 China # GEOSITE 域名集合,匹配集合内的域名
-  - MATCH,🐟 Final # MATCH 不在规则中的请求
+  - GEOIP,CN,🇨🇳 China
+  - GEOIP,lan,🇨🇳 China,no-resolve
+  - GEOSITE,cn,🇨🇳 China
+  - MATCH,🐟 Final
