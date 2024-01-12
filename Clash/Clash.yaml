@@ -314,12 +314,12 @@ proxies:
     server: engage.nanocat.cloud
     port: 2408
     ip: 172.16.0.2
-    ipv6: 2606:4700:110:8590:3f3:93bd:c8a4:a85d
-    private-key: gP9cP+V78zRVDy/TOyxuTtwyesCOP8549IWUXZg7XmA=
+    ipv6: 2606:4700:110:82ef:2622:a722:9a2d:2205
+    private-key: mIjlNihVwtsjeUVQen0uhcE0tPFOVKSrpSNWU7liTlU=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     #preshared-key: 66l8JUDdpHBBSKezlDVwNKyaNaEm+xZ+3/1
     allowed-ips: ["0.0.0.0/0","::/0"]
-    reserved: [248,160,147]
+    reserved: [247,126,89]
     mtu: 1280
     udp: true
     persistent-keepalive: 45
@@ -330,11 +330,11 @@ proxies:
      - server: engage.nanocat.cloud
        port: 2408
        ip: 172.16.0.2
-       ipv6: 2606:4700:110:8590:3f3:93bd:c8a4:a85d
+       ipv6: 2606:4700:110:82ef:2622:a722:9a2d:2205
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
-       reserved: [248,160,147]
+       reserved: [247,126,89]
        
   - name: JP-Warp Team
     type: wireguard
