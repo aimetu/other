@@ -13,7 +13,7 @@
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
 log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、error 错误、debug 调试
 ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
-port: 7890 # 本地 http(s) 代理端口
+port: 7898 # 本地 http(s) 代理端口
 socks-port: 7891 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
 redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
@@ -54,9 +54,9 @@ secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 #      format/pem...
 #      -----END CERTIFICATE-----
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
+geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库
 geo-auto-update: true # 是否自动更新 geodata
 geo-update-interval: 24 # 更新间隔，单位：小时
-geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geox-url: # 自定义geoip.data url
   geoip: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
