@@ -120,6 +120,8 @@ dns:
     - "opencloud.wostore.cn"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+    - "local.adguard.org"
+    - "injections.adguard.org"
   default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
     #- system
     - "223.5.5.5"
