@@ -460,6 +460,7 @@ proxy-providers:
 # > 策略组添加可选参数示例：
 # proxies: [Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
 # use: [ALL, NODE] 手动添加代理集合
+# icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
 # exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
