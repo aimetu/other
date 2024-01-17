@@ -524,7 +524,7 @@ proxy-groups:
       
   - name: ✅ Node
     type: select
-    https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
@@ -615,7 +615,7 @@ proxy-groups:
       
   - name: 🇰🇷 Korea
     type: url-test
-    https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -625,7 +625,7 @@ proxy-groups:
     
   - name: 🇸🇬 Singapore
     type: url-test
-    https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -635,7 +635,7 @@ proxy-groups:
 
   - name: 🇺🇸 America
     type: url-test
-    https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     url: http://www.gstatic.com/generate_204
     interval: 600
