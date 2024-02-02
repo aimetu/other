@@ -128,7 +128,7 @@ dns:
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     #- system # 指定系默认 dns 服务器查询
     - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
-    #- "quic://dns.alidns.com:853" # 指定 doq 服务器查询，「meta专属」
+    #- "quic://dns.alidns.com" # 指定 doq 服务器查询，「meta专属」
     - "https://doh.pub/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
     #- "https://1.12.12.12/dns-query#en0" # 指定 dns 出口网卡
