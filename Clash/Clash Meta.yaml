@@ -478,7 +478,7 @@ proxy-providers:
 proxy-groups:
   - name: 🔰 Pick
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
     proxies:
       - ♻️ Auto
       - ✅ Node
@@ -499,7 +499,7 @@ proxy-groups:
 
   - name: ♻️ Auto
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
     url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
     interval: 600 # 示例：间隔检测时间，单位：秒
     tolerance: 0 # 示例：网络间隔相差值
@@ -525,14 +525,14 @@ proxy-groups:
       
   - name: ✅ Node
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     include-all: true
 
   - name: 🪆 Warp
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -545,7 +545,7 @@ proxy-groups:
 
   - name: 🛞 Proxy Chain
     type: relay
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
@@ -555,7 +555,7 @@ proxy-groups:
 
   - name: ⚖️ Load Balance
     type: load-balance
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -571,7 +571,7 @@ proxy-groups:
       
   - name: ⚠️ Fallback
     type: fallback
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
@@ -586,7 +586,7 @@ proxy-groups:
 
   - name: 🇭🇰 HongKong
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -596,7 +596,7 @@ proxy-groups:
 
   - name: 🇹🇼 Taiwan
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -606,7 +606,7 @@ proxy-groups:
 
   - name: 🇯🇵 Japan
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -616,7 +616,7 @@ proxy-groups:
       
   - name: 🇰🇷 Korea
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -626,7 +626,7 @@ proxy-groups:
     
   - name: 🇸🇬 Singapore
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -636,7 +636,7 @@ proxy-groups:
 
   - name: 🇺🇸 America
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -646,7 +646,7 @@ proxy-groups:
 
   - name: 🇺🇳 Nations
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -656,7 +656,7 @@ proxy-groups:
 
   - name: 🇨🇳 Chinese
     type: url-test
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
     url: http://www.gstatic.com/generate_204
     interval: 600
@@ -666,14 +666,14 @@ proxy-groups:
 
   - name: 🕸️ Speedtest
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/speedtest.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/speedtest.png
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
       
   - name: 🎵 TikTok
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -686,7 +686,7 @@ proxy-groups:
 
   - name: ✉️ Telegram
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -699,7 +699,7 @@ proxy-groups:
 
   - name: 🗣️ Discord
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -712,7 +712,7 @@ proxy-groups:
 
   - name: 🎶 Spotify
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -725,7 +725,7 @@ proxy-groups:
 
   - name: 📽️ Netflix
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -738,7 +738,7 @@ proxy-groups:
 
   - name: 📼 Disney+
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -751,7 +751,7 @@ proxy-groups:
 
   - name: 📹 YouTube
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -764,7 +764,7 @@ proxy-groups:
       
   - name: 🤖 OpenAI
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -777,7 +777,7 @@ proxy-groups:
 
   - name: 🛒 Amazon
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -790,7 +790,7 @@ proxy-groups:
 
   - name: 🎭 Facebook
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -803,7 +803,7 @@ proxy-groups:
 
   - name: 📟 Google
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -816,7 +816,7 @@ proxy-groups:
 
   - name: 🖥️ Microsoft
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/microsoft.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/microsoft.png
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
@@ -830,7 +830,7 @@ proxy-groups:
 
   - name: 🍎 Apple
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/apple.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/apple.png
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
@@ -844,7 +844,7 @@ proxy-groups:
 
   - name: 🎬 Global Media
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -857,7 +857,7 @@ proxy-groups:
 
   - name: 🌐 Global
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
     proxies:
       - 🔰 Pick
       - 🇭🇰 HongKong
@@ -870,14 +870,14 @@ proxy-groups:
 
   - name: 📺 China Media
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
 
   - name: 🇨🇳 China
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
     proxies:
       - DIRECT
       - 🔰 Pick
@@ -887,7 +887,7 @@ proxy-groups:
 
   - name: 🐟 Final
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
     proxies:
       - 🔰 Pick
       - 🇨🇳 China
@@ -895,7 +895,7 @@ proxy-groups:
 
   - name: ⛔ AdBlock
     type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
+    #icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
     proxies:
       - REJECT
       - DIRECT
