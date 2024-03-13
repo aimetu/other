@@ -11,35 +11,50 @@
 
 #💡 通用设置
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
+
 log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、error 错误、debug 调试
+
 ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
+
 port: 7898 # 本地 http(s) 代理端口
 socks-port: 7891 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
 redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
 tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
 routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
+
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
 #  - "clash:88888888"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
 #  - "127.0.0.1/8"
 #  - "::1/128"
+
 allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关 true/false
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
+
 #interface-name: en0 # 指定 clash 流量出站接口
+
 tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip选择握手最快的 ip 进行连接「meta 专属」
+
 keep-alive-interval: 30 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
+
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关 true/false
+
 global-client-fingerprint: chrome # 全局客户端 tls 指纹，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
+
 global-ua: Chrome/123.0 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
+
 experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
+
 external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
-#external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
+
+#external-ui: /path/ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 #external-ui-name: metacubexd # 自定义外部用户界面名字
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
+
 #tls: # 目前仅用于 api 监听地址外部控制器的证书私钥
 #  certificate: string # 证书 pem 格式，或者 证书的路径
 #  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
@@ -48,13 +63,16 @@ secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 #      -----BEGIN CERTIFICATE-----
 #      format/pem...
 #      -----END CERTIFICATE-----
+
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
+
 geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库「meta专属」
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geox-url: # 自定义geoip.data url
   geoip: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
   geosite: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
   mmdb: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
+
 profile:  # profile 为扩展配置，但在 clash.meta, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
   store-fake-ip: true # 储存 fakeip 映射表，域名再次发生连接时，使用原有映射地址
@@ -120,11 +138,13 @@ dns:
     - "opencloud.wostore.cn"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+  
   default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
     #- system
     - "223.5.5.5"
     - "119.29.29.29"
     #- "tls://1.0.0.1:853"
+  
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     #- system # 指定系默认 dns 服务器查询
     - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
@@ -133,16 +153,19 @@ dns:
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
     #- "https://1.12.12.12/dns-query#en0" # 指定 dns 出口网卡
     #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
+  
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "1.0.0.1"
     - "208.67.222.222"
     #- "8.8.8.8"
+  
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析
     - "https://dns.opendns.com/dns-query" # 指定 doh 服务器查询
     - "https://dns.cloudflare.com/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.google:853" # 指定 dot 服务器查询
     #- "https://dns.google/dns-query#proxy" # dns 经过代理查询
     #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
+  
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置geoip开关 true/false
     geoip-code: CN # geoip 匹配区域设定，查询不是cn时使用 fallback 返回结果
@@ -154,6 +177,7 @@ dns:
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
+  
   nameserver-policy: # 使用指定的 dns 服务器解析域名
     "openwrt.lan": system
     "blog.google": 119.29.29.29
