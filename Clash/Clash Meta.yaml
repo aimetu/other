@@ -73,13 +73,15 @@ secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
 geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库
-geo-auto-update: true # 是否自动更新 geodata
-geo-update-interval: 24 # 更新间隔，单位：小时
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geox-url: # 自定义geoip.data url
   geoip: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat"
   geosite: "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat"
   mmdb: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
+geo-auto-update: true # 是否自动更新 geodata
+geo-update-interval: 24 # 更新间隔，单位：小时
+
+geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
 
 profile:  # profile 为扩展配置，但在 Clash.meta, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
