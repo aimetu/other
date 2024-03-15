@@ -454,29 +454,43 @@ proxy-providers:
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
       #dialer-proxy: proxy # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
+      routing-mark: 68686 # 发起连接时附加的路由标记
+      ip-version: dual # 设置节点使用 IP 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
+      additional-prefix: "all |" # 为节点名称添加固定前缀
+      additional-suffix: "| docker" # 为节点名称添加固定后缀
       skip-cert-verify: true # 示例：跳过证书验证
       udp: true # 示例：启用 udp 支持
     health-check: # 示例：网络健康检查（测试延迟）
       enable: true # 示例：是否启用，可选 true/false
       url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
       interval: 600 # 示例：健康检查间隔时间，单位为秒
+      timeout: 5000
+      expected-status: * # 健康检查时期望的 HTTP 响应状态码。默认为 *，表示对响应状态不做要求匹配 200 和 302 以及 400 到 503 状态码
       
 # 本地代理服务器筛选
   NODE: 
-    type: file
+    type: file # 代理服务器类型 file：本地筛选
     path: /proxy/node.yaml
     #url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
     interval: 86400
     override: 
       #down: "5000 Mbps"
       #up: "1000 Mbps"
-      #dialer-proxy: direct 
+      #dialer-proxy: direct
+      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
+      routing-mark: 89898 # 发起连接时附加的路由标记
+      ip-version: dual # 设置节点使用 IP 版本，可选：dual/ipv4/ipv6/ipv4-prefer/ipv6-prefer
+      additional-prefix: "local |" # 为节点名称添加固定前缀
+      additional-suffix: "| lan" # 为节点名称添加固定后缀
       skip-cert-verify: true
       udp: true
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+      timeout: 5000
+      expected-status: * # 健康检查时期望的 HTTP 响应状态码。默认为 *，表示对响应状态不做要求匹配 200 和 302 以及 400 到 503 状态码
       
 #💡 策略组
 # select：手动选择策略组
@@ -1140,8 +1154,11 @@ sub-rules:
 # PROCESS-PATH：进程路径规则，匹配完整进程路径
 # IP-CIDR：ip 范围规则，请求 ipv4 匹配的指定范围 参考：https://www.ipaddressguide.com/
 # IP-CIDR6：ip 范围规则，请求 ipv6 匹配的指定范围
+# IP-SUFFIX：匹配 IP 后缀范围
+# IP-ASN：匹配 IP 所属 ASN
 # no-resolve：跳过域名去进行 dns 解析，当请求为域名匹配到 geoip 或 ip-cidr 规则时，clash 将请求 dns 查询来检查域名的 ip 是否匹配此条规则
 # SRC-IP-CIDR：来源 ipv4 的 ip 范围规则，匹配请求的客户端 ip 地址范围
+# SRC-IP-SUFFIX：匹配来源 IP 后缀范围
 # DST-PORT：从目标端口规则，匹配请求的目标端口
 # SRC-PORT：从来源端口规则，匹配请求来源的端口
 # AND：逻辑规则，规则内的条件都必须满足
@@ -1150,7 +1167,10 @@ sub-rules:
 # IN-TYPE：匹配流量入站的类型，支持的类型（HTTP/SOCKS/TUN/TPROXY/REDIR/INNER）
 # IN-USER：匹配入站用户名,目前仅vmess入站支持配置用户名
 # IN-NAME：匹配入站名称
+# IN-PORT：匹配入站端口
 # NETWORK：匹配入站流量的类型，匹配入站流量的类型 tcp / udp
+# UID：匹配 Linux USER ID
+# DSCP：匹配DSCP标记 (仅限 tproxy udp 入站)
 # GEOIP：根据 geoip 地址国家/地区，匹配集合内相应的 ip 范围
 # GEOSITE：域名集合，匹配集合内的域名 参考：https://github.com/v2fly/domain-list-community/tree/master/data
 # MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
@@ -1177,7 +1197,10 @@ rules:
   - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve
   - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve
+  - IP-SUFFIX,8.8.8.8/24,📟 Google
+  - IP-ASN,15169,📟 Google
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
+  #- SRC-IP-SUFFIX,192.168.1.0/8,DIRECT
   - DST-PORT,1400,✉️ Telegram
   #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
@@ -1186,7 +1209,10 @@ rules:
   #- IN-NAME,ss,🌐 Global
   #- IN-USER,vmess,🌐 Global
   #- IN-TYPE,INNER,🌐 Global
+  #- IN-PORT,7890,🇨🇳 China
   #- NETWORK,tcp,🇨🇳 China
+  #- UID,1001,🇨🇳 China
+  #- DSCP,4,🌐 Global
   - AND,((DST-PORT,443),(NETWORK,UDP)),⛔ AdBlock # 示例：端口为 443 并且网络类型为 udp 的请求
   #- AND,((DOMAIN,baidu.com),(NETWORK,TCP)),🇨🇳 China # 示例：匹配 baidu.com 域名并且网络类型为 tcp 的请求
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
