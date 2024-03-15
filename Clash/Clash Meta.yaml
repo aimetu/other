@@ -466,7 +466,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
       interval: 600 # 示例：健康检查间隔时间，单位为秒
       timeout: 5000
-      expected-status: * # 健康检查时期望的 HTTP 响应状态码。默认为 *，表示对响应状态不做要求匹配 200 和 302 以及 400 到 503 状态码
+      expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
       
 # 本地代理服务器筛选
   NODE: 
@@ -490,7 +490,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       timeout: 5000
-      expected-status: * # 健康检查时期望的 HTTP 响应状态码。默认为 *，表示对响应状态不做要求匹配 200 和 302 以及 400 到 503 状态码
+      expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
       
 #💡 策略组
 # select：手动选择策略组
