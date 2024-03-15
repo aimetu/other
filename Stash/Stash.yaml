@@ -123,7 +123,7 @@ proxies:
        Host: 490418932.xn--uirs2olv2a.top
      v2ray-http-upgrade: false
 
-- name: 🇺🇸~CF~USˣ2
+ - name: 🇺🇸~CF~USˣ2
    type: vless
    server: vv2.zichao.cloud
    port: 443
