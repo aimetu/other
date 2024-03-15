@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.01.08
+# 2024.03.08
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -1150,7 +1150,7 @@ sub-rules:
 # DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
 # DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
 # DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
-# PROCESS-NAME：进程规则，匹配进程名称
+# PROCESS-NAME：进程规则，匹配进程名称（Android 平台可以匹配包名）
 # PROCESS-PATH：进程路径规则，匹配完整进程路径
 # IP-CIDR：ip 范围规则，请求 ipv4 匹配的指定范围 参考：https://www.ipaddressguide.com/
 # IP-CIDR6：ip 范围规则，请求 ipv6 匹配的指定范围
@@ -1198,7 +1198,7 @@ rules:
   - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
   - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve
   - IP-SUFFIX,8.8.8.8/24,📟 Google
-  - IP-ASN,15169,📟 Google
+  #- IP-ASN,15169,📟 Google
   - SRC-IP-CIDR,239.255.255.250/32,DIRECT
   #- SRC-IP-SUFFIX,192.168.1.0/8,DIRECT
   - DST-PORT,1400,✉️ Telegram
