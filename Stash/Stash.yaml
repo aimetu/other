@@ -107,39 +107,39 @@ proxies:
 #     port: 443
 #     password: your-password
 
-  - name: 🇺🇸~CF~USˣ1
-    type: vless
-    server: 490418932.xn--uirs2olv2a.top
-    port: 443
-    uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
-    tls: true
-    skip-cert-verify: true
-    sni: 490418932.xn--uirs2olv2a.top
-    network: ws
-    ws-opts:
-      path: "/?ed=2048"
-      headers:
-        Host: 490418932.xn--uirs2olv2a.top
-    alterId: 0
-    cipher: ""
-    flow: ""
+ - name: 🇺🇸~CF~USˣ1
+   type: vless
+   server: 490418932.xn--uirs2olv2a.top
+   port: 443
+   uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
+   tls: true
+   skip-cert-verify: true
+   sni: 490418932.xn--uirs2olv2a.top
+   network: ws
+   ws-opts:
+     path: "/?ed=2048"
+     headers:
+       Host: 490418932.xn--uirs2olv2a.top
+   alterId: 0
+   cipher: ""
+   flow: ""
     
-  - name: 🇺🇸~CF~USˣ2
-    type: vless
-    server: vv2.zichao.cloud
-    port: 443
-    uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
-    tls: true
-    skip-cert-verify: true
-    sni: vv2.zichao.cloud
-    network: ws
-    ws-opts:
-      path: "/?ed=2048"
-      headers:
-        Host: vv2.zichao.cloud
-    alterId: 0
-    cipher: ""
-    flow: ""
+ - name: 🇺🇸~CF~USˣ2
+   type: vless
+   server: vv2.zichao.cloud
+   port: 443
+   uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
+   tls: true
+   skip-cert-verify: true
+   sni: vv2.zichao.cloud
+   network: ws
+   ws-opts:
+     path: "/?ed=2048"
+     headers:
+       Host: vv2.zichao.cloud
+   alterId: 0
+   cipher: ""
+   flow: ""
     
 # 💡 dns 服务器配置
 dns:
