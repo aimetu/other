@@ -597,9 +597,11 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
-    use: # 示例：手动添加代理集合
       - 🇺🇸~CF~Workers
       - 🇺🇸~CF~Pages
+    #use: # 示例：手动添加代理集合
+      #- ALL
+      #- NODE
       
   - name: ✅ Node
     type: select
