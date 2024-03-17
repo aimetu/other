@@ -457,7 +457,7 @@ proxies:
         Host: cloudflare-vless.aimetu-338.workers.dev
       v2ray-http-upgrade: false
 
-  - name: 🇺🇸~CF~Github
+  - name: 🇺🇸~CF~Pages
     type: vless
     server: 190.93.246.246
     port: 443
@@ -604,7 +604,7 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
-      - 🇺🇸~CF~Github
+      - 🇺🇸~CF~Pages
       - 🇺🇸~CF~Workers
       
   - name: ✅ Node # 用户自行选择策略组或节点
@@ -616,7 +616,7 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
-      - 🇺🇸~CF~Github
+      - 🇺🇸~CF~Pages
       - 🇺🇸~CF~Workers
       
   - name: 🪆 Warp
