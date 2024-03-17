@@ -437,22 +437,6 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇸🇬 Singapore
 
-  - name: 🇺🇸~CF~Github
-    type: vless
-    server: 190.93.246.246
-    port: 443
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-    udp: true
-    tls: true
-    network: ws
-    servername: cloudflare-vless-dg3.pages.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2048"
-      headers:
-        Host: cloudflare-vless-dg3.pages.dev
-      v2ray-http-upgrade: false
-
   - name: 🇺🇸~CF~Workers
     type: vless
     server: 172.64.134.217
@@ -467,6 +451,22 @@ proxies:
       path: "/?ed=2048"
       headers:
         Host: cloudflare-vless.aimetu-338.workers.dev
+      v2ray-http-upgrade: false
+
+  - name: 🇺🇸~CF~Github
+    type: vless
+    server: 190.93.246.246
+    port: 443
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: true
+    network: ws
+    servername: cloudflare-vless-dg3.pages.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: cloudflare-vless-dg3.pages.dev
       v2ray-http-upgrade: false
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
