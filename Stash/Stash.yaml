@@ -109,7 +109,7 @@ proxies:
 
  - name: 🇺🇸~CF~Github
    type: vless
-   server: cloudflare-vless-dg3.pages.dev
+   server: 190.93.246.246
    port: 443
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: true
