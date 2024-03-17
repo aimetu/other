@@ -437,7 +437,71 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇸🇬 Singapore
 
-  - name: 🇺🇸~CF~USˣ1
+  - name: 🇨🇳~CF~Github
+    type: vless
+    server: 104.18.111.46
+    port: 80
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: false
+    network: ws
+    servername: cloudflare-vless-dg3.pages.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: cloudflare-vless-dg3.pages.dev
+      v2ray-http-upgrade: false
+
+  - name: 🇺🇸~CF~Github-Tls
+    type: vless
+    server: 190.93.246.246
+    port: 443
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: true
+    network: ws
+    servername: cloudflare-vless-dg3.pages.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: cloudflare-vless-dg3.pages.dev
+      v2ray-http-upgrade: false
+
+  - name: 🇨🇳~CF~Workers
+    type: vless
+    server: 172.64.134.217
+    port: 80
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: false
+    network: ws
+    servername: cloudflare-vless.aimetu-338.workers.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: cloudflare-vless.aimetu-338.workers.dev
+      v2ray-http-upgrade: false
+
+  - name: 🇺🇸~CF~Workers-Tls
+    type: vless
+    server: 190.93.244.182
+    port: 443
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: true
+    network: ws
+    servername: cloudflare-vless.aimetu-338.workers.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: cloudflare-vless.aimetu-338.workers.dev
+      v2ray-http-upgrade: false
+
+  - name: 🇺🇸~CF~freeˣ1
     type: vless
     server: 490418932.xn--uirs2olv2a.top
     port: 443
@@ -453,7 +517,7 @@ proxies:
         Host: 490418932.xn--uirs2olv2a.top
       v2ray-http-upgrade: false
 
-  - name: 🇺🇸~CF~USˣ2
+  - name: 🇺🇸~CF~freeˣ2
     type: vless
     server: vv2.zichao.cloud
     port: 443
