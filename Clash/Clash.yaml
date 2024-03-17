@@ -362,7 +362,7 @@ proxies:
 
   - name: TW-Warp Teams
     type: wireguard
-    server: engage.nanocat.cloud
+    server: 162.159.193.1
     port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8eaf:7d24:45a7:f716:4e48
