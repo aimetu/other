@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2023.01.08
+# 2023.03.15
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -441,36 +441,36 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [173,82,247]
 
-  - name: 🇺🇸~CF~USˣ1
+  - name: 🇺🇸~CF~Github
     type: vless
-    server: 490418932.xn--uirs2olv2a.top
+    server: 190.93.246.246
     port: 443
-    uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: true
     network: ws
-    servername: 490418932.xn--uirs2olv2a.top
+    servername: cloudflare-vless-dg3.pages.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2048"
       headers:
-        Host: 490418932.xn--uirs2olv2a.top
+        Host: cloudflare-vless-dg3.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🇺🇸~CF~USˣ2
+  - name: 🇺🇸~CF~Workers
     type: vless
-    server: vv2.zichao.cloud
-    port: 443
-    uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
+    server: 172.64.134.217
+    port: 80
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
-    tls: true
+    tls: false
     network: ws
-    servername: vv2.zichao.cloud
+    servername: cloudflare-vless.aimetu-338.workers.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2048"
       headers:
-        Host: vv2.zichao.cloud
+        Host: cloudflare-vless.aimetu-338.workers.dev
       v2ray-http-upgrade: false
 
 #💡 远程代理服务器订阅链接
@@ -604,6 +604,8 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
+      - 🇺🇸~CF~Github
+      - 🇺🇸~CF~Workers
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
@@ -614,7 +616,9 @@ proxy-groups:
       - TW-Warp Teams
       - JP-Warp Team
       - IP-Warp Plus
-
+      - 🇺🇸~CF~Github
+      - 🇺🇸~CF~Workers
+      
   - name: 🪆 Warp
     type: url-test
     url: http://www.gstatic.com/generate_204
