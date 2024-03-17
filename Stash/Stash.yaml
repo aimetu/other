@@ -107,36 +107,36 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🇺🇸~CF~USˣ1
+ - name: 🇺🇸~CF~Github
    type: vless
-   server: 490418932.xn--uirs2olv2a.top
+   server: cloudflare-vless-dg3.pages.dev
    port: 443
-   uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
+   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: true
    skip-cert-verify: true
-   sni: 490418932.xn--uirs2olv2a.top
+   sni: cloudflare-vless-dg3.pages.dev
    network: ws
    ws-opts:
      path: "/?ed=2048"
      headers:
-       Host: 490418932.xn--uirs2olv2a.top
+       Host: cloudflare-vless-dg3.pages.dev
    alterId: 0
    cipher: ""
    flow: ""
     
- - name: 🇺🇸~CF~USˣ2
+ - name: 🇺🇸~CF~Workers
    type: vless
-   server: vv2.zichao.cloud
-   port: 443
-   uuid: 7557110e-1d0c-4400-8960-4c9d34d41e30
-   tls: true
+   server: 172.64.134.217
+   port: 80
+   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+   tls: false
    skip-cert-verify: true
-   sni: vv2.zichao.cloud
+   sni: cloudflare-vless.aimetu-338.workers.dev
    network: ws
    ws-opts:
      path: "/?ed=2048"
      headers:
-       Host: vv2.zichao.cloud
+       Host: cloudflare-vless.aimetu-338.workers.dev
    alterId: 0
    cipher: ""
    flow: ""
