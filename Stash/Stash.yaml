@@ -1,4 +1,4 @@
-# 2024.03.15
+# 2024.03.18
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -22,7 +22,7 @@ proxy-providers:
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
 proxies:
- - name: HK-Warp Client
+ - name: HK~Warp~Client
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
    server: engage.cloudflareclient.com
@@ -44,7 +44,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: TW-Warp Teams
+ - name: TW~Warp~Trust
    type: wireguard
    server: 162.159.193.1
    port: 2408
@@ -65,7 +65,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: JP-Warp Team
+ - name: JP~Warp~Team
    type: wireguard
    server: 162.159.195.1
    port: 2408
@@ -86,7 +86,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: IP-Warp Plus
+ - name: IP~Warp~Plus
    type: wireguard
    server: 188.114.97.229
    port: 2506
@@ -107,23 +107,6 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🇺🇸~CF~Pages
-   type: vless
-   server: 190.93.246.246
-   port: 443
-   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-   tls: true
-   skip-cert-verify: true
-   sni: cloudflare-vless-dg3.pages.dev
-   network: ws
-   ws-opts:
-     path: "/?ed=2048"
-     headers:
-       Host: cloudflare-vless-dg3.pages.dev
-   alterId: 0
-   cipher: ""
-   flow: ""
-    
  - name: 🇺🇸~CF~Workers
    type: vless
    server: 172.64.134.217
@@ -131,12 +114,29 @@ proxies:
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
    skip-cert-verify: true
-   sni: cloudflare-vless.aimetu-338.workers.dev
+   sni: cloudwork.aimeto.workers.dev
    network: ws
    ws-opts:
      path: "/?ed=2048"
      headers:
-       Host: cloudflare-vless.aimetu-338.workers.dev
+       Host: cloudwork.aimeto.workers.dev
+   alterId: 0
+   cipher: ""
+   flow: ""
+
+ - name: 🇺🇸~CF~Pages
+   type: vless
+   server: aimeto.pages.dev
+   port: 443
+   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+   tls: true
+   skip-cert-verify: true
+   sni: aimeto.pages.dev
+   network: ws
+   ws-opts:
+     path: "/?ed=2048"
+     headers:
+       Host: aimeto.pages.dev
    alterId: 0
    cipher: ""
    flow: ""
