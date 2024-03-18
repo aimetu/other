@@ -126,7 +126,7 @@ proxies:
 
  - name: 🇺🇸~CF~Pages
    type: vless
-   server: aimeto.pages.dev
+   server: 162.159.136.23
    port: 443
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: true
