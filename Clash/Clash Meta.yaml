@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.03.15
+# 2024.03.18
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -283,7 +283,7 @@ listeners:
     port: 10808
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     udp: true
 
   - name: http-lan
@@ -291,7 +291,7 @@ listeners:
     port: 10809
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     udp: true
 
   - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
@@ -299,7 +299,7 @@ listeners:
     port: 10810
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: HK-Warp Client # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: HK~Warp~Client # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: redir-lan
@@ -307,14 +307,14 @@ listeners:
     port: 10811
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
 
   - name: tproxy-lan
     type: tproxy
     port: 10812
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     udp: true
 
   - name: shadowsocks-wwan
@@ -322,7 +322,7 @@ listeners:
     port: 10813
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     cipher: aes-256-gcm
 
@@ -331,7 +331,7 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     users:
       - username: Clash
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
@@ -345,23 +345,23 @@ listeners:
     port: 10815
     listen: 0.0.0.0
     rule: rules
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
     network: [tcp, udp]
     target: dns.cloudflare.com
     
 #💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
-  - tcp,127.0.0.1:6553,1.0.0.1:53,HK-Warp Client
-  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,HK-Warp Client # 一行简约配置
+  - tcp,127.0.0.1:6553,1.0.0.1:53,HK~Warp~Client
+  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,HK~Warp~Client # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: dns.cloudflare.com
-    proxy: HK-Warp Client
+    proxy: HK~Warp~Client
   
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
 proxies: 
-  - name: HK-Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: HK~Warp~Client # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
@@ -380,7 +380,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: TW-Warp Teams
+  - name: TW~Warp~Teams
     type: wireguard
     private-key: AFB3mVdZ3kMxEvRQjv4J5MRMnYxPGt3gfmgRfxUzoE0=
     peers:
@@ -399,7 +399,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     dialer-proxy: 🇹🇼 Taiwan
 
-  - name: JP-Warp Team
+  - name: JP~Warp~Team
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     peers:
@@ -418,7 +418,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇯🇵 Japan
 
-  - name: IP-Warp Plus
+  - name: IP~Warp~Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
@@ -445,29 +445,29 @@ proxies:
     udp: true
     tls: false
     network: ws
-    servername: cloudflare-vless.aimetu-338.workers.dev
+    servername: cloudwork.aimeto.workers.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2048"
       headers:
-        Host: cloudflare-vless.aimetu-338.workers.dev
+        Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
   - name: 🇺🇸~CF~Pages
     type: vless
-    server: 190.93.246.246
+    server: aimeto.pages.dev
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: true
     network: ws
-    servername: cloudflare-vless-dg3.pages.dev
+    servername: aimeto.pages.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2048"
       headers:
-        Host: cloudflare-vless-dg3.pages.dev
+        Host: aimeto.pages.dev
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇳 Nations # # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
     
@@ -595,10 +595,10 @@ proxy-groups:
     #interface-name: en0 # 示例：指定出站接口
     #routing-mark: 8848 # 示例：策略组出站时附带路由标记
     proxies: # 示例：手动添加出站代理或其他策略组
-      - HK-Warp Client
-      - TW-Warp Teams
-      - JP-Warp Team
-      - IP-Warp Plus
+      - HK~Warp~Client
+      - TW~Warp~Teams
+      - JP~Warp~Team
+      - IP~Warp~Plus
       - 🇺🇸~CF~Workers
       - 🇺🇸~CF~Pages
     #use: # 示例：手动添加代理集合
@@ -620,10 +620,10 @@ proxy-groups:
     tolerance: 0
     lazy: true
     proxies: 
-      - HK-Warp Client
-      - TW-Warp Teams
-      - JP-Warp Team
-      - IP-Warp Plus
+      - HK~Warp~Client
+      - TW~Warp~Teams
+      - JP~Warp~Team
+      - IP~Warp~Plus
 
   - name: 🛞 Proxy Chain
     type: relay
@@ -633,7 +633,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - HK-Warp Client
+      - HK~Warp~Client
 
   - name: ⚖️ Load Balance
     type: load-balance
