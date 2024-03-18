@@ -621,7 +621,7 @@ proxy-groups:
     lazy: true
     proxies: 
       - HK~Warp~Client
-      - TW~Warp~Teams
+      - TW~Warp~Trust
       - JP~Warp~Team
       - IP~Warp~Plus
 
