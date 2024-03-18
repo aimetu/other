@@ -497,7 +497,7 @@ proxy-providers:
       udp: true # 示例：启用 udp 支持
     health-check: # 示例：网络健康检查（测试延迟）
       enable: true # 示例：是否启用，可选 true/false
-      url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
+      url: http://cp.cloudflare.com/generate_204 # 示例：网络健康检查 url 地址
       interval: 600 # 示例：健康检查间隔时间，单位为秒
       lazy: true # 懒惰状态，默认为 true,不使用该集合节点时，不进行测试
       timeout: 5000
@@ -525,7 +525,7 @@ proxy-providers:
       udp: true
     health-check:
       enable: true
-      url: http://www.gstatic.com/generate_204
+      url: http://cp.cloudflare.com/generate_204
       interval: 600
       lazy: true
       timeout: 5000
@@ -543,7 +543,7 @@ proxy-providers:
 # icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
 # exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
-# url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
+# url: http://cp.cloudflare.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
 # tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
 # lazy: true # 懒惰模式，如果设置为 true，策略组在未被使用时停止检测
@@ -580,7 +580,7 @@ proxy-groups:
   - name: ♻️ Auto
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
-    url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
+    url: http://cp.cloudflare.com/generate_204 # 示例：延迟检查的 url 地址
     interval: 600 # 示例：间隔检测时间，单位：秒
     tolerance: 0 # 示例：网络间隔相差值
     lazy: true # 示例：懒惰模式
@@ -608,14 +608,14 @@ proxy-groups:
   - name: ✅ Node
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     include-all: true
 
   - name: 🪆 Warp
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -628,7 +628,7 @@ proxy-groups:
   - name: 🛞 Proxy Chain
     type: relay
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     lazy: true
     proxies:
@@ -639,7 +639,7 @@ proxy-groups:
     type: load-balance
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     lazy: true
     proxies:
@@ -654,7 +654,7 @@ proxy-groups:
   - name: ⚠️ Fallback
     type: fallback
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     lazy: true
     proxies:
@@ -670,7 +670,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
     filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -680,7 +680,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
     filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -690,7 +690,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
     filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -700,7 +700,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
     filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -710,7 +710,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
     filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -720,7 +720,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
     filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -730,7 +730,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
     filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -740,7 +740,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
