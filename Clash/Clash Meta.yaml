@@ -380,7 +380,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: TW~Warp~Teams
+  - name: TW~Warp~Trust
     type: wireguard
     private-key: AFB3mVdZ3kMxEvRQjv4J5MRMnYxPGt3gfmgRfxUzoE0=
     peers:
@@ -596,7 +596,7 @@ proxy-groups:
     #routing-mark: 8848 # 示例：策略组出站时附带路由标记
     proxies: # 示例：手动添加出站代理或其他策略组
       - HK~Warp~Client
-      - TW~Warp~Teams
+      - TW~Warp~Trust
       - JP~Warp~Team
       - IP~Warp~Plus
       - 🇺🇸~CF~Workers
