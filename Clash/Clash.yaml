@@ -488,7 +488,7 @@ proxy-providers:
       udp: true # 启用 UDP 支持
     health-check: # 网络健康检查（测试延迟）
       enable: true # 是否启用，可选 true/false
-      url: http://cp.cloudflare.com/generate_204 # 网络健康检查 url 地址
+      url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
       interval: 600 # 健康检查间隔时间，单位为秒
 
 # 服务器节点筛选
@@ -499,7 +499,7 @@ proxy-providers:
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
       
   TW: 
@@ -509,7 +509,7 @@ proxy-providers:
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
       
   JP:
@@ -518,7 +518,7 @@ proxy-providers:
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
       
   KR:
@@ -527,7 +527,7 @@ proxy-providers:
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
       
   SG:
@@ -536,7 +536,7 @@ proxy-providers:
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
 
   US:
@@ -545,7 +545,7 @@ proxy-providers:
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
 
   UN:
@@ -556,7 +556,7 @@ proxy-providers:
     #exclude-filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
 
   CN:
@@ -565,7 +565,7 @@ proxy-providers:
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
+      url: http://www.gstatic.com/generate_204
       interval: 600
 
 #💡 策略组
@@ -592,7 +592,7 @@ proxy-groups:
 
   - name: ♻️ Auto
     type: url-test  # url-test 自动策略组,将按照url测试结果使用延迟最低节点
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600 # 间隔检测时间为秒
     #exclude-type: "Shadowsocks|Http" # 排除节点类型，不支持正则表达式，通过 | 分隔
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
@@ -621,7 +621,7 @@ proxy-groups:
       
   - name: 🪆 Warp
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -633,7 +633,7 @@ proxy-groups:
       
   - name: 🛞 Proxy Chain
     type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
     proxies:
@@ -642,7 +642,7 @@ proxy-groups:
   
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理 
@@ -657,7 +657,7 @@ proxy-groups:
       
   - name: ⚠️ Fallback
     type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
     proxies:
@@ -671,7 +671,7 @@ proxy-groups:
 
   - name: 🇭🇰 HongKong
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -681,7 +681,7 @@ proxy-groups:
     
   - name: 🇹🇼 Taiwan
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -691,7 +691,7 @@ proxy-groups:
 
   - name: 🇯🇵 Japan
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -700,7 +700,7 @@ proxy-groups:
       
   - name: 🇰🇷 Korea
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -709,7 +709,7 @@ proxy-groups:
 
   - name: 🇸🇬 Singapore
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -718,7 +718,7 @@ proxy-groups:
       
   - name: 🇺🇸 America
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -727,7 +727,7 @@ proxy-groups:
 
   - name: 🇺🇳 Nations
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
@@ -736,7 +736,7 @@ proxy-groups:
 
   - name: 🇨🇳 Chinese
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
