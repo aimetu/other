@@ -30,7 +30,7 @@ dns-server =
 #💡分流规则
 [Rule]
 # > 通用分流
-DOMAIN,top.baidu.com,China
+DOMAIN,top.baidu.com,DIRECT
 DOMAIN,adsmind.gdtimg.com,REJECT
 
 # > 知乎广告
