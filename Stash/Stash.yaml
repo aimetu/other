@@ -17,7 +17,7 @@ proxy-providers:
   Subscribe:
     url: https://sub.store/download/collection/node
     interval: 86400
-    benchmark-url: http://cp.cloudflare.com/generate_204
+    benchmark-url: http://www.gstatic.com/generate_204
     benchmark-timeout: 3
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
@@ -35,7 +35,7 @@ proxies:
    mtu: 1280
    reserved: [17,176,6]
    keepalive: 45
-   benchmark-url: http://cp.cloudflare.com/generate_204
+   benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -56,7 +56,7 @@ proxies:
    mtu: 1280
    reserved: [135,160,67]
    keepalive: 45
-   benchmark-url: http://cp.cloudflare.com/generate_204
+   benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -77,7 +77,7 @@ proxies:
    mtu: 1280
    reserved: [80,73,10]
    keepalive: 45
-   benchmark-url: http://cp.cloudflare.com/generate_204
+   benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -98,7 +98,7 @@ proxies:
    mtu: 1280
    reserved: [173,82,247]
    keepalive: 45
-   benchmark-url: http://cp.cloudflare.com/generate_204
+   benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -344,7 +344,7 @@ proxy-groups:
 - name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600
 # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测  
   lazy: true
@@ -380,7 +380,7 @@ proxy-groups:
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
-  benchmark-url: http://cp.cloudflare.com/generate_204
+  benchmark-url: http://www.gstatic.com/generate_204
 # 延迟测试超时，单位：秒  
   benchmark-timeout: 5
   interval: 600  
@@ -397,7 +397,7 @@ proxy-groups:
 # strategy: consistent-hashing、round-robin，一般建议设置为 consistent-hashing，避免频繁改变 ip 触发服务端的安全策略 
   strategy: consistent-hashing
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -414,7 +414,7 @@ proxy-groups:
 - name: Fallback
   type: fallback
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -430,7 +430,7 @@ proxy-groups:
 - name: HongKong
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -440,7 +440,7 @@ proxy-groups:
 - name: Taiwan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -450,7 +450,7 @@ proxy-groups:
 - name: Japan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -460,7 +460,7 @@ proxy-groups:
 - name: Korea
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -470,7 +470,7 @@ proxy-groups:
 - name: Singapore
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -480,7 +480,7 @@ proxy-groups:
 - name: America
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
@@ -490,7 +490,7 @@ proxy-groups:
 - name: Nations
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600
   lazy: true
   hidden: false
@@ -500,7 +500,7 @@ proxy-groups:
 - name: Chinese
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
-  url: http://cp.cloudflare.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
