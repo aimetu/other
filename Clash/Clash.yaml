@@ -1157,24 +1157,28 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN, top.baidu.com, 🇨🇳 China
+  - DOMAIN, opencloud.wostore.cn, 🇨🇳 China
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
+  - DOMAIN-SUFFIX, auth.wosms.cn, 🇨🇳 China
+  - DOMAIN-SUFFIX, enrichgw.10010.com, 🇨🇳 China
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
   - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  #- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve # no-resolve 选项以跳过域名去进行 dns 解析
-  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve # IP-CIDR 本地 ipv4 规则
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve # no-resolve 可选，它用于跳过规则的 dns 解析
-  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve # IP-CIDR6 本地 ipv6 规则
-  - SRC-IP-CIDR,239.255.255.250/32,DIRECT # SRC-IP-CIDR 根据数据包的源 ipv4 地址
+  - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
+  - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
+  #- IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
+  - IP-CIDR,172.16.0.0/12,🇨🇳 China,no-resolve
+  - IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve # no-resolve 选项以跳过域名去进行 dns 解析
+  - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve # IP-CIDR 本地 ipv4 规则
+  - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve # no-resolve 可选，它用于跳过规则的 dns 解析
+  - IP-CIDR6,2620:0:2d0:200::7/32,🇨🇳 China,no-resolve # IP-CIDR6 本地 ipv6 规则
+  - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China # SRC-IP-CIDR 根据数据包的源 ipv4 地址
   - DST-PORT,1400,✉️ Telegram # DST-PORT 从目标端口指定规则
   #- DST-PORT,114/514,🇨🇳 China # 匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 匹配 114 到 514 端口
