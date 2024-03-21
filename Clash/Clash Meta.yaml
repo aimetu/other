@@ -1222,9 +1222,13 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN, top.baidu.com, 🇨🇳 China
+  - DOMAIN, opencloud.wostore.cn, 🇨🇳 China
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
+  - DOMAIN-SUFFIX, auth.wosms.cn, 🇨🇳 China
+  - DOMAIN-SUFFIX, enrichgw.10010.com, 🇨🇳 China
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global
   #- DOMAIN-REGEX,^google.*com,📟 Google
