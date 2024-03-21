@@ -479,7 +479,7 @@ proxy-providers:
   ALL: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: /proxy/all.yaml # 存储路径
-    url: https://api.dler.io/sub?target=clash&url=订阅链接|订阅链接&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=true&fdn=true&sort=true
+    url: # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
@@ -1234,7 +1234,7 @@ rules:
   - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  #- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
   - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve
