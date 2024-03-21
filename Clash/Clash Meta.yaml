@@ -163,6 +163,7 @@ dns:
     - "auth.wosms.cn"
     - "mdn.open.wo.cn"
     - "opencloud.wostore.cn"
+    - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
   
@@ -1222,13 +1223,9 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
-  - DOMAIN, top.baidu.com, 🇨🇳 China
-  - DOMAIN, opencloud.wostore.cn, 🇨🇳 China
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
-  - DOMAIN-SUFFIX, auth.wosms.cn, 🇨🇳 China
-  - DOMAIN-SUFFIX, enrichgw.10010.com, 🇨🇳 China
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global
   #- DOMAIN-REGEX,^google.*com,📟 Google
@@ -1238,7 +1235,7 @@ rules:
   - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
-  #- IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
+  - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
   - IP-CIDR,172.16.0.0/12,🇨🇳 China,no-resolve
   - IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve
   - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
