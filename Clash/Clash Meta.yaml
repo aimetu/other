@@ -1176,11 +1176,11 @@ rule-providers:
 #💡 引用子规则，匹配到规则时，将请求送往另一规则流程
 sub-rules:
   local:
-    - DOMAIN-KEYWORD,lan,DIRECT
-    - DOMAIN-SUFFIX,local,DIRECT
-    - IP-CIDR,17.0.0.0/8,DIRECT
-    - IP-CIDR,182.254.116.0/24,DIRECT
-    - IP-CIDR6,fe80::/10,DIRECT
+    - DOMAIN-KEYWORD,lan,🇨🇳 China
+    - DOMAIN-SUFFIX,local,🇨🇳 China
+    - IP-CIDR,17.0.0.0/8,🇨🇳 China
+    - IP-CIDR,182.254.116.0/24,🇨🇳 China
+    - IP-CIDR6,fe80::/10,🇨🇳 China
   adblock:
     - DOMAIN,qzs.qq.com,⛔ AdBlock
     - DOMAIN,ocsp.apple.com,⛔ AdBlock
@@ -1236,18 +1236,18 @@ rules:
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
   - PROCESS-PATH,\\Device\\HarddiskVolume3\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve　　　　　　
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  #- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,224.0.0.0/24,DIRECT,no-resolve
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
-  - IP-CIDR6,2620:0:2d0:200::7/32,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
+  - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
+  #- IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
+  - IP-CIDR,172.16.0.0/12,🇨🇳 China,no-resolve
+  - IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve
+  - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
+  - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
+  - IP-CIDR6,2620:0:2d0:200::7/32,🇨🇳 China,no-resolve
   - IP-SUFFIX,8.8.8.8/24,📟 Google
   #- IP-ASN,15169,📟 Google,no-resolve
-  - SRC-IP-CIDR,239.255.255.250/32,DIRECT
-  #- SRC-IP-SUFFIX,192.168.1.0/8,DIRECT
+  - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China
+  #- SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China
   - DST-PORT,1400,✉️ Telegram
   #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
