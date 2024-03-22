@@ -981,7 +981,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
     proxies:
       - REJECT
-      - DIRECT
+      - 🔰 Pick
 
 #💡 远程分流规则集合（behavior 参数有三种可选项：domain / ipcidr / classical）
 rule-providers:
