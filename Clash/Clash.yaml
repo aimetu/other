@@ -958,7 +958,7 @@ proxy-groups:
     type: select
     proxies:
       - REJECT
-      - DIRECT
+      - 🔰 Pick
 
 #💡 远程分流规则
 rule-providers:
