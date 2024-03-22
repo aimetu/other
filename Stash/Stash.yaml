@@ -728,7 +728,6 @@ proxy-groups:
   - Node
   - Wireless
   - Chinese
-  - AdBlock
 
 - name: Final
   type: select
@@ -743,7 +742,8 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
   proxies:
   - REJECT
-  - DIRECT
+  - China
+  - Pick
 
 # 💡 远程分流规则（domain - text = ipcidr - text > domain = ipcidr > classical）
 rule-providers:
