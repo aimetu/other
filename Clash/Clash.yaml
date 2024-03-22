@@ -945,7 +945,6 @@ proxy-groups:
       - 🔰 Pick
       - ✅ Node
       - 🇨🇳 Chinese
-      - ⛔ AdBlock
 
   - name: 🐟 Final
     type: select
@@ -958,6 +957,7 @@ proxy-groups:
     type: select
     proxies:
       - REJECT
+      - 🇨🇳 China
       - 🔰 Pick
 
 #💡 远程分流规则
