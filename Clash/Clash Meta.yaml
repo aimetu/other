@@ -477,9 +477,9 @@ proxies:
 # exclude-filter: 港|台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
 # exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型（ss、ssr、socks5、http、snell、vmess、vless、trojan、hysteria、hysteria2、wireguard、tuic）排除排除，注意：proxy-providers 与 proxy-groups 写法不同
 proxy-providers:
-  ALL: # 远程代理服务器引用名称
+  Subscribe: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
-    path: /proxy/all.yaml # 存储路径
+    path: /proxy/Subscribe.yaml # 存储路径
     url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
@@ -505,9 +505,9 @@ proxy-providers:
       expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
       
 # 本地代理服务器筛选
-  NODE: 
+  Nodes: 
     type: file # 代理服务器类型 file：本地筛选
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     #url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
@@ -603,8 +603,8 @@ proxy-groups:
       - 🇺🇸~CF~Workers
       - 🇺🇸~CF~Pages
     #use: # 示例：手动添加代理集合
-      #- ALL
-      #- NODE
+      #- Subscribe
+      #- Nodes
       
   - name: ✅ Node
     type: select
