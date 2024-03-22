@@ -540,7 +540,7 @@ proxy-providers:
 # fallback：故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
 # > 策略组添加可选参数示例：
 # proxies: [Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
-# use: [ALL, NODE] 手动添加代理集合
+# use: [Subscribe, Nodes] 手动添加代理集合
 # icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
 # exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
