@@ -476,9 +476,9 @@ proxies:
 
 #💡 远程代理服务器订阅链接
 proxy-providers:
-  NODE:  # 远程代理服务器引用名称
+  Nodes:  # 远程代理服务器引用名称
     type: http # 代理服务器引用类型
-    path: /proxy/node.yaml # 存储到位置路径
+    path: /proxy/Nodes.yaml # 存储到位置路径
     url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     override: # 覆写节点内容
@@ -495,7 +495,7 @@ proxy-providers:
 # 服务器节点筛选
   HK:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     health-check:
@@ -505,7 +505,7 @@ proxy-providers:
       
   TW: 
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     health-check:
@@ -515,7 +515,7 @@ proxy-providers:
       
   JP:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan
     health-check:
       enable: true
@@ -524,7 +524,7 @@ proxy-providers:
       
   KR:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea
     health-check:
       enable: true
@@ -533,7 +533,7 @@ proxy-providers:
       
   SG:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore
     health-check:
       enable: true
@@ -542,7 +542,7 @@ proxy-providers:
 
   US:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
     health-check:
       enable: true
@@ -551,7 +551,7 @@ proxy-providers:
 
   UN:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     # filter 筛选满足关键词或正则表达式的节点，exclude-filter 排除满足关键词或正则表达式的节点
     filter: ^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
     #exclude-filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America
@@ -562,7 +562,7 @@ proxy-providers:
 
   CN:
     type: file
-    path: /proxy/node.yaml
+    path: /proxy/Nodes.yaml
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
     health-check:
       enable: true
@@ -599,7 +599,7 @@ proxy-groups:
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
     use: # use 包含远程代理服务器节点
-      - NODE
+      - Nodes
     proxies:
       - HK~Warp~Client
       - TW~Warp~Trust
@@ -611,7 +611,7 @@ proxy-groups:
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
     use:
-      - NODE 
+      - Nodes 
     proxies:
       - HK~Warp~Client
       - TW~Warp~Trust
