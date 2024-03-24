@@ -1241,10 +1241,10 @@ rules:
   - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
   - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
   - IP-CIDR6,2620:0:2d0:200::7/32,🇨🇳 China,no-resolve
-  - IP-SUFFIX,8.8.8.8/24,📟 Google
+  - IP-SUFFIX,114.114.114.114/32,🇨🇳 China,no-resolve
   #- IP-ASN,15169,📟 Google,no-resolve
-  - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China
-  - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China
+  - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
+  - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
   - DST-PORT,1400,✉️ Telegram
   #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
