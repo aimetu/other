@@ -588,7 +588,7 @@ proxy-groups:
     # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
     # exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
     #include-all: true # 示例：引入所有出站代理节点以及代理集合
-    #include-all-providers: true # 示例：引入所有出站代理节点
+    #include-all-proxies: true # 示例：引入所有出站代理节点
     include-all-providers: true # 示例：引入所有代理集合
     #exclude-type: "Shadowsocks|http" # 示例：根据节点 "协议" 类型
     #disable-udp: true # 示例：禁用 udp 流量转发
