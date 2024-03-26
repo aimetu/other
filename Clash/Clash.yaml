@@ -629,8 +629,8 @@ proxy-groups:
     proxies: # 手动引入出站代理或其他策略组
       - HK~Warp~Client
       - TW~Warp~Trust
-      - SG~Warp~Team
-      - IP~Warp~Plus
+      - JP~Warp~Team
+      - SG~Warp~Plus
       
   - name: 🛞 Proxy Chain
     type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
