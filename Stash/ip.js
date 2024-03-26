@@ -6,13 +6,13 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     province = `省：${province}`;
     city = `市：${city}`;
     distinct = `区：${distinct}`;
-    isp = `网络运营商：${isp}`;
-    operator = `网络服务商：${operator}`;
+    isp = `网络提供商：${isp}`;
+    operator = `网络运营商：${operator}`;
     lon = `经度：${lon}`;
     lat = `纬度：${lat}`;
     ip = `出站IP：${ip}`;
     full_ip = `进站IP：${full_ip}`;
-    net_str = `网络信息商：${net_str}`;
+    net_str = `网络供应商：${net_str}`;
     let region = `${isp}\n${operator}\n${net_str}\n${ip}\n${full_ip}`;
     body={
         title: "网络信息",
