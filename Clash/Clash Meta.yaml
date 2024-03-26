@@ -634,7 +634,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - HK~Warp~Client
+      - 🇺🇸~CF~Workers
 
   - name: ⚖️ Load Balance
     type: load-balance
