@@ -10,12 +10,12 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     operator = `服务商：${operator}`;
     lon = `经度：${lon}`;
     lat = `纬度：${lat}`;
-    ip = `IP地址：${ip}`;
-    full_ip = `全IP：${full_ip}`;
+    ip = `出站IP：${ip}`;
+    full_ip = `进站IP：${full_ip}`;
     net_str = `网络商：${net_str}`;
-    let region = `${isp}\n${operator}\n${ip}\n${full_ip}\n${net_str}`;
+    let region = `${isp}\n${operator}\n${net_str}\n${ip}\n${full_ip}`;
     body={
-        title: "本地网络信息",
+        title: "网络信息",
         content: `${country}\n${country_code}\n${province}\n${city}\n${distinct}\n${lon}\n${lat}\n${region}`,
         backgroundColor: "#ad8b3d",
         icon: "antenna.radiowaves.left.and.right.circle.fill",
