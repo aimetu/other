@@ -17,7 +17,7 @@ $httpClient.get("https://forge.speedtest.cn/api/location/info", function (error,
     body={
         title: "网络信息",
         content: `${country}\n${country_code}\n${province}\n${city}\n${distinct}\n${lon}\n${lat}\n${region}`,
-        backgroundColor: "#ad8b3d",
+        backgroundColor: "#8A9A5B",
         icon: "antenna.radiowaves.left.and.right.circle.fill",
     }
     $done(body)
