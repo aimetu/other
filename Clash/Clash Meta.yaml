@@ -1232,7 +1232,7 @@ rules:
   - PROCESS-NAME,AdGuard.exe,🌐 Global
   - PROCESS-NAME,AdGuardSvc.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
-  - PROCESS-PATH,C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe,🌐 Global
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
   - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
