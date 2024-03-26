@@ -366,7 +366,7 @@ proxies:
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
-     - server: 162.159.192.1 # wireguard 服务器地址
+     - server: engage.cloudflareclient.com # wireguard 服务器地址
        port: 2408 # wireguard 服务端端口
        ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
        ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
@@ -419,7 +419,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇯🇵 Japan
 
-  - name: IP~Warp~Plus
+  - name: SG~Warp~Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     peers:
@@ -599,7 +599,7 @@ proxy-groups:
       - HK~Warp~Client
       - TW~Warp~Trust
       - JP~Warp~Team
-      - IP~Warp~Plus
+      - SG~Warp~Plus
       - 🇺🇸~CF~Workers
       - 🇺🇸~CF~Pages
     #use: # 示例：手动添加代理集合
@@ -624,7 +624,7 @@ proxy-groups:
       - HK~Warp~Client
       - TW~Warp~Trust
       - JP~Warp~Team
-      - IP~Warp~Plus
+      - SG~Warp~Plus
 
   - name: 🛞 Proxy Chain
     type: relay
