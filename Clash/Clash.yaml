@@ -749,11 +749,13 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       
   - name: 🎵 TikTok
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -766,6 +768,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -778,6 +781,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -790,6 +794,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -802,6 +807,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -814,6 +820,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -826,6 +833,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -838,6 +846,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -850,6 +859,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -862,6 +872,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -874,6 +885,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -887,6 +899,7 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -900,6 +913,7 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -911,19 +925,14 @@ proxy-groups:
   - name: 🎬 Global Media
     type: select
     proxies:
+      - 🌐 Global
       - 🔰 Pick
-      - 🇭🇰 HongKong
-      - 🇹🇼 Taiwan
-      - 🇯🇵 Japan
-      - 🇰🇷 Korea
-      - 🇸🇬 Singapore
-      - 🇺🇸 America
-      - 🇺🇳 Nations
 
   - name: 🌐 Global
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -950,6 +959,7 @@ proxy-groups:
     type: select
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇨🇳 China
       - ⛔ AdBlock
 
@@ -959,6 +969,7 @@ proxy-groups:
       - REJECT
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
 
 #💡 远程分流规则
 rule-providers:
