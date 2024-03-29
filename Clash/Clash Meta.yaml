@@ -753,12 +753,14 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       
   - name: 🎵 TikTok
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -772,6 +774,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -785,6 +788,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -798,6 +802,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -811,6 +816,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -824,6 +830,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -837,6 +844,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -850,6 +858,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -863,6 +872,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -876,6 +886,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -889,6 +900,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -903,6 +915,7 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -917,6 +930,7 @@ proxy-groups:
     proxies:
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -929,20 +943,15 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
     proxies:
+      - 🌐 Global
       - 🔰 Pick
-      - 🇭🇰 HongKong
-      - 🇹🇼 Taiwan
-      - 🇯🇵 Japan
-      - 🇰🇷 Korea
-      - 🇸🇬 Singapore
-      - 🇺🇸 America
-      - 🇺🇳 Nations
 
   - name: 🌐 Global
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -972,6 +981,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
     proxies:
       - 🔰 Pick
+      - ✅ Node
       - 🇨🇳 China
       - ⛔ AdBlock
 
@@ -982,6 +992,7 @@ proxy-groups:
       - REJECT
       - 🇨🇳 China
       - 🔰 Pick
+      - ✅ Node
 
 #💡 远程分流规则集合（behavior 参数有三种可选项：domain / ipcidr / classical）
 rule-providers:
