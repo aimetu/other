@@ -1240,8 +1240,8 @@ rules:
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global
   #- DOMAIN-REGEX,^google.*com,📟 Google
-  - PROCESS-NAME,Adguard.exe,🌐 Global
-  - PROCESS-NAME,AdguardSvc.exe,🌐 Global
+  - PROCESS-NAME,vmnat.exe,🌐 Global
+  - PROCESS-NAME,vmware.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
