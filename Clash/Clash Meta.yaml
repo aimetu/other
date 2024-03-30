@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.03.18
+# 2024.03.30
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
