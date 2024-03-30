@@ -365,11 +365,11 @@ proxies:
   - name: HK~Warp~Client # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
+    ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
+    ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
      - server: engage.cloudflareclient.com # wireguard 服务器地址
        port: 2408 # wireguard 服务端端口
-       ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
-       ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM= # 可选字段，预共享密钥
        allowed_ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 ip 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
@@ -384,12 +384,12 @@ proxies:
   - name: TW~Warp~Trust
     type: wireguard
     private-key: CJ+a9D/TltH3gxM3hg2jdyeyctYkjw6Tym4hje+H9EQ=
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:82f0:bb8c:8f76:fdf0:e565
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     peers:
      - server: 162.159.193.1
        port: 2408
-       ip: 172.16.0.2
-       ipv6: 2606:4700:110:82f0:bb8c:8f76:fdf0:e565
-       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [197,215,83]
@@ -403,11 +403,11 @@ proxies:
   - name: JP~Warp~Team
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     peers:
      - server: 162.159.195.1
        port: 2408
-       ip: 172.16.0.2
-       ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
@@ -422,11 +422,11 @@ proxies:
   - name: SG~Warp~Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
      - server: 188.114.97.229
        port: 2506
-       ip: 172.16.0.2
-       ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
