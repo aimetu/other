@@ -1,4 +1,4 @@
-# 2024.03.18
+# 2024.03.30
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -903,8 +903,8 @@ rules:
 - DOMAIN,mssdk-bu.bytedance.com,AdBlock
 - DOMAIN-SUFFIX,adx.appicad.net,AdBlock
 - DOMAIN-SUFFIX,m1.ad.10010.com,AdBlock
-- DOMAIN-KEYWORD,stun,AdBlock
-- DOMAIN-KEYWORD,pcdn,AdBlock
+- DOMAIN-KEYWORD,reddit,AdBlock
+- DOMAIN-KEYWORD,snapchat,AdBlock
 - RULE-SET,🚥 Direct,China
 - RULE-SET,⛔ Anti.ad,AdBlock
 - RULE-SET,⛔ Privacy,AdBlock
