@@ -1197,7 +1197,8 @@ rules:
   #- IN-USER,vmess,🌐 Global # IN-USER 匹配入站用户名,目前仅 vmess 入站支持配置用户名
   #- IN-TYPE,INNER,🌐 Global # IN-TYPE 匹配流量入站的类型，匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
   #- NETWORK,tcp,🇨🇳 China # NETWORK 网络类型规则，匹配入站流量的类型 TCP / UDP
-  - AND,((DOMAIN-SUFFIX,youtube.com),(NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
+  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
+  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
