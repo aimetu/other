@@ -1234,6 +1234,7 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN, tg.feidee.com, ⛔ AdBlock
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
@@ -1272,8 +1273,6 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
-  - AND,((NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock
-  - AND,((NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
   - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),⛔ AdBlock # 示例：域名关键词为 pcdn 或 stun 的请求
   #- NOT,((GEOIP,CN)),🌐 Global # 示例：cn 以外地区请求走 🌐 Global 节点/策略组
