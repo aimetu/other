@@ -1169,6 +1169,7 @@ rules:
   - DOMAIN,ad.k.21cn.com,⛔ AdBlock
   - DOMAIN,admarket.21cn.com,⛔ AdBlock
   - DOMAIN,adshows.21cn.com,⛔ AdBlock
+  - DOMAIN, tg.feidee.com, ⛔ AdBlock
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
