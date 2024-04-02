@@ -1269,7 +1269,8 @@ rules:
   #- NETWORK,tcp,🇨🇳 China
   #- UID,1001,🇨🇳 China
   #- DSCP,4,🌐 Global
-  - AND,((DOMAIN-SUFFIX,youtube.com),(NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
+  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
+  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
