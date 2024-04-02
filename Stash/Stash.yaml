@@ -210,7 +210,7 @@ hosts:
 # 💡 http3/quic 协议基于 udp，在目前的网络环境下较为低效,禁用 quic 协议
 script:
   shortcuts:
-    quic: network == 'udp' and dst_port == 443  # 屏蔽 http3/quic,让流量回落至 http2,避免 udp 被 qos
+    quic: network == 'udp' and (dst_port == 443 or dst_port == 3478 or dst_port == 19302)  # 屏蔽 http3/quic,让流量回落至 http2,避免 udp 被 qos
 
 # 💡 http 引擎相关
 http:
