@@ -1240,7 +1240,7 @@ rules:
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
   - DOMAIN-KEYWORD,reddit,🌐 Global
   - DOMAIN-KEYWORD,snapchat,🌐 Global
-  - DOMAIN-REGEX,^https?:\/\/*\.google\.com,📟 Google
+  - DOMAIN-REGEX,^https?:\/\/(www|m).google\.cn,📟 Google
   - PROCESS-NAME,olk.exe,🌐 Global
   - PROCESS-NAME,WinStore.App.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global
