@@ -458,6 +458,22 @@ proxies:
         Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
 
+  - name: 🇺🇳~CF~Workers
+    type: vless
+    server: workers.cloudflare.cyou  # 优选 IP：https://github.com/Alvin9999/new-pac
+    port: 80
+    uuid: a6857f71-33c0-4584-8772-c38160210cf2
+    udp: true
+    tls: false
+    network: ws
+    servername: sub.aimeto.workers.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: sub.aimeto.workers.dev
+      v2ray-http-upgrade: false
+
   - name: 🇺🇸~CF~Pages
     type: vless
     server: aimeto.pages.dev  # 优选 IP：https://github.com/Alvin9999/new-pac
@@ -605,8 +621,9 @@ proxy-groups:
       - TW~Warp~Trust
       - JP~Warp~Team
       - SG~Warp~Plus
-      - 🇺🇸~CF~Pages
       - 🇺🇸~CF~Workers
+      - 🇺🇳~CF~Workers
+      - 🇺🇸~CF~Pages
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
@@ -617,8 +634,9 @@ proxy-groups:
       - TW~Warp~Trust
       - JP~Warp~Team
       - SG~Warp~Plus
-      - 🇺🇸~CF~Pages
       - 🇺🇸~CF~Workers
+      - 🇺🇳~CF~Workers
+      - 🇺🇸~CF~Pages
       
   - name: 🪆 Warp
     type: url-test
