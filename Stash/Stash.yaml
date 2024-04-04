@@ -124,6 +124,23 @@ proxies:
    cipher: ""
    flow: ""
 
+ - name: 🇺🇳~CF~Workers
+   type: vless
+   server: workers.cloudflare.cyou
+   port: 80
+   uuid: a6857f71-33c0-4584-8772-c38160210cf2
+   tls: false
+   skip-cert-verify: true
+   sni: sub.aimeto.workers.dev
+   network: ws
+   ws-opts:
+     path: "/?ed=2048"
+     headers:
+       Host: sub.aimeto.workers.dev
+   alterId: 0
+   cipher: ""
+   flow: ""
+
  - name: 🇺🇸~CF~Pages
    type: vless
    server: aimeto.pages.dev
