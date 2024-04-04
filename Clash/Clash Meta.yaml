@@ -438,7 +438,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇰🇷 Korea
 
-  - name: SG~CF~Cloud*⁰˙¹
+  - name: SG~CF~Cloud*⁰˙⁵
     type: vless
     server: 172.64.134.217 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -455,7 +455,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇸🇬 Singapore # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: US~CF~Cloud*⁰˙²
+  - name: US~CF~Cloud*⁰˙⁶
     type: vless
     server: workers.cloudflare.cyou # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -472,7 +472,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: UN~CF~Cloud*⁰˙³
+  - name: UN~CF~Cloud*⁰˙⁷
     type: vless
     server: aimeto.pages.dev # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
@@ -617,9 +617,9 @@ proxy-groups:
       - TW~CF~Warp*⁰˙²
       - JP~CF~Warp*⁰˙³
       - KR~CF~Warp*⁰˙⁴
-      - SG~CF~Cloud*⁰˙¹
-      - US~CF~Cloud*⁰˙²
-      - UN~CF~Cloud*⁰˙³
+      - SG~CF~Cloud*⁰˙⁵
+      - US~CF~Cloud*⁰˙⁶
+      - UN~CF~Cloud*⁰˙⁷
     #use: # 示例：手动添加代理集合
       #- Subscribe
       #- Nodes
