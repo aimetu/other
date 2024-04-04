@@ -431,7 +431,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
-    dialer-proxy: 🇸🇬 Singapore
+    dialer-proxy: 🇰🇷 Korea
     peers:
      - server: 188.114.97.229
        port: 2506
@@ -457,7 +457,8 @@ proxies:
       headers:
         Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
-
+   #dialer-proxy: 🇸🇬 Singapore # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
+   
   - name: US~CF~Cloud*⁰˙⁶
     type: vless
     server: workers.cloudflare.cyou  # 优选 IP：https://github.com/Alvin9999/new-pac
@@ -473,7 +474,8 @@ proxies:
       headers:
         Host: sub.aimeto.workers.dev
       v2ray-http-upgrade: false
-
+    #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
+    
   - name: UN~CF~Cloud*⁰˙⁷
     type: vless
     server: aimeto.pages.dev  # 优选 IP：https://github.com/Alvin9999/new-pac
@@ -489,7 +491,8 @@ proxies:
       headers:
         Host: aimeto.pages.dev
       v2ray-http-upgrade: false
-
+    #dialer-proxy: 🇺🇳 Nations # # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
+    
 #💡 远程代理服务器订阅链接
 proxy-providers:
   Nodes:  # 远程代理服务器引用名称
