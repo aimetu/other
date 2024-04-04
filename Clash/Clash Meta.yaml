@@ -455,6 +455,22 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
+  - name: 🇺🇳~CF~Workers
+    type: vless
+    server: workers.cloudflare.cyou # 优选 IP：https://github.com/Alvin9999/new-pac
+    port: 80
+    uuid: a6857f71-33c0-4584-8772-c38160210cf2
+    udp: true
+    tls: false
+    network: ws
+    servername: sub.aimeto.workers.dev
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2048"
+      headers:
+        Host: sub.aimeto.workers.dev
+      v2ray-http-upgrade: false
+
   - name: 🇺🇸~CF~Pages
     type: vless
     server: aimeto.pages.dev # 优选 IP：https://github.com/Alvin9999/new-pac
@@ -601,6 +617,7 @@ proxy-groups:
       - JP~Warp~Team
       - SG~Warp~Plus
       - 🇺🇸~CF~Workers
+      - 🇺🇳~CF~Workers
       - 🇺🇸~CF~Pages
     #use: # 示例：手动添加代理集合
       #- Subscribe
