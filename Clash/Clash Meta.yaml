@@ -386,10 +386,10 @@ proxies:
     private-key: CJ+a9D/TltH3gxM3hg2jdyeyctYkjw6Tym4hje+H9EQ=
     ip: 172.16.0.2
     ipv6: 2606:4700:110:82f0:bb8c:8f76:fdf0:e565
-    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     peers:
      - server: 162.159.193.1 # 域名优选 IP：engage.nanocat.cloud
        port: 2408
+       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [197,215,83]
