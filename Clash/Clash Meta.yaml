@@ -652,7 +652,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - US~CF~Workers
+      - SG~CF~Cloud*⁰˙⁵
 
   - name: ⚖️ Load Balance
     type: load-balance
