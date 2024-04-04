@@ -388,7 +388,7 @@ proxies:
     ipv6: 2606:4700:110:82f0:bb8c:8f76:fdf0:e565
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     peers:
-     - server: 162.159.193.1
+     - server: 162.159.193.1 # 域名优选 IP：engage.nanocat.cloud
        port: 2408
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
@@ -406,7 +406,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     peers:
-     - server: 162.159.195.1
+     - server: 162.159.195.1 # 域名优选 IP：engage.nanocat.me
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -425,7 +425,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 188.114.97.229
+     - server: 188.114.97.229  # 优选 IP：https://github.com/Alvin9999/new-pac
        port: 2506
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -440,7 +440,7 @@ proxies:
 
   - name: 🇺🇸~CF~Workers
     type: vless
-    server: 172.64.134.217
+    server: 172.64.134.217 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -457,7 +457,7 @@ proxies:
 
   - name: 🇺🇸~CF~Pages
     type: vless
-    server: aimeto.pages.dev
+    server: aimeto.pages.dev # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
