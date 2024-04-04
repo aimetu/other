@@ -442,7 +442,7 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [173,82,247]
 
-  - name: UN~CF~Cloud*⁰˙⁵
+  - name: SG~CF~Cloud*⁰˙⁵
     type: vless
     server: 172.64.134.217  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -458,7 +458,7 @@ proxies:
         Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: UN~CF~Cloud*⁰˙⁶
+  - name: US~CF~Cloud*⁰˙⁶
     type: vless
     server: workers.cloudflare.cyou  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -621,8 +621,8 @@ proxy-groups:
       - TW~CF~Warp*⁰˙²
       - JP~CF~Warp*⁰˙³
       - KR~CF~Warp*⁰˙⁴
-      - UN~CF~Cloud*⁰˙⁵
-      - UN~CF~Cloud*⁰˙⁶
+      - SG~CF~Cloud*⁰˙⁵
+      - US~CF~Cloud*⁰˙⁶
       - UN~CF~Cloud*⁰˙⁷
       
   - name: ✅ Node # 用户自行选择策略组或节点
@@ -634,8 +634,8 @@ proxy-groups:
       - TW~CF~Warp*⁰˙²
       - JP~CF~Warp*⁰˙³
       - KR~CF~Warp*⁰˙⁴
-      - UN~CF~Cloud*⁰˙⁵
-      - UN~CF~Cloud*⁰˙⁶
+      - SG~CF~Cloud*⁰˙⁵
+      - US~CF~Cloud*⁰˙⁶
       - UN~CF~Cloud*⁰˙⁷
       
   - name: 🪆 Warp
@@ -657,7 +657,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - US~CF~Workers
+      - SG~CF~Cloud*⁰˙⁵
   
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
