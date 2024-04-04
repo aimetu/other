@@ -1001,12 +1001,12 @@ rule-providers:
     path: /rule/Direct.yaml
     interval: 86400
 
-  ⛔ Anti.ad:
-    type: http
-    behavior: domain
-    url: https://anti-ad.net/clash.yaml
-    path: /rule/anti-ad.yaml
-    interval: 86400
+  #⛔ Anti.ad:
+    #type: http
+    #behavior: domain
+    #url: https://anti-ad.net/clash.yaml
+    #path: /rule/anti-ad.yaml
+    #interval: 86400
 
   ⛔ Privacy:
     type: http
@@ -1230,7 +1230,7 @@ rules:
   #- NOT,((GEOIP,CN)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 CN 以外地区请求走 🌐 Global 节点/策略组
   #- NOT,((DOMAIN,baidu.com)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
-  - RULE-SET,⛔ Anti.ad,⛔ AdBlock
+  #- RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
   - RULE-SET,⛔ Hijacking,⛔ AdBlock
   - RULE-SET,⛔ AdvertisingLite,⛔ AdBlock
