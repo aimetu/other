@@ -107,7 +107,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🇺🇸~CF~Workers
+ - name: 🇹🇼~CF~Workers
    type: vless
    server: 172.64.134.217
    port: 80
@@ -124,7 +124,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: 🇺🇳~CF~Workers
+ - name: 🇰🇷~CF~Workers
    type: vless
    server: workers.cloudflare.cyou
    port: 80
@@ -407,7 +407,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - 🇺🇸~CF~Workers
+    - 🇹🇼~CF~Workers
     
 # 均衡负载：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: Load Balance
