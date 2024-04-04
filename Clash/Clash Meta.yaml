@@ -438,7 +438,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇸🇬 Singapore
 
-  - name: 🇺🇸~Cloud~Workers
+  - name: TW~CF~Workers
     type: vless
     server: 172.64.134.217 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -455,7 +455,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: 🇺🇳~Sub~Workers
+  - name: KR~CF~Workers
     type: vless
     server: workers.cloudflare.cyou # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -471,7 +471,7 @@ proxies:
         Host: sub.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: 🇺🇸~Cloud~Pages
+  - name: US~CF~Pages
     type: vless
     server: aimeto.pages.dev # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
@@ -616,9 +616,9 @@ proxy-groups:
       - TW~Warp~Trust
       - JP~Warp~Team
       - SG~Warp~Plus
-      - 🇺🇸~Cloud~Workers
-      - 🇺🇳~Sub~Workers
-      - 🇺🇸~Cloud~Pages
+      - TW~CF~Workers
+      - KR~CF~Workers
+      - US~CF~Pages
     #use: # 示例：手动添加代理集合
       #- Subscribe
       #- Nodes
@@ -651,7 +651,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - 🇺🇸~CF~Workers
+      - US~CF~Workers
 
   - name: ⚖️ Load Balance
     type: load-balance
