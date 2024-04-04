@@ -442,7 +442,7 @@ proxies:
        allowed_ips: ["0.0.0.0/0","::/0"]
        reserved: [173,82,247]
 
-  - name: 🇺🇸~CF~Workers
+  - name: TW~CF~Workers
     type: vless
     server: 172.64.134.217  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -458,7 +458,7 @@ proxies:
         Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: 🇺🇳~CF~Workers
+  - name: KR~CF~Workers
     type: vless
     server: workers.cloudflare.cyou  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -474,7 +474,7 @@ proxies:
         Host: sub.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: 🇺🇸~CF~Pages
+  - name: US~CF~Pages
     type: vless
     server: aimeto.pages.dev  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
@@ -621,9 +621,9 @@ proxy-groups:
       - TW~Warp~Trust
       - JP~Warp~Team
       - SG~Warp~Plus
-      - 🇺🇸~CF~Workers
-      - 🇺🇳~CF~Workers
-      - 🇺🇸~CF~Pages
+      - TW~CF~Workers
+      - KR~CF~Workers
+      - US~CF~Pages
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
@@ -634,9 +634,9 @@ proxy-groups:
       - TW~Warp~Trust
       - JP~Warp~Team
       - SG~Warp~Plus
-      - 🇺🇸~CF~Workers
-      - 🇺🇳~CF~Workers
-      - 🇺🇸~CF~Pages
+      - TW~CF~Workers
+      - KR~CF~Workers
+      - US~CF~Pages
       
   - name: 🪆 Warp
     type: url-test
@@ -657,7 +657,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - 🇺🇸~CF~Workers
+      - US~CF~Workers
   
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
