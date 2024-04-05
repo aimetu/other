@@ -42,9 +42,6 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 # > 无他相机
 ^https?:\/\/api-release\.wuta-cam\.com\/ad_tree reject-img
 
-# > 随手记
-^https?:\/\/tg\.feidee\.com\/online_ad\/ reject
-
 # > 波点音乐去广告
 ^http:\/\/bd-api\.kuwo\.cn\/api\/service\/resource\/musicResource\/.+ _ reject
 ^https:\/\/bodiancdn\.kuwo\.cn\/.+\.mp4 _ reject
