@@ -244,8 +244,8 @@ http:
     
 # https-url 重写支持 header、302、307、reject 多种策略
   url-rewrite:
-    - ^https?:\/\/(www.)?(g|google)\.cn http://www.google.com header
-    - ^https?:\/\/(ditu|maps).google\.cn https://www.google.com 302
+    - ^https?:\/\/(www|m)\.(g|google)\.cn http://www.google.com header
+    - ^https?:\/\/(ditu|maps)\.google\.cn https://www.google.com 302
     - (?<=_region=)CN(?=&) KR 307
     - (?<=&mcc_mnc=)4 2 307
     - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
@@ -253,10 +253,10 @@ http:
 
 # https-header 重写允许用户增加、删除、替换 http 请求/响应的任意 header
   header-rewrite:
-    - ^https?:\/\/(www.)?(g|google)\.cn request-add DNT 1
-    - ^https?:\/\/(www.)?(g|google)\.cn request-del DNT
-    - ^https?:\/\/(www.)?(g|google)\.cn request-replace DNT 1
-    - ^https?:\/\/(www.)?(g|google)\.cn request-replace-regex User-Agent Go-http-client curl
+    - ^https?:\/\/(www|m)\.(g|google)\.cn request-add DNT 1
+    - ^https?:\/\/(www|m)\.(g|google)\.cn request-del DNT
+    - ^https?:\/\/(www|m)\.(g|google)\.cn request-replace DNT 1
+    - ^https?:\/\/(www|m)\.(g|google)\.cn request-replace-regex User-Agent Go-http-client curl
 
 # 使用 javascript 脚本改写 https 请求
   script:
