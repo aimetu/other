@@ -176,7 +176,7 @@ dns:
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     #- system # 指定系默认 dns 服务器查询
     - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
-    - "quic://dns.alidns.com" # 指定 doq 服务器查询
+    - "quic://223.5.5.5" # 指定 doq 服务器查询
     - "https://doh.pub/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.alidns.com" # 指定 dot 服务器查询
     #- "https://1.12.12.12/dns-query#Meta" # 指定 dns 出口网卡
@@ -207,11 +207,9 @@ dns:
       - "+.youtube.com"
   
   nameserver-policy: # 使用指定的 dns 服务器解析域名
+    "my.router": system
     "openwrt.lan": system
     "blog.google": 119.29.29.29
-    "doh.pub": 1.12.12.12
-    "dns.alidns.com": 223.5.5.5
-    "dns.opendns.com": 208.67.222.222
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
