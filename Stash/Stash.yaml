@@ -190,7 +190,7 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - quic://dns.alidns.com
+    - quic://223.5.5.5
     
 # geoip 过滤 cn 以外的地址，指定到 fallback  
   fallback-filter:
@@ -209,9 +209,6 @@ dns:
   nameserver-policy:
     "openwrt.lan": system
     "blog.google": 119.29.29.29
-    "doh.pub": 1.12.12.12
-    "dns.alidns.com": 223.5.5.5
-    "dns.opendns.com": 208.67.222.222
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
     "dl.google.com": https://doh.pub/dns-query
