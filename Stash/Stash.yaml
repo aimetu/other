@@ -207,6 +207,7 @@ dns:
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
+    "my.router": system
     "openwrt.lan": system
     "blog.google": 119.29.29.29
     "talk.google.com": 108.177.125.188
