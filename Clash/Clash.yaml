@@ -140,32 +140,31 @@ dns:
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
   
-  default-nameserver: # 引导解析其他 dns 服务器,只支持纯 ip 可使用加密dns，"system" 会导致系统 dns 泄露，所以未启用
+  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns，"system" 会导致系统 dns 泄露，所以未启用
     #- system
     - "223.5.5.5"
     - "119.29.29.29"
-    #- "tls://1.0.0.1:853"
+    #- "https://1.12.12.12/dns-query" # doh 纯 ip 加密
+    #- "tls://1.0.0.1:853" # dot 纯 ip 加密
   
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
-    #- system # 指定系默认 dns 服务器查询
-    - "https://dns.alidns.com/dns-query" # 指定 doh 服务器查询
-    - "https://doh.pub/dns-query" # 指定 doh 服务器查询
-    #- "quic://223.5.5.5" # 指定 doq 服务器查询，「meta专属」
-    #- "tls://dns.alidns.com" # 指定 dot 服务器查询
-    #- "https://1.12.12.12/dns-query#Clash" # 指定 dns 出口网卡
-    #- "https://223.6.6.6/dns-query#h3=true" # 指定 doq 服务器查询，强制 http/3，此选项与 perfer-h3 不冲突
+    #- system # 系统默认 dns 服务器查询
+    - "https://dns.alidns.com/dns-query" # doh 服务器查询
+    - "https://doh.pub/dns-query"
+    #- "quic://223.5.5.5" # doq 服务器查询
+    #- "tls://dns.alidns.com" # dot 服务器查询
+    #- "https://1.12.12.12/dns-query#Meta" # doq 指定出口网卡
+    #- "https://223.6.6.6/dns-query#h3=true" # doh 强制 http/3 查询，此选项与 perfer-h3 不冲突
   
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
-    - "1.0.0.1"
+    - "1.1.1.1"
     - "208.67.222.222"
-    #- "8.8.8.8"
-  
-  fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析
-    - "https://doh.opendns.com/dns-query" # 指定 doh 服务器查询
-    - "https://cloudflare-dns.com/dns-query" # 指定 doh 服务器查询
-    #- "tls://dns.google:853" # 指定 dot 服务器查询
-    #- "https://dns.google/dns-query#📟 Google" # dns 经过代理查询
-    #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
+
+  fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
+    - "https://cloudflare-dns.com/dns-query" # doh 服务器查询
+    - "https://doh.opendns.com/dns-query"
+    #- "tls://dns.google" # dot 服务器查询
+    #- "https://dns.google/dns-query#📟 Google&h3=true" # doh 指定代理或使用 http/3 查询
   
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置geoip开关 true/false
