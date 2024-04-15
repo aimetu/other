@@ -190,7 +190,7 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - quic://223.5.5.5
+    - quic://dns.alidns.com
     
 # geoip 过滤 cn 以外的地址，指定到 fallback  
   fallback-filter:
