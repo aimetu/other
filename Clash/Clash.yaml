@@ -161,8 +161,8 @@ dns:
     #- "8.8.8.8"
   
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析
-    - "https://dns.opendns.com/dns-query" # 指定 doh 服务器查询
-    - "https://dns.cloudflare.com/dns-query" # 指定 doh 服务器查询
+    - "https://doh.opendns.com/dns-query" # 指定 doh 服务器查询
+    - "https://cloudflare-dns.com/dns-query" # 指定 doh 服务器查询
     #- "tls://dns.google:853" # 指定 dot 服务器查询
     #- "https://dns.google/dns-query#📟 Google" # dns 经过代理查询
     #- "https://cloudflare-dns.com/dns-query#🌐 Global&h3=true" # 指定策略组和使用 http/3
