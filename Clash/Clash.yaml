@@ -151,7 +151,7 @@ dns:
     #- system # 系统默认 dns 服务器查询
     - "https://dns.alidns.com/dns-query" # doh 服务器查询
     - "https://doh.pub/dns-query"
-    #- "quic://223.5.5.5" # doq 服务器查询
+    #- "quic://dns.alidns.com" # doq 服务器查询
     #- "tls://dns.alidns.com" # dot 服务器查询
     #- "https://1.12.12.12/dns-query#Meta" # doq 指定出口网卡
     #- "https://223.6.6.6/dns-query#h3=true" # doh 强制 http/3 查询，此选项与 perfer-h3 不冲突
