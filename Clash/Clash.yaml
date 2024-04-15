@@ -159,7 +159,7 @@ dns:
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "1.1.1.1"
     - "208.67.222.222"
-    #- "https://8.8.8.8/dns-query" 
+    #- "https://8.8.8.8/dns-query"
 
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://cloudflare-dns.com/dns-query" # doh 服务器查询
