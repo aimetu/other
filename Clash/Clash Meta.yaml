@@ -105,7 +105,7 @@ strategy:
 #💡 虚拟网卡 tun 模式配置
 tun:
   enable: false # tun 模式开关 true/false
-  stack: system # 网络栈类型 system > mixed > gvisor > lwip，macos 用户推荐 gvisor 栈
+  stack: system # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
   auto-redir: true # 自动重定向开关 true/false
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-detect-interface: true # 自动识别出口网卡
