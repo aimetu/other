@@ -271,7 +271,6 @@ sniffer:
   port-whitelist: # 端口白名单
     - 80
     - 443
-    - 8000-9000
 
 #💡 流量入站配置,可以作为服务器
 listeners:
@@ -348,12 +347,12 @@ listeners:
     
 #💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
-  - tcp,127.0.0.1:6553,1.0.0.1:53,HK~CF~Warp*⁰˙¹
-  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,HK~CF~Warp*⁰˙¹ # 一行简约配置
+  - tcp,127.0.0.1:6553,1.0.0.1:53,🇨🇳 China
+  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🇨🇳 China # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: dns.cloudflare.com
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: 🇨🇳 China
   
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
@@ -521,7 +520,7 @@ proxy-providers:
   Nodes: 
     type: file # 代理服务器类型 file：本地筛选
     path: /proxy/Nodes.yaml
-    #url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    #url: https://raw.githubusercontent.com/aimetu/ChromeGo/main/sub/merged_proxies_new.yaml # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
