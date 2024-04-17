@@ -493,7 +493,7 @@ proxy-providers:
   Nodes:  # 远程代理服务器引用名称
     type: http # 代理服务器引用类型
     path: /proxy/Nodes.yaml # 存储到位置路径
-    url: https://raw.githubusercontent.com/aimetu/ChromeGo/main/sub/merged_proxies_new.yaml # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     #exclude-type: "ss|http" # 不支持正则表达式，通过 | 分割，根据节点 "type" 类型排除，注意：proxy-groups 与 proxy-providers 写法不同
     override: # 覆写节点内容
       #down: "50 Mbps" # 下载速度默认以 Mbps 为单位
