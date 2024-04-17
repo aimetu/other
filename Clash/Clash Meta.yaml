@@ -99,8 +99,8 @@ ntp:
 strategy:
   OpenWrt, OpenWrt_5G: # 无线 wifi 网络名称
     tun: false # tun 模式网络开关
-    mixin: false # 混合模式开关
-    system: true # 系统代理开关
+    mixin: true # 混合模式开关
+    system: false # 系统代理开关
 
 #💡 虚拟网卡 tun 模式配置
 tun:
@@ -492,7 +492,7 @@ proxy-providers:
   Subscribe: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: /proxy/Subscribe.yaml # 存储路径
-    url: https://raw.githubusercontent.com/aimetu/ChromeGo/main/sub/merged_proxies_new.yaml # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
@@ -518,9 +518,9 @@ proxy-providers:
       
 # 本地代理服务器筛选
   Nodes: 
-    type: file # 代理服务器类型 file：本地筛选
+    type: file # 本地代理服务器
     path: /proxy/Nodes.yaml
-    #url: https://raw.githubusercontent.com/aimetu/ChromeGo/main/sub/merged_proxies_new.yaml # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    #url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400
     #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
