@@ -618,21 +618,12 @@ proxy-groups:
   - name: 🪆 Warp
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
+    include-all-proxies: true
+    exclude-filter: Cloud
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
     lazy: true
-    proxies: # 示例：手动添加出站代理或其他策略组
-      - HK~CF~Warp*⁰˙¹
-      - TW~CF~Warp*⁰˙²
-      - JP~CF~Warp*⁰˙³
-      - KR~CF~Warp*⁰˙⁴
-      - SG~CF~Cloud*⁰˙⁵
-      - US~CF~Cloud*⁰˙⁶
-      - UN~CF~Cloud*⁰˙⁷
-    #use: # 示例：手动添加代理集合
-      #- Subscribe
-      #- Nodes
 
   - name: 🛞 Proxy Chain
     type: relay
