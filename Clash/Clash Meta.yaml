@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.03.30
+# 2024.04.22
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -287,7 +287,7 @@ listeners:
     port: 10809
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: TW~CF~Warp*⁰˙²
     udp: true
 
   - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
@@ -295,7 +295,7 @@ listeners:
     port: 10810
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: HK~CF~Warp*⁰˙¹ # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: JP~CF~Warp*⁰˙³ # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: redir-lan
@@ -303,14 +303,14 @@ listeners:
     port: 10811
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: KR~CF~Warp*⁰˙⁴
 
   - name: tproxy-lan
     type: tproxy
     port: 10812
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: SG~CF~Cloud*⁰˙⁵
     udp: true
 
   - name: shadowsocks-wwan
@@ -318,7 +318,7 @@ listeners:
     port: 10813
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: US~CF~Cloud*⁰˙⁶
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     cipher: aes-256-gcm
 
@@ -327,11 +327,11 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: UN~CF~Cloud*⁰˙⁷
     users:
       - username: Clash
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
-        alterId: 1
+        alterId: 0
     #ws-path: "/" # 如果不为空则开启websocket传输层
     #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
     #private-key: ./server.key
@@ -341,7 +341,7 @@ listeners:
     port: 10815
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: 🇨🇳 China
     network: [tcp, udp]
     target: dns.cloudflare.com
     
