@@ -17,7 +17,7 @@ log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、e
 ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
 
 port: 7898 # 本地 http(s) 代理端口
-socks-port: 7891 # 本地 socks4/4a/5 代理端口
+socks-port: 7899 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
 redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
 tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
