@@ -256,7 +256,7 @@ listeners:
     port: 10808
     listen: 0.0.0.0
     rule: rules
-    proxy: HK~CF~Warp*⁰˙¹
+    proxy: 🌐 Global
     udp: true
 
   - name: http-lan
@@ -264,7 +264,7 @@ listeners:
     port: 10809
     listen: 0.0.0.0
     rule: rules
-    proxy: TW~CF~Warp*⁰˙²
+    proxy: 🌐 Global
     udp: true
 
   - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
@@ -272,7 +272,7 @@ listeners:
     port: 10810
     listen: 0.0.0.0
     rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: JP~CF~Warp*⁰˙³ # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
+    proxy: 🌐 Global # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
     udp: true # 默认 true
 
   - name: redir-lan
@@ -280,14 +280,14 @@ listeners:
     port: 10811
     listen: 0.0.0.0
     rule: rules
-    proxy: KR~CF~Warp*⁰˙⁴
+    proxy: 🌐 Global
 
   - name: tproxy-lan
     type: tproxy
     port: 10812
     listen: 0.0.0.0
     rule: rules
-    proxy: SG~CF~Cloud*⁰˙⁵
+    proxy: 🌐 Global
     udp: true
 
   - name: shadowsocks-wwan
@@ -295,7 +295,7 @@ listeners:
     port: 10813
     listen: 0.0.0.0
     rule: rules
-    proxy: US~CF~Cloud*⁰˙⁶
+    proxy: 🌐 Global
     password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     cipher: aes-256-gcm
 
@@ -304,7 +304,7 @@ listeners:
     port: 10814
     listen: 0.0.0.0
     rule: rules
-    proxy: UN~CF~Cloud*⁰˙⁷
+    proxy: 🌐 Global
     users:
       - username: Clash
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
@@ -318,18 +318,18 @@ listeners:
     port: 10815
     listen: 0.0.0.0
     rule: rules
-    proxy: 🇨🇳 China
+    proxy: 🌐 Global
     network: [tcp, udp]
     target: dns.cloudflare.com
 
 #💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
-  - tcp,127.0.0.1:6553,1.0.0.1:53,🇨🇳 China
-  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🇨🇳 China # 一行简约配置
+  - tcp,127.0.0.1:6553,1.0.0.1:53,🌐 Global
+  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🌐 Global # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: dns.cloudflare.com
-    proxy: 🇨🇳 China
+    proxy: 🌐 Global
   
 #💡 本地代理服务器
 proxies: 
