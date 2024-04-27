@@ -144,7 +144,7 @@ dns:
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
   
-  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns，"system" 会导致系统 dns 泄露，所以未启用
+  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns
     #- system
     - "223.5.5.5"
     - "tls://1.12.12.12" # dot 纯 ip 加密
