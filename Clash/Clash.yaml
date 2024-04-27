@@ -147,8 +147,8 @@ dns:
   default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns
     #- system
     - "223.5.5.5"
-    - "tls://1.12.12.12" # dot 纯 ip 加密
-    - "https://223.6.6.6/dns-query" # doh 纯 ip 加密
+    - "tls://1.0.0.1" # dot 纯 ip 加密
+    - "https://1.12.12.12/dns-query" # doh 纯 ip 加密
     
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     - "https://dns.alidns.com/dns-query" # doh 服务器查询
