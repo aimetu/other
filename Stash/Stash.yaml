@@ -202,9 +202,9 @@ dns:
       
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
-    - https://dns.opendns.com/dns-query
+    - https://dns.adguard-dns.com/dns-query
     - https://dns.cloudflare.com/dns-query
-    #- https://dns.google/dns-query
+    - quic://dns.adguard-dns.com
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
