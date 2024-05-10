@@ -208,11 +208,6 @@ dns:
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
-    "doh.pub": 1.12.12.12
-    "dns.alidns.com": 223.5.5.5
-    "dns.adguard-dns.com": 94.140.15.15
-    "talk.google.com": 108.177.125.188
-    "mtalk.google.com": 108.177.125.188
     "amplifi.lan": system
     "openwrt.lan": system
     "unifi.loca": system
@@ -227,7 +222,12 @@ hosts:
   "*.clash.dev": 127.0.0.1
   ".dev": 127.0.0.1
   "alpha.clash.dev": '::1'
-
+  "doh.pub": [1.12.12.12, 120.53.53.53]
+  "dns.alidns.com": [223.5.5.5, 223.6.6.6]
+  "dns.adguard-dns.com": [94.140.15.15, 94.140.14.14]
+  "talk.google.com": 108.177.125.188
+  "mtalk.google.com": 108.177.125.188
+    
 # 💡 http3/quic 协议基于 udp，在目前的网络环境下较为低效,禁用 quic 协议
 script:
   shortcuts:
