@@ -222,9 +222,9 @@ hosts:
   "*.clash.dev": 127.0.0.1
   ".dev": 127.0.0.1
   "alpha.clash.dev": '::1'
-  "doh.pub": [1.12.12.12, 120.53.53.53]
-  "dns.alidns.com": [223.5.5.5, 223.6.6.6]
-  "dns.adguard-dns.com": [94.140.15.15, 94.140.14.14]
+  "doh.pub": 1.12.12.12
+  "dns.alidns.com": 223.5.5.5
+  "dns.adguard-dns.com": 94.140.15.15
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
