@@ -187,9 +187,9 @@ dns:
     "dns.adguard-dns.com": 94.140.15.15
     "talk.google.com": 108.177.125.188
     "mtalk.google.com": 108.177.125.188
-    "unifi.loca": system
     "amplifi.lan": system
     "openwrt.lan": system
+    "unifi.loca": system
     "myrouter.local": system
     "blog.google": 94.140.15.15
     "dl.google.com": https://dns.adguard-dns.com/dns-query
