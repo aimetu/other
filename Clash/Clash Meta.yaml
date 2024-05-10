@@ -205,11 +205,6 @@ dns:
       - "+.youtube.com"
   
   nameserver-policy: # 使用指定的 dns 服务器解析域名
-    "doh.pub": 1.12.12.12
-    "dns.alidns.com": 223.5.5.5
-    "dns.adguard-dns.com": 94.140.15.15
-    "talk.google.com": 108.177.125.188
-    "mtalk.google.com": 108.177.125.188
     "amplifi.lan": system
     "openwrt.lan": system
     "unifi.loca": system
@@ -224,6 +219,11 @@ hosts:
   "*.mihomo.dev": 127.0.0.1
   ".dev": 127.0.0.1
   "alpha.mihomo.dev": "::1"
+  "doh.pub": [1.12.12.12, 120.53.53.53]
+  "dns.alidns.com": [223.5.5.5, 223.6.6.6]
+  "dns.adguard-dns.com": [94.140.15.15, 94.140.14.14]
+  "talk.google.com": 108.177.125.188
+  "mtalk.google.com": 108.177.125.188
   "test.com": [223.5.5.5, 223.6.6.6]
   "example.com": baidu.com # 只允许配置一个别名
   "home.lan": lan # lan 为特别字段，将加入本地所有网卡的地址
