@@ -368,7 +368,7 @@ proxies:
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
-     - server: engage.cloudflareclient.com # wireguard 服务器地址
+     - server: 162.159.193.8 # wireguard 服务器地址
        port: 2408 # wireguard 服务端端口
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM= # 可选字段，预共享密钥
@@ -425,8 +425,8 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 188.114.97.229  # 优选 IP：https://github.com/Alvin9999/new-pac
-       port: 2506
+     - server: 162.159.195.6  # 优选 IP：https://github.com/Alvin9999/new-pac
+       port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
        allowed_ips: ["0.0.0.0/0","::/0"]
@@ -440,7 +440,7 @@ proxies:
 
   - name: SG~CF~Cloud*⁰˙⁵
     type: vless
-    server: c.aimetu.cloudns.be # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 172.64.207.125 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -457,7 +457,7 @@ proxies:
 
   - name: US~CF~Cloud*⁰˙⁶
     type: vless
-    server: c.aimetu.cloudns.be # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 104.19.38.18 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
