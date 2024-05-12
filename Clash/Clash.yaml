@@ -340,7 +340,7 @@ tunnels:
 proxies: 
   - name: HK~CF~Warp*⁰˙¹ # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: engage.cloudflareclient.com # wireguard 服务器地址
+    server: 162.159.193.8 # wireguard 服务器地址
     port: 2408 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
@@ -356,7 +356,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     dialer-proxy: 🇭🇰 HongKong # 一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接,用于 wireguard 配置链式代理
     peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
-     - server: engage.cloudflareclient.com
+     - server: 162.159.193.8
        port: 2408
        ip: 172.16.0.2
        ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6
@@ -421,8 +421,8 @@ proxies:
 
   - name: KR~CF~Warp*⁰˙⁴
     type: wireguard
-    server: 188.114.97.229 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195/204.0/24, 188.114.96-99.0/24, 2606:4700:d0-d1::/48, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
-    port: 2506
+    server: 162.159.195.6 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195/204.0/24, 188.114.96-99.0/24, 2606:4700:d0-d1::/48, 2606:4700:100::/48（udp 端口:2408，可选500、1701、4500）
+    port: 2408
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
@@ -437,8 +437,8 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     dialer-proxy: 🇰🇷 Korea
     peers:
-     - server: 188.114.97.229
-       port: 2506
+     - server: 162.159.195.6
+       port: 2408
        ip: 172.16.0.2
        ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
@@ -448,7 +448,7 @@ proxies:
 
   - name: SG~CF~Cloud*⁰˙⁵
     type: vless
-    server: c.aimetu.cloudns.be  # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 172.64.207.125  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -465,7 +465,7 @@ proxies:
    
   - name: US~CF~Cloud*⁰˙⁶
     type: vless
-    server: c.aimetu.cloudns.be  # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 104.19.38.18  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
