@@ -448,7 +448,7 @@ proxies:
 
   - name: SG~CF~Cloud*⁰˙⁵
     type: vless
-    server: 172.64.134.217  # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: c.aimetu.cloudns.be  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -465,7 +465,7 @@ proxies:
    
   - name: US~CF~Cloud*⁰˙⁶
     type: vless
-    server: workers.cloudflare.cyou  # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: c.aimetu.cloudns.be  # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
