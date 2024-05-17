@@ -187,7 +187,7 @@ dns:
     - "https://1.1.1.1/dns-query"
 
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
-    - "https://doh.opendns.com/dns-query"
+    - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     - "https://dns.google/dns-query"
     #- "quic://cloudflare-dns.com"
@@ -211,9 +211,9 @@ dns:
     "unifi.loca": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
-    "dl.google.com": https://doh.opendns.com/dns-query
-    "dl.l.google.com": https://doh.opendns.com/dns-query
-    "update.googleapis.com": https://doh.opendns.com/dns-query
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
+    "update.googleapis.com": https://dns.opendns.com/dns-query
         
 #💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
 hosts:
@@ -222,9 +222,7 @@ hosts:
   "alpha.mihomo.dev": "::1"
   "doh.pub": [1.12.12.12, 120.53.53.53]
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
-  "dns.google": [8.8.8.8, 8.8.4.4]
-  "cloudflare-dns.com": [1.0.0.1, 1.1.1.1]
-  "doh.opendns.com": 146.112.41.2
+  "dns.opendns.com": [208.67.222.222, 208.67.220.220]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
   "example.com": baidu.com # 只允许配置一个别名
