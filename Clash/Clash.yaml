@@ -146,7 +146,8 @@ dns:
   
   default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns
     #- system
-    - "tls://223.5.5.5" # dot 纯 ip 加密
+    - "223.5.5.5"
+    - "tls://223.6.6.6" # dot 纯 ip 加密
     - "https://1.12.12.12/dns-query" # doh 纯 ip 加密
     
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
@@ -166,7 +167,7 @@ dns:
     - "https://doh.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     - "https://dns.google/dns-query"
-    #- "quic://dns.adguard-dns.com"
+    #- "quic://cloudflare-dns.com"
     #- "tls://dns.google"
   
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
