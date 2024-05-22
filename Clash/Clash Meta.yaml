@@ -425,7 +425,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 162.159.195.6  # 优选 IP：https://github.com/Alvin9999/new-pac
+     - server: 162.159.195.5  # 优选 IP：https://github.com/Alvin9999/new-pac
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
