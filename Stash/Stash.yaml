@@ -189,7 +189,7 @@ dns:
     
 # 支持 udp、tcp、dot、doh、doq 协议的 dns 服务，可指定端口，并发响应最快服务
   nameserver:
-    - http3://dns.alidns.com/dns-query
+    - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     - quic://dns.alidns.com
     
