@@ -210,7 +210,7 @@ dns:
   nameserver-policy:
     "amplifi.lan": system
     "openwrt.lan": system
-    "unifi.loca": system
+    "openwrt.local": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.opendns.com/dns-query
