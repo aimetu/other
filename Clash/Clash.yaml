@@ -340,7 +340,7 @@ tunnels:
 proxies: 
   - name: HK~CF~Warp*⁰˙¹ # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
-    server: 162.159.193.8 # wireguard 服务器地址
+    server: 162.159.192.1 # wireguard 服务器地址
     port: 2408 # wireguard 服务端端口
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
