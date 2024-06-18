@@ -109,7 +109,7 @@ proxies:
 
  - name: SG~CF~Cloud*⁰˙⁵
    type: vless
-   server: c.aimetu.cloudns.be
+   server: 141.101.122.184
    port: 80
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
