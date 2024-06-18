@@ -109,7 +109,7 @@ proxies:
 
  - name: SG~CF~Cloud*⁰˙⁵
    type: vless
-   server: 141.101.122.184
+   server: 104.18.87.215
    port: 80
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
@@ -126,7 +126,7 @@ proxies:
 
  - name: US~CF~Cloud*⁰˙⁶
    type: vless
-   server: c.aimetu.cloudns.be
+   server: 141.101.122.184
    port: 80
    uuid: a6857f71-33c0-4584-8772-c38160210cf2
    tls: false
@@ -143,7 +143,7 @@ proxies:
 
  - name: UN~CF~Cloud*⁰˙⁷
    type: vless
-   server: aimeto.pages.dev
+   server: c.aimetu.cloudns.be
    port: 443
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: true
