@@ -15,7 +15,7 @@ subscribe-url: 输入订阅链接
 # 💡 远程代理服务器订阅链接
 proxy-providers:
   Subscribe:
-    url: https://sub.store/download/collection/node
+    url: https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
     interval: 86400
     benchmark-url: http://www.gstatic.com/generate_204
     benchmark-timeout: 3
