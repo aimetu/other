@@ -1,97 +1,115 @@
+# https://raw.githubusercontent.com/InabaKumori/MosDNS-Web-GUI/e789560289070880b2225ecea5edccad274e85c8/config/example.yaml
+# 日志
 log:
   level: info
   file: "/var/log/mosdns.log"
 
+# api 入口设置
 api:
   http: "0.0.0.0:9091"
 
 include: []
 
 plugins:
+# 国内域名
   - tag: geosite_cn
     type: domain_set
     args:
       files:
         - "/var/mosdns/geosite_cn.txt"
 
+ # 国内 ip
   - tag: geoip_cn
     type: ip_set
     args:
       files:
         - "/var/mosdns/geoip_cn.txt"
 
+  # apple 域名
   - tag: geosite_apple
     type: domain_set
     args:
       files:
         - "/var/mosdns/geosite_apple.txt"
 
+  # 国外域名
   - tag: geosite_no_cn
     type: domain_set
     args:
       files:
         - "/var/mosdns/geosite_geolocation-!cn.txt"
 
+  # 白名单 加入的域名始终允许使用 “本地 DNS” 进行解析
   - tag: whitelist
     type: domain_set
     args:
       files:
         - "/etc/mosdns/rule/whitelist.txt"
 
+  # 黑名单 加入的域名将屏蔽 DNS 解析
   - tag: blocklist
     type: domain_set
     args:
       files:
         - "/etc/mosdns/rule/blocklist.txt"
 
+ # 灰名单 加入的域名始终使用 “远程 DNS” 进行解析
   - tag: greylist
     type: domain_set
     args:
       files:
         - "/etc/mosdns/rule/greylist.txt"
 
+  # DDNS域名 加入的域名始终使用 “本地 DNS” 进行解析，并且修改 TTL 为 5 秒，解析结果不进行缓存
   - tag: ddnslist
     type: domain_set
     args:
       files:
         - "/etc/mosdns/rule/ddnslist.txt"
 
+  # 自定义 Hosts 重写
   - tag: hosts
     type: hosts
     args:
       files:
         - "/etc/mosdns/rule/hosts.txt"
 
+  # 重定向请求的域名
   - tag: redirect
     type: redirect
     args:
       files:
         - "/etc/mosdns/rule/redirect.txt"
-
+        
+  # ad 域名
   - tag: adlist
     type: domain_set
     args:
       files:
         - "/var/disable-ads.txt"
 
+  # ptr 黑名单 加入的域名将阻止 ptr 请求
   - tag: local_ptr
     type: domain_set
     args:
       files:
         - "/etc/mosdns/rule/local-ptr.txt"
 
+  # cloudflare 自选 ip 地址
   - tag: cloudflare_cidr
     type: ip_set
     args:
       files:
         - "/etc/mosdns/rule/cloudflare-cidr.txt"
 
+  # 缓存
   - tag: lazy_cache
     type: cache
     args:
       size: 8000
       lazy_cache_ttl: 86400
 
+  # 转发上游 udp
   - tag: forward_xinfeng_udp
     type: forward
     args:
@@ -99,7 +117,8 @@ plugins:
       upstreams:
         - addr: "223.5.5.5"
         - addr: "119.29.29.29"
-
+        
+  # 国内 dns 服务器
   - tag: forward_local
     type: forward
     args:
@@ -122,10 +141,11 @@ plugins:
           insecure_skip_verify: false
           idle_timeout: 30
 
+  # 远程 dns 服务器
   - tag: forward_remote
     type: forward
     args:
-      concurrent: 2
+      concurrent: 1
       upstreams:
         - addr: "https://cloudflare-dns.com/dns-query"
           bootstrap: 1.1.1.1
@@ -143,22 +163,27 @@ plugins:
           insecure_skip_verify: false
           idle_timeout: 30
 
+  # 国外解析
   - tag: forward_remote_upstream
     type: sequence
+  # 设置ECS
     args:
       - exec: prefer_ipv4
       - exec: $forward_remote
 
+  # 修改ttl（默认0 不修改ttl）
   - tag: modify_ttl
     type: sequence
     args:
       - exec: ttl 0-0
-
+      
+  # 修改 ddns 域名 ttl（默认 5秒）
   - tag: modify_ddns_ttl
     type: sequence
     args:
       - exec: ttl 5-5
 
+  # 有响应则修改 TTL 并终止返回
   - tag: has_resp_sequence
     type: sequence
     args:
@@ -168,7 +193,9 @@ plugins:
         exec: $modify_ttl
       - matches: has_resp
         exec: accept
-
+        
+  # fallback 用本地服务器 sequence
+  # 返回非国内 ip 则 drop_resp
   - tag: query_is_non_local_ip
     type: sequence
     args:
@@ -176,6 +203,7 @@ plugins:
       - matches: "!resp_ip $geoip_cn"
         exec: drop_resp
 
+  # fallback 用远程服务器 sequence
   - tag: fallback
     type: fallback
     args:
@@ -184,6 +212,7 @@ plugins:
       threshold: 500
       always_standby: true
 
+#  回退 apple 国内域名
   - tag: apple_domain_fallback
     type: fallback
     args:
@@ -192,6 +221,7 @@ plugins:
       threshold: 100
       always_standby: true
 
+  # 查询 apple 域名
   - tag: query_is_apple_domain
     type: sequence
     args:
@@ -199,36 +229,42 @@ plugins:
         exec: return
       - exec: $apple_domain_fallback
 
+  # 查询 ddns 域名
   - tag: query_is_ddns_domain
     type: sequence
     args:
       - matches: qname $ddnslist
         exec: $forward_local
 
+  # 查询国内域名
   - tag: query_is_local_domain
     type: sequence
     args:
       - matches: qname $geosite_cn
         exec: $forward_local
 
+  # 查询国外域名
   - tag: query_is_no_local_domain
     type: sequence
     args:
       - matches: qname $geosite_no_cn
         exec: $forward_remote_upstream
 
+ # 查询白名单
   - tag: query_is_whitelist_domain
     type: sequence
     args:
       - matches: qname $whitelist
         exec: $forward_local
 
+  # 查询灰名单
   - tag: query_is_greylist_domain
     type: sequence
     args:
       - matches: qname $greylist
         exec: $forward_remote_upstream
 
+  # 拒绝名单
   - tag: query_is_reject_domain
     type: sequence
     args:
@@ -243,11 +279,15 @@ plugins:
       - matches: qtype 65
         exec: reject 3
 
+  # 主要的运行逻辑插件
+  # sequence 插件中调用的插件 tag 必须在 sequence 前定义，
+  # 否则 sequence 找不到对应插件。
   - tag: main_sequence
     type: sequence
     args:
       - exec: $hosts
       - exec: jump has_resp_sequence
+  # 非 “拒绝名单” 或 “DDNS域名” 则启用缓存      
       - matches:
         - "!qname $ddnslist"
         - "!qname $blocklist"
@@ -270,12 +310,14 @@ plugins:
       - exec: jump has_resp_sequence
       - exec: $fallback
 
+  # 启动 udp 服务器
   - tag: udp_server
     type: udp_server
     args:
       entry: main_sequence
       listen: ":5335"
 
+  # 启动 tcp 服务器
   - tag: tcp_server
     type: tcp_server
     args:
