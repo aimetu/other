@@ -204,7 +204,7 @@ dns:
   fallback:
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
+    - https://dns.quad9.net/dns-query
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
@@ -251,6 +251,7 @@ http:
   url-rewrite:
     - ^https?:\/\/(www|m)\.(g|google)\.cn http://www.google.com header
     - ^https?:\/\/(ditu|maps)\.google\.cn https://www.google.com 302
+    - ^https?:\/\/hfapp-service\.qweather\.net\/.*\/ad\/ - reject-200
     - (?<=_region=)CN(?=&) KR 307
     - (?<=&mcc_mnc=)4 2 307
     - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
