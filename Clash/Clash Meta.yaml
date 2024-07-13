@@ -183,14 +183,14 @@ dns:
   
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "208.67.222.222"
-    - "tls://8.8.8.8"
+    - "tls://9.9.9.9"
     - "https://1.1.1.1/dns-query"
 
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
-    - "https://dns.google/dns-query"
-    #- "quic://cloudflare-dns.com"
+    - "https://dns.quad9.net/dns-query"
+    #- "quic://dns.google"
     #- "tls://dns.google"
     
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
