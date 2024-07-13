@@ -211,7 +211,7 @@ dns:
     "openwrt.local": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.google.com": https://dns.quad9.net/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
         
@@ -222,6 +222,7 @@ hosts:
   "alpha.mihomo.dev": "::1"
   "doh.pub": [1.12.12.12, 120.53.53.53]
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
+  "dns.quad9.net": [9.9.9.9, 149.112.112.112]
   "dns.opendns.com": [208.67.222.222, 208.67.220.220]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
