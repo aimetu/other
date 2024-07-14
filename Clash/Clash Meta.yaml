@@ -417,7 +417,7 @@ proxies:
     udp: true
     persistent-keepalive: 45
     remote-dns-resolve: true
-    dns: [1.0.0.1,2606:4700:4700::1001]
+    dns: [1.1.1.1,2606:4700:4700::1111]
     dialer-proxy: 🇯🇵 Japan
 
   - name: CF~Warp Plus
@@ -436,7 +436,7 @@ proxies:
     udp: true
     persistent-keepalive: 45
     remote-dns-resolve: true
-    dns: [1.0.0.1,2606:4700:4700::1001]
+    dns: [1.1.1.1,2606:4700:4700::1111]
     dialer-proxy: 🇰🇷 Korea
 
   - name: CF~Cloud
