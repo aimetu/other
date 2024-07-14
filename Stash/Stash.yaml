@@ -1,4 +1,4 @@
-# 2024.06.25
+# 2024.07.15
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -22,7 +22,7 @@ proxy-providers:
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
 proxies:
- - name: HK~CF~Warp*⁰˙¹
+ - name: CF~Warp Client
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
    server: 162.159.192.1
@@ -44,7 +44,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: TW~CF~Warp*⁰˙²
+ - name: CF~Warp Zero
    type: wireguard
    server: 162.159.193.1
    port: 2408
@@ -65,7 +65,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: JP~CF~Warp*⁰˙³
+ - name: CF~Warp Team
    type: wireguard
    server: 162.159.195.1
    port: 2408
@@ -86,7 +86,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: KR~CF~Warp*⁰˙⁴
+ - name: CF~Warp Plus
    type: wireguard
    server: 162.159.195.5
    port: 2408
@@ -107,9 +107,9 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: SG~CF~Cloud*⁰˙⁵
+ - name: CF~Cloud
    type: vless
-   server: 104.18.87.215
+   server: 162.159.128.118
    port: 80
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
@@ -124,7 +124,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: US~CF~Cloud*⁰˙⁶
+ - name: CF~Workers
    type: vless
    server: 141.101.122.184
    port: 80
@@ -141,7 +141,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: UN~CF~Cloud*⁰˙⁷
+ - name: CF~Pages
    type: vless
    server: c.aimetu.cloudns.be
    port: 443
