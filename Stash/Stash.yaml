@@ -73,7 +73,7 @@ proxies:
    ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
    private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   dns: [1.0.0.1,2606:4700:4700::1001]
+   dns: [1.1.1.1,2606:4700:4700::1111]
    mtu: 1280
    reserved: [80,73,10]
    keepalive: 45
@@ -94,7 +94,7 @@ proxies:
    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-   dns: [1.0.0.1,2606:4700:4700::1001]
+   dns: [1.1.1.1,2606:4700:4700::1111]
    mtu: 1280
    reserved: [173,82,247]
    keepalive: 45
