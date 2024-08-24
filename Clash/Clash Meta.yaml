@@ -32,15 +32,17 @@ lan-allowed-ips: # 允许连接的 ip 地址段，仅作用于 allow-lan 为 tru
 lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
   - "192.168.0.3/32"
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
-#  - "clash:88888888"
+#  - "admin:password"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
 #  - "127.0.0.1/8"
 #  - "::1/128"
 
-#interface-name: en0 # 指定 clash 流量出站接口
+#interface-name: en0 # 指定 clash 流量出站接口网卡
 
-tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip选择握手最快的 ip 进行连接
+tcp-concurrent: true  # # TCP 并发连接所有 IP, 将使用最快握手的 TCP
 
+disable-keep-alive: false # 目前在 android 端强制为 true
+keep-alive-idle: 15
 keep-alive-interval: 15 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关 true/false
@@ -53,9 +55,9 @@ experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 li
 
 external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
-#external-controller-unix: mihomo.sock # Unix socket API 监听地址
+#external-controller-unix: mihomo.sock # Unix socket API 监听地址，测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
-secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
+secret: "password" # http(s)-api、api 监听地址外部控制器访问密钥
 
 #external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 #external-ui-name: metacubexd # 自定义外部用户界面名字
@@ -106,7 +108,7 @@ strategy:
 #💡 虚拟网卡 tun 模式配置
 tun:
   enable: false # tun 模式开关 true/false
-  stack: mixed # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
+  stack: system # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
   auto-detect-interface: true # 自动识别出口网卡
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-redir: true # 自动重定向开关 true/false
