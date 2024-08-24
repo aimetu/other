@@ -21,6 +21,7 @@ socks-port: 7899 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
 redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
 tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
+
 routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 
 allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关 true/false
@@ -47,12 +48,15 @@ unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关
 global-client-fingerprint: chrome # 全局客户端 tls 指纹,可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 
 global-ua: Chrome/126.0  # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
+global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan
 
 experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
 
 external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
+#external-controller-unix: mihomo.sock # Unix socket API 监听地址
+#external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 
 #external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
@@ -70,14 +74,15 @@ secret: "88888888" # http(s)-api、api 监听地址外部控制器访问密钥
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
-geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库
+geodata-mode: true # geoip.dat 数据库开关 true/false，false 使用 mmdb 数据库
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
-geox-url: # 自定义geoip.data url
+geo-auto-update: true # 自动更新 GEO
+geo-update-interval: 72 # 更新间隔，单位为小时
+geox-url: # 自定 GEO 下载地址
   geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoIP.dat"
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
-geo-auto-update: true # 是否自动更新 geodata
-geo-update-interval: 24 # 更新间隔，单位：小时
+  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
 
 geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
 
@@ -144,7 +149,9 @@ dns:
   ipv6-timeout: 300 # 内部双栈并发时，向上游查询时的等待时间，默认 100ms (单位：ms)
   prefer-h3: true # doh 支持 http/3 将并发尝试开关 true/false
   listen: 0.0.0.0:53 # 需要劫持的 dns
-  use-hosts: true # 是否查询系统 hosts 配置开关 true/false
+  use-hosts: true # 是否查询配置中的 hosts 开关 true/false
+  use-system-hosts: true # 是否查询系统中的 hosts 开关 true/false
+  respect-rules: true # dns 连接跟随 rules，需配置 proxy-server-nameserver
   search-domains: [local] # 搜索域以获取 a/aaaa 记录
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池  
