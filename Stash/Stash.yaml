@@ -204,7 +204,7 @@ dns:
   fallback:
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.adguard-dns.com/dns-query
+    - quic://dns.adguard-dns.com
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
