@@ -1,4 +1,4 @@
-# 2024.07.15
+# 2024.08.25
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效
 
@@ -204,7 +204,7 @@ dns:
   fallback:
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.quad9.net/dns-query
+    - https://dns.adguard-dns.com/dns-query
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
@@ -212,9 +212,9 @@ dns:
     "openwrt.local": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.quad9.net/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "update.googleapis.com": quic://dns.adguard-dns.com
     
 # 💡 本地域名映射
 hosts:
@@ -223,8 +223,8 @@ hosts:
   "alpha.clash.dev": '::1'
   "doh.pub": 120.53.53.53
   "dns.alidns.com": 223.5.5.5
-  "dns.quad9.net": 9.9.9.9
   "doh.opendns.com": 208.67.222.222
+  "dns.adguard-dns.com": 94.140.14.14
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
