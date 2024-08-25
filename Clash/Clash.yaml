@@ -153,7 +153,7 @@ dns:
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     - "https://dns.alidns.com/dns-query" # doh 服务器查询
     - "https://doh.pub/dns-query"
-    #- "quic://dns.alidns.com" # doq 服务器查询
+    - "quic://dns.alidns.com" # doq 服务器查询（P 核不支持 DOQ 查询）
     #- "tls://223.5.5.5" # dot 服务器查询
     #- "https://120.53.53.53/dns-query#Meta" # doh 指定出口网卡
     #- "https://223.5.5.5/dns-query#🇨🇳 China&h3=true" # doh 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
