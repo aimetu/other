@@ -196,8 +196,7 @@ dns:
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
-    - "https://dns.adguard-dns.com/dns-query"
-    #- "quic://dns.google"
+    - "quic://dns.adguard-dns.com"
     #- "tls://dns.google"
     
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
