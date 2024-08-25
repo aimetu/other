@@ -6,7 +6,7 @@
 # meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
-# 2024.07.15
+# 2024.08.25
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 #💡 通用设置
@@ -190,13 +190,13 @@ dns:
   
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "208.67.222.222"
-    - "tls://9.9.9.9"
+    - "tls://94.140.14.14"
     - "https://1.1.1.1/dns-query"
 
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
-    - "https://dns.quad9.net/dns-query"
+    - "https://dns.adguard-dns.com/dns-query"
     #- "quic://dns.google"
     #- "tls://dns.google"
     
@@ -218,9 +218,9 @@ dns:
     "openwrt.local": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.quad9.net/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "update.googleapis.com": quic://dns.adguard-dns.com
         
 #💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
 hosts:
@@ -229,8 +229,8 @@ hosts:
   "alpha.mihomo.dev": "::1"
   "doh.pub": [1.12.12.12, 120.53.53.53]
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
-  "dns.quad9.net": [9.9.9.9, 149.112.112.112]
   "dns.opendns.com": [208.67.222.222, 208.67.220.220]
+  "dns.adguard-dns.com": [94.140.14.14, 94.140.15.15]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
   "example.com": baidu.com # 只允许配置一个别名
