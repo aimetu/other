@@ -147,8 +147,8 @@ dns:
   default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns
     #- system
     - "223.5.5.5"
-    - "tls://223.6.6.6" # dot 纯 ip 加密
-    - "https://1.12.12.12/dns-query" # doh 纯 ip 加密
+    - "tls://120.53.53.53" # dot 纯 ip 加密
+    - "https://223.6.6.6/dns-query" # doh 纯 ip 加密
     
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     - "https://dns.alidns.com/dns-query" # doh 服务器查询
@@ -160,8 +160,8 @@ dns:
   
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "208.67.222.222"
-    - "tls://94.140.14.14"
-    - "https://1.1.1.1/dns-query"
+    - "tls://1.1.1.1"
+    - "https://94.140.14.14/dns-query"
 
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://dns.opendns.com/dns-query"
