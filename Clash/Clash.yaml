@@ -46,7 +46,7 @@ unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关
 
 global-client-fingerprint: chrome # 全局客户端 tls 指纹，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 
-global-ua: Chrome/126.0 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
+global-ua: Chrome/128.0.6 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 
 experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
