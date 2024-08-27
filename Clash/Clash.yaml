@@ -1198,8 +1198,8 @@ rules:
   - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock # DOMAIN 完整域名匹配
   - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
   - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock # DOMAIN-SUFFIX 域名后缀匹配
-  - DOMAIN-KEYWORD,reddit,🌐 Global
-  - DOMAIN-KEYWORD,snapchat,🌐 Global # DOMAIN-KEYWORD 域名关键词匹配
+  - DOMAIN-KEYWORD,httpdns,⛔ AdBlock
+  - DOMAIN-KEYWORD,httpsdns,⛔ AdBlock # DOMAIN-KEYWORD 域名关键词匹配
   - PROCESS-NAME,olk.exe,🌐 Global
   - PROCESS-NAME,WinStore.App.exe,🌐 Global
   - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
