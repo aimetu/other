@@ -185,7 +185,7 @@ dns:
   default-nameserver:
     - system
     - 223.5.5.5
-    - 2402:4e00::
+    - '2402:4e00::'
     
 # 支持 udp、tcp、dot、doh、doq 协议的 dns 服务，可指定端口，并发响应最快服务
   nameserver:
