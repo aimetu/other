@@ -24,7 +24,7 @@ proxy-providers:
 proxies:
  - name: CF~Warp Client
    type: wireguard
-   # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
+   # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195/204.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
    server: 162.159.192.1
    port: 2408
    ip: 172.16.0.2
