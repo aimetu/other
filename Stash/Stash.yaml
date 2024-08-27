@@ -925,8 +925,8 @@ rules:
 - DOMAIN,mssdk-bu.bytedance.com,AdBlock
 - DOMAIN-SUFFIX,adx.appicad.net,AdBlock
 - DOMAIN-SUFFIX,m1.ad.10010.com,AdBlock
-- DOMAIN-KEYWORD,reddit,Global
-- DOMAIN-KEYWORD,snapchat,Global
+- DOMAIN-KEYWORD,httpdns,AdBlock
+- DOMAIN-KEYWORD,httpsdns,AdBlock
 - RULE-SET,🚥 Direct,China
 #- RULE-SET,⛔ Anti.ad,AdBlock
 - RULE-SET,⛔ Privacy,AdBlock
