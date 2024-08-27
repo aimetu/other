@@ -224,7 +224,7 @@ hosts:
   "doh.pub": 120.53.53.53
   "dns.alidns.com": 223.5.5.5
   "doh.opendns.com": 208.67.222.222
-  "dns.adguard-dns.com": 2a10:50c0::ad1:ff
+  "dns.adguard-dns.com": '2a10:50c0::ad1:ff'
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
