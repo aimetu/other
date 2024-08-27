@@ -325,7 +325,7 @@ listeners:
     rule: rules
     proxy: 🌐 Global
     network: [tcp, udp]
-    target: dns.cloudflare.com
+    target: www.example.org
 
 #💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
@@ -333,7 +333,7 @@ tunnels:
   - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🌐 Global # 一行简约配置
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
-    target: dns.cloudflare.com
+    target: www.example.org
     proxy: 🌐 Global
   
 #💡 本地代理服务器
