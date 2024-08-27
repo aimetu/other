@@ -432,7 +432,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 162.159.195.5  # 优选 IP：https://github.com/Alvin9999/new-pac
+     - server: 162.159.204.1  # 优选 IP：https://github.com/Alvin9999/new-pac
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -481,7 +481,7 @@ proxies:
 
   - name: CF~Pages
     type: vless
-    server: aimeto.pages.dev # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: c.aimetu.cloudns.be # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
