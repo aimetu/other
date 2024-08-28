@@ -601,6 +601,8 @@ proxy-groups:
       - 🇨🇳 Chinese
       - DIRECT
       - REJECT
+      - REJECT-DROP
+      - PASS
 
   - name: ♻️ Auto
     type: url-test
@@ -1001,6 +1003,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
     proxies:
       - REJECT
+      - REJECT-DROP
+      - PASS
       - 🇨🇳 China
       - 🔰 Pick
       - ✅ Node
