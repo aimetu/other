@@ -1046,7 +1046,7 @@ rule-providers:
     path: /rule/AdvertisingLite_Classical.yaml
     interval: 86400
 
-  ⛔ BlockHttpDNS:
+  ⛔ HttpDNS:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
@@ -1298,7 +1298,7 @@ rules:
   - RULE-SET,⛔ Privacy,⛔ AdBlock
   - RULE-SET,⛔ Hijacking,⛔ AdBlock
   - RULE-SET,⛔ AdvertisingLite,⛔ AdBlock
-  - RULE-SET,⛔ BlockHttpDNS,⛔ AdBlock
+  - RULE-SET,⛔ HttpDNS,⛔ AdBlock
   - RULE-SET,🕸️ Speedtest,🕸️ Speedtest
   - RULE-SET,🎵 TikTok,🎵 TikTok
   - RULE-SET,✉️ Telegram,✉️ Telegram
