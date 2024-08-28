@@ -22,7 +22,7 @@ proxy-providers:
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
 proxies:
- - name: CF~Warp Client
+ - name: Cloudflare~Warp Client
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195/204.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
    server: 162.159.192.1
@@ -44,7 +44,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: CF~Warp Zero
+ - name: Cloudflare~Warp Zero
    type: wireguard
    server: 162.159.193.1
    port: 2408
@@ -65,7 +65,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: CF~Warp Team
+ - name: Cloudflare~Warp Team
    type: wireguard
    server: 162.159.195.1
    port: 2408
@@ -86,7 +86,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: CF~Warp Plus
+ - name: Cloudflare~Warp Plus
    type: wireguard
    server: 162.159.204.1
    port: 2408
@@ -107,7 +107,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: CF~Cloud
+ - name: Cloudflare~Cloud
    type: vless
    server: 162.159.128.118
    port: 80
@@ -124,7 +124,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: CF~Workers
+ - name: Cloudflare~Workers
    type: vless
    server: 141.101.122.184
    port: 80
@@ -141,7 +141,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: CF~Pages
+ - name: Cloudflare~Pages
    type: vless
    server: c.aimetu.cloudns.be
    port: 443
@@ -411,7 +411,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - CF~Cloud
+    - Cloudflare~Cloud
     
 # 均衡负载：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: Load Balance
@@ -457,7 +457,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
+  filter: ^(?!.*Cloudflare).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
   
 - name: Taiwan
   type: url-test
@@ -467,7 +467,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
+  filter: ^(?!.*Cloudflare).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
   
 - name: Japan
   type: url-test
@@ -477,7 +477,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
+  filter: ^(?!.*Cloudflare).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
   
 - name: Korea
   type: url-test
@@ -487,7 +487,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
+  filter: ^(?!.*Cloudflare).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
   
 - name: Singapore
   type: url-test
@@ -497,7 +497,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
+  filter: ^(?!.*Cloudflare).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
   
 - name: America
   type: url-test
@@ -507,7 +507,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
+  filter: ^(?!.*Cloudflare).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
     
 - name: Nations
   type: url-test
@@ -517,7 +517,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
+  filter: ^((?!Cloudflare|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
 
 - name: Chinese
   type: url-test
