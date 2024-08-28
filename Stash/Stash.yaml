@@ -784,27 +784,27 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     interval: 86400
     
-  #⛔ Anti.ad:
-    #behavior: domain
-    #url: https://anti-ad.net/clash.yaml
-    #interval: 86400
+  ⛔ Anti.ad:
+    behavior: domain
+    url: https://anti-ad.net/clash.yaml
+    interval: 86400
 
-  ⛔ Privacy:
+  ⛔ Privacy.ad:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
     interval: 86400
     
-  ⛔ Hijacking:
+  ⛔ Hijacking.ad:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     interval: 86400
     
-  ⛔ AdvertisingLite:
+  ⛔ Lite.ad:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
     interval: 86400
 
-  ⛔ HttpDNS:
+  ⛔ HttpDNS.ad:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
     interval: 86400
@@ -928,11 +928,11 @@ rules:
 - DOMAIN-KEYWORD,httpdns,AdBlock
 - DOMAIN-KEYWORD,httpsdns,AdBlock
 - RULE-SET,🚥 Direct,China
-#- RULE-SET,⛔ Anti.ad,AdBlock
-- RULE-SET,⛔ Privacy,AdBlock
-- RULE-SET,⛔ Hijacking,AdBlock
-- RULE-SET,⛔ AdvertisingLite,AdBlock
-- RULE-SET,⛔ HttpDNS,AdBlock
+- RULE-SET,⛔ Anti.ad,AdBlock
+- RULE-SET,⛔ Privacy.ad,AdBlock
+- RULE-SET,⛔ Hijacking.ad,AdBlock
+- RULE-SET,⛔ Lite.ad,AdBlock
+- RULE-SET,⛔ HttpDNS.ad,AdBlock
 - RULE-SET,🕸️ Speedtest,Speedtest
 - RULE-SET,🎵 TikTok,TikTok
 - RULE-SET,✉️ Telegram,Telegram
