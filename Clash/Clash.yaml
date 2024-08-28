@@ -623,14 +623,6 @@ proxy-groups:
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
     use: # use 包含远程代理服务器节点
       - Nodes
-    proxies:
-      - Cloudflare~Warp Client
-      - Cloudflare~Warp Zero
-      - Cloudflare~Warp Team
-      - Cloudflare~Warp Plus
-      - Cloudflare~Cloud
-      - Cloudflare~Workers
-      - Cloudflare~Pages
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
