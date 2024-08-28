@@ -563,7 +563,7 @@ proxy-providers:
 # load-balance：负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理（可选参数：strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理）
 # fallback：故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
 # > 策略组添加可选参数示例：
-# proxies: [HK~CF~Warp*⁰˙¹, ♻️ Auto] 手动添加出站代理或其他策略组
+# proxies: [Cloudflare~Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
 # use: [Subscribe, Nodes] 手动添加代理集合
 # icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
