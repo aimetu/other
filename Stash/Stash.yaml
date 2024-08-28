@@ -374,6 +374,7 @@ proxy-groups:
   hidden: false
 # include-all: true，引用所有的代理和远程代理集  
   include-all: true
+  filter: ^(?!.*Cloudflare).*(?i)
 
 - name: Node
   type: select
