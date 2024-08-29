@@ -88,13 +88,6 @@ ntp:
   server: ntp.aliyun.com # ntp 服务地址，默认 ntp.aliyun.com
   port: 123 # ntp 服务端口，默认 123
   interval: 600 # 同步时间间隔，单位（分），默认同步间隔为 60 分
-  
-#💡 无线网络 ssid 策略  
-strategy:
-  OpenWrt, OpenWrt_5G: # 无线网络名称
-    tun: false # tun模式网络开关
-    mixin: true # 混合模式开关
-    system: false # 系统代理开关
 
 #💡 虚拟网卡 tun 模式配置
 tun:
