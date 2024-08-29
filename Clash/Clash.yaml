@@ -114,14 +114,14 @@ tun:
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - any:53
 
-#💡 域名解析 dns 服务器配置
+#💡 域名解析 dns 服务器配置（开关 true/false ）
 dns:
-  enable: true  # dns 开关 true/false，关闭将使用系统 dns
-  ipv6: true # ipv6 解析开关 true/false；如果为 false，将返回 ipv6 结果为空
+  enable: true  # dns 开关，关闭将使用系统 dns
+  ipv6: true # ipv6 解析开关，如果为 false，将返回 ipv6 结果为空
   ipv6-timeout: 300 # 内部双栈并发时，向上游查询时的等待时间，默认 100ms (单位：ms)
-  prefer-h3: true # doh 支持 http/3 将并发尝试开关 true/false
+  prefer-h3: true # doh 支持 http/3 将并发尝试开关
   listen: 0.0.0.0:53 # 需要劫持的 dns
-  use-hosts: true # 是否查询系统 hosts 配置开关 true/false
+  use-hosts: true # 是否查询系统 hosts 配置
   search-domains: [local] # 搜索域以获取 a/aaaa 记录
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池  
@@ -144,19 +144,19 @@ dns:
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
   
-  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip 可使用加密 dns
+  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip dns，可使用加密 dot/doh
     #- system
     - "223.5.5.5"
-    - "tls://120.53.53.53" # dot 纯 ip 加密
-    - "https://223.6.6.6/dns-query" # doh 纯 ip 加密
+    - "tls://120.53.53.53"
+    - "https://223.6.6.6/dns-query"
     
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
-    - "https://dns.alidns.com/dns-query" # doh 服务器查询
+    - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
-    - "quic://dns.alidns.com" # doq 服务器查询（P 核不支持 DOQ 查询）
-    #- "tls://223.5.5.5" # dot 服务器查询
+    - "quic://dns.alidns.com" #（P 核不支持 DOQ 查询）
+    #- "tls://223.5.5.5"
     #- "https://120.53.53.53/dns-query#Meta" # doh 指定出口网卡
-    #- "https://223.5.5.5/dns-query#🇨🇳 China&h3=true" # doh 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
+    #- "https://223.6.6.6/dns-query#🇨🇳 China&h3=true" # doh 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
   
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "208.67.222.222"
@@ -170,7 +170,7 @@ dns:
     #- "tls://dns.google"
   
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
-    geoip: true # 配置geoip开关 true/false
+    geoip: true # 配置 geoip 开关 true/false
     geoip-code: CN # geoip 匹配区域设定，查询不是cn时使用 fallback 返回结果
     geosite: # 配置强制 fallback，优先于 ip 判断，具体分类自行查看 geosite 库
       - gfw
