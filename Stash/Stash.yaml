@@ -1,6 +1,6 @@
 # 2024.08.25
 # 配置样例：https://stash.wiki
-# 注意：去掉前面的注释符号 "#" 该行生效
+# 注意：去掉前面的注释符号 "#" 该行生效，（开启关闭参数：true/false）
 
 # 💡 通用设置
 # 网络模式：rule 规则、global 代理、direct 直连
@@ -160,7 +160,7 @@ proxies:
     
 # 💡 dns 服务器配置
 dns:
-# 跳过证书验证开关 true/false，解决部分兼容性问题
+# 跳过证书验证，解决部分兼容性问题
   skip-cert-verify: true
 # 以下域名不会被解析为 fake-ip，解析请求将返回它们真实的 IP 地址
   fake-ip-filter:
