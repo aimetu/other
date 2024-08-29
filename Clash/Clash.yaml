@@ -14,7 +14,7 @@ mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script �
 
 log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、error 错误、debug 调试
 
-ipv6: true # ipv6 开关 true/false，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
+ipv6: true # ipv6 支持，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
 
 port: 7898 # 本地 http(s) 代理端口
 socks-port: 7899 # 本地 socks4/4a/5 代理端口
@@ -23,7 +23,7 @@ redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
 tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
 routing-mark: 6666 # 为 Linux 下的出站连接提供默认流量标记
 
-allow-lan: true # 允许局域网内其它设备通过clash访问互联网开关 true/false
+allow-lan: true # 允许局域网内其它设备通过 clash 访问互联网
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
 lan-allowed-ips: # 允许连接的 ip 地址段，仅作用于 allow-lan 为 true, 默认值为 0.0.0.0/0 和 ::/0
   - "0.0.0.0/0"
@@ -42,13 +42,13 @@ tcp-concurrent: true  # 如果域名解析结果对应多个 ip ,并发所有ip�
 
 keep-alive-interval: 15 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 
-unified-delay: true # 更换延迟计算方式,去除握手等额外延迟开关 true/false
+unified-delay: true # 更换延迟计算方式,去除握手等额外延迟
 
 global-client-fingerprint: chrome # 全局客户端 tls 指纹，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 
 global-ua: Chrome/128.0.6 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 
-experimental: # 禁用 quic-go-gso 支持开关 true/false,这可能会导致 linux 上的性能降低
+experimental: # 禁用 quic-go-gso 支持, 这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
 
 external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
@@ -70,7 +70,7 @@ secret: "password" # http(s)-api、api 监听地址外部控制器访问密钥
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
-geodata-mode: true # geoip.dat数据库开关 true/false，false 使用 mmdb 数据库「meta专属」
+geodata-mode: true # geoip.dat 数据库开关，false 使用 mmdb 数据库「meta专属」
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geox-url: # 自定义geoip.data url
   geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoIP.dat"
@@ -91,9 +91,9 @@ ntp:
 
 #💡 虚拟网卡 tun 模式配置
 tun:
-  enable: false # tun 模式开关 true/false
+  enable: false # tun 模式开关
   stack: system # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
-  auto-redir: true # 自动重定向开关 true/false
+  auto-redir: true # 自动重定向开关
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-detect-interface: true # 自动识别出口网卡
   device: Clash # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
@@ -107,7 +107,7 @@ tun:
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - any:53
 
-#💡 域名解析 dns 服务器配置（开关 true/false ）
+#💡 域名解析 dns 服务器配置
 dns:
   enable: true  # dns 开关，关闭将使用系统 dns
   ipv6: true # ipv6 解析开关，如果为 false，将返回 ipv6 结果为空
@@ -163,7 +163,7 @@ dns:
     #- "tls://dns.google"
   
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
-    geoip: true # 配置 geoip 开关 true/false
+    geoip: true # 配置 geoip 开关
     geoip-code: CN # geoip 匹配区域设定，查询不是cn时使用 fallback 返回结果
     geosite: # 配置强制 fallback，优先于 ip 判断，具体分类自行查看 geosite 库
       - gfw
@@ -225,7 +225,7 @@ bypass:
 
 #💡 内置 sniffer 域名嗅探器，通过读取握手包内的域名字段，将 ip 还原成域名，有效解决 mapping 机制的短板
 sniffer:
-  enable: true # 配置 sniffer 开关 true/false
+  enable: true # 配置 sniffer 开关
   parse-pure-ip: true  # 对所有未获取到域名的流量进行强制嗅探
   force-dns-mapping: true # 对 redir-host 类型识别的流量进行强制嗅探
   override-destination: true # 是否使用嗅探结果作为实际访问，默认为 true  
@@ -504,7 +504,7 @@ proxy-providers:
       skip-cert-verify: true # 跳过证书验证
       udp: true # 启用 UDP 支持
     health-check: # 网络健康检查（测试延迟）
-      enable: true # 是否启用，可选 true/false
+      enable: true # 是否启用
       url: http://www.gstatic.com/generate_204 # 网络健康检查 url 地址
       interval: 600 # 健康检查间隔时间，单位为秒
 
