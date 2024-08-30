@@ -1187,7 +1187,7 @@ rules:
   - DOMAIN-KEYWORD,httpsdns,⛔ AdBlock # DOMAIN-KEYWORD 域名关键词匹配
   - PROCESS-NAME,olk.exe,🌐 Global
   - PROCESS-NAME,WinStore.App.exe,🌐 Global
-  - PROCESS-NAME,pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
+  - PROCESS-NAME,Pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
