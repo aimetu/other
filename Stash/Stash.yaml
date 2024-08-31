@@ -202,9 +202,10 @@ dns:
       
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
+    - https://dns.google/dns-query
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-    - quic://dns.adguard-dns.com
+    #- quic://dns.adguard-dns.com
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
@@ -212,8 +213,8 @@ dns:
     "openwrt.local": system
     "myrouter.local": system
     "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
-    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "dl.google.com": https://dns.google/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
     
 # 💡 本地域名映射
@@ -223,8 +224,8 @@ hosts:
   "alpha.clash.dev": '::1'
   "doh.pub": 120.53.53.53
   "dns.alidns.com": 223.5.5.5
+  "dns.google": '8.8.8.8'
   "doh.opendns.com": 208.67.222.222
-  "dns.adguard-dns.com": '2a10:50c0::ad1:ff'
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
