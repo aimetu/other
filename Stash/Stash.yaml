@@ -215,7 +215,7 @@ dns:
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.google/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": quic://dns.adguard-dns.com
+    "update.googleapis.com": https://cloudflare-dns.com/dns-query
     
 # 💡 本地域名映射
 hosts:
@@ -224,8 +224,9 @@ hosts:
   "alpha.clash.dev": '::1'
   "doh.pub": 120.53.53.53
   "dns.alidns.com": 223.5.5.5
-  "dns.google": '8.8.8.8'
+  "dns.google": 8.8.8.8
   "doh.opendns.com": 208.67.222.222
+  "cloudflare-dns.com": 104.16.249.249
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
