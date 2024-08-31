@@ -212,7 +212,7 @@ dns:
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.google/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": quic://dns.adguard-dns.com
+    "update.googleapis.com": https://cloudflare-dns.com/dns-query
         
 #💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
 hosts:
@@ -223,6 +223,7 @@ hosts:
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
   "dns.google": [8.8.8.8, 8.8.4.4]
   "dns.opendns.com": [208.67.222.222, 208.67.220.220]
+  "cloudflare-dns.com": [104.16.248.249, 104.16.249.249]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
   "example.com": baidu.com # 只允许配置一个别名
