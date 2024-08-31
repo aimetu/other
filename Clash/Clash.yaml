@@ -146,7 +146,7 @@ dns:
   nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
-    - "quic://dns.alidns.com" #（P 核不支持 DOQ 查询）
+    #- "quic://dns.alidns.com" #（P 核不支持 DOQ 查询）
     #- "tls://223.5.5.5"
     #- "https://120.53.53.53/dns-query#Meta" # doh 指定出口网卡
     #- "https://223.6.6.6/dns-query#🇨🇳 China&h3=true" # doh 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
@@ -194,6 +194,7 @@ hosts:
   "dns.google": [8.8.8.8, 8.8.4.4]
   "dns.opendns.com": [208.67.222.222, 208.67.220.220]
   "cloudflare-dns.com": [104.16.248.249, 104.16.249.249]
+  "dns.adguard-dns.com": [94.140.14.14, 94.140.15.15]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
   "example.com": baidu.com # 只允许配置一个别名
