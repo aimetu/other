@@ -217,6 +217,8 @@ dns:
     "update.googleapis.com": quic://dns.alidns.com
     "*.apple.com": https://doh.dns.apple.com/dns-query
     "*.icloud.com": https://doh.dns.apple.com/dns-query
+    "*.mzstatic.com": https://doh.dns.apple.com/dns-query
+    "*.cdn-apple.com": https://doh.dns.apple.com/dns-query
     "networking.apple": https://doh.dns.apple.com/dns-query
     
 # 💡 本地域名映射
