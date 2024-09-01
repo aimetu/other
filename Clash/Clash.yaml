@@ -175,7 +175,6 @@ dns:
       - "+.youtube.com"
   
   nameserver-policy: # 使用指定的 dns 服务器解析域名
-    "amplifi.lan": system
     "openwrt.lan": system
     "openwrt.local": system
     "blog.google": 119.29.29.29
