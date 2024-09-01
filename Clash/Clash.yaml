@@ -183,6 +183,8 @@ dns:
     "update.googleapis.com": quic://dns.alidns.com
     "+.apple.com": https://doh.dns.apple.com/dns-query
     "+.icloud.com": https://doh.dns.apple.com/dns-query
+    "+.mzstatic.comm": https://doh.dns.apple.com/dns-query
+    "+.cdn-apple.com": https://doh.dns.apple.com/dns-query
     "networking.apple": https://doh.dns.apple.com/dns-query
         
 #💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
