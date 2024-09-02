@@ -1,0 +1,306 @@
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3000
+  session_ttl: 720h
+users:
+  - name: admin
+    password: $2a$10$fqglV0BwcKsGfLXgD20ihe7IKb64/19ynPAnR0v9dNP0ugeZarbaK
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: zh-cn
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 1745
+  anonymize_client_ip: false
+  ratelimit: 0
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - quic://dns.alidns.com
+    - '[/openwrt.lan/]127.0.0.1'
+    - '[/openwrt.local/]::1'
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - https://223.5.5.5/dns-query
+    - https://1.12.12.12/dns-query
+  fallback_dns:
+    - https://dns.google/dns-query
+    - https://dns.opendns.com/dns-query
+    - https://cloudflare-dns.com/dns-query
+  upstream_mode: fastest_addr
+  fastest_timeout: 1s
+  allowed_clients:
+    - 192.168.188.0/24
+    - fdfc:e7ce:ea8b::/64
+  disallowed_clients:
+    - 10.0.0.0/23
+    - 192.168.0.1/24
+    - 192.168.1.1/24
+    - 192.168.100.1/24
+  blocked_hosts:
+    - example.org
+    - '*.example.org'
+    - '||example.org^'
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 4194304
+  cache_ttl_min: 600
+  cache_ttl_max: 3600
+  cache_optimistic: true
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: true
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: true
+    use_custom: false
+  max_goroutines: 50
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams:
+    - 127.0.0.1:53
+    - '[::1]:53'
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: false
+  use_http3_upstreams: false
+  serve_plain_dns: true
+  hostsfile_enabled: true
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 853
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+  strict_sni_check: false
+querylog:
+  dir_path: ""
+  ignored:
+    - example.org
+  interval: 168h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  dir_path: ""
+  ignored:
+    - example.org
+  interval: 168h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
+    name: 'CHN: anti-AD'
+    id: 1682841146
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylist.txt
+    name: Easylist
+    id: 1633764053
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
+    name: EasyPrivacy
+    id: 1633764057
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+    name: EasyList China
+    id: 1633764054
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
+    name: Adblock Warning Removal List
+    id: 1682901479
+  - enabled: true
+    url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt
+    name: CJX's EasyList Lite
+    id: 1633764055
+  - enabled: true
+    url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+    name: CJX's Annoyance List
+    id: 1633764058
+  - enabled: false
+    url: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adblock.txt
+    name: AdRules AdBlock List
+    id: 1682826726
+  - enabled: true
+    url: https://adaway.org/hosts.txt
+    name: AdAway blocklist
+    id: 1673164122
+  - enabled: true
+    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+    name: ADgk AdBlock Mobile List
+    id: 1633764062
+  - enabled: true
+    url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
+    name: Xinggsf AdBlock List
+    id: 1682916776
+  - enabled: true
+    url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
+    name: Xinggsf mv List
+    id: 1682916777
+  - enabled: false
+    url: https://fanboy.co.nz/fanboy-annoyance.txt
+    name: Fanboy's Annoyances List
+    id: 1682901480
+  - enabled: false
+    url: https://fanboy.co.nz/r/fanboy-ultimate.txt
+    name: Fanboy's Ultimate List
+    id: 1633764061
+  - enabled: false
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
+    name: 'CHN: AdRules DNS List'
+    id: 1682841145
+  - enabled: true
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
+    name: AdGuard DNS filter
+    id: 1673164119    
+  - enabled: false
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt
+    name: 1Hosts (Lite)
+    id: 1673164121
+  - enabled: false
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_34.txt
+    name: HaGeZi's Normal DNS Blocklist
+    id: 1682861430
+  - enabled: false
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt
+    name: Phishing URL Blocklist
+    id: 1673164123
+  - enabled: false
+    url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt
+    name: Dandelion Sprout's Anti-Malware List
+    id: 1673164118
+whitelist_filters:
+  - enabled: true
+    url: https://raw.githubusercontent.com/mphin/AdGuardHomeRules/main/Allowlist.txt
+    name: Allowlist China
+    id: 1713581916
+  - enabled: false
+    url: https://raw.githubusercontent.com/hl2guide/AdGuard-Home-Whitelist/main/whitelist.txt
+    name: Whitelist
+    id: 1713581917
+user_rules:
+  - '||ocsp.int-x3.letsencrypt.org^'
+  - '||ocsp.apple.com^'
+  - '||world-gen.g.aaplimg.com^'
+  - '||mesu.apple.com^'
+  - '||gdmf.apple.com^'
+  - '||xp.apple.com^'
+  - '||ad.cyapi.cn^'
+  - '||m1.ad.10010.com^'
+  - '||ad.21cn.com^'
+  - '||ad.k.21cn.com^'
+  - '||admarket.21cn.com^'
+  - '||adshows.21cn.com^'
+  - '||mssdk-bu.bytedance.com^'
+  - '||boxer.baidu.com^'
+  - '||adx.appicad.net^'
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: Asia/Shanghai
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites:
+    - domain: dns.alidns.com
+      answer: 223.5.5.5
+    - domain: dns.alidns.com
+      answer: 223.6.6.6
+    - domain: doh.pub
+      answer: 1.12.12.12
+    - domain: doh.pub
+      answer: 120.53.53.53
+    - domain: dns.google
+      answer: 8.8.8.8
+    - domain: dns.google
+      answer: 8.8.4.4
+    - domain: dns.opendns.com
+      answer: 208.67.222.222
+    - domain: dns.opendns.com
+      answer: 208.67.220.220
+    - domain: cloudflare-dns.com
+      answer: 104.16.249.249
+    - domain: cloudflare-dns.com
+      answer: 104.16.248.249
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 72
+  blocked_response_ttl: 10
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent: []
+log:
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 28
