@@ -207,13 +207,10 @@ dns:
   nameserver-policy: # 使用指定的 dns 服务器解析域名
     "openwrt.lan": system
     "openwrt.local": system
-    "dnspod.cn": 119.29.29.29
-    "dnspod.com": https://doh.pub/dns-query
-    "aliyun.com": https://dns.alidns.com/dns-query
-    "alicloud.com": quic://dns.alidns.com
-    "*.apple.com": https://doh.dns.apple.com/dns-query
-    "*.icloud.com": https://doh.dns.apple.com/dns-query
-    "*.mzstatic.com": https://doh.dns.apple.com/dns-query
+    "+.dnspod.cn": 119.29.29.29
+    "+.dnspod.com": https://doh.pub/dns-query
+    "+.aliyun.com": https://dns.alidns.com/dns-query
+    "+.alicloud.com": quic://dns.alidns.com
         
 #💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
 hosts:
