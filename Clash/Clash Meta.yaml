@@ -1,9 +1,9 @@
-# clash 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
+# 使用 yaml 格式，大小写敏感，使用缩进表示层级关系，缩进不允许使用 tab, 只允许空格，缩进的空格数不重要，只要相同层级的元素左对齐即可
 # 对象键值对使用冒号结构表示 key: value, 冒号后面要加一个空格，使用缩进表示层级关系，示例：enable: true
 # ipv6 地址应当使用 [] 来框选，示例：[aaaa::a8aa:ff:fe09:57d9]:853 带端口的 ipv6 地址
 # 使用通配符时，应当使用引号 ''或 " " 将内容包裹起来，以免过度匹配
 # meta 配置详解：https://wiki.metacubex.one
-# meta 配置示例：https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+# meta 配置示例：https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml
 # 第三方 web 管理页面：http://clash.razord.top/ 、http://yacd.haishan.me/、https://clash.metacubex.one/、https://yacd.metacubex.one/、https://d.metacubex.one/、https://metacubex.github.io/metacubexd
 
 # 2024.09.01
@@ -26,16 +26,16 @@ routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 
 allow-lan: true # 允许局域网内其它设备通过 clash 访问互联网
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
-lan-allowed-ips: # 允许连接的 ip 地址段，仅作用于 allow-lan 为 true, 默认值为 0.0.0.0/0 和 ::/0
-  - "0.0.0.0/0"
-  - "::/0"
-lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
-  - "192.168.0.3/32"
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
 #  - "admin:password"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
 #  - "127.0.0.1/8"
 #  - "::1/128"
+lan-allowed-ips: # 允许连接的 ip 地址段，仅作用于 allow-lan 为 true, 默认值为 0.0.0.0/0 和 ::/0
+  - "0.0.0.0/0"
+  - "::/0"
+lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
+  - "192.168.0.3/32"
 
 #interface-name: en0 # 指定 clash 流量出站接口网卡
 
@@ -43,7 +43,7 @@ tcp-concurrent: true  # # TCP 并发连接所有 IP, 将使用最快握手的 TC
 
 disable-keep-alive: false # 目前在 android 端强制为 true
 keep-alive-idle: 15
-keep-alive-interval: 15 # 控制 clash 发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
+keep-alive-interval: 15 # 控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟
 
@@ -83,10 +83,10 @@ geox-url: # 自定 GEO 下载地址
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
   asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-
+  
 geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
 
-profile:  # profile 为扩展配置，但在 Clash.meta, 仅作为缓存项使用(文件位置 ./cache.db)
+profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
   store-fake-ip: true # 储存 fakeip 映射表，域名再次发生连接时，使用原有映射地址
 
