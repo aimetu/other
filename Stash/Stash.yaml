@@ -1,4 +1,4 @@
-# 2024.08.25
+# 2024.09.01
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效，（开启关闭参数：true/false）
 
@@ -211,14 +211,11 @@ dns:
   nameserver-policy:
     "openwrt.lan": system
     "openwrt.local": system
-    "dnspod.cn": 119.29.29.29
-    "dnspod.com": https://doh.pub/dns-query
-    "aliyun.com": https://dns.alidns.com/dns-query
-    "alicloud.com": quic://dns.alidns.com
-    "*.apple.com": https://doh.dns.apple.com/dns-query
-    "*.icloud.com": https://doh.dns.apple.com/dns-query
-    "*.mzstatic.com": https://doh.dns.apple.com/dns-query
-    
+    "*.dnspod.cn": 119.29.29.29
+    "*.dnspod.com": https://doh.pub/dns-query
+    "*.aliyun.com": https://dns.alidns.com/dns-query
+    "*.alicloud.com": quic://dns.alidns.com
+
 # 💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
