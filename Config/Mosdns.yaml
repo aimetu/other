@@ -106,10 +106,10 @@ plugins:
   - tag: lazy_cache
     type: cache
     args:
-      size: 8192
+      size: 10240
       lazy_cache_ttl: 86400
       dump_file: /etc/mosdns/cache.dump
-      dump_interval: 7200
+      dump_interval: 3600
 
   # 转发上游 udp
   - tag: forward_xinfeng_udp
