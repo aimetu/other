@@ -2,7 +2,7 @@
 # 日志
 log:
   level: info
-  file: "${configMosdnsPath}/mosdns.log"
+  file: "/var/log/mosdns.log"
   
 # api 入口设置
 api:
@@ -52,7 +52,6 @@ plugins:
     args:
       concurrent: 2
       upstreams:
-        - addr: "${chinaDNSServerIPInput}" # 运营商 DNS，自行修改
         - addr: "223.5.5.5"
         - addr: "119.29.29.29"
 
