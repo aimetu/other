@@ -23,7 +23,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - h3://dns.alidns.com/dns-query
+    - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     - quic://dns.alidns.com
     - '[/openwrt.lan/]127.0.0.1'
