@@ -86,7 +86,7 @@ plugins:
     type: domain_set
     args:
       files:
-        - "/var/disable-ads.txt"
+        - "/etc/mosdns/rule/disable-ads.txt"
 
   # ptr 黑名单 加入的域名将阻止 ptr 请求
   - tag: local_ptr
@@ -108,7 +108,7 @@ plugins:
     args:
       size: 8192
       lazy_cache_ttl: 86400
-      dump_file: /usr/share/mosdns/cache.dump
+      dump_file: /etc/mosdns/cache.dump
       dump_interval: 7200
 
   # 转发上游 udp
