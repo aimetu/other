@@ -1215,6 +1215,8 @@ sub-rules:
 # IP-SUFFIX：匹配 IP 后缀范围
 # IP-ASN：匹配 IP 所属 ASN
 # no-resolve：跳过域名去进行 dns 解析，当请求为域名匹配到 geoip 或 ip-cidr 规则时，clash 将请求 dns 查询来检查域名的 ip 是否匹配此条规则
+# SRC-GEOIP：匹配来源 IP 所属国家代码
+# SRC-IP-ASN：匹配来源 IP 所属 ASN
 # SRC-IP-CIDR：来源 ipv4 的 ip 范围规则，匹配请求的客户端 ip 地址范围
 # SRC-IP-SUFFIX：匹配来源 IP 后缀范围
 # DST-PORT：从目标端口规则，匹配请求的目标端口
@@ -1258,7 +1260,9 @@ rules:
   - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
   - IP-CIDR6,2620:0:2d0:200::7/32,🇨🇳 China,no-resolve
   - IP-SUFFIX,114.114.114.114/32,🇨🇳 China,no-resolve
-  #- IP-ASN,15169,📟 Google,no-resolve
+  - IP-ASN,15169,📟 Google
+  - SRC-GEOIP,cn,🇨🇳 China
+  - SRC-IP-ASN,62041,✉️ Telegram
   - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
   - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
   - DST-PORT,1400,✉️ Telegram
