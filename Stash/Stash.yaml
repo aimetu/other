@@ -785,7 +785,7 @@ rule-providers:
     
   ⛔ Anti.ad:
     behavior: domain
-    url: https://anti-ad.net/clash.yaml
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
     interval: 86400
 
   ⛔ Privacy.ad:
