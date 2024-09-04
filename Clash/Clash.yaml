@@ -990,7 +990,7 @@ rule-providers:
   #⛔ Anti.ad:
     #type: http
     #behavior: domain
-    #url: https://anti-ad.net/clash.yaml
+    #url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
     #path: /rule/anti-ad.yaml
     #interval: 86400
 
