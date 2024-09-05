@@ -1007,12 +1007,12 @@ rule-providers:
     path: /rule/Direct.yaml
     interval: 86400
 
-  #⛔ Anti.ad:
-    #type: http
-    #behavior: domain
-    #url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    #path: /rule/anti-ad.yaml
-    #interval: 86400
+  ⛔ Anti.ad:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
+    path: /rule/anti-ad.yaml
+    interval: 86400
 
   ⛔ Privacy.ad:
     type: http
@@ -1225,7 +1225,7 @@ sub-rules:
 # OR：逻辑规则，规则内的条件只需满足一项即可
 # NOT：逻辑规则，必须为规则内不包含的条件
 # IN-TYPE：匹配流量入站的类型，支持的类型（HTTP/SOCKS/TUN/TPROXY/REDIR/INNER）
-# IN-USER：匹配入站用户名,目前仅vmess入站支持配置用户名
+# IN-USER：匹配入站用户名,目前仅 vmess 入站支持配置用户名
 # IN-NAME：匹配入站名称
 # IN-PORT：匹配入站端口
 # NETWORK：匹配入站流量的类型，匹配入站流量的类型 tcp / udp
@@ -1258,8 +1258,8 @@ rules:
   - IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve
   - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
   - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
-  - IP-CIDR6,2620:0:2d0:200::7/32,🇨🇳 China,no-resolve
-  - IP-SUFFIX,114.114.114.114/32,🇨🇳 China,no-resolve
+  - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
+  - IP-SUFFIX,114.114.112.0/21,🇨🇳 China,no-resolve
   - IP-ASN,15169,📟 Google
   - SRC-GEOIP,cn,🇨🇳 China
   - SRC-IP-ASN,13335,🌐 Global
@@ -1270,9 +1270,9 @@ rules:
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
   #- DST-PORT,114/233/514-1919,🇨🇳 China # 示例：匹配 114 和 233 以及 514 到 1919
   #- SRC-PORT,7777,🇨🇳 China
-  #- IN-NAME,ss,🌐 Global
+  #- IN-NAME,name,🌐 Global
   #- IN-USER,vmess,🌐 Global
-  #- IN-TYPE,INNER,🌐 Global
+  #- IN-TYPE,SOCKS,🌐 Global
   #- IN-PORT,7890,🇨🇳 China
   #- NETWORK,tcp,🇨🇳 China
   #- UID,1001,🇨🇳 China
@@ -1287,7 +1287,7 @@ rules:
   #- NOT,((GEOIP,CN)),🌐 Global # 示例：cn 以外地区请求走 🌐 Global 节点/策略组
   #- NOT,((DOMAIN,baidu.com)),🌐 Global # 示例：baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
-  #- RULE-SET,⛔ Anti.ad,⛔ AdBlock
+  - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy.ad,⛔ AdBlock
   - RULE-SET,⛔ Hijacking.ad,⛔ AdBlock
   - RULE-SET,⛔ Lite.ad,⛔ AdBlock
