@@ -596,7 +596,7 @@
         "tag": "geosite-facebook",
         "type": "remote",
         "format": "binary",
-        "url": https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
         "download_detour": "Proxy"
       },
       {
