@@ -22,7 +22,7 @@ proxy-providers:
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
 proxies:
- - name: Cloudflare~Warp Client
+ - name: ☁️ Cloudflare~Warp Client
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195/204.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
    server: 162.159.192.1
@@ -44,7 +44,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: Cloudflare~Warp Zero
+ - name: ☁️ Cloudflare~Warp Zero
    type: wireguard
    server: 162.159.193.1
    port: 2408
@@ -65,7 +65,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: Cloudflare~Warp Team
+ - name: ☁️ Cloudflare~Warp Team
    type: wireguard
    server: 162.159.195.1
    port: 2408
@@ -86,7 +86,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: Cloudflare~Warp Plus
+ - name: ☁️ Cloudflare~Warp Plus
    type: wireguard
    server: 162.159.204.1
    port: 2408
@@ -107,7 +107,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: Cloudflare~Cloud
+ - name: ☁️ Cloudflare~Cloud
    type: vless
    server: 162.159.128.118
    port: 80
@@ -124,7 +124,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: Cloudflare~Workers
+ - name: ☁️ Cloudflare~Workers
    type: vless
    server: 141.101.122.184
    port: 80
@@ -141,7 +141,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: Cloudflare~Pages
+ - name: ☁️ Cloudflare~Pages
    type: vless
    server: c.aimetu.cloudns.be
    port: 443
@@ -410,7 +410,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - 🇭🇰 HongKong
-    - Cloudflare~Cloud
+    - ☁️ Cloudflare~Cloud
     
 # 均衡负载：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: ⚖️ Load Balance 
