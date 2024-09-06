@@ -576,7 +576,7 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - 🪆 Warp
+      - ☁️ Warp
       - 🚦 Proxy Chain
       - ⚖️ Load Balance
       - ⚠️ Fallback
@@ -618,7 +618,7 @@ proxy-groups:
     interval: 600
     include-all: true
 
-  - name: 🪆 Warp
+  - name: ☁️ Warp
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     include-all-proxies: true
