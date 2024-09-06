@@ -30,12 +30,23 @@ dns-server =
 #💡分流规则
 [Rule]
 # > 通用分流
-DOMAIN,adsmind.gdtimg.com,REJECT
+DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, ad.cyapi.cn, REJECT
+DOMAIN, ad.21cn.com, REJECT
+DOMAIN, ad.k.21cn.com, REJECT
+DOMAIN, admarket.21cn.com, REJECT
+DOMAIN, adshows.21cn.com, REJECT
+DOMAIN, tg.feidee.com, REJECT
+DOMAIN, mssdk-bu.bytedance.com, REJECT
+
+# 域名后缀匹配
+DOMAIN-SUFFIX, adx.appicad.net, REJECT
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
 
 # > 知乎广告
-DOMAIN,118.89.204.198,REJECT
-IP-CIDR,118.89.204.198/32,REJECT,no-resolve
-IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
+DOMAIN, 118.89.204.198, REJECT
+IP-CIDR, 118.89.204.198/32, REJECT, no-resolve
+IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve
 
 #💡复写
 [Rewrite]
