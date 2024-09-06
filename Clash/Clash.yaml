@@ -589,7 +589,7 @@ proxy-groups:
     proxies: # 该策略组包含的策略组或代理
       - ♻️ Auto
       - ✅ Node
-      - 🪆 Warp
+      - ☁️ Warp
       - 🚦 Proxy Chain
       - ⚖️ Load Balance
       - ⚠️ Fallback
@@ -627,7 +627,7 @@ proxy-groups:
       - ☁️ Cloudflare~Workers
       - ☁️ Cloudflare~Pages
       
-  - name: 🪆 Warp
+  - name: ☁️ Warp
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 600
