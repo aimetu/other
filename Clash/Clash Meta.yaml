@@ -375,7 +375,7 @@ proxies:
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
+    #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
   - name: ☁️ Cloudflare~Warp Zero
     type: wireguard
@@ -394,7 +394,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.1.1.1,2606:4700:4700::1111]
-    dialer-proxy: 🇹🇼 Taiwan
+    #dialer-proxy: 🇹🇼 Taiwan
 
   - name: ☁️ Cloudflare~Warp Team
     type: wireguard
@@ -413,7 +413,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.1.1.1,2606:4700:4700::1111]
-    dialer-proxy: 🇯🇵 Japan
+    #dialer-proxy: 🇯🇵 Japan
 
   - name: ☁️ Cloudflare~Warp Plus
     type: wireguard
@@ -432,7 +432,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.1.1.1,2606:4700:4700::1111]
-    dialer-proxy: 🇰🇷 Korea
+    #dialer-proxy: 🇰🇷 Korea
 
   - name: ☁️ Cloudflare~Cloud
     type: vless
