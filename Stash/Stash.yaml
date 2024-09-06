@@ -347,7 +347,7 @@ proxy-groups:
   - ♻️ Auto
   - ✅ Node
   - 🚥 Wireless
-  - 🛞 Proxy Chain
+  - 🪆 Proxy Chain
   - ⚖️ Load Balance 
   - ⚠️ Fallback
   - 🇭🇰 HongKong
@@ -397,7 +397,7 @@ proxy-groups:
     OpenWrt_5G: DIRECT
 
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: 🛞 Proxy Chain
+- name: 🪆 Proxy Chain
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
