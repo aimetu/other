@@ -1235,17 +1235,19 @@ sub-rules:
 # GEOSITE：域名集合，匹配集合内的域名 参考：https://github.com/v2fly/domain-list-community/tree/master/data
 # MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
 rules:
-  - DOMAIN,ad.cyapi.cn,⛔ AdBlock
-  - DOMAIN,ad.21cn.com,⛔ AdBlock
-  - DOMAIN,ad.k.21cn.com,⛔ AdBlock
-  - DOMAIN,admarket.21cn.com,⛔ AdBlock
-  - DOMAIN,adshows.21cn.com,⛔ AdBlock
-  - DOMAIN,tg.feidee.com, ⛔ AdBlock
-  - DOMAIN,mssdk-bu.bytedance.com,⛔ AdBlock
-  - DOMAIN-SUFFIX,adx.appicad.net,⛔ AdBlock
-  - DOMAIN-SUFFIX,m1.ad.10010.com,⛔ AdBlock
+  - DOMAIN,www.google-analytics.com,⛔ AdBlock
+  - DOMAIN,www.googletagmanager.com,⛔ AdBlock
+  - DOMAIN,www.googleadservices.com,⛔ AdBlock
+  - DOMAIN,www.googletagservices.com,⛔ AdBlock
+  - DOMAIN,safebrowsing.googleapis.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,ads.google.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,adservice.google.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,mobileads.google.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,googlesyndication.com,⛔ AdBlock
+  - DOMAIN-SUFFIX,googlecommerce.com.com,⛔ AdBlock
   - DOMAIN-KEYWORD,httpdns,⛔ AdBlock
   - DOMAIN-KEYWORD,httpsdns,⛔ AdBlock
+  - DOMAIN-KEYWORD,safebrowsing,⛔ AdBlock
   - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
   - PROCESS-NAME,olk.exe,🌐 Global
   - PROCESS-NAME,WinStore.App.exe,🌐 Global
