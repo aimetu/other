@@ -577,7 +577,7 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - 🪆 Warp
-      - 🛞 Proxy Chain
+      - 🚦 Proxy Chain
       - ⚖️ Load Balance
       - ⚠️ Fallback
       - 🇭🇰 HongKong
@@ -628,7 +628,7 @@ proxy-groups:
     tolerance: 0
     lazy: true
 
-  - name: 🛞 Proxy Chain
+  - name: 🚦 Proxy Chain
     type: relay
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
     url: http://www.gstatic.com/generate_204
