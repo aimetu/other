@@ -346,7 +346,7 @@ proxy-groups:
   proxies:
   - ♻️ Auto
   - ✅ Node
-  - 🚥 Wireless
+  - 🚦 Wireless
   - 🪆 Proxy Chain
   - ⚖️ Load Balance 
   - ⚠️ Fallback
@@ -381,7 +381,7 @@ proxy-groups:
   hidden: false
   include-all: true
 
-- name: 🚥 Wireless
+- name: 🚦 Wireless
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
   lazy: true
@@ -755,7 +755,7 @@ proxy-groups:
   - DIRECT
   - 🔰 Pick
   - ✅ Node
-  - 🚥 Wireless
+  - 🚦 Wireless
   - 🇨🇳 Chinese
 
 - name: 🐟 Final
