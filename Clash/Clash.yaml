@@ -1201,9 +1201,9 @@ rules:
   - DOMAIN-KEYWORD,adservice,⛔ AdBlock
   - DOMAIN-KEYWORD,adsserving,⛔ AdBlock
   - DOMAIN-KEYWORD,adsrvmedia,⛔ AdBlock
-  - PROCESS-NAME,olk.exe,🌐 Global
-  - PROCESS-NAME,WinStore.App.exe,🌐 Global
-  - PROCESS-NAME,Pinterest.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
+  - PROCESS-NAME,Notion.exe,🌐 Global
+  - PROCESS-NAME,GitHub.exe,🌐 Global
+  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
