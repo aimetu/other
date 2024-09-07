@@ -1289,9 +1289,9 @@ rules:
   - DOMAIN-KEYWORD,adsserving,⛔ AdBlock
   - DOMAIN-KEYWORD,adsrvmedia,⛔ AdBlock
   - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
-  - PROCESS-NAME,olk.exe,🌐 Global
-  - PROCESS-NAME,WinStore.App.exe,🌐 Global
-  - PROCESS-NAME,Pinterest.exe,🌐 Global
+  - PROCESS-NAME,Notion.exe,🌐 Global
+  - PROCESS-NAME,GitHub.exe,🌐 Global
+  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
