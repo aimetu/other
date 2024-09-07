@@ -147,7 +147,8 @@ dns:
   respect-rules: true # dns 连接跟随 rules，需配置 proxy-server-nameserver
   search-domains: [local] # 搜索域以获取 a/aaaa 记录
   enhanced-mode: fake-ip # dns 增强模式  
-  fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池  
+  fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
+  fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
   fake-ip-filter: # fake-ip 过滤，列表中的域名返回真实 ip
     - "*.lan"
     - "*.local"
@@ -495,8 +496,9 @@ proxy-providers:
     path: /proxy/Subscribe.yaml # 存储路径
     url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
-    #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
-    #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
+    #proxy: DIRECT  # 经过指定代理进行下载/更新
+    #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
+    #exclude-filter: "港|台|日|韩|新|狮|美" # 示例：排除满足关键词或正则表达式的节点
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
     override: # 示例：覆写节点内容
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
@@ -509,6 +511,14 @@ proxy-providers:
       #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
       skip-cert-verify: true # 示例：跳过证书验证
       udp: true # 示例：启用 udp 支持
+    header: # 自定义 http 请求头
+      User-Agent:
+      - "Clash/v1.18.0"
+      - "mihomo/1.18.3"
+      # Accept:
+      # - 'application/vnd.github.v3.raw'
+      # Authorization:
+      # - 'token 1231231'
     health-check: # 示例：网络健康检查（测试延迟）
       enable: true # 示例：是否启用
       url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
@@ -521,29 +531,38 @@ proxy-providers:
   Nodes: 
     type: file # 本地代理服务器
     path: /proxy/Nodes.yaml
-    #url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    #url: https://sub.store/download/collection/node
     interval: 86400
-    #filter: (?i)港|台|日|韩|新|狮|美 # 示例：筛选满足关键词或正则表达式的节点
-    #exclude-filter: 港|台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
+    #proxy: DIRECT
+    #filter: "(?i)港|台|日|韩|新|狮|美"
+    #exclude-filter: "港|台|日|韩|新|狮|美"
+    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     override: 
       #down: "5000 Mbps"
       #up: "1000 Mbps"
       #dialer-proxy: direct
-      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
-      routing-mark: 89898 # 发起连接时附加的路由标记
-      ip-version: dual # 设置节点使用 IP 版本，可选：dual/ipv4/ipv6/ipv4-prefer/ipv6-prefer
-      #additional-prefix: "Subscribe~" # 为节点名称添加固定前缀
-      additional-suffix: "~Nodes" # 为节点名称添加固定后缀
+      #interface-name: WLAN
+      routing-mark: 89898
+      ip-version: dual
+      #additional-prefix: "Subscribe~"
+      additional-suffix: "~Nodes"
       skip-cert-verify: true
       udp: true
+    header: 
+      User-Agent:
+      - "Clash/v1.18.0"
+      - "mihomo/1.18.3"
+      # Accept:
+      # - 'application/vnd.github.v3.raw'
+      # Authorization:
+      # - 'token 1231231'      
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
       lazy: true
       timeout: 5000
-      expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
+      expected-status: "*"
       
 #💡 策略组
 # select：手动选择策略组
