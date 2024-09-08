@@ -916,8 +916,6 @@ rule-providers:
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
 - DOMAIN,openwrt.lan,🇨🇳 China
-- DOMAIN,openwrt.local,🇨🇳 China
-- DOMAIN-SUFFIX,lan,🇨🇳 China
 - DOMAIN-SUFFIX,local,🇨🇳 China
 - DOMAIN-KEYWORD,localhost,🇨🇳 China
 - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
