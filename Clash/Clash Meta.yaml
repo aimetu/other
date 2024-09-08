@@ -1259,8 +1259,6 @@ sub-rules:
 # MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
 rules:
   - DOMAIN,openwrt.lan,🇨🇳 China
-  - DOMAIN,openwrt.local,🇨🇳 China
-  - DOMAIN-SUFFIX,lan,🇨🇳 China
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
   - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
