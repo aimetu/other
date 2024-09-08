@@ -1177,7 +1177,6 @@ rules:
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
   - PROCESS-NAME,Notion.exe,🌐 Global
-  - PROCESS-NAME,GitHub.exe,🌐 Global
   - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
@@ -1239,6 +1238,5 @@ rules:
   - RULE-SET,🇨🇳 China.IPS,🇨🇳 China
   - RULE-SET,🇨🇳 China.BGP,🇨🇳 China
   - GEOIP,CN,🇨🇳 China # GEOIP 根据 geoip 地址国家/地区
-  - GEOIP,lan,🇨🇳 China,no-resolve # no-resolve 也可以添加到 geoip
   - GEOSITE,cn,🇨🇳 China # GEOSITE 域名集合,匹配集合内的域名
   - MATCH,🐟 Final # MATCH 不在规则中的请求
