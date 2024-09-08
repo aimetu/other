@@ -211,10 +211,12 @@ dns:
   nameserver-policy:
     "openwrt.lan": system
     "openwrt.local": system
-    "*.dnspod.cn": 119.29.29.29
-    "*.dnspod.com": https://doh.pub/dns-query
-    "*.aliyun.com": https://dns.alidns.com/dns-query
-    "*.alicloud.com": quic://dns.alidns.com
+    "blog.google": 208.67.222.222
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
+    "update.googleapis.com": quic://dns.alidns.com
+    "+.icloud.com": https://doh.dns.apple.com/dns-query
+    "+.icloud.com.cn": https://doh.dns.apple.com/dns-query
 
 # 💡 本地域名映射
 hosts:
@@ -915,36 +917,21 @@ rule-providers:
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-- DOMAIN,xp.apple.com,⛔ AdBlock
-- DOMAIN,gg.apple.com,⛔ AdBlock
-- DOMAIN,gs.apple.com,⛔ AdBlock
-- DOMAIN,ig.apple.com,⛔ AdBlock
-- DOMAIN,appldnld.apple.com,⛔ AdBlock
-- DOMAIN,ns.itunes.apple.com,⛔ AdBlock
-- DOMAIN,osrecovery.apple.com,⛔ AdBlock
-- DOMAIN,swdownload.apple.com,⛔ AdBlock
-- DOMAIN,updates.cdn-apple.com,⛔ AdBlock
-- DOMAIN,configuration.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,iad-apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,advp.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,mesu.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,gdmf.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,ocsp.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,iadsdk.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,appldnld.apple.com,⛔ AdBlock
-- DOMAIN-SUFFIX,ocsp.g.aaplimg.com,⛔ AdBlock
-- DOMAIN-SUFFIX,mesu.g.aaplimg.com,⛔ AdBlock
-- DOMAIN-SUFFIX,appldnld.g.aaplimg.com,⛔ AdBlock
-- DOMAIN-KEYWORD,adsdk,⛔ AdBlock
-- DOMAIN-KEYWORD,adsame,⛔ AdBlock
-- DOMAIN-KEYWORD,adwords,⛔ AdBlock
-- DOMAIN-KEYWORD,adnewnc,⛔ AdBlock
-- DOMAIN-KEYWORD,adspace,⛔ AdBlock
-- DOMAIN-KEYWORD,adsensor,⛔ AdBlock
-- DOMAIN-KEYWORD,adserver,⛔ AdBlock
-- DOMAIN-KEYWORD,adservice,⛔ AdBlock
-- DOMAIN-KEYWORD,adsserving,⛔ AdBlock
-- DOMAIN-KEYWORD,adsrvmedia,⛔ AdBlock
+- DOMAIN,openwrt.lan,🇨🇳 China
+- DOMAIN,openwrt.local,🇨🇳 China
+- DOMAIN-SUFFIX,lan,🇨🇳 China
+- DOMAIN-SUFFIX,local,🇨🇳 China
+- DOMAIN-KEYWORD,localhost,🇨🇳 China
+- IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
+- IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
+- IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
+- IP-CIDR,172.16.0.0/12,🇨🇳 China,no-resolve
+- IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve
+- IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
+- IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
+- IP-CIDR,183.240.197.130/32,🇨🇳 China,no-resolve
+- IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
+- IP-ASN,15169,📟 Google,no-resolve
 - RULE-SET,🚥 Direct,🇨🇳 China
 - RULE-SET,⛔ Anti.ad,⛔ AdBlock
 - RULE-SET,⛔ Privacy.ad,⛔ AdBlock
