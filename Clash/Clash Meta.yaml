@@ -1277,9 +1277,9 @@ rules:
   - IP-CIDR,183.240.197.130/32,🇨🇳 China,no-resolve
   - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
   - IP-SUFFIX,114.114.112.0/21,🇨🇳 China,no-resolve
-  - IP-ASN,15169,📟 Google,no-resolve
+  - IP-ASN,13335,🌐 Global,no-resolve
   - SRC-GEOIP,cn,🇨🇳 China
-  - SRC-IP-ASN,13335,🌐 Global,no-resolve
+  - SRC-IP-ASN,133877,🌐 Global,no-resolve
   - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
   - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
   - DST-PORT,1400,✉️ Telegram
