@@ -929,7 +929,7 @@ rules:
 - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
 - IP-CIDR,183.240.197.130/32,🇨🇳 China,no-resolve
 - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
-- IP-ASN,15169,📟 Google,no-resolve
+- IP-ASN,13335,🌐 Global,no-resolve
 - RULE-SET,🚥 Direct,🇨🇳 China
 - RULE-SET,⛔ Anti.ad,⛔ AdBlock
 - RULE-SET,⛔ Privacy.ad,⛔ AdBlock
