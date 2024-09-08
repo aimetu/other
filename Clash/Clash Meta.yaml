@@ -1265,7 +1265,6 @@ rules:
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
   - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
   - PROCESS-NAME,Notion.exe,🌐 Global
-  - PROCESS-NAME,GitHub.exe,🌐 Global
   - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
@@ -1335,6 +1334,5 @@ rules:
   - SUB-RULE,(NETWORK,TCP),local # 示例：括号内可以使用任意规则
   - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则
   - GEOIP,CN,🇨🇳 China
-  - GEOIP,lan,🇨🇳 China,no-resolve
   - GEOSITE,cn,🇨🇳 China
   - MATCH,🐟 Final
