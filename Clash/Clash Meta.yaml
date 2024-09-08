@@ -1303,8 +1303,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
-  - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,stun)),⛔ AdBlock # 示例：域名关键词为 pcdn 或 stun 的请求
-  - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock
+  - OR,((DOMAIN-KEYWORD,PCDN),(DOMAIN-KEYWORD,STUN)),⛔ AdBlock # 示例：域名关键词为 pcdn 或 stun 的请求
+  - OR,((DOMAIN-KEYWORD,HTTPDNS),(DOMAIN-KEYWORD,HTTPSDNS)),⛔ AdBlock
   #- NOT,((GEOIP,CN)),🌐 Global # 示例：cn 以外地区请求走 🌐 Global 节点/策略组
   #- NOT,((DOMAIN,baidu.com)),🌐 Global # 示例：baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
