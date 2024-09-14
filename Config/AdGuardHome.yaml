@@ -147,15 +147,15 @@ filters:
     url: https://adaway.org/hosts.txt
     name: AdAway blocklist
     id: 1673164122
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
     name: ADgk AdBlock Mobile List
     id: 1633764062
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
     name: Xinggsf AdBlock List
     id: 1682916776
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
     name: Xinggsf mv List
     id: 1682916777
