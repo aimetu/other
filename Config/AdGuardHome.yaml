@@ -36,7 +36,7 @@ dns:
     - https://dns.google/dns-query
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-  upstream_mode: fastest_addr
+  upstream_mode: parallel
   fastest_timeout: 1s
   allowed_clients:
     - 192.168.188.0/24
