@@ -987,12 +987,19 @@ rule-providers:
     path: /rule/Direct.yaml
     interval: 86400
 
-  #⛔ Anti.ad:
-    #type: http
-    #behavior: domain
-    #url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    #path: /rule/anti-ad.yaml
-    #interval: 86400
+  🚥 Lan:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    path: /rule/Lan.yaml
+    interval: 86400
+
+  ⛔ Anti.ad:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
+    path: /rule/anti-ad.yaml
+    interval: 86400
 
   ⛔ Privacy.ad:
     type: http
@@ -1020,6 +1027,13 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
     path: /rule/BlockHttpDNS.yaml
+    interval: 86400
+
+  ⛔ Stun.ad:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
+    path: /rule/STUN.yaml
     interval: 86400
 
   🕸️ Speedtest:
@@ -1209,11 +1223,13 @@ rules:
   #- NOT,((GEOIP,CN)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 CN 以外地区请求走 🌐 Global 节点/策略组
   #- NOT,((DOMAIN,baidu.com)),🌐 Global # NOT 必须为规则内不包含的条件，示例为 baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
-  #- RULE-SET,⛔ Anti.ad,⛔ AdBlock
+  - RULE-SET,🚥 Lan,🇨🇳 China
+  - RULE-SET,⛔ Anti.ad,⛔ AdBlock
   - RULE-SET,⛔ Privacy.ad,⛔ AdBlock
   - RULE-SET,⛔ Hijacking.ad,⛔ AdBlock
   - RULE-SET,⛔ Lite.ad,⛔ AdBlock
   - RULE-SET,⛔ HttpDNS.ad,⛔ AdBlock
+  - RULE-SET,⛔ Stun.ad,⛔ AdBlock
   - RULE-SET,🕸️ Speedtest,🕸️ Speedtest
   - RULE-SET,🎵 TikTok,🎵 TikTok
   - RULE-SET,✉️ Telegram,✉️ Telegram
