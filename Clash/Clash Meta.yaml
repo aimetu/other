@@ -9,6 +9,18 @@
 # 2024.09.01
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
+# other 设置补充说明
+# 自定义 geoip & ipasn 数据库
+# https://github.com/Hackl0us/GeoIP2-CN
+# https://github.com/Loyalsoldier/geoip
+
+# 网络连通性检查使用的 url
+# http://www.google.com/generate_204
+# http://www.gstatic.com/generate_204
+# http://www.qualcomm.cn/generate_204
+# http://cp.cloudflare.com/generate_204
+# http://captive.apple.com/generate_204
+
 #💡 通用设置
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
 
