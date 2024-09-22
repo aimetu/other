@@ -1,6 +1,34 @@
 # 2024.09.01
 # 配置样例：https://stash.wiki
 # 注意：去掉前面的注释符号 "#" 该行生效，（开启关闭参数：true/false）
+# 规则逻辑：排在前面的优先级高于后面的，本地规则 > 插件规则 > 订阅规则
+
+# other 设置补充说明
+# 自定义 geoip & ipasn 数据库
+# https://github.com/Hackl0us/GeoIP2-CN
+# https://github.com/Loyalsoldier/geoip
+
+# 图标订阅「更多 -ui 配置 - 图标集」
+# aimetu 108*108 图标
+# https://raw.githubusercontent.com/aimetu/icons/main/icons.json
+
+# http 本地服务器「浏览器打开」
+# boxjs 订阅脚本挂载 substore 本地订阅转换
+# http://boxjs.com
+# https://sub.store
+
+# boxjs 订阅脚本
+# https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/box.js.json
+# https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/evilbutcher.boxjs.json
+# https://qxnav.com/rules/QuantumultX/qixin.boxjs.json
+# https://raw.githubusercontent.com/xream/scripts/main/boxjs/boxjs.json
+
+# 网络连通性检查使用的 url
+# http://www.google.com/generate_204
+# http://www.gstatic.com/generate_204
+# http://www.qualcomm.cn/generate_204
+# http://cp.cloudflare.com/generate_204
+# http://captive.apple.com/generate_204
 
 # 💡 通用设置
 # 网络模式：rule 规则、global 代理、direct 直连
