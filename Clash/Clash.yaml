@@ -86,8 +86,8 @@ geodata-loader: memconservative # geo 文件加载模式：standard：标准加�
 geox-url: # 自定义geoip.data url
   geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoIP.dat"
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
-  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+  asn: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb"
 
 profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
