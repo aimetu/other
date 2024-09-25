@@ -369,7 +369,7 @@ script-providers:
 
 # 💡 策略组
 proxy-groups: 
-- name: 出站策略
+- name: 出站选择
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
@@ -562,14 +562,14 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/speedtest.png
   proxies:
   - 大陆直连
-  - 出站策略
+  - 出站选择
   - 节点手选
 
 - name: TikTok
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -583,7 +583,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -597,7 +597,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -611,7 +611,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
   proxies: 
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -625,7 +625,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -639,7 +639,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -653,7 +653,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -667,7 +667,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -681,7 +681,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -695,7 +695,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -709,7 +709,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -724,7 +724,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/microsoft.png
   proxies:
   - 大陆直连
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -739,7 +739,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/apple.png
   proxies:
   - 大陆直连
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -754,13 +754,13 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
   proxies:
   - 全球加速
-  - 出站策略
+  - 出站选择
 
 - name: 全球加速
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 香港节点
   - 台湾节点
@@ -775,14 +775,14 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
   proxies:
   - 大陆直连
-  - 出站策略
+  - 出站选择
   
 - name: 大陆直连
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
   proxies:
   - DIRECT
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 无线场景
   - 中国节点
@@ -791,7 +791,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
   proxies:
-  - 出站策略
+  - 出站选择
   - 节点手选
   - 大陆直连
   - 广告拦截
@@ -802,7 +802,7 @@ proxy-groups:
   proxies:
   - REJECT
   - 大陆直连
-  - 出站策略
+  - 出站选择
   - 节点手选
 
 # 💡 远程分流规则（domain - text = ipcidr - text > domain = ipcidr > classical）
