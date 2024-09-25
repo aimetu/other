@@ -967,6 +967,7 @@ rules:
 - IP-CIDR,183.240.197.130/32,China,no-resolve
 - IP-CIDR6,2620:0:2d0::/48,China,no-resolve
 - IP-ASN,13335,Global,no-resolve
+- DST-PORT,1400,Telegram 
 - RULE-SET,🚥 Direct,China
 - RULE-SET,🚥 Lan,China
 - RULE-SET,⛔ Anti.ad,AdBlock
@@ -988,7 +989,7 @@ rules:
 - RULE-SET,🎭 Facebook,Facebook
 - RULE-SET,📟 Google,Google
 - RULE-SET,🖥️ Microsoft,Microsoft
-- RULE-SET,🍎 Apple.ota,AdBlock
+- RULE-SET,🍎 Apple.ota,AdBlock,no-track # 屏蔽 ios 更新，no-track：隐藏连接
 - RULE-SET,🍎 Apple,Apple
 - RULE-SET,🎥 Global Media,Global Media
 - RULE-SET,🌐 Global,Global
