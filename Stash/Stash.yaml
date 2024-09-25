@@ -376,7 +376,7 @@ proxy-groups:
   - 自动优选
   - 节点手选
   - 无线场景
-  - 代理链接
+  - 代理链
   - 负载均衡
   - 故障转移
   - 香港节点
@@ -426,7 +426,7 @@ proxy-groups:
     OpenWrt_5G: DIRECT
 
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: 代理链接
+- name: 代理链
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
