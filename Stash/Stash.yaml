@@ -374,7 +374,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
   - 自动优选
-  - 节点选择
+  - 节点手选
   - 无线场景
   - 代理链接
   - 均衡负载
@@ -403,7 +403,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp|订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)
 
-- name: 节点选择
+- name: 节点手选
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
   lazy: true
@@ -417,10 +417,10 @@ proxy-groups:
   hidden: false
   proxies:
   - 自动优选
-  - 节点选择
+  - 节点手选
   - DIRECT
   ssid-policy:
-    cellular: 节点选择 
+    cellular: 节点手选 
     default: 自动优选
     OpenWrt: DIRECT 
     OpenWrt_5G: DIRECT
@@ -563,14 +563,14 @@ proxy-groups:
   proxies:
   - 大陆直连
   - 手动选择
-  - 节点选择
+  - 节点手选
 
 - name: TikTok
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -584,7 +584,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -598,7 +598,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -612,7 +612,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
   proxies: 
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -626,7 +626,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -640,7 +640,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -654,7 +654,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -668,7 +668,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -682,7 +682,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -696,7 +696,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -710,7 +710,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -725,7 +725,7 @@ proxy-groups:
   proxies:
   - 大陆直连
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -740,7 +740,7 @@ proxy-groups:
   proxies:
   - 大陆直连
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -761,7 +761,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 香港节点
   - 台湾节点
   - 日本节点
@@ -783,7 +783,7 @@ proxy-groups:
   proxies:
   - DIRECT
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 无线场景
   - 中国节点
 
@@ -792,7 +792,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
   proxies:
   - 手动选择
-  - 节点选择
+  - 节点手选
   - 大陆直连
   - 广告拦截
 
@@ -803,7 +803,7 @@ proxy-groups:
   - REJECT
   - 大陆直连
   - 手动选择
-  - 节点选择
+  - 节点手选
 
 # 💡 远程分流规则（domain - text = ipcidr - text > domain = ipcidr > classical）
 rule-providers:
