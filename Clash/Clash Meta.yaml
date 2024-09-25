@@ -371,7 +371,7 @@ tunnels:
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195/204.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
 proxies: 
-  - name: ☁️ Cloudflare~Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: ☁️ Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
@@ -390,7 +390,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: ☁️ Cloudflare~Warp Zero
+  - name: ☁️ Warp Zero
     type: wireguard
     private-key: CJ+a9D/TltH3gxM3hg2jdyeyctYkjw6Tym4hje+H9EQ=
     ip: 172.16.0.2
@@ -409,7 +409,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇹🇼 Taiwan
 
-  - name: ☁️ Cloudflare~Warp Team
+  - name: ☁️ Warp Team
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     ip: 172.16.0.2
@@ -428,7 +428,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: ☁️ Cloudflare~Warp Plus
+  - name: ☁️ Warp Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     ip: 172.16.0.2
@@ -447,7 +447,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇰🇷 Korea
 
-  - name: ☁️ Cloudflare~Cloud
+  - name: ☁️ Warp Cloud
     type: vless
     server: 162.159.128.118 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -464,7 +464,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇸🇬 Singapore # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: ☁️ Cloudflare~Workers
+  - name: ☁️ Warp Workers
     type: vless
     server: 104.19.38.18 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
@@ -481,7 +481,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: ☁️ Cloudflare~Pages
+  - name: ☁️ Warp Pages
     type: vless
     server: c.aimetu.cloudns.be # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 443
@@ -549,7 +549,7 @@ proxy-providers:
     interval: 86400
     #proxy: DIRECT
     #filter: "(?i)港|台|日|韩|新|狮|美"
-    #exclude-filter: "订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
+    exclude-filter: "订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     override: 
       #down: "5000 Mbps"
@@ -671,7 +671,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - ☁️ Cloudflare~Cloud
+      - ☁️ Warp Cloud
 
   - name: ⚖️ Load Balance
     type: load-balance
@@ -707,7 +707,7 @@ proxy-groups:
   - name: 🇭🇰 HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
-    filter: ^(?!.*Cloudflare).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
+    filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -717,7 +717,7 @@ proxy-groups:
   - name: 🇹🇼 Taiwan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
-    filter: ^(?!.*Cloudflare).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
+    filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -727,7 +727,7 @@ proxy-groups:
   - name: 🇯🇵 Japan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
-    filter: ^(?!.*Cloudflare).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
+    filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -737,7 +737,7 @@ proxy-groups:
   - name: 🇰🇷 Korea
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
-    filter: ^(?!.*Cloudflare).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
+    filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -747,7 +747,7 @@ proxy-groups:
   - name: 🇸🇬 Singapore
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
-    filter: ^(?!.*Cloudflare).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
+    filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -757,7 +757,7 @@ proxy-groups:
   - name: 🇺🇸 America
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
-    filter: ^(?!.*Cloudflare).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
+    filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
