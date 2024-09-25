@@ -369,28 +369,28 @@ script-providers:
 
 # 💡 策略组
 proxy-groups: 
-- name: 出站选择
+- name: Pick
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   proxies:
-  - 自动优选
-  - 节点手选
-  - 无线场景
-  - 代理链
-  - 负载均衡
-  - 故障转移
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
-  - 中国节点
+  - Auto
+  - Node
+  - Wireless
+  - Proxy Chain
+  - Load Balance
+  - Fallback
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
+  - Chinese
   - DIRECT
   - REJECT
 
-- name: 自动优选
+- name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
   url: http://www.gstatic.com/generate_204
@@ -403,30 +403,30 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp|订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)
 
-- name: 节点手选
+- name: Node
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
   lazy: true
   hidden: false
   include-all: true
 
-- name: 无线场景
+- name: Wireless
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
   lazy: true
   hidden: false
   proxies:
-  - 自动优选
-  - 节点手选
+  - Auto
+  - Node
   - DIRECT
   ssid-policy:
-    cellular: 节点手选 
-    default: 自动优选
+    cellular: Node 
+    default: Auto
     OpenWrt: DIRECT 
     OpenWrt_5G: DIRECT
 
 # 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: 代理链
+- name: Proxy Chain
   type: relay
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
@@ -438,11 +438,11 @@ proxy-groups:
   hidden: false
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
-    - 香港节点
+    - HongKong
     - ☁️ Warp Cloud
     
-# 负载均衡：能充分利用多个代理的带宽，不健康的代理会被跳过
-- name: 负载均衡
+# Load Balance：能充分利用多个代理的带宽，不健康的代理会被跳过
+- name: Load Balance
   type: load-balance
 # strategy: consistent-hashing、round-robin，一般建议设置为 consistent-hashing，避免频繁改变 ip 触发服务端的安全策略 
   strategy: consistent-hashing
@@ -452,16 +452,16 @@ proxy-groups:
   lazy: true
   hidden: false
   proxies:
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-# 故障转移：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
-- name: 故障转移
+# Fallback：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
+- name: Fallback
   type: fallback
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
   url: http://www.gstatic.com/generate_204
@@ -469,15 +469,15 @@ proxy-groups:
   lazy: true
   hidden: false
   proxies:
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-- name: 香港节点
+- name: HongKong
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
   url: http://www.gstatic.com/generate_204
@@ -487,7 +487,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
   
-- name: 台湾节点
+- name: Taiwan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
   url: http://www.gstatic.com/generate_204
@@ -497,7 +497,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
   
-- name: 日本节点
+- name: Japan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
   url: http://www.gstatic.com/generate_204
@@ -507,7 +507,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
   
-- name: 韩国节点
+- name: Korea
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
   url: http://www.gstatic.com/generate_204
@@ -517,7 +517,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
   
-- name: 狮城节点
+- name: Singapore
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
   url: http://www.gstatic.com/generate_204
@@ -527,7 +527,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
   
-- name: 美国节点
+- name: America
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
   url: http://www.gstatic.com/generate_204
@@ -537,7 +537,7 @@ proxy-groups:
   include-all: true
   filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
     
-- name: 国际节点
+- name: Nations
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
   url: http://www.gstatic.com/generate_204
@@ -547,7 +547,7 @@ proxy-groups:
   include-all: true
   filter: ^((?!Cloudflare|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
 
-- name: 中国节点
+- name: Chinese
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
   url: http://www.gstatic.com/generate_204
@@ -557,282 +557,282 @@ proxy-groups:
   include-all: true
   filter: 🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
 
-- name: 网速测试
+- name: Speedtest
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/speedtest.png
   proxies:
-  - 大陆直连
-  - 出站选择
-  - 节点手选
+  - China
+  - Pick
+  - Node
 
 - name: TikTok
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
   
 - name: Telegram
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: Discord
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
   
 - name: Spotify
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/spotify.png
   proxies: 
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: Netflix
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/netflix.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
   
 - name: Disney+
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/disney.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: YouTube
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/youtube.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: OpenAI
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/openai.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: Amazon
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/amazon.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
 - name: Facebook
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/facebook.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-- name: 谷歌服务
+- name: Google
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/google.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-- name: 微软服务
+- name: Microsoft
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/microsoft.png
   proxies:
-  - 大陆直连
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - China
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-- name: 苹果服务
+- name: Apple
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/apple.png
   proxies:
-  - 大陆直连
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - China
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
 
-- name: 国际媒体
+- name: Global Media
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/streaming.png
   proxies:
-  - 全球加速
-  - 出站选择
+  - Global
+  - Pick
 
-- name: 全球加速
+- name: Global
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/global.png
   proxies:
-  - 出站选择
-  - 节点手选
-  - 香港节点
-  - 台湾节点
-  - 日本节点
-  - 韩国节点
-  - 狮城节点
-  - 美国节点
-  - 国际节点
+  - Pick
+  - Node
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
   
-- name: 大陆媒体
+- name: China Media
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/media.png
   proxies:
-  - 大陆直连
-  - 出站选择
+  - China
+  - Pick
   
-- name: 大陆直连
+- name: China
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/china.png
   proxies:
   - DIRECT
-  - 出站选择
-  - 节点手选
-  - 无线场景
-  - 中国节点
+  - Pick
+  - Node
+  - Wireless
+  - Chinese
 
-- name: 漏网之鱼
+- name: Final
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/final.png 
   proxies:
-  - 出站选择
-  - 节点手选
-  - 大陆直连
-  - 广告拦截
+  - Pick
+  - Node
+  - China
+  - AdBlock
 
-- name: 广告拦截
+- name: AdBlock
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
   proxies:
   - REJECT
-  - 大陆直连
-  - 出站选择
-  - 节点手选
+  - China
+  - Pick
+  - Node
 
 # 💡 远程分流规则（domain - text = ipcidr - text > domain = ipcidr > classical）
 rule-providers:
-  🚥 直连修正:
+  🚥 Direct:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
     interval: 86400
     
-  🚥 局域网:
+  🚥 Lan:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     interval: 86400
     
-  ⛔ 中区广告:
+  ⛔ Anti.ad:
     behavior: domain
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
     interval: 86400
 
-  ⛔ 隐私保护:
+  ⛔ Privacy.ad:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
     interval: 86400
     
-  ⛔ 反劫持:
+  ⛔ Hijacking.ad:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     interval: 86400
     
-  ⛔ 精简广告:
+  ⛔ Lite.ad:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
     interval: 86400
@@ -847,7 +847,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
     interval: 86400
 
-  🕸️ 网速测试:
+  🕸️ Speedtest:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     interval: 86400
@@ -902,80 +902,80 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
     interval: 86400
   
-  📟 谷歌服务:
+  📟 Google:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
     interval: 86400
     
-  🖥️ 微软服务:
+  🖥️ Microsoft:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
     interval: 86400
     
-  🍎 苹果服务ota:
+  🍎 Apple.ota:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
     interval: 86400
     
-  🍎 苹果服务:
+  🍎 Apple:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.txt
     interval: 86400
 
-  🎥 国际媒体:
+  🎥 Global Media:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
     interval: 86400
     
-  🌐 全球加速:
+  🌐 Global:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
     interval: 86400
     
-  📺 大陆媒体:
+  📺 China Media:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
     interval: 86400
     
-  🇨🇳 大陆直连:
+  🇨🇳 China:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.txt
     interval: 86400
     
-  🇨🇳 大陆直连ips:
+  🇨🇳 China.ips:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
     interval: 86400
 
-  🇨🇳 大陆直连bgp:
+  🇨🇳 China.bgp:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_IP.txt
     interval: 86400
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-- DOMAIN,openwrt.lan,大陆直连
-- DOMAIN-SUFFIX,local,大陆直连
-- DOMAIN-KEYWORD,localhost,大陆直连
-- IP-CIDR,10.0.0.0/8,大陆直连,no-resolve　　　　　　
-- IP-CIDR,100.64.0.0/10,大陆直连,no-resolve
-- IP-CIDR,127.0.0.0/8,大陆直连,no-resolve
-- IP-CIDR,172.16.0.0/12,大陆直连,no-resolve
-- IP-CIDR,192.168.0.0/16,大陆直连,no-resolve
-- IP-CIDR,224.0.0.0/24,大陆直连,no-resolve
-- IP-CIDR,169.254.0.0/16,大陆直连,no-resolve
-- IP-CIDR,183.240.197.130/32,大陆直连,no-resolve
-- IP-CIDR6,2620:0:2d0::/48,大陆直连,no-resolve
-- IP-ASN,13335,全球加速,no-resolve
-- RULE-SET,🚥 直连修正,大陆直连
-- RULE-SET,🚥 局域网,大陆直连
-- RULE-SET,⛔ 中区广告,广告拦截
-- RULE-SET,⛔ 隐私保护,广告拦截
-- RULE-SET,⛔ 反劫持,广告拦截
-- RULE-SET,⛔ 精简广告,广告拦截
-- RULE-SET,⛔ HttpDNS,广告拦截
-- RULE-SET,⛔ Stun,广告拦截
-- RULE-SET,🕸️ 网速测试,网速测试
+- DOMAIN,openwrt.lan,China
+- DOMAIN-SUFFIX,local,China
+- DOMAIN-KEYWORD,localhost,China
+- IP-CIDR,10.0.0.0/8,China,no-resolve　　　　　　
+- IP-CIDR,100.64.0.0/10,China,no-resolve
+- IP-CIDR,127.0.0.0/8,China,no-resolve
+- IP-CIDR,172.16.0.0/12,China,no-resolve
+- IP-CIDR,192.168.0.0/16,China,no-resolve
+- IP-CIDR,224.0.0.0/24,China,no-resolve
+- IP-CIDR,169.254.0.0/16,China,no-resolve
+- IP-CIDR,183.240.197.130/32,China,no-resolve
+- IP-CIDR6,2620:0:2d0::/48,China,no-resolve
+- IP-ASN,13335,Global,no-resolve
+- RULE-SET,🚥 Direct,China
+- RULE-SET,🚥 Lan,China
+- RULE-SET,⛔ Anti.ad,AdBlock
+- RULE-SET,⛔ Privacy.ad,AdBlock
+- RULE-SET,⛔ Hijacking.ad,AdBlock
+- RULE-SET,⛔ Lite.ad,AdBlock
+- RULE-SET,⛔ HttpDNS,AdBlock
+- RULE-SET,⛔ Stun,AdBlock
+- RULE-SET,🕸️ Speedtest,Speedtest
 - RULE-SET,🎵 TikTok,TikTok
 - RULE-SET,✉️ Telegram,Telegram
 - RULE-SET,🗣️ Discord,Discord
@@ -986,16 +986,16 @@ rules:
 - RULE-SET,🤖 OpenAI,OpenAI
 - RULE-SET,🛒 Amazon,Amazon
 - RULE-SET,🎭 Facebook,Facebook
-- RULE-SET,📟 谷歌服务,谷歌服务
-- RULE-SET,🖥️ 微软服务,微软服务
-- RULE-SET,🍎 苹果服务ota,广告拦截
-- RULE-SET,🍎 苹果服务,苹果服务
-- RULE-SET,🎥 国际媒体,国际媒体
-- RULE-SET,🌐 全球加速,全球加速
-- RULE-SET,📺 大陆媒体,大陆媒体
-- RULE-SET,🇨🇳 大陆直连,大陆直连
-- RULE-SET,🇨🇳 大陆直连ips,大陆直连
-- RULE-SET,🇨🇳 大陆直连bgp,大陆直连
-- SCRIPT,quic,广告拦截
-- GEOIP,CN,大陆直连
-- MATCH,漏网之鱼
+- RULE-SET,📟 Google,Google
+- RULE-SET,🖥️ Microsoft,Microsoft
+- RULE-SET,🍎 Apple.ota,AdBlock
+- RULE-SET,🍎 Apple,Apple
+- RULE-SET,🎥 Global Media,Global Media
+- RULE-SET,🌐 Global,Global
+- RULE-SET,📺 China Media,China Media
+- RULE-SET,🇨🇳 China,China
+- RULE-SET,🇨🇳 China.ips,China
+- RULE-SET,🇨🇳 China.bgp,China
+- SCRIPT,quic,AdBlock
+- GEOIP,CN,China
+- MATCH,Final
