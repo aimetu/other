@@ -400,7 +400,7 @@ proxy-groups:
   hidden: false
 # include-all: true，引用所有的代理和远程代理集  
   include-all: true
-  filter: ^(?!.*Warp).*(?i)
+  filter: ^(?!.*Warp|订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)
 
 - name: ✅ 节点选择
   type: select
