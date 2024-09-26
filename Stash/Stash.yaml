@@ -817,7 +817,7 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     interval: 86400
     
-  ⛔ Anti-ad:
+  ⛔ AntiAd:
     behavior: domain
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
     interval: 86400
@@ -970,7 +970,7 @@ rules:
 - DST-PORT,1400,Telegram 
 - RULE-SET,🚥 Direct,China
 - RULE-SET,🚥 Lan,China
-- RULE-SET,⛔ Anti-ad,AdBlock
+- RULE-SET,⛔ AntiAd,AdBlock
 - RULE-SET,⛔ Privacy,AdBlock
 - RULE-SET,⛔ Hijacking,AdBlock
 - RULE-SET,⛔ AdLite,AdBlock
