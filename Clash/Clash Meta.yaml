@@ -595,6 +595,8 @@ proxy-providers:
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
 # tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
+# timeout: 5000 # 健康检查超时时间，单位：毫秒
+# max-failed-times: 5 # 最大失败次数，超过则触发一次强制健康检查，默认 5
 # lazy: true # 懒惰模式，如果设置为 true，策略组在未被使用时停止检测
 # include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
 # include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
@@ -634,6 +636,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
     interval: 600 # 示例：间隔检测时间，单位：秒
     tolerance: 0 # 示例：网络间隔相差值
+    timeout: 3000 # 示例：健康检查超时时间，单位：毫秒
+    max-failed-times: 3 # 示例：最大失败次数，超过则触发一次强制健康检查
     lazy: true # 示例：懒惰模式
     #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
@@ -651,16 +655,19 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
     interval: 600
+    timeout: 3000
+    max-failed-times: 3
     include-all: true
 
   - name: ☁️ Warp
-    type: url-test
+    type: fallback
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     include-all-proxies: true
-    filter: Warp
+    filter: Client|Zero|Team|Plus
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
 
   - name: 🚦 Proxy Chain
@@ -668,6 +675,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
     url: http://www.gstatic.com/generate_204
     interval: 600
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -679,6 +688,8 @@ proxy-groups:
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -694,6 +705,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
     url: http://www.gstatic.com/generate_204
     interval: 600
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -711,6 +724,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -720,6 +735,8 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
     url: http://www.gstatic.com/generate_204
     interval: 600
+    timeout: 3000
+    max-failed-times: 3
     tolerance: 0
     lazy: true
     include-all-providers: true
@@ -731,6 +748,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     include-all-providers: true
       
@@ -741,6 +760,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
     
@@ -751,6 +772,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -761,6 +784,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -771,6 +796,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -781,6 +808,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
