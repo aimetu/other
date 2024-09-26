@@ -1,15 +1,15 @@
 #!name= Unlock
 #!tag = AD、VIP 插件
 #!desc = 🎈 部分 AD 规则, Cookie 脚本, VIP 解锁插件
-#!openUrl = https://github.com/aimetu/other
+#!icon = https://raw.githubusercontent.com/aimetu/icons/main/other/unlock.png
 #!author = aimetu
 #!homepage = https://github.com/aimetu
-#!icon = https://raw.githubusercontent.com/aimetu/icons/main/other/unlock.png
 #!system = iOS, iPadOS, tvOS, macOS
-#!system_version = 15+
+#!system_version = 15
 #!input = Loon
 #!loon_version = 3.2.1(745)
-#!date = 2024-09-01
+#!openUrl = https://apps.apple.com/us/app/loon/id1373567447
+#!date = 2024.09.01
 
 # 💡 解密https的请求
 [MITM]
