@@ -6,7 +6,6 @@
 #!homepage = https://github.com/aimetu
 #!system = iOS, iPadOS, tvOS, macOS
 #!system_version = 15
-#!input = Loon
 #!loon_version = 3.2.1(745)
 #!openUrl = https://apps.apple.com/app/id1373567447
 #!date = 2024.09.01
