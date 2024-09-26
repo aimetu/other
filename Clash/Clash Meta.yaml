@@ -587,11 +587,13 @@ proxy-providers:
 # load-balance：负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理（可选参数：strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理）
 # fallback：故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
 # > 策略组添加可选参数示例：
-# proxies: [Cloudflare~Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
+# proxies: [☁️ Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
 # use: [Subscribe, Nodes] 手动添加代理集合
 # icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
 # exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
+# exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
+# disable-udp: true # 禁用 udp 流量转发
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
 # tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
@@ -601,8 +603,6 @@ proxy-providers:
 # include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
 # include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
 # include-all-providers: true # 引入所有代理集合，可选 false
-# exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
-# disable-udp: true # 禁用 udp 流量转发
 # hidden: true # 隐藏策略组
 # interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
 # routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
@@ -641,10 +641,10 @@ proxy-groups:
     lazy: true # 示例：懒惰模式
     #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
+    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "协议" 类型筛选
     #include-all: true # 示例：引入所有出站代理节点以及代理集合
     #include-all-proxies: true # 示例：引入所有出站代理节点
     include-all-providers: true # 示例：引入所有代理集合
-    #exclude-type: "Shadowsocks|http" # 示例：根据节点 "协议" 类型
     #disable-udp: true # 示例：禁用 udp 流量转发
     #hidden: true # 示例：隐藏策略组
     #interface-name: en0 # 示例：指定出站接口
