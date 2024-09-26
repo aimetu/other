@@ -1378,14 +1378,14 @@ rules:
   - RULE-SET,🎭 Facebook,🎭 Facebook
   - RULE-SET,📟 Google,📟 Google
   - RULE-SET,🖥️ Microsoft,🖥️ Microsoft
-  - RULE-SET,🍎 Apple.OTA,⛔ AdBlock
+  - RULE-SET,🍎 Apple.ota,⛔ AdBlock
   - RULE-SET,🍎 Apple,🍎 Apple
   - RULE-SET,🎬 Global Media,🎬 Global Media
   - RULE-SET,🌐 Global,🌐 Global
   - RULE-SET,📺 China Media,📺 China Media
   - RULE-SET,🇨🇳 China,🇨🇳 China
-  - RULE-SET,🇨🇳 China.IPS,🇨🇳 China
-  - RULE-SET,🇨🇳 China.BGP,🇨🇳 China
+  - RULE-SET,🇨🇳 China.ips,🇨🇳 China
+  - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
   - SUB-RULE,(NETWORK,TCP),local # 示例：括号内可以使用任意规则
   - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则
   - GEOIP,CN,🇨🇳 China
