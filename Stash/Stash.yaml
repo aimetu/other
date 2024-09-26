@@ -117,7 +117,7 @@ proxies:
 
  - name: ☁️ Warp Plus
    type: wireguard
-   server: 162.159.204.1
+   server: 162.159.195.5
    port: 2408
    ip: 172.16.0.2
    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
