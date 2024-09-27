@@ -191,6 +191,8 @@ proxies:
 dns:
 # 跳过证书验证，解决部分兼容性问题
   skip-cert-verify: true
+# 默认情况下 dns 查询会直接出站不经过代理规则,开启后会根据代理规则进行 dns 查询的转发
+  follow-rule: true
 # 以下域名不会被解析为 fake-ip，解析请求将返回它们真实的 IP 地址
   fake-ip-filter:
     - "*.lan"
