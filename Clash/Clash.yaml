@@ -1009,7 +1009,7 @@ rule-providers:
     type: http
     behavior: domain
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    path: /rule/anti-ad.yaml
+    path: /rule/AntiAd.yaml
     interval: 86400
 
   ⛔ Privacy:
