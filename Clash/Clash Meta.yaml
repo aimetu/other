@@ -616,9 +616,9 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - ☁️ Warp
-      - 🚦 Proxy Chain
-      - ⚖️ Load Balance
       - ⚠️ Fallback
+      - ⚖️ Load Balance
+      - 🚦 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -672,9 +672,9 @@ proxy-groups:
     max-failed-times: 3
     lazy: true
 
-  - name: 🚦 Proxy Chain
-    type: relay
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
+  - name: ⚠️ Fallback
+    type: fallback
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     timeout: 3000
@@ -682,7 +682,12 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - ☁️ Warp Cloud
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
 
   - name: ⚖️ Load Balance
     type: load-balance
@@ -702,9 +707,9 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       
-  - name: ⚠️ Fallback
-    type: fallback
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
+  - name: 🚦 Proxy Chain
+    type: relay
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
     url: http://www.gstatic.com/generate_204
     interval: 600
     timeout: 3000
@@ -712,13 +717,8 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - 🇹🇼 Taiwan
-      - 🇯🇵 Japan
-      - 🇰🇷 Korea
-      - 🇸🇬 Singapore
-      - 🇺🇸 America
-      - 🇺🇳 Nations
-
+      - ☁️ Warp Cloud
+      
   - name: 🇭🇰 HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
