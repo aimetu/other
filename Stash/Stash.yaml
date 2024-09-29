@@ -197,9 +197,6 @@ dns:
   follow-rule: false
 # 以下域名不会被解析为 fake-ip，解析请求将返回它们真实的 IP 地址
   fake-ip-filter:
-    - "*.lan"
-    - "*.local"
-    - "localhost"
     - "*.msftncsi.com"
     - "*.msftconnecttest.com"
     - "cable.auth.com"
