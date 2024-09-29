@@ -164,6 +164,10 @@ dns:
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
   fake-ip-filter: # fake-ip 过滤，列表中的域名返回真实 ip
+    - "*.lan"
+    - "*.local"
+    - "localhost"
+    - "WORKGROUP"
     - "*.msftncsi.com"
     - "*.msftconnecttest.com"
     - "cable.auth.com"
@@ -232,7 +236,7 @@ hosts:
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
-  "example.com": baidu.com # 只允许配置一个别名
+  "openwrt.lan": openwrt.local # 只允许配置一个别名
   "home.lan": lan # lan 为特别字段，将加入本地所有网卡的地址
   
 #💡 自定义系统代理需要绕过的域名或ip
