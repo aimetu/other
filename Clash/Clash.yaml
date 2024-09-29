@@ -601,9 +601,9 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - ☁️ Warp
-      - 🚦 Proxy Chain
-      - ⚖️ Load Balance
       - ⚠️ Fallback
+      - ⚖️ Load Balance
+      - 🚦 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -650,14 +650,19 @@ proxy-groups:
       - ☁️ Warp Team
       - ☁️ Warp Plus
       
-  - name: 🚦 Proxy Chain
-    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+  - name: ⚠️ Fallback
+    type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - ☁️ Warp Cloud
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
   
   - name: ⚖️ Load Balance
     type: load-balance # 负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理
@@ -674,19 +679,14 @@ proxy-groups:
       - 🇺🇸 America
       - 🇺🇳 Nations
       
-  - name: ⚠️ Fallback
-    type: fallback # 故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
+  - name: 🚦 Proxy Chain
+    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
     url: http://www.gstatic.com/generate_204
     interval: 600
     lazy: true
     proxies:
       - 🇭🇰 HongKong
-      - 🇹🇼 Taiwan
-      - 🇯🇵 Japan
-      - 🇰🇷 Korea
-      - 🇸🇬 Singapore
-      - 🇺🇸 America
-      - 🇺🇳 Nations
+      - ☁️ Warp Cloud
 
   - name: 🇭🇰 HongKong
     type: url-test
