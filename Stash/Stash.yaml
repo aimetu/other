@@ -380,9 +380,9 @@ proxy-groups:
   - Auto
   - Node
   - Wireless
-  - Proxy Chain
-  - Load Balance
   - Fallback
+  - Load Balance
+  - Proxy Chain
   - HongKong
   - Taiwan
   - Japan
@@ -429,21 +429,22 @@ proxy-groups:
     OpenWrt: DIRECT 
     OpenWrt_5G: DIRECT
 
-# 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
-- name: Proxy Chain
-  type: relay
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
-# 建议只使用 HTTP 协议  
-  benchmark-url: http://www.gstatic.com/generate_204
-# 延迟测试超时，单位：秒  
-  benchmark-timeout: 5
+# Fallback：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
+- name: Fallback
+  type: fallback
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
+  url: http://www.gstatic.com/generate_204
   interval: 600  
   lazy: true
   hidden: false
-# 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
-    - HongKong
-    - ☁️ Warp Cloud
+  - HongKong
+  - Taiwan
+  - Japan
+  - Korea
+  - Singapore
+  - America
+  - Nations
     
 # Load Balance：能充分利用多个代理的带宽，不健康的代理会被跳过
 - name: Load Balance
@@ -464,22 +465,21 @@ proxy-groups:
   - America
   - Nations
 
-# Fallback：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
-- name: Fallback
-  type: fallback
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
-  url: http://www.gstatic.com/generate_204
+# 代理转发链，流量将通过一系列的代理转发到达目的地，仅支持转发 tcp。relay 策略组并不受到内部代理延迟测试的结果影响，需要单独指定测试 url
+- name: Proxy Chain
+  type: relay
+  icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
+# 建议只使用 HTTP 协议  
+  benchmark-url: http://www.gstatic.com/generate_204
+# 延迟测试超时，单位：秒  
+  benchmark-timeout: 5
   interval: 600  
   lazy: true
   hidden: false
+# 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
-  - HongKong
-  - Taiwan
-  - Japan
-  - Korea
-  - Singapore
-  - America
-  - Nations
+    - HongKong
+    - ☁️ Warp Cloud
 
 - name: HongKong
   type: url-test
