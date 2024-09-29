@@ -164,10 +164,6 @@ dns:
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
   fake-ip-filter: # fake-ip 过滤，列表中的域名返回真实 ip
-    - "*.lan"
-    - "*.local"
-    - "localhost"
-    - "WORKGROUP"
     - "*.msftncsi.com"
     - "*.msftconnecttest.com"
     - "cable.auth.com"
