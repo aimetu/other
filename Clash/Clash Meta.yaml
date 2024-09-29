@@ -20,6 +20,7 @@
 # http://www.google.com/generate_204
 # http://www.gstatic.com/generate_204
 # http://www.qualcomm.cn/generate_204
+# http://wifi.vivo.com.cn/generate_204
 # http://cp.cloudflare.com/generate_204
 # http://captive.apple.com/generate_204
 
@@ -61,7 +62,7 @@ keep-alive-interval: 15 # 控制发出 tcp keep alive 包的间隔，减少移�
 
 unified-delay: true # 更换延迟计算方式,去除握手等额外延迟
 
-global-ua: Chrome/128.0.6  # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
+global-ua: Chrome/130.0.1  # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 
 experimental: # 禁用 quic-go-gso 支持, 这可能会导致 linux 上的性能降低
@@ -527,8 +528,8 @@ proxy-providers:
       udp: true # 示例：启用 udp 支持
     header: # 自定义 http 请求头
       User-Agent:
-      - "Chrome/128.0.1"
-      - "Firefox/128.0.2"
+      - "Chrome/130.0.1"
+      - "Firefox/130.0.1"
       #- "Clash/v1.18.0"
       #- "mihomo/1.18.3"
       # Accept:
@@ -566,8 +567,8 @@ proxy-providers:
       udp: true
     header: 
       User-Agent:
-      - "Chrome/128.0.1"
-      - "Firefox/128.0.2"
+      - "Chrome/130.0.1"
+      - "Firefox/130.0.1"
       #- "Clash/v1.18.0"
       #- "mihomo/1.18.3"
       # Accept:
