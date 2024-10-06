@@ -513,7 +513,7 @@ proxy-providers:
     interval: 86400 # 示例：自动更新时长单位：秒
     #proxy: DIRECT  # 经过指定代理进行下载/更新
     #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
-    exclude-filter: "订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱" # 示例：排除满足关键词或正则表达式的节点
+    exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱" # 示例：排除满足关键词或正则表达式的节点
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
     override: # 示例：覆写节点内容
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
@@ -552,7 +552,7 @@ proxy-providers:
     interval: 86400
     #proxy: DIRECT
     #filter: "(?i)港|台|日|韩|新|狮|美"
-    exclude-filter: "订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
+    exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     override: 
       #down: "5000 Mbps"
