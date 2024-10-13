@@ -807,6 +807,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/adblock.png
   proxies:
   - REJECT
+  - REJECT-DROP
   - China
   - Pick
   - Node
