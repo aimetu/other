@@ -54,13 +54,12 @@ lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白�
 
 #interface-name: en0 # 指定 clash 流量出站接口网卡
 
-tcp-concurrent: true  # # TCP 并发连接所有 IP, 将使用最快握手的 TCP
+tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
+unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
 
-disable-keep-alive: false # 目前在 android 端强制为 true
-keep-alive-idle: 15
+keep-alive-idle: 15 # 控制发出 tcp keep alive 包的的最大空闲时间
 keep-alive-interval: 15 # 控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
-
-unified-delay: true # 更换延迟计算方式,去除握手等额外延迟
+disable-keep-alive: false # 禁用 tcp keep alive，目前在 android 端强制为 true
 
 global-ua: Chrome/130.0.1 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
