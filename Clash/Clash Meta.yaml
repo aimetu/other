@@ -528,10 +528,10 @@ proxy-providers:
       udp: true # 示例：启用 udp 支持
     header: # 自定义 http 请求头
       User-Agent:
-      - "Chrome/130.0.1"
-      - "Firefox/130.0.1"
+      #- "Chrome/130.0.1"
+      #- "Firefox/130.0.1"
       #- "Clash/v1.18.0"
-      #- "mihomo/1.18.3"
+      - "mihomo/1.18.3"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
@@ -567,9 +567,9 @@ proxy-providers:
       udp: true
     header: 
       User-Agent:
-      - "Chrome/130.0.1"
-      - "Firefox/130.0.1"
-      #- "Clash/v1.18.0"
+      #- "Chrome/130.0.1"
+      #- "Firefox/130.0.1"
+      - "Clash/v1.18.0"
       #- "mihomo/1.18.3"
       # Accept:
       # - 'application/vnd.github.v3.raw'
