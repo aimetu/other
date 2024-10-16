@@ -57,9 +57,11 @@ lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白�
 tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
 unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
 
-keep-alive-idle: 15 # 控制发出 tcp keep alive 包的的最大空闲时间
-keep-alive-interval: 15 # 控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
-disable-keep-alive: false # 禁用 tcp keep alive，目前在 android 端强制为 true
+keep-alive-idle: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的的最大空闲时间
+keep-alive-interval: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
+disable-keep-alive: false # tcp 保持活动设置，禁用 tcp keep alive，目前在 android 端强制为 true
+
+find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
 global-ua: Chrome/130.0.1 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
@@ -68,17 +70,22 @@ etag-support: true # 外部资源下载的 etag 支持
 experimental: # 禁用 quic-go-gso 支持, 这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
 
-external-controller: 127.0.0.1:9090 # api 监听地址，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
-external-controller-tls: 127.0.0.1:9443 # https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
-#external-controller-unix: mihomo.sock # Unix socket API 监听地址，测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
-#external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
+external-controller: 127.0.0.1:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
+external-controller-tls: 127.0.0.1:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: "password" # http(s)-api、api 监听地址外部控制器访问密钥
+external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
+  allow-origins:
+    - *
+  allow-private-network: true
+#external-controller-unix: mihomo.sock # 通过 Unix 套接字访问 API 监听地址，端点不会验证机密。如果启用，请确保安全措施到位，测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
+#external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
+#external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
 #external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 #external-ui-name: metacubexd # 自定义外部用户界面名字
 #external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
-#tls: # 目前仅用于 api 监听地址外部控制器的证书私钥
+#tls: # 目前仅用于 https api 监听地址外部控制器的证书私钥
 #  certificate: string # 证书 pem 格式，或者 证书的路径
 #  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
 #  custom-certifactes:
@@ -86,8 +93,6 @@ secret: "password" # http(s)-api、api 监听地址外部控制器访问密钥
 #      -----BEGIN CERTIFICATE-----
 #      format/pem...
 #      -----END CERTIFICATE-----
-
-find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
 geodata-mode: true # geoip.dat 数据库开关，false 使用 mmdb 数据库
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
