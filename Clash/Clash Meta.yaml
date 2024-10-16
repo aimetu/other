@@ -511,27 +511,16 @@ proxy-providers:
     path: /proxy/Subscribe.yaml # 存储路径
     url: https://sub.store/download/collection/node # 非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
-    #proxy: DIRECT  # 经过指定代理进行下载/更新
+    #proxy: 🌐 Global  # 经过指定代理进行下载/更新
     #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱" # 示例：排除满足关键词或正则表达式的节点
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
-    override: # 示例：覆写节点内容
-      #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
-      #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
-      #dialer-proxy: 🌐 Global # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
-      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
-      routing-mark: 68686 # 发起连接时附加的路由标记
-      ip-version: dual # 设置节点使用 IP 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
-      additional-prefix: "Subscribe~" # 为节点名称添加固定前缀
-      #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
-      skip-cert-verify: true # 示例：跳过证书验证
-      udp: true # 示例：启用 udp 支持
     header: # 自定义 http 请求头
       User-Agent:
       #- "Chrome/130.0.1"
       #- "Firefox/130.0.1"
-      #- "Clash/v1.18.0"
-      - "mihomo/1.18.3"
+      - "Clash/v1.18.0"
+      #- "mihomo/1.18.3"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
@@ -543,33 +532,38 @@ proxy-providers:
       lazy: true # 懒惰状态，默认为 true,不使用该集合节点时，不进行测试
       timeout: 5000
       expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
-      
+    override: # 示例：覆写节点内容
+      #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
+      #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
+      #dialer-proxy: 🌐 Global # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
+      routing-mark: 68686 # 发起连接时附加的路由标记
+      ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
+      additional-prefix: "Subscribe~" # 为节点名称添加固定前缀
+      #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
+      skip-cert-verify: true # 示例：跳过证书验证
+      udp: true # 示例：启用 udp 支持
+      udp-over-tcp: false # 示例：启用 udp over tcp
+      tfo: false # 示例：启用 tcp fast open, 仅生效于 tcp 协议
+      mptcp: false # 示例：启用 tcp multi path, 仅生效于 tcp 协议
+      proxy-name: # 名字替换，支持正则表达式
+      - pattern: "IPLC-(.*?)倍"
+        target: "iplc x $1"      
 # 本地代理服务器筛选
   Nodes: 
     type: file # 本地代理服务器
     path: /proxy/Nodes.yaml
     #url: https://sub.store/download/collection/node
     interval: 86400
-    #proxy: DIRECT
+    #proxy: 🇨🇳 China
     #filter: "(?i)港|台|日|韩|新|狮|美"
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
-    override: 
-      #down: "5000 Mbps"
-      #up: "1000 Mbps"
-      #dialer-proxy: 🌐 Global
-      #interface-name: WLAN
-      routing-mark: 89898
-      ip-version: dual
-      #additional-prefix: "Subscribe~"
-      additional-suffix: "~Nodes"
-      skip-cert-verify: true
-      udp: true
     header: 
       User-Agent:
-      #- "Chrome/130.0.1"
+      - "Chrome/130.0.1"
       #- "Firefox/130.0.1"
-      - "Clash/v1.18.0"
+      #- "Clash/v1.18.0"
       #- "mihomo/1.18.3"
       # Accept:
       # - 'application/vnd.github.v3.raw'
@@ -582,7 +576,23 @@ proxy-providers:
       lazy: true
       timeout: 5000
       expected-status: "*"
-      
+    override: 
+      #down: "5000 Mbps"
+      #up: "1000 Mbps"
+      #dialer-proxy: 🇨🇳 China
+      #interface-name: WLAN
+      routing-mark: 89898
+      ip-version: dual
+      #additional-prefix: "Subscribe~"
+      additional-suffix: "~Nodes"
+      skip-cert-verify: true
+      udp: true
+      udp-over-tcp: false
+      tfo: false
+      mptcp: false
+      proxy-name: 
+      - pattern: "IPLC-(.*?)倍"
+        target: "iplc x $1"          
 #💡 策略组
 # select：手动选择策略组
 # url-test：自动策略组,将按照url测试结果使用延迟最低节点
