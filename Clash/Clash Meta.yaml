@@ -514,7 +514,7 @@ proxy-providers:
   Subscribe: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: /proxy/Subscribe.yaml # 存储路径
-    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta、&types=clash、＆flag=[ua]、&types=all 根据不同 ua 获取更多的节点，非 clash 配置通过订阅链接转换：https://acl4ssr.netlify.app
+    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta、&types=hysteria2、＆flag=[ua]、&types=all 根据不同 ua| type（节点类型）获取不同的节点，非 clash 配置可通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
     #proxy: 🌐 Global  # 经过指定代理进行下载/更新
     #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
@@ -558,7 +558,7 @@ proxy-providers:
   Nodes: 
     type: file # 本地代理服务器
     path: /proxy/Nodes.yaml
-    #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta、&types=clash、＆flag=[ua]、&types=all 根据不同 ua 获取更多的节点
+    #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta、&types=hysteria2、＆flag=[ua]、&types=all 根据不同 ua| type（节点类型）获取不同的节点
     interval: 86400
     #proxy: 🇨🇳 China
     #filter: "(?i)港|台|日|韩|新|狮|美"
