@@ -1,5 +1,8 @@
 # 2024.09.01
-# 配置样例：https://stash.wiki
+# 官网：https://stash.wiki
+# 配置样例：https://stash.wiki/configuration/example-config
+
+# 各个模块说明「基于 stash 2.7.0 制作」
 # 注意：去掉前面的注释符号 "#" 该行生效，（开启关闭参数：true/false）
 # 规则逻辑：排在前面的优先级高于后面的，本地规则 > 插件规则 > 订阅规则
 
