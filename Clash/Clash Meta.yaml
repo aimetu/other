@@ -106,10 +106,10 @@ geodata-loader: memconservative # geo 文件加载模式：standard：标准加�
 geo-auto-update: true # 自动更新 GEO
 geo-update-interval: 72 # 更新间隔，单位为小时
 geox-url: # 自定 GEO 下载地址
-  geoip: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-  geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-  mmdb: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-Country.mmdb"
-  asn: "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb"
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
   
 geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
 
