@@ -1207,9 +1207,6 @@ rules:
   - DOMAIN,openwrt.lan,🇨🇳 China
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
-  - PROCESS-NAME,Notion.exe,🌐 Global
-  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
   - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
@@ -1229,6 +1226,9 @@ rules:
   #- IN-USER,vmess,🌐 Global # IN-USER 匹配入站用户名,目前仅 vmess 入站支持配置用户名
   #- IN-TYPE,INNER,🌐 Global # IN-TYPE 匹配流量入站的类型，匹配流量入站的类型 HTTP/SOCKS/TUN/TPROXY/REDIR/INNER
   #- NETWORK,tcp,🇨🇳 China # NETWORK 网络类型规则，匹配入站流量的类型 TCP / UDP
+  - PROCESS-NAME,Notion.exe,🌐 Global
+  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global # PROCESS-NAME 根据进程名称匹配
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global # PROCESS-PATH 根据进程路径匹配 
   - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
   - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
