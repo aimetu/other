@@ -1342,9 +1342,6 @@ rules:
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
   - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
-  - PROCESS-NAME,Notion.exe,🌐 Global
-  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
   - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
@@ -1356,22 +1353,25 @@ rules:
   - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
   - IP-SUFFIX,114.114.112.0/21,🇨🇳 China,no-resolve
   - IP-ASN,13335,🌐 Global,no-resolve
-  - SRC-GEOIP,cn,🇨🇳 China
+  - SRC-GEOIP,JP,🌐 Global
   - SRC-IP-ASN,133877,🌐 Global,no-resolve
   - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
   - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
+#- SRC-PORT,7777,🇨🇳 China  
   - DST-PORT,1400,✉️ Telegram
   #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
   #- DST-PORT,114/233/514-1919,🇨🇳 China # 示例：匹配 114 和 233 以及 514 到 1919
-  #- SRC-PORT,7777,🇨🇳 China
+  #- DSCP,4,🌐 Global
+  #- UID,1001,🇨🇳 China
+  #- NETWORK,tcp,🇨🇳 China
   #- IN-NAME,name,🌐 Global
   #- IN-USER,vmess,🌐 Global
   #- IN-TYPE,SOCKS,🌐 Global
   #- IN-PORT,7890,🇨🇳 China
-  #- NETWORK,tcp,🇨🇳 China
-  #- UID,1001,🇨🇳 China
-  #- DSCP,4,🌐 Global
+  - PROCESS-NAME,Notion.exe,🌐 Global
+  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
+  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
   - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
   - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
@@ -1411,12 +1411,12 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
-  - SUB-RULE,(NETWORK,TCP),local # 示例：括号内可以使用任意规则
-  - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则
   - GEOIP,CN,🇨🇳 China
   - GEOSITE,cn,🇨🇳 China
   - GEOSITE,facebook,🎭 Facebook
   - GEOSITE,google,📟 Google
   - GEOSITE,microsoft,🖥️ Microsoft
   - GEOSITE,category-ads-all,⛔ AdBlock
+  - SUB-RULE,(NETWORK,TCP),local
+  - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则  
   - MATCH,🐟 Final
