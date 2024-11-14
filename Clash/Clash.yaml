@@ -611,7 +611,6 @@ proxy-groups:
       - ☁️ Warp
       - ⚠️ Fallback
       - ⚖️ Load Balance
-      - 🚦 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -631,12 +630,12 @@ proxy-groups:
     tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
     lazy: true # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测
     use: # use 包含远程代理服务器节点
-      - ✅ Node
+      - Nodes
       
   - name: ✅ Node # 用户自行选择策略组或节点
     type: select
     use:
-      - ✅ Node 
+      - Nodes
     proxies:
       - ☁️ Warp Client
       - ☁️ Warp Zero
@@ -686,15 +685,6 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
-      
-  - name: 🚦 Proxy Chain
-    type: relay # 代理链策略组，目前 relay 可以支持 udp 的只有 vmess/vless/trojan/ss/ssr/tuic，wireguard 目前不支持在 relay 中使用，请使用 proxy 中的 dialer-proxy 配置项，Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-    lazy: true
-    proxies:
-      - 🇭🇰 HongKong
-      - ☁️ Warp Cloud
 
   - name: 🇭🇰 HongKong
     type: url-test
