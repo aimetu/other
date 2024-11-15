@@ -342,7 +342,6 @@ proxy-groups:
       - ☁️ Warp
       - ⚠️ Fallback
       - ⚖️ Load Balance
-      - 🚦 Proxy Chain
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -430,18 +429,6 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
-      
-  - name: 🚦 Proxy Chain
-    type: relay
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-    timeout: 3000
-    max-failed-times: 3
-    lazy: true
-    proxies:
-      - 🇭🇰 HongKong
-      - ☁️ Warp Cloud
       
   - name: 🇭🇰 HongKong
     type: url-test
