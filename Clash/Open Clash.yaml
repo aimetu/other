@@ -24,19 +24,6 @@ experimental:
 external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
 secret: password
-external-ui: ui
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-
-geodata-mode: true
-geodata-loader: memconservative
-geo-auto-update: true
-geo-update-interval: 72
-geox-url:
-  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
-  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
-  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
-geosite-matcher: succinct
 
 profile:
   store-selected: true
@@ -44,7 +31,7 @@ profile:
 
 tun:
   enable: false
-  stack: system # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
+  stack: mixed
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
@@ -64,7 +51,7 @@ tun:
 
 dns:
   enable: true
-  ipv6: true # ipv6
+  ipv6: true
   ipv6-timeout: 300
   prefer-h3: true
   listen: 0.0.0.0:53
@@ -293,7 +280,7 @@ proxies:
 
 proxy-providers:
   Subscribe:
-    type: http # 代理服务器类型为（http：订阅，file：筛选）
+    type: http
     path: ./proxy/Subscribe.yaml
     url: https://sub.store/download/collection/node
     interval: 86400
@@ -364,16 +351,16 @@ proxy-groups:
     timeout: 3000
     max-failed-times: 3
     lazy: true
-    #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
-    #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "协议" 类型筛选
-    #include-all: true # 示例：引入所有出站代理节点以及代理集合
-    #include-all-proxies: true # 示例：引入所有出站代理节点
-    include-all-providers: true # 示例：引入所有代理集合
+    #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
+    #exclude-filter: 台|日|韩|新|狮|美
+    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
+    #include-all: true
+    #include-all-proxies: true
+    include-all-providers: true
     #disable-udp: true
     #hidden: true
-    #interface-name: en0 # 示例：指定出站接口
-    #routing-mark: 8848 # 示例：策略组出站时附带路由标记
+    #interface-name: en0
+    #routing-mark: 8848
       
   - name: ✅ Node
     type: select
@@ -415,7 +402,7 @@ proxy-groups:
   - name: ⚖️ Load Balance
     type: load-balance
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
-    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
+    strategy: consistent-hashing
     url: http://www.gstatic.com/generate_204
     interval: 600
     timeout: 3000
