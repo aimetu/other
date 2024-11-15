@@ -77,9 +77,9 @@ etag-support: true # 外部资源下载的 etag 支持
 experimental: # 禁用 quic-go-gso 支持, 这可能会导致 linux 上的性能降低
   quic-go-disable-gso: false
 
-external-controller: 127.0.0.1:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
-external-controller-tls: 127.0.0.1:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
-secret: "password" # http(s)-api、api 监听地址外部控制器访问密钥
+external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
+external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
+secret: password # http(s)-api、api 监听地址外部控制器访问密钥
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
     - *
@@ -88,7 +88,7 @@ external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
 #external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
-external-ui: /ui/metacubexd # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
+external-ui: /ui/ # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
 external-ui-name: metacubexd # 自定义外部用户界面名字
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
