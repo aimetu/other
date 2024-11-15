@@ -1,39 +1,29 @@
 mode: rule
-
 log-level: info
-
 ipv6: true
-
 port: 7891
 socks-port: 7892
 mixed-port: 7890
 redir-port: 7893
 tproxy-port: 7894
 routing-mark: 6666
-
 allow-lan: true
 bind-address: "*"
-
 tcp-concurrent: true
 unified-delay: true
-
 keep-alive-idle: 15
 keep-alive-interval: 15
 disable-keep-alive: false
-
 find-process-mode: strict
-
 global-ua: clash.meta
 global-client-fingerprint: chrome
 etag-support: true
-
 experimental:
   quic-go-disable-gso: false
 
 external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
 secret: password
-
 external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
@@ -46,7 +36,6 @@ geox-url:
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
   asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
-  
 geosite-matcher: succinct
 
 profile:
@@ -342,46 +331,6 @@ proxy-providers:
       proxy-name:
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"      
-
-  Nodes: 
-    type: file
-    path: ./proxy_provider/Nodes.yaml
-    #url: https://sub.store/download/collection/node
-    interval: 86400
-    #proxy: 🇨🇳 China
-    #filter: "(?i)港|台|日|韩|新|狮|美"
-    exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
-    header: 
-      User-Agent:
-      #- "Chrome/130.0.1"
-      #- "Firefox/130.0.1"
-      #- "Clash/v1.18.0"
-      - "mihomo/1.18.3"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      lazy: true
-      timeout: 5000
-      expected-status: "*"
-    override: 
-      #down: "5000 Mbps"
-      #up: "1000 Mbps"
-      #dialer-proxy: 🇨🇳 China
-      #interface-name: WLAN
-      routing-mark: 89898
-      ip-version: dual
-      #additional-prefix: "Subscribe~"
-      additional-suffix: "~Nodes"
-      skip-cert-verify: true
-      udp: true
-      udp-over-tcp: false
-      tfo: false
-      mptcp: false
-      proxy-name: 
-      - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"          
 
 proxy-groups:
   - name: 🔰 Pick
