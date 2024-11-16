@@ -15,7 +15,7 @@ bind-address: "*"
 
 tcp-concurrent: true
 
-disable-keep-alive: false
+disable-keep-alive: true
 keep-alive-idle: 600
 keep-alive-interval: 30
 
@@ -29,8 +29,7 @@ external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
 secret: password
 
-external-ui: ui/
-external-ui-name: metacubexd
+external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 profile:
