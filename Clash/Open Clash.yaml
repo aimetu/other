@@ -1014,8 +1014,4 @@ rules:
   - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
   - GEOIP,CN,🇨🇳 China
   - GEOSITE,cn,🇨🇳 China
-  - GEOSITE,facebook,🎭 Facebook
-  - GEOSITE,google,📟 Google
-  - GEOSITE,microsoft,🖥️ Microsoft
-  - GEOSITE,category-ads-all,⛔ AdBlock
   - MATCH,🐟 Final
