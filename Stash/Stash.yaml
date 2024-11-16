@@ -192,7 +192,31 @@ proxies:
    alterId: 0
    cipher: ""
    flow: ""
-    
+   
+ - name: 🇯🇵 日本
+   type: ss
+   server: 149.22.87.204
+   port: 443
+   cipher: aes-128-gcm
+   password: shadowsocks
+   udp: true
+
+ - name: 🇬🇧 英国
+   type: ss
+   server: 141.98.101.182
+   port: 443
+   cipher: aes-128-gcm
+   password: shadowsocks
+   udp: true
+
+ - name: 🇳🇱 荷兰
+   type: ss
+   server: 109.201.152.181
+   port: 443
+   cipher: aes-128-cfb
+   password: shadowsocks
+   udp: true
+
 # 💡 dns 服务器配置
 dns:
 # 跳过证书验证，解决部分兼容性问题
