@@ -49,7 +49,7 @@ routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 allow-lan: true # 允许局域网内其它设备通过 clash 访问互联网
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
-#  - admin:password
+#  - "admin:password"
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
 #  - "127.0.0.1/8"
 #  - "::1/128"
@@ -57,20 +57,20 @@ lan-allowed-ips: # 允许连接的 ip 地址段，仅作用于 allow-lan 为 tru
   - "0.0.0.0/0"
   - "::/0"
 lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
-  - "192.168.0.3/32"
+  - "10.0.0.0/23"
 
 #interface-name: en0 # 指定 clash 流量出站接口网卡
 
-tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
 unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
+tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
 
 disable-keep-alive: false # tcp 保持活动设置，禁用 tcp keep alive，目前在 android 端强制为 true
-keep-alive-idle: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的的最大空闲时间
-keep-alive-interval: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
+keep-alive-idle: 600 # tcp 保持活动设置，控制发出 tcp keep alive 包的的最大空闲时间
+keep-alive-interval: 30 # tcp 保持活动设置，控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
-global-ua: Chrome/130.0.1 # 自定义外部资源下载时使用的的 ua，默认为 clash.meta
+global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta/Chrome/130.0.1
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 etag-support: true # 外部资源下载的 etag 支持
 
@@ -82,29 +82,21 @@ external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址�
 secret: password # http(s)-api、api 监听地址外部控制器访问密钥
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
-    - *
+    - "*"
   allow-private-network: true
 #external-controller-unix: mihomo.sock # 通过 Unix 套接字访问 API 监听地址，端点不会验证机密。如果启用，请确保安全措施到位，测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
 #external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
-external-ui: /ui/ # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{{external-controller}}/ui
-external-ui-name: metacubexd # 自定义外部用户界面名字
+external-ui: ./ui/ # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{external-controller}/ui
+external-ui-name: xd # 自定义外部用户界面名字
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
 #tls: # 目前仅用于 https api 监听地址外部控制器的证书私钥
 #  certificate: string # 证书 pem 格式，或者 证书的路径
 #  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
-#  custom-certifactes:
-#    - |
-#      -----BEGIN CERTIFICATE-----
-#      format/pem...
-#      -----END CERTIFICATE-----
 
 geodata-mode: true # geoip.dat 数据库开关，false 使用 mmdb 数据库
-geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
-geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
-
 geo-auto-update: true # 自动更新 GEO
 geo-update-interval: 72 # 更新间隔，单位为小时
 geox-url: # 自定 GEO 下载地址
@@ -112,6 +104,8 @@ geox-url: # 自定 GEO 下载地址
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
   asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式  
 
 profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
@@ -137,6 +131,7 @@ tun:
   mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   gso: true # 启用通用分段卸载，仅支持 Linux
   gso-max-size: 65536 # 通用分段卸载包的最大大小
+  endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - 0.0.0.0:53
   route-address: # 启用 auto-route 时使用自定义路由而不是默认路由
@@ -144,7 +139,17 @@ tun:
     - 128.0.0.0/1
     - "::/1"
     - "8000::/1"
-  #endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
+  #route-address-set: # 将指定 IP CIDR 添加到防火墙，不匹配的流量将绕过路由 仅支持 Linux，且需要 nftables 以及auto-route 和 auto-redirect 已启用
+    #- ruleset-1
+  #route-exclude-address-set: # 将指定 IP CIDR 添加到防火墙，匹配的流量将绕过路由 仅支持 Linux，且需要 nftables 以及auto-route 和 auto-redirect 已启用
+    #- ruleset-2
+  #route-exclude-address: # 启用 auto-route 时排除自定义网段
+  #- 192.168.0.0/16
+  #- fc00::/7
+  #include-interface: # 限制被路由的接口，默认不限制，与 exclude-interface 冲突，不可一起配置
+  #- eth0
+  #exclude-interface: # 排除路由的接口，与 include-interface 冲突，不可一起配置
+  #- eth1
   #include-uid: # 包含的用户使用 tun，未被配置的用户不会使用，默认不限制
   #- 0
   #include-uid-range: # 包含的用户范围使用 tun，未被配置的用户不会使用
@@ -197,7 +202,7 @@ dns:
   direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，false 为不遵守仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - system
-    
+
   default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip dns，可使用 dot/doh 加密 
     - "223.5.5.5"
     - "tls://120.53.53.53"
@@ -210,18 +215,23 @@ dns:
     #- "tls://223.5.5.5"
     #- "https://120.53.53.53/dns-query#Meta" # 指定出口网卡
     #- "https://223.6.6.6/dns-query#🇨🇳 China&h3=true" # 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
-  
+  nameserver-policy: # 使用指定的 dns 服务器解析域名
+    "openwrt.lan": system
+    "openwrt.local": system
+    "blog.google": 119.29.29.29
+    "dl.google.com": https://doh.pub/dns-query
+    "dl.l.google.com": https://dns.alidns.com/dns-query
+    "update.googleapis.com": quic://dns.alidns.com
+    
   proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
     - "208.67.222.222"
     - "tls://8.8.8.8"
     - "https://1.1.1.1/dns-query"
-
   fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
     - "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     #- "quic://dns.adguard-dns.com"
-
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置 geoip 开关
     geoip-code: CN # geoip 匹配区域设定，查询不是 cn 时使用 fallback 返回结果
@@ -234,15 +244,7 @@ dns:
       - "+.facebook.com"
       - "+.youtube.com"
   
-  nameserver-policy: # 使用指定的 dns 服务器解析域名
-    "openwrt.lan": system
-    "openwrt.local": system
-    "blog.google": 119.29.29.29
-    "dl.google.com": https://doh.pub/dns-query
-    "dl.l.google.com": https://dns.alidns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
-        
-#💡 本地域名映射，类似于 /etc/hosts, 仅支持配置单个 ip
+#💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
   "*.mihomo.dev": 127.0.0.1
   "*.dev": 127.0.0.1
@@ -253,31 +255,6 @@ hosts:
   "mtalk.google.com": 108.177.125.188
   "openwrt.lan": openwrt.local # 只允许配置一个别名
   "home.lan": lan # lan 为特别字段，将加入本地所有网卡的地址
-  
-#💡 自定义系统代理需要绕过的域名或ip
-bypass:
-  - localhost
-  - 127.*
-  - 10.*
-  - 172.16.*
-  - 172.17.*
-  - 172.18.*
-  - 172.19.*
-  - 172.20.*
-  - 172.21.*
-  - 172.22.*
-  - 172.23.*
-  - 172.24.*
-  - 172.25.*
-  - 172.26.*
-  - 172.27.*
-  - 172.28.*
-  - 172.29.*
-  - 172.30.*
-  - 172.31.*
-  - 192.168.*
-  - <local>
-  - ...
 
 #💡 内置 sniffer 域名嗅探器，通过读取握手包内的域名字段，将 ip 还原成域名，有效解决 mapping 机制的短板
 sniffer:
@@ -291,6 +268,7 @@ sniffer:
       override-destination: true
     TLS:
       ports: [443, 8443]
+      override-destination: true
     QUIC:
       ports: [443, 8443]
   skip-domain: # 需要跳过嗅探的域名。主要解决部分站点 sni 字段非域名，导致嗅探结果异常的问题，如米家设备 
@@ -299,7 +277,11 @@ sniffer:
     - "+.apple.com"
   force-domain: # 需要强制嗅探的域名（默认情况下只对 IP 进行嗅探） 
     - "google.com"
-
+  skip-src-address: # 跳过嗅探的来源 IP 段列表
+    - 192.168.0.3/32
+  skip-dst-address: # 跳过嗅探的目标 IP 段列表
+    - 192.168.0.3/32
+    
 #💡 流量入站配置,可以作为服务器
 listeners:
   - name: socks5-lan
@@ -375,8 +357,8 @@ listeners:
     
 #💡 隧道模式，代理转发到目标服务器（示例：127.0.0.1:7777 经过 proxy 这个 proxies/proxy-groups 访问 119.29.29.29:53）
 tunnels:
-  - tcp,127.0.0.1:6553,1.0.0.1:53,🌐 Global
-  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🌐 Global # 一行简约配置
+  - tcp,127.0.0.1:6553,1.0.0.1:53,🌐 Global # 单行简约配置，顺序分别对应多行的 network/address/target/proxy
+  - tcp/udp,127.0.0.1:6666,1.1.1.1:53,🌐 Global
   - network: [tcp, udp] # 完整 yaml 配置
     address: 127.0.0.1:7777
     target: www.example.org
@@ -510,7 +492,7 @@ proxies:
       headers:
         Host: aimeto.pages.dev
       v2ray-http-upgrade: false
-    #dialer-proxy: 🇺🇳 Nations # # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
+    #dialer-proxy: 🇺🇳 Nations # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
     
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
@@ -520,7 +502,7 @@ proxy-providers:
   Subscribe: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: ./proxy/Subscribe.yaml # 存储路径
-    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all | ＆flag=[ua]&types=[hysteria2] 根据不同 ua | type（节点类型）获取不同的节点，非 clash 配置可通过订阅链接转换：https://acl4ssr.netlify.app
+    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点，非 clash 配置可通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
     #proxy: 🌐 Global  # 经过指定代理进行下载/更新
     #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
@@ -564,7 +546,7 @@ proxy-providers:
   Nodes: 
     type: file # 本地代理服务器
     path: ./proxy/Nodes.yaml
-    #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all | ＆flag=[ua]&types=[hysteria2] 根据不同 ua | type（节点类型）获取不同的节点
+    #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点
     interval: 86400
     #proxy: 🇨🇳 China
     #filter: "(?i)港|台|日|韩|新|狮|美"
@@ -617,6 +599,7 @@ proxy-providers:
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
 # exclude-filter: 台|日|韩|新|狮|美 # 排除满足关键词或正则表达式的节点
 # exclude-type: "Shadowsocks|http" # 不支持正则表达式，通过 | 分割，根据节点 "协议" 类型（socks5、Shadowsocks、ShadowsocksR、http、snell、vmess、vless、Trojan、hysteria、hysteria2、wireguard、tuic）排除，注意：proxy-groups 与 proxy-providers 写法不同
+# expected-status: "*" # 健康检查时期望的 HTTP 响应状态码，当响应状态码与期望状态一致时才认为节点可用
 # disable-udp: true # 禁用 udp 流量转发
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
@@ -665,6 +648,7 @@ proxy-groups:
     #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "协议" 类型筛选
+    #expected-status: "*" # 示例：健康检查时期望的 HTTP 响应状态码
     #include-all: true # 示例：引入所有出站代理节点以及代理集合
     #include-all-proxies: true # 示例：引入所有出站代理节点
     include-all-providers: true # 示例：引入所有代理集合
@@ -1073,7 +1057,14 @@ proxy-groups:
       - 🔰 Pick
       - ✅ Node
 
-#💡 远程分流规则集合（behavior 参数有三种可选项：domain / ipcidr / classical）
+#💡 远程分流规则集合
+# type: http 可选 http/file，类型为 http 则必须配置
+# behavior: classical 对应不同的文件格式：domain/ipcidr/classical
+# url: "https://www.example.org" 类型为 http 则必须配置
+# interval: 600 更新 provider 的时间，单位为秒
+# path: ./rule1.yaml 可选文件路径，不可重复，不填写时会使用 url 的 MD5 作为此文件的文件名
+# proxy: DIRECT 经过指定代理进行下载/更新
+# format: yaml 可选 yaml/text/mrs，默认 yaml
 rule-providers:
   🚥 Direct:
     type: http
