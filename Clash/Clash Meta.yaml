@@ -90,8 +90,8 @@ external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
 #external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
-external-ui: ./ui/ # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{external-controller}/ui
-external-ui-name: xd # 自定义外部用户界面名字
+external-ui: ui/ # 配置外部控制器 web ui 目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，clash core 将会将其部署在 http://{external-controller}/ui
+external-ui-name: metacubexd # 自定义外部用户界面名字
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
 #tls: # 目前仅用于 https api 监听地址外部控制器的证书私钥
