@@ -133,7 +133,8 @@ tun:
   gso-max-size: 65536 # 通用分段卸载包的最大大小
   endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
   dns-hijack: # dns 劫持仅支持 tcp/udp
-    - 0.0.0.0:53
+    - any:53
+    - tcp://any:53
   route-address: # 启用 auto-route 时使用自定义路由而不是默认路由
     - 0.0.0.0/1
     - 128.0.0.0/1
