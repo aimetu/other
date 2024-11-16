@@ -1,22 +1,29 @@
 mode: rule
+
 log-level: info
+
 ipv6: true
+
 port: 7891
 socks-port: 7892
 mixed-port: 7890
-redir-port: 7893
-tproxy-port: 7894
-routing-mark: 6666
+redir-port: 7895
+tproxy-port: 7896
+
 allow-lan: true
 bind-address: "*"
+
 tcp-concurrent: true
-unified-delay: true
+
+disable-keep-alive: false
 keep-alive-idle: 15
 keep-alive-interval: 15
-disable-keep-alive: false
-find-process-mode: strict
+
+find-process-mode: off
+
 global-ua: clash.meta
 global-client-fingerprint: chrome
+
 etag-support: true
 experimental:
   quic-go-disable-gso: false
@@ -31,21 +38,20 @@ profile:
 
 tun:
   enable: false
-  stack: mixed
+  stack: system
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
   strict_route: true
-  device: Mihomo
+  device: CLASH
   mtu: 9000
   gso: true
   gso-max-size: 65536
   dns-hijack:
-    - any:53
-  inet4_route_address:
-    - "0.0.0.0/1"
-    - "128.0.0.0/1"
-  inet6_route_address:
+    - 0.0.0.0:53
+  route-address:
+    - 0.0.0.0/1
+    - 128.0.0.0/1
     - "::/1"
     - "8000::/1"
 
@@ -111,8 +117,6 @@ dns:
       - "+.youtube.com"
   
   nameserver-policy:
-    "openwrt.lan": system
-    "openwrt.local": system
     "blog.google": 119.29.29.29
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
@@ -146,9 +150,6 @@ sniffer:
     - "+.apple.com"
   force-domain:
     - "google.com"
-  port-whitelist:
-    - 80
-    - 443
 
 proxies: 
   - name: ☁️ Warp Client
