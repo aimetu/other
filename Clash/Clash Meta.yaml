@@ -497,38 +497,38 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇳 Nations # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-- name: 🇯🇵 日本
-  type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  udp-over-tcp: true
-  udp-over-tcp-version: 2
-  ip-version: dual
+  - name: 🇯🇵 日本
+    type: ss
+    server: 149.22.87.204
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 2
+    ip-version: dual
   
-- name: 🇬🇧 英国
-  type: ss
-  server: 141.98.101.182
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  udp-over-tcp: true
-  udp-over-tcp-version: 2
-  ip-version: dual
+  - name: 🇬🇧 英国
+    type: ss
+    server: 141.98.101.182
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 2
+    ip-version: dual
   
-- name: 🇳🇱 荷兰
-  type: ss
-  server: 109.201.152.181
-  port: 443
-  cipher: aes-128-cfb
-  password: shadowsocks
-  udp: true
-  udp-over-tcp: true
-  udp-over-tcp-version: 2
-  ip-version: dual  
+  - name: 🇳🇱 荷兰
+    type: ss
+    server: 109.201.152.181
+    port: 443
+    cipher: aes-128-cfb
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 2
+    ip-version: dual
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
