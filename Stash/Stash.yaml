@@ -70,7 +70,7 @@ proxies:
    mtu: 1280
    reserved: [17,176,6]
    keepalive: 45
-   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -91,7 +91,7 @@ proxies:
    mtu: 1280
    reserved: [197,215,83]
    keepalive: 45
-   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -112,7 +112,7 @@ proxies:
    mtu: 1280
    reserved: [80,73,10]
    keepalive: 45
-   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -133,7 +133,7 @@ proxies:
    mtu: 1280
    reserved: [173,82,247]
    keepalive: 45
-   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
@@ -200,7 +200,9 @@ proxies:
    cipher: aes-128-gcm
    password: shadowsocks
    udp: true
-
+   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-timeout: 3
+   
  - name: 🇬🇧 英国
    type: ss
    server: 141.98.101.182
@@ -208,7 +210,9 @@ proxies:
    cipher: aes-128-gcm
    password: shadowsocks
    udp: true
-
+   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-timeout: 3
+   
  - name: 🇳🇱 荷兰
    type: ss
    server: 109.201.152.181
@@ -216,7 +220,9 @@ proxies:
    cipher: aes-128-cfb
    password: shadowsocks
    udp: true
-
+   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-timeout: 3
+   
 # 💡 dns 服务器配置
 dns:
 # 跳过证书验证，解决部分兼容性问题
