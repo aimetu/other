@@ -38,18 +38,18 @@ log-level: info  # 日志模式:silent 静默、info 信息、warning 警告、e
 
 ipv6: true # ipv6 支持，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求 aaaa 记录
 
-port: 7898 # 本地 http(s) 代理端口
-socks-port: 7899 # 本地 socks4/4a/5 代理端口
+port: 7891 # 本地 http(s) 代理端口
+socks-port: 7892 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口是一个特殊的端口, 它同时支持 http(s) 和 socks5 协议. 您可以使用任何支持 http 或 socks 代理的程序连接到这个端口
-redir-port: 7892 # 透明代理端口，仅能代理 tcp 流量
-tproxy-port: 7893  # 透明代理端口，可代理 tcp 与 udp 流量
+redir-port: 7895 # 透明代理端口，仅能代理 tcp 流量
+tproxy-port: 7896  # 透明代理端口，可代理 tcp 与 udp 流量
 
 routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 
 allow-lan: true # 允许局域网内其它设备通过 clash 访问互联网
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，绑定 ip 仅允许某个ip访问代理端口：支持三种参数："*" 绑定所有ip地址，192.168.188.188 绑定一个的ipv4地址，[aaaa::a8aa:ff:fe09:57d8] 绑定一个 ipv6 地址
 #authentication:  # 本地 http(s)、socks 服务端口验证的用户名和密码
-#  - "admin:password"
+#  - admin:password
 #skip-auth-prefixes: # 本地 http(s)、socks 服务端口跳过验证的 ip 段
 #  - "127.0.0.1/8"
 #  - "::1/128"
@@ -64,9 +64,9 @@ lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白�
 tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
 unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
 
+disable-keep-alive: false # tcp 保持活动设置，禁用 tcp keep alive，目前在 android 端强制为 true
 keep-alive-idle: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的的最大空闲时间
 keep-alive-interval: 15 # tcp 保持活动设置，控制发出 tcp keep alive 包的间隔，减少移动设备耗电问题的临时措施
-disable-keep-alive: false # tcp 保持活动设置，禁用 tcp keep alive，目前在 android 端强制为 true
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由 clash 判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
@@ -103,6 +103,8 @@ external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-
 
 geodata-mode: true # geoip.dat 数据库开关，false 使用 mmdb 数据库
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
+
 geo-auto-update: true # 自动更新 GEO
 geo-update-interval: 72 # 更新间隔，单位为小时
 geox-url: # 自定 GEO 下载地址
@@ -110,8 +112,6 @@ geox-url: # 自定 GEO 下载地址
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
   asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
-  
-geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式
 
 profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
@@ -133,16 +133,15 @@ tun:
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-redir: true # 自动重定向开关
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
-  device: Meta # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
+  device: CLASH # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   gso: true # 启用通用分段卸载，仅支持 Linux
   gso-max-size: 65536 # 通用分段卸载包的最大大小
   dns-hijack: # dns 劫持仅支持 tcp/udp
-    - any:53
-  inet4_route_address: # 启用 auto_route 时使用自定义路由而不是 ipv4 默认路由
-    - "0.0.0.0/1"
-    - "128.0.0.0/1"
-  inet6_route_address: # 启用 auto_route 时使用自定义路由而不是 ipv6 默认路由
+    - 0.0.0.0:53
+  route-address: # 启用 auto-route 时使用自定义路由而不是默认路由
+    - 0.0.0.0/1
+    - 128.0.0.0/1
     - "::/1"
     - "8000::/1"
   #endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
@@ -194,9 +193,12 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-  
+    
+  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，false 为不遵守仅当 direct-nameserver 不为空时生效    
+  direct-nameserver: # direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+    - system
+    
   default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip dns，可使用 dot/doh 加密 
-    #- system
     - "223.5.5.5"
     - "tls://120.53.53.53"
     - "https://223.6.6.6/dns-query"
@@ -219,7 +221,7 @@ dns:
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     #- "quic://dns.adguard-dns.com"
-    
+
   fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
     geoip: true # 配置 geoip 开关
     geoip-code: CN # geoip 匹配区域设定，查询不是 cn 时使用 fallback 返回结果
@@ -297,9 +299,6 @@ sniffer:
     - "+.apple.com"
   force-domain: # 需要强制嗅探的域名（默认情况下只对 IP 进行嗅探） 
     - "google.com"
-  port-whitelist: # 端口白名单
-    - 80
-    - 443
 
 #💡 流量入站配置,可以作为服务器
 listeners:
