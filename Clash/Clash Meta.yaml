@@ -175,18 +175,18 @@ tun:
 #💡 域名解析 dns 服务器配置
 dns:
   enable: true  # dns 开关关闭将使用系统 dns
-  ipv6: true # ipv6 解析开关如果为 false，将返回 ipv6 结果为空
+  ipv6: true # 是否解析 ipv6, 如为 false, 则回应 AAAA 的空解析
   ipv6-timeout: 300 # 内部双栈并发时，向上游查询时的等待时间，默认 100ms (单位：ms)
-  prefer-h3: true # doh 支持 http/3 将并发尝试开关
+  prefer-h3: true # doh 优先使用 http/3
   respect-rules: true # dns 遵守路由规则，需配置 proxy-server-nameserver
-  use-hosts: true # 是否查询配置中的 hosts
+  use-hosts: true # 是否回应配置中的 hosts
   use-system-hosts: true # 是否查询系统中的 hosts
   search-domains: [local] # 搜索域以获取 a/aaaa 记录
-  listen: 0.0.0.0:53 # 需要劫持的 dns
+  listen: 0.0.0.0:53 # dns 服务监听，仅支持 udp
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
-  fake-ip-filter: # fake-ip 过滤，列表中的域名返回真实 ip
+  fake-ip-filter: # fakeip 过滤，以下地址不会下发 fakeip 映射用于连接
     - "*.lan"
     - "*.local"
     - "localhost"
@@ -209,19 +209,19 @@ dns:
   direct-nameserver: # direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - system
 
-  default-nameserver: # 引导解析 dns 服务器, 只支持纯 ip dns，可使用 dot/doh 加密 
+  default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为加密 dns
     - "223.5.5.5"
     - "tls://120.53.53.53"
     - "https://223.6.6.6/dns-query"
     
-  nameserver: # 默认 dns 服务器，支持 udp/tcp/dot/doh/doq 等协议 
+  nameserver: # 默认的域名解析服务器 
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
     #- "tls://223.5.5.5"
     #- "https://120.53.53.53/dns-query#Meta" # 指定出口网卡
     #- "https://223.6.6.6/dns-query#🇨🇳 China&h3=true" # 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
-  nameserver-policy: # 使用指定的 dns 服务器解析域名
+  nameserver-policy: # 指定域名查询的解析服务器
     "openwrt.lan": system
     "openwrt.local": system
     "blog.google": 119.29.29.29
@@ -229,23 +229,23 @@ dns:
     "dl.l.google.com": https://dns.alidns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
     
-  proxy-server-nameserver: # 回落 dns 服务器，解析代理服务器节点域名，查询失败将使用 nameserver，非并发查询
+  proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循nameserver-policy、nameserver和fallback的配置
     - "208.67.222.222"
     - "tls://8.8.8.8"
     - "https://1.1.1.1/dns-query"
-  fallback: # 当开启 fallback 时，会查询 geoip 过滤不是 cn 时用以下 dns 解析, 支持 udp/tcp/dot/doh/doq 等协议
+  fallback: # 后备域名解析服务器，一般情况下使用境外 dns, 保证结果可信
     - "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     #- "quic://dns.adguard-dns.com"
-  fallback-filter: # 配置 fallback 使用条件，回落 dns 服务器过滤
-    geoip: true # 配置 geoip 开关
-    geoip-code: CN # geoip 匹配区域设定，查询不是 cn 时使用 fallback 返回结果
-    geosite: # 配置强制 fallback，优先于 ip 判断，具体分类自行查看 geosite 库
+  fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
+    geoip: true # 是否启用 geoip 判断
+    geoip-code: CN # geoip 匹配区域筛选，查询不是 cn 时使用 fallback 返回结果
+    geosite: # 匹配到 geosite 的域名，将只使用 fallback 解析，不去使用 nameserver
       - gfw
-    ipcidr: # 如果不匹配 ipcidr 则使用 nameservers 中的结果 
+    ipcidr: # 这些网段的结果会被视为污染，nameserver 解析出这些结果时将会采用 fallback 的解析结果
       - 240.0.0.0/4
-    domain: # 指定该域名用 fallback 解析   
+    domain: # 这些域名被视为已污染，匹配到这些域名，会直接使用 fallback 解析，不去使用 nameserver  
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
