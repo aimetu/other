@@ -19,18 +19,15 @@ disable-keep-alive: true
 keep-alive-idle: 600
 keep-alive-interval: 30
 
-find-process-mode: off
+find-process-mode: strict
 
 global-ua: clash.meta
 global-client-fingerprint: chrome
 etag-support: true
 
-external-controller: 0.0.0.0:9090
-external-controller-tls: 0.0.0.0:9443
+external-controller: 127.0.0.1:9090
+external-controller-tls: 127.0.0.1:9443
 secret: password
-
-external-ui: ui
-external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 profile:
   store-selected: true
