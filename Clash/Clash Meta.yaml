@@ -79,8 +79,8 @@ experimental: # 禁用 quic 协议中的 gso(通用分段卸载)/ecn(显式拥�
   quic-go-disable-ecn: false
   dialer-ip4p-convert: false
 
-external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
-external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
+external-controller: 127.0.0.1:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
+external-controller-tls: 127.0.0.1:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: password # http(s)-api、api 监听地址外部控制器访问密钥
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
