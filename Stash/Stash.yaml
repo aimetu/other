@@ -193,7 +193,7 @@ proxies:
    cipher: ""
    flow: ""
    
- - name: 🇯🇵 日本
+ - name: 🇯🇵 日本*1
    type: ss
    server: 149.22.87.204
    port: 443
@@ -203,9 +203,19 @@ proxies:
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
    
- - name: 🇬🇧 英国
+ - name: 🇯🇵 日本*2
    type: ss
-   server: 141.98.101.182
+   server: 149.22.87.241
+   port: 443
+   cipher: aes-128-gcm
+   password: shadowsocks
+   udp: true
+   benchmark-url: http://www.gstatic.com/generate_204
+   benchmark-timeout: 3
+
+ - name: 🇯🇵 日本*3
+   type: ss
+   server: 149.22.87.240
    port: 443
    cipher: aes-128-gcm
    password: shadowsocks
@@ -213,7 +223,7 @@ proxies:
    benchmark-url: http://www.gstatic.com/generate_204
    benchmark-timeout: 3
    
- - name: 🇳🇱 荷兰
+ - name: 🇳🇱 荷兰*1
    type: ss
    server: 109.201.152.181
    port: 443
