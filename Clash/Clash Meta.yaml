@@ -44,22 +44,22 @@ mixed-port: 7890 # 混合端口, 同时支持 http(s) 和 socks5 协议. 可以�
 redir-port: 7895 # 重定向端口，用于透明代理，仅能代理 tcp 流量
 tproxy-port: 7896  # 透明代理端口，支持 TUN 模式，可代理 tcp 与 udp 流量
 
-routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
-
 allow-lan: true # 允许局域网设备连接代理
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，仅允许某个 ip 访问：支持三种参数："*" 绑定所有 ip 地址，192.168.188.188/[aaaa::a8aa:ff:fe09:57d8] 绑定一个的 ipv4/ipv6 地址
-#authentication:  # 本地 http(s)/socks 代理验证用户密码
-#  - "admin:password"
-#skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
-#  - "127.0.0.1/8"
-#  - "::1/128"
 lan-allowed-ips: # 允许连接的 ipv4/ipv6 地址段，仅作用于 allow-lan 为 true, 默认值为 0.0.0.0/0 和 ::/0
   - "0.0.0.0/0"
   - "::/0"
 lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
   - 192.168.0.3/32
+#authentication:  # 本地 http(s)/socks 代理验证用户密码
+#  - "admin:password"
+#skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
+#  - "127.0.0.1/8"
+#  - "::1/128"
 
 #interface-name: en0 # 指定流量出站接口网卡
+
+routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 
 unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
 tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
@@ -70,7 +70,7 @@ keep-alive-interval: 30 # tcp keep alive 间隔时间 (单位: 秒)
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由设备判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
-global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta、Chrome/130.0.1
+global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta 可选 chrome/131.1、firefox、131.1 或其它
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 etag-support: true # 外部资源下载的 etag 支持
 
@@ -98,7 +98,8 @@ external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-
 #  certificate: string # 证书 pem 格式，或者 证书的路径
 #  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
 
-geodata-mode: true # geoip.dat 数据库开关，false 使用 mmdb 数据库
+geodata-mode: true # geoip 数据模式，true为 dat，false为 mmdb
+geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geo-auto-update: true # 自动更新 geo
 geo-update-interval: 72 # 更新间隔，单位为小时
 geox-url: # 自定 geo 下载地址
@@ -106,7 +107,6 @@ geox-url: # 自定 geo 下载地址
   geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
   asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
-geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式  
 
 profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
@@ -125,14 +125,17 @@ ntp:
 tun:
   enable: false # tun 模式开关
   stack: system # 网络栈类型 system > mixed > gvisor > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
-  auto-detect-interface: true # 自动识别出口网卡
+  auto-detect-interface: true # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
-  auto-redir: true # 自动重定向开关
-  strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
+  auto-redir: true # 自动配置 iptables/nftables 以重定向 TCP 连接，需要 auto-route 已启用
   device: CLASH # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
+  strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
   mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   gso: true # 启用通用分段卸载，仅支持 Linux
   gso-max-size: 65536 # 通用分段卸载包的最大大小
+  udp-timeout: 300 # UDP NAT 过期时间，以秒为单位
+  iproute2-table-index: 2022 # 生成的 iproute2 路由表索引，默认使用 2022
+  iproute2-rule-index: 9000 # 生成的 iproute2 规则起始索引，默认使用 9000
   endpoint-independent_nat: false # 启用独立于端点的 NAT，性能可能会略有下降，在不需要的时候不建议开启
   dns-hijack: # dns 劫持仅支持 tcp/udp
     - any:53
@@ -175,11 +178,11 @@ dns:
   ipv6: true # ipv6 解析开关如果为 false，将返回 ipv6 结果为空
   ipv6-timeout: 300 # 内部双栈并发时，向上游查询时的等待时间，默认 100ms (单位：ms)
   prefer-h3: true # doh 支持 http/3 将并发尝试开关
-  listen: 0.0.0.0:53 # 需要劫持的 dns
+  respect-rules: true # dns 遵守路由规则，需配置 proxy-server-nameserver
   use-hosts: true # 是否查询配置中的 hosts
   use-system-hosts: true # 是否查询系统中的 hosts
-  respect-rules: true # dns 连接跟随 rules，需配置 proxy-server-nameserver
   search-domains: [local] # 搜索域以获取 a/aaaa 记录
+  listen: 0.0.0.0:53 # 需要劫持的 dns
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
