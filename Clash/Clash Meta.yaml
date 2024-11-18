@@ -508,8 +508,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇯🇵 Japan
   
   - name: 🇬🇧 英国
     type: ss
@@ -519,8 +522,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇺🇳 Nations
   
   - name: 🇳🇱 荷兰
     type: ss
@@ -530,8 +536,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇺🇳 Nations
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
