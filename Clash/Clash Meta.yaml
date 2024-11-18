@@ -500,7 +500,7 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇳 Nations # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
-  - name: 🇯🇵 日本1
+  - name: 🇯🇵 日本*1
     type: ss
     server: 149.22.87.204
     port: 443
@@ -514,7 +514,7 @@ proxies:
     ip-version: dual
     #dialer-proxy: 🇯🇵 Japan
   
-  - name: 🇯🇵 日本2
+  - name: 🇯🇵 日本*2
     type: ss
     server: 149.22.87.241
     port: 443
@@ -528,7 +528,7 @@ proxies:
     ip-version: dual
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: 🇯🇵 日本3
+  - name: 🇯🇵 日本*3
     type: ss
     server: 149.22.87.240
     port: 443
@@ -542,7 +542,7 @@ proxies:
     ip-version: dual
     #dialer-proxy: 🇯🇵 Japan
   
-  - name: 🇳🇱 荷兰
+  - name: 🇳🇱 荷兰*1
     type: ss
     server: 109.201.152.181
     port: 443
