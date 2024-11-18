@@ -286,8 +286,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇯🇵 Japan
   
   - name: 🇬🇧 英国
     type: ss
@@ -297,8 +300,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇺🇳 Nations
   
   - name: 🇳🇱 荷兰
     type: ss
@@ -308,8 +314,11 @@ proxies:
     password: shadowsocks
     udp: true
     udp-over-tcp: true
-    udp-over-tcp-version: 2
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
     ip-version: dual
+    #dialer-proxy: 🇺🇳 Nations
 
 proxy-providers:
   Subscribe:
