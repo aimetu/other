@@ -343,10 +343,10 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     header:
       User-Agent:
-      #- "Chrome/130.0.1"
-      #- "Firefox/130.0.1"
-      - "Clash/v1.18.0"
+      #- "Clash/v1.18.0"
       #- "mihomo/1.18.3"
+      - "Clash.meta/2.0.1"
+      #- "Clash-verge/2.0.1"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
