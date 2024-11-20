@@ -50,12 +50,13 @@ lan-allowed-ips: # 允许连接的 ipv4/ipv6 地址段，仅作用于 allow-lan 
   - "0.0.0.0/0"
   - "::/0"
 lan-disallowed-ips: # 禁止连接的 ip 地址段, 黑名单优先级高于白名单, 默认值为空
-  - 192.168.0.3/32
-#authentication:  # 本地 http(s)/socks 代理验证用户密码
-#  - "admin:password"
-#skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
-#  - "127.0.0.1/8"
-#  - "::1/128"
+  - "192.168.1.0/24"
+  - "2409:8a28:7125:35a0::/64"
+authentication:  # 本地 http(s)/socks 代理验证用户密码
+  - "admin:password"
+skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
+  - "127.0.0.1/8"
+  - "::1/128"
 
 #interface-name: en0 # 指定流量出站接口网卡
 
@@ -79,8 +80,8 @@ experimental: # 禁用 quic 协议中的 gso(通用分段卸载)/ecn(显式拥�
   quic-go-disable-ecn: false
   dialer-ip4p-convert: false
 
-external-controller: 127.0.0.1:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
-external-controller-tls: 127.0.0.1:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
+external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
+external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: password # http(s)-api、api 监听地址外部控制器访问密钥
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
@@ -90,7 +91,7 @@ external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
 #external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
-external-ui: ui # 配置外部控制器目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，部署地址：http://{external-controller}/ui
+external-ui: ui/ # 配置外部控制器目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，部署地址：http://{external-controller}/ui
 external-ui-name: metacubexd # 自定义外部 ui 名字
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
