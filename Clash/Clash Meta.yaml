@@ -599,7 +599,7 @@ proxy-providers:
       #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
       ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
-      additional-prefix: "Subscribe~" # 为节点名称添加固定前缀
+      additional-prefix: "Sub~" # 为节点名称添加固定前缀
       #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
       skip-cert-verify: true # 示例：跳过证书验证
       udp: true # 示例：启用 udp 支持
@@ -643,7 +643,7 @@ proxy-providers:
       #interface-name: wlan
       routing-mark: 89898
       ip-version: dual
-      #additional-prefix: "Subscribe~"
+      #additional-prefix: "Sub~"
       additional-suffix: "~Nodes"
       skip-cert-verify: true
       udp: true
