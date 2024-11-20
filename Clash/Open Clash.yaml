@@ -366,7 +366,7 @@ proxy-providers:
       routing-mark: 68686
       ip-version: dual
       additional-prefix: "Sub~"
-      #additional-suffix: "~Node"
+      #additional-suffix: "~Nodes"
       skip-cert-verify: true
       udp: true
       udp-over-tcp:
