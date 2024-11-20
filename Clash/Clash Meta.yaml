@@ -734,7 +734,7 @@ proxy-groups:
     include-all: true
 
   - name: ☁️ Warp
-    type: fallback
+    type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     include-all-proxies: true
     filter: Client|Zero|Team|Plus
