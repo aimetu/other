@@ -1,7 +1,5 @@
 mode: rule
-
 log-level: info
-
 ipv6: true
 
 port: 7891
@@ -11,8 +9,24 @@ redir-port: 7895
 tproxy-port: 7896
 
 allow-lan: true
-bind-address: "*"
+bind-address: "*" 
+lan-allowed-ips:
+  - "0.0.0.0/0"
+  - "::/0"
+lan-disallowed-ips:
+  - "192.168.1.0/24"
+  - "2409:8a28:7125:35a0::/64"
+authentication:
+  - "admin:password"
+skip-auth-prefixes:
+  - "127.0.0.1/8"
+  - "::1/128"
 
+#interface-name: en0
+
+routing-mark: 6666
+
+unified-delay: true
 tcp-concurrent: true
 
 disable-keep-alive: true
@@ -25,9 +39,33 @@ global-ua: clash.meta
 global-client-fingerprint: chrome
 etag-support: true
 
-external-controller: 127.0.0.1:9090
-external-controller-tls: 127.0.0.1:9443
+experimental:
+  quic-go-disable-gso: false
+  quic-go-disable-ecn: false
+  dialer-ip4p-convert: false
+
+external-controller: 0.0.0.0:9090
+external-controller-tls: 0.0.0.0:9443
 secret: password
+external-controller-cors:
+  allow-origins:
+    - "*"
+  allow-private-network: true
+
+external-ui: ui/
+external-ui-name: metacubexd
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
+geodata-mode: true
+geodata-loader: memconservative
+geo-auto-update: true
+geo-update-interval: 72
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+geosite-matcher: succinct
 
 profile:
   store-selected: true
@@ -39,11 +77,14 @@ tun:
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
+  device: wwwlan
   strict_route: true
-  device: CLASH
   mtu: 9000
   gso: true
   gso-max-size: 65536
+  udp-timeout: 300
+  iproute2-table-index: 2022
+  iproute2-rule-index: 9000
   endpoint-independent_nat: false
   dns-hijack:
     - any:53
@@ -53,17 +94,16 @@ tun:
     - 128.0.0.0/1
     - "::/1"
     - "8000::/1"
-
 dns:
   enable: true
   ipv6: true
   ipv6-timeout: 300
   prefer-h3: true
-  listen: 0.0.0.0:53
+  respect-rules: true
   use-hosts: true
   use-system-hosts: true
-  respect-rules: true
   search-domains: [local]
+  listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
@@ -85,16 +125,23 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-  
+    
+  direct-nameserver-follow-policy: true
+  direct-nameserver:
+    - system
+    
   default-nameserver:
     - "223.5.5.5"
     - "tls://120.53.53.53"
     - "https://223.6.6.6/dns-query"
+    
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
   nameserver-policy:
+    "openwrt.lan": system
+    "openwrt.local": system
     "blog.google": 119.29.29.29
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
@@ -108,6 +155,7 @@ dns:
     - "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
+    #- "quic://dns.adguard-dns.com"
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -115,11 +163,10 @@ dns:
       - gfw
     ipcidr:
       - 240.0.0.0/4
-    domain:
+    domain: 
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
-
 hosts:
   "*.mihomo.dev": 127.0.0.1
   "*.dev": 127.0.0.1
@@ -128,6 +175,8 @@ hosts:
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
+  "openwrt.lan": openwrt.local
+  "home.lan": lan
 
 sniffer:
   enable: true
@@ -149,6 +198,10 @@ sniffer:
     - "+.apple.com"
   force-domain:
     - "google.com"
+  skip-src-address:
+    - 192.168.0.3/32
+  skip-dst-address:
+    - 192.168.0.3/32
 
 proxies: 
   - name: ☁️ Warp Client
@@ -156,7 +209,7 @@ proxies:
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU=
     ip: 172.16.0.2
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6
-    peers:
+    peers: 
      - server: 162.159.192.1
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
@@ -166,7 +219,7 @@ proxies:
     mtu: 1280
     udp: true
     persistent-keepalive: 45
-    remote-dns-resolve: true
+    remote-dns-resolve: tru
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇭🇰 HongKong
 
@@ -214,7 +267,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 162.159.195.5  # 优选 IP：https://github.com/Alvin9999/new-pac
+     - server: 162.159.195.5
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -246,7 +299,7 @@ proxies:
 
   - name: ☁️ Warp Workers
     type: vless
-    server: 104.19.38.18
+    server: 104.19.38.18 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
@@ -278,66 +331,10 @@ proxies:
       v2ray-http-upgrade: false
     #dialer-proxy: 🇺🇳 Nations
 
-  - name: 🇯🇵 日本*1
-    type: ss
-    server: 149.22.87.204
-    port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
-    udp: true
-    udp-over-tcp: true
-    udp-over-tcp-version: 1
-    tfo: true
-    mptcp: true
-    ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
-
-  - name: 🇯🇵 日本*2
-    type: ss
-    server: 149.22.87.241
-    port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
-    udp: true
-    udp-over-tcp: true
-    udp-over-tcp-version: 1
-    tfo: true
-    mptcp: true
-    ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
-
-  - name: 🇯🇵 日本*3
-    type: ss
-    server: 149.22.87.240
-    port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
-    udp: true
-    udp-over-tcp: true
-    udp-over-tcp-version: 1
-    tfo: true
-    mptcp: true
-    ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
-  
-  - name: 🇳🇱 荷兰*1
-    type: ss
-    server: 109.201.152.181
-    port: 443
-    cipher: aes-128-cfb
-    password: shadowsocks
-    udp: true
-    udp-over-tcp: true
-    udp-over-tcp-version: 1
-    tfo: true
-    mptcp: true
-    ip-version: dual
-    #dialer-proxy: 🇺🇳 Nations
-
 proxy-providers:
-  Subscribe:
+  Subscribe: # 远程代理服务器引用名称
     type: http
-    path: ./proxy_provider/Subscribe.yaml
+    path: ./proxy/Subscribe.yaml
     url: https://sub.store/download/collection/node
     interval: 86400
     #proxy: 🌐 Global
@@ -349,7 +346,11 @@ proxy-providers:
       #- "Chrome/130.0.1"
       #- "Firefox/130.0.1"
       - "Clash/v1.18.0"
-      - "mihomo/1.18.3"
+      #- "mihomo/1.18.3"
+      # Accept:
+      # - 'application/vnd.github.v3.raw'
+      # Authorization:
+      # - 'token 1231231'
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -361,19 +362,19 @@ proxy-providers:
       #down: "5000 Mbps"
       #up: "1000 Mbps"
       #dialer-proxy: 🌐 Global
-      #interface-name: CLASH
+      #interface-name: wlan
       routing-mark: 68686
       ip-version: dual
       additional-prefix: "Sub~"
-      #additional-suffix: "~Nodes"
+      #additional-suffix: "~Node"
       skip-cert-verify: true
       udp: true
-      udp-over-tcp: false
+      udp-over-tcp:
       tfo: false
       mptcp: false
       proxy-name:
       - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"      
+        target: "iplc x $1"
 
 proxy-groups:
   - name: 🔰 Pick
@@ -410,6 +411,7 @@ proxy-groups:
     #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
     #exclude-filter: 台|日|韩|新|狮|美
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
+    #expected-status: "*"
     #include-all: true
     #include-all-proxies: true
     include-all-providers: true
@@ -823,209 +825,210 @@ rule-providers:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    path: ./rule_provider/Direct.yaml
+    path: ./rule/Direct.yaml
     interval: 86400
 
   🚥 Lan:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
-    path: ./rule_provider/Lan.yaml
+    path: ./rule/Lan.yaml
     interval: 86400
 
   ⛔ AntiAd:
     type: http
     behavior: domain
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    path: ./rule_provider/AntiAd.yaml
+    path: ./rule/AntiAd.yaml
     interval: 86400
 
   ⛔ Privacy:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
-    path: ./rule_provider/Privacy_Classical.yaml
+    path: ./rule/Privacy_Classical.yaml
     interval: 86400
     
   ⛔ Hijacking:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    path: ./rule_provider/Hijacking.yaml
+    path: ./rule/Hijacking.yaml
     interval: 86400
     
   ⛔ AdLite:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
-    path: ./rule_provider/AdvertisingLite_Classical.yaml
+    path: ./rule/AdvertisingLite_Classical.yaml
     interval: 86400
 
   ⛔ HttpDNS:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
-    path: ./rule_provider/BlockHttpDNS.yaml
+    path: ./rule/BlockHttpDNS.yaml
     interval: 86400
 
   ⛔ Stun:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
-    path: ./rule_provider/STUN.yaml
+    path: ./rule/STUN.yaml
     interval: 86400
 
   🕸️ Speedtest:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    path: ./rule_provider/Speedtest.yaml
+    path: ./rule/Speedtest.yaml
     interval: 86400
     
   🎵 TikTok:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    path: ./rule_provider/TikTok.yaml
+    path: ./rule/TikTok.yaml
     interval: 86400
     
   ✉️ Telegram:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    path: ./rule_provider/Telegram.yaml
+    path: ./rule/Telegram.yaml
     interval: 86400
 
   🗣️ Discord:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    path: ./rule_provider/Discord.yaml
+    path: ./rule/Discord.yaml
     interval: 86400
     
   🎶 Spotify:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    path: ./rule_provider/Spotify.yaml
+    path: ./rule/Spotify.yaml
     interval: 86400
     
   📽️ Netflix:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
-    path: ./rule_provider/Netflix.yaml
+    path: ./rule/Netflix.yaml
     interval: 86400
     
   📼 Disney+:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
-    path: ./rule_provider/Disney.yaml
+    path: ./rule/Disney.yaml
     interval: 86400
     
   📹 YouTube:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
-    path: ./rule_provider/YouTube.yaml
+    path: ./rule/YouTube.yaml
     interval: 86400
     
   🤖 OpenAI:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./rule_provider/OpenAI.yaml
+    path: ./rule/OpenAI.yaml
     interval: 86400
 
   🛒 Amazon:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
-    path: ./rule_provider/Amazon.yaml
+    path: ./rule/Amazon.yaml
     interval: 86400
 
   🎭 Facebook:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
-    path: ./rule_provider/Facebook.yaml
+    path: ./rule/Facebook.yaml
     interval: 86400
 
   📟 Google:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-    path: ./rule_provider/Google.yaml
+    path: ./rule/Google.yaml
     interval: 86400
     
   🖥️ Microsoft:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-    path: ./rule_provider/Microsoft.yaml
+    path: ./rule/Microsoft.yaml
     interval: 86400
     
   🍎 Apple.ota:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-    path: ./rule_provider/SystemOTA.yaml
+    path: ./rule/SystemOTA.yaml
     interval: 86400
     
   🍎 Apple:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
-    path: ./rule_provider/Apple_Classical.yaml
+    path: ./rule/Apple_Classical.yaml
     interval: 86400
 
   🎬 Global Media:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
-    path: ./rule_provider/GlobalMedia_Classical.yaml
+    path: ./rule/GlobalMedia_Classical.yaml
     interval: 86400
     
   🌐 Global:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
-    path: ./rule_provider/Global_Classical.yaml
+    path: ./rule/Global_Classical.yaml
     interval: 86400
     
   📺 China Media:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    path: ./rule_provider/ChinaMedia.yaml
+    path: ./rule/ChinaMedia.yaml
     interval: 86400
     
   🇨🇳 China:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
-    path: ./rule_provider/China_Classical.yaml
+    path: ./rule/China_Classical.yaml
     interval: 86400
     
   🇨🇳 China.ips:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
-    path: ./rule_provider/ChinaIPs_Classical.yaml
+    path: ./rule/ChinaIPs_Classical.yaml
     interval: 86400
 
   🇨🇳 China.bgp:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
-    path: ./rule_provider/ChinaIPsBGP_Classical.yaml
+    path: ./rule/ChinaIPsBGP_Classical.yaml
     interval: 86400
 
 rules:
   - DOMAIN,openwrt.lan,🇨🇳 China
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
+  - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
   - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
@@ -1035,7 +1038,6 @@ rules:
   - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
   - IP-CIDR,183.240.197.130/32,🇨🇳 China,no-resolve
   - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
-  - IP-SUFFIX,114.114.112.0/21,🇨🇳 China,no-resolve
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,🚥 Lan,🇨🇳 China
   - RULE-SET,⛔ AntiAd,⛔ AdBlock
