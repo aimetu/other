@@ -77,7 +77,7 @@ tun:
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
-  device: wwwlan
+  device: mtun
   strict_route: true
   mtu: 9000
   gso: true
