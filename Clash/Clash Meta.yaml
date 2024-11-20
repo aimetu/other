@@ -41,8 +41,8 @@ ipv6: true # ipv6 支持，关闭将阻断所有 ipv6 链接和屏蔽 dns 请求
 port: 7891 # 本地 http(s) 代理端口
 socks-port: 7892 # 本地 socks4/4a/5 代理端口
 mixed-port: 7890 # 混合端口, 同时支持 http(s) 和 socks5 协议. 可以使用任何支持 http 或 socks 代理的程序连接到这个端口
-redir-port: 7895 # 重定向端口，用于透明代理，仅能代理 tcp 流量
-tproxy-port: 7896  # 透明代理端口，支持 TUN 模式，可代理 tcp 与 udp 流量
+redir-port: 7895 # 重定向端口，用于透明代理，仅能代理 tcp 流量（用于 Linux 和 MacOS ）
+tproxy-port: 7896  # 透明代理端口，支持 TUN 模式，可代理 tcp 与 udp 流量（用于 Linux ）
 
 allow-lan: true # 允许局域网设备连接代理
 bind-address: "*" # 仅适用 allow-lan 为 true 的情况，仅允许某个 ip 访问：支持三种参数："*" 绑定所有 ip 地址，192.168.188.188/[aaaa::a8aa:ff:fe09:57d8] 绑定一个的 ipv4/ipv6 地址
@@ -75,14 +75,17 @@ global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认�
 global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
 etag-support: true # 外部资源下载的 etag 支持
 
-experimental: # 禁用 quic 协议中的 gso(通用分段卸载)/ecn(显式拥塞通知)/ip4p(地址转换) 功能, 这可能会导致 linux 上的性能降低
-  quic-go-disable-gso: false
-  quic-go-disable-ecn: false
-  dialer-ip4p-convert: false
-
 external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
 secret: password # http(s)-api、api 监听地址外部控制器访问密钥
+#tls:
+#  certificate: string # 证书 PEM 格式，或者 证书的路径
+#  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
+#  custom-certifactes:
+#    - |
+#      -----BEGIN CERTIFICATE-----
+#      format/pem...
+#      -----END CERTIFICATE-----
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
     - "*"
@@ -95,10 +98,6 @@ external-ui: ui/ # 配置外部控制器目录，存放配置文件的相对路�
 external-ui-name: metacubexd # 自定义外部 ui 名字
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
-#tls: # 目前仅用于 https api 监听地址外部控制器的证书私钥
-#  certificate: string # 证书 pem 格式，或者 证书的路径
-#  private-key: string # 证书对应的私钥 pem 格式，或者私钥路径
-
 geodata-mode: true # geoip 数据模式，true为 dat，false为 mmdb
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geo-auto-update: true # 自动更新 geo
@@ -109,6 +108,11 @@ geox-url: # 自定 geo 下载地址
   mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
   asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
 geosite-matcher: succinct # geosite 匹配模式：succinct：默认 rule-set 分流模式，mph：V2Ray 或 Xray 混合模式  
+
+experimental: # 禁用 quic 协议中的 gso(通用分段卸载)/ecn(显式拥塞通知)/ip4p(地址转换) 功能, 这可能会导致 linux 上的性能降低
+  quic-go-disable-gso: false
+  quic-go-disable-ecn: false
+  dialer-ip4p-convert: false
 
 profile:  # profile 为扩展配置, 仅作为缓存项使用(文件位置 ./cache.db)
   store-selected: true # 储存 api 对策略组的选择，以供下次启动时使用
