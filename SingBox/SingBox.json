@@ -15,6 +15,8 @@
             },
             {
                 "tag": "dns_local",
+                "address_resolver": "223.5.5.5",
+                "address_strategy": "prefer_ipv4",
                 "address": [
                     "https://doh.pub/dns-query",
                     "https://dns.alidns.com/dns-query",
@@ -24,6 +26,8 @@
             },
             {
                 "tag": "dns_proxy",
+                "address_resolver": "119.29.29.29",
+                "address_strategy": "prefer_ipv4",
                 "address": [
                     "https://dns.google/dns-query",
                     "https://dns.opendns.com/dns-query"
