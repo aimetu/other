@@ -129,7 +129,7 @@ tun:
   auto-detect-interface: true # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-redir: true # 自动配置 iptables/nftables 以重定向 TCP 连接，需要 auto-route 已启用
-  device: wwwlan # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
+  device: mtun # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
   mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   gso: true # 启用通用分段卸载，仅支持 Linux
@@ -592,7 +592,7 @@ proxy-providers:
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
       #dialer-proxy: 🌐 Global # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
-      #interface-name: WLAN # 指定节点绑定的接口，从此接口发起连接
+      #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
       ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
       additional-prefix: "Subscribe~" # 为节点名称添加固定前缀
@@ -636,7 +636,7 @@ proxy-providers:
       #down: "5000 Mbps"
       #up: "1000 Mbps"
       #dialer-proxy: 🇨🇳 China
-      #interface-name: WLAN
+      #interface-name: wlan
       routing-mark: 89898
       ip-version: dual
       #additional-prefix: "Subscribe~"
