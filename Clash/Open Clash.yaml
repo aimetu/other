@@ -21,6 +21,8 @@ authentication:
 skip-auth-prefixes:
   - "127.0.0.1/8"
   - "::1/128"
+  - "192.168.188.0/24"
+  - "fd82:426c:b6f7::/64"
 
 #interface-name: en0
 
