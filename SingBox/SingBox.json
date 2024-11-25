@@ -10,29 +10,38 @@
     "dns": {
         "servers": [
             {
-                "tag": "local-dns",
-                "address_resolver": "223.5.5.5",
+                "tag": "direct-dns",
+                "address_resolver": "resolver-dns",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
                 "address": [
                     "https://doh.pub/dns-query",
                     "https://dns.alidns.com/dns-query",
-                    "quic://dns.alidns.com",
+                    "quic://dns.alidns.com"
                 ],
-                "detour": "DIRECT"
+                "detour": "direct"
             },
             {
                 "tag": "proxy-dns",
-                "address_resolver": "119.29.29.29",
+                "address_resolver": "resolver-dns",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
                 "address": [
                     "https://dns.google/dns-query",
-                    "https://dns.opendns.com/dns-query"
+                    "https://dns.opendns.com/dns-query",
                     "https://cloudflare-dns.com/dns-query"
                 ],
                 "detour": "🔰 Pick"
             },
+            {
+                "tag": "resolver-dns",
+                "address": [
+                    "223.5.5.5",
+                    "119.29.29.29"
+                ],
+                "strategy": "prefer_ipv4",
+                "detour": "direct"
+            },   
             {
                 "tag": "block-dns",
                 "address": "rcode://success"
@@ -45,7 +54,7 @@
         "rules": [
             {
                 "outbound": "any",
-                "server": "local-dns",
+                "server": "direct-dns",
                 "disable_cache": true
             },
             {
@@ -53,18 +62,18 @@
                     "local",
                     "localhost"
                 ],
-                "server": "local-dns"
+                "server": "direct-dns"
             },
             {
-                "clash_mode": "DIRECT",
+                "clash_mode": "direct",
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "server": "local-dns"
+                "server": "direct-dns"
             },
             {
-                "clash_mode": "🌐 Global",
+                "clash_mode": "global",
                 "query_type": [
                     "A",
                     "AAAA"
@@ -98,7 +107,7 @@
                     "A",
                     "AAAA"
                 ],
-                "server": "local-dns"
+                "server": "direct-dns"
             },
             {
                 "fallback_rules": [
@@ -106,7 +115,7 @@
                         "rule_set": [
                             "cnip"
                         ],
-                        "server": "local-dns"
+                        "server": "direct-dns"
                     },
                     {
                         "match_all": true,
@@ -139,7 +148,7 @@
         {
             "tag": "tun-in",
             "type": "tun",
-            "interface_name": "tun0",
+            "interface_name": "stun",
             "stack": "mixed",
             "inet4_address": [
                 "172.19.0.1/30"
