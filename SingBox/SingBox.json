@@ -339,7 +339,7 @@
             "interrupt_exist_connections": true,
             "outbounds": "subscribes",
             "excludes": [
-                "(?i)🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇹🇼|🇰🇷|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|KOREA|Korea"
+                "^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$"
             ]
         },
         {
@@ -892,7 +892,7 @@
 
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
-            "external_ui": "/ui",
+            "external_ui": "ui",
             "secret": "password",
             "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
             "external_ui_download_detour": "🔰 Pick",
