@@ -10,73 +10,72 @@
     "dns": {
         "servers": [
             {
-                "tag": "dns_block",
-                "address": "rcode://success"
-            },
-            {
-                "tag": "dns_local",
+                "tag": "local-dns",
                 "address_resolver": "223.5.5.5",
                 "address_strategy": "prefer_ipv4",
+                "strategy": "prefer_ipv4",
                 "address": [
                     "https://doh.pub/dns-query",
                     "https://dns.alidns.com/dns-query",
                     "quic://dns.alidns.com",
                 ],
-                "detour": "🇨🇳 China"
+                "detour": "DIRECT"
             },
             {
-                "tag": "dns_proxy",
+                "tag": "proxy-dns",
                 "address_resolver": "119.29.29.29",
                 "address_strategy": "prefer_ipv4",
+                "strategy": "prefer_ipv4",
                 "address": [
                     "https://dns.google/dns-query",
                     "https://dns.opendns.com/dns-query"
                     "https://cloudflare-dns.com/dns-query"
                 ],
-                "client_subnet": "223.5.5.5",
-                "detour": "🇨🇳 China"
+                "detour": "🔰 Pick"
             },
             {
-                "tag": "dns_fakeip",
+                "tag": "block-dns",
+                "address": "rcode://success"
+            },
+            {
+                "tag": "fakeip-dns",
                 "address": "fakeip"
-            }
+            }            
         ],
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns_local",
+                "server": "local-dns",
                 "disable_cache": true
             },
             {
                 "domain_suffix": [
-                    "ghproxy.com",
-                    "jsdelivr.net",
-                    "guangbomi.com",
-                    "oaifree.com"
+                    "local",
+                    "localhost"
                 ],
-                "server": "dns_local"
+                "server": "local-dns"
             },
             {
-                "clash_mode": "Direct",
+                "clash_mode": "DIRECT",
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "server": "dns_local"
+                "server": "local-dns"
             },
             {
-                "clash_mode": "Global",
+                "clash_mode": "🌐 Global",
                 "query_type": [
                     "A",
                     "AAAA"
                 ],
-                "server": "dns_proxy"
+                "server": "proxy-dns"
             },
             {
                 "rule_set": [
                     "ads"
                 ],
-                "server": "dns_block",
+                "server": "block-dns",
                 "disable_cache": true,
                 "rewrite_ttl": 0
             },
@@ -89,7 +88,7 @@
                     "AAAA"
                 ],
                 "rewrite_ttl": 1,
-                "server": "dns_fakeip"
+                "server": "fakeip-dns"
             },
             {
                 "rule_set": [
@@ -99,7 +98,7 @@
                     "A",
                     "AAAA"
                 ],
-                "server": "dns_local"
+                "server": "local-dns"
             },
             {
                 "fallback_rules": [
@@ -107,18 +106,18 @@
                         "rule_set": [
                             "cnip"
                         ],
-                        "server": "dns_local"
+                        "server": "local-dns"
                     },
                     {
                         "match_all": true,
-                        "server": "dns_fakeip",
+                        "server": "fakeip-dns",
                         "rewrite_ttl": 1
                     }
                 ],
-                "server": "dns_proxy"
+                "server": "proxy-dns"
             }
         ],
-        "final": "dns_proxy",
+        "final": "proxy-dns",
         "strategy": "prefer_ipv4",
         "independent_cache": true,
         "lazy_cache": true,
@@ -151,6 +150,7 @@
             "auto_route": true,
             "strict_route": true,
             "sniff": true,
+            "sniff_override_destination": false,
             "platform": {
                 "http_proxy": {
                     "enabled": false,
@@ -169,6 +169,22 @@
             ]
         }
     ],
+    "outbound_providers": [
+        {
+            "tag": "Subscribe ",
+            "type": "remote",
+            "download_url": "https://example.com/xxx/xxx&flag=clash",
+            "path": "./proxy/Subscribe.yaml",
+            "download_interval": "48h",
+            "download_ua": "clash.meta",
+            "includes": [
+
+            ],
+            "excludes": "(?i)订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱",
+            "healthcheck_url": "https://www.gstatic.com/generate_204",
+            "healthcheck_interval": "600m"
+        }
+    ],    
     "outbounds": [
         {
             "tag": "🔰 Pick",
@@ -183,6 +199,21 @@
                 "🇸🇬 Singapore",
                 "🇺🇸 America",
                 "🇺🇳 Nations"
+                "REJECT"
+                "REJECT"
+            ]
+        },
+        {
+            "tag": "♻️ Auto",
+            "type": "urltest",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇹🇼|🇰🇷|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|KOREA|Korea"
             ]
         },
         {
@@ -193,29 +224,105 @@
 
             ],
             "excludes": "(?i)订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
+        },        
+        {
+            "tag": "🇭🇰 HongKong",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇭🇰|港|香港|hk|HK|Hong|HongKong"
+            ]
+        },
+        {
+            "tag": "🇹🇼 Taiwan",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan"
+            ]
+        },
+        {
+            "tag": "🇯🇵 Japan",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan"
+            ]
+        },
+        {
+            "tag": "🇰🇷 Korea",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea"
+            ]
+        },
+        {
+            "tag": "🇸🇬 Singapore",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore"
+            ]
+        },
+        {
+            "tag": "🇺🇸 America",
+            "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
+            "use_all_providers": true,
+            "includes": [
+                "🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America"
+            ]
         },
         {
             "tag": "🇺🇳 Nations",
             "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "interval": "3m",
+            "tolerance": 150,
+            "idle_timeout": "30m",
+            "interrupt_exist_connections": false,
             "use_all_providers": true,
             "includes": [
-
+                "{all}"
             ],
             "excludes": "(?i)🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇹🇼|🇰🇷|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|KOREA|Korea"
         },
         {
-            "tag": "📹 YouTube",
+            "tag": "🕸️ Speedtest",
             "type": "selector",
             "outbounds": [
+                "🇨🇳 China",
                 "🔰 Pick",
-                "✅ Node",
-                "🇭🇰 HongKong",
-                "🇹🇼 Taiwan",
-                "🇯🇵 Japan",
-                "🇰🇷 Korea",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇺🇳 Nations"
             ]
         },
         {
@@ -232,108 +339,23 @@
                 "🇺🇸 America",
                 "🇺🇳 Nations"
             ]
-        },
-        {
-            "tag": "🎥 Netflix",
-            "type": "selector",
-            "outbounds": [
-                "🔰 Pick",
-                "✅ Node",
-                "🇭🇰 HongKong",
-                "🇹🇼 Taiwan",
-                "🇯🇵 Japan",
-                "🇰🇷 Korea",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇺🇳 Nations"
-            ]
-        },
-        {
-            "tag": "📼 Disney+",
-            "type": "selector",
-            "outbounds": [
-                "🔰 Pick",
-                "✅ Node",
-                "🇭🇰 HongKong",
-                "🇹🇼 Taiwan",
-                "🇯🇵 Japan",
-                "🇰🇷 Korea",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇺🇳 Nations"
-            ]
-        },
-        {
-            "tag": "🤖 OpenAI",
-            "type": "selector",
-            "outbounds": [
-                "🔰 Pick",
-                "✅ Node",
-                "🇭🇰 HongKong",
-                "🇹🇼 Taiwan",
-                "🇯🇵 Japan",
-                "🇰🇷 Korea",
-                "🇸🇬 Singapore",
-                "🇺🇸 America",
-                "🇺🇳 Nations"
-            ]
-        },
+        },        
         {
             "tag": "🎮 Game",
             "type": "selector",
             "outbounds": [
                 "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "🖥️ Microsoft",
-            "type": "selector",
-            "outbounds": [
-                "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "📟 Google",
-            "type": "selector",
-            "outbounds": [
-                "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "🍎 Apple",
-            "type": "selector",
-            "outbounds": [
-                "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "🇨🇳 China.Domain",
-            "type": "selector",
-            "outbounds": [
-                "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "🇨🇳 China.ips",
-            "type": "selector",
-            "outbounds": [
-                "🇨🇳 China",
-                "🔰 Pick"
-            ]
-        },
-        {
-            "tag": "🌐 Global.Domain",
-            "type": "selector",
-            "outbounds": [
                 "🔰 Pick",
-                "🇨🇳 China"
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
             ]
-        },
+        },        
         {
             "tag": "✉️ Telegram",
             "type": "selector",
@@ -350,24 +372,71 @@
             ]
         },
         {
-            "tag": "🇨🇳 China.APP",
+            "tag": "📹 YouTube",
             "type": "selector",
             "outbounds": [
-                "🇨🇳 China"
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
             ]
-        },
+        },        
         {
-            "tag": "🔒 Private",
+            "tag": "🎥 Netflix",
             "type": "selector",
             "outbounds": [
-                "🇨🇳 China"
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
             ]
-        },
+        },        
         {
-            "tag": "🕸️ Speedtest",
+            "tag": "📼 Disney+",
             "type": "selector",
             "outbounds": [
-                "🇨🇳 China",
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
+            ]
+        },        
+        {
+            "tag": "🤖 OpenAI",
+            "type": "selector",
+            "outbounds": [
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
+            ]
+        },        
+        {
+            "tag": "📟 Google",
+            "type": "selector",
+            "outbounds": [
+                "🔰 Pick",
+                "✅ Node",
                 "🇭🇰 HongKong",
                 "🇹🇼 Taiwan",
                 "🇯🇵 Japan",
@@ -378,27 +447,37 @@
             ]
         },
         {
-            "tag": "🇨🇳 China",
+            "tag": "🖥️ Microsoft",
             "type": "selector",
             "outbounds": [
-                "DIRECT"
+                "🇨🇳 China",
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
             ]
-        },
+        },        
         {
-            "tag": "⛔ AdBlock",
+            "tag": "🍎 Apple",
             "type": "selector",
             "outbounds": [
-                "REJECT"
+                "🇨🇳 China",
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
             ]
-        },
-        {
-            "tag": "REJECT",
-            "type": "block"
-        },
-        {
-            "tag": "DIRECT",
-            "type": "direct"
-        },
+        },        
         {
             "tag": "🌐 Global",
             "type": "selector",
@@ -415,92 +494,94 @@
             ]
         },
         {
-            "tag": "dns-out",
-            "type": "dns"
+            "tag": "🌐 Global.Domain",
+            "type": "selector",
+            "outbounds": [
+                "🔰 Pick",
+                "✅ Node",
+                "🇭🇰 HongKong",
+                "🇹🇼 Taiwan",
+                "🇯🇵 Japan",
+                "🇰🇷 Korea",
+                "🇸🇬 Singapore",
+                "🇺🇸 America",
+                "🇺🇳 Nations"
+            ]
+        },        
+        {
+            "tag": "🇨🇳 China.APP",
+            "type": "selector",
+            "outbounds": [
+                "🇨🇳 China"
+                "🔰 Pick"
+                "✅ Node", 
+            ]
         },
+        {
+            "tag": "🇨🇳 China.ips",
+            "type": "selector",
+            "outbounds": [
+                "🇨🇳 China",
+                "🔰 Pick"
+                "✅ Node", 
+            ]
+        },        
+        {
+            "tag": "🇨🇳 China",
+            "type": "selector",
+            "outbounds": [
+                "DIRECT"
+                "🔰 Pick",
+                "✅ Node",                
+            ]
+        },
+        {
+            "tag": "🇨🇳 China.Domain",
+            "type": "selector",
+            "outbounds": [
+                "🇨🇳 China",
+                "🔰 Pick",
+                "✅ Node", 
+            ]
+        },        
         {
             "tag": "🐟 Final",
             "type": "selector",
             "outbounds": [
                 "🔰 Pick",
-                "🇨🇳 China",
                 "✅ Node",
+                "🇨🇳 China",
             ]
-        },
+        }, 
         {
-            "tag": "♻️ Auto",
-            "type": "urltest",
-            "url": "http://www.google-analytics.com/generate_204",
-            "tolerance": 50,
-            "use_all_providers": true,
-            "includes": [
-                "🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇹🇼|🇰🇷|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|KOREA|Korea"
-            ]
-        },
-        {
-            "tag": "🇭🇰 HongKong",
+            "tag": "⛔ AdBlock",
             "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇭🇰|港|香港|hk|HK|Hong|HongKong"
+            "outbounds": [
+                "REJECT"
+                "🔰 Pick",
+                "✅ Node",
+                "🇨🇳 China",
             ]
+        },        
+        {
+            "tag": "dns-out",
+            "type": "dns"
         },
         {
-            "tag": "🇹🇼 Taiwan",
+            "tag": "🔒 Private",
             "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan"
+            "outbounds": [
+                "🇨🇳 China"
             ]
+        },        
+        {
+            "tag": "REJECT",
+            "type": "block"
         },
         {
-            "tag": "🇯🇵 Japan",
-            "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan"
-            ]
-        },
-        {
-            "tag": "🇰🇷 Korea",
-            "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea"
-            ]
-        },
-        {
-            "tag": "🇸🇬 Singapore",
-            "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore"
-            ]
-        },
-        {
-            "tag": "🇺🇸 America",
-            "type": "selector",
-            "use_all_providers": true,
-            "includes": [
-                "🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America"
-            ]
-        }
-    ],
-    "outbound_providers": [
-        {
-            "tag": "Subscribe ",
-            "type": "remote",
-            "download_url": "https://example.com/xxx/xxx&flag=clash",
-            "path": "./proxy/Subscribe.yaml",
-            "download_interval": "48h",
-            "download_ua": "clash.meta",
-            "includes": [
-
-            ],
-            "excludes": "(?i)订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱",
-            "healthcheck_url": "https://www.gstatic.com/generate_204",
-            "healthcheck_interval": "600m"
-        }
+            "tag": "DIRECT",
+            "type": "direct"
+        },       
     ],
     "routing": {
         "rules": [
@@ -530,7 +611,6 @@
                 "domain_suffix": [
                     "linux.do",
                     "ajay.app",
-                    "returnyoutubedislikeapi.com"
                 ],
                 "outbound": "🌐 Global.Domain"
             },
@@ -558,45 +638,9 @@
             },
             {
                 "rule_set": [
-                    "ads"
-                ],
-                "outbound": "⛔ AdBlock"
-            },
-            {
-                "rule_set": [
                     "networktest"
                 ],
                 "outbound": "🕸️ Speedtest"
-            },
-            {
-                "rule_set": [
-                    "applications"
-                ],
-                "outbound": "🇨🇳 China.APP"
-            },
-            {
-                "rule_set": [
-                    "private"
-                ],
-                "outbound": "🔒 Private"
-            },
-            {
-                "rule_set": [
-                    "microsoft-cn"
-                ],
-                "outbound": "🖥️ Microsoft"
-            },
-            {
-                "rule_set": [
-                    "apple-cn"
-                ],
-                "outbound": "🍎 Apple"
-            },
-            {
-                "rule_set": [
-                    "google-cn"
-                ],
-                "outbound": "📟 Google"
             },
             {
                 "rule_set": [
@@ -606,22 +650,17 @@
             },
             {
                 "rule_set": [
-                    "ai"
-                ],
-                "outbound": "🤖 OpenAI"
-            },
-            {
-                "rule_set": [
-                    "geosite-youtube"
-                ],
-                "outbound": "📹 YouTube"
-            },
-            {
-                "rule_set": [
                     "geoip-tiktok",
                     "geosite-tiktok"
                 ],
                 "outbound": "🎵 TikTok"
+            },
+            {
+                "rule_set": [
+                    "telegramip"
+                ],
+                "outbound": "✉️ Telegram",
+                "skip_resolve": true
             },
             {
                 "rule_set": [
@@ -638,9 +677,34 @@
             },
             {
                 "rule_set": [
-                    "networktest"
+                    "geosite-youtube"
                 ],
-                "outbound": "🕸️ Speedtest"
+                "outbound": "📹 YouTube"
+            },
+            {
+                "rule_set": [
+                    "ai"
+                ],
+                "outbound": "🤖 OpenAI"
+            },
+            {
+                "rule_set": [
+                    "google-cn"
+                ],
+                "outbound": "📟 Google"
+            },            
+            {
+                "rule_set": [
+                    "microsoft-cn"
+                ],
+                "outbound": "🖥️ Microsoft"
+            },
+            
+            {
+                "rule_set": [
+                    "apple-cn"
+                ],
+                "outbound": "🍎 Apple"
             },
             {
                 "rule_set": [
@@ -650,17 +714,28 @@
             },
             {
                 "rule_set": [
+                    "applications"
+                ],
+                "outbound": "🇨🇳 China.APP"
+            },
+            {
+                "rule_set": [
+                    "cnip"
+                ],
+                "outbound": "🇨🇳 China.ips"
+            },
+            {
+                "rule_set": [
                     "cn"
                 ],
                 "outbound": "🇨🇳 China.Domain"
             },
             {
                 "rule_set": [
-                    "telegramip"
+                    "ads"
                 ],
-                "outbound": "✉️ Telegram",
-                "skip_resolve": true
-            },
+                "outbound": "⛔ AdBlock"
+            },   
             {
                 "rule_set": [
                     "privateip"
@@ -670,10 +745,10 @@
             },
             {
                 "rule_set": [
-                    "cnip"
+                    "private"
                 ],
-                "outbound": "🇨🇳 China.ips"
-            }
+                "outbound": "🔒 Private"
+            },
         ],
         "rule_set": [
             {
@@ -831,12 +906,18 @@
     },
     "experimental": {
         "cache_file": {
-            "enabled": true
+            "enabled": true,
+            "path": "cache.db",
+            "store_fakeip": true,
+            "store_rdrc": true
         },
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
             "external_ui": "/ui",
-            "secret": "password"
+            "secret": "password",
+            "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+            "external_ui_download_detour": "🔰 Pick",
+            "default_mode": "rule"
         }
     }
 }
