@@ -20,7 +20,7 @@
                     "https://dns.alidns.com/dns-query",
                     "quic://dns.alidns.com"
                 ],
-                "detour": "direct" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
+                "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
             },
             {
                 "tag": "proxy-dns",
@@ -42,15 +42,19 @@
                 ],
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
-            },   
+            },
+            {
+                "tag": "success-dns",
+                "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
+            },               
             {
                 "tag": "block-dns",
-                "address": "rcode://refused" // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
+                "address": "rcode://refused"
             },
             {
                 "tag": "fakeip-dns",
                 "address": "fakeip"
-            }            
+            }  
         ],
         "rules": [
             {
