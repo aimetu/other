@@ -568,7 +568,7 @@
             "tag": "🇨🇳 China",
             "type": "selector",
             "outbounds": [
-                "DIRECT"
+                "DIRECT",
                 "🔰 Pick",
                 "✅ Node"
             ]
@@ -587,7 +587,7 @@
             "tag": "⛔ AdBlock",
             "type": "selector",
             "outbounds": [
-                "REJECT"
+                "REJECT",
                 "🔰 Pick",
                 "✅ Node",
                 "🇨🇳 China",
@@ -605,7 +605,7 @@
                 "tag": "⛔ geosite-adblock",
                 "type": "remote",
                 "format": "binary",
-                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adblock.srs"
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adblock.srs",
                 "path": "./rules/adblock.srs",
                 "update_interval": "86400",
                 "download_detour": "🔰 Pick"
@@ -792,8 +792,8 @@
                 "outbound": "🎵 TikTok"
             },
             {
-                "rule_set": "✉️ geosite-telegram"
-                "outbound": "✉️ Telegram",
+                "rule_set": "✉️ geosite-telegram",
+                "outbound": "✉️ Telegram"
             },
             {
                 "rule_set": "🎶 geosite-spotify",
