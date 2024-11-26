@@ -7,182 +7,168 @@
         "output": "box.log", // 输出文件路径，启动后将不输出到控制台
         "timestamp": true // 添加时间到每行
     },
+	
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "store_fakeip": true,
+            "store_rdrc": false
+        },
+        "clash_api": {
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "ui",
+            "secret": "password",
+            "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+            "external_ui_download_detour": "🔰 Pick",
+            "default_mode": "rule"
+        }
+    },
+	
     "dns": {
         "servers": [
-            {
-                "tag": "direct-dns", // DNS 服务器的标签
-                "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
-                "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
-                "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
-                // DNS 服务器的地址
-                "address": [
-                    "https://doh.pub/dns-query",
-                    "https://dns.alidns.com/dns-query",
-                    "quic://dns.alidns.com"
-                ],
+        {
+            "tag": "direct-dns", // DNS 服务器的标签
+            "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
+            "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
+            "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
+            // DNS 服务器的地址
+            "address": [
+                "https://doh.pub/dns-query",
+                "https://dns.alidns.com/dns-query",
+                "quic://dns.alidns.com"
+            ],
                 "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
-            },
-            {
-                "tag": "proxy-dns",
-                "address_resolver": "resolver-dns",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4",
-                "address": [
-                    "https://dns.google/dns-query",
-                    "https://dns.opendns.com/dns-query",
-                    "https://cloudflare-dns.com/dns-query"
-                ],
-                "detour": "🔰 Pick"
-            },
-            {
-                "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
-                "address": [
-                    "223.5.5.5",
-                    "119.29.29.29"
-                ],
-                "strategy": "prefer_ipv4",
-                "detour": "direct"
-            },
-            {
-                "tag": "success-dns",
-                "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
-            },               
-            {
-                "tag": "block-dns",
-                "address": "rcode://refused"
-            },
-            {
-                "tag": "fakeip-dns",
-                "address": "fakeip"
-            }  
-        ],
-        "rules": [
-            {
-                "outbound": "any",  // 任何出站连接 DNS 服务器解析
-                "server": "direct-dns",
-                "disable_cache": true
-            },
-            {
-                "domain_suffix": [
-                    "local",
-                    "localhost"
-                ],
-                "server": "direct-dns"
-            },
-            {
-                "clash_mode": "direct", // 直连模式
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "server": "direct-dns"
-            },
-            {
-                "clash_mode": "global", // 全局代理模式
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "server": "proxy-dns"
-            },
-            {
-                "rule_set": [
-                    "⛔ AdBlock"
-                ],
-                "server": "block-dns",
-                "disable_cache": true,
-                "rewrite_ttl": 0
-            },
-            {
-                "rule_set": [
-                    "🌐 Global"
-                ],
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "rewrite_ttl": 1,
-                "server": "fakeip-dns"
-            },
-            {
-                "rule_set": [
-                    "🇨🇳 China"
-                ],
-                "query_type": [
-                    "A",
-                    "AAAA"
-                ],
-                "server": "direct-dns"
-            },
-            {
-                "fallback_rules": [
-                    {
-                        "rule_set": [
-                            "🌐 Global"
-                        ],
-                        "server": "proxy-dns"
-                    },
-                    {
-                        "match_all": true,
-                        "server": "fakeip-dns",
-                        "rewrite_ttl": 1
-                    }
-                ],
-                "server": "proxy-dns"
-            }
-        ],
-        
-        "final": "proxy-dns", // 如果上述规则都不适用的
-        "strategy": "prefer_ipv4",
-        "independent_cache": true,
-        "lazy_cache": true,
-        "reverse_mapping": true,
-        "mapping_override": true,
-        "fakeip": {
-            "enabled": true,
-            "inet4_range": "198.18.0.0/15",
-            "inet6_range": "fc00::/18",
-            "exclude_rule": {
-                "rule_set": [
-                    "fakeip-filter"
-                ]
-            }
+        },
+        {
+            "tag": "proxy-dns",
+            "address_resolver": "resolver-dns",
+            "address_strategy": "prefer_ipv4",
+            "strategy": "prefer_ipv4",
+            "address": [
+                "https://dns.google/dns-query",
+                "https://dns.opendns.com/dns-query",
+                "https://cloudflare-dns.com/dns-query"
+            ],
+            "detour": "🔰 Pick"
+        },
+        {
+            "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
+            "address": [
+                "223.5.5.5",
+                "119.29.29.29"
+            ],
+            "detour": "direct"
+        },
+        {
+            "tag": "block-dns",
+            "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
+        },
+        {
+            "tag": "fakeip-dns",
+            "address": "fakeip"
+        }  
+    ],
+	"disable_cache": true,
+	"disable_expire": true,
+	"independent_cache": true,
+    "rules": [
+        {
+            "outbound": "any",  // 任何出站连接 DNS 服务器解析
+            "server": "direct-dns",
+            "disable_cache": true
+        },
+        {
+            "clash_mode": "direct", // 直连模式
+            "server": "direct-dns"
+        },
+        {
+            "clash_mode": "global", // 全局代理模式
+            "server": "proxy-dns"
+        }
+    ],
+	
+    "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18",
+		"final": "proxy-dns",
+		"strategy": "prefer_ipv4"
         }
     },
     
     "inbounds": [
         {
-            "tag": "tun-in",
-            "type": "tun",
-            "interface_name": "stun",
-            "stack": "mixed",
-            "inet4_address": [
-                "198.18.0.1/16"
-            ],
-            "inet6_address": [
-                "fdfe:dcba:9876::1/126"
-            ],
-            "auto_route": true,
-            "strict_route": true,
+            "type": "http",
+            "listen": "::",
+            "listen_port": 1080,
             "sniff": true,
             "sniff_override_destination": false,
-            "platform": {
-                "http_proxy": {
-                    "enabled": false,
-                    "server": "0.0.0.0",
-                    "server_port": 1082
-                }
-            }
+			"tcp_fast_open": false,
+			"tcp_multi_path": false,
+			"udp_fragment": false,
+			"domain_strategy": "prefer_ipv4",
         },
-        
+        {
+            "type": "socks",
+            "listen": "::",
+            "listen_port": 1081,
+            "sniff": true,
+            "sniff_override_destination": false,
+			"tcp_fast_open": false,
+			"tcp_multi_path": false,
+			"udp_fragment": false,
+			"domain_strategy": "prefer_ipv4",
+        },
         {
             "type": "mixed",
             "listen": "0.0.0.0",
             "listen_port": 1082,
             "sniff": true,
-            "set_system_proxy": true,
             "sniff_override_destination": false,
-            "domain_strategy": "prefer_ipv4"
+			"tcp_fast_open": false,
+			"tcp_multi_path": false,
+			"udp_fragment": false,
+			"domain_strategy": "prefer_ipv4",
+        },		
+        {
+            "tag": "tun-in",
+            "type": "tun",
+			"stack": "mixed",
+            "interface_name": "stun", //设置虚拟网卡名称，默认自动选择。
+            "address": [
+              "172.18.0.1/30",
+              "fdfe:dcba:9876::1/126"
+            ],
+			"mtu": 9000,
+			"udp_timeout": "5m",
+			"iproute2_table_index": 2022, //生成的 iproute2 路由表索引
+			"iproute2_rule_index": 9000, //生成的 iproute2 规则起始索引
+            "auto_route": true, //设置到 Tun 的默认路由
+			"auto_redirect": true, // 自动配置 iptables/nftables 以重定向连接, 需要 auto_route 已启用
+			"auto_redirect_input_mark": "0x2023", //route_address_set 和 route_exclude_address_set 使用的连接输入标记
+			"auto_redirect_output_mark": "0x2024", //route_address_set 和 route_exclude_address_set 使用的连接输出标记
+            "strict_route": true, //启用 auto_route 时执行严格的路由规则, 它可以防止 IP 地址泄漏
+			"endpoint_independent_nat": true, //启用通用分段卸载
+			"platform": {
+                "http_proxy": {
+                    "enabled": true,
+                    "server": "0.0.0.0",
+                    "server_port": 1081
+                }
+            },
+			"route_exclude_address": [
+                "192.168.0.0/16",
+                "fc00::/7"
+            ],
+			"route_address_set": [
+                "geoip-cloudflare"
+            ],
+			"route_exclude_address_set": [
+                "geoip-cn"
+            ],
+			"sniff": true,
+			"sniff_override_destination": false,
+			"domain_strategy": "prefer_ipv4"
         }
     ],
     
@@ -755,12 +741,11 @@
                 "download_detour": "🔰 Pick"
             },
         ],
-        
+
         "rules": [
             {
-                "protocol": [
-                    "quic"
-                ],
+                "network": "udp",
+				"port": 443,
                 "outbound": "⛔ AdBlock"
             },
             {
@@ -772,93 +757,67 @@
                 "outbound": "🌐 Global"
             },
             {
-                "rule_set": [
-                    "🕸️ geosite-networktest"
-                ],
+                "rule_set": "⛔ geosite-adblock",
+                "outbound": "⛔ AdBlock"
+            },			
+            {
+                "rule_set": "🕸️ geosite-networktest",
                 "outbound": "🕸️ Speedtest"
             },
             {
-                "rule_set": [
-                    "🎵 geosite-tiktok"
-                ],
+                "rule_set": "🎵 geosite-tiktok",
                 "outbound": "🎵 TikTok"
             },
             {
-                "rule_set": [
-                    "✉️ geosite-telegram"
-                ],
+                "rule_set": "✉️ geosite-telegram"
                 "outbound": "✉️ Telegram",
             },
             {
-                "rule_set": [
-                    "🎶 geosite-spotify"
-                ],
+                "rule_set": "🎶 geosite-spotify",
                 "outbound": "🎶 Spotify"
             },
             {
-                "rule_set": [
-                    "📽️ geoip-netflix"
-                ],
+                "rule_set": "📽️ geoip-netflix",
                 "outbound": "🎥 Netflix"
             },
             {
-                "rule_set": [
-                    "📼 geosite-disney"
-                ],
+                "rule_set": "📼 geosite-disney",
                 "outbound": "📼 Disney+"
             },
             {
-                "rule_set": [
-                    "📹 geosite-youtube"
-                ],
+                "rule_set": "📹 geosite-youtube",
                 "outbound": "📹 YouTube"
             },
             {
-                "rule_set": [
-                    "🤖 geosite-openai"
-                ],
+                "rule_set": "🤖 geosite-openai",
                 "outbound": "🤖 OpenAI"
             },
             {
-                "rule_set": [
-                    "🛒 geosite-amazon"
-                ],
+                "rule_set": "🛒 geosite-amazon",
                 "outbound": "🛒 Amazon"
             },
             {
-                "rule_set": [
-                    "🎭 geoip-facebook"
-                ],
+                "rule_set": "🎭 geoip-facebook",
                 "outbound": "🎭 Facebook"
             },              
             {
-                "rule_set": [
-                    "📟 geosite-google"
-                ],
+                "rule_set": "📟 geosite-google",
                 "outbound": "📟 Google"
             },            
             {
-                "rule_set": [
-                    "🖥️ geosite-microsoft"
-                ],
+                "rule_set": "🖥️ geosite-microsoft",
                 "outbound": "🖥️ Microsoft"
             },
             {
-                "rule_set": [
-                    "🍎 geosite-apple"
-                ],
+                "rule_set": "🍎 geosite-apple",
                 "outbound": "🍎 Apple"
             },
             {
-                "rule_set": [
-                    "🌐 geosite-proxymedia"
-                ],
+                "rule_set": "🌐 geosite-proxymedia",
                 "outbound": "🎬 Global Media"
             },            
             {
-                "rule_set": [
-                    "🌐 geosite-proxy"
-                ],
+                "rule_set": "🌐 geosite-proxy",
                 "outbound": "🌐 Global"
             },
             {
@@ -867,36 +826,9 @@
                     "🇨🇳 geoip-cn"
                 ],
                 "outbound": "🇨🇳 China"
-            },
-            {
-                "rule_set": [
-                    "⛔ geosite-adblock"
-                ],
-                "outbound": "⛔ AdBlock"
-            },
+            }
         ],
-        
         "final": "🐟 Final",
-        "auto_detect_interface": true,
-        "override_android_vpn": true,
-        "concurrent_dial": true
-    },
-
-    "experimental": {
-        "cache_file": {
-            "enabled": true,
-            "path": "cache.db",
-            "store_fakeip": true,
-            "store_rdrc": true
-        },
-
-        "clash_api": {
-            "external_controller": "0.0.0.0:9090",
-            "external_ui": "ui",
-            "secret": "password",
-            "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-            "external_ui_download_detour": "🔰 Pick",
-            "default_mode": "rule"
-        }
+        "auto_detect_interface": true
     }
 }
