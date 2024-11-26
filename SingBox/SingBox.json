@@ -31,32 +31,20 @@
             "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
             "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
             "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
-            // DNS 服务器的地址
-            "address": [
-                "https://doh.pub/dns-query",
-                "https://dns.alidns.com/dns-query",
-                "quic://dns.alidns.com"
-            ],
-                "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
+            "address": "https://dns.alidns.com/dns-query" // DNS 服务器的地址
+             "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
         },
         {
             "tag": "proxy-dns",
             "address_resolver": "resolver-dns",
             "address_strategy": "prefer_ipv4",
             "strategy": "prefer_ipv4",
-            "address": [
-                "https://dns.google/dns-query",
-                "https://dns.opendns.com/dns-query",
-                "https://cloudflare-dns.com/dns-query"
-            ],
+            "address": "https://dns.opendns.com/dns-query",
             "detour": "🔰 Pick"
         },
         {
             "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
-            "address": [
-                "223.5.5.5",
-                "119.29.29.29"
-            ],
+            "address": "223.5.5.5"
             "detour": "direct"
         },
         {
@@ -134,25 +122,25 @@
     "inbounds": [
         {
             "type": "http",
-            "listen": "::",
+            "listen": "0.0.0.0",
             "listen_port": 1080,
             "sniff": true,
             "sniff_override_destination": true,
 			"tcp_fast_open": true,
 			"tcp_multi_path": true,
 			"udp_fragment": true,
-			"domain_strategy": "prefer_ipv4",
+			"domain_strategy": "prefer_ipv4"
         },
         {
             "type": "socks",
-            "listen": "::",
+            "listen": "0.0.0.0",
             "listen_port": 1081,
             "sniff": true,
             "sniff_override_destination": true,
 			"tcp_fast_open": true,
 			"tcp_multi_path": true,
 			"udp_fragment": true,
-			"domain_strategy": "prefer_ipv4",
+			"domain_strategy": "prefer_ipv4"
         },
         {
             "type": "mixed",
@@ -163,7 +151,7 @@
 			"tcp_fast_open": true,
 			"tcp_multi_path": true,
 			"udp_fragment": true,
-			"domain_strategy": "prefer_ipv4",
+			"domain_strategy": "prefer_ipv4"
         },		
         {
             "tag": "tun-in",
