@@ -84,6 +84,41 @@
         {
             "clash_mode": "global", // 全局代理模式
             "server": "proxy-dns"
+        },
+        {
+            "type": "logical",
+			"mode": "and",
+			"rules": [
+			{
+				"domain_suffix": [
+				".lan",
+				"*.lan",
+				"*.local",
+				"localhost",
+				"WORKGROUP",
+				"*.msftncsi.com",
+				"*.msftconnecttest.com",
+				"cable.auth.com",
+				"captive.apple.com",
+				"*.cmpassport.com",
+				"id6.me",
+				"open.e.189.cn",
+				"auth.wosms.cn",
+				"mdn.open.wo.cn",
+				"opencloud.wostore.cn",
+				"enrichgw.10010.com",
+				"localhost.*.qq.com",
+				"localhost.*.weixin.qq.com"
+			],
+			"invert": true
+			},
+			{
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
+            },
+            "server": "fakeip-dns"
         }
     ],
 	
@@ -91,9 +126,9 @@
         "enabled": true,
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18",
-		"final": "proxy-dns",
 		"strategy": "prefer_ipv4"
-        }
+        },
+	"final": "proxy-dns"
     },
     
     "inbounds": [
@@ -741,7 +776,7 @@
                 "download_detour": "🔰 Pick"
             },
         ],
-
+        
         "rules": [
             {
                 "network": "udp",
@@ -828,6 +863,7 @@
                 "outbound": "🇨🇳 China"
             }
         ],
+        
         "final": "🐟 Final",
         "auto_detect_interface": true
     }
