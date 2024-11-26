@@ -207,7 +207,7 @@
         }
     ],
     
-    "subscribes": [
+    "outbound_providers": [
         {
             "tag": "Subscribe ", // 自定义订阅标签
             "url": "https://example.com/xxx/xxx&flag=clash", // 订阅链接
@@ -262,7 +262,7 @@
             "tolerance": 150, // 以毫秒为单位的测试容差。 默认使用 50
             "idle_timeout": "30m", // 空闲超时。默认使用 30m
             "interrupt_exist_connections": true, // 当选定的出站发生更改时，中断现有连接
-            "outbounds": "subscribes"
+            "use_all_providers": true,
             "excludes": [
                 "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
             ]            
@@ -270,7 +270,7 @@
         {
             "tag": "✅ Node",
             "type": "selector",
-            "outbounds": "subscribes"
+            "use_all_providers": true,
         },        
         {
             "tag": "🇭🇰 HongKong",
@@ -280,7 +280,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇭🇰|港|香港|hk|HK|Hong|HongKong"
             ]
@@ -293,7 +293,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan"
             ]
@@ -306,7 +306,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan"
             ]
@@ -319,7 +319,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea"
             ]
@@ -332,7 +332,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore"
             ]
@@ -345,7 +345,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "include": [
                 "🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America"
             ]
@@ -358,7 +358,7 @@
             "tolerance": 150,
             "idle_timeout": "30m",
             "interrupt_exist_connections": true,
-            "outbounds": "subscribes",
+            "use_all_providers": true,
             "excludes": [
                 "^((?!🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$"
             ]
