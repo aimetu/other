@@ -693,7 +693,7 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - ☁️ Warp
+      - ☁️ Warp+
       - ⚠️ Fallback
       - ⚖️ Load Balance
       - 🇭🇰 HongKong
@@ -739,7 +739,7 @@ proxy-groups:
     max-failed-times: 3
     include-all: true
 
-  - name: ☁️ Warp
+  - name: ☁️ Warp+
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     include-all-proxies: true
