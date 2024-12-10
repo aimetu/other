@@ -39,7 +39,7 @@ dns:
   upstream_mode: parallel
   fastest_timeout: 1s
   allowed_clients:
-    - 192.168.188.0/24
+    - 10.10.10.0/24
     - fdfc:e7ce:ea8b::/64
   disallowed_clients:
     - 10.0.0.0/23
