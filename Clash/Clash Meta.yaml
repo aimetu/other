@@ -57,7 +57,7 @@ authentication:  # 本地 http(s)/socks 代理验证用户密码
 skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
   - "127.0.0.1/8"
   - "::1/128"
-  - "192.168.188.0/24"
+  - "10.10.10.0/24"
   - "fd82:426c:b6f7::/64"
 
 #interface-name: en0 # 指定流量出站接口网卡
