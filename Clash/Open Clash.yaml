@@ -111,8 +111,6 @@ dns:
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
   nameserver-policy:
-    "openwrt.lan": system
-    "openwrt.local": system
     "blog.google": 119.29.29.29
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
@@ -145,8 +143,6 @@ hosts:
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
-  "openwrt.lan": openwrt.local
-  "home.lan": lan
 
 sniffer:
   enable: true
