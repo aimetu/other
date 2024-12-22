@@ -74,8 +74,8 @@ profile:
   store-fake-ip: true
 
 tun:
-  enable: false
-  stack: system
+  enable: true
+  stack: gvisor
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
