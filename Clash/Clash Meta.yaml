@@ -6,9 +6,9 @@
 # mihomo 配置示例：https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml
 
 # 第三方 web 管理页面：
+# https://board.zash.run.place/
 # http://clash.razord.top/
 # http://yacd.haishan.me/
-# https://clash.metacubex.one/
 # https://yacd.metacubex.one/
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
@@ -97,7 +97,7 @@ external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
 #external-doh-server: https://dns.alidns.com/dns-query # 在 RESTful API 端口上开启 DOH 服务器
 
 external-ui: ui/ # 配置外部控制器目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，部署地址：http://{external-controller}/ui
-external-ui-name: metacubexd # 自定义外部 ui 名字
+external-ui-name: metacubexd # 自定义外部 ui 名字 zashboard：https://github.com/Zephyruso/zashboard
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" # 自定义外部用户界面下载地址
 
 geodata-mode: true # geoip 数据模式，true为 dat，false为 mmdb
