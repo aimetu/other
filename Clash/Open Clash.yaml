@@ -28,8 +28,7 @@ external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
 secret: password
 
-external-ui: ui/
-external-ui-name: metacubexd
+external-ui: ui
 external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 geodata-mode: true
@@ -96,21 +95,17 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    
-  direct-nameserver-follow-policy: true
-  direct-nameserver:
-    - system
-    
-  default-nameserver:
+
+  default-nameserver: 
     - "223.5.5.5"
     - "tls://120.53.53.53"
     - "https://223.6.6.6/dns-query"
-    
-  nameserver:
+
+  nameserver: 
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
-  nameserver-policy:
+  nameserver-policy: 
     "blog.google": 119.29.29.29
     "dl.google.com": https://doh.pub/dns-query
     "dl.l.google.com": https://dns.alidns.com/dns-query
@@ -265,7 +260,7 @@ proxies:
 
   - name: ☁️ Warp Workers
     type: vless
-    server: 104.19.38.18 # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 104.19.38.18
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
@@ -994,7 +989,6 @@ rules:
   - DOMAIN,openwrt.lan,🇨🇳 China
   - DOMAIN-SUFFIX,local,🇨🇳 China
   - DOMAIN-KEYWORD,localhost,🇨🇳 China
-  - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
   - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
   - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
   - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
