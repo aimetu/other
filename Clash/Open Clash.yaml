@@ -10,23 +10,6 @@ tproxy-port: 7896
 
 allow-lan: true
 bind-address: "*" 
-lan-allowed-ips:
-  - "0.0.0.0/0"
-  - "::/0"
-lan-disallowed-ips:
-  - "192.168.1.0/24"
-  - "2409:8a28:7125:35a0::/64"
-authentication:
-  - "admin:password"
-skip-auth-prefixes:
-  - "127.0.0.1/8"
-  - "::1/128"
-  - "192.168.188.0/24"
-  - "fd82:426c:b6f7::/64"
-
-#interface-name: en0
-
-routing-mark: 6666
 
 unified-delay: true
 tcp-concurrent: true
@@ -41,18 +24,9 @@ global-ua: clash.meta
 global-client-fingerprint: chrome
 etag-support: true
 
-experimental:
-  quic-go-disable-gso: false
-  quic-go-disable-ecn: false
-  dialer-ip4p-convert: false
-
 external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
 secret: password
-external-controller-cors:
-  allow-origins:
-    - "*"
-  allow-private-network: true
 
 external-ui: ui/
 external-ui-name: metacubexd
@@ -79,15 +53,6 @@ tun:
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
-  device: mtun
-  strict_route: true
-  mtu: 9000
-  gso: true
-  gso-max-size: 65536
-  udp-timeout: 300
-  iproute2-table-index: 2022
-  iproute2-rule-index: 9000
-  endpoint-independent_nat: false
   dns-hijack:
     - any:53
     - tcp://any:53
@@ -161,7 +126,6 @@ dns:
     - "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
-    #- "quic://dns.adguard-dns.com"
   fallback-filter:
     geoip: true
     geoip-code: CN
