@@ -135,7 +135,7 @@ tun:
   auto-detect-interface: true # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-redir: true # 自动配置 iptables/nftables 以重定向 TCP 连接，需要 auto-route 已启用
-  device: mtun # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
+  device: utun # 指定 tun 网卡名称，macos 设备只能使用 utun 开头的网卡名
   strict_route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
   mtu: 9000 # 最大传输单元, 可用值为 1-65534, 会影响极限状态下的速率,一般用户默认即可
   gso: true # 启用通用分段卸载，仅支持 Linux
