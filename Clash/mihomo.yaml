@@ -63,7 +63,6 @@ tun:
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
-  device: mtun
   strict_route: true
   mtu: 9000
   gso: true
