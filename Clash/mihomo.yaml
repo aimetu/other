@@ -339,7 +339,7 @@ proxies:
 proxy-providers:
   Subscribe:
     type: http
-    path: ./proxy/Subscribe.yaml
+    path: ./proxy_provider/Subscribe.yaml
     url: https://sub.store/download/collection/node
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     header:
@@ -368,7 +368,7 @@ proxy-providers:
 
   Nodes: 
     type: http
-    path: ./proxy/Nodes.yaml
+    path: ./proxy_provider/Nodes.yaml
     url: https://sub.store/download/collection/node
     interval: 86400
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
@@ -846,203 +846,203 @@ rule-providers:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    path: ./rule/Direct.yaml
+    path: ./rule_provider/Direct.yaml
     interval: 86400
 
   🚥 Lan:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
-    path: ./rule/Lan.yaml
+    path: ./rule_provider/Lan.yaml
     interval: 86400
 
   ⛔ AntiAd:
     type: http
     behavior: domain
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    path: ./rule/AntiAd.yaml
+    path: ./rule_provider/AntiAd.yaml
     interval: 86400
 
   ⛔ Privacy:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical.yaml
-    path: ./rule/Privacy_Classical.yaml
+    path: ./rule_provider/Privacy_Classical.yaml
     interval: 86400
     
   ⛔ Hijacking:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    path: ./rule/Hijacking.yaml
+    path: ./rule_provider/Hijacking.yaml
     interval: 86400
     
   ⛔ AdLite:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical.yaml
-    path: ./rule/AdvertisingLite_Classical.yaml
+    path: ./rule_provider/AdvertisingLite_Classical.yaml
     interval: 86400
 
   ⛔ HttpDNS:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
-    path: ./rule/BlockHttpDNS.yaml
+    path: ./rule_provider/BlockHttpDNS.yaml
     interval: 86400
 
   ⛔ Stun:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
-    path: ./rule/STUN.yaml
+    path: ./rule_provider/STUN.yaml
     interval: 86400
 
   🕸️ Speedtest:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    path: ./rule/Speedtest.yaml
+    path: ./rule_provider/Speedtest.yaml
     interval: 86400
     
   🎵 TikTok:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    path: ./rule/TikTok.yaml
+    path: ./rule_provider/TikTok.yaml
     interval: 86400
     
   ✉️ Telegram:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    path: ./rule/Telegram.yaml
+    path: ./rule_provider/Telegram.yaml
     interval: 86400
 
   🗣️ Discord:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    path: ./rule/Discord.yaml
+    path: ./rule_provider/Discord.yaml
     interval: 86400
     
   🎶 Spotify:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    path: ./rule/Spotify.yaml
+    path: ./rule_provider/Spotify.yaml
     interval: 86400
     
   📽️ Netflix:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
-    path: ./rule/Netflix.yaml
+    path: ./rule_provider/Netflix.yaml
     interval: 86400
     
   📼 Disney+:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
-    path: ./rule/Disney.yaml
+    path: ./rule_provider/Disney.yaml
     interval: 86400
     
   📹 YouTube:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
-    path: ./rule/YouTube.yaml
+    path: ./rule_provider/YouTube.yaml
     interval: 86400
     
   🤖 OpenAI:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./rule/OpenAI.yaml
+    path: ./rule_provider/OpenAI.yaml
     interval: 86400
 
   🛒 Amazon:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
-    path: ./rule/Amazon.yaml
+    path: ./rule_provider/Amazon.yaml
     interval: 86400
 
   🎭 Facebook:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
-    path: ./rule/Facebook.yaml
+    path: ./rule_provider/Facebook.yaml
     interval: 86400
 
   📟 Google:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-    path: ./rule/Google.yaml
+    path: ./rule_provider/Google.yaml
     interval: 86400
     
   🖥️ Microsoft:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-    path: ./rule/Microsoft.yaml
+    path: ./rule_provider/Microsoft.yaml
     interval: 86400
     
   🍎 Apple.ota:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-    path: ./rule/SystemOTA.yaml
+    path: ./rule_provider/SystemOTA.yaml
     interval: 86400
     
   🍎 Apple:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml
-    path: ./rule/Apple_Classical.yaml
+    path: ./rule_provider/Apple_Classical.yaml
     interval: 86400
 
   🎬 Global Media:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
-    path: ./rule/GlobalMedia_Classical.yaml
+    path: ./rule_provider/GlobalMedia_Classical.yaml
     interval: 86400
     
   🌐 Global:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml
-    path: ./rule/Global_Classical.yaml
+    path: ./rule_provider/Global_Classical.yaml
     interval: 86400
     
   📺 China Media:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    path: ./rule/ChinaMedia.yaml
+    path: ./rule_provider/ChinaMedia.yaml
     interval: 86400
     
   🇨🇳 China:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
-    path: ./rule/China_Classical.yaml
+    path: ./rule_provider/China_Classical.yaml
     interval: 86400
     
   🇨🇳 China.ips:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_Classical.yaml
-    path: ./rule/ChinaIPs_Classical.yaml
+    path: ./rule_provider/ChinaIPs_Classical.yaml
     interval: 86400
 
   🇨🇳 China.bgp:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical.yaml
-    path: ./rule/ChinaIPsBGP_Classical.yaml
+    path: ./rule_provider/ChinaIPsBGP_Classical.yaml
     interval: 86400
 
 rules:
