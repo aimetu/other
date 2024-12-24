@@ -20,7 +20,7 @@ disable-keep-alive: true
 keep-alive-idle: 600
 keep-alive-interval: 30
 
-find-process-mode: strict
+find-process-mode: off
 
 global-ua: clash.meta
 global-client-fingerprint: chrome
@@ -322,9 +322,7 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - ☁️ Warp+
       - ⚠️ Fallback
-      - ⚖️ Load Balance
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -368,17 +366,6 @@ proxy-groups:
     max-failed-times: 3
     include-all: true
 
-  - name: ☁️ Warp+
-    type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    include-all-proxies: true
-    filter: Warp
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-    timeout: 3000
-    max-failed-times: 3
-    lazy: true
-
   - name: ⚠️ Fallback
     type: fallback
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
@@ -395,25 +382,7 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
-
-  - name: ⚖️ Load Balance
-    type: load-balance
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
-    strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
-    url: http://www.gstatic.com/generate_204
-    interval: 600
-    timeout: 3000
-    max-failed-times: 3
-    lazy: true
-    proxies:
-      - 🇭🇰 HongKong
-      - 🇹🇼 Taiwan
-      - 🇯🇵 Japan
-      - 🇰🇷 Korea
-      - 🇸🇬 Singapore
-      - 🇺🇸 America
-      - 🇺🇳 Nations
-      
+  
   - name: 🇭🇰 HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
