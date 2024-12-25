@@ -410,7 +410,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:82f0:bb8c:8f76:fdf0:e565
     peers:
-     - server: 162.159.193.1 # 域名优选 IP：engage.nanocat.cloud
+     - server: 162.159.193.1
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -429,7 +429,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     peers:
-     - server: 162.159.195.1 # 域名优选 IP：engage.nanocat.me
+     - server: 162.159.195.1
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -448,7 +448,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 162.159.195.5  # 优选 IP：https://github.com/Alvin9999/new-pac
+     - server: 162.159.195.5
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -476,11 +476,10 @@ proxies:
       headers:
         Host: cloudwork.aimeto.workers.dev
       v2ray-http-upgrade: false
-    #dialer-proxy: 🇸🇬 Singapore # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
   - name: ☁️ Warp Workers
     type: vless
-    server: 104.19.38.18 # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 104.19.38.18
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
@@ -493,11 +492,10 @@ proxies:
       headers:
         Host: sub.aimeto.workers.dev
       v2ray-http-upgrade: false
-    #dialer-proxy: 🇺🇸 America # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
   - name: ☁️ Warp Pages
     type: vless
-    server: c.aimetu.cloudns.be # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: c.aimetu.cloudns.be
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -510,7 +508,6 @@ proxies:
       headers:
         Host: aimeto.pages.dev
       v2ray-http-upgrade: false
-    #dialer-proxy: 🇺🇳 Nations # 使用指定的 proxy/proxy-group 发出连接,建立网络连接
 
   - name: 🇯🇵 日本*1
     type: ss
@@ -524,7 +521,6 @@ proxies:
     tfo: true
     mptcp: true
     ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
   
   - name: 🇯🇵 日本*2
     type: ss
@@ -538,7 +534,6 @@ proxies:
     tfo: true
     mptcp: true
     ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
 
   - name: 🇯🇵 日本*3
     type: ss
@@ -552,7 +547,32 @@ proxies:
     tfo: true
     mptcp: true
     ip-version: dual
-    #dialer-proxy: 🇯🇵 Japan
+  
+  - name: 🇺🇸 美国*1
+    type: ss
+    server: 184.170.241.194
+    port: 443
+    cipher: aes-128-cfb
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
+    ip-version: dual
+
+  - name: 🇬🇧 英国*1
+    type: ss
+    server: 212.102.53.193
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
+    ip-version: dual
   
   - name: 🇳🇱 荷兰*1
     type: ss
@@ -566,7 +586,6 @@ proxies:
     tfo: true
     mptcp: true
     ip-version: dual
-    #dialer-proxy: 🇺🇳 Nations
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
