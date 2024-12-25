@@ -156,7 +156,7 @@ sniffer:
 proxies: 
   - name: ☁️ Warp Cloud
     type: vless
-    server: 162.159.128.118
+    server: 162.159.128.118 # 优选 IP：https://github.com/Alvin9999/new-pac
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
@@ -231,6 +231,32 @@ proxies:
   - name: 🇯🇵 日本*3
     type: ss
     server: 149.22.87.240
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
+    ip-version: dual
+  
+  - name: 🇺🇸 美国*1
+    type: ss
+    server: 184.170.241.194
+    port: 443
+    cipher: aes-128-cfb
+    password: shadowsocks
+    udp: true
+    udp-over-tcp: true
+    udp-over-tcp-version: 1
+    tfo: true
+    mptcp: true
+    ip-version: dual
+
+  - name: 🇬🇧 英国*1
+    type: ss
+    server: 212.102.53.193
     port: 443
     cipher: aes-128-gcm
     password: shadowsocks
