@@ -58,7 +58,7 @@ skip-auth-prefixes: # 跳过验证的 ip4/ipv6 段
   - "127.0.0.1/8"
   - "::1/128"
   - "10.10.10.0/24"
-  - "fd82:426c:b6f7::/64"
+  - "2409:8a28:7125:eb65::/64"
 
 #interface-name: en0 # 指定流量出站接口网卡
 
@@ -74,7 +74,7 @@ keep-alive-interval: 30 # tcp keep alive 间隔时间 (单位: 秒)
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由设备判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
 global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta 可选 chrome/131.1、firefox、131.1 或其它
-global-client-fingerprint: chrome # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 chrome/firefox/safari/ios/android/edge/360/qq/random
+global-client-fingerprint: random # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 random(随机)/chrome/firefox/safari/ios/android/edge/360/qq
 etag-support: true # 外部资源下载的 etag 支持
 
 external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
@@ -189,7 +189,6 @@ dns:
   respect-rules: true # dns 遵守路由规则，需配置 proxy-server-nameserver
   use-hosts: true # 是否回应配置中的 hosts
   use-system-hosts: true # 是否查询系统中的 hosts
-  search-domains: [local] # 搜索域以获取 a/aaaa 记录
   listen: 0.0.0.0:53 # dns 服务监听，仅支持 udp
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
