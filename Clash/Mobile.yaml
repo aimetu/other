@@ -88,7 +88,6 @@ dns:
   respect-rules: true
   use-hosts: true
   use-system-hosts: true
-  search-domains: [local]
   listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
