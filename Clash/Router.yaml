@@ -528,6 +528,7 @@ proxy-groups:
       - 🇸🇬 Singapore
       - 🇺🇸 America
       - 🇺🇳 Nations
+      - 🇨🇳 China
 
   - name: ✉️ Telegram
     type: select
