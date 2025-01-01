@@ -1,4 +1,4 @@
-# 2024.11.08
+# 2025.01.01
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -917,11 +917,6 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
     interval: 86400
 
-  ⛔ Stun:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
-    interval: 86400
-
   🕸️ Speedtest:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
@@ -1050,7 +1045,6 @@ rules:
 - RULE-SET,⛔ Hijacking,AdBlock
 - RULE-SET,⛔ AdLite,AdBlock
 - RULE-SET,⛔ HttpDNS,AdBlock
-- RULE-SET,⛔ Stun,AdBlock
 - RULE-SET,🕸️ Speedtest,Speedtest
 - RULE-SET,🎵 TikTok,TikTok
 - RULE-SET,✉️ Telegram,Telegram
