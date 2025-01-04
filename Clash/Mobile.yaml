@@ -58,7 +58,7 @@ profile:
 
 tun:
   enable: true
-  stack: gvisor
+  stack: system
   auto-detect-interface: true
   auto-route: true
   auto-redir: true
