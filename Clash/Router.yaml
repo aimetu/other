@@ -20,7 +20,7 @@ disable-keep-alive: true
 keep-alive-idle: 600
 keep-alive-interval: 30
 
-find-process-mode: off
+find-process-mode: strict
 
 global-ua: clash.meta
 global-client-fingerprint: chrome
