@@ -596,7 +596,8 @@ proxy-providers:
     path: ./proxy/Subscribe.yaml # 存储路径
     url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点，非 clash 配置可通过订阅链接转换：https://acl4ssr.netlify.app
     interval: 86400 # 示例：自动更新时长单位：秒
-    #proxy: 🌐 Global  # 经过指定代理进行下载/更新
+    #proxy: 🌐 Global # 经过指定代理进行下载/更新
+    size-limit: 0 # 限制下载文件的最大大小，默认为 0 即不限制文件大小，单位为字节 (b)
     #filter: "(?i)港|台|日|韩|新|狮|美" # 示例：筛选满足关键词或正则表达式的节点
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱" # 示例：排除满足关键词或正则表达式的节点
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
@@ -624,14 +625,14 @@ proxy-providers:
       #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
       ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
-      additional-prefix: "Sub~" # 为节点名称添加固定前缀
-      #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
       skip-cert-verify: true # 示例：跳过证书验证
       udp: true # 示例：启用 udp 支持
       udp-over-tcp: false # 示例：启用 udp over tcp
       tfo: false # 示例：启用 tcp fast open, 仅生效于 tcp 协议
       mptcp: false # 示例：启用 tcp multi path, 仅生效于 tcp 协议
-      proxy-name: # 名字替换，支持正则表达式
+      additional-prefix: "Sub~" # 为节点名称添加固定前缀
+      #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
+      proxy-name: # 对节点名称内容进行替换，支持正则表达式，pattern 为替换内容，target 为替换目标
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"      
 # 本地代理服务器筛选
@@ -640,7 +641,8 @@ proxy-providers:
     path: ./proxy/Nodes.yaml
     #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点
     interval: 86400
-    #proxy: 🇨🇳 China
+    #proxy: 🌐 Global
+    size-limit: 0
     #filter: "(?i)港|台|日|韩|新|狮|美"
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
@@ -668,13 +670,13 @@ proxy-providers:
       #interface-name: wlan
       routing-mark: 89898
       ip-version: dual
-      #additional-prefix: "Sub~"
-      additional-suffix: "~Nodes"
       skip-cert-verify: true
       udp: true
       udp-over-tcp: false
       tfo: false
       mptcp: false
+      #additional-prefix: "Sub~"
+      additional-suffix: "~Nodes"
       proxy-name: 
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"          
@@ -1151,13 +1153,15 @@ proxy-groups:
       - ✅ Node
 
 #💡 远程分流规则集合
-# type: http 可选 http/file，类型为 http 则必须配置
+# name： 名称 (🌐 Global ) 必须，且不能重复
+# type: http 可选 http / file / inlinee，类型为 http 则必须配置
 # behavior: classical 对应不同的文件格式：domain/ipcidr/classical
 # url: "https://www.example.org" 类型为 http 则必须配置
 # interval: 600 更新 provider 的时间，单位为秒
 # path: ./rule1.yaml 可选文件路径，不可重复，不填写时会使用 url 的 MD5 作为此文件的文件名
 # proxy: DIRECT 经过指定代理进行下载/更新
-# format: yaml 可选 yaml/text/mrs，默认 yaml
+# size-limit: 0 限制下载文件的最大大小，默认为 0 即不限制文件大小，单位为字节 (b)
+# format: yaml 可选 yaml/text/mrs，默认 yaml。mrs目前 behavior 仅支持 domain/ipcidr
 rule-providers:
   🚥 Direct:
     type: http
