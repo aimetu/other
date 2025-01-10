@@ -1477,7 +1477,7 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
-  - GEOIP,CN,🇨🇳 China
+  - GEOIP,cn,🇨🇳 China
   - GEOSITE,cn,🇨🇳 China
   - SUB-RULE,(NETWORK,TCP),local
   - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则  
