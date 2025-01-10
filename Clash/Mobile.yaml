@@ -1142,5 +1142,5 @@ rules:
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
   - GEOIP,CN,🇨🇳 China
-  - GEOSITE,cn,🇨🇳 China
+  - GEOSITE,CN,🇨🇳 China
   - MATCH,🐟 Final
