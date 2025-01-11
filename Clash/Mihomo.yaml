@@ -98,8 +98,11 @@ external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
 
 external-ui: ./ui # 配置外部控制器目录，存放配置文件的相对路径，或存放网页静态资源的绝对路径，部署地址：http://{external-controller}/ui
 external-ui-name: zashboard # 自定义外部 ui 名
-# 自定义外部用户界面下载地址 metacubexd："https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+# 自定义外部用户界面下载地址
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+# metacubexd："https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+# zashboard（大内存）："https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+# zashboard（小内存）："https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
 
 geodata-mode: true # geoip 数据模式，true为 dat，false为 mmdb
 geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
