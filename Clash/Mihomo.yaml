@@ -67,9 +67,9 @@ routing-mark: 6666 # 为 linux 下的出站连接提供默认流量标记
 unified-delay: true # 开启统一延迟时，会计算 rtt (往返时延)，以消除连接握手等带来的不同类型节点的延迟差异
 tcp-concurrent: true  # tcp 并发连接所有 ip, 将使用最快握手的 tcp
 
-disable-keep-alive: true # 启用 tcp keep alive
+disable-keep-alive: true # 禁用 tcp keep alive，允许链接一直存在
 keep-alive-idle: 600 # tcp keep alive 空闲时间 (单位: 秒)
-keep-alive-interval: 30 # tcp keep alive 间隔时间 (单位: 秒)
+keep-alive-interval: 15 # tcp keep alive 间隔时间 (单位: 秒)
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由设备判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
