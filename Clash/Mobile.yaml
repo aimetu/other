@@ -34,7 +34,7 @@ secret: password
 
 external-ui: ./ui
 external-ui-name: zashboard
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
 geodata-mode: true
 geodata-loader: memconservative
