@@ -30,6 +30,9 @@
 # http://wifi.vivo.com.cn/generate_204
 # http://cp.cloudflare.com/generate_204
 # http://captive.apple.com/generate_204
+# http://www.msftncsi.com/ncsi.txt
+# http://www.msftconnecttest.com/connecttest.txt
+# http://detectportal.firefox.com/success.txt
 
 #💡 通用设置
 mode: rule # 运行模式:rule 规则、global 全局、direct 直连、script 脚本
