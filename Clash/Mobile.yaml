@@ -187,7 +187,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6
     peers:
-     - server: 162.159.192.1
+     - server: engage.cloudflareclient.com
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
