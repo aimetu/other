@@ -108,7 +108,7 @@ external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/downloa
 # zashboard（小内存）："https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
 
 geodata-mode: true # geoip 数据模式，true为 dat，false为 mmdb
-geodata-loader: memconservative # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geodata-loader: standard # geo 文件加载模式：standard：标准加载器，memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
 geo-auto-update: true # 自动更新 geo
 geo-update-interval: 72 # 更新间隔，单位为小时
 geox-url: # 自定 geo 下载地址
