@@ -1352,7 +1352,7 @@ rules:
   - SRC-IP-ASN,133877,🌐 Global,no-resolve
   - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
   - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
-#- SRC-PORT,7777,🇨🇳 China  
+  #- SRC-PORT,7777,🇨🇳 China  
   - DST-PORT,1400,✉️ Telegram
   #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
