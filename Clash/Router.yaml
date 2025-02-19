@@ -111,6 +111,9 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+    - "geoip,cn"
+    - "geosite,cn"
+    
   default-nameserver:
     - "223.5.5.5"
     - "tls://120.53.53.53"
