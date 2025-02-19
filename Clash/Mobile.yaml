@@ -114,7 +114,9 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    
+    - "geoip,cn"
+    - "geosite,cn"
+
   direct-nameserver-follow-policy: true
   direct-nameserver:
     - system
