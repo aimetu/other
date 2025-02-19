@@ -221,6 +221,8 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
+    #- "geoip,cn" # 内核绕过中国 ip 区域
+    #- "geosite,cn" #  内核绕过中国 ip 区域
     
   direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，false 为不遵守仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
