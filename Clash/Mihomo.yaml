@@ -276,6 +276,9 @@ hosts:
   "alpha.mihomo.dev": "::1"
   "doh.pub": [1.12.12.12, 120.53.53.53]
   "dns.alidns.com": [223.5.5.5, 223.6.6.6]
+  "dns.google": [8.8.4.4, 8.8.8.8]
+  "dns.opendns.com": [208.67.220.220, 208.67.222.222]
+  "cloudflare-dns.com": [104.16.248.249, 104.16.249.249]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
   "openwrt.lan": openwrt.local # 只允许配置一个别名
