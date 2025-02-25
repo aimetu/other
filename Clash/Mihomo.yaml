@@ -226,20 +226,19 @@ dns:
     
   direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - system
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
   default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为加密 dns
     - "223.5.5.5"
     - "tls://120.53.53.53"
     - "https://223.6.6.6/dns-query"
     
-  nameserver: # 默认的域名解析服务器 
+  nameserver: # 默认的域名解析服务器（ 可指定 "geoip:cn & geosite" dns 解析，添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
-    #- "tls://223.5.5.5"
-    #- "https://120.53.53.53/dns-query#Meta" # 指定出口网卡
-    #- "https://223.6.6.6/dns-query#🇨🇳 China&h3=true" # 指定代理（策略组）和使用 http/3 查询，此选项与 perfer-h3 不冲突
+
   nameserver-policy: # 指定域名查询的解析服务器
     "openwrt.lan": system
     "openwrt.local": system
@@ -252,11 +251,12 @@ dns:
     - "208.67.222.222"
     - "tls://8.8.8.8"
     - "https://1.1.1.1/dns-query"
+    
   fallback: # 后备域名解析服务器，一般情况下使用境外 dns, 保证结果可信
     - "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
-    #- "quic://dns.adguard-dns.com"
+    
   fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
     geoip: true # 是否启用 geoip 判断
     geoip-code: CN # geoip 匹配区域筛选，查询不是 cn 时使用 fallback 返回结果
