@@ -125,7 +125,7 @@ dns:
     - "https://doh.pub/dns-query"
     - "quic://dns.alidns.com"
     
-  direct-nameserver-follow-policy: true
+  direct-nameserver-follow-policy: false
   direct-nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
