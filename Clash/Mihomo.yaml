@@ -224,8 +224,8 @@ dns:
     #- "geoip,cn" # 内核绕过 cn，提升性能
     #- "geosite,cn" #  内核绕过 cn，提升性能
     
-  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，false 为不遵守仅当 direct-nameserver 不为空时生效    
-  direct-nameserver: # direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
+  direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - system
 
   default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为加密 dns
@@ -248,7 +248,7 @@ dns:
     "dl.l.google.com": https://dns.alidns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
     
-  proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循nameserver-policy、nameserver和fallback的配置
+  proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
     - "208.67.222.222"
     - "tls://8.8.8.8"
     - "https://1.1.1.1/dns-query"
