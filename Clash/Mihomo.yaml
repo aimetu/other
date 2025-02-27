@@ -554,7 +554,7 @@ proxy-providers:
     override: # 示例：覆写节点内容
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
-      #dialer-proxy: 🌐 Global # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #dialer-proxy: 🐟 Final # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
       ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
@@ -574,7 +574,7 @@ proxy-providers:
     path: ./proxy/Nodes.yaml
     #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点
     interval: 86400
-    proxy: 🐟 Final
+    #proxy: 🐟 Final
     size-limit: 0
     #filter: "(?i)港|台|日|韩|新|狮|美"
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
@@ -599,7 +599,7 @@ proxy-providers:
     override: 
       #down: "5000 Mbps"
       #up: "1000 Mbps"
-      #dialer-proxy: 🇨🇳 China
+      #dialer-proxy: 🐟 Final
       #interface-name: wlan
       routing-mark: 89898
       ip-version: dual
