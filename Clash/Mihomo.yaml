@@ -537,7 +537,7 @@ proxy-providers:
     header: # 自定义 http 请求头
       User-Agent:
       #- "Clash/v1.18.0"
-      #- "mihomo/1.18.3"
+      #- "FlClash/0.8.76"
       - "Clash.meta/2.0.1"
       #- "Clash-verge/2.0.1"
       # Accept:
@@ -582,9 +582,9 @@ proxy-providers:
     header: 
       User-Agent:
       #- "Clash/v1.18.0"
-      #- "mihomo/1.18.3"
+      #- "FlClash/0.8.76"
       #- "Clash.meta/2.0.1"
-      - "Clash-verge/2.0.1"
+      - "Clash-verge/2.0.3"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
