@@ -26,7 +26,7 @@
             "cache_id": "singbox",
             "store_fakeip": true,
             "store_rdrc": false,
-            "rdrc_timeout": 3d
+            "rdrc_timeout": "3d"
         }		
     },
 
@@ -182,14 +182,15 @@
                 "enrichgw.10010.com",
                 "localhost.*.qq.com",
                 "localhost.*.weixin.qq.com"
-            ],
+            ]
             },
             {
             "query_type": [
               "A",
               "AAAA"
             ]
-            },
+            }
+            ]
         }
     ],
 	
