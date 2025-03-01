@@ -14,7 +14,7 @@
             "external_ui": "ui",
             "secret": "password",
             "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-            "external_ui_download_detour": "🔰 Pick",
+            "external_ui_download_detour": "🐟 Final",
             "default_mode": "rule"
         },
         "cache_file": {
@@ -31,7 +31,7 @@
             "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
             "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
             "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
-            "address": "https://dns.alidns.com/dns-query" // DNS 服务器的地址
+            "address": "https://dns.alidns.com/dns-query", // DNS 服务器的地址
              "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
         },
         {
@@ -44,7 +44,7 @@
         },
         {
             "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
-            "address": "223.5.5.5"
+            "address": "223.5.5.5",
             "detour": "direct"
         },
         {
@@ -76,6 +76,8 @@
         {
             "type": "logical",
             "mode": "and",
+            "invert": true,
+            "server": "fakeip-dns",
             "rules": [
             {
                 "domain_suffix": [
@@ -98,7 +100,6 @@
                 "localhost.*.qq.com",
                 "localhost.*.weixin.qq.com"
             ],
-            "invert": true
             },
             {
             "query_type": [
@@ -106,7 +107,6 @@
               "AAAA"
             ]
             },
-            "server": "fakeip-dns"
         }
     ],
 	
@@ -157,7 +157,7 @@
             "tag": "tun-in",
             "type": "tun",
 			"stack": "mixed",
-            "interface_name": "stun", //设置虚拟网卡名称，默认自动选择。
+            "interface_name": "utun", //设置虚拟网卡名称，默认自动选择。
             "address": [
               "172.18.0.1/30",
               "fdfe:dcba:9876::1/126"
@@ -258,7 +258,7 @@
         {
             "tag": "✅ Node",
             "type": "selector",
-            "use_all_providers": true,
+            "use_all_providers": true
         },        
         {
             "tag": "🇭🇰 HongKong",
@@ -590,7 +590,7 @@
                 "REJECT",
                 "🔰 Pick",
                 "✅ Node",
-                "🇨🇳 China",
+                "🇨🇳 China"
             ]
         },
         {
@@ -762,7 +762,7 @@
                 "path": "./rules/geoip-cn.srs",
                 "update_interval": "86400",
                 "download_detour": "🔰 Pick"
-            },
+            }
         ],
         
         "rules": [
