@@ -4,7 +4,7 @@
     "log": {
         "disabled": false, // 禁用日志，启动后不输出日志
         "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
-        "output": "box.log", // 输出文件路径，启动后将不输出到控制台
+        "output": "singbox.log", // 输出文件路径，启动后将不输出到控制台
         "timestamp": true // 添加时间到每行
     },
 	
@@ -15,110 +15,21 @@
             "secret": "password",
             "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
             "external_ui_download_detour": "🐟 Final",
-            "default_mode": "rule"
+            "default_mode": "rule",
+            "access_control_allow_origin": "*",
+            "access_control_allow_private_network": false
+		
         },
         "cache_file": {
             "enabled": true,
+            "path": "cache.db",
+            "cache_id": "singbox",
             "store_fakeip": true,
-            "store_rdrc": false
+            "store_rdrc": false,
+            "rdrc_timeout": 3d
         }		
     },
-	
-    "dns": {
-        "servers": [
-        {
-            "tag": "direct-dns", // DNS 服务器的标签
-            "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
-            "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
-            "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
-            "address": "https://dns.alidns.com/dns-query", // DNS 服务器的地址
-             "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
-        },
-        {
-            "tag": "proxy-dns",
-            "address_resolver": "resolver-dns",
-            "address_strategy": "prefer_ipv4",
-            "strategy": "prefer_ipv4",
-            "address": "https://dns.opendns.com/dns-query",
-            "detour": "🔰 Pick"
-        },
-        {
-            "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
-            "address": "223.5.5.5",
-            "detour": "direct"
-        },
-        {
-            "tag": "block-dns",
-            "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
-        },
-        {
-            "tag": "fakeip-dns",
-            "address": "fakeip"
-        }  
-    ],
-	"disable_cache": true,
-	"disable_expire": true,
-	"independent_cache": true,
-    "rules": [
-        {
-            "outbound": "any",  // 任何出站连接 DNS 服务器解析
-            "server": "direct-dns",
-            "disable_cache": true
-        },
-        {
-            "clash_mode": "direct", // 直连模式
-            "server": "direct-dns"
-        },
-        {
-            "clash_mode": "global", // 全局代理模式
-            "server": "proxy-dns"
-        },
-        {
-            "type": "logical",
-            "mode": "and",
-            "invert": true,
-            "server": "fakeip-dns",
-            "rules": [
-            {
-                "domain_suffix": [
-                ".lan",
-                "*.lan",
-                "*.local",
-                "localhost",
-                "WORKGROUP",
-                "*.msftncsi.com",
-                "*.msftconnecttest.com",
-                "cable.auth.com",
-                "captive.apple.com",
-                "*.cmpassport.com",
-                "id6.me",
-                "open.e.189.cn",
-                "auth.wosms.cn",
-                "mdn.open.wo.cn",
-                "opencloud.wostore.cn",
-                "enrichgw.10010.com",
-                "localhost.*.qq.com",
-                "localhost.*.weixin.qq.com"
-            ],
-            },
-            {
-            "query_type": [
-              "A",
-              "AAAA"
-            ]
-            },
-        }
-    ],
-	
-    "fakeip": {
-        "enabled": true,
-        "inet4_range": "198.18.0.0/16",
-        "inet6_range": "fc00::/18",
-		"strategy": "prefer_ipv4"
-        },
-	"final": "proxy-dns"
-    },
-    
+
     "inbounds": [
         {
             "type": "http",
@@ -194,7 +105,103 @@
 			"domain_strategy": "prefer_ipv4"
         }
     ],
-    
+	
+    "dns": {
+        "servers": [
+        {
+            "tag": "direct-dns", // DNS 服务器的标签
+            "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
+            "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
+            "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
+            "address": "https://dns.alidns.com/dns-query", // DNS 服务器的地址
+             "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
+        },
+        {
+            "tag": "proxy-dns",
+            "address_resolver": "resolver-dns",
+            "address_strategy": "prefer_ipv4",
+            "strategy": "prefer_ipv4",
+            "address": "https://dns.opendns.com/dns-query",
+            "detour": "🔰 Pick"
+        },
+        {
+            "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
+            "address": "223.5.5.5",
+            "detour": "direct"
+        },
+        {
+            "tag": "block-dns",
+            "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
+        },
+        {
+            "tag": "fakeip-dns",
+            "address": "fakeip"
+        }  
+    ],
+	"disable_cache": true,
+	"disable_expire": true,
+	"independent_cache": true,
+
+    "rules": [
+        {
+            "outbound": "any",  // 任何出站连接 DNS 服务器解析
+            "server": "direct-dns",
+            "disable_cache": true
+        },
+        {
+            "clash_mode": "direct", // 直连模式
+            "server": "direct-dns"
+        },
+        {
+            "clash_mode": "global", // 全局代理模式
+            "server": "proxy-dns"
+        },
+        {
+            "type": "logical",
+            "mode": "and",
+            "invert": true,
+            "server": "fakeip-dns",
+            "rules": [
+            {
+                "domain_suffix": [
+                ".lan",
+                "*.lan",
+                "*.local",
+                "localhost",
+                "WORKGROUP",
+                "*.msftncsi.com",
+                "*.msftconnecttest.com",
+                "cable.auth.com",
+                "captive.apple.com",
+                "*.cmpassport.com",
+                "id6.me",
+                "open.e.189.cn",
+                "auth.wosms.cn",
+                "mdn.open.wo.cn",
+                "opencloud.wostore.cn",
+                "enrichgw.10010.com",
+                "localhost.*.qq.com",
+                "localhost.*.weixin.qq.com"
+            ],
+            },
+            {
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
+            },
+        }
+    ],
+	
+    "fakeip": {
+        "enabled": true,
+        "inet4_range": "198.18.0.0/16",
+        "inet6_range": "fc00::/18",
+		"strategy": "prefer_ipv4"
+        },
+	"final": "proxy-dns"
+    },
+
     "outbound_providers": [
         {
             "tag": "Subscribe ", // 自定义订阅标签
@@ -210,13 +217,11 @@
             "download_interval": "48h" // 自动更新时间
         }
     ],
-
         // 设置此选项后，脚本将自动使路由规则适应 DNS 规则
         "auto_set_outbounds_dns":{
         "proxy": "proxy-dns",
         "direct": "direct-dns"
     },
-
     "save_config_path": "./config.json", // 设置生成的配置文件的路径
     "auto_backup": false,  // 备份当前使用的配置文件备份
     "exclude_protocol": "wireguard", // 设置要排除的协议
