@@ -842,13 +842,6 @@ rule-providers:
     path: ./rule/Lan.yaml
     interval: 86400
 
-  ⛔ AntiAd:
-    type: http
-    behavior: domain
-    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    path: ./rule/AntiAd.yaml
-    interval: 86400
-
   ⛔ Privacy:
     type: http
     behavior: classical
@@ -1047,7 +1040,6 @@ rules:
   - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,🚥 Lan,🇨🇳 China
-  - RULE-SET,⛔ AntiAd,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
   - RULE-SET,⛔ Hijacking,⛔ AdBlock
   - RULE-SET,⛔ AdLite,⛔ AdBlock
