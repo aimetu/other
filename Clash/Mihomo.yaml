@@ -1110,13 +1110,6 @@ rule-providers:
     path: ./rule/Lan.yaml
     interval: 86400
 
-  ⛔ AntiAd:
-    type: http
-    behavior: domain
-    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-    path: ./rule/AntiAd.yaml
-    interval: 86400
-
   ⛔ Privacy:
     type: http
     behavior: classical
@@ -1384,7 +1377,6 @@ rules:
   #- NOT,((DOMAIN,baidu.com)),🌐 Global # 示例：baidu.com 以外域名的请求走 🌐 Global 节点/策略组
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,🚥 Lan,🇨🇳 China
-  - RULE-SET,⛔ AntiAd,⛔ AdBlock
   - RULE-SET,⛔ Privacy,⛔ AdBlock
   - RULE-SET,⛔ Hijacking,⛔ AdBlock
   - RULE-SET,⛔ AdLite,⛔ AdBlock
