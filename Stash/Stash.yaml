@@ -1,4 +1,4 @@
-# 2025.01.01
+# 2025.03.08
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -290,18 +290,11 @@ http:
     - "*.g.cn"
     - "*.google.cn"
     - "boxer.baidu.com"
-    - "*.tiktokv.com"
-    - "*.byteoversea.com"
-    - "*.tik-tokapi.com"
     
 # https-url 重写支持 header、302、307、reject 多种策略
   url-rewrite:
     - ^https?:\/\/(www|m)\.(g|google)\.cn http://www.google.com header
     - ^https?:\/\/(ditu|maps)\.google\.cn https://www.google.com 302
-    - (?<=_region=)CN(?=&) KR 307
-    - (?<=&mcc_mnc=)4 2 307
-    - ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
-    - (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 
 # https-header 重写允许用户增加、删除、替换 http 请求/响应的任意 header
   header-rewrite:
