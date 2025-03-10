@@ -256,21 +256,16 @@ dns:
   nameserver-policy:
     "openwrt.lan": system
     "openwrt.local": system
-    "blog.google": 119.29.29.29
-    "dl.google.com": https://doh.pub/dns-query
-    "dl.l.google.com": https://dns.alidns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
+    "blog.google": 208.67.222.222
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
+    "update.googleapis.com": https://dns.opendns.com/dns-query
 
 # 💡 本地域名映射
 hosts:
   "*.clash.dev": 127.0.0.1
   "*.dev": 127.0.0.1
   "alpha.clash.dev": '::1'
-  "doh.pub": 120.53.53.53
-  "dns.alidns.com": 223.5.5.5
-  "dns.google": 8.8.8.8
-  "dns.opendns.com": 208.67.222.222
-  "cloudflare-dns.com": 104.16.249.249
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
     
