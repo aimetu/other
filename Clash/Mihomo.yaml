@@ -236,8 +236,6 @@ dns:
     - https://doh.pub/dns-query
     
   nameserver-policy: # 指定域名查询的解析服务器
-    "openwrt.lan": system
-    "openwrt.local": system
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.opendns.com/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
@@ -277,8 +275,8 @@ hosts:
   "cloudflare-dns.com": [104.16.248.249, 104.16.249.249]
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
-  "openwrt.lan": openwrt.local # 只允许配置一个别名
-  "home.lan": lan # lan 为特别字段，将加入本地所有网卡的地址
+  "my.router": router.local # 只允许配置一个别名
+  "*.home.arpa": lan # lan 为特别字段，将加入本地所有网卡的地址
 
 #💡 内置 sniffer 域名嗅探器，通过读取握手包内的域名字段，将 ip 还原成域名，有效解决 mapping 机制的短板
 sniffer:
