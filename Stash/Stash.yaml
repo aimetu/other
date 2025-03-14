@@ -1,4 +1,4 @@
-# 2025.03.08
+# 2025.03.15
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -224,7 +224,6 @@ dns:
     
 # 默认 dns 服务器只会被用来解析 dns 服务的域名，仅允许 ip 地址
   default-nameserver:
-    - system
     - 223.5.5.5
     - '2400:3200::1'
     
@@ -232,7 +231,6 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - quic://dns.alidns.com
     
 # geoip 过滤 cn 以外的地址，指定到 fallback  
   fallback-filter:
@@ -243,10 +241,8 @@ dns:
       
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
-    - https://dns.google/dns-query
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
-    #- quic://dns.adguard-dns.com
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
