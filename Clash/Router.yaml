@@ -83,6 +83,7 @@ dns:
   ipv6: true
   ipv6-timeout: 300
   prefer-h3: true
+  respect-rules: false
   use-hosts: true
   use-system-hosts: true
   listen: 0.0.0.0:53
@@ -118,11 +119,6 @@ dns:
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
-  nameserver-policy:
-    "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": https://dns.opendns.com/dns-query
     
   proxy-server-nameserver:
     - "https://208.67.222.222/dns-query"
@@ -141,6 +137,16 @@ dns:
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
+
+  direct-nameserver-follow-policy: false
+  direct-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    "blog.google": 208.67.222.222
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
+    "update.googleapis.com": https://dns.opendns.com/dns-query
 
 hosts:
   "*.mihomo.dev": 127.0.0.1
