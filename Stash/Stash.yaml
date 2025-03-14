@@ -250,8 +250,6 @@ dns:
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
-    "openwrt.lan": system
-    "openwrt.local": system
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.opendns.com/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
@@ -949,8 +947,8 @@ rule-providers:
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-- DOMAIN,openwrt.lan,China
-- DOMAIN-SUFFIX,local,China
+- DOMAIN,router.local,China
+- DOMAIN-SUFFIX,home.arpa,China
 - DOMAIN-KEYWORD,localhost,China
 - IP-CIDR,10.0.0.0/8,China,no-resolve　　　　　　
 - IP-CIDR,100.64.0.0/10,China,no-resolve
