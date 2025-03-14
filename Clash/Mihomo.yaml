@@ -230,18 +230,7 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     #- "quic://dns.alidns.com"
-    
-  direct-nameserver-follow-policy: false # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
-  direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-    
-  nameserver-policy: # 指定域名查询的解析服务器，可指定 "geoip:cn & geosite" dns 解析
-    "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": https://dns.opendns.com/dns-query
-    
+
   proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
     #- "208.67.220.220"
     #- "tls://8.8.8.8"
@@ -264,7 +253,18 @@ dns:
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
-  
+    
+  direct-nameserver-follow-policy: false # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
+  direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    
+  nameserver-policy: # 指定域名查询的解析服务器，可指定 "geoip:cn & geosite" dns 解析
+    "blog.google": 208.67.222.222
+    "dl.google.com": https://dns.opendns.com/dns-query
+    "dl.l.google.com": https://dns.opendns.com/dns-query
+    "update.googleapis.com": https://dns.opendns.com/dns-query
+    
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
   "*.mihomo.dev": 127.0.0.1
