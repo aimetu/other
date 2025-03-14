@@ -225,7 +225,7 @@ dns:
 # 默认 dns 服务器只会被用来解析 dns 服务的域名，仅允许 ip 地址
   default-nameserver:
     - 223.5.5.5
-    - '2400:3200::1'
+    - 119.29.29.29
     
 # 支持 udp、tcp、dot、doh、doq 协议的 dns 服务，可指定端口，并发响应最快服务
   nameserver:
@@ -234,7 +234,7 @@ dns:
     
 # geoip 过滤 cn 以外的地址，指定到 fallback  
   fallback-filter:
-    geoip: true
+    geoip: false
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
