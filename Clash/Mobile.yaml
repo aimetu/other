@@ -141,7 +141,7 @@ dns:
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
   fallback-filter:
-    geoip: true
+    geoip: false
     geoip-code: CN
     geosite:
       - gfw
