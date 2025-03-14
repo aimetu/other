@@ -243,9 +243,9 @@ dns:
     "update.googleapis.com": https://dns.opendns.com/dns-query
     
   proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
-    #- "208.67.222.222"
+    #- "208.67.220.220"
     #- "tls://8.8.8.8"
-    - "https://208.67.220.220/dns-query"
+    - "https://208.67.222.222/dns-query"
     - "https://1.1.1.1/dns-query"
     
   fallback: # 后备域名解析服务器，一般情况下使用境外 dns, 保证结果可信
