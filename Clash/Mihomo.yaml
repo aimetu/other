@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.01.01
+# 2025.03.15
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -220,34 +220,36 @@ dns:
     #- "geoip,cn" # 内核绕过 cn，提升性能
     #- "geosite,cn" #  内核绕过 cn，提升性能
     
-  default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为加密 dns
-    - "223.5.5.5"
-    - "tls://120.53.53.53"
+  default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为（dot、doh）加密 dns
+    #- "223.5.5.5"
+    #- "tls://1.12.12.12"
     - "https://223.6.6.6/dns-query"
+    - "https://120.53.53.53/dns-query"
     
-  nameserver: # 默认的域名解析服务器（ 可指定 "geoip:cn & geosite" dns 解析，添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
+  nameserver: # 默认的域名解析服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
-    - "quic://dns.alidns.com"
+    #- "quic://dns.alidns.com"
     
   direct-nameserver-follow-policy: false # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     
-  nameserver-policy: # 指定域名查询的解析服务器
+  nameserver-policy: # 指定域名查询的解析服务器，可指定 "geoip:cn & geosite" dns 解析
     "blog.google": 208.67.222.222
     "dl.google.com": https://dns.opendns.com/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": https://dns.opendns.com/dns-query
     
   proxy-server-nameserver: # 代理节点域名解析服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
-    - "208.67.222.222"
-    - "tls://8.8.8.8"
+    #- "208.67.222.222"
+    #- "tls://8.8.8.8"
+    - "https://208.67.220.220/dns-query"
     - "https://1.1.1.1/dns-query"
     
   fallback: # 后备域名解析服务器，一般情况下使用境外 dns, 保证结果可信
-    - "https://dns.google/dns-query"
+    #- "https://dns.google/dns-query"
     - "https://dns.opendns.com/dns-query"
     - "https://cloudflare-dns.com/dns-query"
     
