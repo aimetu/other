@@ -134,7 +134,7 @@ ntp:
 #💡 虚拟网卡 tun 模式配置
 tun:
   enable: false # tun 模式开关
-  stack: system # 网络栈类型 system > gvisor > mixed > lwip，system 栈占用低, 建议使用 mixed 栈，macos 用户推荐 gvisor 栈
+  stack: gvisor # 网络栈类型 system > gvisor > mixed，默认 gvisor，system 栈占用低，需防火墙放行内核，mixed 混合堆栈 tcp 使用 system，udp 使用 gvisor 需防火墙放行内核
   auto-detect-interface: true # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
   auto-route: true # 自动设置全局路由,可以自动将全局流量路由进入 tun 网卡
   auto-redir: true # 自动配置 iptables/nftables 以重定向 TCP 连接，需要 auto-route 已启用
