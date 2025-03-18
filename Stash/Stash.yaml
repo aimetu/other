@@ -946,6 +946,10 @@ rules:
 - DOMAIN,router.local,China
 - DOMAIN-SUFFIX,home.arpa,China
 - DOMAIN-KEYWORD,localhost,China
+- DOMAIN-WILDCARD,*.tv.apple.*,Global
+- DOMAIN-WILDCARD,*.news.apple.*,Global
+- DOMAIN-WILDCARD,*.trustd.apple.*,Global
+- DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,Google
 - IP-CIDR,10.0.0.0/8,China,no-resolve　　　　　　
 - IP-CIDR,100.64.0.0/10,China,no-resolve
 - IP-CIDR,127.0.0.0/8,China,no-resolve
@@ -956,7 +960,11 @@ rules:
 - IP-CIDR,183.240.197.130/32,China,no-resolve
 - IP-CIDR6,2620:0:2d0::/48,China,no-resolve
 - IP-ASN,13335,Global,no-resolve
-- DST-PORT,1400,Telegram 
+- DST-PORT,1400,Telegram
+- AND,((NETWORK,UDP),(DST-PORT,3478)),AdBlock # NETWORK：可选值 tcp, udp
+- AND,((NETWORK,UDP),(DST-PORT,19302)),AdBlock
+- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,4483)),AdBlock # PROTOCOL：可选值 TCP, HTTP, HTTPS, UDP, QUIC
+- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,9305)),AdBlock 
 - RULE-SET,🚥 Direct,China
 - RULE-SET,🚥 Lan,China
 - RULE-SET,⛔ Privacy,AdBlock
