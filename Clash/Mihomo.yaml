@@ -224,7 +224,7 @@ dns:
     - "223.5.5.5"
     - "119.29.29.29"
     #- "tls://223.6.6.6"
-    #- "https://120.53.53.53/dns-query"
+    #- "https://223.5.5.5/dns-query"
     
   nameserver: # 默认的域名解析服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
