@@ -241,15 +241,15 @@ dns:
       
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
-    - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
+    - https://dns.adguard-dns.com/dns-query
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
-    "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": https://dns.opendns.com/dns-query
+    "blog.google": 94.140.15.15
+    "dl.google.com": https://dns.adguard-dns.com/dns-query
+    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "update.googleapis.com": quic://dns.adguard-dns.com
 
 # 💡 本地域名映射
 hosts:
