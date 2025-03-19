@@ -223,8 +223,8 @@ dns:
   default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
     - "119.29.29.29"
-    #- "tls://94.140.15.15"
-    #- "https://1.1.1.1/dns-query"
+    #- "tls://1.1.1.1"
+    #- "https://94.140.15.15/dns-query"
     
   nameserver: # 默认的域名解析服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
