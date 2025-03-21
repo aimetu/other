@@ -1391,9 +1391,9 @@ rules:
   - RULE-SET,🌐 Global,🌐 Global
   - RULE-SET,📺 China Media,📺 China Media
   - RULE-SET,🇨🇳 China,🇨🇳 China
-  - RULE-SET,🇨🇳 China.ips,🇨🇳 China
-  - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
-  - GEOIP,cn,🇨🇳 China
+  - RULE-SET,🇨🇳 China.ips,🇨🇳 China,no-resolve
+  - RULE-SET,🇨🇳 China.bgp,🇨🇳 China,no-resolve
+  - GEOIP,cn,🇨🇳 China,no-resolve
   - GEOSITE,cn,🇨🇳 China
   - SUB-RULE,(NETWORK,TCP),local
   - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则  
