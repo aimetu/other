@@ -990,8 +990,8 @@ rules:
 - RULE-SET,🌐 Global,Global
 - RULE-SET,📺 China Media,China Media
 - RULE-SET,🇨🇳 China,China
-- RULE-SET,🇨🇳 China.ips,China
-- RULE-SET,🇨🇳 China.bgp,China
+- RULE-SET,🇨🇳 China.ips,China,no-resolve
+- RULE-SET,🇨🇳 China.bgp,China,no-resolve
 - SCRIPT,quic,AdBlock
-- GEOIP,CN,China
+- GEOIP,CN,China,no-resolve
 - MATCH,Final
