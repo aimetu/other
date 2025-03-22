@@ -217,8 +217,8 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    #- "geoip,cn" # 内核绕过 cn，提升性能
-    #- "geosite,cn" #  内核绕过 cn，提升性能
+    #- "geoip:cn" # 内核绕过 cn，提升性能
+    #- "geosite:cn"
     
   default-nameserver: # 默认 dns 用于解析 dns 服务器的域名, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
