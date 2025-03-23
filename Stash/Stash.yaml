@@ -340,7 +340,7 @@ tiles:
     backgroundColor: '#00a6ac'
 
   - name: timecard-tile
-    interval: 86400
+    interval: 259200
     title: 节假日信息查询
     content: 漫长的等待中
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/calendar.png
@@ -350,19 +350,19 @@ tiles:
 script-providers:
   baidu:
     url: https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
-    interval: 86400
+    interval: 259200
 
   ip-tile:
     url: https://raw.githubusercontent.com/aimetu/other/main/Stash/ip.js
-    interval: 86400
+    interval: 259200
     
   network-tile:
     url: https://raw.githubusercontent.com/aimetu/other/main/Stash/network.js
-    interval: 86400
+    interval: 259200
     
   timecard-tile:
     url: https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
-    interval: 86400
+    interval: 259200
 
 # 💡 策略组
 proxy-groups: 
@@ -809,137 +809,137 @@ rule-providers:
   🚥 Direct:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
-    interval: 86400
+    interval: 259200
     
   🚥 Lan:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
-    interval: 86400
+    interval: 259200
 
   ⛔ Privacy:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Domain.txt
-    interval: 86400
+    interval: 259200
     
   ⛔ Hijacking:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
-    interval: 86400
+    interval: 259200
     
   ⛔ AdLite:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.txt
-    interval: 86400
+    interval: 259200
 
   ⛔ HttpDNS:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml
-    interval: 86400
+    interval: 259200
 
   🕸️ Speedtest:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
-    interval: 86400
+    interval: 259200
     
   🎵 TikTok:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    interval: 86400
+    interval: 259200
     
   ✉️ Telegram:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
-    interval: 86400
+    interval: 259200
 
   🗣️ Discord:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    interval: 86400
+    interval: 259200
     
   🎶 Spotify:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
-    interval: 86400
+    interval: 259200
         
   📽️ Netflix:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_IP.txt
-    interval: 86400
+    interval: 259200
     
   📼 Disney+:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
-    interval: 86400
+    interval: 259200
     
   📹 YouTube:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
-    interval: 86400    
+    interval: 259200    
 
   🤖 OpenAI:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
-    interval: 86400
+    interval: 259200
 
   🛒 Amazon:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
-    interval: 86400
+    interval: 259200
 
   🎭 Facebook:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
-    interval: 86400
+    interval: 259200
   
   📟 Google:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-    interval: 86400
+    interval: 259200
     
   🖥️ Microsoft:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
-    interval: 86400
+    interval: 259200
     
   🍎 Apple.ota:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SystemOTA/SystemOTA.yaml
-    interval: 86400
+    interval: 259200
     
   🍎 Apple:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.txt
-    interval: 86400
+    interval: 259200
 
   🎥 Global Media:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt
-    interval: 86400
+    interval: 259200
     
   🌐 Global:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt
-    interval: 86400
+    interval: 259200
     
   📺 China Media:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
-    interval: 86400
+    interval: 259200
     
   🇨🇳 China:
     behavior: domain-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Domain.txt
-    interval: 86400
+    interval: 259200
     
   🇨🇳 China.ips:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs_IP.txt
-    interval: 86400
+    interval: 259200
 
   🇨🇳 China.bgp:
     behavior: ipcidr-text
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_IP.txt
-    interval: 86400
+    interval: 259200
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
