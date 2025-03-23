@@ -72,7 +72,7 @@ keep-alive-interval: 15 # tcp keep alive 间隔时间 (单位: 秒)
 
 find-process-mode: strict # 查找进程模式有3个值：always 开启，强制匹配所有进程。strict 默认，由设备判断是否开启。off 不匹配进程，推荐在路由器上使用此模式。
 
-global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta 可选 chrome/135.0、firefox/135.0 或其它
+global-ua: clash.meta # 自定义外部资源下载时使用的的 ua，默认为 clash.meta 可选 Chrome/135.0、Firefox/135.0 或其它
 global-client-fingerprint: random # 全局客户端 TLS 指纹，优先低于 proxy 内的 client-fingerprint, 支持协议有 VLESS,Vmess 和 trojan，可选 random(随机)/chrome/firefox/safari/ios/android/edge/360/qq
 etag-support: true # 外部资源下载的 etag 支持
 
