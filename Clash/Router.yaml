@@ -235,8 +235,8 @@ proxy-providers:
     exclude-filter: "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
     header:
       User-Agent:
-      #- "FlClash/0.8.76"
-      - "Clash.meta/2.0.1"
+      - "FlClash/0.8.80"
+      #- "Clash-verge/2.2.0"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -267,8 +267,8 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     header: 
       User-Agent:
-      #- "Clash.meta/2.0.1"
-      - "Clash-verge/2.0.1"
+      #- "FlClash/0.8.80"
+      - "Clash-verge/2.2.0"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
