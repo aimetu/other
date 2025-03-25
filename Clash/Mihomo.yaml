@@ -464,7 +464,7 @@ proxies:
 
   - name: ☁️ Warp Hide
     type: vless
-    server: 162.159.128.118 # 优选 IP：http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
+    server: 162.159.128.118 # 优选 IP：https://github.com/Alvin9999/new-pac, http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
