@@ -141,36 +141,36 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: ☁️ Warp Cloud
+ - name: ☁️ Warp Hide
    type: vless
    server: 162.159.128.118
    port: 80
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
    skip-cert-verify: true
-   sni: cloudwork.aimeto.workers.dev
+   sni: hide.aimeto.workers.dev
    network: ws
    ws-opts:
-     path: "/?ed=2048"
+     path: "/?ed=2560"
      headers:
-       Host: cloudwork.aimeto.workers.dev
+       Host: hide.aimeto.workers.dev
    alterId: 0
    cipher: ""
    flow: ""
 
- - name: ☁️ Warp Workers
+ - name: ☁️ Warp Light
    type: vless
    server: 141.101.122.184
    port: 80
-   uuid: a6857f71-33c0-4584-8772-c38160210cf2
+   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
    skip-cert-verify: true
-   sni: sub.aimeto.workers.dev
+   sni: light.aimeto.workers.dev
    network: ws
    ws-opts:
-     path: "/?ed=2048"
+     path: "/?ed=Light"
      headers:
-       Host: sub.aimeto.workers.dev
+       Host: light.aimeto.workers.dev
    alterId: 0
    cipher: ""
    flow: ""
@@ -182,12 +182,12 @@ proxies:
    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: true
    skip-cert-verify: true
-   sni: aimeto.pages.dev
+   sni: jinqiantu.pages.dev
    network: ws
    ws-opts:
-     path: "/?ed=2048"
+     path: "/?ed=2560"
      headers:
-       Host: aimeto.pages.dev
+       Host: jinqiantu.pages.dev
    alterId: 0
    cipher: ""
    flow: ""
