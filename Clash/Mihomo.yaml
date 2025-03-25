@@ -462,36 +462,36 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇰🇷 Korea
 
-  - name: ☁️ Warp Cloud
+  - name: ☁️ Warp Hide
     type: vless
-    server: 162.159.128.118 # 优选 IP：https://github.com/Alvin9999/new-pac
+    server: 162.159.128.118 # 优选 IP：http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: false
     network: ws
-    servername: cloudwork.aimeto.workers.dev
+    servername: hide.aimeto.workers.dev
     skip-cert-verify: true
     ws-opts:
-      path: "/?ed=2048"
+      path: "/?ed=2560"
       headers:
-        Host: cloudwork.aimeto.workers.dev
+        Host: hide.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Workers
+  - name: ☁️ Warp Light
     type: vless
     server: 104.19.38.18
     port: 80
-    uuid: a6857f71-33c0-4584-8772-c38160210cf2
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: false
     network: ws
-    servername: sub.aimeto.workers.dev
+    servername: light.aimeto.workers.dev
     skip-cert-verify: true
     ws-opts:
-      path: "/?ed=2048"
+      path: "/?ed=2560"
       headers:
-        Host: sub.aimeto.workers.dev
+        Host: light.aimeto.workers.dev
       v2ray-http-upgrade: false
 
   - name: ☁️ Warp Pages
@@ -502,12 +502,12 @@ proxies:
     udp: true
     tls: true
     network: ws
-    servername: aimeto.pages.dev
+    servername: jinqiantu.pages.dev
     skip-cert-verify: true
     ws-opts:
-      path: "/?ed=2048"
+      path: "/?ed=2560"
       headers:
-        Host: aimeto.pages.dev
+        Host: jinqiantu.pages.dev
       v2ray-http-upgrade: false
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
