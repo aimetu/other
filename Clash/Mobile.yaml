@@ -359,7 +359,7 @@ proxy-providers:
       - "Clash-verge/2.2.0"
     health-check:
       enable: true
-      url: http://www.gstatic.com/generate_204
+      url: http://cp.cloudflare.com/generate_204
       interval: 600
       lazy: true
       timeout: 5000
