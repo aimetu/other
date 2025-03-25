@@ -472,7 +472,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - ☁️ Warp Cloud
+    - ☁️ Warp Light
 
 - name: HongKong
   type: url-test
