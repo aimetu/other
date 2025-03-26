@@ -494,7 +494,7 @@ proxies:
         Host: light.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-# 优选 IP：https://github.com/Alvin9999/new-pac, http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
+# 优选 IP：https://github.com/Alvin9999/new-pac, https://blog.aizrf.com/p/cf/，http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
   - name: ☁️ Warp privacy
     type: vless
     server: 172.64.153.157
