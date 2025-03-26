@@ -497,7 +497,7 @@ proxies:
 # 优选 IP：https://github.com/Alvin9999/new-pac, http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
   - name: ☁️ Warp privacy
     type: vless
-    server: 104.24.128.96
+    server: 172.64.153.157
     port: 80
     uuid: a6857f71-33c0-4584-8772-c38160210cf2
     udp: true
