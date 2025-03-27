@@ -80,6 +80,7 @@ tun:
 
 dns:
   enable: true
+  cache-algorithm: arc
   ipv6: true
   ipv6-timeout: 300
   prefer-h3: true
