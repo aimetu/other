@@ -1048,8 +1048,8 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
-  - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,p2p)),⛔ AdBlock
   - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock
+  - OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),⛔ AdBlock
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,🚥 Lan,🇨🇳 China
   - RULE-SET,⛔ Privacy,⛔ AdBlock
