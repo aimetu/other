@@ -544,10 +544,10 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
     header: # 自定义 http 请求头
       User-Agent:
-      #- "Clash/v1.18.0"
-      #- "Clash.meta/2.2.0"
-      - "FlClash/0.8.80"
-      #- "Clash-verge/2.2.0"
+      #- "Clash/v1.18.8"
+      #- "Clash.meta/2.2.2"
+      - "FlClash/0.8.88"
+      #- "Clash-verge/2.2.2"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
@@ -560,17 +560,17 @@ proxy-providers:
       timeout: 5000
       expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
     override: # 示例：覆写节点内容
+      ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
+      tfo: false # 示例：启用 tcp fast open, 仅生效于 tcp 协议
+      mptcp: false # 示例：启用 tcp multi path, 仅生效于 tcp 协议
+      udp: true # 示例：启用 udp 支持
+      udp-over-tcp: false # 示例：启用 udp over tcp
+      skip-cert-verify: true # 示例：跳过证书验证
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
       #dialer-proxy: 🐟 Final # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
-      ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
-      skip-cert-verify: true # 示例：跳过证书验证
-      udp: true # 示例：启用 udp 支持
-      udp-over-tcp: false # 示例：启用 udp over tcp
-      tfo: false # 示例：启用 tcp fast open, 仅生效于 tcp 协议
-      mptcp: false # 示例：启用 tcp multi path, 仅生效于 tcp 协议
       additional-prefix: "Sub~" # 为节点名称添加固定前缀
       #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
       proxy-name: # 对节点名称内容进行替换，支持正则表达式，pattern 为替换内容，target 为替换目标
@@ -589,10 +589,10 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     header: 
       User-Agent:
-      #- "Clash/v1.18.0"
-      #- "Clash.meta/2.2.0"
-      #- "FlClash/0.8.80"
-      - "Clash-verge/2.2.0"
+      #- "Clash/v1.18.8"
+      #- "Clash.meta/2.2.2"
+      #- "FlClash/0.8.88"
+      - "Clash-verge/2.2.2"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
@@ -605,17 +605,17 @@ proxy-providers:
       timeout: 5000
       expected-status: "*"
     override: 
+      ip-version: dual
+      tfo: false
+      mptcp: false
+      udp: true
+      udp-over-tcp: false
+      skip-cert-verify: true
       #down: "5000 Mbps"
       #up: "1000 Mbps"
       #dialer-proxy: 🐟 Final
       #interface-name: wlan
       routing-mark: 89898
-      ip-version: dual
-      skip-cert-verify: true
-      udp: true
-      udp-over-tcp: false
-      tfo: false
-      mptcp: false
       #additional-prefix: "Sub~"
       additional-suffix: "~Nodes"
       proxy-name: 
@@ -1407,7 +1407,7 @@ rules:
   - RULE-SET,🇨🇳 China,🇨🇳 China
   - RULE-SET,🇨🇳 China.ips,🇨🇳 China
   - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
-  - GEOIP,cn,🇨🇳 China,no-resolve
+  - GEOIP,cn,🇨🇳 China
   - GEOSITE,cn,🇨🇳 China
   - SUB-RULE,(NETWORK,TCP),local
   - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则  
