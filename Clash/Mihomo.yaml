@@ -1370,16 +1370,16 @@ rules:
   - PROCESS-NAME,Notion.exe,🌐 Global
   - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
   - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
-  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # 示例：匹配域名，且网络类型为 udp 指定 443 端口的请求
+  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # AND：规则内的条件都必须满足时才会匹配
   - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
   - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
   - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
   - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
   #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
-  - OR,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,p2p)),⛔ AdBlock # 示例：域名关键词为 pcdn 或 stun 的请求
-  - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock
-  #- NOT,((GEOIP,CN,no-resolve)),🌐 Global # 示例：cn 以外地区请求走 🌐 Global 节点/策略组
-  #- NOT,((DOMAIN,baidu.com)),🌐 Global # 示例：baidu.com 以外域名的请求走 🌐 Global 节点/策略组
+  - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock  # OR：规则内的条件只需满足一项时匹配
+  - OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),⛔ AdBlock
+  #- NOT,((GEOIP,CN,no-resolve)),🌐 Global # NOT：规则内不包含的条件时匹配
+  #- NOT,((DOMAIN,baidu.com)),🌐 Global
   - RULE-SET,🚥 Direct,🇨🇳 China
   - RULE-SET,🚥 Lan,🇨🇳 China
   - RULE-SET,⛔ Privacy,⛔ AdBlock
