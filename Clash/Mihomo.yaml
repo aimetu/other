@@ -556,8 +556,8 @@ proxy-providers:
       enable: true # 示例：是否启用
       url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
       interval: 600 # 示例：健康检查间隔时间，单位为秒
-      lazy: true # 懒惰状态，默认为 true,不使用该集合节点时，不进行测试
       timeout: 5000
+      lazy: true # 懒惰状态，默认为 true,不使用该集合节点时，不进行测试
       expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
     override: # 示例：覆写节点内容
       ip-version: dual # 设置节点使用 ip 版本，可选：dual(双向)/ipv4/ipv6/ipv4-prefer(优先IPV4)/ipv6-prefer(优先IPV6)
@@ -601,8 +601,8 @@ proxy-providers:
       enable: true
       url: http://cp.cloudflare.com/generate_204
       interval: 600
-      lazy: true
       timeout: 5000
+      lazy: true
       expected-status: "*"
     override: 
       ip-version: dual
