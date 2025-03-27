@@ -1023,5 +1023,5 @@ rules:
 - RULE-SET,🇨🇳 China.ips,China
 - RULE-SET,🇨🇳 China.bgp,China
 - SCRIPT,quic,AdBlock
-- GEOIP,CN,China,no-resolve
+- GEOIP,CN,China
 - MATCH,Final
