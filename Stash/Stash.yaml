@@ -976,7 +976,7 @@ rules:
 - AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,9305)),AdBlock
 - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),AdBlock  # OR：规则内的条件只需满足一项时匹配
 - OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),AdBlock
-#- NOT,((GEOIP,CN,no-resolve)),🌐 Global # NOT：规则内不包含的条件时匹配
+#- NOT,((GEOIP,CN,no-resolve)),Global # NOT：规则内不包含的条件时匹配
 - RULE-SET,🚥 Direct,China
 - RULE-SET,🚥 Lan,China
 - RULE-SET,⛔ Privacy,AdBlock
