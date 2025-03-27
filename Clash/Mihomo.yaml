@@ -646,7 +646,6 @@ proxy-providers:
 # include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
 # include-all-providers: true # 引入所有代理集合，可选 false
 # hidden: true # 隐藏策略组
-# interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
 proxy-groups:
   - name: 🔰 Pick
     type: select
@@ -688,14 +687,11 @@ proxy-groups:
     include-all-providers: true # 示例：引入所有代理集合
     #disable-udp: true # 示例：禁用 udp 流量转发
     #hidden: true # 示例：隐藏策略组
-    #interface-name: en0 # 示例：指定出站接口
-    #routing-mark: 8848 # 示例：策略组出站时附带路由标记
       
   - name: ✅ Node
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
-    interval: 600
     timeout: 5000
     max-failed-times: 5
     include-all: true
@@ -703,19 +699,20 @@ proxy-groups:
   - name: ☁️ Warp+
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    include-all-proxies: true
     filter: Client|Zero|Team|Plus
     url: http://www.gstatic.com/generate_204
     interval: 600
     timeout: 5000
     max-failed-times: 5
     lazy: true
+    include-all-proxies: true
 
   - name: ⚠️ Fallback
     type: fallback
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 0
     timeout: 5000
     max-failed-times: 5
     lazy: true
@@ -734,6 +731,7 @@ proxy-groups:
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
+    tolerance: 0
     timeout: 5000
     max-failed-times: 5
     lazy: true
