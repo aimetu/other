@@ -638,7 +638,7 @@ proxy-providers:
 # disable-udp: true # 禁用 udp 流量转发
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
-# tolerance: 0 # 网络间隔相差值，进行节点切换，否则不进行切换
+# tolerance: 50 # 网络间隔相差值，进行节点切换，否则不进行切换
 # timeout: 5000 # 健康检查超时时间，单位：毫秒
 # max-failed-times: 5 # 最大失败次数，超过则触发一次强制健康检查，默认 5
 # lazy: true # 懒惰模式，如果设置为 true，策略组在未被使用时停止检测
@@ -647,7 +647,6 @@ proxy-providers:
 # include-all-providers: true # 引入所有代理集合，可选 false
 # hidden: true # 隐藏策略组
 # interface-name: en0 # 指定策略组的出站接口：优先级: 代理节点 > 代理策略 > 全局
-# routing-mark: 8848 # 策略组出站时附带路由标记：优先级: 代理节点 > 代理策略 > 全局
 proxy-groups:
   - name: 🔰 Pick
     type: select
@@ -676,9 +675,9 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
     url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
     interval: 600 # 示例：间隔检测时间，单位：秒
-    tolerance: 0 # 示例：网络间隔相差值
-    timeout: 3000 # 示例：健康检查超时时间，单位：毫秒
-    max-failed-times: 3 # 示例：最大失败次数，超过则触发一次强制健康检查
+    tolerance: 50 # 示例：网络间隔相差值
+    timeout: 5000 # 示例：健康检查超时时间，单位：毫秒
+    max-failed-times: 5 # 示例：最大失败次数，超过则触发一次强制健康检查
     lazy: true # 示例：懒惰模式
     #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
@@ -697,8 +696,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
     interval: 600
-    timeout: 3000
-    max-failed-times: 3
+    timeout: 5000
+    max-failed-times: 5
     include-all: true
 
   - name: ☁️ Warp+
@@ -708,8 +707,8 @@ proxy-groups:
     filter: Client|Zero|Team|Plus
     url: http://www.gstatic.com/generate_204
     interval: 600
-    timeout: 3000
-    max-failed-times: 3
+    timeout: 5000
+    max-failed-times: 5
     lazy: true
 
   - name: ⚠️ Fallback
@@ -717,8 +716,8 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
     url: http://www.gstatic.com/generate_204
     interval: 600
-    timeout: 3000
-    max-failed-times: 3
+    timeout: 5000
+    max-failed-times: 5
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -735,8 +734,8 @@ proxy-groups:
     strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理
     url: http://www.gstatic.com/generate_204
     interval: 600
-    timeout: 3000
-    max-failed-times: 3
+    timeout: 5000
+    max-failed-times: 5
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -753,9 +752,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
 
@@ -765,9 +764,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    timeout: 3000
-    max-failed-times: 3
-    tolerance: 0
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5
     lazy: true
     include-all-providers: true
 
@@ -777,9 +776,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5
     lazy: true
     include-all-providers: true
       
@@ -789,9 +788,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
     
@@ -801,9 +800,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
 
@@ -813,9 +812,9 @@ proxy-groups:
     filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
 
@@ -825,9 +824,9 @@ proxy-groups:
     filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
 
@@ -837,9 +836,9 @@ proxy-groups:
     filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
     url: http://www.gstatic.com/generate_204
     interval: 600
-    tolerance: 0
-    timeout: 3000
-    max-failed-times: 3    
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 5    
     lazy: true
     include-all-providers: true
 
