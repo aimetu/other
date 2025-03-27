@@ -293,18 +293,18 @@ proxy-providers:
       enable: true
       url: http://cp.cloudflare.com/generate_204
       interval: 600
-      lazy: true
       timeout: 5000
+      lazy: true
       expected-status: "*"
     override: 
-      routing-mark: 89898
       ip-version: dual
-      additional-suffix: "~Nodes"
-      skip-cert-verify: true
-      udp: true
-      udp-over-tcp: false
       tfo: false
       mptcp: false
+      udp: true
+      udp-over-tcp: false
+      skip-cert-verify: true
+      routing-mark: 89898
+      additional-suffix: "~Nodes"
       proxy-name: 
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"          
