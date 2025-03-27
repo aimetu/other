@@ -258,23 +258,17 @@ hosts:
   "alpha.clash.dev": '::1'
   "talk.google.com": 108.177.125.188
   "mtalk.google.com": 108.177.125.188
-    
-# 💡 http3/quic 协议基于 udp，在目前的网络环境下较为低效,禁用 quic 协议
-script:
-  shortcuts:
-    quic: network == 'udp' and (dst_port == 443 or dst_port == 3478 or dst_port == 19302)  # 屏蔽 http3/quic,让流量回落至 http2,避免 udp 被 qos
 
 # 💡 http 引擎相关
 http:
 # 强制使用 http 引擎处理 tcp 连接 
   force-http-engine:
-    - boxer.baidu.com
+    - sub.store
 
 # 开启 mitm 功能的域名列表,需安装证书并信任
   mitm:
     - "*.g.cn"
     - "*.google.cn"
-    - "boxer.baidu.com"
     
 # https-url 重写支持 header、302、307、reject 多种策略
   url-rewrite:
@@ -288,28 +282,14 @@ http:
     - ^https?:\/\/(www|m)\.(g|google)\.cn request-replace DNT 1
     - ^https?:\/\/(www|m)\.(g|google)\.cn request-replace-regex User-Agent Go-http-client curl
 
-# 使用 javascript 脚本改写 https 请求
-  script:
-    - match: ^https:\/\/boxer\.baidu\.com\/scheme\?scheme
-      name: baidu
-      type: response
-      require-body: false
-      timeout: 10
-
 # 定时 javascript 脚本任务
 cron:
   script:
-    - name: baidu  # 引用 script-providers 中的脚本
-      cron: '0 8 * * *'  # cron 表达式，具体表达示参考：https://crontab.guru
+    - name: ip-tile  # 引用 script-providers 中的脚本
+      cron: '0 0 * * *'  # cron 表达式，具体表达示参考：https://crontab.guru
       timeout: 10   # script timeout in second ( optional )
       argument: ''  # script argument ( optional )
       debug: false  # 开发模式，每次执行前会从 provider 加载最新脚本
-      
-    - name: ip-tile
-      cron: '0 0 * * *'
-      timeout: 10
-      argument: ''
-      debug: false
       
     - name: network-tile
       cron: '0 0 * * *'
@@ -348,10 +328,6 @@ tiles:
 
 # 远程资源脚本模式
 script-providers:
-  baidu:
-    url: https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
-    interval: 259200
-
   ip-tile:
     url: https://raw.githubusercontent.com/aimetu/other/main/Stash/ip.js
     interval: 259200
@@ -991,10 +967,16 @@ rules:
 - IP-CIDR6,2620:0:2d0::/48,China,no-resolve
 - IP-ASN,13335,Global,no-resolve
 - DST-PORT,1400,Telegram
-- AND,((NETWORK,UDP),(DST-PORT,3478)),AdBlock # NETWORK：可选值 tcp, udp
+- AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),AdBlock # AND：规则内的条件都必须满足时才会匹配
+- AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),AdBlock 
+- AND,((NETWORK,UDP),(DST-PORT,443)),AdBlock # NETWORK：可选值 tcp, udp
+- AND,((NETWORK,UDP),(DST-PORT,3478)),AdBlock
 - AND,((NETWORK,UDP),(DST-PORT,19302)),AdBlock
 - AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,4483)),AdBlock # PROTOCOL：可选值 TCP, HTTP, HTTPS, UDP, QUIC
-- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,9305)),AdBlock 
+- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,9305)),AdBlock
+- OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),AdBlock  # OR：规则内的条件只需满足一项时匹配
+- OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),AdBlock
+#- NOT,((GEOIP,CN,no-resolve)),🌐 Global # NOT：规则内不包含的条件时匹配
 - RULE-SET,🚥 Direct,China
 - RULE-SET,🚥 Lan,China
 - RULE-SET,⛔ Privacy,AdBlock
@@ -1022,6 +1004,5 @@ rules:
 - RULE-SET,🇨🇳 China,China
 - RULE-SET,🇨🇳 China.ips,China
 - RULE-SET,🇨🇳 China.bgp,China
-- SCRIPT,quic,AdBlock
 - GEOIP,CN,China
 - MATCH,Final
