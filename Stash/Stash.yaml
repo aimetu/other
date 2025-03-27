@@ -1,4 +1,4 @@
-# 2025.03.15
+# 2025.03.25
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -51,7 +51,7 @@ proxy-providers:
     url: http://sub.store/download/collection/node
     interval: 86400
     filter: "^(?!.*订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)"
-    benchmark-url: http://www.gstatic.com/generate_204
+    benchmark-benchmark-url: http://www.gstatic.com/generate_204
     benchmark-timeout: 3
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
@@ -369,6 +369,8 @@ proxy-groups:
 - name: Pick
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
+  benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 5
   proxies:
   - Auto
   - Node
@@ -390,8 +392,12 @@ proxy-groups:
 - name: Auto
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
-  url: http://www.gstatic.com/generate_204
+  benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
+# 网络间隔相差值，进行节点切换，否则不进行切换
+  tolerance: 0
+# 延迟测试超时，单位：秒
+  benchmark-timeout: 5
 # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测  
   lazy: true
 # hidden 在列表中隐藏策略组开关
@@ -403,6 +409,8 @@ proxy-groups:
 - name: Node
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
+  benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -410,6 +418,8 @@ proxy-groups:
 - name: Wireless
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
+  benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   proxies:
@@ -426,8 +436,10 @@ proxy-groups:
 - name: Fallback
   type: fallback
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   proxies:
@@ -445,8 +457,10 @@ proxy-groups:
 # strategy: consistent-hashing、round-robin，一般建议设置为 consistent-hashing，避免频繁改变 ip 触发服务端的安全策略 
   strategy: consistent-hashing
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   proxies:
@@ -464,9 +478,9 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
   benchmark-url: http://www.gstatic.com/generate_204
-# 延迟测试超时，单位：秒  
+  interval: 600
+  tolerance: 0
   benchmark-timeout: 5
-  interval: 600  
   lazy: true
   hidden: false
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
@@ -477,8 +491,10 @@ proxy-groups:
 - name: HongKong
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -487,8 +503,10 @@ proxy-groups:
 - name: Taiwan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -497,8 +515,10 @@ proxy-groups:
 - name: Japan
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -507,8 +527,10 @@ proxy-groups:
 - name: Korea
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -517,8 +539,10 @@ proxy-groups:
 - name: Singapore
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -527,8 +551,10 @@ proxy-groups:
 - name: America
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -537,8 +563,10 @@ proxy-groups:
 - name: Nations
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
-  url: http://www.gstatic.com/generate_204
+  benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
@@ -547,8 +575,10 @@ proxy-groups:
 - name: Chinese
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
-  url: http://www.gstatic.com/generate_204
-  interval: 600  
+  benchmark-url: http://www.gstatic.com/generate_204
+  interval: 600
+  tolerance: 0
+  benchmark-timeout: 5
   lazy: true
   hidden: false
   include-all: true
