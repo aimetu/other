@@ -51,8 +51,8 @@ proxy-providers:
     url: http://sub.store/download/collection/node
     interval: 86400
     filter: "^(?!.*订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)"
-    benchmark-benchmark-url: http://www.gstatic.com/generate_204
-    benchmark-timeout: 3
+    benchmark-url: http://www.gstatic.com/generate_204
+    benchmark-timeout: 5
    
 # 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
 proxies:
@@ -70,7 +70,7 @@ proxies:
    reserved: [17,176,6]
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
-   benchmark-timeout: 3
+   benchmark-timeout: 5
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
@@ -91,7 +91,7 @@ proxies:
    reserved: [197,215,83]
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
-   benchmark-timeout: 3
+   benchmark-timeout: 5
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
@@ -112,7 +112,7 @@ proxies:
    reserved: [80,73,10]
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
-   benchmark-timeout: 3
+   benchmark-timeout: 5
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
@@ -133,7 +133,7 @@ proxies:
    reserved: [173,82,247]
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
-   benchmark-timeout: 3
+   benchmark-timeout: 5
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
