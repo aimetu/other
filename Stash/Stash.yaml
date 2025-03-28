@@ -949,62 +949,62 @@ rule-providers:
     
 # 💡 规则类型引用（指定规则类型引用代理或策略组）
 rules:
-- DOMAIN,router.local,China
-- DOMAIN-SUFFIX,home.arpa,China
-- DOMAIN-KEYWORD,localhost,China
-- DOMAIN-WILDCARD,*.tv.apple.*,Global
-- DOMAIN-REGEX,*.news.apple.*,Global
-- DOMAIN-REGEX,*.trustd.apple.*,Global
+- DOMAIN, router.local, China
+- DOMAIN-SUFFIX, home.arpa, China
+- DOMAIN-KEYWORD, localhost, China
+- DOMAIN-WILDCARD, *.tv.apple.*, Global
+- DOMAIN-REGEX, *.news.apple.*, Global
+- DOMAIN-REGEX, *.trustd.apple.*, Global
 - URL-REGEX, ^https?:\/\/(www|m)\.google\.cn, Google
 - USER-AGENT, AppleTV*, Global
 - USER-AGENT, AppleNews*, Global
-- IP-CIDR,10.0.0.0/8,China,no-resolve　　　　　　
-- IP-CIDR,100.64.0.0/10,China,no-resolve
-- IP-CIDR,127.0.0.0/8,China,no-resolve
-- IP-CIDR,172.16.0.0/12,China,no-resolve
-- IP-CIDR,192.168.0.0/16,China,no-resolve
-- IP-CIDR,224.0.0.0/24,China,no-resolve
-- IP-CIDR,169.254.0.0/16,China,no-resolve
-- IP-CIDR,183.240.197.130/32,China,no-resolve
-- IP-CIDR6,2620:0:2d0::/48,China,no-resolve
-- IP-ASN,13335,Global
-- DST-PORT,1400,Telegram
-- AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),AdBlock # AND：规则内的条件都必须满足时才会匹配
-- AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),AdBlock 
-- AND,((NETWORK,UDP),(DST-PORT,443)),AdBlock # NETWORK：可选值 tcp, udp
-- AND,((NETWORK,UDP),(DST-PORT,3478)),AdBlock
-- AND,((NETWORK,UDP),(DST-PORT,19302)),AdBlock
-- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,4483)),AdBlock # PROTOCOL：可选值 TCP, HTTP, HTTPS, UDP, QUIC
-- AND,((DOMAIN-SUFFIX,bilibili.com),(PROTOCOL,UDP),(DST-PORT,9305)),AdBlock
-- OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),AdBlock  # OR：规则内的条件只需满足一项时匹配
-- OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),AdBlock
-#- NOT,((GEOIP,CN,no-resolve)),Global # NOT：规则内不包含的条件时匹配
-- RULE-SET,🚥 Direct,China
-- RULE-SET,🚥 Lan,China
-- RULE-SET,⛔ Privacy,AdBlock
-- RULE-SET,⛔ Hijacking,AdBlock
-- RULE-SET,⛔ AdLite,AdBlock
-- RULE-SET,⛔ HttpDNS,AdBlock
-- RULE-SET,🕸️ Speedtest,Speedtest
-- RULE-SET,🎵 TikTok,TikTok
-- RULE-SET,✉️ Telegram,Telegram
-- RULE-SET,🗣️ Discord,Discord
-- RULE-SET,🎶 Spotify,Spotify
-- RULE-SET,📽️ Netflix,Netflix
-- RULE-SET,📼 Disney+,Disney+
-- RULE-SET,📹 YouTube,YouTube
-- RULE-SET,🤖 OpenAI,OpenAI
-- RULE-SET,🛒 Amazon,Amazon
-- RULE-SET,🎭 Facebook,Facebook
-- RULE-SET,📟 Google,Google
-- RULE-SET,🖥️ Microsoft,Microsoft
-- RULE-SET,🍎 Apple.ota,AdBlock,no-track # 屏蔽 ios 更新，no-track：隐藏连接
-- RULE-SET,🍎 Apple,Apple
-- RULE-SET,🎥 Global Media,Global Media
-- RULE-SET,🌐 Global,Global
-- RULE-SET,📺 China Media,China Media
-- RULE-SET,🇨🇳 China,China
-- RULE-SET,🇨🇳 China.ips,China
-- RULE-SET,🇨🇳 China.bgp,China
-- GEOIP,CN,China
-- MATCH,Final
+- IP-CIDR, 10.0.0.0/8, China, no-resolve　　　　　　
+- IP-CIDR, 100.64.0.0/10, China, no-resolve
+- IP-CIDR, 127.0.0.0/8, China, no-resolve
+- IP-CIDR, 172.16.0.0/12, China, no-resolve
+- IP-CIDR, 192.168.0.0/16, China, no-resolve
+- IP-CIDR, 224.0.0.0/24, China, no-resolve
+- IP-CIDR, 169.254.0.0/16, China, no-resolve
+- IP-CIDR, 183.240.197.130/32, China, no-resolve
+- IP-CIDR6, 2620:0:2d0::/48, China, no-resolve
+- IP-ASN, 13335, Global
+- DST-PORT, 1400, Telegram
+- AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 4483)), AdBlock # AND：规则内的条件都必须满足时才会匹配
+- AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 9305)), AdBlock 
+- AND, ((NETWORK, UDP), (DST-PORT, 443)), AdBlock # NETWORK：可选值 tcp, udp
+- AND, ((NETWORK, UDP), (DST-PORT, 3478)), AdBlock
+- AND, ((NETWORK, UDP), (DST-PORT, 19302)), AdBlock
+- AND, ((DOMAIN-SUFFIX, bilibili.com), (PROTOCOL, UDP), (DST-PORT, 4483)), AdBlock # PROTOCOL：可选值 TCP, HTTP, HTTPS, UDP, QUIC
+- AND, ((DOMAIN-SUFFIX, bilibili.com), (PROTOCOL, UDP), (DST-PORT, 9305)), AdBlock
+- OR, ((DOMAIN-KEYWORD, httpdns), (DOMAIN-KEYWORD, httpsdns)), AdBlock  # OR：规则内的条件只需满足一项时匹配
+- OR, ((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)), AdBlock
+#- NOT, ((GEOIP, CN, no-resolve)), Global # NOT：规则内不包含的条件时匹配
+- RULE-SET, 🚥 Direct, China
+- RULE-SET, 🚥 Lan, China
+- RULE-SET, ⛔ Privacy, AdBlock
+- RULE-SET, ⛔ Hijacking, AdBlock
+- RULE-SET, ⛔ AdLite, AdBlock
+- RULE-SET, ⛔ HttpDNS, AdBlock
+- RULE-SET, 🕸️ Speedtest, Speedtest
+- RULE-SET, 🎵 TikTok, TikTok
+- RULE-SET, ✉️ Telegram, Telegram
+- RULE-SET, 🗣️ Discord, Discord
+- RULE-SET, 🎶 Spotify, Spotify
+- RULE-SET, 📽️ Netflix, Netflix
+- RULE-SET, 📼 Disney+, Disney+
+- RULE-SET, 📹 YouTube, YouTube
+- RULE-SET, 🤖 OpenAI, OpenAI
+- RULE-SET, 🛒 Amazon, Amazon
+- RULE-SET, 🎭 Facebook, Facebook
+- RULE-SET, 📟 Google, Google
+- RULE-SET, 🖥️ Microsoft, Microsoft
+- RULE-SET, 🍎 Apple.ota, AdBlock, no-track # 屏蔽 ios 更新，no-track：隐藏连接
+- RULE-SET, 🍎 Apple, Apple
+- RULE-SET, 🎥 Global Media, Global Media
+- RULE-SET, 🌐 Global, Global
+- RULE-SET, 📺 China Media, China Media
+- RULE-SET, 🇨🇳 China, China
+- RULE-SET, 🇨🇳 China.ips, China
+- RULE-SET, 🇨🇳 China.bgp, China
+- GEOIP, CN, China
+- MATCH, Final
