@@ -953,9 +953,11 @@ rules:
 - DOMAIN-SUFFIX,home.arpa,China
 - DOMAIN-KEYWORD,localhost,China
 - DOMAIN-WILDCARD,*.tv.apple.*,Global
-- DOMAIN-WILDCARD,*.news.apple.*,Global
-- DOMAIN-WILDCARD,*.trustd.apple.*,Global
-- DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,Google
+- DOMAIN-REGEX,*.news.apple.*,Global
+- DOMAIN-REGEX,*.trustd.apple.*,Global
+- URL-REGEX, ^https?:\/\/(www|m)\.google\.cn, Google
+- USER-AGENT, AppleTV*, Global
+- USER-AGENT, AppleNews*, Global
 - IP-CIDR,10.0.0.0/8,China,no-resolve　　　　　　
 - IP-CIDR,100.64.0.0/10,China,no-resolve
 - IP-CIDR,127.0.0.0/8,China,no-resolve
