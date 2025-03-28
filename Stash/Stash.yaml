@@ -965,7 +965,7 @@ rules:
 - IP-CIDR,169.254.0.0/16,China,no-resolve
 - IP-CIDR,183.240.197.130/32,China,no-resolve
 - IP-CIDR6,2620:0:2d0::/48,China,no-resolve
-- IP-ASN,13335,Global,no-resolve
+- IP-ASN,13335,Global
 - DST-PORT,1400,Telegram
 - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),AdBlock # AND：规则内的条件都必须满足时才会匹配
 - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),AdBlock 
