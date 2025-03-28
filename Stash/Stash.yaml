@@ -54,7 +54,7 @@ proxy-providers:
     benchmark-url: http://www.gstatic.com/generate_204
     benchmark-timeout: 5
    
-# 💡 本地代理服务器（支持 ss、ssr、socks5、http、https、vmess、vless、trojan、hysteria、snell、tuic、wireguard 等协议）
+# 💡 本地代理服务器
 proxies:
  - name: ☁️ Warp Client
    type: wireguard
