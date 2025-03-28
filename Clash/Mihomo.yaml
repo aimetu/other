@@ -536,7 +536,7 @@ proxy-providers:
   Subscribe: # 远程代理服务器引用名称
     type: http # 代理服务器类型为（http：订阅，file：筛选）
     path: ./proxy/Subscribe.yaml # 存储路径
-    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点，非 clash 配置可通过订阅链接转换：https://acl4ssr.netlify.app
+    url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的配置
     interval: 86400 # 示例：自动更新时长单位：秒
     proxy: 🐟 Final # 经过指定代理进行下载/更新
     size-limit: 0 # 限制下载文件的最大大小，默认为 0 即不限制文件大小，单位为字节 (b)
