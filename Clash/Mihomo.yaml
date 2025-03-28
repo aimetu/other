@@ -1375,18 +1375,18 @@ rule-providers:
 #💡 引用子规则，匹配到规则时，将请求送往另一规则流程
 sub-rules:
   local:
-    - DOMAIN-KEYWORD,lan,🇨🇳 China
-    - DOMAIN-SUFFIX,local,🇨🇳 China
-    - IP-CIDR,17.0.0.0/8,🇨🇳 China
-    - IP-CIDR,182.254.116.0/24,🇨🇳 China
-    - IP-CIDR6,fe80::/10,🇨🇳 China
+    - DOMAIN-KEYWORD, lan, 🇨🇳 China
+    - DOMAIN-SUFFIX, local, 🇨🇳 China
+    - IP-CIDR, 17.0.0.0/8, 🇨🇳 China
+    - IP-CIDR, 182.254.116.0/24, 🇨🇳 China
+    - IP-CIDR6, fe80::/10, 🇨🇳 China
   adblock:
-    - DOMAIN,qzs.qq.com,⛔ AdBlock
-    - DOMAIN,ocsp.apple.com,⛔ AdBlock
+    - DOMAIN, qzs.qq.com, ⛔ AdBlock
+    - DOMAIN, ocsp.apple.com, ⛔ AdBlock
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
 # RULE-SET：引用规则集合
-# SUB-RULE:引用子规则，匹配到规则时,将请求送往另一规则流程，如果在 sub-rule 内没匹配到，则会退回常规规则流程
+# SUB-RULE:引用子规则，匹配到规则时, 将请求送往另一规则流程，如果在 sub-rule 内没匹配到，则会退回常规规则流程
 # DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
 # DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
 # DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
@@ -1408,7 +1408,7 @@ sub-rules:
 # OR：逻辑规则，规则内的条件只需满足一项即可
 # NOT：逻辑规则，必须为规则内不包含的条件
 # IN-TYPE：匹配流量入站的类型，支持的类型（HTTP/SOCKS/TUN/TPROXY/REDIR/INNER）
-# IN-USER：匹配入站用户名,目前仅 vmess 入站支持配置用户名
+# IN-USER：匹配入站用户名, 目前仅 vmess 入站支持配置用户名
 # IN-NAME：匹配入站名称
 # IN-PORT：匹配入站端口
 # NETWORK：匹配入站流量的类型，匹配入站流量的类型 tcp / udp
@@ -1418,79 +1418,79 @@ sub-rules:
 # GEOSITE：域名集合，匹配集合内的域名 参考：https://github.com/v2fly/domain-list-community/tree/master/data
 # MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
 rules:
-  - DOMAIN,router.local,🇨🇳 China
-  - DOMAIN-SUFFIX,home.arpa,🇨🇳 China
-  - DOMAIN-KEYWORD,localhost,🇨🇳 China
-  - DOMAIN-REGEX,^https?:\/\/(www|m)\.google\.cn,📟 Google
-  - IP-CIDR,10.0.0.0/8,🇨🇳 China,no-resolve　　　　　　
-  - IP-CIDR,100.64.0.0/10,🇨🇳 China,no-resolve
-  - IP-CIDR,127.0.0.0/8,🇨🇳 China,no-resolve
-  - IP-CIDR,172.16.0.0/12,🇨🇳 China,no-resolve
-  - IP-CIDR,192.168.0.0/16,🇨🇳 China,no-resolve
-  - IP-CIDR,224.0.0.0/24,🇨🇳 China,no-resolve
-  - IP-CIDR,169.254.0.0/16,🇨🇳 China,no-resolve
-  - IP-CIDR,183.240.197.130/32,🇨🇳 China,no-resolve
-  - IP-CIDR6,2620:0:2d0::/48,🇨🇳 China,no-resolve
-  - IP-SUFFIX,114.114.112.0/21,🇨🇳 China,no-resolve
-  - IP-ASN,13335,🌐 Global
-  - SRC-GEOIP,JP,🌐 Global
-  - SRC-IP-ASN,133877,🌐 Global
-  - SRC-IP-CIDR,239.255.255.250/32,🇨🇳 China,no-resolve
-  - SRC-IP-SUFFIX,192.168.1.0/8,🇨🇳 China,no-resolve
-  #- SRC-PORT,7777,🇨🇳 China  
-  - DST-PORT,1400,✉️ Telegram
-  #- DST-PORT,114/514,🇨🇳 China # 示例：匹配 114 和 514 端口
-  #- DST-PORT,114-514,🇨🇳 China # 示例：匹配 114 到 514 端口
-  #- DST-PORT,114/233/514-1919,🇨🇳 China # 示例：匹配 114 和 233 以及 514 到 1919
-  #- DSCP,4,🌐 Global
-  #- UID,1001,🇨🇳 China
-  #- NETWORK,tcp,🇨🇳 China
-  #- IN-NAME,name,🌐 Global
-  #- IN-USER,vmess,🌐 Global
-  #- IN-TYPE,SOCKS,🌐 Global
-  #- IN-PORT,7890,🇨🇳 China
-  - PROCESS-NAME,Notion.exe,🌐 Global
-  - PROCESS-NAME,OneDriveUpdater.exe,🌐 Global
-  - PROCESS-PATH,C:\Program Files\Microsoft OneDrive\OneDrive.exe,🌐 Global
-  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,4483)),⛔ AdBlock # AND：规则内的条件都必须满足时才会匹配
-  - AND,((DOMAIN-SUFFIX,bilibili.com),(NETWORK,UDP),(DST-PORT,9305)),⛔ AdBlock 
-  - AND,((NETWORK,UDP),(DST-PORT,443)),⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
-  - AND,((NETWORK,UDP),(DST-PORT,3478)),⛔ AdBlock
-  - AND,((NETWORK,UDP),(DST-PORT,19302)),⛔ AdBlock
-  #- AND,((DST-PORT,22),(GEOIP,CN,no-resolve)),🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
-  - OR,((DOMAIN-KEYWORD,httpdns),(DOMAIN-KEYWORD,httpsdns)),⛔ AdBlock  # OR：规则内的条件只需满足一项时匹配
-  - OR,((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)),⛔ AdBlock
-  #- NOT,((GEOIP,CN,no-resolve)),🌐 Global # NOT：规则内不包含的条件时匹配
-  #- NOT,((DOMAIN,baidu.com)),🌐 Global
-  - RULE-SET,🚥 Direct,🇨🇳 China
-  - RULE-SET,🚥 Lan,🇨🇳 China
-  - RULE-SET,⛔ Privacy,⛔ AdBlock
-  - RULE-SET,⛔ Hijacking,⛔ AdBlock
-  - RULE-SET,⛔ AdLite,⛔ AdBlock
-  - RULE-SET,⛔ HttpDNS,⛔ AdBlock
-  - RULE-SET,🕸️ Speedtest,🕸️ Speedtest
-  - RULE-SET,🎵 TikTok,🎵 TikTok
-  - RULE-SET,✉️ Telegram,✉️ Telegram
-  - RULE-SET,🗣️ Discord,🗣️ Discord
-  - RULE-SET,🎶 Spotify,🎶 Spotify
-  - RULE-SET,📽️ Netflix,📽️ Netflix
-  - RULE-SET,📼 Disney+,📼 Disney+
-  - RULE-SET,📹 YouTube,📹 YouTube
-  - RULE-SET,🤖 OpenAI,🤖 OpenAI
-  - RULE-SET,🛒 Amazon,🛒 Amazon
-  - RULE-SET,🎭 Facebook,🎭 Facebook
-  - RULE-SET,📟 Google,📟 Google
-  - RULE-SET,🖥️ Microsoft,🖥️ Microsoft
-  - RULE-SET,🍎 Apple.ota,⛔ AdBlock
-  - RULE-SET,🍎 Apple,🍎 Apple
-  - RULE-SET,🎬 Global Media,🎬 Global Media
-  - RULE-SET,🌐 Global,🌐 Global
-  - RULE-SET,📺 China Media,📺 China Media
-  - RULE-SET,🇨🇳 China,🇨🇳 China
-  - RULE-SET,🇨🇳 China.ips,🇨🇳 China
-  - RULE-SET,🇨🇳 China.bgp,🇨🇳 China
-  - GEOIP,cn,🇨🇳 China
-  - GEOSITE,cn,🇨🇳 China
-  - SUB-RULE,(NETWORK,TCP),local
-  - SUB-RULE,(NETWORK,UDP),adblock # 示例：括号内可以使用任意规则  
-  - MATCH,🐟 Final
+  - DOMAIN, router.local, 🇨🇳 China
+  - DOMAIN-SUFFIX, home.arpa, 🇨🇳 China
+  - DOMAIN-KEYWORD, localhost, 🇨🇳 China
+  - DOMAIN-REGEX, ^https?:\/\/(www|m)\.google\.cn, 📟 Google
+  - IP-CIDR, 10.0.0.0/8, 🇨🇳 China, no-resolve　　　　　　
+  - IP-CIDR, 100.64.0.0/10, 🇨🇳 China, no-resolve
+  - IP-CIDR, 127.0.0.0/8, 🇨🇳 China, no-resolve
+  - IP-CIDR, 172.16.0.0/12, 🇨🇳 China, no-resolve
+  - IP-CIDR, 192.168.0.0/16, 🇨🇳 China, no-resolve
+  - IP-CIDR, 224.0.0.0/24, 🇨🇳 China, no-resolve
+  - IP-CIDR, 169.254.0.0/16, 🇨🇳 China, no-resolve
+  - IP-CIDR, 183.240.197.130/32, 🇨🇳 China, no-resolve
+  - IP-CIDR6, 2620:0:2d0::/48, 🇨🇳 China, no-resolve
+  - IP-SUFFIX, 114.114.112.0/21, 🇨🇳 China, no-resolve
+  - IP-ASN, 13335, 🌐 Global
+  - SRC-GEOIP, JP, 🌐 Global
+  - SRC-IP-ASN, 133877, 🌐 Global
+  - SRC-IP-CIDR, 239.255.255.250/32, 🇨🇳 China, no-resolve
+  - SRC-IP-SUFFIX, 192.168.1.0/8, 🇨🇳 China, no-resolve
+  #- SRC-PORT, 7777, 🇨🇳 China  
+  - DST-PORT, 1400, ✉️ Telegram
+  #- DST-PORT, 114/514, 🇨🇳 China # 示例：匹配 114 和 514 端口
+  #- DST-PORT, 114-514, 🇨🇳 China # 示例：匹配 114 到 514 端口
+  #- DST-PORT, 114/233/514-1919, 🇨🇳 China # 示例：匹配 114 和 233 以及 514 到 1919
+  #- DSCP, 4, 🌐 Global
+  #- UID, 1001, 🇨🇳 China
+  #- NETWORK, tcp, 🇨🇳 China
+  #- IN-NAME, name, 🌐 Global
+  #- IN-USER, vmess, 🌐 Global
+  #- IN-TYPE, SOCKS, 🌐 Global
+  #- IN-PORT, 7890, 🇨🇳 China
+  - PROCESS-NAME, Notion.exe, 🌐 Global
+  - PROCESS-NAME, OneDriveUpdater.exe, 🌐 Global
+  - PROCESS-PATH, C:\Program Files\Microsoft OneDrive\OneDrive.exe, 🌐 Global
+  - AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 4483)), ⛔ AdBlock # AND：规则内的条件都必须满足时才会匹配
+  - AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 9305)), ⛔ AdBlock 
+  - AND, ((NETWORK, UDP), (DST-PORT, 443)), ⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
+  - AND, ((NETWORK, UDP), (DST-PORT, 3478)), ⛔ AdBlock
+  - AND, ((NETWORK, UDP), (DST-PORT, 19302)), ⛔ AdBlock
+  #- AND, ((DST-PORT, 22), (GEOIP, CN, no-resolve)), 🇨🇳 China # ip 类规则可用 no-resolve,  需书写在括号内
+  - OR, ((DOMAIN-KEYWORD, httpdns), (DOMAIN-KEYWORD, httpsdns)), ⛔ AdBlock  # OR：规则内的条件只需满足一项时匹配
+  - OR, ((DOMAIN-KEYWORD,  p2ptun),  (DOMAIN-KEYWORD,  p2plive),  (DOMAIN-KEYWORD,  p2plog)), ⛔ AdBlock
+  #- NOT, ((GEOIP, CN, no-resolve)), 🌐 Global # NOT：规则内不包含的条件时匹配
+  #- NOT, ((DOMAIN, baidu.com)), 🌐 Global
+  - RULE-SET, 🚥 Direct, 🇨🇳 China
+  - RULE-SET, 🚥 Lan, 🇨🇳 China
+  - RULE-SET, ⛔ Privacy, ⛔ AdBlock
+  - RULE-SET, ⛔ Hijacking, ⛔ AdBlock
+  - RULE-SET, ⛔ AdLite, ⛔ AdBlock
+  - RULE-SET, ⛔ HttpDNS, ⛔ AdBlock
+  - RULE-SET, 🕸️ Speedtest, 🕸️ Speedtest
+  - RULE-SET, 🎵 TikTok, 🎵 TikTok
+  - RULE-SET, ✉️ Telegram, ✉️ Telegram
+  - RULE-SET, 🗣️ Discord, 🗣️ Discord
+  - RULE-SET, 🎶 Spotify, 🎶 Spotify
+  - RULE-SET, 📽️ Netflix, 📽️ Netflix
+  - RULE-SET, 📼 Disney+, 📼 Disney+
+  - RULE-SET, 📹 YouTube, 📹 YouTube
+  - RULE-SET, 🤖 OpenAI, 🤖 OpenAI
+  - RULE-SET, 🛒 Amazon, 🛒 Amazon
+  - RULE-SET, 🎭 Facebook, 🎭 Facebook
+  - RULE-SET, 📟 Google, 📟 Google
+  - RULE-SET, 🖥️ Microsoft, 🖥️ Microsoft
+  - RULE-SET, 🍎 Apple.ota, ⛔ AdBlock
+  - RULE-SET, 🍎 Apple, 🍎 Apple
+  - RULE-SET, 🎬 Global Media, 🎬 Global Media
+  - RULE-SET, 🌐 Global, 🌐 Global
+  - RULE-SET, 📺 China Media, 📺 China Media
+  - RULE-SET, 🇨🇳 China, 🇨🇳 China
+  - RULE-SET, 🇨🇳 China.ips, 🇨🇳 China
+  - RULE-SET, 🇨🇳 China.bgp, 🇨🇳 China
+  - GEOIP, cn, 🇨🇳 China
+  - GEOSITE, cn, 🇨🇳 China
+  - SUB-RULE, (NETWORK, TCP), local
+  - SUB-RULE, (NETWORK, UDP), adblock # 示例：括号内可以使用任意规则  
+  - MATCH, 🐟 Final
