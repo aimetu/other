@@ -387,7 +387,7 @@ tunnels:
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192/193/195/204.0/24，（udp 端口:2408，备选 500、1701、4500）warp 服务器优选参考：https://gitlab.com/Misaka-blog/warp-script
 proxies: 
-  - name: ☁️ Warp Client # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: 🌤️ Warp # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
@@ -406,7 +406,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: ☁️ Warp Zero
+  - name: 🌤️ Warp Zero
     type: wireguard
     private-key: CJ+a9D/TltH3gxM3hg2jdyeyctYkjw6Tym4hje+H9EQ=
     ip: 172.16.0.2
@@ -425,7 +425,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇹🇼 Taiwan
 
-  - name: ☁️ Warp Team
+  - name: 🌤️ Warp Team
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     ip: 172.16.0.2
@@ -444,7 +444,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: ☁️ Warp Plus
+  - name: 🌤️ Warp Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     ip: 172.16.0.2
@@ -463,7 +463,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇰🇷 Korea
 
-  - name: ☁️ Warp Hide
+  - name: 🌤️ Warp Hide
     type: vless
     server: 162.159.128.118
     port: 80
@@ -479,7 +479,7 @@ proxies:
         Host: hide.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Light
+  - name: 🌤️ Warp Light
     type: vless
     server: 104.19.38.18
     port: 80
@@ -496,7 +496,7 @@ proxies:
       v2ray-http-upgrade: false
 
 # 优选 IP：https://github.com/Alvin9999/new-pac, https://blog.aizrf.com/p/cf/，http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
-  - name: ☁️ Warp privacy
+  - name: 🌤️ Warp privacy
     type: vless
     server: 172.64.153.157
     port: 80
@@ -512,7 +512,7 @@ proxies:
         Host: privacy.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Pages
+  - name: 🌤️ Warp Pages
     type: vless
     server: c.aimetu.cloudns.be
     port: 443
@@ -629,7 +629,7 @@ proxy-providers:
 # load-balance：负载均衡策略，将按照算法随机选择节点,不同的请求使用不同的代理（可选参数：strategy: consistent-hashing # consistent-hashing：相同的请求分配给同一个代理，round-robin：所有请求使用不同的代理）
 # fallback：故障转移策略组，按照节点顺序选择,直到该策略超时，才选择下一个可用代理
 # > 策略组添加可选参数示例：
-# proxies: [☁️ Warp Client, ♻️ Auto] 手动添加出站代理或其他策略组
+# proxies: [🌤️ Warp, ♻️ Auto] 手动添加出站代理或其他策略组
 # use: [Subscribe, Nodes] 手动添加代理集合
 # icon: "url" 策略组添加图标显示
 # filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 筛选满足关键词或正则表达式的节点
@@ -654,7 +654,7 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - ☁️ Warp+
+      - 🌤️ Warp
       - ⚠️ Fallback
       - ⚖️ Load Balance
       - 🇭🇰 HongKong
@@ -697,10 +697,9 @@ proxy-groups:
     max-failed-times: 5
     include-all: true
 
-  - name: ☁️ Warp+
+  - name: 🌤️ Warp
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    filter: Client|Zero|Team|Plus
     url: http://www.gstatic.com/generate_204
     interval: 600
     timeout: 5000
