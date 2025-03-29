@@ -168,7 +168,7 @@ proxies:
    sni: light.aimeto.workers.dev
    network: ws
    ws-opts:
-     path: "/?ed=Light"
+     path: "/?ed=2560"
      headers:
        Host: light.aimeto.workers.dev
    alterId: 0
