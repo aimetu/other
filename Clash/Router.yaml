@@ -178,7 +178,7 @@ sniffer:
     - "google.com"
 
 proxies: 
-  - name: ☁️ Warp Hide
+  - name: 🌤️ Warp Hide
     type: vless
     server: 162.159.128.118
     port: 80
@@ -194,7 +194,7 @@ proxies:
         Host: hide.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Light
+  - name: 🌤️ Warp Light
     type: vless
     server: 104.19.38.18
     port: 80
@@ -211,7 +211,7 @@ proxies:
       v2ray-http-upgrade: false
 
 # 优选 IP：https://github.com/Alvin9999/new-pac, http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
-  - name: ☁️ Warp privacy
+  - name: 🌤️ Warp privacy
     type: vless
     server: 172.64.153.157
     port: 80
@@ -227,7 +227,7 @@ proxies:
         Host: privacy.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Pages
+  - name: 🌤️ Warp Pages
     type: vless
     server: c.aimetu.cloudns.be
     port: 443
