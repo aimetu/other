@@ -183,7 +183,7 @@ sniffer:
     - "+.apple.com"
 
 proxies: 
-  - name: ☁️ Warp Client
+  - name: 🌤️ Warp
     type: wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU=
     ip: 172.16.0.2
@@ -202,7 +202,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇭🇰 HongKong
 
-  - name: ☁️ Warp Zero
+  - name: 🌤️ Warp Zero
     type: wireguard
     private-key: CJ+a9D/TltH3gxM3hg2jdyeyctYkjw6Tym4hje+H9EQ=
     ip: 172.16.0.2
@@ -221,7 +221,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇹🇼 Taiwan
 
-  - name: ☁️ Warp Team
+  - name: 🌤️ Warp Team
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     ip: 172.16.0.2
@@ -240,7 +240,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: ☁️ Warp Plus
+  - name: 🌤️ Warp Plus
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     ip: 172.16.0.2
@@ -259,7 +259,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇰🇷 Korea
 
-  - name: ☁️ Warp Hide
+  - name: 🌤️ Warp Hide
     type: vless
     server: 162.159.128.118
     port: 80
@@ -275,7 +275,7 @@ proxies:
         Host: hide.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Light
+  - name: 🌤️ Warp Light
     type: vless
     server: 104.19.38.18
     port: 80
@@ -292,7 +292,7 @@ proxies:
       v2ray-http-upgrade: false
 
 # 优选 IP：https://github.com/Alvin9999/new-pac, http://ip.flares.cloud, https://stock.hostmonit.com/CloudFlareYes, https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
-  - name: ☁️ Warp privacy
+  - name: 🌤️ Warp privacy
     type: vless
     server: 172.64.153.157
     port: 80
@@ -308,7 +308,7 @@ proxies:
         Host: privacy.aimeto.workers.dev
       v2ray-http-upgrade: false
 
-  - name: ☁️ Warp Pages
+  - name: 🌤️ Warp Pages
     type: vless
     server: c.aimetu.cloudns.be
     port: 443
@@ -404,7 +404,7 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - ☁️ Warp+
+      - 🌤️ Warp
       - ⚠️ Fallback
       - ⚖️ Load Balance
       - 🇭🇰 HongKong
@@ -448,10 +448,9 @@ proxy-groups:
     max-failed-times: 5
     include-all: true
 
-  - name: ☁️ Warp+
+  - name: 🌤️ Warp
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    filter: Client|Zero|Team|Plus
     url: http://www.gstatic.com/generate_204
     timeout: 5000
     max-failed-times: 5
