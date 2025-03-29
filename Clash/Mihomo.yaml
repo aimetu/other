@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.03.25
+# 2025.03.30
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -514,7 +514,7 @@ proxies:
 
   - name: 🌤️ Warp Pages
     type: vless
-    server: c.aimetu.cloudns.be
+    server: jinqiantu.pages.dev
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
