@@ -111,6 +111,23 @@ proxies:
    cipher: ""
    flow: ""
 
+ - name: 🌤️ Warp Privacy
+   type: vless
+   server: work.aimetu.cloudns.be
+   port: 80
+   uuid: a6857f71-33c0-4584-8772-c38160210cf2
+   tls: false
+   skip-cert-verify: true
+   sni: privacy.aimeto.workers.dev
+   network: ws
+   ws-opts:
+     path: "/?ed=2560"
+     headers:
+       Host: privacy.aimeto.workers.dev
+   alterId: 0
+   cipher: ""
+   flow: ""
+
  - name: 🌤️ Warp Pages
    type: vless
    server: jinqiantu.pages.dev
