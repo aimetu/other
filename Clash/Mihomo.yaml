@@ -236,7 +236,7 @@ dns:
   proxy-server-nameserver: # 代理节点域名 dns 服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
     - "tls://1.1.1.1"
     - "tls://208.67.222.222"
-    #- "tls://1.0.0.1"
+    #- "https://1.0.0.1/dns-query"
     #- "https://208.67.220.220/dns-query"
     
   fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
