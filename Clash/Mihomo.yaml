@@ -1053,7 +1053,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🚥 Lan:
     type: http
@@ -1063,7 +1063,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   ⛔ Privacy:
     type: http
@@ -1073,7 +1073,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
     
   ⛔ Hijacking:
     type: http
@@ -1083,7 +1083,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
    
   ⛔ AdLite:
     type: http
@@ -1093,7 +1093,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   ⛔ HttpDNS:
     type: http
@@ -1103,7 +1103,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🕸️ Speedtest:
     type: http
@@ -1113,7 +1113,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🎵 TikTok:
     type: http
@@ -1123,7 +1123,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   ✉️ Telegram:
     type: http
@@ -1133,7 +1133,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🗣️ Discord:
     type: http
@@ -1143,7 +1143,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🎶 Spotify:
     type: http
@@ -1153,7 +1153,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   📽️ Netflix:
     type: http
@@ -1163,7 +1163,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   📼 Disney+:
     type: http
@@ -1173,7 +1173,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   📹 YouTube:
     type: http
@@ -1183,7 +1183,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🤖 OpenAI:
     type: http
@@ -1193,7 +1193,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🛒 Amazon:
     type: http
@@ -1203,7 +1203,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🎭 Facebook:
     type: http
@@ -1213,7 +1213,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   📟 Google:
     type: http
@@ -1223,7 +1223,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🖥️ Microsoft:
     type: http
@@ -1233,7 +1233,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🍎 Apple.ota:
     type: http
@@ -1243,7 +1243,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🍎 Apple:
     type: http
@@ -1253,7 +1253,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🎬 Global Media:
     type: http
@@ -1263,7 +1263,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🌐 Global:
     type: http
@@ -1273,7 +1273,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   📺 China Media:
     type: http
@@ -1283,7 +1283,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🇨🇳 China:
     type: http
@@ -1293,7 +1293,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🇨🇳 China.ips:
     type: http
@@ -1303,7 +1303,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
   🇨🇳 China.bgp:
     type: http
@@ -1313,7 +1313,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🌐 Global
+    #proxy: 🐟 Final
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
 # RULE-SET：引用规则集合
