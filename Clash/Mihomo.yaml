@@ -218,8 +218,8 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    #- rule-set:🇨🇳 China
-    #- "geosite:cn" # 内核绕过 cn，提升性能
+    #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 的规则
+    #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
     
     
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
@@ -234,8 +234,8 @@ dns:
     #- "quic://dns.alidns.com"
 
   proxy-server-nameserver: # 代理节点域名 dns 服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
-    - "1.1.1.1"
-    - "208.67.222.222"
+    - "tls://1.1.1.1"
+    - "tls://208.67.222.222"
     #- "tls://1.0.0.1"
     #- "https://208.67.220.220/dns-query"
     
@@ -266,10 +266,12 @@ dns:
     "dl.google.com": https://dns.opendns.com/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
-    "geosite:cn,private":
+    "geosite: cn, private":
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    "rule-set:🇨🇳 China,🇨🇳 China.ips,🇨🇳 China.bgp": https://dns.alidns.com/dns-query
+    "rule-set: 🇨🇳 China, 🇨🇳 China.ips, 🇨🇳 China.bgp": 
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
   "*.mihomo.dev": 127.0.0.1
@@ -438,71 +440,20 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: 🌤️ Warp Plus
-    type: wireguard
-    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
-    peers:
-     - server: 162.159.195.1
-       port: 2408
-       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
-       allowed_ips: ["0.0.0.0/0","::/0"]
-       reserved: [173,82,247]
-    mtu: 1280
-    udp: true
-    persistent-keepalive: 45
-    remote-dns-resolve: true
-    dns: [1.1.1.1,2606:4700:4700::1111]
-    #dialer-proxy: 🇰🇷 Korea
- 
-  - name: 🌤️ Warp Hide
+  - name: 🌤️ Warp Workers
     type: vless
-    server: 162.159.128.118 # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
+    server: work.aimetu.cloudns.be
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: false
     network: ws
-    servername: hide.aimeto.workers.dev
+    servername: jinqiantu.aimeto.workers.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: hide.aimeto.workers.dev
-      v2ray-http-upgrade: false
-
-  - name: 🌤️ Warp Light
-    type: vless
-    server: 104.19.38.18
-    port: 80
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-    udp: true
-    tls: false
-    network: ws
-    servername: light.aimeto.workers.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: light.aimeto.workers.dev
-      v2ray-http-upgrade: false
-
-  - name: 🌤️ Warp privacy
-    type: vless
-    server: 172.64.153.157
-    port: 80
-    uuid: a6857f71-33c0-4584-8772-c38160210cf2
-    udp: true
-    tls: false
-    network: ws
-    servername: privacy.aimeto.workers.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: privacy.aimeto.workers.dev
+        Host: jinqiantu.aimeto.workers.dev
       v2ray-http-upgrade: false
 
   - name: 🌤️ Warp Pages
@@ -562,7 +513,7 @@ proxy-providers:
       skip-cert-verify: true # 示例：跳过证书验证
       #down: "5000 Mbps" # 示例：下载速度默认以 mbps 为单位
       #up: "1000 Mbps" # 示例：上传速度默认以 mbps 为单位
-      #dialer-proxy: 🐟 Final # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
+      #dialer-proxy: 🌐 Global # 示例：一个出站代理的标识。当值不为空时，将使用指定的 proxy/proxy-group 发出连接
       #interface-name: wlan # 指定节点绑定的接口，从此接口发起连接
       routing-mark: 68686 # 发起连接时附加的路由标记
       additional-prefix: "Sub~" # 为节点名称添加固定前缀
@@ -607,7 +558,7 @@ proxy-providers:
       skip-cert-verify: true
       #down: "5000 Mbps"
       #up: "1000 Mbps"
-      #dialer-proxy: 🐟 Final
+      #dialer-proxy: 🌐 Global
       #interface-name: wlan
       routing-mark: 89898
       #additional-prefix: "Sub~"
@@ -740,7 +691,7 @@ proxy-groups:
   - name: 🇭🇰 HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
-    filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
+    filter: (?i)(🇭🇰|香港|hk|hong|hongkong)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -752,7 +703,7 @@ proxy-groups:
   - name: 🇹🇼 Taiwan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
-    filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
+    filter: (?i)(🇹🇼|台湾|台北|臺灣|tw|tai|taiwan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -764,7 +715,7 @@ proxy-groups:
   - name: 🇯🇵 Japan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
-    filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
+    filter: (?i)(🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -776,7 +727,7 @@ proxy-groups:
   - name: 🇰🇷 Korea
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
-    filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
+    filter: (?i)(🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -788,7 +739,7 @@ proxy-groups:
   - name: 🇸🇬 Singapore
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
-    filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
+    filter: (?i)(🇸🇬|新加坡|狮城|sg|singapore)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -800,7 +751,7 @@ proxy-groups:
   - name: 🇺🇸 America
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
-    filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
+    filter: (?i)(🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -812,7 +763,7 @@ proxy-groups:
   - name: 🇺🇳 Nations
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
-    filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
+    filter: ((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|香港|hk|hong|hongkong|🇹🇼|台湾|台北|臺灣|tw|tai|taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan|🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea|🇸🇬|新加坡|狮城|sg|singapore|🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america).)*$
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -824,7 +775,7 @@ proxy-groups:
   - name: 🇨🇳 Chinese
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
-    filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
+    filter: (?i)(🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -1102,7 +1053,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🚥 Lan:
     type: http
@@ -1112,7 +1063,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   ⛔ Privacy:
     type: http
@@ -1122,7 +1073,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
     
   ⛔ Hijacking:
     type: http
@@ -1132,7 +1083,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
    
   ⛔ AdLite:
     type: http
@@ -1142,7 +1093,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   ⛔ HttpDNS:
     type: http
@@ -1152,7 +1103,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🕸️ Speedtest:
     type: http
@@ -1162,7 +1113,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🎵 TikTok:
     type: http
@@ -1172,7 +1123,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   ✉️ Telegram:
     type: http
@@ -1182,7 +1133,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🗣️ Discord:
     type: http
@@ -1192,7 +1143,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🎶 Spotify:
     type: http
@@ -1202,7 +1153,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   📽️ Netflix:
     type: http
@@ -1212,7 +1163,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   📼 Disney+:
     type: http
@@ -1222,7 +1173,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   📹 YouTube:
     type: http
@@ -1232,7 +1183,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🤖 OpenAI:
     type: http
@@ -1242,7 +1193,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🛒 Amazon:
     type: http
@@ -1252,7 +1203,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🎭 Facebook:
     type: http
@@ -1262,7 +1213,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   📟 Google:
     type: http
@@ -1272,7 +1223,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🖥️ Microsoft:
     type: http
@@ -1282,7 +1233,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🍎 Apple.ota:
     type: http
@@ -1292,7 +1243,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🍎 Apple:
     type: http
@@ -1302,7 +1253,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🎬 Global Media:
     type: http
@@ -1312,7 +1263,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🌐 Global:
     type: http
@@ -1322,7 +1273,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   📺 China Media:
     type: http
@@ -1332,7 +1283,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🇨🇳 China:
     type: http
@@ -1342,7 +1293,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🇨🇳 China.ips:
     type: http
@@ -1352,7 +1303,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
+    #proxy: 🌐 Global
 
   🇨🇳 China.bgp:
     type: http
@@ -1362,19 +1313,7 @@ rule-providers:
     interval: 259200
     format: yaml
     size-limit: 0
-    #proxy: 🐟 Final
-
-#💡 引用子规则，匹配到规则时，将请求送往另一规则流程
-sub-rules:
-  local:
-    - DOMAIN-KEYWORD, lan, 🇨🇳 China
-    - DOMAIN-SUFFIX, local, 🇨🇳 China
-    - IP-CIDR, 17.0.0.0/8, 🇨🇳 China
-    - IP-CIDR, 182.254.116.0/24, 🇨🇳 China
-    - IP-CIDR6, fe80::/10, 🇨🇳 China
-  adblock:
-    - DOMAIN, qzs.qq.com, ⛔ AdBlock
-    - DOMAIN, ocsp.apple.com, ⛔ AdBlock
+    #proxy: 🌐 Global
 
 #💡 规则匹配策略，包含代理和策略组，每一条规则都必须有一个策略，规则将按照从上到下的顺序匹配
 # RULE-SET：引用规则集合
@@ -1486,3 +1425,15 @@ rules:
   - SUB-RULE, (OR,((NETWORK,TCP),(NETWORK,UDP))), local
   - SUB-RULE, (AND,((NETWORK,UDP))), adblock # 示例：括号内可以使用任意规则  
   - MATCH, 🐟 Final
+  
+#💡 引用子规则，匹配到规则时，将请求送往另一规则流程
+sub-rules:
+  local:
+    - DOMAIN-KEYWORD, lan, 🇨🇳 China
+    - DOMAIN-SUFFIX, local, 🇨🇳 China
+    - IP-CIDR, 17.0.0.0/8, 🇨🇳 China
+    - IP-CIDR, 182.254.116.0/24, 🇨🇳 China
+    - IP-CIDR6, fe80::/10, 🇨🇳 China
+  adblock:
+    - DOMAIN, qzs.qq.com, ⛔ AdBlock
+    - DOMAIN, ocsp.apple.com, ⛔ AdBlock
