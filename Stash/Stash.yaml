@@ -77,53 +77,19 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🌤️ Warp Hide
-   type: vless
-   server: 162.159.128.118
-   port: 80
-   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-   tls: false
-   skip-cert-verify: true
-   sni: hide.aimeto.workers.dev
-   network: ws
-   ws-opts:
-     path: "/?ed=2560"
-     headers:
-       Host: hide.aimeto.workers.dev
-   alterId: 0
-   cipher: ""
-   flow: ""
-
- - name: 🌤️ Warp Light
-   type: vless
-   server: 141.101.122.184
-   port: 80
-   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-   tls: false
-   skip-cert-verify: true
-   sni: light.aimeto.workers.dev
-   network: ws
-   ws-opts:
-     path: "/?ed=2560"
-     headers:
-       Host: light.aimeto.workers.dev
-   alterId: 0
-   cipher: ""
-   flow: ""
-
- - name: 🌤️ Warp Privacy
+ - name: 🌤️ Warp Workers
    type: vless
    server: work.aimetu.cloudns.be
    port: 80
-   uuid: a6857f71-33c0-4584-8772-c38160210cf2
+   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
    tls: false
    skip-cert-verify: true
-   sni: privacy.aimeto.workers.dev
+   sni: jinqiantu.aimeto.workers.dev
    network: ws
    ws-opts:
      path: "/?ed=2560"
      headers:
-       Host: privacy.aimeto.workers.dev
+       Host: jinqiantu.aimeto.workers.dev
    alterId: 0
    cipher: ""
    flow: ""
@@ -427,7 +393,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
+  filter: (?i)(🇭🇰|香港|hk|hong|hongkong)
   
 - name: Taiwan
   type: url-test
@@ -439,7 +405,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
+  filter: (?i)(🇹🇼|台湾|台北|臺灣|tw|tai|taiwan)
   
 - name: Japan
   type: url-test
@@ -451,7 +417,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
+  filter: (?i)(🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan)
   
 - name: Korea
   type: url-test
@@ -463,7 +429,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
+  filter: (?i)(🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea)
   
 - name: Singapore
   type: url-test
@@ -475,7 +441,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
+  filter: (?i)(🇸🇬|新加坡|狮城|sg|singapore)
   
 - name: America
   type: url-test
@@ -487,7 +453,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
+  filter: (?i)(🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america)
     
 - name: Nations
   type: url-test
@@ -499,7 +465,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
+  filter: ((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|香港|hk|hong|hongkong|🇹🇼|台湾|台北|臺灣|tw|tai|taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan|🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea|🇸🇬|新加坡|狮城|sg|singapore|🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america).)*$
 
 - name: Chinese
   type: url-test
@@ -511,7 +477,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: 🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
+  filter: (?i)(🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连)
 
 - name: Speedtest
   type: select
