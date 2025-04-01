@@ -241,7 +241,7 @@ dns:
   fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
      - "https://cloudflare-dns.com/dns-query"
      - "https://dns.opendns.com/dns-query"
-    #- "https://dns.adguard-dns.com"
+    #- "quic://dns.adguard-dns.com"
 
   fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
     geoip: true # 是否启用 geoip 判断
