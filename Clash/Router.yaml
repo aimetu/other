@@ -122,8 +122,8 @@ dns:
     - "https://doh.pub/dns-query"
 
   proxy-server-nameserver:
-    - "1.1.1.1"
-    - "208.67.222.222"
+    - "tls://1.1.1.1"
+    - "tls://208.67.222.222"
   fallback:
      - "https://cloudflare-dns.com/dns-query"
      - "https://dns.opendns.com/dns-query"
@@ -197,52 +197,20 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇭🇰 HongKong
 
-  - name: 🌤️ Warp Hide
+  - name: 🌤️ Warp Workers
     type: vless
-    server: 162.159.128.118 # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
+    server: work.aimetu.cloudns.be # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
     port: 80
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
     tls: false
     network: ws
-    servername: hide.aimeto.workers.dev
+    servername: jinqiantu.aimeto.workers.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: hide.aimeto.workers.dev
-      v2ray-http-upgrade: false
-
-  - name: 🌤️ Warp Light
-    type: vless
-    server: 104.19.38.18
-    port: 80
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-    udp: true
-    tls: false
-    network: ws
-    servername: light.aimeto.workers.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: light.aimeto.workers.dev
-      v2ray-http-upgrade: false
-
-  - name: 🌤️ Warp privacy
-    type: vless
-    server: 172.64.153.157
-    port: 80
-    uuid: a6857f71-33c0-4584-8772-c38160210cf2
-    udp: true
-    tls: false
-    network: ws
-    servername: privacy.aimeto.workers.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: privacy.aimeto.workers.dev
+        Host: jinqiantu.aimeto.workers.dev
       v2ray-http-upgrade: false
 
   - name: 🌤️ Warp Pages
@@ -398,7 +366,7 @@ proxy-groups:
   - name: 🇭🇰 HongKong
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
-    filter: ^(?!.*Warp).*(🇭🇰|港|香港|hk|HK|Hong|HongKong)
+    filter: (?i)(🇭🇰|香港|hk|hong|hongkong)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -410,7 +378,7 @@ proxy-groups:
   - name: 🇹🇼 Taiwan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
-    filter: ^(?!.*Warp).*(🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan)
+    filter: (?i)(🇹🇼|台湾|台北|臺灣|tw|tai|taiwan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -422,7 +390,7 @@ proxy-groups:
   - name: 🇯🇵 Japan
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
-    filter: ^(?!.*Warp).*(🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan)
+    filter: (?i)(🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -434,7 +402,7 @@ proxy-groups:
   - name: 🇰🇷 Korea
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
-    filter: ^(?!.*Warp).*(🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea)
+    filter: (?i)(🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -446,7 +414,7 @@ proxy-groups:
   - name: 🇸🇬 Singapore
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
-    filter: ^(?!.*Warp).*(🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore)
+    filter: (?i)(🇸🇬|新加坡|狮城|sg|singapore)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -458,7 +426,7 @@ proxy-groups:
   - name: 🇺🇸 America
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
-    filter: ^(?!.*Warp).*(🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America)
+    filter: (?i)(🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -470,7 +438,7 @@ proxy-groups:
   - name: 🇺🇳 Nations
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
-    filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|港|香港|hk|HK|Hong|HongKong|🇹🇼|台|台湾|台北|臺灣|tw|TW|Tai|Taiwan|🇯🇵|日|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|JP|Japan|🇰🇷|韩|韓|韩国|韓國|首尔|朝鲜|kr|KR|KOR|Korea|South Korea|SouthKorea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|US|United States|UnitedStates|America).)*$
+    filter: ((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|香港|hk|hong|hongkong|🇹🇼|台湾|台北|臺灣|tw|tai|taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan|🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea|🇸🇬|新加坡|狮城|sg|singapore|🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america).)*$
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
@@ -482,7 +450,7 @@ proxy-groups:
   - name: 🇨🇳 Chinese
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
-    filter: (?i)🇨🇳|中国|大陆|国内|回国|cn|CN|CHINA|电信|移动|联通|腾讯|阿里|教育|校园|直连
+    filter: (?i)(🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连)
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
