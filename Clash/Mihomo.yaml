@@ -219,8 +219,9 @@ dns:
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
     #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 的规则
+    #- rule-set:🇨🇳 🇨🇳 China.ips
+    #- rule-set:🇨🇳 🇨🇳 China.bgp
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
-    
     
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
@@ -520,7 +521,10 @@ proxy-providers:
       #additional-suffix: "~Nodes" # 为节点名称添加固定后缀
       proxy-name: # 对节点名称内容进行替换，支持正则表达式，pattern 为替换内容，target 为替换目标
       - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"      
+        target: "iplc x $1"
+      - pattern: "Cloudflare"
+        target: "CF"
+        
 # 本地代理服务器筛选
   Nodes: 
     type: file # 本地代理服务器
@@ -565,7 +569,10 @@ proxy-providers:
       additional-suffix: "~Nodes"
       proxy-name: 
       - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"          
+        target: "iplc x $1"
+      - pattern: "Cloudflare"
+        target: "CF"
+        
 #💡 策略组
 # select：手动选择策略组
 # url-test：自动策略组,将按照url测试结果使用延迟最低节点
