@@ -227,7 +227,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8f21:225d:3e30:7660:78cf
     peers:
-     - server: 162.159.195.1
+     - server: 162.159.194.1
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
@@ -246,7 +246,7 @@ proxies:
     ip: 172.16.0.2
     ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
     peers:
-     - server: 162.159.195.5
+     - server: 162.159.195.1
        port: 2408
        public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
        #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
