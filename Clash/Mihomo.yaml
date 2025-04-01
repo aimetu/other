@@ -218,8 +218,9 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    #- "geoip:cn" # 内核绕过 cn，提升性能
-    #- "geosite:cn"
+    #- rule-set:🇨🇳 China
+    #- "geosite:cn" # 内核绕过 cn，提升性能
+    
     
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
@@ -255,7 +256,7 @@ dns:
       - "+.facebook.com"
       - "+.youtube.com"
     
-  direct-nameserver-follow-policy: false # 是否遵循 nameserver-policy，默认为不遵守，仅当 direct-nameserver 不为空时生效    
+  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - quic://dns.alidns.com
     - https://dns.opendns.com/dns-query
@@ -265,7 +266,9 @@ dns:
     "dl.google.com": https://dns.opendns.com/dns-query
     "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
-    
+    "geosite:cn":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
   "*.mihomo.dev": 127.0.0.1
