@@ -269,6 +269,7 @@ dns:
     "geosite:cn":
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
+    "rule-set:🇨🇳 China": https://dns.alidns.com/dns-query
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
   "*.mihomo.dev": 127.0.0.1
