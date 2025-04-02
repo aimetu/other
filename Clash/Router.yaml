@@ -139,7 +139,7 @@ dns:
       - "+.facebook.com"
       - "+.youtube.com"
 
-  direct-nameserver-follow-policy: false
+  direct-nameserver-follow-policy: true
   direct-nameserver:
     - https://cloudflare-dns.com/dns-query
     - https://dns.opendns.com/dns-query
