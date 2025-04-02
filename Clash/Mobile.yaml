@@ -347,7 +347,6 @@ proxy-groups:
     proxies:
       - ♻️ Auto
       - ✅ Node
-      - 🌤️ Warp+
       - ⚠️ Fallback
       - ⚖️ Load Balance
       - 🇭🇰 HongKong
@@ -390,14 +389,6 @@ proxy-groups:
     timeout: 5000
     max-failed-times: 5
     include-all: true
-
-  - name: 🌤️ Warp+
-    type: select
-    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
-    url: http://www.gstatic.com/generate_204
-    timeout: 5000
-    max-failed-times: 5
-    include-all-proxies: true
 
   - name: ⚠️ Fallback
     type: fallback
