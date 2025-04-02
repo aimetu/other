@@ -1430,8 +1430,8 @@ rules:
   - RULE-SET, 🇨🇳 China.bgp, 🇨🇳 China
   - GEOIP, cn, 🇨🇳 China
   - GEOSITE, cn, 🇨🇳 China
-  - SUB-RULE, (OR,((NETWORK,TCP),(NETWORK,UDP))), local
-  - SUB-RULE, (AND,((NETWORK,UDP))), adblock # 示例：括号内可以使用任意规则  
+  - SUB-RULE, (OR, ((NETWORK, TCP), (NETWORK, UDP))), local
+  - SUB-RULE, (AND, ((NETWORK, UDP))), adblock # 示例：括号内可以使用任意规则  
   - MATCH, 🐟 Final
   
 #💡 引用子规则，匹配到规则时，将请求送往另一规则流程
