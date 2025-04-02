@@ -141,7 +141,7 @@ dns:
 
   direct-nameserver-follow-policy: false
   direct-nameserver:
-    - quic://dns.alidns.com
+    - https://cloudflare-dns.com/dns-query
     - https://dns.opendns.com/dns-query
   nameserver-policy:
     "blog.google": 208.67.222.222
