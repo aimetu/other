@@ -226,7 +226,7 @@ dns:
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
     - "tls://223.5.5.5"
     - "tls://120.53.53.53"
-    #- ".1.1.1"
+    #- "1.1.1.1"
     #- "https://208.67.222.222/dns-query"
     
   nameserver: # 默认加密 dns 服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
