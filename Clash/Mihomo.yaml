@@ -218,9 +218,7 @@ dns:
     - "enrichgw.10010.com"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
-    #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 的规则
-    #- rule-set:🇨🇳 🇨🇳 China.ips
-    #- rule-set:🇨🇳 🇨🇳 China.bgp
+    #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 域名类规则
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
     
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
@@ -268,11 +266,11 @@ dns:
     "dl.l.google.com": https://dns.opendns.com/dns-query
     "update.googleapis.com": quic://dns.alidns.com
     "geosite:cn,private":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
-    "rule-set:🇨🇳 China,🇨🇳 China.ips,🇨🇳 China.bgp": 
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
+      - https://223.5.5.5/dns-query
+      - https://224.6.6.6/dns-query
+    "rule-set:🌐 Global": 
+      - https://1.1.1.1/dns-query
+      - https://208.67.222.222/dns-query
 
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
