@@ -529,9 +529,9 @@ proxy-providers:
   Nodes: 
     type: file # 本地代理服务器
     path: ./proxy/Nodes.yaml
-    #url: https://sub.store/download/collection/node # 订阅添加后缀 &flag=meta&types=all、＆flag=[ua]&types=[hysteria2] 根据不同 ua|type（节点类型）获取不同的节点
+    #url: https://sub.store/download/collection/node
     interval: 86400
-    #proxy: 🐟 Final
+    proxy: 🐟 Final
     size-limit: 0
     #filter: "(?i)🇭🇰|港|香港|hk|HK|HongKong|🇹🇼|台|臺灣|tw|TW|Taiwan|🇯🇵|日|日本|东京|jp|JP|Japan|🇰🇷|韩|韓|首尔|朝鲜|kr|KR|Korea|🇸🇬|新|狮|新加坡|狮城|sg|SG|Singapore|🇺🇸|美|美国|美國|us|US|America"
     exclude-filter: "(?i)(订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱)"
