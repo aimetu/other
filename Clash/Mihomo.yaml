@@ -549,7 +549,7 @@ proxy-providers:
       # - 'token 1231231'      
     health-check:
       enable: true
-      url: http://1.1.1.1/generate_204
+      url: http://connectivitycheck.gstatic.com/generate_204
       interval: 600
       timeout: 3000
       lazy: true
