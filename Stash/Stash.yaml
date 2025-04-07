@@ -43,7 +43,7 @@ mode: rule
 log-level: info
 
 # 💡 代理服务信息在主页显示
-subscribe-url: 输入订阅链接
+subscribe-url: http://sub.store/download/collection/node
 
 # 💡 远程代理服务器订阅链接
 proxy-providers:
@@ -52,7 +52,7 @@ proxy-providers:
     interval: 86400
     filter: "^(?!.*订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)"
     benchmark-url: http://www.gstatic.com/generate_204
-    benchmark-timeout: 5
+    benchmark-timeout: 3
    
 # 💡 本地代理服务器
 proxies:
@@ -69,7 +69,7 @@ proxies:
    reserved: [17,176,6]
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
-   benchmark-timeout: 5
+   benchmark-timeout: 3
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
@@ -265,7 +265,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   benchmark-url: http://www.gstatic.com/generate_204
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   proxies:
   - Auto
   - Node
@@ -292,7 +292,7 @@ proxy-groups:
 # 网络间隔相差值，进行节点切换，否则不进行切换
   tolerance: 0
 # 延迟测试超时，单位：秒
-  benchmark-timeout: 5
+  benchmark-timeout: 3
 # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测  
   lazy: true
 # hidden 在列表中隐藏策略组开关
@@ -305,7 +305,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
   benchmark-url: http://www.gstatic.com/generate_204
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -314,7 +314,7 @@ proxy-groups:
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
   benchmark-url: http://www.gstatic.com/generate_204
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   proxies:
@@ -334,7 +334,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   proxies:
@@ -355,7 +355,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   proxies:
@@ -375,7 +375,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
@@ -389,7 +389,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -401,7 +401,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -413,7 +413,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -425,7 +425,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -437,7 +437,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -449,7 +449,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -461,7 +461,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -473,7 +473,7 @@ proxy-groups:
   benchmark-url: http://www.gstatic.com/generate_204
   interval: 600
   tolerance: 0
-  benchmark-timeout: 5
+  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
