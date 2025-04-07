@@ -523,7 +523,7 @@ proxy-providers:
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"
       - pattern: "Cloudflare"
-        target: "CF"
+        target: "cf*"
         
 # 本地代理服务器筛选
   Nodes: 
@@ -571,7 +571,7 @@ proxy-providers:
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"
       - pattern: "Cloudflare"
-        target: "CF"
+        target: "cf*"
         
 #💡 策略组
 # select：手动选择策略组
