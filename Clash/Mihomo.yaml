@@ -502,7 +502,7 @@ proxy-providers:
       enable: true # 示例：是否启用
       url: http://www.gstatic.com/generate_204 # 示例：网络健康检查 url 地址
       interval: 600 # 示例：健康检查间隔时间，单位为秒
-      timeout: 5000
+      timeout: 3000
       lazy: true # 懒惰状态，默认为 true,不使用该集合节点时，不进行测试
       expected-status: "*" # 健康检查时期望的 HTTP 响应状态码。默认为 "*" 表示对响应状态不做要求匹配(200/204/302/400-503) 200 和 204 和 302 以及 400 到 503 状态码
     override: # 示例：覆写节点内容
@@ -550,7 +550,7 @@ proxy-providers:
       enable: true
       url: http://cp.cloudflare.com/generate_204
       interval: 600
-      timeout: 5000
+      timeout: 3000
       lazy: true
       expected-status: "*"
     override: 
@@ -591,8 +591,8 @@ proxy-providers:
 # url: http://www.gstatic.com/generate_204 # 对组内代理节点进行延迟检查的 url 地址
 # interval: 600 # 间隔检测时间，单位：秒
 # tolerance: 50 # 网络间隔相差值，进行节点切换，否则不进行切换
-# timeout: 5000 # 健康检查超时时间，单位：毫秒
-# max-failed-times: 5 # 最大失败次数，超过则触发一次强制健康检查，默认 5
+# timeout: 3000 # 健康检查超时时间，单位：毫秒
+# max-failed-times: 3 # 最大失败次数，超过则触发一次强制健康检查，默认 5
 # lazy: true # 懒惰模式，如果设置为 true，策略组在未被使用时停止检测
 # include-all: true # 引入所有出站代理节点以及代理集合，可选 false，会使 include-all-proxies 和 include-all-providers 失效
 # include-all-proxies: true # 引入所有出站代理节点，可选 false，引入不包含策略组，可在 proxies 引入其他策略组
@@ -627,8 +627,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
     interval: 600 # 示例：间隔检测时间，单位：秒
     tolerance: 0 # 示例：网络间隔相差值
-    timeout: 5000 # 示例：健康检查超时时间，单位：毫秒
-    max-failed-times: 5 # 示例：最大失败次数，超过则触发一次强制健康检查
+    timeout: 3000 # 示例：健康检查超时时间，单位：毫秒
+    max-failed-times: 3 # 示例：最大失败次数，超过则触发一次强制健康检查
     lazy: true # 示例：懒惰模式
     #filter: (?i)(🇭🇰|港|香港|hk|HK|Hong|HongKong) # 示例：筛选满足关键词或正则表达式的节点
     #exclude-filter: (?i)(台|日|韩|新|狮|美) # 示例：排除满足关键词或正则表达式的节点
@@ -644,16 +644,16 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
     url: http://www.gstatic.com/generate_204
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     include-all: true
 
   - name: 🌤️ Warp+
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/warp.png
     url: http://www.gstatic.com/generate_204
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     include-all-proxies: true
 
   - name: ⚠️ Fallback
@@ -662,8 +662,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -681,8 +681,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     proxies:
       - 🇭🇰 HongKong
@@ -700,8 +700,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -712,8 +712,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     include-all-providers: true
 
@@ -724,8 +724,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5
+    timeout: 3000
+    max-failed-times: 3
     lazy: true
     include-all-providers: true
       
@@ -736,8 +736,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
     
@@ -748,8 +748,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -760,8 +760,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -772,8 +772,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
@@ -784,8 +784,8 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 600
     tolerance: 0
-    timeout: 5000
-    max-failed-times: 5    
+    timeout: 3000
+    max-failed-times: 3    
     lazy: true
     include-all-providers: true
 
