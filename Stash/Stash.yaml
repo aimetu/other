@@ -29,11 +29,12 @@
 # https://raw.githubusercontent.com/xream/scripts/main/boxjs/boxjs.json
 
 # 网络连通性检查使用的 url
+# http://1.1.1.1/generate_204
 # http://www.google.com/generate_204
 # http://www.gstatic.com/generate_204
-# http://www.qualcomm.cn/generate_204
-# http://cp.cloudflare.com/generate_204
-# http://captive.apple.com/generate_204
+# http://www.msftncsi.com/ncsi.txt
+# http://www.msftconnecttest.com/connecttest.txt
+# http://captive.apple.com/hotspot-detect.html
 
 # 💡 通用设置
 # 网络模式：rule 规则、global 代理、direct 直连
