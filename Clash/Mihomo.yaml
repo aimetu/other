@@ -1371,8 +1371,7 @@ rules:
   - IP-CIDR, 183.240.197.130/32, 🇨🇳 China, no-resolve
   - IP-CIDR6, 2620:0:2d0::/48, 🇨🇳 China, no-resolve
   - IP-SUFFIX, 114.114.112.0/21, 🇨🇳 China, no-resolve
-  - IP-ASN, 14061, 🌐 Global
-  - IP-ASN, 20473, 🌐 Global
+  - IP-ASN, 20940, 🌐 Global
   - SRC-GEOIP, JP, 🌐 Global
   - SRC-IP-ASN, 133877, 🌐 Global
   - SRC-IP-CIDR, 239.255.255.250/32, 🇨🇳 China, no-resolve
