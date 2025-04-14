@@ -80,17 +80,17 @@ proxies:
 
  - name: 🌤️ Warp Workers
    type: vless
-   server: work.aimetu.cloudns.be
-   port: 80
-   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-   tls: false
+   server: jinqianto.pages.dev
+   port: 443
+   uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+   tls: true
    skip-cert-verify: true
-   sni: jinqiantu.aimeto.workers.dev
+   sni: jinqianto.pages.dev
    network: ws
    ws-opts:
      path: "/?ed=2560"
      headers:
-       Host: jinqiantu.aimeto.workers.dev
+       Host: jinqianto.pages.dev
    alterId: 0
    cipher: ""
    flow: ""
