@@ -199,23 +199,23 @@ proxies:
 
   - name: 🌤️ Warp Workers
     type: vless
-    server: work.aimetu.cloudns.be # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
-    port: 80
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    server: jinqianto.Pages.dev
+    port: 443
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
-    tls: false
+    tls: true
     network: ws
-    servername: jinqiantu.aimeto.workers.dev
+    servername: jinqianto.pages.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: jinqiantu.aimeto.workers.dev
+        Host: jinqianto.pages.dev
       v2ray-http-upgrade: false
 
   - name: 🌤️ Warp Pages
     type: vless
-    server: c.aimetu.cloudns.be
+    server: jinqiantu.pages.dev
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     udp: true
