@@ -237,18 +237,18 @@ proxies:
 
   - name: 🌤️ Warp Workers
     type: vless
-    server: jinqianto.pages.dev
+    server: jinxiutu.pages.dev
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
     tls: true
     network: ws
-    servername: jinqianto.pages.dev
+    servername: jinxiutu.pages.dev
     skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: jinqianto.pages.dev
+        Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
   - name: 🌤️ Warp Pages
