@@ -443,7 +443,8 @@ proxies:
     remote-dns-resolve: true
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
-
+    
+# 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
   - name: 🌤️ Warp Workers
     type: vless
     server: jinqianto.Pages.dev
