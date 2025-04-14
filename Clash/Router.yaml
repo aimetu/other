@@ -199,7 +199,7 @@ proxies:
 
   - name: 🌤️ Warp Workers
     type: vless
-    server: jinqianto.Pages.dev
+    server: jinqianto.pages.dev
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
