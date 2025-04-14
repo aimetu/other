@@ -80,17 +80,17 @@ proxies:
 
  - name: 🌤️ Warp Workers
    type: vless
-   server: jinqianto.pages.dev
+   server: jinxiutu.pages.dev
    port: 443
    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
    tls: true
    skip-cert-verify: true
-   sni: jinqianto.pages.dev
+   sni: jinxiutu.pages.dev
    network: ws
    ws-opts:
      path: "/?ed=2560"
      headers:
-       Host: jinqianto.pages.dev
+       Host: jinxiutu.pages.dev
    alterId: 0
    cipher: ""
    flow: ""
