@@ -105,7 +105,7 @@
     ],
 
     "dns": {
-        "final": "direct-dns"
+        "final": "direct-dns",
         "disable_cache": true,
 	"disable_expire": true,
 	"independent_cache": true,
