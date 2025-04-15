@@ -873,8 +873,8 @@ rules:
 - DOMAIN-SUFFIX, home.arpa, China
 - DOMAIN-KEYWORD, localhost, China
 - DOMAIN-WILDCARD, *.tv.apple.*, Global
-- DOMAIN-REGEX, *.news.apple.*, Global
-- DOMAIN-REGEX, *.trustd.apple.*, Global
+- DOMAIN-REGEX, ^.*\.news\.apple\.com$, Global
+- DOMAIN-REGEX, ^.*\.trustd\.apple\.com$, Global
 - URL-REGEX, ^https?:\/\/(www|m)\.google\.cn, Google
 - USER-AGENT, AppleTV*, Global
 - USER-AGENT, AppleNews*, Global
