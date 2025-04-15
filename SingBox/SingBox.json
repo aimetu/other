@@ -66,21 +66,21 @@
             "tag": "tun-in",
             "type": "tun",
 			"stack": "mixed",
-            "interface_name": "utun", //设置虚拟网卡名称，默认自动选择。
+            "interface_name": "utun",
             "address": [
               "172.18.0.1/30",
               "fdfe:dcba:9876::1/126"
             ],
 			"mtu": 9000,
 			"udp_timeout": "5m",
-			"iproute2_table_index": 2022, //生成的 iproute2 路由表索引
-			"iproute2_rule_index": 9000, //生成的 iproute2 规则起始索引
-            "auto_route": true, //设置到 Tun 的默认路由
-			"auto_redirect": true, // 自动配置 iptables/nftables 以重定向连接, 需要 auto_route 已启用
-			"auto_redirect_input_mark": "0x2023", //route_address_set 和 route_exclude_address_set 使用的连接输入标记
-			"auto_redirect_output_mark": "0x2024", //route_address_set 和 route_exclude_address_set 使用的连接输出标记
-            "strict_route": true, //启用 auto_route 时执行严格的路由规则, 它可以防止 IP 地址泄漏
-			"endpoint_independent_nat": true, //启用通用分段卸载
+			"iproute2_table_index": 2022,
+			"iproute2_rule_index": 9000,
+            "auto_route": true,
+			"auto_redirect": true,
+			"auto_redirect_input_mark": "0x2023",
+			"auto_redirect_output_mark": "0x2024",
+            "strict_route": true,
+			"endpoint_independent_nat": true,
 			"platform": {
                 "http_proxy": {
                     "enabled": true,
@@ -130,13 +130,13 @@
             "detour": "🔰 Pick"
         },
         {
-            "tag": "resolver-dns", // 用于解析域名的 DNS 服务器
+            "tag": "resolver-dns",
             "address": "223.5.5.5",
             "detour": "direct"
         },
         {
             "tag": "block-dns",
-            "address": "rcode://success"  // RCode 传输层传输层常用于屏蔽请求, 可选项：refused success format_error server_failure name_error not_implemented
+            "address": "rcode://success"
         },
         {
             "tag": "fakeip-dns",
@@ -146,16 +146,16 @@
 
     "rules": [
         {
-            "outbound": "any",  // 任何出站连接 DNS 服务器解析
+            "outbound": "any",
             "server": "direct-dns",
             "disable_cache": true
         },
         {
-            "clash_mode": "direct", // 直连模式
+            "clash_mode": "direct",
             "server": "direct-dns"
         },
         {
-            "clash_mode": "global", // 全局代理模式
+            "clash_mode": "global",
             "server": "proxy-dns"
         },
         {
@@ -201,35 +201,9 @@
         "inet4_range": "198.18.0.0/16",
         "inet6_range": "fc00::/18",
 		"strategy": "prefer_ipv4"
-        },
-	"final": "proxy-dns"
+        }
     },
 
-    "outbound_providers": [
-        {
-            "tag": "Subscribe ", // 自定义订阅标签
-            "url": "https://example.com/xxx/xxx&flag=clash", // 订阅链接
-            "enabled": true, // 启用此链接转换，false 订阅将被忽略
-            "emoji": 1, // 增加 emoji 表情，false 或 0，节点名称将不包含国家/地区国旗 emoji
-            "subgroup": "named",  // 为 subscription 链接命名并生成出站
-            "User-Agent": "clash.meta", // 自定义 UA，例如将 UA 设置为 “clash.meta” 或 “sing-box”
-            "prefix": "Sub~", // 添加到节点名称开头的自定义前缀。如果未设置，则不会添加前缀
-            "ex-node-name": "(?i)订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱", // 筛选包含关键字的节点
-            "healthcheck_url": "https://www.gstatic.com/generate_204", // 节点检测链接
-            "healthcheck_interval": "600m", // 每隔多少时间检测节点
-            "download_interval": "48h" // 自动更新时间
-        }
-    ],
-        // 设置此选项后，脚本将自动使路由规则适应 DNS 规则
-        "auto_set_outbounds_dns":{
-        "proxy": "proxy-dns",
-        "direct": "direct-dns"
-    },
-    "save_config_path": "./config.json", // 设置生成的配置文件的路径
-    "auto_backup": false,  // 备份当前使用的配置文件备份
-    "exclude_protocol": "wireguard", // 设置要排除的协议
-    //"config_template": "", //  配置模板链接，以从此模板生成 sing-box 配置
-    //"Only-nodes": false // 设置为 true 或 1 时，仅输出订阅链接的 sing-box 格式的节点信息
     
     "outbounds": [
         {
@@ -253,10 +227,10 @@
             "tag": "♻️ Auto",
             "type": "urltest",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "600m", // 测试间隔。 默认使用 3m
-            "tolerance": 50, // 以毫秒为单位的测试容差。 默认使用 50
-            "idle_timeout": "1800m", // 空闲超时。默认使用 30m
-            "interrupt_exist_connections": true, // 当选定的出站发生更改时，中断现有连接
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
+            "interrupt_exist_connections": true,
             "use_all_providers": true,
             "excludes": [
                 "订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱"
