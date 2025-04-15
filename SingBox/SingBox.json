@@ -12,14 +12,14 @@
         "clash_api": {
             "external_controller": "0.0.0.0:9090",
             "external_ui": "ui",
-            "secret": "password",
-            "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+            "secret": "zashboard",
+            "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip",
             "external_ui_download_detour": "🐟 Final",
             "default_mode": "rule",
             "access_control_allow_origin": "*",
             "access_control_allow_private_network": false
-		
         },
+	    
         "cache_file": {
             "enabled": true,
             "path": "cache.db",
@@ -233,7 +233,6 @@
         {
             "tag": "🔰 Pick",
             "type": "selector",
-            //"default": "♻️ Auto", // 默认的出站标签。默认使用第一个出站
             "outbounds": [
                 "♻️ Auto",
                 "✅ Node",
@@ -252,9 +251,9 @@
             "tag": "♻️ Auto",
             "type": "urltest",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m", // 测试间隔。 默认使用 3m
-            "tolerance": 150, // 以毫秒为单位的测试容差。 默认使用 50
-            "idle_timeout": "30m", // 空闲超时。默认使用 30m
+            "interval": "600m", // 测试间隔。 默认使用 3m
+            "tolerance": 50, // 以毫秒为单位的测试容差。 默认使用 50
+            "idle_timeout": "1800m", // 空闲超时。默认使用 30m
             "interrupt_exist_connections": true, // 当选定的出站发生更改时，中断现有连接
             "use_all_providers": true,
             "excludes": [
@@ -264,15 +263,18 @@
         {
             "tag": "✅ Node",
             "type": "selector",
+            "url": "https://www.gstatic.com/generate_204",
+            "idle_timeout": "1800m",
+            "interrupt_exist_connections": true,
             "use_all_providers": true
         },        
         {
             "tag": "🇭🇰 HongKong",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -283,9 +285,9 @@
             "tag": "🇹🇼 Taiwan",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -296,9 +298,9 @@
             "tag": "🇯🇵 Japan",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -309,9 +311,9 @@
             "tag": "🇰🇷 Korea",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -322,9 +324,9 @@
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -335,9 +337,9 @@
             "tag": "🇺🇸 America",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "include": [
@@ -348,9 +350,9 @@
             "tag": "🇺🇳 Nations",
             "type": "selector",
             "url": "https://www.gstatic.com/generate_204",
-            "interval": "3m",
-            "tolerance": 150,
-            "idle_timeout": "30m",
+            "interval": "600m",
+            "tolerance": 50,
+            "idle_timeout": "1800m",
             "interrupt_exist_connections": true,
             "use_all_providers": true,
             "excludes": [
@@ -613,7 +615,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adblock.srs",
                 "path": "./rules/adblock.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -622,7 +624,7 @@
                 "format": "binary",
                 "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/networktest.srs",
                 "path": "./rules/networktest.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },            
             {
@@ -631,7 +633,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/tiktok.srs",
                 "path": "./rules/geosite/tiktok.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -640,7 +642,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/telegram.srs",
                 "path": "./rules/telegramip.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -649,7 +651,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/spotify.srs",
                 "path": "./rules/spotify.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -658,7 +660,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
                 "path": "./rules/netflix.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -667,7 +669,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/disney.srs",
                 "path": "./rules/disney.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -676,7 +678,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/youtube.srs",
                 "path": "./rules/youtube.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -685,7 +687,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/openai.srs",
                 "path": "./rules/openai.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },   
             {
@@ -694,7 +696,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
                 "path": "./rules/amazon.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -703,7 +705,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
                 "path": "./rules/facebook.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -712,7 +714,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/google.srs",
                 "path": "./rules/google.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -721,7 +723,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/microsoft.srs",
                 "path": "./rules/microsoft.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -730,7 +732,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/apple.srs",
                 "path": "./rules/apple.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -739,7 +741,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/proxy.srs",
                 "path": "./rules/proxy.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -748,7 +750,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geosite/proxymedia.srs",
                 "path": "./rules/proxymedia.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },          
             {
@@ -757,7 +759,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
                 "path": "./rules/geosite-cn.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             },
             {
@@ -766,7 +768,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
                 "path": "./rules/geoip-cn.srs",
-                "update_interval": "86400",
+                "update_interval": "259200",
                 "download_detour": "🔰 Pick"
             }
         ],
