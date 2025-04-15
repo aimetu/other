@@ -314,65 +314,96 @@ sniffer:
     
 #💡 流量入站配置,可以作为服务器
 listeners:
-  - name: socks5-lan
+  - name: socks-lan
     type: socks # socks代理
-    port: 10808
+    port: 10808 # 支持使用ports格式，例如200,302 or 200,204,401-429,501-503
     listen: 0.0.0.0
-    rule: rules
-    proxy: 🌐 Global
     udp: true
-
+    users:
+      - username: admin
+        password: password
+    rule: rules # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
+    #proxy: 🌐 Global  # 如果不为空则直接将该入站流量交由指定 proxy 处理 (当 proxy 不为空时，这里的 proxy 名称必须合法，否则会出错)
+    
   - name: http-lan
     type: http # http(s)代理
     port: 10809
     listen: 0.0.0.0
-    rule: rules
-    proxy: 🌐 Global
     udp: true
+    users:
+      - username: admin
+        password: password
+    rule: rules
+    #proxy: 🌐 Global
 
-  - name: mixed-lan # 用于监听局域网流量的入站,适用于无加密传输
+  - name: mixed-lan
     type: mixed # http(s) 和socks代理混合
     port: 10810
     listen: 0.0.0.0
-    rule: rules # 默认使用 rules,如果未找到 sub-rule 则直接使用 rules
-    proxy: 🌐 Global # 如果不为空则直接将该入站流量交由指定 proxy 处理(当 proxy 不为空时,这里的 proxy 名称必须合法,否则会出错)
-    udp: true # 默认 true
-
-  - name: redir-lan
-    type: redir
-    port: 10811
-    listen: 0.0.0.0
+    udp: true
+    users:
+      - username: admin
+        password: password
     rule: rules
-    proxy: 🌐 Global
+    #proxy: 🌐 Global
 
   - name: tproxy-lan
     type: tproxy
+    port: 10811
+    listen: 0.0.0.0
+    udp: true
+    rule: rules
+    #proxy: 🌐 Global
+    
+  - name: shadowsocks-lan
+    type: shadowsocks
     port: 10812
     listen: 0.0.0.0
+    password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
+    cipher: aes-256-gcm
     rule: rules
-    proxy: 🌐 Global
-    udp: true
-
-  - name: shadowsocks-wwan
-    type: shadowsocks
+    #proxy: 🌐 Global
+    
+  - name: vmess-lan
+    type: vmess
     port: 10813
     listen: 0.0.0.0
     rule: rules
-    proxy: 🌐 Global
-    password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    cipher: aes-256-gcm
-
-  - name: vmess-wwan
-    type: vmess
-    port: 10814
-    listen: 0.0.0.0
-    rule: rules
-    proxy: 🌐 Global
+    #proxy: 🌐 Global
     users:
-      - username: Clash
+      - username: admin
         uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
         alterId: 0
     #ws-path: "/" # 如果不为空则开启websocket传输层
+    #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
+    #private-key: ./server.key
+
+  - name: vless-lan
+    type: vless
+    port: 10814
+    listen: 0.0.0.0
+    rule: rules
+    #proxy: 🌐 Global
+    users:
+      - username: admin
+        uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
+        flow: xtls-rprx-vision
+    #ws-path: "/" # 如果不为空则开启websocket传输层
+    #grpc-service-name: "GunService" # 如果不为空则开启 grpc 传输层
+    #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
+    #private-key: ./server.key
+
+  - name: trojan-lan
+    type: trojan
+    port: 10815
+    listen: 0.0.0.0
+    rule: rules
+    #proxy: 🌐 Global
+    users:
+      - username: admin
+        password: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
+    #ws-path: "/" # 如果不为空则开启websocket传输层
+    #grpc-service-name: "GunService" # 如果不为空则开启 grpc 传输层
     #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
     #private-key: ./server.key
     
