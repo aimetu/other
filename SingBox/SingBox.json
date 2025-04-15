@@ -1,11 +1,9 @@
-// https://github.com/Thaolga/openwrt-nekobox/blob/main/luci-app-nekobox/root/etc/neko/config/Puernya.json
-// https://sing-box.sagernet.org
 {
     "log": {
-        "disabled": false, // 禁用日志，启动后不输出日志
-        "level": "info", // 日志等级，可选值：trace debug info warn error fatal panic
-        "output": "singbox.log", // 输出文件路径，启动后将不输出到控制台
-        "timestamp": true // 添加时间到每行
+        "disabled": false,
+        "level": "info",
+        "output": "singbox.log",
+        "timestamp": true
     },
 	
     "experimental": {
@@ -105,16 +103,23 @@
 			"domain_strategy": "prefer_ipv4"
         }
     ],
-	
+
     "dns": {
+        "final": "direct-dns"
+        "disable_cache": true,
+	"disable_expire": true,
+	"independent_cache": true,
+	"cache_capacity": 86400,
+	"reverse_mapping": false,
+	"client_subnet": "",
         "servers": [
         {
-            "tag": "direct-dns", // DNS 服务器的标签
-            "address_resolver": "resolver-dns", // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签，如果服务器地址包括域名则必须
-            "address_strategy": "prefer_ipv4", // 用于解析本 DNS 服务器的域名的策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
-            "strategy": "prefer_ipv4", // 默认解析策略, 可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only, 如果被其他设置覆盖则不生效
-            "address": "https://dns.alidns.com/dns-query", // DNS 服务器的地址
-             "detour": "🇨🇳 China" // 用于连接到 DNS 服务器的出站的标签, 如果为空，将使用默认出站
+            "tag": "direct-dns",
+            "address_resolver": "resolver-dns",
+            "address_strategy": "prefer_ipv4",
+            "strategy": "prefer_ipv4",
+            "address": "https://dns.alidns.com/dns-query",
+             "detour": "🇨🇳 China"
         },
         {
             "tag": "proxy-dns",
@@ -138,9 +143,6 @@
             "address": "fakeip"
         }  
     ],
-	"disable_cache": true,
-	"disable_expire": true,
-	"independent_cache": true,
 
     "rules": [
         {
