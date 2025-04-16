@@ -872,7 +872,9 @@ rules:
 - DOMAIN, router.local, China
 - DOMAIN-SUFFIX, home.arpa, China
 - DOMAIN-KEYWORD, localhost, China
-- DOMAIN-WILDCARD, *.tv.apple.*, Global
+- DOMAIN-WILDCARD, *.tv.apple.com, Global
+- DOMAIN-WILDCARD, *.news.apple.com, Global
+- DOMAIN-WILDCARD, *.trustd.apple.com, Global
 - DOMAIN-REGEX, ^.*\.news\.apple\.com, Global
 - DOMAIN-REGEX, ^.*\.trustd\.apple\.com, Global
 - URL-REGEX, ^https?:\/\/(www|m)\.google\.cn, Google
