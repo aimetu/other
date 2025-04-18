@@ -146,7 +146,7 @@ dns:
     - https://cloudflare-dns.com/dns-query
     - https://dns.opendns.com/dns-query
   nameserver-policy:
-    "blog.google": 94.140.15.15
+    "blog.google": 94.140.14.14
     "dl.google.com": https://dns.adguard-dns.com/dns-query
     "dl.l.google.com": https://dns.adguard-dns.com/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
