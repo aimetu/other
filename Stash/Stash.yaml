@@ -1,4 +1,4 @@
-# 2025.03.30
+# 2025.04.15
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -144,7 +144,7 @@ dns:
     
 # 默认 dns 服务器只会被用来解析 dns 服务的域名，仅允许 ip 地址
   default-nameserver:
-    - 223.5.5.5
+    - 223.6.6.6
     - 119.29.29.29
     
 # 支持 udp、tcp、dot、doh、doq 协议的 dns 服务，可指定端口，并发响应最快服务
