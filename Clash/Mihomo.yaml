@@ -225,7 +225,7 @@ dns:
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
     
   default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
-    - "223.6.6.6"
+    - "223.5.5.5"
     - "119.29.29.29"
     #- "tls://1.1.1.1"
     #- "https://208.67.222.222/dns-query"
@@ -270,8 +270,8 @@ dns:
     "update.googleapis.com": quic://dns.adguard-dns.com
     "rule-set:📟 Google,📹 YouTube": https://dns.google/dns-query
     "geosite:category-scholar-!cn,geolocation-!cn":
-      - https://dns.opendns.com/dns-query
       - https://cloudflare-dns.com/dns-query
+      - https://dns.opendns.com/dns-query
     
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
