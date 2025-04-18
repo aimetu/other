@@ -131,7 +131,7 @@
         },
         {
             "tag": "resolver-dns",
-            "address": "223.6.6.6",
+            "address": "223.5.5.5",
             "detour": "direct"
         },
         {
