@@ -264,10 +264,10 @@ dns:
     - https://dns.opendns.com/dns-query
     
   nameserver-policy: # 指定域名查询的解析服务器，可指定 " geosite & rule-set " dns 解析
-    "blog.google": 208.67.222.222
-    "dl.google.com": https://dns.opendns.com/dns-query
-    "dl.l.google.com": https://dns.opendns.com/dns-query
-    "update.googleapis.com": quic://dns.alidns.com
+    "blog.google": 94.140.15.15
+    "dl.google.com": https://dns.adguard-dns.com/dns-query
+    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "update.googleapis.com": quic://dns.adguard-dns.com
     "rule-set:📟 Google,📹 YouTube": https://dns.google/dns-query
     "geosite:category-scholar-!cn,geolocation-!cn":
       - https://dns.opendns.com/dns-query
