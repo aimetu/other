@@ -224,7 +224,7 @@ dns:
     #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 域名类规则
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
     
-  default-nameserver: # 默认 dns 服务器, 必须为 ip 可为（dot、doh）加密 dns
+  default-nameserver: # 用于解析 nameserver，fallback 域名的 dns 服务域, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
     - "119.29.29.29"
     #- "tls://1.1.1.1"
@@ -235,7 +235,7 @@ dns:
     - "https://doh.pub/dns-query"
     #- "quic://dns.alidns.com"
 
-  proxy-server-nameserver: # 代理节点域名 dns 服务器，仅用于解析代理节点的域名，不填则遵循 nameserver-policy、nameserver和fallback的配置
+  proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - "tls://1.1.1.1"
     - "tls://208.67.222.222"
     #- "https://1.0.0.1/dns-query"
@@ -259,7 +259,7 @@ dns:
       - "+.youtube.com"
     
   direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，仅当 direct-nameserver 不为空时生效    
-  direct-nameserver: # 用于 direct 出口域名解析的 DNS 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+  direct-nameserver: # 用于 direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
     - https://cloudflare-dns.com/dns-query
     - https://dns.opendns.com/dns-query
     
