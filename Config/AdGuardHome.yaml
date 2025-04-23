@@ -25,22 +25,20 @@ dns:
   upstream_dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - quic://dns.alidns.com
     - '[/openwrt.lan/]127.0.0.1'
     - '[/openwrt.local/]::1'
   upstream_dns_file: ""
   bootstrap_dns:
-    - https://223.5.5.5/dns-query
-    - https://120.53.53.53/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
   fallback_dns:
-    - https://dns.google/dns-query
     - https://dns.opendns.com/dns-query
     - https://cloudflare-dns.com/dns-query
   upstream_mode: parallel
   fastest_timeout: 1s
   allowed_clients:
     - 10.10.10.0/24
-    - fdfc:e7ce:ea8b::/64
+    - fd12:ca4f:3aa9::/64
   disallowed_clients:
     - 10.0.0.0/23
     - 192.168.0.1/24
@@ -270,13 +268,9 @@ filtering:
     - domain: dns.alidns.com
       answer: 223.6.6.6
     - domain: doh.pub
-      answer: 1.12.12.12
+      answer: 1.12.12.21
     - domain: doh.pub
       answer: 120.53.53.53
-    - domain: dns.google
-      answer: 8.8.8.8
-    - domain: dns.google
-      answer: 8.8.4.4
     - domain: dns.opendns.com
       answer: 208.67.222.222
     - domain: dns.opendns.com
