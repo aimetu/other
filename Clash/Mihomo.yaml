@@ -269,9 +269,12 @@ dns:
     "dl.l.google.com": https://dns.adguard-dns.com/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
     "rule-set:📟 Google,📹 YouTube": https://dns.google/dns-query
+    "geosite:cn,private": 
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
     "geosite:category-scholar-!cn,geolocation-!cn":
-      - https://cloudflare-dns.com/dns-query
       - https://dns.opendns.com/dns-query
+      - https://cloudflare-dns.com/dns-query
     
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
