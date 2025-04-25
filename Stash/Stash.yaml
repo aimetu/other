@@ -57,7 +57,7 @@ proxy-providers:
    
 # 💡 本地代理服务器
 proxies:
- - name: 🌤️ Warp
+ - name: 🌤️ Local~W01
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
    port: 2408
@@ -78,7 +78,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🌤️ Warp Workers
+ - name: 🌤️ Local~W01
    type: vless
    server: jinxiutu.pages.dev
    port: 443
@@ -95,7 +95,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: 🌤️ Warp Pages
+ - name: 🌤️ Local~W02
    type: vless
    server: jinqiantu.pages.dev
    port: 443
@@ -300,7 +300,7 @@ proxy-groups:
   hidden: false
 # include-all: true，引用所有的代理和远程代理集  
   include-all: true
-  filter: ^(?!.*Warp).*(?i)
+  filter: ^(?!.*local).*(?i)
 
 - name: Node
   type: select
@@ -466,7 +466,7 @@ proxy-groups:
   lazy: true
   hidden: false
   include-all: true
-  filter: ^((?!Warp|🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|香港|hk|hong|hongkong|🇹🇼|台湾|台北|臺灣|tw|tai|taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan|🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea|🇸🇬|新加坡|狮城|sg|singapore|🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america).)*$
+  filter: ^((?!local|🇨🇳|中国|大陆|国内|回国|cn|china|电信|移动|联通|腾讯|阿里|教育|校园|直连|🇭🇰|香港|hk|hong|hongkong|🇹🇼|台湾|台北|臺灣|tw|tai|taiwan|🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|jp|japan|🇰🇷|韩国|韓國|首尔|朝鲜|kr|kor|korea|🇸🇬|新加坡|狮城|sg|singapore|🇺🇸|美国|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|us|america).)*$
 
 - name: Chinese
   type: url-test
