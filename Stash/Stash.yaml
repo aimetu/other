@@ -57,7 +57,7 @@ proxy-providers:
    
 # 💡 本地代理服务器
 proxies:
- - name: 🌤️ Local~W01
+ - name: 🌤️ Local-Wireguard
    type: wireguard
    # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
    port: 2408
@@ -78,7 +78,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🌤️ Local~P01
+ - name: 🌤️ Local-Pages01
    type: vless
    server: jinxiutu.pages.dev
    port: 443
@@ -95,7 +95,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: 🌤️ Local~P02
+ - name: 🌤️ Local-Pages02
    type: vless
    server: jinqiantu.pages.dev
    port: 443
