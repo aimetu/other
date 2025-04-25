@@ -178,7 +178,7 @@ sniffer:
     - "+.apple.com"
 
 proxies: 
-  - name: 🌤️ Local~W01
+  - name: 🌤️ Local-Wireguard
     type: wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU=
     ip: 172.16.0.2
@@ -197,7 +197,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇭🇰 HongKong
 
-  - name: 🌤️ Local~P01
+  - name: 🌤️ Local-Pages01
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -213,7 +213,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local~P02
+  - name: 🌤️ Local-Pages02
     type: vless
     server: jinqiantu.pages.dev
     port: 443
