@@ -314,7 +314,7 @@ sniffer:
     
 #💡 流量入站配置,可以作为服务器
 listeners:
-  - name: socks-lan
+  - name: socks-local
     type: socks # socks代理
     port: 10808 # 支持使用ports格式，例如200,302 or 200,204,401-429,501-503
     listen: 0.0.0.0
@@ -325,7 +325,7 @@ listeners:
     rule: rules # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
     #proxy: 🌐 Global  # 如果不为空则直接将该入站流量交由指定 proxy 处理 (当 proxy 不为空时，这里的 proxy 名称必须合法，否则会出错)
     
-  - name: http-lan
+  - name: http-local
     type: http # http(s)代理
     port: 10809
     listen: 0.0.0.0
@@ -336,7 +336,7 @@ listeners:
     rule: rules
     #proxy: 🌐 Global
 
-  - name: mixed-lan
+  - name: mixed-local
     type: mixed # http(s) 和socks代理混合
     port: 10810
     listen: 0.0.0.0
@@ -347,7 +347,7 @@ listeners:
     rule: rules
     #proxy: 🌐 Global
 
-  - name: tproxy-lan
+  - name: tproxy-local
     type: tproxy
     port: 10811
     listen: 0.0.0.0
@@ -355,7 +355,7 @@ listeners:
     rule: rules
     #proxy: 🌐 Global
     
-  - name: shadowsocks-lan
+  - name: shadowsocks-local
     type: shadowsocks
     port: 10812
     listen: 0.0.0.0
@@ -364,7 +364,7 @@ listeners:
     rule: rules
     #proxy: 🌐 Global
     
-  - name: vmess-lan
+  - name: vmess-local
     type: vmess
     port: 10813
     listen: 0.0.0.0
@@ -378,7 +378,7 @@ listeners:
     #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
     #private-key: ./server.key
 
-  - name: vless-lan
+  - name: vless-local
     type: vless
     port: 10814
     listen: 0.0.0.0
@@ -393,7 +393,7 @@ listeners:
     #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
     #private-key: ./server.key
 
-  - name: trojan-lan
+  - name: trojan-local
     type: trojan
     port: 10815
     listen: 0.0.0.0
@@ -418,7 +418,7 @@ tunnels:
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
 proxies: 
-  - name: 🌤️ Local~W01 # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: 🌤️ Local-Wireguard # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
@@ -438,7 +438,7 @@ proxies:
     #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
   
 # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
-  - name: 🌤️ Local~P01
+  - name: 🌤️ Local-Pages01
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -454,7 +454,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local~P02
+  - name: 🌤️ Local-Pages02
     type: vless
     server: jinqiantu.pages.dev
     port: 443
