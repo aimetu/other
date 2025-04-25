@@ -78,7 +78,7 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🌤️ Local~W01
+ - name: 🌤️ Local~P01
    type: vless
    server: jinxiutu.pages.dev
    port: 443
@@ -95,7 +95,7 @@ proxies:
    cipher: ""
    flow: ""
 
- - name: 🌤️ Local~W02
+ - name: 🌤️ Local~P02
    type: vless
    server: jinqiantu.pages.dev
    port: 443
@@ -382,7 +382,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - 🌤️ Warp
+    - 🌤️ Local~W01
 
 - name: HongKong
   type: url-test
