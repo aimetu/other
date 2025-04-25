@@ -418,7 +418,7 @@ tunnels:
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
 proxies: 
-  - name: 🌤️ Warp # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: 🌤️ Local~W01 # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
@@ -438,7 +438,7 @@ proxies:
     #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
   
 # 优选 IP：https://blog.aizrf.com/p/cf/, https://stock.hostmonit.com/CloudFlareYes
-  - name: 🌤️ Warp Workers
+  - name: 🌤️ Local~P01
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -454,7 +454,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Warp Pages
+  - name: 🌤️ Local~P02
     type: vless
     server: jinqiantu.pages.dev
     port: 443
