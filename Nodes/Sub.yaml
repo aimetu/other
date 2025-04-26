@@ -1,23 +1,4 @@
 proxies: 
-  - name: 🌤️ Cloud-wireguard-v6 # 代理名称,书写时请确保不会与其他代理节点重名
-    type: wireguard # 代理类型,此处为 wireguard
-    private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
-    ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
-    ipv6: 2606:4700:110:88a4:fa34:70a2:56b7:ead6 # 可选字段，本机在 wireguard 网络中使用的 ipv6 地址
-    peers: # 如果使用多个 peer，每一个 peer 的 allowed-ips 需要做区分；此时顶层段落的 server, port, ip, ipv6, public-key, pre-shared-key, reserved 等字段均会被忽略，不过private-key仍然在顶层指定
-     - server: 2606:4700:d0::a29f:c001 # wireguard 服务器地址
-       port: 2408 # wireguard 服务端端口
-       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM= # 可选字段，预共享密钥
-       allowed_ips: ["0.0.0.0/0","::/0"] # 可选字段，限制客户端的哪些 ip 段的流量由服务端进行转发。一般情况下可填 ['0.0.0.0/0']
-       reserved: [17,176,6] # 可选字段，Wireguard 协议保留字段的值，部分 warp 节点需要使用
-    mtu: 1280 # 可选字段，设置 mtu 值
-    udp: true # 可选字段，是否启用 udp 支持
-    persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
-    remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
-    dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    dialer-proxy: 🐔 FCloud-vless # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
-
   - name: 🌤️ Cloud-vless
     type: vless
     server: jinxiutu.pages.dev
