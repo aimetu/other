@@ -262,40 +262,6 @@ proxy-providers:
       - pattern: "IPLC-(.*?)倍"
         target: "iplc x $1"      
 
-  Nodes: 
-    type: http
-    path: ./proxy_provider/Nodes.yaml
-    url: https://sub.store/download/collection/node
-    interval: 86400
-    proxy: 🐟 Final
-    size-limit: 0
-    #filter: "(?i)🇭🇰|香港|hk|hong|🇹🇼|台湾|tw|tai|🇯🇵|日本|jp|japan|🇰🇷|韩国|kr|korea|🇸🇬|新加坡|sg|singapore|🇺🇸|美国|us|america"
-    exclude-filter: "(?i)(订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱)"
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
-    header: 
-      User-Agent:
-      #- "FlClash/0.8.88"
-      - "Clash-verge/2.2.2"
-    health-check:
-      enable: true
-      url: http://connectivitycheck.gstatic.com/generate_204
-      interval: 600
-      timeout: 3000
-      lazy: true
-      expected-status: "*"
-    override: 
-      ip-version: dual
-      tfo: false
-      mptcp: false
-      udp: true
-      udp-over-tcp: false
-      skip-cert-verify: true
-      routing-mark: 89898
-      additional-suffix: "~Nodes"
-      proxy-name: 
-      - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"          
-
 proxy-groups:
   - name: 🔰 Pick
     type: select
