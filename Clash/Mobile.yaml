@@ -264,43 +264,7 @@ proxy-providers:
       additional-prefix: "Sub~"
       proxy-name:
       - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"      
-
-  Nodes: 
-    type: http
-    path: ./proxy/Nodes.yaml
-    url: https://sub.store/download/collection/node
-    interval: 86400
-    proxy: 🐟 Final
-    size-limit: 0
-    #filter: "(?i)🇭🇰|香港|hk|hong|🇹🇼|台湾|tw|tai|🇯🇵|日本|jp|japan|🇰🇷|韩国|kr|korea|🇸🇬|新加坡|sg|singapore|🇺🇸|美国|us|america"
-    exclude-filter: "(?i)(订阅|流量|剩余|套餐|到期|过滤|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱)"
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
-    header: 
-      User-Agent:
-      #- "Clash/v1.18.8"
-      #- "Clash.meta/2.2.2"
-      #- "FlClash/0.8.88"
-      - "Clash-verge/2.2.2"
-    health-check:
-      enable: true
-      url: http://connectivitycheck.gstatic.com/generate_204
-      interval: 600
-      timeout: 3000
-      lazy: true
-      expected-status: "*"
-    override: 
-      ip-version: dual
-      tfo: false
-      mptcp: false
-      udp: true
-      udp-over-tcp: false
-      skip-cert-verify: true
-      routing-mark: 89898
-      additional-suffix: "~Nodes"
-      proxy-name: 
-      - pattern: "IPLC-(.*?)倍"
-        target: "iplc x $1"          
+        target: "iplc x $1"
 
 proxy-groups:
   - name: 🔰 Pick
@@ -327,22 +291,22 @@ proxy-groups:
   - name: ♻️ Auto
     type: url-test
     icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
-    url: http://www.gstatic.com/generate_204 # 示例：延迟检查的 url 地址
-    interval: 600 # 示例：间隔检测时间，单位：秒
-    tolerance: 0 # 示例：网络间隔相差值
-    timeout: 3000 # 示例：健康检查超时时间，单位：毫秒
-    max-failed-times: 3 # 示例：最大失败次数，超过则触发一次强制健康检查
-    lazy: true # 示例：懒惰模式
-    #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong # 示例：筛选满足关键词或正则表达式的节点
-    #exclude-filter: 台|日|韩|新|狮|美 # 示例：排除满足关键词或正则表达式的节点
-    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "协议" 类型筛选
-    #expected-status: "*" # 示例：健康检查时期望的 HTTP 响应状态码
-    #include-all: true # 示例：引入所有出站代理节点以及代理集合
-    #include-all-proxies: true # 示例：引入所有出站代理节点
-    include-all-providers: true # 示例：引入所有代理集合
-    #disable-udp: true # 示例：禁用 udp 流量转发
-    #hidden: true # 示例：隐藏策略组
-    #interface-name: en0 # 示例：指定出站接口
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    timeout: 3000
+    max-failed-times: 3
+    lazy: true
+    #filter: (?i)🇭🇰|港|香港|hk|HK|Hong|HongKong
+    #exclude-filter: 台|日|韩|新|狮|美
+    #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
+    #expected-status: "*"
+    #include-all: true
+    #include-all-proxies: true
+    include-all-providers: true
+    #disable-udp: true
+    #hidden: true
+    #interface-name: en0
       
   - name: ✅ Node
     type: select
