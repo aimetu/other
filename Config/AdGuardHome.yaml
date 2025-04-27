@@ -69,7 +69,7 @@ dns:
   bootstrap_prefer_ipv6: false
   upstream_timeout: 10s
   private_networks: []
-  use_private_ptr_resolvers: true
+  use_private_ptr_resolvers: false
   local_ptr_upstreams:
     - 127.0.0.1:53
     - '[::1]:53'
@@ -79,6 +79,8 @@ dns:
   use_http3_upstreams: false
   serve_plain_dns: true
   hostsfile_enabled: true
+  pending_requests:
+    enabled: true
 tls:
   enabled: false
   server_name: ""
@@ -172,7 +174,7 @@ filters:
   - enabled: false
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
     name: AdGuard DNS filter
-    id: 1673164119    
+    id: 1673164119
   - enabled: false
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt
     name: 1Hosts (Lite)
@@ -255,6 +257,7 @@ filtering:
     enabled: false
     bing: true
     duckduckgo: true
+    ecosia: true
     google: true
     pixabay: true
     yandex: true
@@ -283,13 +286,15 @@ filtering:
       answer: 104.16.248.249
     - domain: cloudflare-dns.com
       answer: 104.16.249.249
+  safe_fs_patterns:
+    - /tmp/AdGuardHome/data/userfilters/*
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
   parental_cache_size: 1048576
   cache_time: 30
   filters_update_interval: 72
   blocked_response_ttl: 10
-  filtering_enabled: true
+  filtering_enabled: false
   parental_enabled: false
   safebrowsing_enabled: false
   protection_enabled: true
@@ -302,6 +307,7 @@ clients:
     hosts: true
   persistent: []
 log:
+  enabled: true
   file: ""
   max_backups: 0
   max_size: 100
@@ -313,4 +319,4 @@ os:
   group: ""
   user: ""
   rlimit_nofile: 0
-schema_version: 28
+schema_version: 29
