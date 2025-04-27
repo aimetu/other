@@ -232,7 +232,7 @@ dns:
     
   nameserver: # 默认加密 dns 服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
-    - "https://dns.pub/dns-query"
+    - "https://doh.pub/dns-query"
     #- "quic://dns.alidns.com"
 
   proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
@@ -271,7 +271,7 @@ dns:
     "rule-set:📟 Google,📹 YouTube": https://dns.google/dns-query
     "geosite:cn,private": 
       - https://dns.alidns.com/dns-query
-      - https://dns.pub/dns-query
+      - https://doh.pub/dns-query
     "geosite:category-scholar-!cn,geolocation-!cn":
       - https://cloudflare-dns.com/dns-query
       - https://dns.opendns.com/dns-query
@@ -280,7 +280,7 @@ dns:
 hosts:
   "*.mihomo.dev": 127.0.0.1
   "*.dev": 127.0.0.1
-  dns.pub: [120.53.53.53, 1.12.12.21]
+  doh.pub: [120.53.53.53, 1.12.12.21]
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
   dns.opendns.com: [208.67.222.222, 208.67.220.220]
   dns.adguard-dns.com: [94.140.14.14, 94.140.15.15]
