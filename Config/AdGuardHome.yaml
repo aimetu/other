@@ -36,7 +36,7 @@ dns:
     - https://dns.opendns.com/dns-query
   upstream_mode: parallel
   fastest_timeout: 1s
-allowed_clients: []
+  allowed_clients: []
   disallowed_clients:
     - 10.0.0.0/23
     - 192.168.0.1/24
@@ -284,13 +284,14 @@ filtering:
       answer: 104.16.248.249
     - domain: cloudflare-dns.com
       answer: 104.16.249.249
+  safe_fs_patterns: []
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
   parental_cache_size: 1048576
   cache_time: 30
   filters_update_interval: 72
   blocked_response_ttl: 10
-  filtering_enabled: false
+  filtering_enabled: true
   parental_enabled: false
   safebrowsing_enabled: false
   protection_enabled: true
