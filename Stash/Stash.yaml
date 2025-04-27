@@ -29,11 +29,13 @@
 # https://raw.githubusercontent.com/xream/scripts/main/boxjs/boxjs.json
 
 # 网络连通性检查使用的 url
-# http://1.1.1.1/generate_204
 # http://www.google.com/generate_204
 # http://www.gstatic.com/generate_204
+# https://cp.cloudflare.com/generate_204
+# http://connectivitycheck.gstatic.com/generate_204
 # http://www.msftncsi.com/ncsi.txt
 # http://www.msftconnecttest.com/connecttest.txt
+# http://detectportal.firefox.com/success.txt
 # http://captive.apple.com/hotspot-detect.html
 
 # 💡 通用设置
@@ -54,6 +56,7 @@ proxy-providers:
     filter: "^(?!.*订阅|流量|剩余|套餐|到期|重置|距离|过期|线路|官网|网站|网址|地址|备用|客服|群|邀请|返利|循环|已用|联系|邮箱).*(?i)"
     benchmark-url: http://www.gstatic.com/generate_204
     benchmark-timeout: 3
+    benchmark-disabled: false
    
 # 💡 本地代理服务器
 proxies:
@@ -71,6 +74,7 @@ proxies:
    keepalive: 45
    benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
+   benchmark-disabled: false
 # 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
 #   underlying-proxy: 
 #     type: trojan
@@ -272,6 +276,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/pick.png
   benchmark-url: http://www.gstatic.com/generate_204
   benchmark-timeout: 3
+  benchmark-disabled: false
   proxies:
   - Auto
   - Node
@@ -294,11 +299,13 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/auto.png
   benchmark-url: http://www.gstatic.com/generate_204
+  # 延迟测试超时，单位：秒
+  benchmark-timeout: 3
+  # 单个代理的延迟测试，设置为 true 时完全禁用延迟测试
+  benchmark-disabled: false
   interval: 600
 # 网络间隔相差值，进行节点切换，否则不进行切换
   tolerance: 0
-# 延迟测试超时，单位：秒
-  benchmark-timeout: 3
 # lazy：懒惰模式，如果设置为 true，策略组在未被使用时停止检测  
   lazy: true
 # hidden 在列表中隐藏策略组开关
@@ -312,6 +319,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/node.png
   benchmark-url: http://www.gstatic.com/generate_204
   benchmark-timeout: 3
+  benchmark-disabled: false
   lazy: true
   hidden: false
   include-all: true
@@ -321,6 +329,7 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/wireless.png
   benchmark-url: http://www.gstatic.com/generate_204
   benchmark-timeout: 3
+  benchmark-disabled: false
   lazy: true
   hidden: false
   proxies:
@@ -338,9 +347,9 @@ proxy-groups:
   type: fallback
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/fallback.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   proxies:
@@ -359,9 +368,10 @@ proxy-groups:
   strategy: consistent-hashing
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   proxies:
@@ -379,9 +389,10 @@ proxy-groups:
   icon: https://raw.githubusercontent.com/aimetu/icons/main/other/chain.png
 # 建议只使用 HTTP 协议  
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
@@ -393,9 +404,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/hongkong.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -405,9 +417,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/taiwan.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -417,9 +430,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/japan.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -429,9 +443,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/korea.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -441,9 +456,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/singapore.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -453,9 +469,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/america.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -465,9 +482,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/nations.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
@@ -477,9 +495,10 @@ proxy-groups:
   type: url-test
   icon: https://raw.githubusercontent.com/aimetu/icons/main/map/chinese.png
   benchmark-url: http://www.gstatic.com/generate_204
+  benchmark-timeout: 3
+  benchmark-disabled: false
   interval: 600
   tolerance: 0
-  benchmark-timeout: 3
   lazy: true
   hidden: false
   include-all: true
