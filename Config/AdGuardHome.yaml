@@ -109,31 +109,31 @@ statistics:
   interval: 168h
   enabled: true
 filters:
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
     name: 'CHN: anti-AD'
     id: 1682841146
-  - enabled: true
+  - enabled: false
     url: https://easylist-downloads.adblockplus.org/easylist.txt
     name: Easylist
     id: 1633764053
-  - enabled: true
+  - enabled: false
     url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
     name: EasyPrivacy
     id: 1633764057
-  - enabled: true
+  - enabled: false
     url: https://easylist-downloads.adblockplus.org/easylistchina.txt
     name: EasyList China
     id: 1633764054
-  - enabled: true
+  - enabled: false
     url: https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
     name: Adblock Warning Removal List
     id: 1682901479
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt
     name: CJX's EasyList Lite
     id: 1633764055
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
     name: CJX's Annoyance List
     id: 1633764058
@@ -141,7 +141,7 @@ filters:
     url: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adblock.txt
     name: AdRules AdBlock List
     id: 1682826726
-  - enabled: true
+  - enabled: false
     url: https://adaway.org/hosts.txt
     name: AdAway blocklist
     id: 1673164122
@@ -169,7 +169,7 @@ filters:
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
     name: 'CHN: AdRules DNS List'
     id: 1682841145
-  - enabled: true
+  - enabled: false
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
     name: AdGuard DNS filter
     id: 1673164119    
@@ -190,7 +190,7 @@ filters:
     name: Dandelion Sprout's Anti-Malware List
     id: 1673164118
 whitelist_filters:
-  - enabled: true
+  - enabled: false
     url: https://raw.githubusercontent.com/mphin/AdGuardHomeRules/main/Allowlist.txt
     name: Allowlist China
     id: 1713581916
@@ -275,10 +275,14 @@ filtering:
       answer: 208.67.222.222
     - domain: dns.opendns.com
       answer: 208.67.220.220
-    - domain: cloudflare-dns.com
-      answer: 104.16.249.249
+    - domain: dns.adguard-dns.com
+      answer: 94.140.14.14
+    - domain: ddns.adguard-dns.com
+      answer: 94.140.15.15
     - domain: cloudflare-dns.com
       answer: 104.16.248.249
+    - domain: cloudflare-dns.com
+      answer: 104.16.249.249
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
   parental_cache_size: 1048576
