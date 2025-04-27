@@ -291,7 +291,7 @@ filtering:
   cache_time: 30
   filters_update_interval: 72
   blocked_response_ttl: 10
-  filtering_enabled: true
+  filtering_enabled: false
   parental_enabled: false
   safebrowsing_enabled: false
   protection_enabled: true
