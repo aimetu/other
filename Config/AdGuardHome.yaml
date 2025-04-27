@@ -24,7 +24,7 @@ dns:
   refuse_any: true
   upstream_dns:
     - https://dns.alidns.com/dns-query
-    - https://dns.pub/dns-query
+    - https://doh.pub/dns-query
     - '[/openwrt.lan/]127.0.0.1'
     - '[/openwrt.local/]::1'
   upstream_dns_file: ""
@@ -268,9 +268,9 @@ filtering:
       answer: 223.5.5.5
     - domain: dns.alidns.com
       answer: 223.6.6.6
-    - domain: dns.pub
+    - domain: doh.pub
       answer: 1.12.12.21
-    - domain: dns.pub
+    - domain: doh.pub
       answer: 120.53.53.53
     - domain: dns.opendns.com
       answer: 208.67.222.222
