@@ -387,7 +387,7 @@ proxy-groups:
 # 流量: stash <-> http <-> vmess <-> ss1 <-> ss2 <-> 互联网
   proxies:
     - HongKong
-    - 🌤️ Local~W01
+    - 🌤️ Local-Wireguard
 
 - name: HongKong
   type: url-test
