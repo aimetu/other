@@ -36,9 +36,7 @@ dns:
     - https://dns.opendns.com/dns-query
   upstream_mode: parallel
   fastest_timeout: 1s
-  allowed_clients:
-    - 10.10.10.0/24
-    - fd12:ca4f:3aa9::/64
+allowed_clients: []
   disallowed_clients:
     - 10.0.0.0/23
     - 192.168.0.1/24
