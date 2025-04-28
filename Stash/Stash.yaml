@@ -82,40 +82,6 @@ proxies:
 #     port: 443
 #     password: your-password
 
- - name: 🌤️ Local-Pages01
-   type: vless
-   server: jinxiutu.pages.dev
-   port: 443
-   uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-   tls: true
-   skip-cert-verify: true
-   sni: jinxiutu.pages.dev
-   network: ws
-   ws-opts:
-     path: "/?ed=2560"
-     headers:
-       Host: jinxiutu.pages.dev
-   alterId: 0
-   cipher: ""
-   flow: ""
-
- - name: 🌤️ Local-Pages02
-   type: vless
-   server: jinqiantu.pages.dev
-   port: 443
-   uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-   tls: true
-   skip-cert-verify: true
-   sni: jinqiantu.pages.dev
-   network: ws
-   ws-opts:
-     path: "/?ed=2560"
-     headers:
-       Host: jinqiantu.pages.dev
-   alterId: 0
-   cipher: ""
-   flow: ""
-
 # 💡 dns 服务器配置
 dns:
 # 跳过证书验证，解决部分兼容性问题
