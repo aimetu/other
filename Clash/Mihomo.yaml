@@ -526,7 +526,7 @@ proxies:
         Host: p02.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🐔 FC-Vm
+  - name: 🐔 FCLOUD-VMESS
     type: vmess
     server: 2a0c:4ac1:8:a5::5
     port: 10011
@@ -543,7 +543,7 @@ proxies:
       headers:
         Host: www.bing.com
 
-  - name: 🐔 FC-VL
+  - name: 🐔 FCLOUD-VLESS
     type: vless
     server: 2a0c:4ac1:8:a5::5
     port: 10010
@@ -558,7 +558,7 @@ proxies:
       short-id: 5cbc298b
     client-fingerprint: chrome
 
-  - name: 🐔 FC-H2
+  - name: 🐔 FCLOUD-HYSTERIA2
     type: hysteria2
     server: 2a0c:4ac1:8:a5::5
     port: 10012
@@ -568,7 +568,7 @@ proxies:
     alpn:
       - h3
 
-  - name: 🐔 FC-TU
+  - name: 🐔 FCLOUD-TUIC
     type: tuic
     server: 2a0c:4ac1:8:a5::5
     port: 10013
