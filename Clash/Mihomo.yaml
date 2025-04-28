@@ -423,7 +423,7 @@ tunnels:
 #💡 本地代理服务器
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
 proxies: 
-  - name: 🌤️ Local-WireGuard # 代理名称,书写时请确保不会与其他代理节点重名
+  - name: 🌤️ WARP # 代理名称,书写时请确保不会与其他代理节点重名
     type: wireguard # 代理类型,此处为 wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU= # base64 编码的 wireguard 客户端私钥
     ip: 172.16.0.2 # 本机在 wireguard 网络中使用的 ipv4 地址
@@ -440,9 +440,9 @@ proxies:
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    dialer-proxy: 🐔 Local-Tuic # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
+    #dialer-proxy: 🐔 Local-Tuic # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: 🌤️ Local-jqt
+  - name: 🌤️ CF-JQT
     type: vless
     server: jinqiantu.pages.dev
     port: 443
@@ -459,7 +459,7 @@ proxies:
         Host: jinqiantu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jqt-p01
+  - name: 🌤️ CF-JQT-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 443
@@ -476,7 +476,7 @@ proxies:
         Host: p01.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jxt
+  - name: 🌤️ CF-JXT
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -493,7 +493,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jxt-p02
+  - name: 🌤️ CF-JXT-P02
     type: vless
     server: p02.jinqiantu.dpdns.org
     port: 443
@@ -510,7 +510,7 @@ proxies:
         Host: p02.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🐔 Local-Vmess
+  - name: 🐔 FC-Vm
     type: vmess
     server: 2a0c:4ac1:8:a5::5
     port: 10011
@@ -527,7 +527,7 @@ proxies:
       headers:
         Host: www.bing.com
 
-  - name: 🐔 Local-Vless
+  - name: 🐔 FC-VL
     type: vless
     server: 2a0c:4ac1:8:a5::5
     port: 10010
@@ -542,7 +542,7 @@ proxies:
       short-id: 5cbc298b
     client-fingerprint: chrome
 
-  - name: 🐔 Local-Hysteria2
+  - name: 🐔 FC-H2
     type: hysteria2
     server: 2a0c:4ac1:8:a5::5
     port: 10012
@@ -552,7 +552,7 @@ proxies:
     alpn:
       - h3
 
-  - name: 🐔 Local-Tuic
+  - name: 🐔 FC-TU
     type: tuic
     server: 2a0c:4ac1:8:a5::5
     port: 10013
