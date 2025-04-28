@@ -202,38 +202,6 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇭🇰 HongKong
 
-  - name: 🌤️ Local-Pages01
-    type: vless
-    server: jinxiutu.pages.dev
-    port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    udp: true
-    tls: true
-    network: ws
-    servername: jinxiutu.pages.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: jinxiutu.pages.dev
-      v2ray-http-upgrade: false
-
-  - name: 🌤️ Local-Pages02
-    type: vless
-    server: jinqiantu.pages.dev
-    port: 443
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-    udp: true
-    tls: true
-    network: ws
-    servername: jinqiantu.pages.dev
-    skip-cert-verify: true
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: jinqiantu.pages.dev
-      v2ray-http-upgrade: false
-
 proxy-providers:
   Subscribe:
     type: http
