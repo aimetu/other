@@ -442,7 +442,24 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
     #dialer-proxy: 🇭🇰 HongKong # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
-  - name: 🌤️ CF-JQT
+  - name: 🌤️ CDN-WROKERS-W01
+    type: vless
+    server: w01.jinqiantu.dpdns.org
+    port: 443
+    uuid: 2514871c-a9ac-42ed-9e6b-16ca5b7e91f8
+    udp: true
+    tls: true
+    network: ws
+    client-fingerprint: chrome
+    servername: w01.jinqiantu.dpdns.org
+    skip-cert-verify: true
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: w01.jinqiantu.dpdns.org
+      v2ray-http-upgrade: false
+
+  - name: 🌤️ CF-PAGES-01
     type: vless
     server: jinqiantu.pages.dev
     port: 443
@@ -457,9 +474,8 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: jinqiantu.pages.dev
-      v2ray-http-upgrade: false
 
-  - name: 🌤️ CF-JQT-P01
+  - name: 🌤️ CDN-PAGES-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 443
@@ -476,7 +492,7 @@ proxies:
         Host: p01.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🌤️ CF-JXT
+  - name: 🌤️ CF-PAGES-02
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -493,7 +509,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ CF-JXT-P02
+  - name: 🌤️ CDN-PAGES-P02
     type: vless
     server: p02.jinqiantu.dpdns.org
     port: 443
