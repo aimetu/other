@@ -183,7 +183,7 @@ sniffer:
     - "+.apple.com"
 
 proxies: 
-  - name: 🌤️ Local-Wireguard
+  - name: 🌤️ WARP
     type: wireguard
     private-key: nvWCeA9If1axAV3HnZ5oCsck6aPb/+I/+yhbPorfSFU=
     ip: 172.16.0.2
