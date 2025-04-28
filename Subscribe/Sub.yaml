@@ -1,5 +1,5 @@
 proxies: 
-  - name: 🌤️ Local-jqt
+  - name: 🌤️ CF-JQT
     type: vless
     server: jinqiantu.pages.dev
     port: 443
@@ -16,7 +16,7 @@ proxies:
         Host: jinqiantu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jqt-p01
+  - name: 🌤️ CF-JQT-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 443
@@ -33,7 +33,7 @@ proxies:
         Host: p01.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jxt
+  - name: 🌤️ CF-JXT
     type: vless
     server: jinxiutu.pages.dev
     port: 443
@@ -50,7 +50,7 @@ proxies:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
 
-  - name: 🌤️ Local-jxt-p02
+  - name: 🌤️ CF-JXT-P02
     type: vless
     server: p02.jinqiantu.dpdns.org
     port: 443
@@ -67,7 +67,7 @@ proxies:
         Host: p02.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
 
-  - name: 🐔 Local-Vmess
+  - name: 🐔 CV-VM
     type: vmess
     server: 2a0c:4ac1:8:a5::5
     port: 10011
@@ -84,7 +84,7 @@ proxies:
       headers:
         Host: www.bing.com
 
-  - name: 🐔 Local-Vless
+  - name: 🐔 CV-VL
     type: vless
     server: 2a0c:4ac1:8:a5::5
     port: 10010
@@ -99,7 +99,7 @@ proxies:
       short-id: 5cbc298b
     client-fingerprint: chrome
 
-  - name: 🐔 Local-Hysteria2
+  - name: 🐔 CV-H2
     type: hysteria2
     server: 2a0c:4ac1:8:a5::5
     port: 10012
@@ -109,7 +109,7 @@ proxies:
     alpn:
       - h3
 
-  - name: 🐔 Local-Tuic
+  - name: 🐔 CV-TU
     type: tuic
     server: 2a0c:4ac1:8:a5::5
     port: 10013
