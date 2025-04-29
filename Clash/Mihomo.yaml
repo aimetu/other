@@ -447,124 +447,147 @@ proxies:
     server: jinqiantu.pages.dev
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    servername: jinqiantu.pages.dev
     udp: true
     tls: true
     network: ws
-    client-fingerprint: chrome
-    servername: jinqiantu.pages.dev
-    skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: jinqiantu.pages.dev
-
+    client-fingerprint: randomized
+    skip-cert-verify: true
+    
   - name: 🌤️ CDN-PAGES-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 443
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    servername: p01.jinqiantu.dpdns.org
     udp: true
     tls: true
     network: ws
-    client-fingerprint: chrome
-    servername: p01.jinqiantu.dpdns.org
-    skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: p01.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
-
+    client-fingerprint: randomized
+    skip-cert-verify: true
+    
   - name: 🌤️ CF-PAGES-02
     type: vless
     server: jinxiutu.pages.dev
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: jinxiutu.pages.dev
     udp: true
     tls: true
     network: ws
-    client-fingerprint: chrome
-    servername: jinxiutu.pages.dev
-    skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
-
+    client-fingerprint: randomized
+    skip-cert-verify: true
+    
   - name: 🌤️ CDN-PAGES-P02
     type: vless
     server: p02.jinqiantu.dpdns.org
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: p02.jinqiantu.dpdns.org
     udp: true
     tls: true
     network: ws
-    client-fingerprint: chrome
-    servername: p02.jinqiantu.dpdns.org
-    skip-cert-verify: true
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: p02.jinqiantu.dpdns.org
       v2ray-http-upgrade: false
-
+    client-fingerprint: randomized
+    skip-cert-verify: true
+    
+  - name: 🌤️ CDN-WORKERS-W01
+    type: trojan
+    server: w01.jinqiantu.dpdns.org
+    port: 443
+    password: 63712d3b-50f6-46f6-ad2d-bac665563d04
+    sni: w01.jinqiantu.dpdns.org
+    udp: true
+    network: ws
+    ws-opts: 
+      path: "/?ed=2560"
+      headers:
+        Host: w01.jinqiantu.dpdns.org
+      v2ray-http-upgrade: false
+      v2ray-http-upgrade-fast-open: false
+    alpn:
+      - h3
+    client-fingerprint: randomized
+    skip-cert-verify: true
+    
   - name: 🐔 FCLOUD-VMESS
     type: vmess
     server: 2a0c:4ac1:8:a5::5
     port: 10011
     uuid: 63b277fa-90eb-438f-bbaa-ca9ad7af34a9
-    udp: true
-    tls: false
-    client-fingerprint: chrome
     alterId: 0
     cipher: auto
-    skip-cert-verify: true
+    udp: true
+    tls: false
     network: ws
     ws-opts:
       path: "63b277fa-90eb-438f-bbaa-ca9ad7af34a9-vm"
       headers:
         Host: www.bing.com
-
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
   - name: 🐔 FCLOUD-VLESS
     type: vless
     server: 2a0c:4ac1:8:a5::5
     port: 10010
     uuid: 63b277fa-90eb-438f-bbaa-ca9ad7af34a9
-    network: tcp
-    tls: true
-    udp: true
     flow: xtls-rprx-vision
+    udp: true
+    tls: true
+    network: tcp
     servername: www.yahoo.com
     reality-opts:
       public-key: 4j_p9Lu3VOyY466SnY1nGFca_4HfMxkmj8nnII2GgS4
       short-id: 5cbc298b
     client-fingerprint: chrome
-
+    skip-cert-verify: true
+    
   - name: 🐔 FCLOUD-HYSTERIA2
     type: hysteria2
     server: 2a0c:4ac1:8:a5::5
     port: 10012
     password: 63b277fa-90eb-438f-bbaa-ca9ad7af34a9
     sni: www.bing.com
-    skip-cert-verify: true
     alpn:
       - h3
-
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
   - name: 🐔 FCLOUD-TUIC
     type: tuic
     server: 2a0c:4ac1:8:a5::5
     port: 10013
     uuid: 63b277fa-90eb-438f-bbaa-ca9ad7af34a9
     password: 63b277fa-90eb-438f-bbaa-ca9ad7af34a9
-    alpn: [h3]
-    disable-sni: false
-    reduce-rtt: true
-    udp-relay-mode: native
     congestion-controller: bbr
-    fast-open: true
-    skip-cert-verify: true
+    udp-relay-mode: native
+    disable-sni: false
     sni: www.bing.com
+    reduce-rtt: true
+    fast-open: true
+    alpn:
+      - h3
+    client-fingerprint: chrome
+    skip-cert-verify: true
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
