@@ -474,6 +474,38 @@ proxies:
       v2ray-http-upgrade: false
     client-fingerprint: randomized
     skip-cert-verify: true
+
+  - name: 🌤️ CDN-PAGES-P01
+    type: vless
+    server: p01.jinqiantu.dpdns.org
+    port: 443
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    servername: p01.jinqiantu.dpdns.org
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: p01.jinqiantu.dpdns.org
+    client-fingerprint: randomized
+    skip-cert-verify: true
+
+  - name: 🌤️ CDN-PAGES-P02
+    type: vless
+    server: p02.jinqiantu.dpdns.org
+    port: 443
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: p02.jinqiantu.dpdns.org
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: p02.jinqiantu.dpdns.org
+    client-fingerprint: randomized
+    skip-cert-verify: true
     
   - name: 🌤️ CDN-WORKERS-W01
     type: trojan
