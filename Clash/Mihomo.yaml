@@ -457,21 +457,23 @@ proxies:
         Host: jinqiantu.pages.dev
     client-fingerprint: randomized
     skip-cert-verify: true
-    
+
   - name: 🌤️ CF-PAGES-02
-    type: vless
+    type: trojan
     server: jinxiutu.pages.dev
     port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    servername: jinxiutu.pages.dev
+    password: 38966bb4-c2a2-4010-8663-25db09980b2b
+    sni: jinxiutu.pages.dev
     udp: true
-    tls: true
     network: ws
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: jinxiutu.pages.dev
       v2ray-http-upgrade: false
+      v2ray-http-upgrade-fast-open: false
+    alpn:
+      - h3
     client-fingerprint: randomized
     skip-cert-verify: true
 
@@ -492,18 +494,21 @@ proxies:
     skip-cert-verify: true
 
   - name: 🌤️ CDN-PAGES-P02
-    type: vless
+    type: trojan
     server: p02.jinqiantu.dpdns.org
     port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    servername: p02.jinqiantu.dpdns.org
+    password: 38966bb4-c2a2-4010-8663-25db09980b2b
+    sni: p02.jinqiantu.dpdns.org
     udp: true
-    tls: true
     network: ws
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: p02.jinqiantu.dpdns.org
+      v2ray-http-upgrade: false
+      v2ray-http-upgrade-fast-open: false
+    alpn:
+      - h3
     client-fingerprint: randomized
     skip-cert-verify: true
     
