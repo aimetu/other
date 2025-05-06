@@ -322,8 +322,8 @@ proxy-groups:
   ssid-policy:
     cellular: Node 
     default: Auto
-    OpenWrt: DIRECT 
-    OpenWrt_5G: DIRECT
+    OpenWrt_2.4G: DIRECT 
+    OpenWrt_5.8G: DIRECT
 
 # Fallback：在确保服务器可用的情况下，由上至下自动选择服务器，不健康的代理会被跳过  
 - name: Fallback
