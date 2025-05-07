@@ -594,7 +594,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 FCLOUD-DE-TUIC
+  - name: 🐔 DE-FCLOUD-TUIC
     type: tuic
     server: 2a0c:4ac1:8:a5::5
     port: 10013
