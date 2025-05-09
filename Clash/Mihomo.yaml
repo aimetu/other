@@ -550,6 +550,22 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
     
+  - name: 🐔 US-FCLOUD-VLESS
+    type: vless
+    server: 2604:abc0:103:415:a1::97
+    port: 10010
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    flow: xtls-rprx-vision
+    udp: true
+    tls: true
+    network: tcp
+    servername: www.yahoo.com
+    reality-opts:
+      public-key: dC2QhZzJeVjE0pECQ6wqAkauM5R3RXMcCC7OQGZTfgE
+      short-id: 38a95164
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
   - name: 🐔 US-FCLOUD-VMESS
     type: vmess
     server: 2604:abc0:103:415:a1::97
@@ -566,23 +582,7 @@ proxies:
         Host: www.bing.com
     client-fingerprint: chrome
     skip-cert-verify: true
-    
-  - name: 🐔 US-FCLOUD-VLESS
-    type: vless
-    server: 2604:abc0:103:415:a1::97
-    port: 10010
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    flow: xtls-rprx-vision
-    udp: true
-    tls: true
-    network: tcp
-    servername: www.yahoo.com
-    reality-opts:
-      public-key: JSOT3BxWSgdaT3hZXeC6ygv6dcccl6yoo5vwBA2ehm8
-      short-id: 463b0ca9
-    client-fingerprint: chrome
-    skip-cert-verify: true
-    
+
   - name: 🐔 US-FCLOUD-HYSTERIA2
     type: hysteria2
     server: 2604:abc0:103:415:245a:97ff:fe82:bbd6
