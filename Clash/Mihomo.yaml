@@ -530,26 +530,7 @@ proxies:
       - h3
     client-fingerprint: randomized
     skip-cert-verify: true
-    
-  - name: 🌤️ CDN-WORKERS-W01
-    type: trojan
-    server: w01.jinqiantu.dpdns.org
-    port: 443
-    password: 63712d3b-50f6-46f6-ad2d-bac665563d04
-    sni: w01.jinqiantu.dpdns.org
-    udp: true
-    network: ws
-    ws-opts: 
-      path: "/?ed=2560"
-      headers:
-        Host: w01.jinqiantu.dpdns.org
-      v2ray-http-upgrade: false
-      v2ray-http-upgrade-fast-open: false
-    alpn:
-      - h3
-    client-fingerprint: randomized
-    skip-cert-verify: true
-    
+  
   - name: 🐔 US-FCLOUD-VLESS
     type: vless
     server: 2604:abc0:103:415:a1::97
