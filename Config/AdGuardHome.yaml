@@ -32,8 +32,8 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   fallback_dns:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.opendns.com/dns-query
+    - 1.1.1.1
+    - 208.67.222.222
   upstream_mode: parallel
   fastest_timeout: 1s
   allowed_clients: []
@@ -272,18 +272,10 @@ filtering:
       answer: 1.12.12.21
     - domain: doh.pub
       answer: 120.53.53.53
-    - domain: dns.opendns.com
-      answer: 208.67.222.222
-    - domain: dns.opendns.com
-      answer: 208.67.220.220
     - domain: dns.adguard-dns.com
       answer: 94.140.14.14
     - domain: dns.adguard-dns.com
       answer: 94.140.15.15
-    - domain: cloudflare-dns.com
-      answer: 104.16.248.249
-    - domain: cloudflare-dns.com
-      answer: 104.16.249.249
   safe_fs_patterns: []
   safebrowsing_cache_size: 1048576
   safesearch_cache_size: 1048576
