@@ -535,13 +535,13 @@ proxies:
     type: vless
     server: sg.jinqian.dpdns.org
     port: 443
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
     tls: true
     network: ws
     servername: sg.jinqian.dpdns.org
     ws-opts:
-      path: "/58935f45"
+      path: "/38966bb4"
       headers:
         Host: sg.jinqian.dpdns.org
     client-fingerprint: chrome
