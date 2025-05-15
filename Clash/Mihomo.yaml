@@ -530,6 +530,22 @@ proxies:
       - h3
     client-fingerprint: randomized
     skip-cert-verify: true
+
+  - name: 🐔 SG-WFCLOUD-VLESS
+    type: vless
+    server: sg.jinqian.dpdns.org
+    port: 443
+    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
+    udp: true
+    tls: true
+    network: ws
+    servername: sg.jinqian.dpdns.org
+    ws-opts:
+      path: "/58935f45"
+      headers:
+        Host: sg.jinqian.dpdns.org
+    client-fingerprint: chrome
+    skip-cert-verify: true
   
   - name: 🐔 US-FCLOUD-VLESS
     type: vless
