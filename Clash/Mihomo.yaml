@@ -533,17 +533,17 @@ proxies:
 
   - name: 🐔 SG-WFCLOUD-VLESS
     type: vless
-    server: sg.jinqian.dpdns.org
+    server: js.jinqian.dpdns.org
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
     tls: true
     network: ws
-    servername: sg.jinqian.dpdns.org
+    servername: js.jinqian.dpdns.org
     ws-opts:
       path: "/38966bb4"
       headers:
-        Host: sg.jinqian.dpdns.org
+        Host: js.jinqian.dpdns.org
     client-fingerprint: chrome
     skip-cert-verify: true
   
