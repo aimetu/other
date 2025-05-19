@@ -533,7 +533,7 @@ proxies:
 
   - name: 🐔 SG-WFCLOUD-VLESS
     type: vless
-    server: sg.jinqian.dpdns.org
+    server: www.visa.com.tw
     port: 443
     uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
     udp: true
