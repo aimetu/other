@@ -543,7 +543,7 @@ proxies:
     ws-opts:
       path: "/38966bb4"
       headers:
-        Host: sg.jinqian.dpdns.org
+        Host: au.jinqian.dpdns.org
     client-fingerprint: chrome
     skip-cert-verify: true
 
@@ -559,7 +559,7 @@ proxies:
     ws-opts:
       path: "/38966bb4"
       headers:
-        Host: sg.jinqian.dpdns.org
+        Host: in.jinqian.dpdns.org
     client-fingerprint: chrome
     skip-cert-verify: true
 
