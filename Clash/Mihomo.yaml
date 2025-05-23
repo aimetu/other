@@ -531,7 +531,7 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🐔 AU-WEBHOST-VLESS
+  - name: 🐔 AU-WEBHOST
     type: vless
     server: au.jinqian.dpdns.org
     port: 443
@@ -547,7 +547,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 IN-WEBHOST-VLESS
+  - name: 🐔 IN-WEBHOST
     type: vless
     server: in.jinqian.dpdns.org
     port: 443
@@ -563,7 +563,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 SG-WFCLOUD-VLESS
+  - name: 🐔 SG-WEBCLOUD
     type: vless
     server: sg.jinqian.dpdns.org
     port: 443
