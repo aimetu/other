@@ -556,7 +556,7 @@ proxies:
     udp: true
     tls: true
     network: tcp
-    servername: www.yahoo.com
+    servername: www.bing.com
     reality-opts:
       public-key: dC2QhZzJeVjE0pECQ6wqAkauM5R3RXMcCC7OQGZTfgE
       short-id: 38a95164
