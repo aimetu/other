@@ -531,38 +531,6 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🐔 AU-WEBHOST
-    type: vless
-    server: au.jinqian.dpdns.org
-    port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    udp: true
-    tls: true
-    network: ws
-    servername: au.jinqian.dpdns.org
-    ws-opts:
-      path: "/38966bb4"
-      headers:
-        Host: au.jinqian.dpdns.org
-    client-fingerprint: chrome
-    skip-cert-verify: true
-
-  - name: 🐔 IN-WEBHOST
-    type: vless
-    server: in.jinqian.dpdns.org
-    port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    udp: true
-    tls: true
-    network: ws
-    servername: in.jinqian.dpdns.org
-    ws-opts:
-      path: "/38966bb4"
-      headers:
-        Host: in.jinqian.dpdns.org
-    client-fingerprint: chrome
-    skip-cert-verify: true
-
   - name: 🐔 SG-WEBCLOUD
     type: vless
     server: sg.jinqian.dpdns.org
