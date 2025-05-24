@@ -558,8 +558,8 @@ proxies:
     network: tcp
     servername: www.bing.com
     reality-opts:
-      public-key: dC2QhZzJeVjE0pECQ6wqAkauM5R3RXMcCC7OQGZTfgE
-      short-id: 38a95164
+      public-key: r1qQqr1ZMR3iuQBxh0xHLmXqVLJiDLJNjWkCEwSu3Vw
+      short-id: 8b466913
     client-fingerprint: chrome
     skip-cert-verify: true
     
@@ -582,7 +582,7 @@ proxies:
 
   - name: 🐔 US-FCLOUD-HYSTERIA2
     type: hysteria2
-    server: 2604:abc0:103:415:a1::97
+    server: 2604:abc0:103:415:88a8:34ff:febf:95d9
     port: 10012
     password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     sni: www.bing.com
@@ -593,7 +593,7 @@ proxies:
     
   - name: 🐔 US-FCLOUD-TUIC
     type: tuic
-    server: 2604:abc0:103:415:a1::97
+    server: 2604:abc0:103:415:88a8:34ff:febf:95d9
     port: 10013
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
