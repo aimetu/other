@@ -558,8 +558,8 @@ proxies:
     network: tcp
     servername: www.bing.com
     reality-opts:
-      public-key: r1qQqr1ZMR3iuQBxh0xHLmXqVLJiDLJNjWkCEwSu3Vw
-      short-id: 8b466913
+      public-key: 4B_ESqPI9iGmODoC22_LFFVD5v_hpp6Rsir4srQfbTw
+      short-id: 1446e42a
     client-fingerprint: chrome
     skip-cert-verify: true
     
