@@ -547,7 +547,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
   
-  - name: 🐔 US-FCLOUD-VLESS
+  - name: 🐔 US-VLESS
     type: vless
     server: 2604:abc0:103:415:a1::97
     port: 10010
@@ -563,7 +563,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-FCLOUD-VMESS
+  - name: 🐔 US-VMESS
     type: vmess
     server: 2604:abc0:103:415:a1::97
     port: 10011
@@ -580,7 +580,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 US-FCLOUD-HYSTERIA2
+  - name: 🐔 US-HYSTERIA2
     type: hysteria2
     server: 2604:abc0:103:415:88a8:34ff:febf:95d9
     port: 10012
@@ -591,9 +591,70 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-FCLOUD-TUIC
+  - name: 🐔 US-TUIC
     type: tuic
     server: 2604:abc0:103:415:88a8:34ff:febf:95d9
+    port: 10013
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    congestion-controller: bbr
+    udp-relay-mode: native
+    disable-sni: false
+    sni: www.bing.com
+    reduce-rtt: true
+    fast-open: true
+    alpn:
+      - h3
+    client-fingerprint: chrome
+    skip-cert-verify: true
+
+  - name: 🐔 IN-VLESS
+    type: vless
+    server: 2401:4ea0:1:c82f::a1c
+    port: 10010
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    flow: xtls-rprx-vision
+    udp: true
+    tls: true
+    network: tcp
+    servername: www.bing.com
+    reality-opts:
+      public-key: ZWX3XZzWciF-AHowyIptURORGvZKKrmO3H6JMo7EmnI
+      short-id: d6a4c211
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
+  - name: 🐔 IN-VMESS
+    type: vmess
+    server: 2401:4ea0:1:c82f::a1c
+    port: 10011
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: "5e7b8799-1f03-4c3a-911f-7ce6911483c9-vm"
+      headers:
+        Host: www.bing.com
+    client-fingerprint: chrome
+    skip-cert-verify: true
+
+  - name: 🐔 IN-HYSTERIA2
+    type: hysteria2
+    server: 2401:4ea0:1:c82f::a1c
+    port: 10012
+    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    sni: www.bing.com
+    alpn:
+      - h3
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
+  - name: 🐔 IN-TUIC
+    type: tuic
+    server: 2401:4ea0:1:c82f::a1c
     port: 10013
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
