@@ -495,39 +495,10 @@ proxy-groups:
   - China
   - Pick
   - Node
-
-- name: TikTok
-  type: select
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
-  proxies:
-  - Pick
-  - Node
-  - HongKong
-  - Taiwan
-  - Japan
-  - Korea
-  - Singapore
-  - America
-  - Nations
-  - China
   
 - name: Telegram
   type: select
   icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
-  proxies:
-  - Pick
-  - Node
-  - HongKong
-  - Taiwan
-  - Japan
-  - Korea
-  - Singapore
-  - America
-  - Nations
-
-- name: Discord
-  type: select
-  icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/discord.png
   proxies:
   - Pick
   - Node
@@ -775,21 +746,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Speedtest/Speedtest.yaml
     interval: 259200
     
-  🎵 TikTok:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    interval: 259200
-    
   ✉️ Telegram:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
     interval: 259200
 
-  🗣️ Discord:
-    behavior: classical
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
-    interval: 259200
-    
   🎶 Spotify:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
@@ -916,9 +877,7 @@ rules:
 - RULE-SET, ⛔ AdLite, AdBlock
 - RULE-SET, ⛔ HttpDNS, AdBlock
 - RULE-SET, 🕸️ Speedtest, Speedtest
-- RULE-SET, 🎵 TikTok, TikTok
 - RULE-SET, ✉️ Telegram, Telegram
-- RULE-SET, 🗣️ Discord, Discord
 - RULE-SET, 🎶 Spotify, Spotify
 - RULE-SET, 📽️ Netflix, Netflix
 - RULE-SET, 📼 Disney+, Disney+
