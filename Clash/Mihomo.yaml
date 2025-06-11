@@ -601,7 +601,7 @@ proxies:
     udp: true
     tls: true
     network: tcp
-    servername: www.java.com
+    servername: www.amd.com
     reality-opts:
       public-key: kyejSm9mBXa9gWKqDI-I98-HVvenPugFHIOf_yvJmAo
       short-id: 6ba85179e30d4fc2
@@ -617,7 +617,7 @@ proxies:
     udp: true
     tls: true
     network: grpc
-    servername: www.java.com
+    servername: www.amd.com
     grpc-opts:
       grpc-service-name: "grpc"
     reality-opts:
