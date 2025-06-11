@@ -530,22 +530,6 @@ proxies:
       - h3
     client-fingerprint: randomized
     skip-cert-verify: true
-
-  - name: 🐔 SG-WEBCLOUD
-    type: vless
-    server: sg.jinqian.dpdns.org
-    port: 443
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    udp: true
-    tls: true
-    network: ws
-    servername: sg.jinqian.dpdns.org
-    ws-opts:
-      path: "/38966bb4"
-      headers:
-        Host: sg.jinqian.dpdns.org
-    client-fingerprint: chrome
-    skip-cert-verify: true
   
   - name: 🐔 US-S1-VLESS
     type: vless
@@ -608,64 +592,38 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 IN-S1-VLESS
+  - name: 🐔 TUR-N1-VLESS
     type: vless
-    server: 2401:4ea0:1:c82f::a1c
-    port: 10010
+    server: 45.95.214.224
+    port: 10011
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     flow: xtls-rprx-vision
     udp: true
     tls: true
     network: tcp
-    servername: www.bing.com
+    servername: www.java.com
     reality-opts:
-      public-key: ZWX3XZzWciF-AHowyIptURORGvZKKrmO3H6JMo7EmnI
-      short-id: d6a4c211
+      public-key: kyejSm9mBXa9gWKqDI-I98-HVvenPugFHIOf_yvJmAo
+      short-id: 6ba85179e30d4fc2
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 IN-S1-VMESS
-    type: vmess
-    server: 2401:4ea0:1:c82f::a1c
+  - name: 🐔 TUR-S1-VLESS
+    type: vless
+    server: 45.95.214.224
     port: 10011
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    alterId: 0
-    cipher: auto
+    flow:
     udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: "5e7b8799-1f03-4c3a-911f-7ce6911483c9-vm"
-      headers:
-        Host: www.bing.com
-    client-fingerprint: chrome
-    skip-cert-verify: true
-
-  - name: 🐔 IN-S1-HYSTERIA2
-    type: hysteria2
-    server: 2401:4ea0:1:c82f::a1c
-    port: 10012
-    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    sni: www.bing.com
-    alpn:
-      - h3
-    client-fingerprint: chrome
-    skip-cert-verify: true
-    
-  - name: 🐔 IN-S1-TUIC
-    type: tuic
-    server: 2401:4ea0:1:c82f::a1c
-    port: 10013
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    congestion-controller: bbr
-    udp-relay-mode: native
-    disable-sni: false
-    sni: www.bing.com
-    reduce-rtt: true
-    fast-open: true
-    alpn:
-      - h3
+    tls: true
+    network: grpc
+    servername: www.java.com
+    grpc-opts:
+      grpc-service-name: "grpc"
+    reality-opts:
+      public-key: kyejSm9mBXa9gWKqDI-I98-HVvenPugFHIOf_yvJmAo
+      short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
     client-fingerprint: chrome
     skip-cert-verify: true
   
