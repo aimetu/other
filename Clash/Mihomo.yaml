@@ -81,7 +81,7 @@ etag-support: true # 外部资源下载的 etag 支持
 
 external-controller: 0.0.0.0:9090 # 外部控制器 api 监听地址，允许使用 RESTful API 控制您的 mihomo 内核，你可以将 127.0.0.1 修改为 0.0.0.0 来监听所有 ip
 external-controller-tls: 0.0.0.0:9443 # 外部控制器 https-api 监听地址，需要配置 tls 部分证书和其私钥配置，使用 tls 也必须填写 external-controller
-secret: password # http(s)-api、api 监听地址外部控制器访问密钥
+secret: U2FsdGVkX18ZbnaTEGawdyfMO6FQZYRbmyZcblLGyGE= # http(s)-api、api 监听地址外部控制器访问密钥
 #tls:
 #  certificate: string # 证书 PEM 格式，或者 证书的路径
 #  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
@@ -181,11 +181,11 @@ tun:
   #- 0
   #- 10
   #include-package: # 包含的 android 应用包名使用 tun，未配置的应用包不会使用
-  #- com.android.chrome
   #- com.android.vending
   #- com.google.android.youtube
   #- com.google.android.apps.maps
   #- com.google.android.play.games
+  #- com.google.android.apps.translate
   #exclude-package: # 排除 android 应用包名，使其避免使用 tun
   #- com.adguard.android
   #- org.localsend.localsend_app
@@ -1430,8 +1430,10 @@ rule-providers:
 # DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
 # DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
 # DOMAIN-REGEX：匹配域名正则表达式
-# PROCESS-NAME：进程规则，匹配进程名称（Android 平台可以匹配包名）
+# PROCESS-NAME：使用进程匹配，在 Android 平台可以匹配包名
+# PROCESS-NAME-REGEX：使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
 # PROCESS-PATH：进程路径规则，匹配完整进程路径
+# PROCESS-PATH-REGEX：使用进程路径正则表达式匹配
 # IP-CIDR：ip 范围规则，请求 ipv4 匹配的指定范围 参考：https://www.ipaddressguide.com/
 # IP-CIDR6：ip 范围规则，请求 ipv6 匹配的指定范围
 # IP-SUFFIX：匹配 IP 后缀范围
@@ -1490,7 +1492,14 @@ rules:
   #- IN-PORT, 7890, 🇨🇳 China
   - PROCESS-NAME, Notion.exe, 🌐 Global
   - PROCESS-NAME, OneDriveUpdater.exe, 🌐 Global
+  #- PROCESS-NAME, com.android.vending, 📟 Google  # 使用进程匹配，Android平台可以匹配包名
+  #- PROCESS-NAME, org.telegram.messenger, ✉️ Telegram
+  #- PROCESS-NAME, com.openai.chatgpt, 🤖 OpenAI
+  #- PROCESS-NAME-REGEX, *.telegram.*, ✉️ Telegram # 使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
   - PROCESS-PATH, C:\Program Files\Microsoft OneDrive\OneDrive.exe, 🌐 Global
+  #- PROCESS-PATH-REGEX, *\Notion\Notion.exe, 🌐 Global
+  #- PROCESS-PATH-REGEX, *.android.calendar, 📟 Google
+  #- PROCESS-PATH-REGEX, (?i).*google.android.apps.*, 📟 Google # 使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
   - AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 4483)), ⛔ AdBlock # AND：规则内的条件都必须满足时才会匹配
   - AND, ((DOMAIN-SUFFIX, bilibili.com), (NETWORK, UDP), (DST-PORT, 9305)), ⛔ AdBlock 
   - AND, ((NETWORK, UDP), (DST-PORT, 443)), ⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
