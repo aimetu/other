@@ -28,7 +28,7 @@ etag-support: true
 
 external-controller: 0.0.0.0:9090
 external-controller-tls: 0.0.0.0:9443
-secret: password
+secret: U2FsdGVkX18ZbnaTEGawdyfMO6FQZYRbmyZcblLGyGE=
 
 external-ui: ./ui
 external-ui-name: zashboard
