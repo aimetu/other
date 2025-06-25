@@ -182,8 +182,13 @@ tun:
   #- 10
   #include-package: # 包含的 android 应用包名使用 tun，未配置的应用包不会使用
   #- com.android.chrome
+  #- com.android.vending
+  #- com.google.android.youtube
+  #- com.google.android.apps.maps
+  #- com.google.android.play.games
   #exclude-package: # 排除 android 应用包名，使其避免使用 tun
   #- com.adguard.android
+  #- org.localsend.localsend_app
 
 #💡 域名解析 dns 服务器配置
 dns:
