@@ -262,6 +262,7 @@ proxy-groups:
       - ♻️ Auto
       - ✅ Node
       - ⚠️ Fallback
+      - ⚖️ Load Balance
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
       - 🇯🇵 Japan
@@ -312,6 +313,27 @@ proxy-groups:
     timeout: 3000
     max-failed-times: 3
     lazy: true
+    hidden: true
+    proxies:
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
+  - name: ⚖️ Load Balance
+    type: load-balance
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/load.png
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 0
+    timeout: 3000
+    max-failed-times: 3
+    lazy: true
+    hidden: true
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
