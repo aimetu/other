@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.05.05
+# 2025.07.05
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -200,7 +200,7 @@ dns:
   respect-rules: true # dns 遵守路由规则，需配置 proxy-server-nameserver
   use-hosts: true # 是否回应配置中的 hosts
   use-system-hosts: true # 是否查询系统中的 hosts
-  listen: 0.0.0.0:53 # dns 服务监听，仅支持 udp
+  listen: 0.0.0.0:1053 # dns 服务监听，支持 udp, tcp
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
