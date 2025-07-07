@@ -317,6 +317,7 @@ proxy-groups:
     timeout: 3000
     max-failed-times: 3
     lazy: true
+    hidden: true
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
@@ -336,6 +337,7 @@ proxy-groups:
     timeout: 3000
     max-failed-times: 3
     lazy: true
+    hidden: true
     proxies:
       - 🇭🇰 HongKong
       - 🇹🇼 Taiwan
