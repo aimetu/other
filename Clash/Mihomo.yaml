@@ -536,9 +536,9 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
   
-  - name: 🐔 US-S1-VLESS
+  - name: 🐔 IN-S1-VLESS
     type: vless
-    server: 2604:abc0:103:415:a1::97
+    server: 2401:4ea0:1:c82f::a83
     port: 10010
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     flow: xtls-rprx-vision
@@ -547,14 +547,14 @@ proxies:
     network: tcp
     servername: www.bing.com
     reality-opts:
-      public-key: ymV1idvg7rZ-V8v8EWuvTz0ujZQN5vqmZBd5fvn24Hs
-      short-id: a0772ae9
+      public-key: GdHNXN2DaYDsnGw08zCEYMP6sxOoAj2Fs91Uf1edvEo
+      short-id: 5a2e5a89
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-S1-VMESS
+  - name: 🐔 IN-S1-VMESS
     type: vmess
-    server: 2604:abc0:103:415:a1::97
+    server: 2401:4ea0:1:c82f::a83
     port: 10011
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     alterId: 0
@@ -569,9 +569,9 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 US-S1-HYSTERIA2
+  - name: 🐔 IN-S1-HYSTERIA2
     type: hysteria2
-    server: 2604:abc0:103:415:88a8:34ff:febf:95d9
+    server: 2401:4ea0:1:c82f::a83
     port: 10012
     password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     sni: www.bing.com
@@ -580,9 +580,9 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-S1-TUIC
+  - name: 🐔 IN-S1-TUIC
     type: tuic
-    server: 2604:abc0:103:415:88a8:34ff:febf:95d9
+    server: 2401:4ea0:1:c82f::a83
     port: 10013
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
