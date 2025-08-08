@@ -536,68 +536,42 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
   
-  - name: 🐔 IN-S1-VLESS
+  - name: 🐔 US-VLESS-TCP
     type: vless
-    server: 2401:4ea0:1:c82f::a83
-    port: 10010
+    server: 2604:abc0:103:415:a1::48
+    port: 10011
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     flow: xtls-rprx-vision
     udp: true
     tls: true
     network: tcp
-    servername: www.bing.com
+    servername: www.amd.com
     reality-opts:
-      public-key: GdHNXN2DaYDsnGw08zCEYMP6sxOoAj2Fs91Uf1edvEo
-      short-id: 5a2e5a89
+      public-key: HyZjg8oAVNHgHULx7MVIUQSYTvascXOH-sa12Vxlp3g
+      short-id: 6ba85179e30d4fc2
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 IN-S1-VMESS
-    type: vmess
-    server: 2401:4ea0:1:c82f::a83
+  - name: 🐔 US-VLESS-GRPC
+    type: vless
+    server: 2604:abc0:103:415:a1::48
     port: 10011
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    alterId: 0
-    cipher: auto
+    flow:
     udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: "5e7b8799-1f03-4c3a-911f-7ce6911483c9-vm"
-      headers:
-        Host: www.bing.com
+    tls: true
+    network: grpc
+    servername: www.amd.com
+    grpc-opts:
+      grpc-service-name: "grpc"
+    reality-opts:
+      public-key: HyZjg8oAVNHgHULx7MVIUQSYTvascXOH-sa12Vxlp3g
+      short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 IN-S1-HYSTERIA2
-    type: hysteria2
-    server: 2401:4ea0:1:c82f::a83
-    port: 10012
-    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    sni: www.bing.com
-    alpn:
-      - h3
-    client-fingerprint: chrome
-    skip-cert-verify: true
-    
-  - name: 🐔 IN-S1-TUIC
-    type: tuic
-    server: 2401:4ea0:1:c82f::a83
-    port: 10013
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    congestion-controller: bbr
-    udp-relay-mode: native
-    disable-sni: false
-    sni: www.bing.com
-    reduce-rtt: true
-    fast-open: true
-    alpn:
-      - h3
-    client-fingerprint: chrome
-    skip-cert-verify: true
-
-  - name: 🐔 TUR-N1-VLESS
+  - name: 🐔 TUR-VLESS-TCP
     type: vless
     server: 45.95.214.224
     port: 10011
@@ -613,7 +587,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 TUR-S1-VLESS
+  - name: 🐔 TUR-VLESS-GRPC
     type: vless
     server: 45.95.214.224
     port: 10011
