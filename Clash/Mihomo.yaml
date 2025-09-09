@@ -501,7 +501,7 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
     
-  - name: 🌤️ CDN-NAT64-P01
+  - name: 🌤️ CDN-WORKERS-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 443
