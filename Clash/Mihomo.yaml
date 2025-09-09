@@ -466,22 +466,6 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: 🌤️ CF-PAGES-01
-    type: vless
-    server: jinqiantu.pages.dev
-    port: 443
-    uuid: 58935f45-89c2-4b82-a77c-72eee801da09
-    servername: jinqiantu.pages.dev
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: jinqiantu.pages.dev
-    client-fingerprint: randomized
-    skip-cert-verify: true
-
   - name: 🌤️ CDN-WORKERS-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
@@ -498,41 +482,35 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🌤️ CF-PAGES-02
-    type: trojan
-    server: jinxiutu.pages.dev
+  - name: 🌤️ CF-PAGES-01
+    type: vless
+    server: jinqianto.pages.dev
     port: 443
-    password: 38966bb4-c2a2-4010-8663-25db09980b2b
-    sni: jinxiutu.pages.dev
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: jinqianto.pages.dev
     udp: true
+    tls: true
     network: ws
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: jinxiutu.pages.dev
-      v2ray-http-upgrade: false
-      v2ray-http-upgrade-fast-open: false
-    alpn:
-      - h3
+        Host: jinqianto.pages.dev
     client-fingerprint: randomized
     skip-cert-verify: true
-    
-  - name: 🌤️ CDN-WORKERS-P02
-    type: trojan
+
+  - name: 🌤️ CDN-PAGES-P02
+    type: vless
     server: p02.jinqiantu.dpdns.org
     port: 443
-    password: 38966bb4-c2a2-4010-8663-25db09980b2b
-    sni: p02.jinqiantu.dpdns.org
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: p02.jinqiantu.dpdns.org
     udp: true
+    tls: true
     network: ws
     ws-opts:
       path: "/?ed=2560"
       headers:
         Host: p02.jinqiantu.dpdns.org
-      v2ray-http-upgrade: false
-      v2ray-http-upgrade-fast-open: false
-    alpn:
-      - h3
     client-fingerprint: randomized
     skip-cert-verify: true
   
