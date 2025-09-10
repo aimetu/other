@@ -482,7 +482,7 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🌤️ CF-PAGES-01
+  - name: 🌤️ CF-PAGES-P02
     type: vless
     server: jinqianto.pages.dev
     port: 443
