@@ -466,7 +466,7 @@ proxies:
     dns: [1.1.1.1,2606:4700:4700::1111]
     #dialer-proxy: 🇯🇵 Japan
 
-  - name: 🌤️ CDN-WORKERS-P01
+  - name: 🇯🇵 CDN-WORKERS-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
     port: 8443
@@ -482,7 +482,23 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🌤️ CF-PAGES-P02
+  - name: 🇸🇬 CDN-PAGES-P02
+    type: vless
+    server: p02.jinqiantu.dpdns.org
+    port: 2053
+    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
+    servername: p02.jinqiantu.dpdns.org
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: p02.jinqiantu.dpdns.org
+    client-fingerprint: randomized
+    skip-cert-verify: true
+
+  - name: 🇸🇬 CF-PAGES-P02
     type: vless
     server: jinqianto.pages.dev
     port: 443
@@ -498,22 +514,6 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
 
-  - name: 🌤️ CDN-PAGES-P02
-    type: vless
-    server: p02.jinqiantu.dpdns.org
-    port: 2053
-    uuid: 38966bb4-c2a2-4010-8663-25db09980b2b
-    servername: p02.jinqiantu.dpdns.org
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: "/?ed=2560"
-      headers:
-        Host: p02.jinqiantu.dpdns.org
-    client-fingerprint: randomized
-    skip-cert-verify: true
-  
   - name: 🇺🇸 US-S1-VISION
     type: vless
     server: 2604:abc0:103:415:a1::48
