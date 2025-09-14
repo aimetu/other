@@ -514,7 +514,7 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
   
-  - name: 🐔 US-S1-VISION
+  - name: 🇺🇸 US-S1-VISION
     type: vless
     server: 2604:abc0:103:415:a1::48
     port: 10011
@@ -530,7 +530,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-S1-GRPC
+  - name: 🇺🇸 US-S1-GRPC
     type: vless
     server: 2604:abc0:103:415:a1::48
     port: 10011
@@ -549,7 +549,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 TUR-N1-VISION
+  - name: 🇹🇷 TUR-N1-VISION
     type: vless
     server: 45.95.214.224
     port: 10011
@@ -565,7 +565,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 TUR-N1-GRPC
+  - name: 🇹🇷 TUR-N1-GRPC
     type: vless
     server: 45.95.214.224
     port: 10011
@@ -584,7 +584,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 IT-R1-VISION
+  - name: 🇮🇹 IT-R1-VISION
     type: vless
     server: 5.59.248.78
     port: 10011
@@ -600,7 +600,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 IT-R1-GRPC
+  - name: 🇮🇹 IT-R1-GRPC
     type: vless
     server: 5.59.248.78
     port: 10011
