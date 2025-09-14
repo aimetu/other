@@ -514,7 +514,7 @@ proxies:
     client-fingerprint: randomized
     skip-cert-verify: true
   
-  - name: 🐔 US-VLESS-TCP
+  - name: 🐔 US-S1-VISION
     type: vless
     server: 2604:abc0:103:415:a1::48
     port: 10011
@@ -530,7 +530,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 US-VLESS-GRPC
+  - name: 🐔 US-S1-GRPC
     type: vless
     server: 2604:abc0:103:415:a1::48
     port: 10011
@@ -549,7 +549,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🐔 TUR-VLESS-TCP
+  - name: 🐔 TUR-N1-VISION
     type: vless
     server: 45.95.214.224
     port: 10011
@@ -565,7 +565,7 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
     
-  - name: 🐔 TUR-VLESS-GRPC
+  - name: 🐔 TUR-N1-GRPC
     type: vless
     server: 45.95.214.224
     port: 10011
@@ -579,6 +579,41 @@ proxies:
       grpc-service-name: "grpc"
     reality-opts:
       public-key: kyejSm9mBXa9gWKqDI-I98-HVvenPugFHIOf_yvJmAo
+      short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
+    client-fingerprint: chrome
+    skip-cert-verify: true
+
+  - name: 🐔 IT-R1-VISION
+    type: vless
+    server: 5.59.248.78
+    port: 10011
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    flow: xtls-rprx-vision
+    udp: true
+    tls: true
+    network: tcp
+    servername: www.amd.com
+    reality-opts:
+      public-key: N2gCE1M3mtsbpLCGzfg3PDR7rL1T-wjQJDSt8205ej4
+      short-id: 6ba85179e30d4fc2
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    
+  - name: 🐔 IT-R1-GRPC
+    type: vless
+    server: 5.59.248.78
+    port: 10011
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    flow:
+    udp: true
+    tls: true
+    network: grpc
+    servername: www.amd.com
+    grpc-opts:
+      grpc-service-name: "grpc"
+    reality-opts:
+      public-key: N2gCE1M3mtsbpLCGzfg3PDR7rL1T-wjQJDSt8205ej4
       short-id: 6ba85179e30d4fc2
       support-x25519mlkem768: false
     client-fingerprint: chrome
