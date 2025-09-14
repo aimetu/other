@@ -527,6 +527,7 @@ proxies:
     reality-opts:
       public-key: HyZjg8oAVNHgHULx7MVIUQSYTvascXOH-sa12Vxlp3g
       short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
     client-fingerprint: chrome
     skip-cert-verify: true
     
@@ -562,6 +563,7 @@ proxies:
     reality-opts:
       public-key: kyejSm9mBXa9gWKqDI-I98-HVvenPugFHIOf_yvJmAo
       short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
     client-fingerprint: chrome
     skip-cert-verify: true
     
@@ -597,6 +599,7 @@ proxies:
     reality-opts:
       public-key: N2gCE1M3mtsbpLCGzfg3PDR7rL1T-wjQJDSt8205ej4
       short-id: 6ba85179e30d4fc2
+      support-x25519mlkem768: false
     client-fingerprint: chrome
     skip-cert-verify: true
     
