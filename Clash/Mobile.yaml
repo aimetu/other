@@ -64,6 +64,7 @@ tun:
   auto-redir: true
   device: utun
   strict_route: true
+  disable-icmp-forwarding: true
   mtu: 9000
   gso: true
   gso-max-size: 65536
