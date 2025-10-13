@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.09.25
+# 2025.10.10
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -470,7 +470,7 @@ proxies:
   - name: 🇯🇵 CDN-WORKERS-P01
     type: vless
     server: p01.jinqiantu.dpdns.org
-    port: 8443
+    port: 2096
     uuid: 58935f45-89c2-4b82-a77c-72eee801da09
     servername: p01.jinqiantu.dpdns.org
     udp: true
