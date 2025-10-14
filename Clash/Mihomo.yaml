@@ -524,9 +524,9 @@ proxies:
     udp: true
     tls: true
     network: tcp
-    servername: www.amd.com
+    servername: addons.mozilla.org
     reality-opts:
-      public-key: w9smDQ21yww19KG3wVhifWmBp6mKu6EldPbHDg_77Bs
+      public-key: cb_928hZONrOul5UbnxzWSrcZQVwoG4nBY0qKTEI2XA
       short-id: 6ba85179e30d4fc2
       support-x25519mlkem768: false
     client-fingerprint: chrome
@@ -541,11 +541,11 @@ proxies:
     udp: true
     tls: true
     network: grpc
-    servername: www.amd.com
+    servername: addons.mozilla.org
     grpc-opts:
       grpc-service-name: "grpc"
     reality-opts:
-      public-key: w9smDQ21yww19KG3wVhifWmBp6mKu6EldPbHDg_77Bs
+      public-key: cb_928hZONrOul5UbnxzWSrcZQVwoG4nBY0qKTEI2XA
       short-id: 6ba85179e30d4fc2
       support-x25519mlkem768: false
     client-fingerprint: chrome
