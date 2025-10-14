@@ -526,7 +526,7 @@ proxies:
     network: tcp
     servername: addons.mozilla.org
     reality-opts:
-      public-key: cb_928hZONrOul5UbnxzWSrcZQVwoG4nBY0qKTEI2XA
+      public-key: -ohUyaVrQ3XxPjSCMAZZXgZVFCeSxa1VoiaghgHDj3U
       short-id: 6ba85179e30d4fc2
       support-x25519mlkem768: false
     client-fingerprint: chrome
@@ -545,7 +545,7 @@ proxies:
     grpc-opts:
       grpc-service-name: "grpc"
     reality-opts:
-      public-key: cb_928hZONrOul5UbnxzWSrcZQVwoG4nBY0qKTEI2XA
+      public-key: -ohUyaVrQ3XxPjSCMAZZXgZVFCeSxa1VoiaghgHDj3U
       short-id: 6ba85179e30d4fc2
       support-x25519mlkem768: false
     client-fingerprint: chrome
