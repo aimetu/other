@@ -551,40 +551,84 @@ proxies:
     client-fingerprint: chrome
     skip-cert-verify: true
 
-  - name: 🇮🇹 IT-R1-VISION
+  - name: 🇮🇹 IT-R1-VLESS
     type: vless
     server: 5.59.248.78
-    port: 10011
+    port: 25402
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    flow: xtls-rprx-vision
     udp: true
     tls: true
-    network: tcp
-    servername: www.amd.com
-    reality-opts:
-      public-key: uDzvpNvr97Egi026tlwr44YPzcYgeoNM3ULs8qfNzhM
-      short-id: 6ba85179e30d4fc2
-      support-x25519mlkem768: false
-    client-fingerprint: chrome
+    network: ws
+    servername: it.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: it.jinqian.dpdns.org
+    client-fingerprint: chrome    
+    skip-cert-verify: true
+
+  - name: 🇮🇹 IT-R1-VLESS-CDN01
+    type: vless
+    server: it.jinqian.dpdns.org
+    port: 2053
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    network: ws
+    servername: it.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: it.jinqian.dpdns.org
+    client-fingerprint: chrome    
     skip-cert-verify: true
     
-  - name: 🇮🇹 IT-R1-GRPC
+  - name: 🇮🇹 IT-R1-VLESS-CDN02
     type: vless
-    server: 5.59.248.78
-    port: 10011
+    server: ip.sb
+    port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    flow:
     udp: true
     tls: true
-    network: grpc
-    servername: www.amd.com
-    grpc-opts:
-      grpc-service-name: "grpc"
-    reality-opts:
-      public-key: uDzvpNvr97Egi026tlwr44YPzcYgeoNM3ULs8qfNzhM
-      short-id: 6ba85179e30d4fc2
-      support-x25519mlkem768: false
-    client-fingerprint: chrome
+    network: ws
+    servername: it.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: it.jinqian.dpdns.org
+    client-fingerprint: chrome    
+    skip-cert-verify: true
+    
+  - name: 🇮🇹 IT-R1-VLESS-CDN03
+    type: vless
+    server: time.is
+    port: 2087
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    network: ws
+    servername: it.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: it.jinqian.dpdns.org
+    client-fingerprint: chrome    
+    skip-cert-verify: true
+
+  - name: 🇮🇹 IT-R1-VLESS-CDN04
+    type: vless
+    server: www.visa.cn
+    port: 2096
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    network: ws
+    servername: it.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: it.jinqian.dpdns.org
+    client-fingerprint: chrome    
     skip-cert-verify: true
 
   - {name: "🇺🇸 US-S1-VlESS", type: vless, server: 2604:abc0:103:415:a1::48, port: 32146, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} }
