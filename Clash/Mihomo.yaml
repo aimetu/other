@@ -233,7 +233,7 @@ dns:
   default-nameserver: # 用于解析 nameserver，fallback 域名的 dns 服务域, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
     - "119.29.29.29"
-    #- "tls://1.1.1.1"
+    #- "tls://1.0.0.1"
     #- "https://208.67.222.222/dns-query"
     
   nameserver: # 默认加密 dns 服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
@@ -242,9 +242,9 @@ dns:
     #- "quic://dns.alidns.com"
 
   proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - "tls://1.1.1.1"
+    - "tls://1.0.0.1"
     - "tls://208.67.222.222"
-    #- "https://1.0.0.1/dns-query"
+    #- "https://1.1.1.1/dns-query"
     #- "https://208.67.220.220/dns-query"
     
   fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
