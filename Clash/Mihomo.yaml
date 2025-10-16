@@ -548,7 +548,7 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
     
-  - {name: "🇺🇸 US-S1-VlESS", type: vless, server: 2604:abc0:103:415:a1::48, port: 32146, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
+  - {name: "🇺🇸 US-S1-VLESS", type: vless, server: 2604:abc0:103:415:a1::48, port: 32146, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-TROJAN", type: trojan, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 42136, password: XAJrWY6ig6, udp: true, network: ws, sni: us.jinqian.dpdns.org, skip-cert-verify: true, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-VMESS-CDN01", type: vmess, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-VMESS-CDN02", type: vmess, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
