@@ -23,7 +23,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - https://dns.alidns.com/dns-query
+    - quic://dns.alidns.com
     - https://doh.pub/dns-query
     - '[/openwrt.lan/]127.0.0.1'
     - '[/openwrt.local/]::1'
@@ -32,7 +32,7 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   fallback_dns:
-    - 1.1.1.1
+    - 1.0.0.1
     - 208.67.222.222
   upstream_mode: parallel
   fastest_timeout: 1s
