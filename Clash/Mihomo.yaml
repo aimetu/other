@@ -93,6 +93,9 @@ secret: U2FsdGVkX18ZbnaTEGawdyfMO6FQZYRbmyZcblLGyGE= # http(s)-api、api 监听�
 external-controller-cors: # 外部控制器 RESTful API CORS 标头配置
   allow-origins:
     - "*"
+    #- https://yacd.metacubex.one
+    #- https://metacubex.github.io
+    #- https://board.zash.run.place
   allow-private-network: true
 #external-controller-unix: mihomo.sock # 通过 Unix 套接字访问 API 监听地址，端点不会验证机密。如果启用，请确保安全措施到位，测试方法： curl -v --unix-socket "mihomo.sock" http://localhost/
 #external-controller-pipe: \\.\pipe\mihomo # Windows 命名管道 API 监听地址，访问 API 接口不会验证密钥，若开启，请确保您的安全
