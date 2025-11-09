@@ -583,7 +583,7 @@
     },
     {
       "type": "vless",
-      "tag": "CF-PAGES-P02",
+      "tag": "PAGES-VL-CF02",
       "server": "jinqianto.pages.dev",
       "server_port": 443,
       "uuid": "38966bb4-c2a2-4010-8663-25db09980b2b",
@@ -604,7 +604,7 @@
     },
     {
       "type": "vless",
-      "tag": "CDN-WORKERS-P01",
+      "tag": "WORKERS-VL-CDN01",
       "server": "p01.jinqiantu.dpdns.org",
       "server_port": 2096,
       "uuid": "58935f45-89c2-4b82-a77c-72eee801da09",
@@ -625,7 +625,7 @@
     },
     {
       "type": "vless",
-      "tag": "CDN-PAGES-P02",
+      "tag": "PAGES-VL-CDN02",
       "server": "p02.jinqiantu.dpdns.org",
       "server_port": 2083,
       "uuid": "38966bb4-c2a2-4010-8663-25db09980b2b",
