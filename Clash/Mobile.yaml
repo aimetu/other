@@ -184,7 +184,7 @@ sniffer:
     - "+.apple.com"
 
 proxies: 
-  - name: 🌤️ WARP-TEAM
+  - name: 🌤️ WARP-WG-T01
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     ip: 172.16.0.2
@@ -203,7 +203,7 @@ proxies:
     dns: [1.0.0.1,2606:4700:4700::1001]
     #dialer-proxy: 🇭🇰 HongKong
 
-  - name: 🌤️ WARP-PLUS
+  - name: 🌤️ WARP-WG-P01
     type: wireguard
     private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
     ip: 172.16.0.2
