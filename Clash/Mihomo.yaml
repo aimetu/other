@@ -487,6 +487,8 @@ proxies:
     skip-cert-verify: true
 
   - {name: "🇯🇵 WORKERS-VL-CDN01", type: vless, server: p01.jinqiantu.dpdns.org, port: 2096, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: p01.jinqiantu.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p01.jinqiantu.dpdns.org}} } 
+  - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w02.jinqianto.netlib.re, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w02.jinqianto.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w02.jinqianto.netlib.re}} }
+  - {name: "🇰🇷 WORKERS-TR-CDN02", type: trojan, server: cdns.doon.eu.org, port: 2087, password: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, sni: w02.jinqianto.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w02.jinqianto.netlib.re}} }  
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
   - name: 🇹🇷 TR-N1-VL
