@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.10.10
+# 2025.11.18
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -554,9 +554,10 @@ proxies:
     skip-cert-verify: true
 
   - {name: "🇺🇸 US-S1-TR", type: trojan, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 42136, password: XAJrWY6ig6, udp: true, network: ws, sni: us.jinqian.dpdns.org, skip-cert-verify: true, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-S1-ARGO", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
-  - {name: "🇺🇸 US-S1-ARGO-CDN01", type: vless, server: cdns.doon.eu.org, port: 2086, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} }
-  - {name: "🇺🇸 US-S1-ARGO-CDN02", type: vless, server: sub.danfeng.eu.org, port: 2095, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} }   
+  - {name: "🇺🇸 US-S1-ARGO", type: vless, server: tunnel.jinqiantu.netlib.re, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
+  - {name: "🇺🇸 US-S1-ARGO-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
+  - {name: "🇺🇸 US-S1-ARGO-CDN02", type: vless, server: tunnel.jinqiantu.netlib.re, port: 2086, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
+  - {name: "🇺🇸 US-S1-ARGO-CDN03", type: vless, server: us.jinqian.dpdns.org, port: 2095, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} }   
   - {name: "🇺🇸 US-S1-VM-CDN01", type: vmess, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-VM-CDN02", type: vmess, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-VM-CDN03", type: vmess, server: time.is, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
