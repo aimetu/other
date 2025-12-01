@@ -490,49 +490,49 @@ proxies:
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w02.jinqianto.netlib.re, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w02.jinqianto.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w02.jinqianto.netlib.re}} }
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
-  - name: 🇹🇷 TR-N1-VL
-    type: vless
-    server: 45.95.214.224
-    port: 41941
+  - name: 🇹🇷 TR-N1-ARGO
+    type: vmess
+    server: tunnel.jinqian.dpdns.org
+    port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    alterId: 0
+    cipher: auto
     udp: true
     tls: true
     network: ws
-    servername: tr.jinqian.dpdns.org
+    servername: tunnel.jinqian.dpdns.org
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: tr.jinqian.dpdns.org
+        Host: tunnel.jinqian.dpdns.org
     client-fingerprint: chrome    
     skip-cert-verify: true
 
+  - {name: "🇹🇷 TR-N1-ARGO-CDN01", type: vmess, server: tr.jinqian.dpdns.org, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tunnel.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqian.dpdns.org}} } 
+  - {name: "🇹🇷 TR-N1-VL", type: vless, server: 45.95.214.224, port: 41941, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
   - {name: "🇹🇷 TR-N1-VL-CDN01", type: vless, server: tr.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
-  - {name: "🇹🇷 TR-N1-VL-CDN02", type: vless, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
-  - {name: "🇹🇷 TR-N1-VL-CDN03", type: vless, server: time.is, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} }
-  - {name: "🇹🇷 TR-N1-VL-CDN04", type: vless, server: skk.moe, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
-  - {name: "🇹🇷 TR-N1-VL-CDN05", type: vless, server: swww.visa.cn, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
-  
-  - name: 🇺🇸 US-R3-VL
-    type: vless
-    server: 66.181.36.236
-    port: 22703
+   
+  - name: 🇺🇸 US-R3-AROG
+    type: vmess
+    server: tun.jinqian.dpdns.org
+    port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    alterId: 0
+    cipher: auto
     udp: true
     tls: true
     network: ws
-    servername: usr3.jinqian.dpdns.org
+    servername: tun.jinqian.dpdns.org
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: usr3.jinqian.dpdns.org
+        Host: tun.jinqian.dpdns.org
     client-fingerprint: chrome    
     skip-cert-verify: true
 
+  - {name: "🇺🇸 US-R3-AROG-CDN01", type: vmess, server: usr3.jinqian.dpdns.org, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tun.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqian.dpdns.org}} } 
+  - {name: "🇺🇸 US-R3-VL", type: vless, server: 66.181.36.236, port: 22703, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-R3-VL-CDN01", type: vless, server: usr3.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-R3-VL-CDN02", type: vless, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-R3-VL-CDN03", type: vless, server: time.is, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-R3-VL-CDN04", type: vless, server: skk.moe, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-R3-VL-CDN05", type: vless, server: www.visa.cn, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
 
   - name: 🇩🇪 DE-N2-ARGO
     type: vless
@@ -550,35 +550,27 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇩🇪 DE-N2-ARGO-CDN01", type: vless, server: de.jinqiantu.netlib.re, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} } 
-  
-  - name: 🇺🇸 US-S1-VM
-    type: vmess
-    server: 2604:abc0:103:415:a1::48
-    port: 46665
+  - {name: "🇩🇪 DE-N2-ARGO-CDN01", type: vless, server: de.jinqiantu.netlib.re, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} } 
+
+  - name: 🇺🇸 US-S1-ARGO
+    type: vless
+    server: tunnel.jinqiantu.netlib.re
+    port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    alterId: 0
-    cipher: auto
     udp: true
     tls: true
     network: ws
-    servername: us.jinqian.dpdns.org
+    servername: tunnel.jinqiantu.netlib.re
     ws-opts:
       path: "/?ed=2560"
       headers:
-        Host: us.jinqian.dpdns.org
+        Host: tunnel.jinqiantu.netlib.re
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇺🇸 US-S1-ARGO", type: vless, server: tunnel.jinqiantu.netlib.re, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
-  - {name: "🇺🇸 US-S1-ARGO-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
-  - {name: "🇺🇸 US-S1-ARGO-CDN02", type: vless, server: tunnel.jinqiantu.netlib.re, port: 2086, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
-  - {name: "🇺🇸 US-S1-ARGO-CDN03", type: vless, server: us.jinqian.dpdns.org, port: 2095, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: false, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} }   
+  - {name: "🇺🇸 US-S1-ARGO-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tunnel.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqiantu.netlib.re}} } 
+  - {name: "🇺🇸 US-S1-VM", type: vmess, server: 2604:abc0:103:415:a1::48, port: 46665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-VM-CDN01", type: vmess, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-S1-VM-CDN02", type: vmess, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-S1-VM-CDN03", type: vmess, server: time.is, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-S1-VM-CDN04", type: vmess, server: skk.moe, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
-  - {name: "🇺🇸 US-S1-VM-CDN05", type: vmess, server: www.visa.cn, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
