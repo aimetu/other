@@ -430,6 +430,7 @@ tunnels:
     proxy: 🌐 Global # 代理
   
 #💡 本地代理服务器
+# CF优选：ip.sb、time.is、skk.moe、www.visa.cn，开tls端口：2053、2083、2087、2096、8443、443，关tls端口：2052、2082、2086、2095、80、8880、8080
 # wireguard 代理服务器地址：engage.cloudflareclient.com，162.159.192-195.0/24，（udp 端口:2408，备选 500、1701、4500）
 proxies: 
   - name: 🌤️ WARP-WG-T01 # 代理名称,书写时请确保不会与其他代理节点重名
