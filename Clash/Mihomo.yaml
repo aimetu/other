@@ -534,10 +534,10 @@ proxies:
   - {name: "🇺🇸 US-R3-VL-CDN04", type: vless, server: skk.moe, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-R3-VL-CDN05", type: vless, server: www.visa.cn, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
 
-  - name: 🇩🇪 DE-N2-VL
+  - name: 🇩🇪 DE-N2-ARGO
     type: vless
-    server: de.jinqiantu.netlib.re
-    port: 2053
+    server: tun.jinqiantu.netlib.re
+    port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     udp: true
     tls: true
@@ -550,7 +550,7 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇩🇪 DE-N2-ARGO", type: vless, server: tun.jinqiantu.netlib.re, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} } 
+  - {name: "🇩🇪 DE-N2-ARGO-CDN01", type: vless, server: de.jinqiantu.netlib.re, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} } 
   
   - name: 🇺🇸 US-S1-VM
     type: vmess
