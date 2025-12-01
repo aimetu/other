@@ -536,10 +536,12 @@ proxies:
   - {name: "🇺🇸 US-R3-VL-CDN01", type: vless, server: usr3.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: usr3.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: usr3.jinqian.dpdns.org}} } 
 
   - name: 🇩🇪 DE-N2-ARGO
-    type: vless
+    type: vmess
     server: tun.jinqiantu.netlib.re
     port: 2083
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    alterId: 0
+    cipher: auto
     udp: true
     tls: true
     network: ws
@@ -550,8 +552,10 @@ proxies:
         Host: tun.jinqiantu.netlib.re
     client-fingerprint: chrome    
     skip-cert-verify: true
-
-  - {name: "🇩🇪 DE-N2-ARGO-CDN01", type: vless, server: de.jinqiantu.netlib.re, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} } 
+    
+  - {name: "🇩🇪 DE-N2-ARGO-CDN01", type: vmess, server: de.jinqiantu.netlib.re, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tun.jinqiantu.netlib.re, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tun.jinqiantu.netlib.re}} }
+  - {name: "🇩🇪 DE-N2-VL", type: vless, server: 45.142.106.53, port: 14086, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: de.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: de.jinqiantu.netlib.re}} }  
+  - {name: "🇩🇪 DE-N2-VL-CDN01", type: vless, server: de.jinqiantu.netlib.re, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: de.jinqiantu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: de.jinqiantu.netlib.re}} } 
 
   - name: 🇺🇸 US-S1-ARGO
     type: vless
