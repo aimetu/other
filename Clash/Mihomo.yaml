@@ -513,7 +513,7 @@ proxies:
   - {name: "🇹🇷 TR-N1-VL", type: vless, server: 45.95.214.224, port: 41941, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.aimetu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.aimetu.netlib.re}} } 
   - {name: "🇹🇷 TR-N1-VL-CDN01", type: vless, server: tr.aimetu.netlib.re, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.aimetu.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.aimetu.netlib.re}} } 
    
-  - name: 🇺🇸 US-R3-AROG
+  - name: 🇺🇸 US-R3-ARGO
     type: vmess
     server: tunnel.jinqianto.netlib.re
     port: 2083
@@ -531,7 +531,7 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇺🇸 US-R3-AROG-CDN01", type: vmess, server: us.jinqianto.netlib.re, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tunnel.jinqianto.netlib.re, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqianto.netlib.re}} } 
+  - {name: "🇺🇸 US-R3-ARGO-CDN01", type: vmess, server: us.jinqianto.netlib.re, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tunnel.jinqianto.netlib.re, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tunnel.jinqianto.netlib.re}} } 
   - {name: "🇺🇸 US-R3-VL", type: vless, server: 66.181.36.236, port: 22703, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqianto.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqianto.netlib.re}} } 
   - {name: "🇺🇸 US-R3-VL-CDN01", type: vless, server: us.jinqianto.netlib.re, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqianto.netlib.re, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqianto.netlib.re}} } 
 
