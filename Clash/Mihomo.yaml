@@ -565,7 +565,7 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇺🇸 US-S1-VM", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 8080, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
+  - {name: "🇺🇸 US-S1-VM", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
   - {name: "🇺🇸 US-S1-WS-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-WS-CDN02", type: vless, server: ip.sb, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   - {name: "🇺🇸 US-S1-WS-CDN03", type: vless, server: time.is, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
