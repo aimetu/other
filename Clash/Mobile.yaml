@@ -94,6 +94,7 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
+  ake-ip-ttl: 1
   fake-ip-filter:
     - "*.lan"
     - "*.local"
@@ -125,11 +126,11 @@ dns:
     - "https://doh.pub/dns-query"
 
   proxy-server-nameserver:
-    - "223.6.6.6"
-    - "119.28.28.28"
+    - "tls://1.0.0.1"
+    - "tls://8.8.4.4"
   fallback:
+     - "https://dns.google/dns-query"
      - "https://cloudflare-dns.com/dns-query"
-     - "https://dns.opendns.com/dns-query"
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -144,12 +145,12 @@ dns:
     
   direct-nameserver-follow-policy: true
   direct-nameserver:
+    - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.opendns.com/dns-query
   nameserver-policy:
-    "blog.google": 94.140.14.14
-    "dl.google.com": https://dns.adguard-dns.com/dns-query
-    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "blog.google": 8.8.8.8
+    "dl.google.com": https://dns.google/dns-query
+    "dl.l.google.com": https://dns.google/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
     
 hosts:
@@ -158,7 +159,7 @@ hosts:
   "alpha.mihomo.dev": "::1"
   doh.pub: [120.53.53.53, 1.12.12.21]
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
-  dns.opendns.com: [208.67.222.222, 208.67.220.220]
+  dns.google: [8.8.8.8, 8.8.4.4]
   dns.adguard-dns.com: [94.140.14.14, 94.140.15.15]
   cloudflare-dns.com: [104.16.248.249, 104.16.249.249]
   "talk.google.com": 108.177.125.188
