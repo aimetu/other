@@ -1,4 +1,4 @@
-# 2025.05.05
+# 2025.12.25
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -148,14 +148,14 @@ dns:
       
 # 当 geoip 不是 cn 时用以下 dns 解析 
   fallback:
+    - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.opendns.com/dns-query
 
 # 域名使用指定的 dns 服务器解析
   nameserver-policy:
-    "blog.google": 94.140.14.14
-    "dl.google.com": https://dns.adguard-dns.com/dns-query
-    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "blog.google": 8.8.8.8
+    "dl.google.com": https://dns.google/dns-query
+    "dl.l.google.com": https://dns.google/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
 
 # 💡 本地域名映射
@@ -165,7 +165,7 @@ hosts:
   "alpha.clash.dev": '::1'
   doh.pub: 120.53.53.53
   dns.alidns.com: 223.5.5.5
-  dns.opendns.com: 208.67.222.222
+  dns.google: 8.8.8.8
   dns.adguard-dns.com: 94.140.14.14
   cloudflare-dns.com: 104.16.249.249
   "talk.google.com": 108.177.125.188
