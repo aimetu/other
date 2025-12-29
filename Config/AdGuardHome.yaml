@@ -33,7 +33,7 @@ dns:
     - 119.29.29.29
   fallback_dns:
     - 1.0.0.1
-    - 208.67.222.222
+    - 8.8.8.8
   upstream_mode: parallel
   fastest_timeout: 1s
   allowed_clients: []
