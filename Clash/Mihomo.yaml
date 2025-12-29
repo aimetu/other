@@ -274,9 +274,9 @@ dns:
     - https://cloudflare-dns.com/dns-query
     
   nameserver-policy: # 指定域名查询的解析服务器，可指定 " geosite & rule-set " dns 解析
-    "blog.google": 94.140.14.14
-    "dl.google.com": https://dns.adguard-dns.com/dns-query
-    "dl.l.google.com": https://dns.adguard-dns.com/dns-query
+    "blog.google": 8.8.8.8
+    "dl.google.com": https://dns.google/dns-query
+    "dl.l.google.com": https://dns.google/dns-query
     "update.googleapis.com": quic://dns.adguard-dns.com
     "rule-set:📟 Google,📹 YouTube": https://dns.google/dns-query
     "geosite:cn,private": 
