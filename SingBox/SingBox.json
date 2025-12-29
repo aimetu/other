@@ -126,7 +126,7 @@
             "address_resolver": "resolver-dns",
             "address_strategy": "prefer_ipv4",
             "strategy": "prefer_ipv4",
-            "address": "https://dns.opendns.com/dns-query",
+            "address": "https://cloudflare-dns.com/dns-query",
             "detour": "🔰 Pick"
         },
         {
