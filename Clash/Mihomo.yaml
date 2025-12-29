@@ -208,6 +208,7 @@ dns:
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
+  fake-ip-ttl: 1 # # 配置 fakeip 查询返回的 ttl，非必要情况下请勿修改
   fake-ip-filter: # fakeip 过滤，以下地址不会下发 fakeip 映射用于连接
     - "*.lan"
     - "*.local"
@@ -236,8 +237,8 @@ dns:
   default-nameserver: # 用于解析 nameserver，fallback 域名的 dns 服务域, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
     - "119.29.29.29"
-    #- "tls://1.0.0.1"
-    #- "https://208.67.222.222/dns-query"
+    #- "tls://1.1.1.1"
+    #- "https://8.8.8.8/dns-query"
     
   nameserver: # 默认加密 dns 服务器（ 添加指定参数：#eth0：指定出口网卡，#proxy：指定代理或策略组 &h3=true：强制 doh 启用 http/3 查询  ）
     - "https://dns.alidns.com/dns-query"
@@ -245,14 +246,14 @@ dns:
     #- "quic://dns.alidns.com"
 
   proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - "223.6.6.6"
-    - "119.28.28.28"
-    #- "https://1.1.1.1/dns-query"
-    #- "https://208.67.220.220/dns-query"
+    - "tls://1.0.0.1"
+    - "tls://8.8.4.4"
+    #- "https://1.0.0.1/dns-query"
+    #- "https://8.8.4.4/dns-query"
     
   fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
+     - "https://dns.google/dns-query"
      - "https://cloudflare-dns.com/dns-query"
-     - "https://dns.opendns.com/dns-query"
     #- "quic://dns.adguard-dns.com"
 
   fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
@@ -269,8 +270,8 @@ dns:
     
   direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，仅当 direct-nameserver 不为空时生效    
   direct-nameserver: # 用于 direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+    - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.opendns.com/dns-query
     
   nameserver-policy: # 指定域名查询的解析服务器，可指定 " geosite & rule-set " dns 解析
     "blog.google": 94.140.14.14
@@ -282,8 +283,8 @@ dns:
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
     "geosite:category-scholar-!cn,geolocation-!cn":
+      - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
-      - https://dns.opendns.com/dns-query
     
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
@@ -291,7 +292,7 @@ hosts:
   "*.dev": 127.0.0.1
   doh.pub: [120.53.53.53, 1.12.12.21]
   dns.alidns.com: [223.5.5.5, 223.6.6.6]
-  dns.opendns.com: [208.67.222.222, 208.67.220.220]
+  dns.google: [8.8.8.8, 8.8.4.4]
   dns.adguard-dns.com: [94.140.14.14, 94.140.15.15]
   cloudflare-dns.com: [104.16.248.249, 104.16.249.249]
   "alpha.mihomo.dev": "::1"
