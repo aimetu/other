@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2025.11.18
+# 2026.02.01
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -246,8 +246,8 @@ dns:
     #- "quic://dns.alidns.com"
 
   proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - "tls://1.0.0.1"
-    - "tls://8.8.4.4"
+    - "1.0.0.1"
+    - "8.8.4.4"
     #- "https://1.0.0.1/dns-query"
     #- "https://8.8.4.4/dns-query"
     
