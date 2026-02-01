@@ -126,8 +126,8 @@ dns:
     - "https://doh.pub/dns-query"
 
   proxy-server-nameserver:
-    - "tls://1.0.0.1"
-    - "tls://8.8.4.4"
+    - "1.0.0.1"
+    - "8.8.4.4"
   fallback:
      - "https://dns.google/dns-query"
      - "https://cloudflare-dns.com/dns-query"
