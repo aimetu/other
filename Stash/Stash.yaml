@@ -1,4 +1,4 @@
-# 2025.12.25
+# 2026.02.02
 # 官网：https://stash.wiki
 # 配置样例：https://stash.wiki/configuration/example-config
 
@@ -76,12 +76,8 @@ proxies:
    benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
    benchmark-disabled: false
-# 若使用 underlying-proxy，其必须支持 udp 中继，建议使用 udp over tcp 的协议（如 trojan、vless、vmess、snell ）  
-#   underlying-proxy: 
-#     type: trojan
-#     server: your-underlying-proxy
-#     port: 443
-#     password: your-password
+# 代理链（dialer-proxy）用于在代理配置中指定上游代理，使目标代理服务器的连接先通过另一个代理转发
+   # dialer-proxy: - HongKong
 
  - name: 🌤️ WARP-PLUS
    type: wireguard
@@ -98,6 +94,7 @@ proxies:
    benchmark-url: http://cp.cloudflare.com/generate_204
    benchmark-timeout: 3
    benchmark-disabled: false
+   # dialer-proxy: - Japan
    
 # 💡 dns 服务器配置
 dns:
