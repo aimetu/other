@@ -492,43 +492,41 @@ proxies:
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
-  - name: 🇹🇷 TR-N1-GRPC
+  - name: 🇹🇷 TR-N1-WS
     type: vless
     server: 45.95.214.224
     port: 46666
-    uuid: 2d9c2186-e88f-433a-8147-fcbd914a8e6b
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     udp: true
     tls: true
-    flow:
-    network: grpc
-    servername: asus.com
-    grpc-opts:
-      grpc-service-name: "grpc"
-    reality-opts:
-        public-key: L5KSawTmB_Ji96th2Ni2uq7kkDxxD7Vd45dCrgLL7GI
-        short-id: b69e526b5f
-        support-x25519mlkem768: false
+    network: ws
+    servername: tr.jinqian.dpdns.org
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: tr.jinqian.dpdns.org
     client-fingerprint: chrome    
     skip-cert-verify: true
-  
-  - name: 🇺🇸 US-R3-GRPC
+
+  - {name: "🇹🇷 TR-N1-WS-CDN01", type: vless, server: tr.jinqian.dpdns.org, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: tr.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: tr.jinqian.dpdns.org}} } 
+
+  - name: 🇺🇸 US-R3-WS
     type: vless
     server: 66.181.36.236
     port: 22703
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     udp: true
     tls: true
-    flow:
-    network: grpc
-    servername: www.amd.com
-    grpc-opts:
-      grpc-service-name: "grpc"
-    reality-opts:
-        public-key: 19pd7UwJsSiuS0C0sy_KFe6Cufa4p2gPRR4RSF4VJBU
-        short-id: 1d5c1f16
-        support-x25519mlkem768: false
+    network: ws
+    servername: us.aimeto.ggff.net
+    ws-opts:
+      path: "/?ed=2560"
+      headers:
+        Host: us.aimeto.ggff.net
     client-fingerprint: chrome    
     skip-cert-verify: true
+
+  - {name: "🇺🇸 US-R3-WS-CDN01", type: vless, server: us.aimeto.ggff.net, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.aimeto.ggff.net, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.aimeto.ggff.net}} }
   
   - name: 🇩🇪 DE-N2-WS
     type: vless
