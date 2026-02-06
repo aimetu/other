@@ -544,7 +544,7 @@ proxies:
     client-fingerprint: chrome    
     skip-cert-verify: true
 
-  - {name: "🇩🇪 DE-N2-WS-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: de.aimeto.ggff.net, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: de.aimeto.ggff.net}} } 
+  - {name: "🇩🇪 DE-N2-WS-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: de.aimeto.ggff.net, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: de.aimeto.ggff.net}} } 
 
   - name: 🇺🇸 US-S1-WS
     type: vless
