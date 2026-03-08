@@ -1396,7 +1396,7 @@ rules:
   - DOMAIN-SUFFIX, home.arpa, 🇨🇳 China
   - DOMAIN-KEYWORD, localhost, 🇨🇳 China
   - DOMAIN-REGEX, ^https?:\/\/(www|m)\.google\.cn, 📟 Google
-  - IP-CIDR, 10.0.0.0/8, 🇨🇳 China, no-resolve　　　　　　
+  - IP-CIDR, 10.0.0.0/8, 🇨🇳 China, no-resolve
   - IP-CIDR, 100.64.0.0/10, 🇨🇳 China, no-resolve
   - IP-CIDR, 127.0.0.0/8, 🇨🇳 China, no-resolve
   - IP-CIDR, 172.16.0.0/12, 🇨🇳 China, no-resolve
@@ -1411,7 +1411,7 @@ rules:
   - SRC-IP-ASN, 133877, 🌐 Global
   - SRC-IP-CIDR, 239.255.255.250/32, 🇨🇳 China, no-resolve
   - SRC-IP-SUFFIX, 192.168.1.0/8, 🇨🇳 China, no-resolve
-  #- SRC-PORT, 7777, 🇨🇳 China  
+  #- SRC-PORT, 7777, 🇨🇳 China
   - DST-PORT, 1400, ✉️ Telegram
   #- DST-PORT, 114/514, 🇨🇳 China # 示例：匹配 114 和 514 端口
   #- DST-PORT, 114-514, 🇨🇳 China # 示例：匹配 114 到 514 端口
@@ -1425,7 +1425,7 @@ rules:
   #- IN-PORT, 7890, 🇨🇳 China
   - PROCESS-NAME, Notion.exe, 🌐 Global
   - PROCESS-NAME, OneDriveUpdater.exe, 🌐 Global
-  #- PROCESS-NAME, com.android.vending, 📟 Google  # 使用进程匹配，Android平台可以匹配包名
+  #- PROCESS-NAME, com.android.vending, 📟 Google # 使用进程匹配，Android平台可以匹配包名
   #- PROCESS-NAME, org.telegram.messenger, ✉️ Telegram
   #- PROCESS-NAME, com.openai.chatgpt, 🤖 OpenAI
   #- PROCESS-NAME-REGEX, *.telegram.*, ✉️ Telegram # 使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
@@ -1438,9 +1438,9 @@ rules:
   - AND, ((NETWORK, UDP), (DST-PORT, 443)), ⛔ AdBlock # 示例：匹配网络类型为 udp 指定端口的请求
   - AND, ((NETWORK, UDP), (DST-PORT, 3478)), ⛔ AdBlock
   - AND, ((NETWORK, UDP), (DST-PORT, 19302)), ⛔ AdBlock
-  #- AND, ((DST-PORT, 22), (GEOIP, CN, no-resolve)), 🇨🇳 China # ip 类规则可用 no-resolve,  需书写在括号内
-  - OR, ((DOMAIN-KEYWORD, httpdns), (DOMAIN-KEYWORD, httpsdns)), ⛔ AdBlock  # OR：规则内的条件只需满足一项时匹配
-  - OR, ((DOMAIN-KEYWORD,  p2ptun),  (DOMAIN-KEYWORD,  p2plive),  (DOMAIN-KEYWORD,  p2plog)), ⛔ AdBlock
+  #- AND, ((DST-PORT, 22), (GEOIP, CN, no-resolve)), 🇨🇳 China # ip 类规则可用 no-resolve, 需书写在括号内
+  - OR, ((DOMAIN-KEYWORD, httpdns), (DOMAIN-KEYWORD, httpsdns)), ⛔ AdBlock # OR：规则内的条件只需满足一项时匹配
+  - OR, ((DOMAIN-KEYWORD, p2ptun), (DOMAIN-KEYWORD, p2plive), (DOMAIN-KEYWORD, p2plog)), ⛔ AdBlock
   #- NOT, ((GEOIP, CN, no-resolve)), 🌐 Global # NOT：规则内不包含的条件时匹配
   #- NOT, ((DOMAIN, baidu.com)), 🌐 Global
   - RULE-SET, 🚥 Direct, 🇨🇳 China
