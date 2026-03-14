@@ -233,15 +233,16 @@ dns:
     - "localhost.*.weixin.qq.com"
     #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 域名类规则
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
-    #- RULE-SET,reject-domain,fake-ip # 当 fake-ip-filter-mode: rule 时开启规则模式，写法发生改变
-    #- DOMAIN,www.baidu.com,real-ip
-    #- DOMAIN-SUFFIX,jd.com,fake-ip
-    #- GEOSITE,gfw,fake-ip
-    #- MATCH,fake-ip # 最后 fake-ip or real-ip
+    #- RULE-SET, 🇨🇳 China, 🇨🇳 China, fake-ip # 当 fake-ip-filter-mode: rule 时开启规则模式，写法发生改变
+    #- DOMAIN, router.local, real-ip
+    #- DOMAIN-SUFFIX, home.arpa, fake-ip
+    #- GEOSITE, gfw, fake-ip
+    #- MATCH, fake-ip # 最后 fake-ip or real-ip
     
   default-nameserver: # 用于解析 nameserver，fallback 域名的 dns 服务域, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
     - "119.29.29.29"
+    #- system
     #- "tls://1.1.1.1"
     #- "https://8.8.8.8/dns-query"
     
@@ -290,6 +291,7 @@ dns:
     "geosite:category-scholar-!cn,geolocation-!cn":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
+     #"rule-set:🌐 Global,dns": 8.8.8.8
     
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
