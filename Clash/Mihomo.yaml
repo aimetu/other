@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2026.02.01
+# 2026.03.01
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -207,7 +207,7 @@ dns:
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   # fake-ip-range6: fdfe:dcba:9876::1/64  # fake-ip6 解析地址池
-  fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ），如果匹配成功不返回 (返回)  fake-ip
+  fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ）rule，如果匹配成功不返回 (返回)  fake-ip， rule 时开启规则模式，写法发生改变
   fake-ip-ttl: 1 # # 配置 fakeip 查询返回的 ttl，非必要情况下请勿修改
   fake-ip-filter: # fakeip 过滤，以下地址不会下发 fakeip 映射用于连接
     - "*.lan"
@@ -233,6 +233,11 @@ dns:
     - "localhost.*.weixin.qq.com"
     #- rule-set:🇨🇳 China # rule-providers 中 behavior 必须为 domain/classical 域名类规则
     #- geosite:cn # geosite 中名为 cn 的分类（ 需要自行保证该分类存在 ）
+    #- RULE-SET,reject-domain,fake-ip # 当 fake-ip-filter-mode: rule 时开启规则模式，写法发生改变
+    #- DOMAIN,www.baidu.com,real-ip
+    #- DOMAIN-SUFFIX,jd.com,fake-ip
+    #- GEOSITE,gfw,fake-ip
+    #- MATCH,fake-ip # 最后 fake-ip or real-ip
     
   default-nameserver: # 用于解析 nameserver，fallback 域名的 dns 服务域, 必须为 ip 可为（dot、doh）加密 dns
     - "223.5.5.5"
