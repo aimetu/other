@@ -112,29 +112,29 @@
 	"cache_capacity": 86400,
 	"reverse_mapping": false,
 	"client_subnet": "",
+	"strategy": "ipv4_only",
     "servers": [
-        {
+      {
             "tag": "direct-dns",
-            "address_resolver": "resolver-dns",
-            "address_strategy": "prefer_ipv4",
-            "strategy": "prefer_ipv4",
             "type": "https",
+			"path": "/dns-query",
 			"server": "223.5.5.5",
+			"server_port": 443,
              "detour": "🇨🇳 China"
         },
         {
             "tag": "proxy-dns",
-            "address_resolver": "resolver-dns",
-            "address_strategy": "prefer_ipv4",
-            "strategy": "prefer_ipv4",
             "type": "https",
+			"path": "/dns-query",
 			"server": "1.1.1.1",
+			"server_port": 443,
             "detour": "🔰 Pick"
         },
         {
             "tag": "resolver-dns",
 			"type": "udp",
             "server": "223.5.5.5",
+			"server_port": 53,
             "detour": "direct"
         },
         {
