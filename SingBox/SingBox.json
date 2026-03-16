@@ -112,7 +112,7 @@
 	"cache_capacity": 86400,
 	"reverse_mapping": false,
 	"client_subnet": "",
-        "servers": [
+    "servers": [
         {
             "tag": "direct-dns",
             "address_resolver": "resolver-dns",
