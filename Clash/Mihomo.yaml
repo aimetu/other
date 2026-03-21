@@ -570,7 +570,7 @@ proxies:
     skip-cert-verify: true
 
   - {name: "🇺🇸 US-S1-8080", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 8080, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
-  - {name: "🇺🇸 US-S1-443", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: tx.flv.huya.com, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tx.flv.huya.com}} }
+  - {name: "🇺🇸 US-S1-443", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: tx.flv.huya.com, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tx.flv.huya.com}} }
   - {name: "🇺🇸 US-S1-WS-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: ws, servername: us.jinqian.dpdns.org, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: us.jinqian.dpdns.org}} } 
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
