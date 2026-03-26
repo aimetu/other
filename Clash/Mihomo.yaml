@@ -892,6 +892,29 @@ proxy-groups:
       - 🔰 Pick
       - ✅ Node
 
+  - name: 🎮 Game
+    type: select
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/other/game.png
+    proxies:
+      - 🔰 Pick
+      - ✅ Node
+      - 🇨🇳 China
+
+  - name: 🎵 TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/tiktok.png
+    proxies:
+      - 🇨🇳 China
+      - 🔰 Pick
+      - ✅ Node
+      - 🇭🇰 HongKong
+      - 🇹🇼 Taiwan
+      - 🇯🇵 Japan
+      - 🇰🇷 Korea
+      - 🇸🇬 Singapore
+      - 🇺🇸 America
+      - 🇺🇳 Nations
+
   - name: ✉️ Telegram
     type: select
     icon: https://raw.githubusercontent.com/aimetu/icons/main/logo/telegram.png
@@ -1186,6 +1209,36 @@ rule-providers:
     size-limit: 0
     #proxy: 🐟 Final
 
+  🎮 Game:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    path: ./rule/Game.yaml
+    interval: 259200
+    format: yaml
+    size-limit: 0
+    #proxy: 🐟 Final
+
+  🎵 DouYin:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DouYin/DouYin.yaml
+    path: ./rule/DouYin.yaml
+    interval: 259200
+    format: yaml
+    size-limit: 0
+    #proxy: 🐟 Final
+
+  🎵 TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./rule/TikTok.yaml
+    interval: 259200
+    format: yaml
+    size-limit: 0
+    #proxy: 🐟 Final
+
   ✉️ Telegram:
     type: http
     behavior: classical
@@ -1460,6 +1513,9 @@ rules:
   - RULE-SET, ⛔ AdLite, ⛔ AdBlock
   - RULE-SET, ⛔ HttpDNS, ⛔ AdBlock
   - RULE-SET, 🕸️ Speedtest, 🕸️ Speedtest
+  - RULE-SET, 🎮 Game, 🎮 Game
+  - RULE-SET, 🎵 DouYin, 🎵 TikTok
+  - RULE-SET, 🎵 TikTok, 🎵 TikTok
   - RULE-SET, ✉️ Telegram, ✉️ Telegram
   - RULE-SET, 🎶 Spotify, 🎶 Spotify
   - RULE-SET, 📽️ Netflix, 📽️ Netflix
