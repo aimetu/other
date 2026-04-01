@@ -510,7 +510,7 @@ proxies:
     servername: tr.jinqian.dpdns.org
     grpc-opts:
       grpc-service-name: trn1
-      # grpc-user-agent: "grpc-go/1.36.0"
+      grpc-user-agent: grpc-java/1.80.0
       # ping-interval: 0
     skip-cert-verify: true
     client-fingerprint: chrome
@@ -528,7 +528,7 @@ proxies:
     servername: us.aimeto.ggff.net
     grpc-opts:
       grpc-service-name: usr3
-      # grpc-user-agent: "grpc-go/1.36.0"
+      grpc-user-agent: grpc-ruby/1.78.1
       # ping-interval: 0
     skip-cert-verify: true
     client-fingerprint: chrome
@@ -545,13 +545,13 @@ proxies:
     network: grpc
     servername: de.aimeto.ggff.net
     grpc-opts:
-      grpc-service-name: "den2"
-      grpc-user-agent: "grpc-go/1.36.0"
+      grpc-service-name: den2
+      grpc-user-agent: grpc-go/1.79.3
       # ping-interval: 0
     skip-cert-verify: true
     client-fingerprint: chrome
 
-  - {name: "🇩🇪 DE-N2-GRPC-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2, } } 
+  - {name: "🇩🇪 DE-N2-GRPC-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2} } 
 
   - name: 🇺🇸 US-S1-GRPC
     type: vless
@@ -564,7 +564,7 @@ proxies:
     servername: us.jinqian.dpdns.org
     grpc-opts:
       grpc-service-name: uss1
-      # grpc-user-agent: "grpc-go/1.36.0"
+      grpc-user-agent: grpc-java-android/1.80.0
       # ping-interval: 0
     skip-cert-verify: true
     client-fingerprint: chrome
@@ -594,10 +594,10 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic" # 示例：根据节点 "type" 类型排除
     header: # 自定义 http 请求头
       User-Agent:
-      #- "Clash/v1.18.8"
-      #- "Clash.meta/2.2.2"
-      - "FlClash/0.8.88"
-      #- "Clash-verge/2.2.2"
+      #- "Clash/v1.20.2"
+      #- "Clash.meta/2.3.1"
+      - "FlClash/0.8.95"
+      #- "Clash-verge/2.4.8"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
@@ -642,10 +642,10 @@ proxy-providers:
     #exclude-type: "ss|ssr|http|vmess|vless|trojan|socks5|snell|hysteria|hysteria2|wireguard|tuic"
     header: 
       User-Agent:
-      #- "Clash/v1.18.8"
-      #- "Clash.meta/2.2.2"
-      #- "FlClash/0.8.88"
-      - "Clash-verge/2.2.2"
+      #- "Clash/v1.20.2"
+      #- "Clash.meta/2.3.1"
+      #- "FlClash/0.8.95"
+      - "Clash-verge/2.4.8"
       # Accept:
       # - 'application/vnd.github.v3.raw'
       # Authorization:
