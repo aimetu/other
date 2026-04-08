@@ -595,7 +595,7 @@ proxy-providers:
     header: # 自定义 http 请求头
       User-Agent:
       #- "Clash/v1.20.2"
-      #- "Clash.meta/2.3.1"
+      #- "mihomo/1.19.5"
       - "FlClash/0.8.95"
       #- "Clash-verge/2.4.8"
       # Accept:
@@ -643,7 +643,7 @@ proxy-providers:
     header: 
       User-Agent:
       #- "Clash/v1.20.2"
-      #- "Clash.meta/2.3.1"
+      #- "mihomo/1.19.5"
       #- "FlClash/0.8.95"
       - "Clash-verge/2.4.8"
       # Accept:
@@ -652,7 +652,7 @@ proxy-providers:
       # - 'token 1231231'      
     health-check:
       enable: true
-      url: http://connectivitycheck.gstatic.com/generate_204
+      url: http://cp.cloudflare.com/generate_204
       interval: 600
       timeout: 3000
       lazy: true
