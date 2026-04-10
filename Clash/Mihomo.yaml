@@ -499,41 +499,19 @@ proxies:
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
-  - name: 🇩🇪 DE-N1-GRPC
-    type: vless
+  - name: 🇩🇪 DE-N1-ANYTLS
+    type: anytls
     server: 2.58.196.11
     port: 22703
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     udp: true
-    tls: true
-    network: grpc
-    servername: de.aimetu.eu.cc
-    grpc-opts:
-      grpc-service-name: den1
-      grpc-user-agent: grpc-java/1.80.0
-      # ping-interval: 0 # 默认关闭，单位为秒
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    sni: addons.mozilla.org
     skip-cert-verify: true
     client-fingerprint: chrome
 
-  - {name: "🇩🇪 DE-N1-GRPC-CDN01", type: vless, server: de.aimetu.eu.cc, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimetu.eu.cc, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den1} }
-  
-  - name: 🇩🇪 DE-N2-GRPC
-    type: vless
-    server: 2.58.196.42
-    port: 22703
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    udp: true
-    tls: true
-    network: grpc
-    servername: de.aimeto.ggff.net
-    grpc-opts:
-      grpc-service-name: den2
-      grpc-user-agent: grpc-go/1.79.3
-      # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: true
-    client-fingerprint: chrome
-
-  - {name: "🇩🇪 DE-N2-GRPC-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2} } 
+  - {name: "🇩🇪 DE-N2-VISION", type: vless, server: 2.58.196.42, port: 22703, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.asus.com, skip-cert-verify: false, client-fingerprint: chrome, reality-opts: {public-key: lhYX_4-8rM_YIkVc5qoHBt59MpK90pGTF7VP8bI-ek4, short-id: 565d8416, support-x25519mlkem768: false} } 
   
   - name: 🇺🇸 US-R3-GRPC
     type: vless
