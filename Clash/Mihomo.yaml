@@ -458,7 +458,7 @@ proxies:
     persistent-keepalive: 45 # 可选字段，数据包间隔持久保活时长
     remote-dns-resolve: true # 可选字段，是否强制 dns 远程解析，默认值为 false
     dns: [1.0.0.1,2606:4700:4700::1001] # 可选字段，当 remote-dns-resolve 为 true 时生效，指定远程解析使用的 dns 服务器
-    #dialer-proxy: 🇹🇷 TR-N1-VL # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
+    #dialer-proxy: 🇯🇵 Japan # 指定 proxy/proxy-group 建立网络连接,用于 wireguard 配置链式代理
 
   - name: 🌤️ WARP-WG-P01
     type: wireguard
@@ -477,7 +477,7 @@ proxies:
     persistent-keepalive: 45
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
-    #dialer-proxy:  🇭🇰 HongKong
+    #dialer-proxy: 🇯🇵 Japan
 
   - name: 🇸🇬 PAGES-VL-CF02
     type: vless
@@ -499,24 +499,42 @@ proxies:
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
-  - name: 🇹🇷 TR-N1-GRPC
+  - name: 🇩🇪 DE-N1-GRPC
     type: vless
-    server: 45.95.214.224
-    port: 46666
+    server: 2.58.196.11
+    port: 22703
     uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     udp: true
     tls: true
     network: grpc
-    servername: tr.jinqian.dpdns.org
+    servername: de.aimetu.eu.cc
     grpc-opts:
-      grpc-service-name: trn1
+      grpc-service-name: den1
       grpc-user-agent: grpc-java/1.80.0
-      # ping-interval: 0
+      # ping-interval: 0 # 默认关闭，单位为秒
     skip-cert-verify: true
     client-fingerprint: chrome
 
-  - {name: "🇹🇷 TR-N1-GRPC-CDN01", type: vless, server: tr.jinqian.dpdns.org, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: tr.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: trn1} }
+  - {name: "🇩🇪 DE-N1-GRPC-CDN01", type: vless, server: de.aimetu.eu.cc, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimetu.eu.cc, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den1} }
+  
+  - name: 🇩🇪 DE-N2-GRPC
+    type: vless
+    server: 2.58.196.42
+    port: 22703
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    network: grpc
+    servername: de.aimeto.ggff.net
+    grpc-opts:
+      grpc-service-name: den2
+      grpc-user-agent: grpc-go/1.79.3
+      # ping-interval: 0 # 默认关闭，单位为秒
+    skip-cert-verify: true
+    client-fingerprint: chrome
 
+  - {name: "🇩🇪 DE-N2-GRPC-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2} } 
+  
   - name: 🇺🇸 US-R3-GRPC
     type: vless
     server: 66.181.36.236
@@ -529,29 +547,11 @@ proxies:
     grpc-opts:
       grpc-service-name: usr3
       grpc-user-agent: grpc-ruby/1.78.1
-      # ping-interval: 0
+      # ping-interval: 0 # 默认关闭，单位为秒
     skip-cert-verify: true
     client-fingerprint: chrome
 
   - {name: "🇺🇸 US-R3-GRPC-CDN01", type: vless, server: us.aimeto.ggff.net, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: us.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: usr3} }
-  
-  - name: 🇩🇪 DE-N2-GRPC
-    type: vless
-    server: 45.142.106.53
-    port: 22703
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    udp: true
-    tls: true
-    network: grpc
-    servername: de.aimeto.ggff.net
-    grpc-opts:
-      grpc-service-name: den2
-      grpc-user-agent: grpc-go/1.79.3
-      # ping-interval: 0
-    skip-cert-verify: true
-    client-fingerprint: chrome
-
-  - {name: "🇩🇪 DE-N2-GRPC-CDN01", type: vless, server: de.aimeto.ggff.net, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: de.aimeto.ggff.net, skip-cert-verify: true, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2} } 
 
   - name: 🇺🇸 US-S1-GRPC
     type: vless
@@ -565,7 +565,7 @@ proxies:
     grpc-opts:
       grpc-service-name: uss1
       grpc-user-agent: grpc-java-android/1.80.0
-      # ping-interval: 0
+      # ping-interval: 0 # 默认关闭，单位为秒
     skip-cert-verify: true
     client-fingerprint: chrome
 
@@ -575,6 +575,7 @@ proxies:
   - {name: "🇺🇸 US-S1-443", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: puui.qpic.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: puui.qpic.cn}} }
   
   - {name: "🇺🇸 US-S1-ARGO", type: vmess, server: gos1.jinqian.dpdns.org, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: gos1.jinqian.dpdns.org, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: gos1.jinqian.dpdns.org}} }  
+  
   - {name: "🇺🇸 US-S1-VISION", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: false, client-fingerprint: chrome, reality-opts: {public-key: iAVRUDdsAzVDVEFkIVuw51rhZgyuQuxCMksVmD4iPnY, short-id: 64ee47a7, support-x25519mlkem768: false} } 
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
