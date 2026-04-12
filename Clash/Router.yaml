@@ -87,9 +87,10 @@ dns:
   respect-rules: false
   use-hosts: true
   use-system-hosts: true
-  listen: 0.0.0.0:1053
+  listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fdfe:dcba:9876::1/64
   fake-ip-filter-mode: blacklist
   fake-ip-ttl: 1
   fake-ip-filter:
@@ -118,16 +119,37 @@ dns:
   default-nameserver:
     - "223.5.5.5"
     - "119.29.29.29"
+    
   nameserver:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
+    
+  nameserver-policy:
+    "blog.google": 8.8.8.8
+    "dl.google.com": https://dns.google/dns-query
+    "dl.l.google.com": https://dns.google/dns-query
+    "update.googleapis.com": quic://dns.adguard-dns.com
+    
+  direct-nameserver-follow-policy: true
+  direct-nameserver:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
 
   proxy-server-nameserver:
     - "1.0.0.1"
     - "8.8.4.4"
+    
+  proxy-server-nameserver-policy: 
+    "*.eu.cc": 208.67.220.220
+    "*.pages.dev": 208.67.220.220
+    "*.ggff.net": 208.67.222.222
+    "*.dpdns.org": 208.67.222.222
+    engage.cloudflareclient.com: https://dns.opendns.com/dns-query
+    
   fallback:
      - "https://dns.google/dns-query"
      - "https://cloudflare-dns.com/dns-query"
+     
   fallback-filter:
     geoip: false
     geoip-code: CN
@@ -139,17 +161,7 @@ dns:
       - "+.google.com"
       - "+.facebook.com"
       - "+.youtube.com"
-
-  direct-nameserver-follow-policy: true
-  direct-nameserver:
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-  nameserver-policy:
-    "blog.google": 8.8.8.8
-    "dl.google.com": https://dns.google/dns-query
-    "dl.l.google.com": https://dns.google/dns-query
-    "update.googleapis.com": quic://dns.adguard-dns.com
-
+      
 hosts:
   "*.mihomo.dev": 127.0.0.1
   "*.dev": 127.0.0.1
