@@ -206,9 +206,9 @@ dns:
   listen: 0.0.0.0:1053 # dns 服务监听，支持 udp, tcp
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
-  # fake-ip-range6: fdfe:dcba:9876::1/64  # fake-ip6 解析地址池
+  fake-ip-range6: fdfe:dcba:9876::1/64  # fake-ip6 解析地址池
   fake-ip-filter-mode: blacklist # 匹配模式默认为 blacklist（ whitelist ）rule，如果匹配成功不返回 (返回)  fake-ip， rule 时开启规则模式，写法发生改变
-  fake-ip-ttl: 1 # # 配置 fakeip 查询返回的 ttl，非必要情况下请勿修改
+  fake-ip-ttl: 1 # 配置 fakeip 查询返回的 ttl，非必要情况下请勿修改
   fake-ip-filter: # fakeip 过滤，以下地址不会下发 fakeip 映射用于连接
     - "*.lan"
     - "*.local"
@@ -250,36 +250,8 @@ dns:
     - "https://dns.alidns.com/dns-query"
     - "https://doh.pub/dns-query"
     #- "quic://dns.alidns.com"
-
-  proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - "1.0.0.1"
-    - "8.8.4.4"
-    #- "https://1.0.0.1/dns-query"
-    #- "https://8.8.4.4/dns-query"
     
-  fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
-     - "https://dns.google/dns-query"
-     - "https://cloudflare-dns.com/dns-query"
-    #- "quic://dns.adguard-dns.com"
-
-  fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
-    geoip: true # 是否启用 geoip 判断
-    geoip-code: CN # geoip 匹配区域筛选，查询不是 cn 时使用 fallback 返回结果
-    geosite: # 匹配到 geosite 的域名，将只使用 fallback 解析，不去使用 nameserver
-      - gfw
-    ipcidr: # 这些网段的结果会被视为污染，nameserver 解析出这些结果时将会采用 fallback 的解析结果
-      - 240.0.0.0/4
-    domain: # 这些域名被视为已污染，匹配到这些域名，会直接使用 fallback 解析，不去使用 nameserver  
-      - "+.google.com"
-      - "+.facebook.com"
-      - "+.youtube.com"
-    
-  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，仅当 direct-nameserver 不为空时生效    
-  direct-nameserver: # 用于 direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-    
-  nameserver-policy: # 指定域名查询的解析服务器，可指定 " geosite & rule-set " dns 解析
+  nameserver-policy: # 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
     "blog.google": 8.8.8.8
     "dl.google.com": https://dns.google/dns-query
     "dl.l.google.com": https://dns.google/dns-query
@@ -291,7 +263,37 @@ dns:
     "geosite:category-scholar-!cn,geolocation-!cn":
       - https://dns.google/dns-query
       - https://cloudflare-dns.com/dns-query
-     #"rule-set:🌐 Global,dns": 8.8.8.8
+
+  direct-nameserver-follow-policy: true # 是否遵循 nameserver-policy，仅当 direct-nameserver 不为空时生效    
+  direct-nameserver: # 用于 direct 出口域名解析的 dns 服务器，如果不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+
+  proxy-server-nameserver: # 用于解析代理节点域名的 dns 服务器，不填则遵循 nameserver-policy、nameserver 和 fallback 的配置
+    - "1.0.0.1"
+    - "8.8.4.4"
+    #- "https://1.0.0.1/dns-query"
+    #- "https://8.8.4.4/dns-query"
+    
+  proxy-server-nameserver-policy:  # 用于节点域名解析，仅当 proxy-server-nameserver 不为空时生效, 格式同 nameserver-policy
+    engage.cloudflareclient.com: 1.0.0.1
+    
+  fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
+     - "https://dns.google/dns-query"
+     - "https://cloudflare-dns.com/dns-query"
+    #- "quic://dns.adguard-dns.com"
+    
+  fallback-filter: # 后备域名解析服务器筛选，满足条件的将使用 fallback 结果或只使用 fallback 解析
+    geoip: true # 是否启用 geoip 判断
+    geoip-code: CN # geoip 匹配区域筛选，查询不是 cn 时使用 fallback 返回结果
+    geosite: # 匹配到 geosite 的域名，将只使用 fallback 解析，不去使用 nameserver
+      - gfw
+    ipcidr: # 这些网段的结果会被视为污染，nameserver 解析出这些结果时将会采用 fallback 的解析结果
+      - 240.0.0.0/4
+    domain: # 这些域名被视为已污染，匹配到这些域名，会直接使用 fallback 解析，不去使用 nameserver  
+      - "+.google.com"
+      - "+.facebook.com"
+      - "+.youtube.com"
     
 #💡 本地域名映射，类似于/etc/hosts, 仅支持配置单个 ip
 hosts:
@@ -336,28 +338,6 @@ sniffer:
     
 #💡 流量入站配置,可以作为服务器
 listeners:
-  - name: socks-local
-    type: socks # socks代理
-    port: 10808 # 支持使用ports格式，例如200,302 or 200,204,401-429,501-503
-    listen: 0.0.0.0
-    udp: true
-    users:
-      - username: admin
-        password: password
-    rule: rules # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
-    #proxy: 🌐 Global  # 如果不为空则直接将该入站流量交由指定 proxy 处理 (当 proxy 不为空时，这里的 proxy 名称必须合法，否则会出错)
-    
-  - name: http-local
-    type: http # http(s)代理
-    port: 10809
-    listen: 0.0.0.0
-    udp: true
-    users:
-      - username: admin
-        password: password
-    rule: rules
-    #proxy: 🌐 Global
-
   - name: mixed-local
     type: mixed # http(s) 和socks代理混合
     port: 10810
@@ -368,66 +348,6 @@ listeners:
         password: password
     rule: rules
     #proxy: 🌐 Global
-
-  - name: tproxy-local
-    type: tproxy
-    port: 10811
-    listen: 0.0.0.0
-    udp: true
-    rule: rules
-    #proxy: 🌐 Global
-    
-  - name: shadowsocks-local
-    type: shadowsocks
-    port: 10812
-    listen: 0.0.0.0
-    password: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    cipher: aes-256-gcm
-    rule: rules
-    #proxy: 🌐 Global
-    
-  - name: vmess-local
-    type: vmess
-    port: 10813
-    listen: 0.0.0.0
-    rule: rules
-    #proxy: 🌐 Global
-    users:
-      - username: admin
-        uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
-        alterId: 0
-    #ws-path: "/" # 如果不为空则开启websocket传输层
-    #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
-    #private-key: ./server.key
-
-  - name: vless-local
-    type: vless
-    port: 10814
-    listen: 0.0.0.0
-    rule: rules
-    #proxy: 🌐 Global
-    users:
-      - username: admin
-        uuid: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
-        flow: xtls-rprx-vision
-    #ws-path: "/" # 如果不为空则开启websocket传输层
-    #grpc-service-name: "GunService" # 如果不为空则开启 grpc 传输层
-    #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
-    #private-key: ./server.key
-
-  - name: trojan-local
-    type: trojan
-    port: 10815
-    listen: 0.0.0.0
-    rule: rules
-    #proxy: 🌐 Global
-    users:
-      - username: admin
-        password: 08c4ff67-599a-4d28-90a5-9d85fecd0e5b
-    #ws-path: "/" # 如果不为空则开启websocket传输层
-    #grpc-service-name: "GunService" # 如果不为空则开启 grpc 传输层
-    #certificate: ./server.crt # 下面两项如果填写则开启tls（需要同时填写）
-    #private-key: ./server.key
     
 #💡 隧道模式，代理转发到目标服务器（示例：address 经过 proxy 访问 target）
 tunnels:
