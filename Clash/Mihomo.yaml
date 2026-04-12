@@ -276,7 +276,11 @@ dns:
     #- "https://8.8.4.4/dns-query"
     
   proxy-server-nameserver-policy:  # 用于节点域名解析，仅当 proxy-server-nameserver 不为空时生效, 格式同 nameserver-policy
-    engage.cloudflareclient.com: 1.0.0.1
+    "*.eu.cc": 208.67.220.220
+    "*.pages.dev": 208.67.220.220
+    "*.ggff.net": 208.67.222.222
+    "*.dpdns.org": 208.67.222.222
+    engage.cloudflareclient.com: https://dns.opendns.com/dns-query
     
   fallback: # 后备 dns 服务器，一般情况下使用境外 dns, 保证结果可信
      - "https://dns.google/dns-query"
