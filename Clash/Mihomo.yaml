@@ -524,7 +524,7 @@ proxies:
   
   - {name: "🇺🇸 US-S1-443", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: puui.qpic.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: puui.qpic.cn}} }
   
-  - {name: "🇺🇸 US-S1-ARGO", type: vmess, server: tun.jinqian.dpdns.org, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tun.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tun.jinqian.dpdns.org}} }  
+  - {name: "🇺🇸 US-S1-ARGO", type: vmess, server: tunnel.jinqian.dpdns.org, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tunnel.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tunnel.jinqian.dpdns.org}} }  
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
