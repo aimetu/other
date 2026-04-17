@@ -494,13 +494,37 @@ proxies:
     client-fingerprint: chrome
 
   - {name: "🇺🇸 US-S1-GRPC-CDN01", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, servername: us.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: uss1} } 
-  
+
+  - {name: "🇺🇸 US-S1-VISION", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: -rffh9osBnauDceST5TyMDjbiGdZjNvzRw3CGYpIsBU, short-id: 038a319c8a889e09, support-x25519mlkem768: false} } 
+
+  - name: 🇺🇸 US-S1-XHTTP
+    type: vless
+    server: 2604:abc0:103:415:a1::48
+    port: 26665
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    encryption: "none"
+    flow: ""
+    network: xhttp
+    alpn:
+      - h2
+    servername: www.bing.com # Reality 伪装域名
+    reality-opts:
+      public-key: z1w8UkKwRhoQfjAutON7m929byL84RzkBSz0KIgjMWM
+      short-id: ca2675
+    xhttp-opts:
+      path: /?ed=2560 # 必须与服务端配置的 path 一致
+      mode: auto # Reality 模式下 auto 会自动选择 stream-one
+      host: www.bing.com # 直连时可省略，默认继承 servername
+    skip-cert-verify: true
+    client-fingerprint: chrome
+
   - {name: "🇺🇸 US-S1-8080", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 8080, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
+  
   - {name: "🇺🇸 US-S1-443", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: puui.qpic.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: puui.qpic.cn}} }
   
   - {name: "🇺🇸 US-S1-ARGO", type: vmess, server: gos1.jinqian.dpdns.org, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: gos1.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: gos1.jinqian.dpdns.org}} }  
-  
-  - {name: "🇺🇸 US-S1-VISION", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: iAVRUDdsAzVDVEFkIVuw51rhZgyuQuxCMksVmD4iPnY, short-id: 64ee47a7, support-x25519mlkem768: false} } 
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
