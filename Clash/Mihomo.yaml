@@ -501,6 +501,18 @@ proxies:
 
   - {name: "🇺🇸 US-S1-VISION", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: -rffh9osBnauDceST5TyMDjbiGdZjNvzRw3CGYpIsBU, short-id: 038a319c8a889e09, support-x25519mlkem768: false} } 
 
+  - name: 🇺🇸 US-S1-HY2
+    type: hysteria2
+    server: 2604:abc0:103:415:4caa:3ff:fe72:b812
+    port: 16665
+    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    obfs: salamander
+    obfs-password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    sni: us.jinqian.dpdns.org
+    alpn: [h3]
+    skip-cert-verify: false
+    client-fingerprint: chrome
+
   - name: 🇺🇸 US-S1-XHTTP
     type: vless
     server: 2604:abc0:103:415:a1::48
