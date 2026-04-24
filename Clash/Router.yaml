@@ -980,7 +980,13 @@ rule-providers:
 rules:
   - DOMAIN, router.local, 🇨🇳 China
   - DOMAIN-SUFFIX, home.arpa, 🇨🇳 China
+  - DOMAIN-SUFFIX, intlgame.com, 🎮 Game
+  - DOMAIN-SUFFIX, sgameglobal.com, 🎮 Game
+  - DOMAIN-SUFFIX, appsflyersdk.com, 🎮 Game
+  - DOMAIN-KEYWORD, sgameglobal.com,  🎮 Game
   - DOMAIN-KEYWORD, localhost, 🇨🇳 China
+  - IP-CIDR, 43.132.55.55/16, 🎮 Game, no-resolve
+  - IP-CIDR, 183.192.65.101/16, 🎮 Game, no-resolve
   - IP-CIDR, 10.0.0.0/8, 🇨🇳 China, no-resolve　　　　　　
   - IP-CIDR, 100.64.0.0/10, 🇨🇳 China, no-resolve
   - IP-CIDR, 127.0.0.0/8, 🇨🇳 China, no-resolve
