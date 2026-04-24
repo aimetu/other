@@ -1392,10 +1392,13 @@ rule-providers:
 # DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
 # DOMAIN-SUFFIX：域名后缀规则，如果请求的域名后缀匹配，则会匹配上此规则
 # DOMAIN-KEYWORD：域名关键词规则，如果请求的域名中包含关键字，则会匹配上此规则
+# DOMAIN-WILDCARD：通配符匹配，仅支持*和?通配符
 # DOMAIN-REGEX：匹配域名正则表达式
 # PROCESS-NAME：使用进程匹配，在 Android 平台可以匹配包名
+# PROCESS-NAME-WILDCARD：使用进程名称通配符匹配，仅支持*和?通配符，在Android平台可以匹配包名
 # PROCESS-NAME-REGEX：使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
 # PROCESS-PATH：进程路径规则，匹配完整进程路径
+# PROCESS-PATH-WILDCARD：使用进程路径通配符匹配，仅支持*和?通配符
 # PROCESS-PATH-REGEX：使用进程路径正则表达式匹配
 # IP-CIDR：ip 范围规则，请求 ipv4 匹配的指定范围 参考：https://www.ipaddressguide.com/
 # IP-CIDR6：ip 范围规则，请求 ipv6 匹配的指定范围
@@ -1422,9 +1425,10 @@ rule-providers:
 # GEOSITE：域名集合，匹配集合内的域名 参考：https://github.com/v2fly/domain-list-community/tree/master/data
 # MATCH：兜底规则，不在规则中的请求（规则必须写在其他规则之后，它会直接匹配所有的请求）
 rules:
-  - DOMAIN, router.local, 🇨🇳 China
+  - DOMAIN, router.local, 🇨🇳 China # DOMAIN：域名规则，如果请求的域完全匹配，则会匹配上此规则
   - DOMAIN-SUFFIX, home.arpa, 🇨🇳 China
   - DOMAIN-KEYWORD, localhost, 🇨🇳 China
+  - DOMAIN-WILDCARD, *.local, 🇨🇳 China
   - DOMAIN-REGEX, ^https?:\/\/(www|m)\.google\.cn, 📟 Google
   - IP-CIDR, 10.0.0.0/8, 🇨🇳 China, no-resolve
   - IP-CIDR, 100.64.0.0/10, 🇨🇳 China, no-resolve
@@ -1458,8 +1462,10 @@ rules:
   #- PROCESS-NAME, com.android.vending, 📟 Google # 使用进程匹配，Android平台可以匹配包名
   #- PROCESS-NAME, org.telegram.messenger, ✉️ Telegram
   #- PROCESS-NAME, com.openai.chatgpt, 🤖 OpenAI
+  #- PROCESS-NAME-WILDCARD, *telegram*, ✉️ Telegram # 使用进程名称通配符匹配，仅支持*和?通配符，在Android平台可以匹配包名
   #- PROCESS-NAME-REGEX, *.telegram.*, ✉️ Telegram # 使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
   - PROCESS-PATH, C:\Program Files\Microsoft OneDrive\OneDrive.exe, 🌐 Global
+  #- PROCESS-PATH-WILDCARD, /Program Files/*/OneDrive.exe, 🌐 Global # 使用进程路径通配符匹配，仅支持*和?通配符
   #- PROCESS-PATH-REGEX, *\Notion\Notion.exe, 🌐 Global
   #- PROCESS-PATH-REGEX, *.android.calendar, 📟 Google
   #- PROCESS-PATH-REGEX, (?i).*google.android.apps.*, 📟 Google # 使用进程名称正则表达式匹配，在 Android 平台可以匹配包名
