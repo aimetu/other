@@ -203,7 +203,7 @@ dns:
   respect-rules: true # dns 遵守路由规则，需配置 proxy-server-nameserver
   use-hosts: true # 是否回应配置中的 hosts
   use-system-hosts: true # 是否查询系统中的 hosts
-  listen: 0.0.0.0:53 # dns 服务监听，支持 udp, tcp
+  listen: 0.0.0.0:1053 # dns 服务监听，支持 udp, tcp
   enhanced-mode: fake-ip # dns 增强模式  
   fake-ip-range: 198.18.0.1/16 # fake-ip 解析地址池
   fake-ip-range6: fdfe:dcba:9876::1/64  # fake-ip6 解析地址池
