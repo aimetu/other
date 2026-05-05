@@ -13,7 +13,7 @@
 # https://d.metacubex.one/
 # https://metacubex.github.io/metacubexd/
 
-# 2026.03.01
+# 2026.05.05
 # 注释：在 yaml 格式的文件中，以 "#" 作为注释开头，行尾为结尾，"#" 必须在行头或者必须在前方有空格，否则不视为注释
 
 # other 设置补充说明
@@ -423,6 +423,25 @@ proxies:
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
   - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
 
+  - name: 🇭🇰 HK-R1-GRPC
+    type: vless
+    server: 198.44.182.3
+    port: 22703
+    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
+    udp: true
+    tls: true
+    network: grpc
+    alpn: [h2, http/1.1]
+    servername: hk.aimeto.eu.cc
+    grpc-opts:
+      grpc-service-name: hkr1
+      grpc-user-agent: grpc-go/1.79.3
+      # ping-interval: 0 # 默认关闭，单位为秒
+    skip-cert-verify: true
+    client-fingerprint: chrome
+
+  - {name: "🇭🇰 HK-R1-GRPC-CDN01", type: vless, server: hk.aimeto.eu.cc, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: hk.aimeto.eu.cc, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: hkr1, grpc-user-agent: grpc-go/1.79.3} } 
+
   - name: 🇩🇪 DE-N1-GRPC
     type: vless
     server: 2.58.196.11
@@ -509,7 +528,7 @@ proxies:
     obfs: salamander
     obfs-password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
     sni: us.jinqian.dpdns.org
-    alpn: [h3]
+    alpn: [h3, h2]
     skip-cert-verify: false
     client-fingerprint: chrome
 
