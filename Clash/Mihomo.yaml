@@ -436,7 +436,7 @@ proxies:
     tls: true
     network: grpc
     alpn: [h2, http/1.1]
-    servername: hk.aimeto.eu.cc
+    servername: hk.jinqian.ggff.net
     grpc-opts:
       grpc-service-name: hkr1
       grpc-user-agent: grpc-go/1.79.3
@@ -444,7 +444,7 @@ proxies:
     skip-cert-verify: true
     client-fingerprint: chrome
 
-  - {name: "🇭🇰 HK-R1-GRPC-CDN01", type: vless, server: hk.aimeto.eu.cc, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: hk.aimeto.eu.cc, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: hkr1, grpc-user-agent: grpc-go/1.79.3} } 
+  - {name: "🇭🇰 HK-R1-GRPC-CDN01", type: vless, server: hk.jinqian.ggff.net, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: hk.jinqian.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: hkr1, grpc-user-agent: grpc-go/1.79.3} } 
 
   - name: 🇩🇪 DE-N1-GRPC
     type: vless
