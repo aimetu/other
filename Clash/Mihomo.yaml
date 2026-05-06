@@ -420,8 +420,12 @@ proxies:
     skip-cert-verify: false
 
   - {name: "🇯🇵 WORKERS-VL-CDN01", type: vless, server: w01.jinqiantu.dpdns.org, port: 2096, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.jinqiantu.dpdns.org}} } 
+  
   - {name: "🇰🇷 WORKERS-VL-CDN02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
-  - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} } 
+
+  - {name: "🇯🇵 WORKERS-VL-CDN03", type: vless, server: w01.aimetu.eu.cc, port: 2087, uuid: a6857f71-33c0-4584-8772-c38160210cf2, udp: true, tls: true, network: ws, servername: w01.aimetu.eu.cc, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimetu.eu.cc}} } 
+  
+  - {name: "🇸🇬 PAGES-VL-CDN02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} }
 
   - name: 🇭🇰 HK-R1-GRPC
     type: vless
