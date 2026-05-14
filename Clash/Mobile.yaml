@@ -195,7 +195,7 @@ sniffer:
     - "+.apple.com"
 
 proxies: 
-  - name: 🌤️ WARP-WG-T01
+  - name: 🌤️ WARP+
     type: wireguard
     private-key: QOmt5UE2jp5s2vqYMKmjd714tBC7eteELAFRCEinJG4=
     ip: 172.16.0.2
@@ -213,25 +213,6 @@ proxies:
     remote-dns-resolve: true
     dns: [1.0.0.1,2606:4700:4700::1001]
     #dialer-proxy: 🇭🇰 HongKong
-
-  - name: 🌤️ WARP-WG-P01
-    type: wireguard
-    private-key: wEPBA9NACxZ+lfcTD0yFDrx83RNWseNw2O3yJYWeVmk=
-    ip: 172.16.0.2
-    ipv6: 2606:4700:110:89db:66c6:5265:3a6f:b92
-    peers: 
-     - server: 162.159.195.1
-       port: 2408
-       public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-       #pre-shared-key: 31aIhAPwktDGpH4JDhA8GNvjFXEf/a6+UaQRyOAiyfM=
-       allowed_ips: ["0.0.0.0/0","::/0"]
-       reserved: [173,82,247]
-    mtu: 1500
-    udp: true
-    persistent-keepalive: 45
-    remote-dns-resolve: true
-    dns: [1.0.0.1,2606:4700:4700::1001]
-    #dialer-proxy: 🇯🇵 Japan
 
 proxy-providers:
   Subscribe:
