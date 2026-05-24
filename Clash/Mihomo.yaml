@@ -419,8 +419,8 @@ proxies:
     network: tcp
     servername: www.amd.com
     reality-opts:
-      public-key: n4RIR-DYOXIKuhjmWjCHBKfCXSc8rPKRRH4F6629rwU
-      short-id: 6250
+      public-key: aj2eNz7qBTdjdA7eTWQxLayhh63yfuALfJsGc4wpWR0
+      short-id: 4ead5d7c92396de9
       support-x25519mlkem768: false
     skip-cert-verify: true
     client-fingerprint: chrome
