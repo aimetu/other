@@ -45,7 +45,7 @@ geox-url:
 geosite-matcher: succinct
 
 experimental:
-  quic-go-disable-gso: false
+  quic-go-disable-gso: true
   quic-go-disable-ecn: false
   dialer-ip4p-convert: false
 
