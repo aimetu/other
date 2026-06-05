@@ -422,7 +422,7 @@ proxies:
       public-key: aj2eNz7qBTdjdA7eTWQxLayhh63yfuALfJsGc4wpWR0
       short-id: 4ead5d7c92396de9
       support-x25519mlkem768: false
-    skip-cert-verify: true
+    skip-cert-verify: false
     client-fingerprint: chrome
 
   - name: 🇩🇪 德国N1
@@ -439,7 +439,7 @@ proxies:
       grpc-service-name: den1
       grpc-user-agent: grpc-go/1.79.3
       # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: true
+    skip-cert-verify: false
     client-fingerprint: chrome
 
   - {name: "🇩🇪 德国N1C", type: vless, server: de.jinqiantu.dpdns.org, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: de.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den1, grpc-user-agent: grpc-go/1.79.3} } 
@@ -458,7 +458,7 @@ proxies:
       grpc-service-name: den2
       grpc-user-agent: grpc-java/1.80.0
       # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: true
+    skip-cert-verify: false
     client-fingerprint: chrome
     
   - {name: "🇩🇪 德国N2C", type: vless, server: de.aimeto.ggff.net, port: 2087, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: de.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den2, grpc-user-agent: grpc-java/1.80.0} } 
@@ -477,7 +477,7 @@ proxies:
       grpc-service-name: usr3
       grpc-user-agent: grpc-ruby/1.78.1
       # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: true
+    skip-cert-verify: false
     client-fingerprint: chrome
 
   - {name: "🇺🇸 美国R3C", type: vless, server: us.aimeto.ggff.net, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: us.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: usr3} }
@@ -496,7 +496,7 @@ proxies:
       grpc-service-name: uss1
       grpc-user-agent: grpc-java-android/1.80.0
       # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: true
+    skip-cert-verify: false
     client-fingerprint: chrome
 
   - {name: "🇺🇸 美国S1C", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: us.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: uss1} } 
