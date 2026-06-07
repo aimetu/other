@@ -482,6 +482,8 @@ proxies:
 
   - {name: "🇺🇸 美国R3C", type: vless, server: us.aimeto.ggff.net, port: 2096, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: us.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: usr3} }
 
+  - {name: "🇺🇸 美国R3A", type: vmess, server: tus.aimeto.ggff.net, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tus.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tus.aimeto.ggff.net}} } 
+  
   - name: 🇺🇸 美国S1
     type: vless
     server: 2604:abc0:103:415:a1::48
@@ -540,8 +542,6 @@ proxies:
   - {name: "🇺🇸 美国S180", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 8080, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
   
   - {name: "🇺🇸 美国S143", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: puui.qpic.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: puui.qpic.cn}} }
-  
-  - {name: "🇺🇸 美国S1A", type: vmess, server: tunnel.jinqian.dpdns.org, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tunnel.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tunnel.jinqian.dpdns.org}} }  
   
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
