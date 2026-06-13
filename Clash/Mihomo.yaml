@@ -503,7 +503,7 @@ proxies:
 
   - {name: "🇺🇸 美国S1C", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: us.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: uss1} } 
 
-  - {name: "🇺🇸 美国S1V", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: -rffh9osBnauDceST5TyMDjbiGdZjNvzRw3CGYpIsBU, short-id: 038a319c8a889e09, support-x25519mlkem768: false} } 
+  - {name: "🇺🇸 美国S1V", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: dQEvzyC3706lmGxxCzvk1WedePGE87PaCDZWCsgYbn8, short-id: 730f2a76, support-x25519mlkem768: false} } 
 
   - name: 🇺🇸 美国S1H
     type: hysteria2
@@ -530,11 +530,11 @@ proxies:
     alpn: [h2]
     servername: www.bing.com # Reality 伪装域名
     reality-opts:
-      public-key: 1TYQQzdLRivuE4RRyM6Az3azZZ4Cpz7AkshVSGfYLC4
-      short-id: c42292b179bfd6bf  
+      public-key: erIXMzbyx6cw6sHqu--QT62wYX4yfNHE2lDbCRZ7tgw
+      short-id: fec3a791  
     xhttp-opts:
-      path: /?ed=2560 # 必须与服务端配置的 path 一致
-      mode: auto # Reality 模式下 auto 会自动选择 stream-one
+      path: "/?ed=2560" # 必须与服务端配置的 path 一致
+      mode: "stream-one" # Reality 模式下 auto 会自动选择 stream-one
       host: www.bing.com # 直连时可省略，默认继承 servername
     skip-cert-verify: false
     client-fingerprint: chrome
