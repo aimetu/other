@@ -26,7 +26,7 @@ global-ua: clash.meta
 etag-support: true
 
 external-controller: 0.0.0.0:9090
-external-controller-tls: 0.0.0.0:9443
+external-controller-tls: 0.0.0.0:9091
 secret: U2FsdGVkX18ZbnaTEGawdyfMO6FQZYRbmyZcblLGyGE=
 
 external-ui: ./ui
