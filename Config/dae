@@ -1,0 +1,64 @@
+global {
+    tproxy_port: 12345
+    tproxy_port_protect: true
+    so_mark_from_dae: 0
+    log_level: info
+    lan_interface: br-lan
+    wan_interface: auto
+    auto_config_kernel_parameter: true
+    dial_mode: domain
+    tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
+    udp_check_dns: 'dns.alidns.com:53,223.5.5.5,2400:3200::1'
+    check_interval: 30s
+    check_tolerance: 50ms
+}
+
+subscription {
+    glados: 'https://example.com/subscribe/'
+}
+
+node {
+    s_216818d184: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@2.58.196.42:22703?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2'
+    s_6a9443515d: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@de.aimeto.ggff.net:2087?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2C'
+    s_9ea2f1da03: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@2.58.196.11:22703?encryption=none&security=tls&sni=de.jinqian.dpdns.org&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den1&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN1'
+    s_e3ab3972fe: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@de.jinqiantu.dpdns.org:2083?encryption=none&security=tls&sni=de.jinqiantu.dpdns.org&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den1&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN1C'
+    s_5df664f227: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@us.aimeto.ggff.net:2096?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3C'
+    s_a6a8697794: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@66.181.36.236:22703?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3'
+    s_073817f539: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@us.jinqian.dpdns.org:2053?encryption=none&security=tls&sni=us.jinqian.dpdns.org&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=uss1&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDS1C'
+    s_f1301a12a3: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@[2604:abc0:103:415:a1::48]:46665?encryption=none&security=tls&sni=us.jinqian.dpdns.org&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=uss1&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDS1'
+}
+
+dns {
+    ipversion_prefer: 4
+    upstream {
+        alidns: 'quic://dns.alidns.com:853'
+        google: 'tls://dns.google:853'
+    }
+    routing {
+        request {
+            qname(geosite:cn) -> alidns
+            fallback: google
+        }
+    }
+}
+
+group {
+    proxy {
+        filter: subtag(glados) && name(keyword: 'TW')
+        policy: min_moving_avg
+    }
+}
+
+routing {
+    pname(NetworkManager, systemd-resolved, dnsmasq) -> must_direct
+    dip(224.0.0.0/3) -> direct
+    dip(255.255.255.255/32) -> direct
+    dip('ff00::/8') -> direct
+    dip(geoip:private) -> direct
+    l4proto(udp) && dport(123) -> direct
+    domain(connectivitycheck.gstatic.com) -> direct
+    domain(msftconnecttest.com) -> direct
+    dip(geoip:cn) -> direct
+    domain(geosite:cn) -> direct
+    fallback: proxy
+}
