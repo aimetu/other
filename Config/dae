@@ -1,16 +1,33 @@
 global {
     tproxy_port: 12345
     tproxy_port_protect: true
+    pprof_port: 0
+    bpf_conn_state_map_size: 262144
     so_mark_from_dae: 0
     log_level: info
+    disable_waiting_network: false
+    disable_thp: true
     lan_interface: br-lan
     wan_interface: auto
     auto_config_kernel_parameter: true
     dial_mode: domain
     tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
+    tcp_check_http_method: HEAD
     udp_check_dns: 'dns.alidns.com:53,223.5.5.5,2400:3200::1'
-    check_interval: 30s
+    check_interval: 300s
     check_tolerance: 50ms
+    bootstrap_resolver: '223.5.5.5:53'
+    fallback_resolver: '119.29.29.29:53'
+    allow_insecure: false
+    sniffing_timeout: 30ms
+    tls_implementation: tls
+    utls_imitate: chrome_auto
+    tls_fragment: false
+    tls_fragment_length: '50-100'
+    tls_fragment_interval: '10-20'
+    mptcp: false
+    bandwidth_max_tx: '200 mbps'
+    bandwidth_max_rx: '1 gbps'
 }
 
 subscription {
@@ -45,6 +62,7 @@ dns {
 group {
     proxy {
         filter: subtag(glados) && name(keyword: 'TW')
+        filter: name(regex: '德国N2', regex: '美国R3')
         policy: min_moving_avg
     }
 }
