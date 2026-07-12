@@ -50,19 +50,18 @@ node {
 dns {
     # ipversion_prefer: 4
     upstream {
-        alidns: 'quic://dns.alidns.com:853'
-        google: 'tls://dns.google:853'
-        # dnspod: 'udp://119.29.29.29:53'
+        alidns: 'udp://223.5.5.5:53'
+        cloudflare: 'tcp+udp://1.1.1.1:53'
     }
     routing {
         request {
             qname(geosite:cn) -> alidns
-            # qname(geosite:private) && !qname(geosite:cn) -> dnspod
-            fallback: google
+            # qname(geosite:private) && !qname(geosite:cn) -> alidns
+            fallback: cloudflare
         }
         response {
-            upstream(google) -> accept            
-            ip(geoip:private) && !qname(geosite:cn) -> google
+            upstream(cloudflare) -> accept
+            ip(geoip:private) && !qname(geosite:cn) -> cloudflare
             fallback: accept
         }
     }
