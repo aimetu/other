@@ -57,7 +57,7 @@ dns {
     routing {
         request {
             qname(geosite:cn) -> alidns
-            # ip(geoip:private) && !qname(geosite:cn) -> dnspod
+            # qname(geosite:private) && !qname(geosite:cn) -> dnspod
             fallback: google
         }
         response {
