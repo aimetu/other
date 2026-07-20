@@ -29,11 +29,11 @@ global {
     bandwidth_max_tx: '200 mbps'
     bandwidth_max_rx: '1 gbps'
     # bootstrap_resolver: '223.5.5.5:53'
-    fallback_resolver: '119.29.29.29:53'
+    fallback_resolver: '1.1.1.1:53'
 }
 
 subscription {
-    glados: 'https://example.com/subscribe/'
+    subscribe: 'https://example.com/subscribe/'
 }
 
 node {
@@ -50,8 +50,8 @@ node {
 dns {
     # ipversion_prefer: 4
     upstream {
-        alidns: 'udp://223.5.5.5:53'
-        cloudflare: 'tcp+udp://1.1.1.1:53'
+        alidns: 'https://dns.alidns.com:443/dns-query'
+        cloudflare: 'https://cloudflare-dns.com:443/dns-query'
     }
     routing {
         request {
@@ -69,7 +69,7 @@ dns {
 
 group {
     proxy {
-        filter: subtag(glados) && name(keyword: 'TW')
+        filter: subtag(subscribe) && name(keyword: 'TW')
         filter: name(regex: 'DEN2', regex: 'USR3')
         # filter: name(DEN2, USR3)
         policy: min_moving_avg
