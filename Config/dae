@@ -1,10 +1,10 @@
-# https://github.com/olicesx/dae/blob/main/example.dae
+# https://github.com/daeuniverse/dae/blob/v2.0.0/example.dae
 
 global {
     tproxy_port: 12345
     tproxy_port_protect: true
     pprof_port: 0
-    # bpf_conn_state_map_size: 262144
+    bpf_conn_state_map_size: 262144
     so_mark_from_dae: 0
     log_level: info
     disable_waiting_network: false
@@ -28,7 +28,7 @@ global {
     mptcp: false
     bandwidth_max_tx: '200 mbps'
     bandwidth_max_rx: '1 gbps'
-    # bootstrap_resolver: '223.5.5.5:53'
+    bootstrap_resolver: '223.5.5.5:53'
     fallback_resolver: '1.1.1.1:53'
 }
 
