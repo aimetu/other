@@ -1,0 +1,180 @@
+# https://github.com/daeuniverse/honk/blob/main/config.dae
+# https://github.com/daeuniverse/honk/blob/main/example.dae
+
+global {
+    wan_interface: auto    
+    lan_interface: br-lan
+    
+    log_level: info
+
+    # 运行日志追加写入 data_dir 下的文件（空值关闭文件输出）
+    log_file: 'honk.log'
+
+    # 拨号模式：ip / domain / domain+ / domain++
+    dial_mode: domain
+    allow_insecure: false
+    auto_config_kernel_parameter: true
+
+    # 运行时状态与相对资源根目录（须为绝对路径；修改后需重启）
+    data_dir: '/var/lib/honk'
+
+    # 健康检查：TCP 用 HTTPS 探测，UDP 用 DNS 探测（经节点自身隧道）
+    tcp_check_url: 'https://www.gstatic.com/generate_204'
+    tcp_check_http_method: HEAD
+    udp_check_dns: 'dns.google.com:53,8.8.8.8,2001:4860:4860::8888'
+    check_interval: 300s
+    check_tolerance: 50ms
+
+    # 预热与拨号预算（详细语义见 doc/zh/configuration.md）：
+    # - 健康探测只测不暖:探测不会给冷节点留下常驻会话,无需担心节点多。
+    # - UDP 预热：每组每 IP 族 top-N 个 UDP 叶子预建会话（单组封顶 3，
+    #   进程总量封顶 4×N；大订阅建议 N=1-3）。
+    # udp_warm_node_count: 3
+
+    # - 启动裸 TCP 预连接:'auto'(默认,最多 8 个,各组当前选中优先)
+    #   / 0(关闭) / N;AnyTLS/QUIC 与内置 direct/block 自动排除。
+    # preconnect_node_count: 'auto'
+
+    # 物理代理连接/握手并发上限（默认 64；Ready/已热复用及 direct/block 不占额度）
+    # max_concurrent_dials: 64
+
+    bootstrap_resolver: '223.5.5.5:53'
+
+    fallback_resolver: '1.1.1.1:53'
+
+    # 保存成功获取的订阅正文到运行目录 .sub,启动/重载时可离线恢复
+    store_subscribe: true
+
+    # 持有有歧义 LAN 转发 UDP 首包；默认开启，修改后需重启。
+    nfqueue_enable: true
+
+    # 预热与拨号预算(小中规模节点的推荐值;大订阅见 doc/zh/configuration.md)
+    # 大订阅基线关闭额外 UDP 预热；Selector 选择仍单独保活。
+    udp_warm_node_count: 0
+
+    # 大订阅诊断基线也关闭启动裸 TCP 预连接。
+    preconnect_node_count: 0
+
+    # 物理代理连接/握手上限（默认 64；Ready/已热复用和 direct/block 不占额度）
+    # max_concurrent_dials: 64
+
+    tproxy_port: 12345
+    tproxy_port_protect: true
+    pprof_port: 0
+    bpf_conn_state_map_size: 262144
+    so_mark_from_dae: 0
+    
+    disable_waiting_network: false
+    disable_thp: false
+
+    sniffing_timeout: 100ms
+    tls_implementation: tls
+    utls_imitate: chrome_auto
+    tls_fragment: false
+    tls_fragment_length: '50-100'
+    tls_fragment_interval: '10-20'
+    mptcp: false
+    bandwidth_max_tx: '200 mbps'
+    bandwidth_max_rx: '1 gbps'
+}
+
+subscription {
+    subscribe: 'https://example.com/subscribe/'(honk/1.0 like)
+}
+
+node {
+    # iris-1: ''socks5://user:pass@gw.example.com:1080''    
+    DEN2: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@2.58.196.42:22703?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2'
+    DEN2C: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@de.aimeto.ggff.net:2087?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2C'
+    USR3C: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@us.aimeto.ggff.net:2096?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3C'
+    USR3: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@66.181.36.236:22703?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3'
+}
+
+group {
+    proxy {
+        filter: subtag(subscribe) && name(keyword: 'TW')
+        policy: min_moving_avg
+        # 按延迟自动选择；无存活节点时回退到 manual 组
+        final: manual
+    }
+    manual {
+        filter: name(DEN2, USR3)
+        # 固定使用组内第一个节点
+        policy: fixed(0)
+    }
+}
+
+dns {
+    # ipversion_prefer: 4
+    # 自动推断直连公网路径的 /24；代理上游不会携带生成的 ECS。
+    client_subnet: auto
+
+    # hosts 快照:true 加入 /etc/hosts,路径加载 OxiDNS 兼容规则文件;可重复
+    use_host: true
+
+    # 独立 DNS 监听器（默认关闭；无认证递归,必须用防火墙限制来源）
+    # bind: 'tcp+udp://:1053'
+
+    upstream {
+        # local: 'udp://127.0.0.1:53'        
+        local: 'udp://223.5.5.5:53' -> direct
+        remote: 'tls://dns.google:853' -> proxy
+    }
+    routing {
+        request {
+            qname(geosite:gfw) -> remote
+            qname(geosite:private) && !qname(geosite:cn) -> local
+            fallback: remote
+        }
+        response {
+            upstream(remote) -> accept
+            ip(geoip:private) && !qname(geosite:cn) -> accept
+            fallback: remote
+        }
+    }
+}
+
+routing {
+    # must_direct: DNS 服务、代理客户端、系统服务    
+    pname(dnsmasq, systemd-resolved) && l4proto(udp) && dport(53) -> direct(must)
+    pname(AdGuardHome) -> direct(must)
+    pname(mosdns) -> direct(must)
+    pname(NetworkManager) -> direct(must)
+    pname(systemd-networkd) -> direct(must)
+    pname(systemd-resolved) -> direct(must)
+    pname(dhcpcd) -> direct
+
+    # 代理客户端直连（防止回环）
+    pname(sing-box, mihomo) -> direct(must)
+
+    # GeoIP 规则
+    dip(geoip: private) -> direct(must)
+    dip(geoip:cn) -> direct
+
+    # 特定 IP 走代理
+    # dip(10.10.10.110) -> proxy
+
+    # 域名代理
+    domain(geosite:cn) -> direct
+    domain(geosite: google) -> proxy
+
+    # 通用端口代理
+    l4proto(udp) && dport(443) -> block
+    fallback: proxy
+}
+
+experimental {
+    clash_api {
+        external_controller: '127.0.0.1:9090'
+        external_ui: 'ui'
+        secret: 'password'
+        default_mode: 'Rule'
+    }
+    cache_file {
+        enabled: true
+        path: 'cache.db'
+        cache_id: ''
+        store_fakeip: false
+        store_dns: false
+    }
+}
