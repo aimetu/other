@@ -1,5 +1,6 @@
 # https://github.com/daeuniverse/dae/blob/main/example.dae
-# https://github.com/daeuniverse/dae/blob/v2.0.0/example.dae
+# https://github.com/daeuniverse/dae/blob/v2.1.1/example.dae
+#
 #
 # You can split the configuration into multiple files with `include { ... }`.
 #
@@ -48,15 +49,17 @@ global {
     # Disable waiting for network before pulling subscriptions.
     disable_waiting_network: false
 
-    # Disable transparent huge pages for dae userspace memory.
-    # This is enabled by default to keep RSS stable on systems with THP=always.
-    disable_thp: true
+    # Opt the dae process out of transparent huge pages.
+    # Off by default: dae leaves kernel memory policy untouched. Enable it if
+    # you observe RSS inflation from THP-backed matcher memory on THP=always
+    # systems.
+    disable_thp: false
 
     ##### Interface and kernel options.
 
     # The LAN interface to bind. Use it if you want to proxy LAN.
     # Multiple interfaces split by ",".
-    lan_interface: br-lan
+    #lan_interface: docker0
 
     # The WAN interface to bind. Use it if you want to proxy localhost.
     # Multiple interfaces split by ",". Use "auto" to auto detect.
@@ -84,9 +87,9 @@ global {
     # First is URL, others are IP addresses if given.
     # This DNS should have both IPv4 and IPv6 if you have double stack in local.
     #udp_check_dns: 'dns.google:53'
-    udp_check_dns: 'dns.alidns.com:53,223.5.5.5,2400:3200::1'
+    udp_check_dns: 'dns.google:53,8.8.8.8,2001:4860:4860::8888'
 
-    check_interval: 300s
+    check_interval: 30s
 
     # Group will switch node only when new_latency <= old_latency - tolerance.
     check_tolerance: 50ms
@@ -117,6 +120,11 @@ global {
     # Timeout to waiting for first data sending for sniffing. It is always 0 if dial_mode is ip.
     # Default 30ms is suitable for most networks. Increase to 100-300ms for high-latency networks.
     sniffing_timeout: 30ms
+
+    # Inject kernel-space-only sniff-punt rules for device-scoped domain whitelists whose
+    # device uses its own DNS (so the domain conditions would otherwise never match).
+    # Requires sniffing to be enabled (sniffing_timeout > 0 and dial_mode != ip).
+    auto_sniff_punt: true
 
     # TLS implementation. tls is to use Go's crypto/tls. utls is to use uTLS, which can imitate browser's Client Hello.
     tls_implementation: tls
@@ -215,10 +223,10 @@ dns {
 
     # Maximum number of DNS cache entries.
     # When cache size exceeds this limit, least recently used entries will be evicted.
-    # Set to 0 for unlimited cache size (default, original behavior).
-    # Recommended to set a limit when using optimistic_cache_ttl=0 to prevent memory leaks.
-    # Default: 0
-    #max_cache_size: 0
+    # Set to 0 for unlimited cache size.
+    # The finite default keeps high-cardinality query streams from growing memory without bound.
+    # Default: 65536
+    #max_cache_size: 65536
 
     # Bind to local address to listen for DNS queries
     # bind: '127.0.0.1:5353'
@@ -367,8 +375,7 @@ routing {
 
     # Network managers in localhost should be direct to avoid false negative network connectivity check when binding to
     # WAN.
-    # pname(NetworkManager) -> direct
-    pname(NetworkManager, systemd-resolved, dnsmasq) -> must_direct
+    pname(NetworkManager) -> direct
 
     # Put it in the front to prevent broadcast, multicast and other packets that should be sent to the LAN from being
     # forwarded by the proxy.
