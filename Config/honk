@@ -152,14 +152,15 @@ routing {
     dip(geoip: private) -> direct(must)
     dip(geoip:cn) -> direct
 
-    # 特定 IP 走代理
+    # 特定 IP 规则
+    dip(224.0.0.0/3, 'ff00::/8') -> direct
     # dip(10.10.10.110) -> proxy
 
-    # 域名代理
+    # 域名规则
     domain(geosite:cn) -> direct
     domain(geosite: google) -> proxy
 
-    # 通用端口代理
+    # 通用端口规则
     l4proto(udp) && dport(443) -> block
     fallback: proxy
 }
