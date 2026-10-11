@@ -129,6 +129,7 @@ dns {
         response {
             upstream(remote) -> accept
             ip(geoip:private) && !qname(geosite:cn) -> accept
+            qname(geosite: private) -> accept
             fallback: remote
         }
     }
