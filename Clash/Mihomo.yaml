@@ -405,45 +405,10 @@ proxies:
   
   - {name: "🇰🇷 WORKERS-C02", type: vless, server: w01.aimeto.ggff.net, port: 2053, uuid: 58935f45-89c2-4b82-a77c-72eee801da09, udp: true, tls: true, network: ws, servername: w01.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.aimeto.ggff.net}} }
 
-  - {name: "🇺🇸 WORKERS-C03", type: vless, server: w01.jinqian.ggff.net, port: 2087, uuid: a6857f71-33c0-4584-8772-c38160210cf2, udp: true, tls: true, network: ws, servername: w01.jinqian.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.jinqian.ggff.net}} } 
+  - {name: "🇺🇸 WORKERS-C03", type: vless, server: w01.jinqian.dpdns.org, port: 2087, uuid: a6857f71-33c0-4584-8772-c38160210cf2, udp: true, tls: true, network: ws, servername: w01.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: w01.jinqian.dpdns.org}} } 
   
   - {name: "🇸🇬 PAGES-C02", type: vless, server: p02.jinqiantu.dpdns.org, port: 2083, uuid: 38966bb4-c2a2-4010-8663-25db09980b2b, udp: true, tls: true, network: ws, servername: p02.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/?ed=2560", headers: {Host: p02.jinqiantu.dpdns.org}} }
 
-  - name: 🇭🇰 香港R1
-    type: vless
-    server: 198.44.182.3
-    port: 22703
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    udp: true
-    tls: true
-    flow: xtls-rprx-vision
-    network: tcp
-    servername: www.amd.com
-    reality-opts:
-      public-key: aj2eNz7qBTdjdA7eTWQxLayhh63yfuALfJsGc4wpWR0
-      short-id: 4ead5d7c92396de9
-      support-x25519mlkem768: false
-    skip-cert-verify: false
-    client-fingerprint: chrome
-
-  - name: 🇩🇪 德国N1
-    type: vless
-    server: 2.58.196.11
-    port: 22703
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    udp: true
-    tls: true
-    network: grpc
-    alpn: [h2, http/1.1]
-    servername: de.jinqiantu.dpdns.org
-    grpc-opts:
-      grpc-service-name: den1
-      grpc-user-agent: grpc-go/1.79.3
-      # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: false
-    client-fingerprint: chrome
-
-  - {name: "🇩🇪 德国N1C", type: vless, server: de.jinqiantu.dpdns.org, port: 2083, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: de.jinqiantu.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: den1, grpc-user-agent: grpc-go/1.79.3} } 
 
   - name: 🇩🇪 德国N2
     type: vless
@@ -485,62 +450,6 @@ proxies:
 
   - {name: "🇺🇸 美国R3A", type: vmess, server: tus.aimeto.ggff.net, port: 8443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: true, network: ws, servername: tus.aimeto.ggff.net, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: tus.aimeto.ggff.net}} } 
   
-  - name: 🇺🇸 美国S1
-    type: vless
-    server: 2604:abc0:103:415:a1::48
-    port: 46665
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9  
-    udp: true
-    tls: true
-    network: grpc
-    alpn: [h2, http/1.1]
-    servername: us.jinqian.dpdns.org
-    grpc-opts:
-      grpc-service-name: uss1
-      grpc-user-agent: grpc-java-android/1.80.0
-      # ping-interval: 0 # 默认关闭，单位为秒
-    skip-cert-verify: false
-    client-fingerprint: chrome
-
-  - {name: "🇺🇸 美国S1C", type: vless, server: us.jinqian.dpdns.org, port: 2053, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, network: grpc, alpn: [h2, http/1.1], servername: us.jinqian.dpdns.org, skip-cert-verify: false, client-fingerprint: chrome, grpc-opts: {grpc-service-name: uss1} } 
-
-  - {name: "🇺🇸 美国S1V", type: vless, server: 2604:abc0:103:415:a1::48, port: 36665, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, udp: true, tls: true, flow: xtls-rprx-vision, network: tcp, servername: www.bing.com, skip-cert-verify: true, client-fingerprint: chrome, reality-opts: {public-key: 1PZqT2Hs_6wSH7DX6-Zt1_1ddDk8l571QfcLnsIv9i0, short-id: 38bf625c, support-x25519mlkem768: false} } 
-
-  - name: 🇺🇸 美国S1H
-    type: hysteria2
-    server: 2604:abc0:103:415:a1::48
-    port: 16665
-    password: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    sni: us.jinqian.dpdns.org
-    alpn: [h3, h2]
-    skip-cert-verify: false
-    client-fingerprint: chrome
-
-  - name: 🇺🇸 美国S1X
-    type: vless
-    server: 2604:abc0:103:415:4caa:3ff:fe72:b812
-    port: 26665
-    uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9
-    udp: true
-    tls: true
-    encryption: "none"
-    flow: ""
-    network: xhttp
-    alpn: [h2]
-    servername: www.bing.com # Reality 伪装域名
-    reality-opts:
-      public-key: KM_8rQ1VkK3OfVRT7jYcWgqkyPb4olIFn1fdXq8j7D4
-      short-id: f533807c  
-    xhttp-opts:
-      path: "/?ed=2560" # 必须与服务端配置的 path 一致
-      mode: "auto" # Reality 模式下 auto 会自动选择 stream-one
-      host: www.bing.com # 直连时可省略，默认继承 servername
-    skip-cert-verify: false
-    client-fingerprint: chrome
-
-  - {name: "🇺🇸 美国S180", type: vmess, server: 2604:abc0:103:415:4caa:3ff:fe72:b812, port: 8080, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: free.sinaimg.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: free.sinaimg.cn}} } 
-  
-  - {name: "🇺🇸 美国S143", type: vmess, server: 2604:abc0:103:415:a1::48, port: 443, uuid: 5e7b8799-1f03-4c3a-911f-7ce6911483c9, alterId: 0, cipher: auto, udp: true, tls: false, network: ws, servername: puui.qpic.cn, skip-cert-verify: false, client-fingerprint: chrome, ws-opts: {path: "/", headers: {Host: puui.qpic.cn}} }
 
 #💡 远程代理服务器订阅链接，可订阅或设置多个代理服务器订阅
 # filter: (?i)港|台|日|韩|新|狮|美 # 筛选满足关键词或正则表达式的节点
