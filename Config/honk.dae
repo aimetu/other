@@ -84,21 +84,22 @@ subscription {
 
 node {
     # iris-1: ''socks5://user:pass@gw.example.com:1080''    
-    DEN2: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@2.58.196.42:22703?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2'
-    DEN2C: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@de.aimeto.ggff.net:2087?encryption=none&security=tls&sni=de.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=den2&mode=gun#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BDN2C'
-    USR3C: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@us.aimeto.ggff.net:2096?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3C'
-    USR3: 'vless://5e7b8799-1f03-4c3a-911f-7ce6911483c9@66.181.36.236:22703?encryption=none&security=tls&sni=us.aimeto.ggff.net&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=grpc&authority=&serviceName=usr3&mode=gun#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BDR3'
+    PAGES: 'vless://38966bb4-c2a2-4010-8663-25db09980b2b@jinqianto.pages.dev:443?encryption=none&security=tls&sni=jinqianto.pages.dev&fp=random&type=ws&host=jinqianto.pages.dev&path=%2F%3Fed%3D2560#%F0%9F%87%B8%F0%9F%87%AC%20PAGES'
+    PAGES-C02: 'vless://38966bb4-c2a2-4010-8663-25db09980b2b@p02.jinqiantu.dpdns.org:2083?encryption=none&security=tls&sni=p02.jinqiantu.dpdns.org&fp=random&type=ws&host=p02.jinqiantu.dpdns.org&path=%2F%3Fed%3D2560#%F0%9F%87%B8%F0%9F%87%AC%20PAGES-C02'
+    WORKERS-C01: 'vless://58935f45-89c2-4b82-a77c-72eee801da09@w01.jinqiantu.dpdns.org:2096?encryption=none&security=tls&sni=w01.jinqiantu.dpdns.org&fp=random&type=ws&host=w01.jinqiantu.dpdns.org&path=%2F%3Fed%3D2560#%F0%9F%87%AF%F0%9F%87%B5%20WORKERS-C01'
+    WORKERS-C02: 'vless://58935f45-89c2-4b82-a77c-72eee801da09@w01.aimeto.ggff.net:2053?encryption=none&security=tls&sni=w01.aimeto.ggff.net&fp=random&type=ws&host=w01.aimeto.ggff.net&path=%2F%3Fed%3D2560#%F0%9F%87%B0%F0%9F%87%B7%20WORKERS-C02'
+    WORKERS-C03: 'vless://a6857f71-33c0-4584-8772-c38160210cf2@w01.jinqian.dpdns.org:2087?encryption=none&security=tls&sni=w01.jinqian.dpdns.org&fp=chrome&type=ws&host=w01.jinqian.dpdns.org&path=%2F%3Fed%3D2560#%F0%9F%87%BA%F0%9F%87%B8%20WORKERS-C03'	
 }
 
 group {
     proxy {
-        filter: subtag(subscribe) && name(keyword: 'TW')
+        filter: subtag(subscribe) && name(keyword: '新加坡')
         policy: min_moving_avg
         # 按延迟自动选择；无存活节点时回退到 manual 组
         final: manual
     }
     manual {
-        filter: name(DEN2, USR3)
+        filter: name(PAGES-C02, WORKERS-C01, WORKERS-C02)
         # 固定使用组内第一个节点
         policy: fixed(0)
     }
